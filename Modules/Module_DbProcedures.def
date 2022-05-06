@@ -1,0 +1,782 @@
+'################################################################################################
+' This module provides functions to call t-tql and local data procedures.
+'################################################################################################
+
+Option Compare Database
+Option Explicit
+
+' Used to store permissions
+Public Type CRUD
+    Create As Boolean
+    Read As Boolean
+    Update As Boolean
+    Delete As Boolean
+End Type
+
+' Used to store column settings of a datasheetview
+Public Type ColumnStyle
+    Width As Integer
+    hidden As Boolean
+    order As Integer
+End Type
+
+Public Function SetColumnStyle(ByVal rfrm As Form, ByVal clmn As String, ByVal Width As Integer, ByVal hidden As Boolean, ByVal order As Integer) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         SetColumnStyle
+' Date:             2022 March
+' Purpose:          Set the style of a column
+' In:
+' -> rfrm:          Form of interest to apply style settings
+' -> clmn:          The column of choice
+' -> width:         Width of the column (choose zero to hide)
+' -> order:         The order/position of the column
+' Out:              Done (T/F)
+'------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    Dim cs As ColumnStyle
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    
+    If Not rs(0) > 0 Then
+        db.Execute "INSERT INTO columns (user_id, table_id, column_id, column_width, column_hidden, column_order) VALUES('" & GetUserName() & "', '" & rfrm.name & "', '" & clmn & "', " & Width & ", " & CInt(hidden) & ", " & order & ")"
+    Else
+        db.Execute "UPDATE columns SET column_width = " & Width & ", column_hidden = " & CInt(hidden) & ", column_order = " & order & " WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'"
+    End If
+    
+    SetColumnStyle = True
+    
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
+Public Function GetColumnStyle(ByVal rfrm As Form, ByVal clmn As String) As ColumnStyle
+'-------------------------------------------------------------------------------
+' Function:         GetColumnStyle
+' Date:             2022 March
+' Purpose:          Set the style of a column
+' In:
+' -> rfrm:          Form of interest to apply style settings
+' -> clmn:          The column of choice
+' Out:              ColumnStyle (returns width = -3 in case of errors)
+'------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    Dim cs As ColumnStyle
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT * FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    
+    If rs.EOF Or rs.BOF Then
+        cs.Width = -3
+        GoTo Exit_Function
+    Else
+        cs.Width = rs!column_width
+        cs.hidden = rs!column_hidden
+        cs.order = rs!column_order
+    End If
+
+Exit_Function:
+    GetColumnStyle = cs
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    cs.Width = -3
+    Resume Exit_Function
+End Function
+
+Public Function GetFieldValue(ByVal table As String, ByVal field As String, ByVal id As Integer) As Variant
+'-------------------------------------------------------------------------------
+' Function:         GetFieldValue
+' Date:             2022 Feburary
+' Purpose:          Get value of a field
+' In:
+' -> table:         Table to open
+' -> field;         Field to look at
+' Out:              Response (Variant)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT " & field & " FROM " & table & " WHERE id = " & id)
+    
+    If rs(0) <> "" Then
+        GetFieldValue = rs(0)
+    Else
+        GetFieldValue = ""
+    End If
+    
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    GetFieldValue = ""
+    Resume Exit_Function
+End Function
+
+Public Function SetFieldValue(ByVal table As String, ByVal field As String, ByVal id As Integer, ByVal value As Variant) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         GetFieldValue
+' Date:             2022 Feburary
+' Purpose:          Get value of a field
+' In:
+' -> table:         Table to open
+' -> field;         Field to look at
+' Out:              Response (Variant)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    
+    If IsNumeric(value) Then
+        db.Execute "UPDATE " & table & " SET " & field & " = " & value
+    Else
+        db.Execute "UPDATE " & table & " SET " & field & " = '" & value & "'"
+    End If
+    
+    SetFieldValue = True
+    
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
+Public Function GetDbSetting(key As String) As String
+'-------------------------------------------------------------------------------
+' Function:  GetDbSetting
+' Date:      2022 January
+' Purpose:   Get the named setting from table dbsetup and return it as a string
+' In:        Column name to search for
+' Out:       First value of the column
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    
+    If key = "language" Then
+        Set rs = db.OpenRecordset("SELECT " & key & " FROM users")
+    Else
+        Set rs = db.OpenRecordset("SELECT " & key & " FROM dbsetup")
+    End If
+    
+    If rs(0) <> "" Then
+        GetDbSetting = rs(0)
+    Else
+        GetDbSetting = ""
+    End If
+    
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    GetDbSetting = ""
+    Resume Exit_Function
+End Function
+
+Public Function GetBeVersion() As Variant
+'-------------------------------------------------------------------------------
+' Function:         GetBeVersion
+' Date:             2022 January
+' Purpose:          Get the backend version
+' Out:              Version
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT TOP 1 be_version FROM setup")
+    
+    If rs.EOF Or rs.BOF Then
+        GetBeVersion = Null
+    Else
+        GetBeVersion = rs(0)
+    End If
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    GetBeVersion = Null
+    MsgBox "Error (mdlDbProcedures - GetVersion): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function GetUserName() As Variant
+'-------------------------------------------------------------------------------
+' Function:  GetUserName
+' Date:      2022 January
+' Purpose:   Get the name of the logged in user
+' In:        -
+' Out:       User name (will be null in case of any error)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "users_get_name"
+    cmd.Parameters.Append cmd.CreateParameter("@response_message", adVarChar, adParamOutput, 256)
+    cmd.Execute
+    
+    GetUserName = cmd.Parameters.item("@response_message")
+    
+Exit_Function:
+    Set cmd = Nothing
+    Exit Function
+Catch_Error:
+    GetUserName = Null
+    Resume Exit_Function
+End Function
+
+Public Function GetUserId() As Variant
+'-------------------------------------------------------------------------------
+' Function:  GetUserId
+' Date:      2022 March
+' Purpose:   Get the id of the logged in user
+' In:        -
+' Out:       User id (will be null in case of any error)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT id FROM users WHERE name = '" & GetUserName() & "'", dbOpenDynaset, dbSeeChanges)
+    
+    If rs.EOF Or rs.BOF Then
+        GetUserId = Null
+    Else
+        GetUserId = rs(0)
+    End If
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    GetUserId = Null
+    Resume Exit_Function
+End Function
+
+Public Function GetTranslation(ByVal container As String, ByVal item As String, ByVal language As String) As Variant
+'-------------------------------------------------------------------------------
+' Function:         GetTranslation
+' Date:             2022 January
+' Purpose:          Get the translation of a specific item in a container
+' In:
+' -> container:     Container with item of interes (e.g. Form, MsgBox, . . .)
+' -> item:          Item to be translated (e.g. name of the control)
+' -> language:      Language code (e.g. 'de')
+' Out:              Translation (will be null in case of any error)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT " & language & " FROM translation WHERE container ='" & container & "' AND item = '" & item & "'")
+    
+    If rs.EOF Or rs.BOF Then
+        db.Execute "INSERT INTO translation(container, item, " & language & ") VALUES('" & container & "', '" & item & "', '" & item & "')"
+        GetTranslation = item
+    Else
+        GetTranslation = rs(0)
+    End If
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    GetTranslation = Null
+    Resume Exit_Function
+End Function
+
+Public Function GetPermission(ByVal title As String) As CRUD
+'-------------------------------------------------------------------------------
+' Function:         GetPermission
+' Date:             2022 January
+' Purpose:          Get the permission of an item called title
+' In:
+' -> title:         Title of the permission
+' Out:              Permission according CRUD taxonomy
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim response As CRUD
+    Dim db As database
+    Dim rsa, rsb, rsc As Recordset
+    
+    Set db = CurrentDb()
+    Set rsa = db.OpenRecordset("SELECT id FROM permission WHERE title = '" & title & "'", dbOpenDynaset, dbSeeChanges)
+    Set rsb = db.OpenRecordset("SELECT role FROM users WHERE name = '" & GetUserName & "'", dbOpenDynaset, dbSeeChanges)
+    
+    If rsa.EOF Or rsa.BOF Or rsb.EOF Or rsb.BOF Then
+        GetPermission = response
+        db.Execute "INSERT INTO permission(title) VALUES('" & title & "')"
+        Exit Function
+    End If
+    
+    Set rsc = db.OpenRecordset("SELECT * FROM role_permission WHERE role = " & rsb(0) & " AND permission = " & rsa(0), dbOpenDynaset, dbSeeChanges)
+    
+    response.Create = rsc("can_create")
+    response.Read = rsc("can_read")
+    response.Update = rsc("can_update")
+    response.Delete = rsc("can_delete")
+    
+    GetPermission = response
+
+Exit_Function:
+    Set db = Nothing
+    Set rsa = Nothing
+    Set rsb = Nothing
+    Set rsc = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
+Public Function DuplicateRecord(ByVal table As String, ByVal id As Integer) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         DuplicateRecord
+' Date:             2022 January
+' Purpose:          Perform the duplication of the record if applies
+' In:
+' -> rfrm:          Name of the table to duplicate a record
+' Out:              Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    cmd.CommandType = adCmdStoredProc
+    
+    Select Case table
+        Case "role"
+            cmd.CommandText = "role_duplicate"
+            cmd.Parameters.Append cmd.CreateParameter("@pRole", adInteger, adParamInput, , id)
+            cmd.Execute
+        Case Else
+            MsgBox GetTranslation("msgbox", "duplication_not_supported", GetDbSetting("language")), vbExclamation, GetTranslation("msgbox", "vbExclamation", GetDbSetting("language"))
+    End Select
+    
+Exit_Function:
+    Set cmd = Nothing
+    Exit Function
+Catch_Error:
+    MsgBox "Error (mdlDbProcedures - DuplicateRecord): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function TestCalculation(ByVal analysis As Integer) As Double
+'-------------------------------------------------------------------------------
+' Function:         TestCalculation
+' Date:             2022 January
+' Purpose:          Validate equation by calling calculation test procedure
+' In:
+' -> analysis:      Analysis service of interest
+' Out:              Result (Float)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "calculation_test"
+    cmd.Parameters.Append cmd.CreateParameter("@analysis", adInteger, adParamInput, , analysis)
+    cmd.Parameters.Append cmd.CreateParameter("@response_message", adDouble, adParamOutput)
+    cmd.Execute
+    
+    TestCalculation = cmd.Parameters.item("@response_message")
+    
+Exit_Function:
+    Set cmd = Nothing
+    Exit Function
+Catch_Error:
+    MsgBox "Error (mdlDbProcedures - TestCalculation): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function IterateCalculation(ByVal request As Integer) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         TestCalculation
+' Date:             2022 January
+' Purpose:          Validate equation cy calculation test
+' In:
+' -> analysis:      Analysis service of interest
+' Out:              Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "calculation_iterate"
+    cmd.Parameters.Append cmd.CreateParameter("@request", adInteger, adParamInput, , request)
+    cmd.Execute
+    
+    IterateCalculation = True
+    
+Exit_Function:
+    Set cmd = Nothing
+    Exit Function
+Catch_Error:
+    MsgBox "Error (mdlDbProcedures - IterateCalculation): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function SendMail(ByVal recipients As String, ByVal subject As String, ByVal Body As String) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         SendMail
+' Date:             2022 February
+' Purpose:          Send a mail using the server mail profile
+' In:
+' -> recipients:    Recipients
+' -> subject:       Subject
+' -> body:          Body
+' Out:              Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "mail_send"
+    cmd.Parameters.Append cmd.CreateParameter("@p_recipients", adLongVarWChar, adParamInput, -1, recipients)
+    cmd.Parameters.Append cmd.CreateParameter("@p_subject", adVarChar, adParamInput, 256, subject)
+    cmd.Parameters.Append cmd.CreateParameter("@p_body", adLongVarWChar, adParamInput, -1, Body)
+    cmd.Parameters.Append cmd.CreateParameter("@p_filenames", adLongVarWChar, adParamInput, -1, "")
+    cmd.Execute
+    
+    SendMail = True
+    
+Exit_Function:
+    Set cmd = Nothing
+    Exit Function
+Catch_Error:
+    MsgBox "Error (mdlDbProcedures - SendMail): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function AttachToMailQueue(ByVal request As Integer, ByVal subject As String, ByVal Body As String, Optional ByVal recipients As String = "") As Boolean
+'-------------------------------------------------------------------------------
+' Function:         AttachToMailQueue
+' Date:             2022 March
+' Purpose:          Attach a mail to queue
+' In:
+' -> request:       Request
+' -> subject:       Subject
+' -> body:          Body
+' -> recipients:    Recipients (Optional)
+' Out:              Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    
+    If IsNull(recipients) And IsNull(request) Then Exit Function
+    
+    Set db = CurrentDb
+    
+    If recipients = "" Then
+        db.Execute "INSERT INTO mailqueue (subject, body, request) VALUES('" & subject & "', '" & Body & "', " & request & ")", dbOpenDynaset
+    Else
+        db.Execute "INSERT INTO mailqueue (recipients, subject, body, request) VALUES('" & recipients & "', '" & subject & "', '" & Body & "', " & request & ")", dbOpenDynaset
+    End If
+    
+    AttachToMailQueue = True
+
+Exit_Function:
+    Set db = Nothing
+    Exit Function
+Catch_Error:
+    MsgBox "Error (mdlDbProcedures - AttachToMailQueue): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function CreateSubRequest(ByVal request As Integer) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         CreateSubRequest
+' Date:             2022 February
+' Purpose:          Create a subrequest (sample)
+' In:
+' -> recipients:    Request of choice
+' Out:              Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "request_create_subrequest"
+    cmd.Parameters.Append cmd.CreateParameter("@p_id", adInteger, adParamInput, , request)
+    cmd.Execute
+    
+    CreateSubRequest = True
+    
+Exit_Function:
+    Set cmd = Nothing
+    Exit Function
+Catch_Error:
+    MsgBox "Error (mdlDbProcedures - CreateSubRequest): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function AddUser() As Boolean
+'-------------------------------------------------------------------------------
+' Function:         AddUser
+' Date:             2022 March
+' Purpose:          Add user to table users
+' In:               -
+' Out:              Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM users WHERE name = '" & GetUserName() & "'")
+    
+    If rs(0) = 0 Then db.Execute "INSERT INTO users (name) VALUES('" & GetUserName() & "')", dbOpenDynaset
+    
+     AddUser = True
+     
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
+Public Function AddAdmin() As Boolean
+'-------------------------------------------------------------------------------
+' Function:         AddAdmin
+' Date:             2022 March
+' Purpose:          Add admin to table users
+' In:               -
+' Out:              Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    Dim rx As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM users WHERE name = '" & GetUserName() & "'", dbOpenDynaset, dbSeeChanges)
+    Set rx = db.OpenRecordset("SELECT id FROM role WHERE administrative = 1", dbOpenDynaset, dbSeeChanges)
+
+    If rs(0) = 0 Then db.Execute "INSERT INTO users (name, role) VALUES('" & GetUserName() & "', " & rx!id & ")", dbOpenDynaset
+    
+    AddAdmin = True
+     
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
+Public Function CreateSPA(ByVal UID As String, ByVal profile As Integer, ByVal analysis As Integer, ByVal from As Date, ByVal till As Date) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         CreateSPA
+' Date:             2022 March
+' Purpose:          Create a statistical process analysis (SPA)
+' In:
+' -> UID:           Unique identifier to present data of interest in charts
+' -> profile:       The profile of choice to be analyzed
+' -> analysis:      The analysis of choice to be plotted/calculated
+' -> from:          The date from to analyze the data
+' -> till:          The date till to analyze the data
+' Out:              Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "spa_create"
+    cmd.Parameters.Append cmd.CreateParameter("@uid", adVarChar, adParamInput, 256, UID)
+    cmd.Parameters.Append cmd.CreateParameter("@profile", adInteger, adParamInput, , profile)
+    cmd.Parameters.Append cmd.CreateParameter("@analysis", adInteger, adParamInput, , analysis)
+    cmd.Parameters.Append cmd.CreateParameter("@from", adDate, adParamInput, , from)
+    cmd.Parameters.Append cmd.CreateParameter("@till", adDate, adParamInput, , till)
+    cmd.Execute
+    
+    CreateSPA = True
+    
+Exit_Function:
+    Set cmd = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
+Public Function GetAuditTrail(ByVal table As String, ByVal id As Integer) As String
+'-------------------------------------------------------------------------------
+' Function:         etAuditTrail
+' Date:             2022 March
+' Purpose:          Get audit trail of table
+' In:
+' -> table:         Table of interest
+' -> id:            id to diff
+' -> from:          The date from to analyze the data
+' -> till:          The date till to analyze the data
+' Out:              Recordset
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    Dim rs As ADODB.Recordset
+    Dim fld As field
+    Dim s As String
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "audit_xml_diff"
+    cmd.Parameters.Append cmd.CreateParameter("@table_name", adVarChar, adParamInput, 128, table)
+    cmd.Parameters.Append cmd.CreateParameter("@id", adInteger, adParamInput, , id)
+    
+    Set rs = cmd.Execute()
+    
+    While Not rs.EOF
+        s = s & "[" & rs!changed_at & "] " & rs!changed_by & "<br>" & "<b>" & rs!elem_name & "</b> " & SubstNull(rs!value_old, "null") & " -> " & SubstNull(rs!value_new, "null") & "<br><br>"
+        rs.MoveNext
+    Wend
+        
+    GetAuditTrail = s
+
+Exit_Function:
+    Set cmd = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
+Public Function GetStateCode(ByVal state As Integer) As Variant
+'-------------------------------------------------------------------------------
+' Function:         GetStateCode
+' Date:             2022 February
+' Purpose:          Get the state code from table state id
+' Out:              State Code
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT state FROM state WHERE id = " & state)
+    
+    If rs.EOF Or rs.BOF Then
+        GetStateCode = Null
+    Else
+        GetStateCode = rs(0)
+    End If
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    GetStateCode = Null
+    MsgBox "Error (mdlDbProcedures - GetVersion): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function ActiveUsers() As Integer
+'-------------------------------------------------------------------------------
+' Function:         ActiveUsers
+' Date:             2022 April
+' Purpose:          Count number of active users
+' Out:              Amount of users
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb
+    Set rs = db.OpenRecordset("SELECT COUNT(*) As cnt FROM users WHERE role IS NOT NULL")
+    
+    If Not rs.EOF Then ActiveUsers = rs!cnt
+    
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    ActiveUsers = 0
+    Resume Exit_Function
+End Function
+
+Public Function GetCustomerID() As Variant
+'-------------------------------------------------------------------------------
+' Function:         GetCustomerID
+' Date:             2022 April
+' Purpose:          Get customer id of actual user
+' Out:              Customer ID
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    Dim rs As ADODB.Recordset
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "users_get_customer"
+    cmd.Parameters.Append cmd.CreateParameter("@response_message", adInteger, adParamOutput)
+    cmd.Execute
+    
+    GetCustomerID = cmd.Parameters.item("@response_message")
+    
+    Set rs = cmd.Execute()
+
+Exit_Function:
+    Set cmd = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function

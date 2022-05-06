@@ -1,0 +1,99 @@
+'################################################################################################
+' This module handles the upload of pictures into the database (picture fields)
+'################################################################################################
+
+Option Compare Database
+Option Explicit
+
+Public Function UploadPicture(ByRef fref As Object) As Boolean
+'-------------------------------------------------------------------------------
+'Function:          UploadPicture
+'Date:              2022 March
+'Purpose:           Uploads a picture to the database
+'In:
+' -> fref:          BLOB field to store the serialized data
+'Out:               Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim oShell As Object
+    Dim oFSO As Object
+    Dim fName As String
+    
+    Set oShell = CreateObject("WScript.Shell")
+    Set oFSO = CreateObject("Scripting.FileSystemObject")
+    
+    fName = OpenFileDialog()
+    If fName = "" Then Exit Function
+    FileToBlob fName, fref
+    
+    UploadPicture = True
+    
+Exit_Function:
+    Exit Function
+Catch_Error:
+    MsgBox "Error (mdlManageForm - UploadPicture): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function ShowPicture(ByRef fref As Object, ByRef pref As Object) As Boolean
+'-------------------------------------------------------------------------------
+'Function:          ShowPicture
+'Date:              2022 March
+'Purpose:           Show the picture of the BLOB
+'In:
+' -> fref:          BLOB field of the serialized data
+' -> pref           Picture field to present the picture
+'Out:               Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim oShell As Object
+    Dim oFSO As Object
+    Dim fPath As String
+    Dim fName As String
+    
+    Set oShell = CreateObject("WScript.Shell")
+    Set oFSO = CreateObject("Scripting.FileSystemObject")
+    
+    fPath = oShell.ExpandEnvironmentStrings("%USERPROFILE%\") + pCacheFolder
+    If Not oFSO.FolderExists(fPath) Then MkDir fPath
+    
+    fName = fPath & "\" & "tmp_" & CreateGuid()
+    If Not IsNull(fref) Then BlobToFile fName, fref
+    pref.Picture = fName
+    
+    ShowPicture = True
+    
+Exit_Function:
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
+Public Function CleanCache() As Boolean
+'-------------------------------------------------------------------------------
+'Function:          CleanCache
+'Date:              2022 March
+'Purpose:           Clean the cache pictures have been saced to
+'In:
+' -> fref:          BLOB field of the serialized data
+' -> pref           Picture field to present the picture
+'Out:               Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim oShell As Object
+    Dim oFSO As Object
+    Dim fPath As String
+    
+    Set oShell = CreateObject("WScript.Shell")
+    Set oFSO = CreateObject("Scripting.FileSystemObject")
+    
+    fPath = oShell.ExpandEnvironmentStrings("%USERPROFILE%\") + pCacheFolder
+    If oFSO.FolderExists(fPath) Then Kill fPath + "\*.*"
+    
+    CleanCache = True
+
+Exit_Function:
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
