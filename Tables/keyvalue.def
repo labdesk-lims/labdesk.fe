@@ -114,21 +114,30 @@
       <CurrencyLCID name="CurrencyLCID" type="4" value="0"/>
     </Field_2>
   </FieldDefs>
-  <Rows>
-    <Row_1>
-      <field_0 name="id" binary="false" null="false" value="152"/>
-      <field_1 name="key" binary="false" null="false" value="1"/>
-      <field_2 name="value_txt" binary="false" null="false">100MHz</field_2>
-    </Row_1>
-    <Row_2>
-      <field_0 name="id" binary="false" null="false" value="153"/>
-      <field_1 name="key" binary="false" null="false" value="2"/>
-      <field_2 name="value_txt" binary="false" null="false">300MHz</field_2>
-    </Row_2>
-    <Row_3>
-      <field_0 name="id" binary="false" null="false" value="154"/>
-      <field_1 name="key" binary="false" null="false" value="3"/>
-      <field_2 name="value_txt" binary="false" null="false">500Mhz</field_2>
-    </Row_3>
-  </Rows>
+  <Indexes>
+    <Index_0 name="id">
+      <Name value="id"/>
+      <Unique value="false"/>
+      <Clustered value="false"/>
+      <Primary value="false"/>
+      <Foreign value="false"/>
+      <Required value="false"/>
+      <IgnoreNulls value="false"/>
+      <Fields>
+        <FieldNames value="+id"/>
+      </Fields>
+    </Index_0>
+    <Index_1 name="PrimaryKey">
+      <Name value="PrimaryKey"/>
+      <Unique value="true"/>
+      <Clustered value="false"/>
+      <Primary value="true"/>
+      <Foreign value="false"/>
+      <Required value="true"/>
+      <IgnoreNulls value="false"/>
+      <Fields>
+        <FieldNames value="+id"/>
+      </Fields>
+    </Index_1>
+  </Indexes>
 </TableDef>

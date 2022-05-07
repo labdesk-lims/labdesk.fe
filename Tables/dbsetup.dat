@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<TableData>
+  <Rows>
+    <Row_1>
+      <field_0 name="ID" binary="false" null="false" value="1"/>
+      <field_1 name="server" binary="false" null="false">169.254.108.13\mssql</field_1>
+      <field_2 name="database" binary="false" null="false">labdesk</field_2>
+      <field_3 name="user" binary="false" null="false">sa</field_3>
+      <field_4 name="password" binary="false" null="false">labdesk</field_4>
+      <field_5 name="token" binary="false" null="false">1d5a7a33-ab89-11</field_5>
+      <field_6 name="licence" binary="false" null="false">yNNcO2fD/EirJ7jCP/JY5VbMRXEBcEDUYqxDzRP49f3aw47eLkYkDfNGp+K6Df6v5XlMQNXG/#013//#010/6FE/26LTOMwLM4hy4EJivqXDX6ZxpdnSSmJFlxgIdggIPVX0NPNUNDjInVX5YMcpIxrVxHb2/#013//#010/9DGRXvwmlsnaefQxdvkbYFi+9wTDjI41XcIYdBccOSB68rv3</field_6>
+      <field_7 name="navpane" binary="false" null="false" value="true"/>
+      <field_8 name="sysinit" binary="false" null="false" value="false"/>
+    </Row_1>
+  </Rows>
+</TableData>

@@ -332,17 +332,18 @@
       <CurrencyLCID name="CurrencyLCID" type="4" value="0"/>
     </Field_8>
   </FieldDefs>
-  <Rows>
-    <Row_1>
-      <field_0 name="ID" binary="false" null="false" value="1"/>
-      <field_1 name="server" binary="false" null="false">labdesk\mssql</field_1>
-      <field_2 name="database" binary="false" null="false">labdesk</field_2>
-      <field_3 name="user" binary="false" null="false">sa</field_3>
-      <field_4 name="password" binary="false" null="false">labdesk</field_4>
-      <field_5 name="token" binary="false" null="false">1d5a7a33-ab89-11</field_5>
-      <field_6 name="licence" binary="false" null="false">lTGPzEtHU2idSbz3z9YvFL2VFVnQTLNsYbwiCvs21UJpFXRPXlDMWJxDiZUjC4Br7fWtF7Jl/#013//#010/O8F0sxWK1JSMDMm7d8DLgL+UKjLTQgH2/AbgsAzYflYCQvGsrsOGy/GyHHZeH4RdzRWIqtDQ/#013//#010/Qie7yIEEbNOK86D8lZv1p7OnwDsWFIT1IoZ5OTcAlm7TK2wI</field_6>
-      <field_7 name="navpane" binary="false" null="false" value="true"/>
-      <field_8 name="sysinit" binary="false" null="false" value="false"/>
-    </Row_1>
-  </Rows>
+  <Indexes>
+    <Index_0 name="PrimaryKey">
+      <Name value="PrimaryKey"/>
+      <Unique value="true"/>
+      <Clustered value="false"/>
+      <Primary value="true"/>
+      <Foreign value="false"/>
+      <Required value="true"/>
+      <IgnoreNulls value="false"/>
+      <Fields>
+        <FieldNames value="+ID"/>
+      </Fields>
+    </Index_0>
+  </Indexes>
 </TableDef>

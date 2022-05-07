@@ -10,13 +10,13 @@
 		<ConvertUTF8 value="false"/>
 		<EnableODBCScan value="false"/>
 		<ExportData value="true"/>
-		<ExportIndexes value="false"/>
+		<ExportIndexes value="true"/>
 		<ExportLinked value="false"/>
 		<HTMLLogging value="false"/>
 		<KeyboardHookRetry value="0"/>
 		<KillCTI value="true"/>
 		<LocalPath value="C:\Users\lkoge\OneDrive\Dokumente\GitHub\labdesk.fe\"/>
-		<MaxRecords value="100"/>
+		<MaxRecords value="500"/>
 		<MaxRecordsLinked value="0"/>
 		<MethodBeforeImport value=""/>
 		<MethodExportName value=""/>
@@ -31,7 +31,7 @@
 		<SanitizeFiles value="0"/>
 		<SelectObjects value="1"/>
 		<SelectProperties value="false"/>
-		<SeparateData value="false"/>
+		<SeparateData value="true"/>
 		<SeparateDataLinked value="false"/>
 		<SplitFormsFiles value="false"/>
 		<SplitReportFiles value="false"/>
