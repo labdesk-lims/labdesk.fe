@@ -71,6 +71,10 @@ Private Sub InitTranslations()
     GetTranslation "workplace", "workplace_deactivation_failed", GetDbSetting("language")
     
     GetTranslation "project_member", "member_exists", GetDbSetting("language")
+    
+    GetTranslation "btcposition", "sample_already_stored", GetDbSetting("language")
+    
+    GetTranslation "method", "method_in_use", GetDbSetting("language")
 End Sub
 
 Private Sub AddTranslation(container As String, item As String, en As String)

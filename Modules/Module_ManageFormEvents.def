@@ -570,7 +570,7 @@ End Sub
 
 Public Sub SyncFormSaveFilter(rfrm As Form)
     ' Will call the form to save the filter settings
-    If rfrm.FilterOn And Not IsNull(rfrm.Filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
+    If rfrm.FilterOn And Not IsNull(rfrm.filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
 End Sub
 
 Public Sub SyncFormApplyFilter(rfrm As Form)
@@ -683,7 +683,7 @@ End Sub
 
 Public Sub SyncSubFormSaveFilter(rfrm As Form)
     ' Open form to save filter settings
-    If rfrm.FilterOn And Not IsNull(rfrm.Filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
+    If rfrm.FilterOn And Not IsNull(rfrm.filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
 End Sub
 
 Public Sub SyncSubFormApplyFilter(rfrm As Form)

@@ -41,7 +41,7 @@
     <UseBigIntforlinkingandimportingdata name="Use BigInt for linking and importing data" type="4" value="0" sort="1"/>
     <UseDateTime2forlinkingandimportingdata name="Use DateTime2 for linking and importing data" type="4" value="0" sort="1"/>
     <UseMicrosoftAccess2007compatiblecache name="Use Microsoft Access 2007 compatible cache" type="4" value="0" sort="1"/>
-    <UseAppIconForFrmRpt name="UseAppIconForFrmRpt" type="1" value="True" sort="1"/>
+    <UseAppIconForFrmRpt name="UseAppIconForFrmRpt" type="1" value="False" sort="1"/>
     <UseMDIMode name="UseMDIMode" type="2" value="0" sort="1"/>
     <WebDesignMode name="WebDesignMode" type="2" value="0" sort="1"/>
   </CurrentDb>
