@@ -15,7 +15,7 @@
 		<HTMLLogging value="false"/>
 		<KeyboardHookRetry value="0"/>
 		<KillCTI value="true"/>
-		<LocalPath value="C:\Users\lkoge\OneDrive\Dokumente\GitHub\labdesk.fe\"/>
+		<LocalPath value=""/>
 		<MaxRecords value="500"/>
 		<MaxRecordsLinked value="0"/>
 		<MethodBeforeImport value=""/>
@@ -37,7 +37,7 @@
 		<SplitReportFiles value="false"/>
 		<StructureOnly value="false"/>
 		<TableProperties value="Description|RowHeight|SubdatasheetName"/>
-		<UseProjectPath value="false"/>
+		<UseProjectPath value="true"/>
 		<ValidObjects value="131071"/>
 		<ValidSystemObjects value=""/>
 		<Version value="20"/>
