@@ -65,7 +65,7 @@ On Error GoTo Catch_Error
     End If
 
     ' Config subforms if ID is not null
-    If Not (rfrm.Recordset.EOF Or rfrm.Recordset.BOF) Then
+    If Not IsNull(rfrm.id) Then
         For Each ctrl In rfrm.Controls
             If ctrl.ControlType = acSubform Then
                 rfrm.Form(ctrl.name).Form.Form_Init readOnly, "WHERE " & rfrm.DataTable & " = " & rfrm.id
@@ -239,7 +239,7 @@ On Error GoTo Catch_Error
     For Each myForm In Split(rfrm.RefreshForm, ",")
         If CurrentProject.AllForms(myForm).IsLoaded Then Forms(myForm).Requery
     Next
-
+    
 Exit_Function:
     Exit Sub
 Catch_Error:
@@ -261,7 +261,7 @@ On Error GoTo Catch_Error
     Dim myForm As Variant
     Dim subFormChanged As Boolean
     Dim subFormValidity As Boolean
-    
+
     ' Check for changes on subforms
     For Each ctrl In rfrm.Controls
         If ctrl.ControlType = acSubform And Not IsNull(rfrm.id) Then

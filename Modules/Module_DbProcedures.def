@@ -172,7 +172,7 @@ On Error GoTo Catch_Error
     Set db = CurrentDb()
     
     If key = "language" Then
-        Set rs = db.OpenRecordset("SELECT " & key & " FROM users")
+        Set rs = db.OpenRecordset("SELECT " & key & " FROM users WHERE id = " & GetUserId())
     Else
         Set rs = db.OpenRecordset("SELECT " & key & " FROM dbsetup")
     End If

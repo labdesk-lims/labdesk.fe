@@ -123,6 +123,8 @@ On Error GoTo Catch_Error
     For Each tbl In remoteTables
         Set td = CurrentDb.CreateTableDef(tbl, dbAttachSavePWD, tbl, ODBCConStr)
         CurrentDb.TableDefs.Append td
+        '//If the table is name view_ then add a primary key
+        If InStr(1, tbl, "view_", vbTextCompare) Then CurrentDb.Execute "CREATE UNIQUE INDEX pk_" & tbl & " ON " & tbl & " (id) WITH PRIMARY"
     Next
     
     AttachDSNLessTables = True
