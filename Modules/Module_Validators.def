@@ -153,10 +153,10 @@ Public Function ValidLicence(ByVal silent As Boolean) As Variant
     Dim Json As Object
     Dim s As String
     Dim rs As Recordset
-
+    
 On Error GoTo Catch_Error
     Set rs = CurrentDb.OpenRecordset("SELECT COUNT(*) As seats FROM users WHERE role IS NOT NULL")
-    s = RetrieveDecryptAES(GetDbSetting("licence"), GetDbSetting("database") & GetDbSetting("server"), 100)
+    s = RetrieveDecryptAES(GetDbSetting("licence"), pLcSecret, 100)
     Set Json = JsonConverter.ParseJson(s)
     If Json("version") <> pReVersion Then Err.Raise vbObjectError + 513, "function valid licence", "Version does not match licence."
     If rs!seats > Json("seats") Then Err.Raise vbObjectError + 513, "function valid licence", "Maximum amount of seats reached."

@@ -18,9 +18,10 @@ Public Const pAppTitle = "LABDESK LIMS"
 
 ' Semantic Versioning according to https://semver.org/
 ' MAJOR-MINOR-PATCH
-Public Const pBeVersion = "1-0-0-alpha" 'Backend version
-Public Const pFeVersion = "1-0-0-alpha" 'Frontend version
-Public Const pReVersion = "1-0-0-alpha" 'Release version (used for licence check)
+Public Const pBeVersion = "v1.0.0" 'Backend version
+Public Const pFeVersion = "v1.0.0" 'Frontend version
+Public Const pReVersion = "v1.0.0" 'Release version (used for licence check)
+Public Const pLcSecret = "ls_k#!8kkdKo*f09"
 
 ' Cache folder setting
 Public Const pCacheFolder = ".labdesk"
@@ -230,6 +231,7 @@ On Error GoTo Catch_Error
     'Interface cosmetics
     AddAppProperty "AppTitle", dbText, pAppTitle
     Application.RefreshTitleBar
+    SysCmd acSysCmdSetStatus, "User: " & GetUserName()
     
     'Hide the navigation pane
     HideNavPane GetDbSetting("navpane")

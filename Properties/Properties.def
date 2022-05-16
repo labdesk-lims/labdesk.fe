@@ -21,7 +21,7 @@
     <NavPaneClosed name="NavPane Closed" type="4" value="0" sort="1"/>
     <NavPaneSortBy name="NavPane Sort By" type="4" value="1" sort="1"/>
     <NavPaneViewBy name="NavPane View By" type="4" value="0" sort="1"/>
-    <NavPaneWidth name="NavPane Width" type="4" value="340" sort="1"/>
+    <NavPaneWidth name="NavPane Width" type="4" value="339" sort="1"/>
     <NeverCache name="Never Cache" type="4" value="0" sort="1"/>
     <PicturePropertyStorageFormat name="Picture Property Storage Format" type="4" value="0" sort="1"/>
     <ProjVer name="ProjVer" type="3" value="142" sort="1"/>
@@ -41,7 +41,7 @@
     <UseBigIntforlinkingandimportingdata name="Use BigInt for linking and importing data" type="4" value="0" sort="1"/>
     <UseDateTime2forlinkingandimportingdata name="Use DateTime2 for linking and importing data" type="4" value="0" sort="1"/>
     <UseMicrosoftAccess2007compatiblecache name="Use Microsoft Access 2007 compatible cache" type="4" value="0" sort="1"/>
-    <UseAppIconForFrmRpt name="UseAppIconForFrmRpt" type="1" value="True" sort="1"/>
+    <UseAppIconForFrmRpt name="UseAppIconForFrmRpt" type="1" value="False" sort="1"/>
     <UseMDIMode name="UseMDIMode" type="2" value="0" sort="1"/>
     <WebDesignMode name="WebDesignMode" type="2" value="0" sort="1"/>
   </CurrentDb>
@@ -77,7 +77,7 @@
     <DefaultBackgroundColor name="Default Background Color" type="24" value="-1" sort="6"/>
     <DefaultCellEffect name="Default Cell Effect" type="25" value="0" sort="6"/>
     <DefaultColumnWidth name="Default Column Width" type="26" value="2,499cm" sort="6"/>
-    <DefaultDatabaseDirectory name="Default Database Directory" type="27" value="%USERPROFILE%\OneDrive\Dokumente\" sort="6"/>
+    <DefaultDatabaseDirectory name="Default Database Directory" type="27" value="%USERPROFILE%\Documents\GitHub\labdesk.fe" sort="6"/>
     <DefaultFieldType name="Default Field Type" type="28" value="0" sort="6"/>
     <DefaultFindReplaceBehavior name="Default Find/Replace Behavior" type="29" value="0" sort="6"/>
     <DefaultFontColor name="Default Font Color" type="30" value="-1" sort="6"/>
@@ -100,7 +100,7 @@
     <EnableFontSwitching name="Enable Font Switching" type="47" value="0" sort="6"/>
     <EnableMRUFileList name="Enable MRU File List" type="48" value="-1" sort="6"/>
     <ErrorTrapping name="Error Trapping" type="49" value="2" sort="6"/>
-    <FDCategory name="FDCategory" type="50" value="4" sort="6"/>
+    <FDCategory name="FDCategory" type="50" value="2" sort="6"/>
     <FollowedHyperlinkColor name="Followed Hyperlink Color" type="51" value="5" sort="6"/>
     <FormTemplate name="Form Template" type="52" value="Normal" sort="6"/>
     <FourDigitYearFormatting name="Four-Digit Year Formatting" type="53" value="0" sort="6"/>
@@ -126,7 +126,7 @@
     <NavPaneClosed name="NavPane Closed" type="73" value="0" sort="6"/>
     <NavPaneSortBy name="NavPane Sort By" type="74" value="1" sort="6"/>
     <NavPaneViewBy name="NavPane View By" type="75" value="0" sort="6"/>
-    <NavPaneWidth name="NavPane Width" type="76" value="340" sort="6"/>
+    <NavPaneWidth name="NavPane Width" type="76" value="339" sort="6"/>
     <NewDatabaseSortOrder name="New Database Sort Order" type="77" value="1033" sort="6"/>
     <NumberofUpdateRetries name="Number of Update Retries" type="78" value="2" sort="6"/>
     <ObjectsSnaptoGrid name="Objects Snap to Grid" type="79" value="-1" sort="6"/>
@@ -149,7 +149,7 @@
     <ShowAnimations name="Show Animations" type="96" value="-1" sort="6"/>
     <ShowConditionsColumn name="Show Conditions Column" type="97" value="0" sort="6"/>
     <ShowGrid name="Show Grid" type="98" value="-1" sort="6"/>
-    <ShowHiddenObjects name="Show Hidden Objects" type="99" value="-1" sort="6"/>
+    <ShowHiddenObjects name="Show Hidden Objects" type="99" value="0" sort="6"/>
     <ShowMacroNamesColumn name="Show Macro Names Column" type="100" value="0" sort="6"/>
     <ShowNewObjectShortcuts name="Show New Object Shortcuts" type="101" value="-1" sort="6"/>
     <ShowRuler name="Show Ruler" type="102" value="-1" sort="6"/>
@@ -164,7 +164,7 @@
     <ShowValuesinSnapshot name="Show Values in Snapshot" type="111" value="-1" sort="6"/>
     <ShowValuesLimit name="Show Values Limit" type="112" value="1000" sort="6"/>
     <ShowWindowsInTaskbar name="ShowWindowsInTaskbar" type="113" value="-1" sort="6"/>
-    <SizeofMRUFileList name="Size of MRU File List" type="114" value="4" sort="6"/>
+    <SizeofMRUFileList name="Size of MRU File List" type="114" value="1" sort="6"/>
     <SubstituteFontName name="Substitute Font Name" type="115" value="Arial" sort="6"/>
     <SyntaxChecking name="Syntax Checking" type="116" value="0" sort="6"/>
     <TopMargin name="Top Margin" type="117" value="0,635cm" sort="6"/>
@@ -195,7 +195,7 @@
     </Reference>
     <Reference>
       <Name value="MSForms 2.0"/>
-      <FullPath value="C:\Windows\System32\FM20.DLL"/>
+      <FullPath value="%SystemRoot%\System32\FM20.DLL"/>
       <Position value="8"/>
       <GUID value="{0D452EE1-E08F-101A-852E-02608C4D0BB4}"/>
       <Major value="2"/>
@@ -203,7 +203,7 @@
     </Reference>
     <Reference>
       <Name value="MSXML2 6.0"/>
-      <FullPath value="C:\Windows\System32\msxml6.dll"/>
+      <FullPath value="%SystemRoot%\System32\msxml6.dll"/>
       <Position value="11"/>
       <GUID value="{F5078F18-C551-11D3-89B9-0000F81FE221}"/>
       <Major value="6"/>
@@ -219,7 +219,7 @@
     </Reference>
     <Reference>
       <Name value="Scripting 1.0"/>
-      <FullPath value="C:\Windows\System32\scrrun.dll"/>
+      <FullPath value="%SystemRoot%\System32\scrrun.dll"/>
       <Position value="6"/>
       <GUID value="{420B2830-E718-11CF-893D-00A0C9054228}"/>
       <Major value="1"/>
@@ -227,7 +227,7 @@
     </Reference>
     <Reference>
       <Name value="SHDocVw 1.1"/>
-      <FullPath value="C:\Windows\System32\ieframe.dll"/>
+      <FullPath value="%SystemRoot%\System32\ieframe.dll"/>
       <Position value="7"/>
       <GUID value="{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}"/>
       <Major value="1"/>
@@ -235,7 +235,7 @@
     </Reference>
     <Reference>
       <Name value="stdole 2.0"/>
-      <FullPath value="C:\Windows\System32\stdole2.tlb"/>
+      <FullPath value="%SystemRoot%\System32\stdole2.tlb"/>
       <Position value="3"/>
       <GUID value="{00020430-0000-0000-C000-000000000046}"/>
       <Major value="2"/>
@@ -243,7 +243,7 @@
     </Reference>
     <Reference>
       <Name value="VBScript_RegExp_55 5.5"/>
-      <FullPath value="C:\Windows\System32\vbscript.dll\3"/>
+      <FullPath value="%SystemRoot%\System32\vbscript.dll\3"/>
       <Position value="10"/>
       <GUID value="{3F4DACA7-160D-11D2-A8E9-00104B365C9F}"/>
       <Major value="5"/>

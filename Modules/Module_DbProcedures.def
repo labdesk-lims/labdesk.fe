@@ -172,7 +172,7 @@ On Error GoTo Catch_Error
     Set db = CurrentDb()
     
     If key = "language" Then
-        Set rs = db.OpenRecordset("SELECT " & key & " FROM users")
+        Set rs = db.OpenRecordset("SELECT " & key & " FROM users WHERE id = " & GetUserId())
     Else
         Set rs = db.OpenRecordset("SELECT " & key & " FROM dbsetup")
     End If
@@ -200,25 +200,24 @@ Public Function GetBeVersion() As Variant
 ' Out:              Version
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim db As database
-    Dim rs As Recordset
+    Dim cmd As ADODB.Command
     
-    Set db = CurrentDb()
-    Set rs = db.OpenRecordset("SELECT TOP 1 be_version FROM setup")
+    Set cmd = New ADODB.Command
     
-    If rs.EOF Or rs.BOF Then
-        GetBeVersion = Null
-    Else
-        GetBeVersion = rs(0)
-    End If
-
+    cmd.ActiveConnection = ADODBConStr
+    
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "version_be"
+    cmd.Parameters.Append cmd.CreateParameter("@version_be", adVarChar, adParamOutput, 256)
+    cmd.Execute
+    
+    GetBeVersion = cmd.Parameters.item("@version_be")
+    
 Exit_Function:
-    Set db = Nothing
-    Set rs = Nothing
+    Set cmd = Nothing
     Exit Function
 Catch_Error:
-    GetBeVersion = Null
-    MsgBox "Error (mdlDbProcedures - GetVersion): " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlDbProcedures - GetBeVersion): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function
 

@@ -2,7 +2,7 @@
 <CommandBar name="StdDplContextMenu">
   <AdaptiveMenu value="false"/>
   <Context value=""/>
-  <Description value="StdDplContextMenu pop-up menu"/>
+  <Description value="StdDplContextMenu-Menü"/>
   <Enabled value="true"/>
   <Position value="5"/>
   <Protection value="22"/>

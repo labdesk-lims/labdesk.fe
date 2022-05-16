@@ -2,7 +2,7 @@
 <CommandBar name="FltContextMenu">
   <AdaptiveMenu value="false"/>
   <Context value=""/>
-  <Description value="FltContextMenu pop-up menu"/>
+  <Description value="FltContextMenu-Menü"/>
   <Enabled value="true"/>
   <Position value="5"/>
   <Protection value="22"/>
