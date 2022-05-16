@@ -2,7 +2,7 @@
 <CommandBar name="StdContextMenu">
   <AdaptiveMenu value="false"/>
   <Context value=""/>
-  <Description value="StdContextMenu pop-up menu"/>
+  <Description value="StdContextMenu-Menü"/>
   <Enabled value="true"/>
   <Position value="5"/>
   <Protection value="22"/>

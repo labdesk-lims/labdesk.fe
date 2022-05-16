@@ -21,7 +21,7 @@
     <NavPaneClosed name="NavPane Closed" type="4" value="0" sort="1"/>
     <NavPaneSortBy name="NavPane Sort By" type="4" value="1" sort="1"/>
     <NavPaneViewBy name="NavPane View By" type="4" value="0" sort="1"/>
-    <NavPaneWidth name="NavPane Width" type="4" value="340" sort="1"/>
+    <NavPaneWidth name="NavPane Width" type="4" value="339" sort="1"/>
     <NeverCache name="Never Cache" type="4" value="0" sort="1"/>
     <PicturePropertyStorageFormat name="Picture Property Storage Format" type="4" value="0" sort="1"/>
     <ProjVer name="ProjVer" type="3" value="142" sort="1"/>
@@ -126,7 +126,7 @@
     <NavPaneClosed name="NavPane Closed" type="73" value="0" sort="6"/>
     <NavPaneSortBy name="NavPane Sort By" type="74" value="1" sort="6"/>
     <NavPaneViewBy name="NavPane View By" type="75" value="0" sort="6"/>
-    <NavPaneWidth name="NavPane Width" type="76" value="340" sort="6"/>
+    <NavPaneWidth name="NavPane Width" type="76" value="339" sort="6"/>
     <NewDatabaseSortOrder name="New Database Sort Order" type="77" value="1033" sort="6"/>
     <NumberofUpdateRetries name="Number of Update Retries" type="78" value="2" sort="6"/>
     <ObjectsSnaptoGrid name="Objects Snap to Grid" type="79" value="-1" sort="6"/>

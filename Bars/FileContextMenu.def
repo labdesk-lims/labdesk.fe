@@ -2,7 +2,7 @@
 <CommandBar name="FileContextMenu">
   <AdaptiveMenu value="false"/>
   <Context value=""/>
-  <Description value="FileContextMenu pop-up menu"/>
+  <Description value="FileContextMenu-Menü"/>
   <Enabled value="true"/>
   <Position value="5"/>
   <Protection value="22"/>

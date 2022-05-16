@@ -2,7 +2,7 @@
 <CommandBar name="RqstContextMenu">
   <AdaptiveMenu value="false"/>
   <Context value=""/>
-  <Description value="RqstContextMenu pop-up menu"/>
+  <Description value="RqstContextMenu-Menü"/>
   <Enabled value="true"/>
   <Position value="5"/>
   <Protection value="22"/>

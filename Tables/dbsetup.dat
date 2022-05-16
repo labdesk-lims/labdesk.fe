@@ -3,12 +3,12 @@
   <Rows>
     <Row_1>
       <field_0 name="ID" binary="false" null="false" value="1"/>
-      <field_1 name="server" binary="false" null="false">192.168.178.43</field_1>
+      <field_1 name="server" binary="false" null="false">169.254.128.250\MSSQL</field_1>
       <field_2 name="database" binary="false" null="false">labdesk</field_2>
       <field_3 name="user" binary="false" null="false">sa</field_3>
-      <field_4 name="password" binary="false" null="false">labdesk</field_4>
+      <field_4 name="password" binary="false" null="false">260779</field_4>
       <field_5 name="token" binary="false" null="false">1d5a7a33-ab89-11</field_5>
-      <field_6 name="licence" binary="false" null="false">Qjw1EljdDNQtHHnVzXcCa1gIanctT1ah1mt1/ARZGhJok1mEZKFz7gjytabqT6EqpRQI6naH/#013//#010/Y+fHGSLp+SMJC28S9XRCr0qhH8bu0YAzuZbS06YG8YD2mF95OmHq0kCYtxi14SafD/N64NWz/#013//#010/3KlTyQry4H+1iWjT+i5zbHOR1D8s+RAgNmwOa5OQknhVPL/l</field_6>
+      <field_6 name="licence" binary="false" null="false">OjcSGNUrpsNk8bP+FKasjkgIe95X+JgMLmQx0FXxkHnzmbmk15CS2+7vOW+0Kjp2nXRC3d3u/#013//#010/fQ0gZd12Oh1setOyzEIvUOAnCT5eVNiQoTYvW+vGbGqulIN5nx4m2pyFWtt67O8Z/eh9K7Zm/#013//#010/+p0Xz7u8JFvAPTJmRvXMNzuk6nNA3EdNs7Di1za1C/E3JFUZ</field_6>
       <field_7 name="navpane" binary="false" null="false" value="true"/>
       <field_8 name="sysinit" binary="false" null="false" value="false"/>
     </Row_1>
