@@ -2,7 +2,7 @@
 <CommandBar name="RqstContextMenu">
   <AdaptiveMenu value="false"/>
   <Context value=""/>
-  <Description value="RqstContextMenu-Menü"/>
+  <Description value="RqstContextMenu pop-up menu"/>
   <Enabled value="true"/>
   <Position value="5"/>
   <Protection value="22"/>
@@ -13,7 +13,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Add record"/>
+      <Caption value="Datensatz hinzufügen"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -23,7 +23,7 @@
       <Parameter value="add_record"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Add record"/>
+      <TooltipText value="Datensatz hinzufügen"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -36,7 +36,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Add Sub-Sample"/>
+      <Caption value="Unterstichprobe hinzufügen"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -46,7 +46,7 @@
       <Parameter value="add_subrequest"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Add Sub-Sample"/>
+      <TooltipText value="Unterstichprobe hinzufügen"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -59,7 +59,7 @@
     <Control id="1">
       <BeginGroup value="true"/>
       <BuiltIn value="false"/>
-      <Caption value="Apply filter"/>
+      <Caption value="Filter anwenden"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -69,7 +69,7 @@
       <Parameter value="apply_filter"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Apply filter"/>
+      <TooltipText value="Filter anwenden"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -82,7 +82,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Save filter"/>
+      <Caption value="Filter speichern"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -92,7 +92,7 @@
       <Parameter value="save_filter"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Save filter"/>
+      <TooltipText value="Filter speichern"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -105,7 +105,7 @@
     <Control id="1">
       <BeginGroup value="true"/>
       <BuiltIn value="false"/>
-      <Caption value="Manage columns"/>
+      <Caption value="Spalten verwalten"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -115,7 +115,7 @@
       <Parameter value="clmn_dlg"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Manage columns"/>
+      <TooltipText value="Spalten verwalten"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -128,7 +128,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Reset column width"/>
+      <Caption value="Spaltenbreite zurücksetzen"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -138,7 +138,7 @@
       <Parameter value="clmn_std"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Reset column width"/>
+      <TooltipText value="Spaltenbreite zurücksetzen"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -151,7 +151,7 @@
     <Control id="1">
       <BeginGroup value="true"/>
       <BuiltIn value="false"/>
-      <Caption value="Show report"/>
+      <Caption value="Bericht anzeigen"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -161,7 +161,7 @@
       <Parameter value="show_report"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Show report"/>
+      <TooltipText value="Bericht anzeigen"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -174,7 +174,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Show Sticker"/>
+      <Caption value="Sticker anzeigen"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -184,7 +184,7 @@
       <Parameter value="show_sticker"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Show Sticker"/>
+      <TooltipText value="Sticker anzeigen"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -197,7 +197,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Show audit trail"/>
+      <Caption value="Audit trail anzeigen"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -207,7 +207,7 @@
       <Parameter value="audit_trail"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Show audit trail"/>
+      <TooltipText value="Audit trail anzeigen"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>

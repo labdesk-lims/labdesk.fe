@@ -25,7 +25,7 @@ On Error GoTo Catch_Error
     ' Checks for changes on subforms as well
     For Each control In rfrm.Controls
         If control.ControlType = acSubform Then
-            subFormChanged = subFormChanged Or rfrm.Form(control.name).Form.GetChanged(rfrm.Form(control.name).Form)
+            subFormChanged = subFormChanged Or rfrm.Form(control.Name).Form.GetChanged(rfrm.Form(control.Name).Form)
         End If
     Next
     
@@ -34,7 +34,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncFormGetChanged): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - AsyncFormGetChanged): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function
 
@@ -56,11 +56,11 @@ On Error GoTo Catch_Error
     rfrm.tmpGuid = CreateGuid()
    
     ' Check read only condidtion
-    If Not GetPermission(rfrm.name).Update Or rfrm.Form_Init_Individual_Permission() Or (Not pValidLic And Not rfrm.Form_Init_Individual_Permission()) Then readOnly = True
+    If Not GetPermission(rfrm.Name).Update Or rfrm.Form_Init_Individual_Permission() Or (Not pValidLic And Not rfrm.Form_Init_Individual_Permission()) Then readOnly = True
     
     ' Config main form
     If ConfigAsyncForm(rfrm.Form, rfrm.DataTable, rfrm.tmpGuid, , readOnly, rfrm.whereClause) = False Then
-        DoCmd.Close acForm, rfrm.name
+        DoCmd.Close acForm, rfrm.Name
         Exit Sub
     End If
 
@@ -68,13 +68,13 @@ On Error GoTo Catch_Error
     If Not IsNull(rfrm.id) Then
         For Each ctrl In rfrm.Controls
             If ctrl.ControlType = acSubform Then
-                rfrm.Form(ctrl.name).Form.Form_Init readOnly, "WHERE " & rfrm.DataTable & " = " & rfrm.id
+                rfrm.Form(ctrl.Name).Form.Form_Init readOnly, "WHERE " & rfrm.DataTable & " = " & rfrm.id
             End If
         Next
     Else
         For Each ctrl In rfrm.Controls
             If ctrl.ControlType = acSubform Then
-                rfrm.Form(ctrl.name).Form.visible = False
+                rfrm.Form(ctrl.Name).Form.visible = False
             End If
         Next
     End If
@@ -100,7 +100,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncFormInit): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - AsyncFormInit): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -122,12 +122,12 @@ On Error GoTo Catch_Error
 
     ' Close form
     rfrm.ForceClose = True
-    DoCmd.Close acForm, rfrm.name, acSaveNo
+    DoCmd.Close acForm, rfrm.Name, acSaveNo
 
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncFormOkClick): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - AsyncFormOkClick): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -160,17 +160,17 @@ On Error GoTo Catch_Error
     'Undo all changes in subforms
     For Each ctrl In rfrm.Controls
         If ctrl.ControlType = acSubform Then
-            rfrm.Form(ctrl.name).Form.FormChanged = False
+            rfrm.Form(ctrl.Name).Form.FormChanged = False
         End If
     Next
     
     'Jump back to selected record
-    DoCmd.Close acForm, rfrm.name, acSaveNo
+    DoCmd.Close acForm, rfrm.Name, acSaveNo
 
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncFormCancelClick): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - AsyncFormCancelClick): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -192,7 +192,7 @@ On Error GoTo Catch_Error
     ' Check for changes on subforms
     For Each ctrl In rfrm.Controls
         If ctrl.ControlType = acSubform And Not IsNull(rfrm.id) Then
-            subFormChanged = subFormChanged Or rfrm.Form(ctrl.name).Form.FormChanged
+            subFormChanged = subFormChanged Or rfrm.Form(ctrl.Name).Form.FormChanged
         End If
     Next
     
@@ -200,7 +200,7 @@ On Error GoTo Catch_Error
     subFormValidity = True
     For Each ctrl In rfrm.Controls
         If ctrl.ControlType = acSubform And Not IsNull(rfrm.id) Then
-            subFormValidity = subFormValidity And rfrm.Form(ctrl.name).Form.Form_Check_Validity
+            subFormValidity = subFormValidity And rfrm.Form(ctrl.Name).Form.Form_Check_Validity
         End If
     Next
     
@@ -209,7 +209,7 @@ On Error GoTo Catch_Error
         If MsgBox(GetTranslation("msgbox", "entries_not_valid_close_anyway", GetDbSetting("language")), vbYesNo, GetTranslation("msgbox", "vbYesNo", GetDbSetting("language"))) = vbYes Then
             For Each ctrl In rfrm.Controls
                 If ctrl.ControlType = acSubform Then
-                    rfrm.Form(ctrl.name).Form.FormChanged = False
+                    rfrm.Form(ctrl.Name).Form.FormChanged = False
                 End If
             Next
             Exit Sub
@@ -226,7 +226,7 @@ On Error GoTo Catch_Error
         Else
             For Each ctrl In rfrm.Controls
                 If ctrl.ControlType = acSubform And Not IsNull(rfrm.id) Then
-                    rfrm.Form(ctrl.name).Form.FormChanged = False
+                    rfrm.Form(ctrl.Name).Form.FormChanged = False
                 End If
             Next
         End If
@@ -243,7 +243,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncFormUnload): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - AsyncFormUnload): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -265,7 +265,7 @@ On Error GoTo Catch_Error
     ' Check for changes on subforms
     For Each ctrl In rfrm.Controls
         If ctrl.ControlType = acSubform And Not IsNull(rfrm.id) Then
-            subFormChanged = subFormChanged Or rfrm.Form(ctrl.name).Form.FormChanged
+            subFormChanged = subFormChanged Or rfrm.Form(ctrl.Name).Form.FormChanged
         End If
     Next
     
@@ -273,7 +273,7 @@ On Error GoTo Catch_Error
     subFormValidity = True
     For Each ctrl In rfrm.Controls
         If ctrl.ControlType = acSubform And Not IsNull(rfrm.id) Then
-            subFormValidity = subFormValidity And rfrm.Form(ctrl.name).Form.Form_Check_Validity
+            subFormValidity = subFormValidity And rfrm.Form(ctrl.Name).Form.Form_Check_Validity
         End If
     Next
     
@@ -288,7 +288,7 @@ On Error GoTo Catch_Error
         UpdateTable rfrm.DataTable, GetTableNameFromGuid(rfrm.tmpGuid)
         For Each ctrl In rfrm.Controls
                 If ctrl.ControlType = acSubform And Not IsNull(rfrm.id) Then
-                    AsyncSubFormSaveData rfrm.Form(ctrl.name).Form
+                    AsyncSubFormSaveData rfrm.Form(ctrl.Name).Form
                 End If
             Next
     End If
@@ -299,7 +299,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncFormSave): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - AsyncFormSave): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -347,7 +347,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncSubFormInit): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - AsyncSubFormInit): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -370,7 +370,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncSubFormSaveData): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - AsyncSubFormSaveData): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -396,7 +396,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncSubFormUndoChanges): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - AsyncSubFormUndoChanges): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -415,7 +415,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncSubFormClose): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - AsyncSubFormClose): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -442,8 +442,8 @@ On Error GoTo Catch_Error
 Skip_hide:
     
      ' Configure a synchronous form
-    If ConfigSyncForm(rfrm.Form, rfrm.name) = False Then
-        DoCmd.Close acForm, rfrm.name
+    If ConfigSyncForm(rfrm.Form, rfrm.Name) = False Then
+        DoCmd.Close acForm, rfrm.Name
         Exit Sub
     End If
     
@@ -455,7 +455,7 @@ Skip_hide:
         If (ctrl.ControlType = acTextBox Or ctrl.ControlType = acComboBox) Then
             ctrl.ColumnWidth = -2
             'Customize columns
-            cs = GetColumnStyle(rfrm, ctrl.name)
+            cs = GetColumnStyle(rfrm, ctrl.Name)
             If cs.Width <> -3 Then
                 ctrl.ColumnWidth = cs.Width
                 ctrl.ColumnOrder = cs.order
@@ -477,7 +477,7 @@ Skip_show:
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - SyncFormOpen): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - SyncFormOpen): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -496,14 +496,14 @@ On Error GoTo Catch_Error
     For Each ctrl In rfrm.Controls
         If (ctrl.ControlType = acTextBox Or ctrl.ControlType = acComboBox) Then
             ' Save column settings
-            SetColumnStyle rfrm, ctrl.name, ctrl.ColumnWidth, ctrl.ColumnHidden, ctrl.ColumnOrder
+            SetColumnStyle rfrm, ctrl.Name, ctrl.ColumnWidth, ctrl.ColumnHidden, ctrl.ColumnOrder
         End If
     Next ctrl
     
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - SyncFormClose): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - SyncFormClose): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -535,7 +535,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - SyncFormIdClick): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - SyncFormIdClick): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -549,7 +549,7 @@ Public Sub SyncFormAddRecord(ByRef rfrm As Form)
 ' Out:              -
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    If Not GetPermission(rfrm.name).Create Then
+    If Not GetPermission(rfrm.Name).Create Then
         MsgBox GetTranslation("msgbox", "add_record_not_supported", GetDbSetting("language")), vbExclamation, GetTranslation("msgbox", "vbExclamation", GetDbSetting("language"))
     Else
         DoCmd.OpenForm rfrm.EditForm, acNormal, , , acFormAdd, acWindowNormal
@@ -559,7 +559,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - SyncFormAddRecord): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - SyncFormAddRecord): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -570,12 +570,12 @@ End Sub
 
 Public Sub SyncFormSaveFilter(rfrm As Form)
     ' Will call the form to save the filter settings
-    If rfrm.FilterOn And Not IsNull(rfrm.Filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
+    If rfrm.FilterOn And Not IsNull(rfrm.Filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.Name
 End Sub
 
 Public Sub SyncFormApplyFilter(rfrm As Form)
     ' Will call the form to apply the filter settings
-    DoCmd.OpenForm "filter_apply_dlg", acNormal, , "form = 'role' AND userid = '" & GetUserName() & "'", acFormEdit, acDialog, rfrm.name
+    DoCmd.OpenForm "filter_apply_dlg", acNormal, , "form = 'role' AND userid = '" & GetUserName() & "'", acFormEdit, acDialog, rfrm.Name
 End Sub
 
 Public Sub SyncFormApplyClmnStd(rfrm As Form)
@@ -612,8 +612,8 @@ On Error GoTo Catch_Error
     rfrm.visible = False
     
      ' Configure a synchronous form
-    If ConfigSyncForm(rfrm.Form, rfrm.name) = False Then
-        DoCmd.Close acForm, rfrm.name
+    If ConfigSyncForm(rfrm.Form, rfrm.Name) = False Then
+        DoCmd.Close acForm, rfrm.Name
         Exit Sub
     End If
     
@@ -625,7 +625,7 @@ On Error GoTo Catch_Error
         If (ctrl.ControlType = acTextBox Or ctrl.ControlType = acComboBox) Then
             ctrl.ColumnWidth = -2
             'Customize columns
-            cs = GetColumnStyle(rfrm, ctrl.name)
+            cs = GetColumnStyle(rfrm, ctrl.Name)
             If cs.Width <> -3 Then
                 ctrl.ColumnWidth = cs.Width
                 ctrl.ColumnOrder = cs.order
@@ -645,7 +645,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - SyncSubFormOpen): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - SyncSubFormOpen): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -677,16 +677,16 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - SyncSubFormIdClick): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - SyncSubFormIdClick): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
 Public Sub SyncSubFormSaveFilter(rfrm As Form)
     ' Open form to save filter settings
-    If rfrm.FilterOn And Not IsNull(rfrm.Filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
+    If rfrm.FilterOn And Not IsNull(rfrm.Filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.Name
 End Sub
 
 Public Sub SyncSubFormApplyFilter(rfrm As Form)
     ' Open form to apply filter settings
-    DoCmd.OpenForm "filter_apply_dlg", acNormal, , "form = 'role' AND userid = '" & GetUserName() & "'", acFormEdit, acDialog, rfrm.name
+    DoCmd.OpenForm "filter_apply_dlg", acNormal, , "form = 'role' AND userid = '" & GetUserName() & "'", acFormEdit, acDialog, rfrm.Name
 End Sub

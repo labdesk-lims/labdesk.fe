@@ -2,7 +2,7 @@
 <CommandBar name="FileContextMenu">
   <AdaptiveMenu value="false"/>
   <Context value=""/>
-  <Description value="FileContextMenu-Menü"/>
+  <Description value="FileContextMenu pop-up menu"/>
   <Enabled value="true"/>
   <Position value="5"/>
   <Protection value="22"/>
@@ -13,7 +13,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Upload file"/>
+      <Caption value="Datei hochladen"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -23,7 +23,7 @@
       <Parameter value="upload_file"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Upload file"/>
+      <TooltipText value="Datei hochladen"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -36,7 +36,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Download file"/>
+      <Caption value="Datei herunterladen"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -46,7 +46,7 @@
       <Parameter value="download_file"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Download file"/>
+      <TooltipText value="Datei herunterladen"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -59,7 +59,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Open file"/>
+      <Caption value="Datei öffnen"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -69,7 +69,7 @@
       <Parameter value="open_file"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Open file"/>
+      <TooltipText value="Datei öffnen"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>

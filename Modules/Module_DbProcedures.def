@@ -38,12 +38,12 @@ On Error GoTo Catch_Error
     Dim cs As ColumnStyle
     
     Set db = CurrentDb()
-    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.Name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
     
     If Not rs(0) > 0 Then
-        db.Execute "INSERT INTO columns (user_id, table_id, column_id, column_width, column_hidden, column_order) VALUES('" & GetUserName() & "', '" & rfrm.name & "', '" & clmn & "', " & Width & ", " & CInt(hidden) & ", " & order & ")"
+        db.Execute "INSERT INTO columns (user_id, table_id, column_id, column_width, column_hidden, column_order) VALUES('" & GetUserName() & "', '" & rfrm.Name & "', '" & clmn & "', " & Width & ", " & CInt(hidden) & ", " & order & ")"
     Else
-        db.Execute "UPDATE columns SET column_width = " & Width & ", column_hidden = " & CInt(hidden) & ", column_order = " & order & " WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'"
+        db.Execute "UPDATE columns SET column_width = " & Width & ", column_hidden = " & CInt(hidden) & ", column_order = " & order & " WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.Name & "' AND column_id = '" & clmn & "'"
     End If
     
     SetColumnStyle = True
@@ -72,7 +72,7 @@ On Error GoTo Catch_Error
     Dim cs As ColumnStyle
     
     Set db = CurrentDb()
-    Set rs = db.OpenRecordset("SELECT * FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    Set rs = db.OpenRecordset("SELECT * FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.Name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
     
     If rs.EOF Or rs.BOF Then
         cs.Width = -3

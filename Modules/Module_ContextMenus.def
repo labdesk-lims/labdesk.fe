@@ -357,46 +357,46 @@ On Error GoTo Catch_Error
     
     Select Case strAction
         Case "add_record"
-            Forms(frmCurrentForm.name).AddRecord
+            Forms(frmCurrentForm.Name).AddRecord
             
         Case "duplicate_record"
-            Forms(frmCurrentForm.name).DuplicateRecord
+            Forms(frmCurrentForm.Name).DuplicateRecord
         
         Case "add_subrequest"
-            Forms(frmCurrentForm.name).AddSubRequest
+            Forms(frmCurrentForm.Name).AddSubRequest
         
         Case "show_report"
-            Forms(frmCurrentForm.name).ShowReport
+            Forms(frmCurrentForm.Name).ShowReport
             
         Case "save_filter"
-            Forms(frmCurrentForm.name).SaveFilter
+            Forms(frmCurrentForm.Name).SaveFilter
             
         Case "apply_filter"
-            Forms(frmCurrentForm.name).ApplyFilter
+            Forms(frmCurrentForm.Name).ApplyFilter
         
         Case "clmn_std"
-            Forms(frmCurrentForm.name).ApplyClmnStd
+            Forms(frmCurrentForm.Name).ApplyClmnStd
         
         Case "upload_file"
-            Forms(frmCurrentForm.name).Form("attachment").Form.UploadFile
+            Forms(frmCurrentForm.Name).Form("attachment").Form.UploadFile
         
         Case "download_file"
-            Forms(frmCurrentForm.name).Form("attachment").Form.DownloadFile
+            Forms(frmCurrentForm.Name).Form("attachment").Form.DownloadFile
         
         Case "open_file"
-            Forms(frmCurrentForm.name).Form("attachment").Form.OpenFile
+            Forms(frmCurrentForm.Name).Form("attachment").Form.OpenFile
             
         Case "clmn_dlg"
             DoCmd.RunCommand acCmdUnhideColumns
         
         Case "show_sticker"
-            Forms(frmCurrentForm.name).ShowSticker
+            Forms(frmCurrentForm.Name).ShowSticker
         
         Case "audit_trail"
-            DoCmd.OpenForm "*AuditTrail", acNormal, , , acFormReadOnly, acWindowNormal, Forms(frmCurrentForm.name).LinkedTable & ", " & Forms(frmCurrentForm.name).id
+            DoCmd.OpenForm "*AuditTrail", acNormal, , , acFormReadOnly, acWindowNormal, Forms(frmCurrentForm.Name).LinkedTable & ", " & Forms(frmCurrentForm.Name).id
             
         Case "audit_trail_subform"
-            DoCmd.OpenForm "*AuditTrail", acNormal, , , acFormReadOnly, acWindowNormal, Forms(frmCurrentForm.name).Form(Screen.ActiveControl.Parent.name).Form.DataTable & ", " & Forms(frmCurrentForm.name).Form(Screen.ActiveControl.Parent.name).Form.id
+            DoCmd.OpenForm "*AuditTrail", acNormal, , , acFormReadOnly, acWindowNormal, Forms(frmCurrentForm.Name).Form(Screen.ActiveControl.Parent.Name).Form.DataTable & ", " & Forms(frmCurrentForm.Name).Form(Screen.ActiveControl.Parent.Name).Form.id
     End Select
 
 Exit_Function:

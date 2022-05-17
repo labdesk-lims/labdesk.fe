@@ -9,6 +9,24 @@ Option Explicit
 Global ADODBConStr As String
 Global ODBCConStr As String
 
+Function fShellRun(sCommandStringToExecute)
+'-------------------------------------------------------------------------------
+' Function:  fShellRun
+' Date:      2022 May
+' Purpose:   This function will accept a string as a DOS command to execute.
+'            It will then execute the command in a shell, and returns the command
+'            return code to the caller.
+' In:        -
+' Out:       Connection Valid (T/F)
+'-------------------------------------------------------------------------------
+    Dim oShellObject
+
+    Set oShellObject = CreateObject("Wscript.Shell")
+
+    On Error Resume Next
+    fShellRun = oShellObject.Run(sCommandStringToExecute, 0, True)
+End Function
+
 Private Function IsValidADODBConnection() As Boolean
 '-------------------------------------------------------------------------------
 ' Function:  IsValidADODBConnection
@@ -108,7 +126,7 @@ On Error GoTo Catch_Error
     '//Delete table links
     For Each td In CurrentDb.TableDefs
         For Each tbl In remoteTables
-            If td.name = tbl Then
+            If td.Name = tbl Then
                 CurrentDb.TableDefs.Delete tbl
             End If
         Next
@@ -116,7 +134,7 @@ On Error GoTo Catch_Error
     
     '//Delete all temporary tables
     For Each tbl In CurrentDb.TableDefs
-        If tbl.name Like "tmp_*" Then CurrentDb.TableDefs.Delete tbl.name
+        If tbl.Name Like "tmp_*" Then CurrentDb.TableDefs.Delete tbl.Name
     Next
     
     '//Relink all tables
@@ -153,7 +171,7 @@ On Error GoTo Catch_Error
     '//Delete table links
     For Each td In CurrentDb.TableDefs
         For Each tbl In remoteTables
-            If td.name = tbl Then
+            If td.Name = tbl Then
                 CurrentDb.TableDefs.Delete tbl
             End If
         Next
@@ -161,7 +179,7 @@ On Error GoTo Catch_Error
     
     '//Delete all temporary tables
     For Each tbl In CurrentDb.TableDefs
-        If tbl.name Like "tmp_*" Then CurrentDb.TableDefs.Delete tbl.name
+        If tbl.Name Like "tmp_*" Then CurrentDb.TableDefs.Delete tbl.Name
     Next
     
     UnAttachDSNLessTables = True

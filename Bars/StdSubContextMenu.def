@@ -2,7 +2,7 @@
 <CommandBar name="StdSubContextMenu">
   <AdaptiveMenu value="false"/>
   <Context value=""/>
-  <Description value="StdSubContextMenu-Menü"/>
+  <Description value="StdSubContextMenu pop-up menu"/>
   <Enabled value="true"/>
   <Position value="5"/>
   <Protection value="22"/>
@@ -13,7 +13,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Show audit trail"/>
+      <Caption value="Audit trail anzeigen"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -23,7 +23,7 @@
       <Parameter value="audit_trail_subform"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Show audit trail"/>
+      <TooltipText value="Audit trail anzeigen"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>

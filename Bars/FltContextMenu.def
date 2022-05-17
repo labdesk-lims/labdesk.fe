@@ -2,7 +2,7 @@
 <CommandBar name="FltContextMenu">
   <AdaptiveMenu value="false"/>
   <Context value=""/>
-  <Description value="FltContextMenu-Menü"/>
+  <Description value="FltContextMenu pop-up menu"/>
   <Enabled value="true"/>
   <Position value="5"/>
   <Protection value="22"/>
@@ -13,7 +13,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Apply filter"/>
+      <Caption value="Filter anwenden"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -23,7 +23,7 @@
       <Parameter value="apply_filter"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Apply filter"/>
+      <TooltipText value="Filter anwenden"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -36,7 +36,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Save filter"/>
+      <Caption value="Filter speichern"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -46,7 +46,7 @@
       <Parameter value="save_filter"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Save filter"/>
+      <TooltipText value="Filter speichern"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -59,7 +59,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Manage columns"/>
+      <Caption value="Spalten verwalten"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -69,7 +69,7 @@
       <Parameter value="clmn_dlg"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Manage columns"/>
+      <TooltipText value="Spalten verwalten"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -82,7 +82,7 @@
     <Control id="1">
       <BeginGroup value="true"/>
       <BuiltIn value="false"/>
-      <Caption value="Show audit trail"/>
+      <Caption value="Audit trail anzeigen"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -92,7 +92,7 @@
       <Parameter value="audit_trail"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Show audit trail"/>
+      <TooltipText value="Audit trail anzeigen"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>

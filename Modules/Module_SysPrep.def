@@ -79,7 +79,7 @@ Private Sub InitTranslations()
     GetTranslation "method", "method_in_use", GetDbSetting("language")
 End Sub
 
-Private Sub AddTranslation(container As String, item As String, en As String)
+Private Sub AddTranslation(container As String, item As String, en As String, de As String)
     Dim db As database
     Dim rs As Recordset
     
@@ -87,7 +87,7 @@ Private Sub AddTranslation(container As String, item As String, en As String)
     Set rs = db.OpenRecordset("SELECT COUNT(id) As cnt FROM translation WHERE container = '" & container & "' AND item = '" & item & "'")
     
     If rs!cnt = 0 Then
-        db.Execute "INSERT INTO translation (container, item, en) VALUES ('" & container & "', '" & item & "', '" & en & "')"
+        db.Execute "INSERT INTO translation (container, item, en, de) VALUES ('" & container & "', '" & item & "', '" & en & "', '" & de & "')"
     End If
 End Sub
 
@@ -99,7 +99,7 @@ Private Sub UpdateTranslation()
     Set rs = db.OpenRecordset("SELECT * FROM _translation")
     
     Do While Not rs.EOF
-        AddTranslation rs!container, rs!item, rs!en
+        AddTranslation rs!container, rs!item, rs!en, rs!de
         rs.MoveNext
     Loop
 End Sub
