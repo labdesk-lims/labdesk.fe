@@ -62,10 +62,10 @@ On Error GoTo Catch_Error
     Set db = CurrentDb()
     
     For Each tbl In db.TableDefs
-        If tbl.Name = table Then
+        If tbl.name = table Then
             For Each f In tbl.Fields
                 If f.attributes = 17 And f.type = 4 Then    '(17 = dbAutoIncrField (16) + dbFixedField(1),  4 = dbLong)
-                    id_clmn = f.Name
+                    id_clmn = f.name
                 End If
             Next f
         End If
@@ -143,7 +143,7 @@ On Error GoTo Catch_Error
     
     'Copy record layout to new table
     For Each fldOld In rst.Fields
-        Set fldNew = tdf.CreateField(fldOld.Name, fldOld.type, fldOld.Size)
+        Set fldNew = tdf.CreateField(fldOld.name, fldOld.type, fldOld.Size)
         tdf.Fields.Append fldNew
     Next fldOld
     
@@ -193,8 +193,8 @@ On Error GoTo Catch_Error
             rstTemp.AddNew
             For lngi = 0 To rstTemp.Fields.count - 1
                 'Do not copy VarBinary fields
-                If rstTable(rstTemp(lngi).Name).type <> dbLongBinary Then
-                    rstTemp(lngi) = rstTable(rstTemp(lngi).Name)
+                If rstTable(rstTemp(lngi).name).type <> dbLongBinary Then
+                    rstTemp(lngi) = rstTable(rstTemp(lngi).name)
                 End If
             Next lngi
             rstTemp.Update
@@ -239,11 +239,11 @@ On Error GoTo Catch_Error
             If Not rstForm.EOF Then
                 rstForm.Edit
                 For Each fld In rstTemp.Fields
-                    If fld.Name <> id_column Then
+                    If fld.name <> id_column Then
                         If fld.type <> dbLongBinary Then
-                            rstForm(fld.Name).value = fld
+                            rstForm(fld.name).value = fld
                         Else
-                            If Not IsNull(fld) Then rstForm(fld.Name).value = fld
+                            If Not IsNull(fld) Then rstForm(fld.name).value = fld
                         End If
                     End If
                 Next fld
@@ -263,8 +263,8 @@ On Error GoTo Catch_Error
         Do Until rstTemp.EOF
             rstForm.AddNew
             For Each fld In rstTemp.Fields
-                If fld.Name <> id_column Then
-                    rstForm(fld.Name).value = fld
+                If fld.name <> id_column Then
+                    rstForm(fld.name).value = fld
                 End If
             Next fld
         rstForm.Update

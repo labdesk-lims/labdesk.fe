@@ -13,7 +13,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Datei hochladen"/>
+      <Caption value="Upload file"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -23,7 +23,7 @@
       <Parameter value="upload_file"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Datei hochladen"/>
+      <TooltipText value="Upload file"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -36,7 +36,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Datei herunterladen"/>
+      <Caption value="Download file"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -46,7 +46,7 @@
       <Parameter value="download_file"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Datei herunterladen"/>
+      <TooltipText value="Download file"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -59,7 +59,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Datei öffnen"/>
+      <Caption value="Open file"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -69,7 +69,7 @@
       <Parameter value="open_file"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Datei öffnen"/>
+      <TooltipText value="Open file"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>

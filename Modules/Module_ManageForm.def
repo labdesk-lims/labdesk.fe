@@ -58,23 +58,23 @@ On Error GoTo Catch_Error
     Dim ctrl As control
     Dim i As Integer
     
-    rfrm.Caption = GetTranslation(rfrm.Name, "caption_", language)
+    rfrm.Caption = GetTranslation(rfrm.name, "caption_", language)
     
     For Each ctrl In rfrm.Controls
         'Translate labels
         If TypeName(ctrl) = "Label" Then
-            rfrm.Controls(ctrl.Name).Caption = GetTranslation(rfrm.Name, ctrl.Name, language)
+            rfrm.Controls(ctrl.name).Caption = GetTranslation(rfrm.name, ctrl.name, language)
         End If
         
         'Translate buttons
         If TypeName(ctrl) = "CommandButton" Then
-            rfrm.Controls(ctrl.Name).Caption = GetTranslation(rfrm.Name, ctrl.Name, language)
+            rfrm.Controls(ctrl.name).Caption = GetTranslation(rfrm.name, ctrl.name, language)
         End If
         
         'Translate register tabs
         If TypeName(ctrl) = "TabControl" Then
-            While i < rfrm.Controls(ctrl.Name).Pages.count
-                rfrm.Controls(ctrl.Name).Pages(i).Caption = GetTranslation(rfrm.Name, rfrm.Controls(ctrl.Name).Pages(i).Name, language)
+            While i < rfrm.Controls(ctrl.name).Pages.count
+                rfrm.Controls(ctrl.name).Pages(i).Caption = GetTranslation(rfrm.name, rfrm.Controls(ctrl.name).Pages(i).name, language)
                 i = i + 1
             Wend
         End If
@@ -109,34 +109,34 @@ On Error GoTo Catch_Error
     For Each ctrl In rfrm.Controls
         'Customize register tabs
         If TypeName(ctrl) = "TabControl" Then
-            While i < rfrm.Controls(ctrl.Name).Pages.count
-                rfrm.Controls(ctrl.Name).BorderStyle = 0 'Transparent
-                rfrm.Controls(ctrl.Name).ForeColor = CI.ForeColor_TabPage
-                rfrm.Controls(ctrl.Name).BackColor = CI.BackColor_TabPage
-                rfrm.Controls(ctrl.Name).Style = 0
+            While i < rfrm.Controls(ctrl.name).Pages.count
+                rfrm.Controls(ctrl.name).BorderStyle = 0 'Transparent
+                rfrm.Controls(ctrl.name).ForeColor = CI.ForeColor_TabPage
+                rfrm.Controls(ctrl.name).BackColor = CI.BackColor_TabPage
+                rfrm.Controls(ctrl.name).Style = 0
                 i = i + 1
             Wend
         End If
         
         'Customize Labels
         If TypeName(ctrl) = "Label" Then
-            rfrm.Controls(ctrl.Name).FontItalic = True
+            rfrm.Controls(ctrl.name).FontItalic = True
         End If
         
         'Customize TextBox
         If TypeName(ctrl) = "TextBox" Then
-            rfrm.Controls(ctrl.Name).BackColor = CI.BackColor_TextBox
-            rfrm.Controls(ctrl.Name).BorderStyle = 0
+            rfrm.Controls(ctrl.name).BackColor = CI.BackColor_TextBox
+            rfrm.Controls(ctrl.name).BorderStyle = 0
         End If
         
         'Customize ComboBox
         If TypeName(ctrl) = "ComboBox" Then
-            rfrm.Controls(ctrl.Name).BackColor = CI.BackColor_ComboBox
+            rfrm.Controls(ctrl.name).BackColor = CI.BackColor_ComboBox
         End If
         
         'Customize SubForms
         If TypeName(ctrl) = "SubForm" Then
-            rfrm.Controls(ctrl.Name).BorderStyle = CI.SubForm_BorderStyle
+            rfrm.Controls(ctrl.name).BorderStyle = CI.SubForm_BorderStyle
         End If
     Next ctrl
     
@@ -164,10 +164,10 @@ Public Function ConfigAsyncForm(ByRef rfrm As Form, ByVal table As String, ByVal
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     'Check and set form permissions
-    If Not GetPermission(rfrm.Name).Read Then Err.Raise vbObjectError + 513, , GetTranslation("mdlManageForm", "msgbox_permission_denied", GetDbSetting("language"))
-    If Not GetPermission(rfrm.Name).Update Or readOnly Then rfrm.AllowEdits = False Else rfrm.AllowEdits = True
-    If Not GetPermission(rfrm.Name).Create Or (readOnly And Not IsFormView(rfrm)) Then rfrm.AllowAdditions = False Else rfrm.AllowAdditions = True
-    If Not GetPermission(rfrm.Name).Delete Or readOnly Then rfrm.AllowDeletions = False Else rfrm.AllowDeletions = True
+    If Not GetPermission(rfrm.name).Read Then Err.Raise vbObjectError + 513, , GetTranslation("mdlManageForm", "msgbox_permission_denied", GetDbSetting("language"))
+    If Not GetPermission(rfrm.name).Update Or readOnly Then rfrm.AllowEdits = False Else rfrm.AllowEdits = True
+    If Not GetPermission(rfrm.name).Create Or (readOnly And Not IsFormView(rfrm)) Then rfrm.AllowAdditions = False Else rfrm.AllowAdditions = True
+    If Not GetPermission(rfrm.name).Delete Or readOnly Then rfrm.AllowDeletions = False Else rfrm.AllowDeletions = True
     
     'Customize design
     CustomizeForm rfrm
@@ -177,7 +177,7 @@ On Error GoTo Catch_Error
     
     'Translate all controls
     TranslateForm rfrm.Form, GetDbSetting("language")
-    If Not GetPermission(rfrm.Name).Update Or readOnly Then rfrm.Caption = rfrm.Caption & " " & GetTranslation("form", "label_read_only", GetDbSetting("language"))
+    If Not GetPermission(rfrm.name).Update Or readOnly Then rfrm.Caption = rfrm.Caption & " " & GetTranslation("form", "label_read_only", GetDbSetting("language"))
     
     'Prepare temporary table for actual session and set it as object source
     CreateTable table, GetTableNameFromGuid(tmpGuid)
@@ -194,7 +194,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlManageForm - ConfigAsyncForm): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - ConfigAsyncForm): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function
 
@@ -215,14 +215,14 @@ Public Function ConfigAsyncSubForm(ByRef rfrm As Form, ByVal table As String, By
 On Error GoTo Catch_Error
     
     'Check and set form permissions
-    If Not GetPermission(rfrm.Name).Read Then
+    If Not GetPermission(rfrm.name).Read Then
         rfrm.visible = False
         rfrm.AllowAdditions = False
         Err.Raise vbObjectError + 513, , GetTranslation("mdlManageForm", "msgbox_permission_denied", GetDbSetting("language"))
     End If
-    If Not GetPermission(rfrm.Name).Update Or readOnly Then rfrm.AllowEdits = False Else rfrm.AllowEdits = True
-    If Not GetPermission(rfrm.Name).Create Or readOnly Then rfrm.AllowAdditions = False Else rfrm.AllowAdditions = True
-    If Not GetPermission(rfrm.Name).Delete Or readOnly Then rfrm.AllowDeletions = False Else rfrm.AllowDeletions = True
+    If Not GetPermission(rfrm.name).Update Or readOnly Then rfrm.AllowEdits = False Else rfrm.AllowEdits = True
+    If Not GetPermission(rfrm.name).Create Or readOnly Then rfrm.AllowAdditions = False Else rfrm.AllowAdditions = True
+    If Not GetPermission(rfrm.name).Delete Or readOnly Then rfrm.AllowDeletions = False Else rfrm.AllowDeletions = True
     
     'Customize design
     CustomizeForm rfrm
@@ -248,7 +248,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlManageForm - ConfigAsyncSubForm): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - ConfigAsyncSubForm): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function
 
@@ -269,19 +269,19 @@ On Error GoTo Catch_Error
     Dim ctrl As control
     
     'Check and set form permissions
-    If Not GetPermission(rfrm.Name).Read Then Err.Raise vbObjectError + 513, , GetTranslation("mdlManageForm", "msgbox_permission_denied", GetDbSetting("language"))
-    If Not GetPermission(rfrm.Name).Update Or readOnly Or Not pValidLic Then rfrm.AllowEdits = False Else rfrm.AllowEdits = True
-    If Not GetPermission(rfrm.Name).Create Or readOnly Or Not pValidLic Then rfrm.AllowAdditions = False Else rfrm.AllowAdditions = True
-    If Not GetPermission(rfrm.Name).Delete Or readOnly Or Not pValidLic Then rfrm.AllowDeletions = False Else rfrm.AllowDeletions = True
+    If Not GetPermission(rfrm.name).Read Then Err.Raise vbObjectError + 513, , GetTranslation("mdlManageForm", "msgbox_permission_denied", GetDbSetting("language"))
+    If Not GetPermission(rfrm.name).Update Or readOnly Or Not pValidLic Then rfrm.AllowEdits = False Else rfrm.AllowEdits = True
+    If Not GetPermission(rfrm.name).Create Or readOnly Or Not pValidLic Then rfrm.AllowAdditions = False Else rfrm.AllowAdditions = True
+    If Not GetPermission(rfrm.name).Delete Or readOnly Or Not pValidLic Then rfrm.AllowDeletions = False Else rfrm.AllowDeletions = True
     
     'Set all labels to read only if edit permission is not set
     For Each ctrl In rfrm.Controls
         'Translate labels
         If TypeName(ctrl) = "TextBox" Or TypeName(ctrl) = "CheckBox" Or TypeName(ctrl) = "ComboBox" Or TypeName(ctrl) = "CustomControl" Or TypeName(ctrl) = "ListBox" Or TypeName(ctrl) = "ObjecFrame" Then
-            If Not GetPermission(rfrm.Name).Update Or readOnly Then
-                rfrm.Controls(ctrl.Name).Locked = True
+            If Not GetPermission(rfrm.name).Update Or readOnly Then
+                rfrm.Controls(ctrl.name).Locked = True
             Else
-                rfrm.Controls(ctrl.Name).Locked = False
+                rfrm.Controls(ctrl.name).Locked = False
             End If
         End If
     Next ctrl
@@ -292,13 +292,13 @@ On Error GoTo Catch_Error
     'Translate all controls
     TranslateForm rfrm.Form, GetDbSetting("language")
     'Attach a read only hint if applies
-    If Not GetPermission(rfrm.Name).Update Or readOnly Then rfrm.Caption = rfrm.Caption & " " & GetTranslation("form", "label_read_only", GetDbSetting("language"))
+    If Not GetPermission(rfrm.name).Update Or readOnly Then rfrm.Caption = rfrm.Caption & " " & GetTranslation("form", "label_read_only", GetDbSetting("language"))
     
     ConfigSyncForm = True
     
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlManageForm - ConfigSyncForm): " & rfrm.Name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageForm - ConfigSyncForm): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function

@@ -13,7 +13,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Datensatz hinzufügen"/>
+      <Caption value="Add record"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -23,7 +23,7 @@
       <Parameter value="add_record"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Datensatz hinzufügen"/>
+      <TooltipText value="Add record"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -36,7 +36,7 @@
     <Control id="1">
       <BeginGroup value="true"/>
       <BuiltIn value="false"/>
-      <Caption value="Filter anwenden"/>
+      <Caption value="Apply filter"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -46,7 +46,7 @@
       <Parameter value="apply_filter"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Filter anwenden"/>
+      <TooltipText value="Apply filter"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -59,7 +59,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Filter speichern"/>
+      <Caption value="Save filter"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -69,7 +69,7 @@
       <Parameter value="save_filter"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Filter speichern"/>
+      <TooltipText value="Save filter"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -82,7 +82,7 @@
     <Control id="1">
       <BeginGroup value="true"/>
       <BuiltIn value="false"/>
-      <Caption value="Spalten verwalten"/>
+      <Caption value="Manage columns"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -92,7 +92,7 @@
       <Parameter value="clmn_dlg"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Spalten verwalten"/>
+      <TooltipText value="Manage columns"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -105,7 +105,7 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Spaltenbreite zurücksetzen"/>
+      <Caption value="Reset column width"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -115,7 +115,7 @@
       <Parameter value="clmn_std"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Spaltenbreite zurücksetzen"/>
+      <TooltipText value="Reset column width"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -128,7 +128,7 @@
     <Control id="1">
       <BeginGroup value="true"/>
       <BuiltIn value="false"/>
-      <Caption value="Audit trail anzeigen"/>
+      <Caption value="Show audit trail"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
@@ -138,7 +138,7 @@
       <Parameter value="audit_trail"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Audit trail anzeigen"/>
+      <TooltipText value="Show audit trail"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>

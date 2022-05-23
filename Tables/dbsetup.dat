@@ -8,9 +8,8 @@
       <field_3 name="user" binary="false" null="false">sa</field_3>
       <field_4 name="password" binary="false" null="false">260779</field_4>
       <field_5 name="token" binary="false" null="false">1d5a7a33-ab89-11</field_5>
-      <field_6 name="licence" binary="false" null="false">OjcSGNUrpsNk8bP+FKasjkgIe95X+JgMLmQx0FXxkHnzmbmk15CS2+7vOW+0Kjp2nXRC3d3u/#013//#010/fQ0gZd12Oh1setOyzEIvUOAnCT5eVNiQoTYvW+vGbGqulIN5nx4m2pyFWtt67O8Z/eh9K7Zm/#013//#010/+p0Xz7u8JFvAPTJmRvXMNzuk6nNA3EdNs7Di1za1C/E3JFUZ</field_6>
-      <field_7 name="navpane" binary="false" null="false" value="true"/>
-      <field_8 name="sysinit" binary="false" null="false" value="false"/>
+      <field_6 name="navpane" binary="false" null="false" value="true"/>
+      <field_7 name="sysinit" binary="false" null="false" value="false"/>
     </Row_1>
   </Rows>
 </TableData>

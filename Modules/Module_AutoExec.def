@@ -21,7 +21,7 @@ Public Const pAppTitle = "LABDESK LIMS"
 Public Const pBeVersion = "v1.0.0" 'Backend version
 Public Const pFeVersion = "v1.0.0" 'Frontend version
 Public Const pReVersion = "v1.0.0" 'Release version (used for licence check)
-Public Const pLcSecret = "ls_k#!8kkdKo*f09"
+Public Const pLcSecret = "_gfmf!jshd*n#jü7/hhs&"
 
 ' Cache folder setting
 Public Const pCacheFolder = ".labdesk"
@@ -173,7 +173,7 @@ Public Function InitApp() As Boolean
 ' Out:          Done (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    
+
     DSNLessTables = Array( _
     "filter", "translation", "setup", _
     "contact", "laboratory", "customer", "manufacturer", "smppoint", "smpcontainer", "smpmatrix", "material", _
@@ -190,8 +190,7 @@ On Error GoTo Catch_Error
     
     'Try to attach tables
     If ConnectDb(GetDbSetting("server"), GetDbSetting("database"), DSNLessTables, GetDbSetting("user"), GetDbSetting("password")) = False Then
-        MsgBox "Error (mdlAutoExec - InitApp): " & "Database connection failed.", vbCritical, "Error"
-        Err.Raise vbObjectError + 513, , "Database connection failed."
+        Err.Raise vbObjectError + 513, , "Connecting to database failed."
     End If
     
     'Init application (initialization routine needs to be called just once for setup reasons)
@@ -237,7 +236,7 @@ On Error GoTo Catch_Error
     'HideNavPane GetDbSetting("navpane")
  
     'Check for valid subscription otherwise read onyl will be appplied
-    If Not IsNull(ValidLicence(False)) Then
+    If Not ValidLicence(False) Then
         Err.Raise vbObjectError + 513, , "Not a valid licence."
     Else
         pValidLic = True

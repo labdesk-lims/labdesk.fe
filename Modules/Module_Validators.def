@@ -25,7 +25,7 @@ On Error GoTo Catch_Error
     If IsNull(strEmailAddress) Then Resume Exit_Function
     
     objRegExp.IgnoreCase = True
-    objRegExp.Global = True
+    objRegExp.global = True
     objRegExp.Pattern = "^([a-zA-Z0-9_\-\.]+)@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$"
     
     blnIsValidEmail = objRegExp.test(strEmailAddress)
@@ -147,28 +147,6 @@ Public Function httpGET(fn As String) As String
     httpGET = oHttp.ResponseText
 
     Set oHttp = Nothing
-End Function
-
-Public Function ValidLicence(ByVal silent As Boolean) As Variant
-    Dim Json As Object
-    Dim s As String
-    Dim rs As Recordset
-    
-On Error GoTo Catch_Error
-    Set rs = CurrentDb.OpenRecordset("SELECT COUNT(*) As seats FROM users WHERE role IS NOT NULL")
-    s = RetrieveDecryptAES(GetDbSetting("licence"), pLcSecret, 100)
-    Set Json = JsonConverter.ParseJson(s)
-    If Json("version") <> pReVersion Then Err.Raise vbObjectError + 513, "function valid licence", "Version does not match licence."
-    If rs!seats > Json("seats") Then Err.Raise vbObjectError + 513, "function valid licence", "Maximum amount of seats reached."
-    If DateValue(Json("expiry")) < Now() Then Err.Raise vbObjectError + 513, "function valid licence", "Licence expired."
-    ValidLicence = Null
-    
-Exit_Function:
-    Exit Function
-Catch_Error:
-    If Not silent Then MsgBox Err.description, vbInformation, "Wrong licence"
-    ValidLicence = Err.Number
-    Resume Exit_Function
 End Function
 
 Public Function IsSubForm(ByRef rfrm As Form) As Boolean

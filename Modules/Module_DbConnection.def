@@ -9,7 +9,7 @@ Option Explicit
 Global ADODBConStr As String
 Global ODBCConStr As String
 
-Function fShellRun(sCommandStringToExecute)
+Public Function fShellRun(ByVal sCommandStringToExecute As String)
 '-------------------------------------------------------------------------------
 ' Function:  fShellRun
 ' Date:      2022 May
@@ -67,16 +67,21 @@ Public Function ConnectDb(ByVal server As String, ByVal database As String, ByVa
 ' Out:              Done (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    If GetDbSetting("server") = "" Or GetDbSetting("database") = "" Then Err.Raise vbObjectError + 513, , "Server and/or database not set."
-
+    'Check if server and database is set
+    If server = "" Or database = "" Then Err.Raise vbObjectError + 513, , "Server and/or database not set."
+    
+    'Check if server is reachable
+    If fShellRun("%ComSpec% /C %SystemRoot%\system32\ping.exe -n 1 -w 500 " & Split(server, "\")(0) & " | " & "%SystemRoot%\system32\find.exe /i " & Chr(34) & "TTL=" & Chr(34)) = 1 Then Err.Raise vbObjectError + 513, , "Server not available."
+    
+    'Set connection string
     If Len(user) = 0 Then
         SetConStr server, database
     Else
         SetConStr server, database, user, password
     End If
     
-    If Not IsValidADODBConnection Then Err.Raise vbObjectError + 513, , "Database connection failed."
-
+    If Not IsValidADODBConnection Then Err.Raise vbObjectError + 513, , "Invalid connection string."
+    
     AttachDSNLessTables (remoteTables)
     
     ConnectDb = True
@@ -84,6 +89,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
+    MsgBox "Error (mdlDbConnection - ConnectDb): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function
 
@@ -126,7 +132,7 @@ On Error GoTo Catch_Error
     '//Delete table links
     For Each td In CurrentDb.TableDefs
         For Each tbl In remoteTables
-            If td.Name = tbl Then
+            If td.name = tbl Then
                 CurrentDb.TableDefs.Delete tbl
             End If
         Next
@@ -134,7 +140,7 @@ On Error GoTo Catch_Error
     
     '//Delete all temporary tables
     For Each tbl In CurrentDb.TableDefs
-        If tbl.Name Like "tmp_*" Then CurrentDb.TableDefs.Delete tbl.Name
+        If tbl.name Like "tmp_*" Then CurrentDb.TableDefs.Delete tbl.name
     Next
     
     '//Relink all tables
@@ -171,7 +177,7 @@ On Error GoTo Catch_Error
     '//Delete table links
     For Each td In CurrentDb.TableDefs
         For Each tbl In remoteTables
-            If td.Name = tbl Then
+            If td.name = tbl Then
                 CurrentDb.TableDefs.Delete tbl
             End If
         Next
@@ -179,7 +185,7 @@ On Error GoTo Catch_Error
     
     '//Delete all temporary tables
     For Each tbl In CurrentDb.TableDefs
-        If tbl.Name Like "tmp_*" Then CurrentDb.TableDefs.Delete tbl.Name
+        If tbl.name Like "tmp_*" Then CurrentDb.TableDefs.Delete tbl.name
     Next
     
     UnAttachDSNLessTables = True
