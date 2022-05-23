@@ -8,6 +8,7 @@ Private Sub InitTranslations()
     GetTranslation "tooltip", "click_to_upload", GetDbSetting("language")
     GetTranslation "msgbox", "entries_not_valid", GetDbSetting("language")
     GetTranslation "msgbox", "record_deactivated", GetDbSetting("language")
+    GetTranslation "msgbox", "reference_material_expired", GetDbSetting("language")
     
     ' Translations of form certificate_edit
     GetTranslation "certificate_edit", "creation_date_wrong", GetDbSetting("language")
@@ -54,7 +55,7 @@ Private Sub InitTranslations()
     GetTranslation "qualification_edit", "valid_till_date_wrong", GetDbSetting("language")
     
     GetTranslation "request", "wrong_cc_email", GetDbSetting("language")
-    
+     
     GetTranslation "request_edit", "not_validateable", GetDbSetting("language")
     GetTranslation "request_edit", "request_retracted_subject", GetDbSetting("language")
     GetTranslation "request_edit", "request_retracted_body", GetDbSetting("language")
