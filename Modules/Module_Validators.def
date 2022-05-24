@@ -164,3 +164,31 @@ On Error GoTo Catch_Error
 Catch_Error:
     IsFormView = False
 End Function
+
+Public Function SelectReport() As Variant
+    Dim db As database
+    Dim a, s As Variant
+    Dim i As Integer
+    
+    Set db = CurrentDb()
+    
+    db.Execute "DELETE * FROM keyvalue"
+    
+    a = Split(pReportTemplate, ",")
+    
+    i = 0
+    For Each s In a
+        db.Execute "INSERT INTO keyvalue (key, value_txt) VALUES(" & i & ",'" & s & "')"
+        i = i + 1
+    Next
+    
+    DoCmd.OpenForm "*SelectDialog", acNormal, , , acFormEdit, acDialog, "SELECT value_txt, key FROM keyvalue"
+    
+    If Not IsNull(Forms("*SelectDialog").comboBox.Column(1)) Then
+        SelectReport = Forms("*SelectDialog").comboBox.Column(0)
+    Else
+        SelectReport = Null
+    End If
+    
+    DoCmd.Close acForm, "*SelectDialog", acSaveNo
+End Function

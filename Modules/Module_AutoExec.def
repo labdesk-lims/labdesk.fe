@@ -22,6 +22,7 @@ Public Const pBeVersion = "v1.0.0" 'Backend version
 Public Const pFeVersion = "v1.0.0" 'Frontend version
 Public Const pReVersion = "v1.0.0" 'Release version (used for licence check)
 Public Const pLcSecret = "_gfmf!jshd*n#jü7/hhs&"
+Public Const pReportTemplate = "labreport_main" 'Separate report names using comma
 
 ' Cache folder setting
 Public Const pCacheFolder = ".labdesk"

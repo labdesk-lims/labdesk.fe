@@ -426,14 +426,14 @@ Function AES(sMessage As String, isEncode As Boolean, sPassword As String) As St
     AES = sCipher
 End Function
 
-Function keyScheduleCore(ByRef row(), ByVal A, ByRef sbox(), ByRef rcon())
+Function keyScheduleCore(ByRef row(), ByVal a, ByRef sbox(), ByRef rcon())
     Dim result(4), i
  
     For i = 0 To 3
         result(i) = sbox(row((i + 5) Mod 4))
     Next
  
-    result(0) = result(0) Xor rcon(A)
+    result(0) = result(0) Xor rcon(a)
     keyScheduleCore = result
 End Function
  
