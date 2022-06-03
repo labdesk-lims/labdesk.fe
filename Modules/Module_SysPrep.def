@@ -81,6 +81,7 @@ Private Sub InitTranslations()
 End Sub
 
 Private Sub AddTranslation(container As String, item As String, en As String, de As String)
+On Error GoTo Skip
     Dim db As database
     Dim rs As Recordset
     
@@ -90,9 +91,11 @@ Private Sub AddTranslation(container As String, item As String, en As String, de
     If rs!cnt = 0 Then
         db.Execute "INSERT INTO translation (container, item, en, de) VALUES ('" & container & "', '" & item & "', '" & en & "', '" & de & "')"
     End If
+Skip:
 End Sub
 
 Private Sub UpdateTranslation()
+On Error GoTo Skip
     Dim db As database
     Dim rs As Recordset
     
@@ -103,9 +106,11 @@ Private Sub UpdateTranslation()
         AddTranslation rs!container, rs!item, rs!en, rs!de
         rs.MoveNext
     Loop
+Skip:
 End Sub
 
 Private Sub AddRole(title As String, description As String, administrative As Boolean)
+On Error GoTo Skip
     Dim db As database
     Dim rs As Recordset
     
@@ -115,9 +120,11 @@ Private Sub AddRole(title As String, description As String, administrative As Bo
     If rs!cnt = 0 Then
         db.Execute "INSERT INTO role (title, description, administrative) VALUES ('" & title & "', '" & description & "', " & CInt(administrative) & ")"
     End If
+Skip:
 End Sub
 
 Private Sub UpdateRole()
+On Error GoTo Skip
     Dim db As database
     Dim rs As Recordset
     
@@ -128,9 +135,11 @@ Private Sub UpdateRole()
         AddRole rs!title, rs!description, rs!administrative
         rs.MoveNext
     Loop
+Skip:
 End Sub
 
 Private Sub AddPermission(title As String, description As String)
+On Error GoTo Skip
     Dim db As database
     Dim rs As Recordset
     
@@ -140,9 +149,11 @@ Private Sub AddPermission(title As String, description As String)
     If rs!cnt = 0 Then
         db.Execute "INSERT INTO permission (title, description) VALUES ('" & title & "', '" & description & "')"
     End If
+Skip:
 End Sub
 
 Private Sub UpdatePermission()
+On Error GoTo Skip
     Dim db As database
     Dim rs As Recordset
     
@@ -157,18 +168,22 @@ Private Sub UpdatePermission()
         End If
         rs.MoveNext
     Loop
+Skip:
 End Sub
 
 Private Sub AddRolePermission(role As Integer, permission As Integer, can_create As Boolean, can_read As Boolean, can_update As Boolean, can_delete As Boolean)
+On Error GoTo Skip
     Dim db As database
     Dim rs As Recordset
     
     Set db = CurrentDb()
     
     db.Execute "UPDATE role_permission SET can_create = " & CInt(can_create) & ", can_read = " & CInt(can_read) & ", can_update = " & CInt(can_update) & ", can_delete = " & CInt(can_delete) & " WHERE permission = " & permission & " AND role = " & role
+Skip:
 End Sub
 
 Private Sub UpdateRolePermission()
+On Error GoTo Skip
     Dim db As database
     Dim rs As Recordset
     Dim ra, rb, rx, ry As Recordset
@@ -185,6 +200,7 @@ Private Sub UpdateRolePermission()
         AddRolePermission rb!id, ry!id, True, rs!can_read, rs!can_update, rs!can_delete
         rs.MoveNext
     Loop
+Skip:
 End Sub
 
 Public Sub SysPrep()
