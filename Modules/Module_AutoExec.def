@@ -232,9 +232,7 @@ On Error GoTo Catch_Error
     AddAppProperty "AppTitle", dbText, pAppTitle
     Application.RefreshTitleBar
     SysCmd acSysCmdSetStatus, "User: " & GetUserName()
-    
-    'Hide the navigation pane
-    'HideNavPane GetDbSetting("navpane")
+    HideNavPane GetDbSetting("navpane")
  
     'Check for valid subscription otherwise read onyl will be appplied
     If Not ValidLicence(False) Then

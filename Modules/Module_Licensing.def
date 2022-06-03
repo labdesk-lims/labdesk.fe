@@ -30,7 +30,12 @@ On Error GoTo Catch_Error
     Dim rs As Recordset
     
     Set db = CurrentDb
-    db.Execute "UPDATE setup SET licence = '" & licence & "'"
+    Set rs = db.OpenRecordset("SELECT COUNT(*) As cnt FROM setup")
+    If rs!cnt > 0 Then
+        db.Execute "UPDATE setup SET licence = '" & licence & "'"
+    Else
+        db.Execute "INSERT INTO setup (licence) VALUES('" & licence & "')"
+    End If
     
     SetLicenceString = True
     
@@ -39,6 +44,7 @@ Exit_Function:
     Set rs = Nothing
     Exit Function
 Catch_Error:
+    MsgBox Err.description
     SetLicenceString = False
     Resume Exit_Function
 End Function

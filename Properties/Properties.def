@@ -18,7 +18,7 @@
     <DesignWithData name="DesignWithData" type="1" value="True" sort="1"/>
     <HasOfflineLists name="HasOfflineLists" type="3" value="70" sort="1"/>
     <NavPaneCategory name="NavPane Category" type="4" value="0" sort="1"/>
-    <NavPaneClosed name="NavPane Closed" type="4" value="1" sort="1"/>
+    <NavPaneClosed name="NavPane Closed" type="4" value="0" sort="1"/>
     <NavPaneSortBy name="NavPane Sort By" type="4" value="1" sort="1"/>
     <NavPaneViewBy name="NavPane View By" type="4" value="0" sort="1"/>
     <NavPaneWidth name="NavPane Width" type="4" value="348" sort="1"/>
@@ -123,7 +123,7 @@
     <MoveEnclosedControls name="Move Enclosed Controls" type="70" value="0" sort="6"/>
     <NavPaneCategory name="NavPane Category" type="71" value="0" sort="6"/>
     <NavPaneCategoryName name="NavPane Category Name" type="72" value="" sort="6"/>
-    <NavPaneClosed name="NavPane Closed" type="73" value="-1" sort="6"/>
+    <NavPaneClosed name="NavPane Closed" type="73" value="0" sort="6"/>
     <NavPaneSortBy name="NavPane Sort By" type="74" value="1" sort="6"/>
     <NavPaneViewBy name="NavPane View By" type="75" value="0" sort="6"/>
     <NavPaneWidth name="NavPane Width" type="76" value="348" sort="6"/>
@@ -149,13 +149,13 @@
     <ShowAnimations name="Show Animations" type="96" value="-1" sort="6"/>
     <ShowConditionsColumn name="Show Conditions Column" type="97" value="0" sort="6"/>
     <ShowGrid name="Show Grid" type="98" value="-1" sort="6"/>
-    <ShowHiddenObjects name="Show Hidden Objects" type="99" value="0" sort="6"/>
+    <ShowHiddenObjects name="Show Hidden Objects" type="99" value="-1" sort="6"/>
     <ShowMacroNamesColumn name="Show Macro Names Column" type="100" value="0" sort="6"/>
     <ShowNewObjectShortcuts name="Show New Object Shortcuts" type="101" value="-1" sort="6"/>
     <ShowRuler name="Show Ruler" type="102" value="-1" sort="6"/>
     <ShowStartupDialogBox name="Show Startup Dialog Box" type="103" value="-1" sort="6"/>
     <ShowStatusBar name="Show Status Bar" type="104" value="-1" sort="6"/>
-    <ShowSystemObjects name="Show System Objects" type="105" value="0" sort="6"/>
+    <ShowSystemObjects name="Show System Objects" type="105" value="-1" sort="6"/>
     <ShowTableNames name="Show Table Names" type="106" value="-1" sort="6"/>
     <ShowValuesinIndexed name="Show Values in Indexed" type="107" value="-1" sort="6"/>
     <ShowValuesinNonIndexed name="Show Values in Non-Indexed" type="108" value="-1" sort="6"/>

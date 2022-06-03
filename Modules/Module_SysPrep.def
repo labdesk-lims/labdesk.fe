@@ -241,6 +241,10 @@ Public Sub sysinit()
     UpdatePermission
     UpdateRolePermission
     AddAdmin
+    'Hide the navigation pane
+    HideNavPane True
+    'Disable shift
+    ap_DisableShift
     ' Deactivate initialization
     CurrentDb.Execute "UPDATE dbsetup SET sysinit = 0"
 End Sub
