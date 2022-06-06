@@ -21,7 +21,7 @@ Public Const pAppTitle = "LABDESK LIMS"
 Public Const pBeVersion = "v1.0.0" 'Backend version
 Public Const pFeVersion = "v1.0.0" 'Frontend version
 Public Const pReVersion = "v1.0.0" 'Release version (used for licence check)
-Public Const pLcSecret = "_gfmf!jshd*n#jü7/hhs&"
+Public Const pLcSecret = "_gfmf!jshd*n#jü7/hhs&" 'Licence secret for encryption
 Public Const pReportTemplate = "labreport_main" 'Separate report names using comma
 
 ' Cache folder setting
@@ -196,7 +196,7 @@ On Error GoTo Catch_Error
     
     'Init application (initialization routine needs to be called just once for setup reasons)
     If GetFieldValue("dbsetup", "sysinit", 1) = True Then
-        If MsgBox("Press OK to initialize application.", vbOKCancel, "Information") = vbOK Then
+        If MsgBox("Press OK to initialize application. This may take a while.", vbOKCancel, "Information") = vbOK Then
             sysinit
             MsgBox "System initialization finished. Restart application to proceed.", vbInformation, "Information"
             Exit Function

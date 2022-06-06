@@ -8,7 +8,6 @@ Private Sub InitTranslations()
     GetTranslation "tooltip", "click_to_upload", GetDbSetting("language")
     GetTranslation "msgbox", "entries_not_valid", GetDbSetting("language")
     GetTranslation "msgbox", "record_deactivated", GetDbSetting("language")
-    GetTranslation "msgbox", "reference_material_expired", GetDbSetting("language")
     
     ' Translations of form certificate_edit
     GetTranslation "certificate_edit", "creation_date_wrong", GetDbSetting("language")
@@ -78,6 +77,8 @@ Private Sub InitTranslations()
     GetTranslation "btcposition", "sample_already_stored", GetDbSetting("language")
     
     GetTranslation "method", "method_in_use", GetDbSetting("language")
+    
+    GetTranslation "filter_apply_dlg", "deletion_aborted", GetDbSetting("language")
 End Sub
 
 Private Sub AddTranslation(container As String, item As String, en As String, de As String)
@@ -197,7 +198,7 @@ On Error GoTo Skip
         Set rx = db.OpenRecordset("SELECT * FROM _permission WHERE id = " & rs!permission)
         Set ry = db.OpenRecordset("SELECT * FROM permission WHERE title = '" & rx!title & "'", dbOpenDynaset, dbSeeChanges)
         
-        AddRolePermission rb!id, ry!id, True, rs!can_read, rs!can_update, rs!can_delete
+        AddRolePermission rb!ID, ry!ID, True, rs!can_read, rs!can_update, rs!can_delete
         rs.MoveNext
     Loop
 Skip:
@@ -214,11 +215,6 @@ Public Sub SysPrep()
     If TableExists("_translation") Then CurrentDb.TableDefs.Delete "_translation"
     CreateTable "translation", "_translation"
     CopyTable "translation", "_translation"
-    
-    ' Filters
-    If TableExists("_filter") Then CurrentDb.TableDefs.Delete "_filter"
-    CreateTable "filter", "_filter"
-    CopyTable "filter", "_filter"
     
     ' Roles
     If TableExists("_role") Then CurrentDb.TableDefs.Delete "_role"
