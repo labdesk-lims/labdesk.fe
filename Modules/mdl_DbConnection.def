@@ -1,0 +1,199 @@
+'################################################################################################
+' This class manages the database connection
+'################################################################################################
+
+Option Compare Database
+Option Explicit
+
+' Globally available connection string
+Global ADODBConStr As String
+Global ODBCConStr As String
+
+Public Function fShellRun(ByVal sCommandStringToExecute As String)
+'-------------------------------------------------------------------------------
+' Function:  fShellRun
+' Date:      2022 May
+' Purpose:   This function will accept a string as a DOS command to execute.
+'            It will then execute the command in a shell, and returns the command
+'            return code to the caller.
+' In:        -
+' Out:       Connection Valid (T/F)
+'-------------------------------------------------------------------------------
+    Dim oShellObject
+
+    Set oShellObject = CreateObject("Wscript.Shell")
+
+    On Error Resume Next
+    fShellRun = oShellObject.Run(sCommandStringToExecute, 0, True)
+End Function
+
+Private Function IsValidADODBConnection() As Boolean
+'-------------------------------------------------------------------------------
+' Function:  IsValidADODBConnection
+' Date:      2022 January
+' Purpose:   Checks if connection string works
+' In:        -
+' Out:       Connection Valid (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim dbCon As ADODB.Connection
+    Set dbCon = CreateObject("adodb.connection")
+
+    dbCon.ConnectionTimeout = pConnectionTimeout
+    dbCon.Open ADODBConStr
+
+    IsValidADODBConnection = True
+
+Exit_Function:
+    Set dbCon = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
+Public Function ConnectDb(ByVal server As String, ByVal database As String, ByVal remoteTables As Variant, Optional ByVal user As String, Optional ByVal password As String) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         ConnectDb
+' Date:             2022 January
+' Purpose:          Connects to the database using the provided credentials
+' In:
+' -> server:        Server to connect to
+' -> database:      Database of choice
+' -> remoteTables:  Array of tables to be linked to the frontend
+' -> user:          Optional user credentials
+' -> password:      Optional password credentials
+' Note:             If user and password are not provided the connection will
+'                   be established using windows authentication.
+' Out:              Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    'Check if server and database is set
+    If server = "" Or database = "" Then Err.Raise vbObjectError + 513, , "Server and/or database not set."
+    
+    'Check if server is reachable
+    If fShellRun("%ComSpec% /C %SystemRoot%\system32\ping.exe -n 1 -w 500 " & Split(server, "\")(0) & " | " & "%SystemRoot%\system32\find.exe /i " & Chr(34) & "TTL=" & Chr(34)) = 1 Then Err.Raise vbObjectError + 513, , "Server not available."
+    
+    'Set connection string
+    If Len(user) = 0 Then
+        SetConStr server, database
+    Else
+        SetConStr server, database, user, password
+    End If
+    
+    If Not IsValidADODBConnection Then Err.Raise vbObjectError + 513, , "Invalid connection string."
+    
+    AttachDSNLessTables (remoteTables)
+    
+    ConnectDb = True
+    
+Exit_Function:
+    Exit Function
+Catch_Error:
+    MsgBox "Error (mdlDbConnection - ConnectDb): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Private Sub SetConStr(ByVal server As String, ByVal database As String, Optional ByVal user As String, Optional ByVal password As String)
+'-------------------------------------------------------------------------------
+' Function:     SetConStr
+' Date:         2022 January
+' Purpose:      Get the ADODB and ODBC connection string
+' In:
+' -> server:        Server to connect to
+' -> database:      Database of choice
+' -> user:          Optional user credentials
+' -> password:      Optional password credentials
+' Out:                Done (T/F)
+'-------------------------------------------------------------------------------
+    If Len(user) = 0 Then
+        '//Use trusted authentication if stUsername is not supplied.
+        ADODBConStr = "Provider=SQLNCLI11;" & "Server=" & server & ";" & "Database=" & database & ";" & "Integrated Security=SSPI;" & "DataTypeCompatibility=80;" & "MARS Connection=True;" & "APP=labdesk-ui;"
+        ODBCConStr = "ODBC;DRIVER=SQL Server;SERVER=" & server & ";DATABASE=" & database & ";Trusted_Connection=Yes;ColumnEncryption=Enabled;" & "APP=labdesk-ui;"
+    Else
+        '//WARNING: This will save the username and the password with the linked table information.
+        ADODBConStr = "Provider=SQLNCLI11;" & "Server=" & server & ";" & "Database=" & database & ";" & " User Id=" & user & ";" & " Password=" & password & ";" & "DataTypeCompatibility=80;" & "MARS Connection=True;" & "APP=labdesk-ui;"
+        ODBCConStr = "ODBC;DRIVER=SQL Server;SERVER=" & server & ";DATABASE=" & database & ";UID=" & user & ";PWD=" & password & ";ColumnEncryption=Enabled;" & "APP=labdesk-ui;"
+    End If
+End Sub
+
+Private Function AttachDSNLessTables(ByVal remoteTables As Variant) As Boolean
+'---------------------------------------------------------------------------------------
+' Function:  AttachDSNLessTable
+' Date:      2022 January
+' Purpose:   Create a linked table to SQL Server without using a DSN
+' In:
+' -> remoteTable:  Array of the tables that you are linking to on the SQL Server database
+' Out:       Connection established (T/F)
+'---------------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim td As TableDef
+    Dim tbl As Variant
+
+    '//Delete table links
+    For Each td In CurrentDb.TableDefs
+        For Each tbl In remoteTables
+            If td.name = tbl Then
+                CurrentDb.TableDefs.Delete tbl
+            End If
+        Next
+    Next
+    
+    '//Delete all temporary tables
+    For Each tbl In CurrentDb.TableDefs
+        If tbl.name Like "tmp_*" Then CurrentDb.TableDefs.Delete tbl.name
+    Next
+    
+    '//Relink all tables
+    For Each tbl In remoteTables
+        Set td = CurrentDb.CreateTableDef(tbl, dbAttachSavePWD, tbl, ODBCConStr)
+        CurrentDb.TableDefs.Append td
+        '//If the table is name view_ then add a primary key
+        'If InStr(1, tbl, "view_", vbTextCompare) Then CurrentDb.Execute "CREATE UNIQUE INDEX pk_" & tbl & " ON " & tbl & " (id) WITH PRIMARY"
+    Next
+    
+    AttachDSNLessTables = True
+
+Exit_Function:
+    Exit Function
+Catch_Error:
+    AttachDSNLessTables = False
+    MsgBox "Error (mdlConnect - AttachDSNLessTables): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function UnAttachDSNLessTables(ByVal remoteTables As Variant) As Boolean
+'---------------------------------------------------------------------------------------
+' Function:  UnlinkDSNLessTables
+' Date:      2022 March
+' Purpose:   Unlink tables
+' In:
+' -> remoteTable:  Array of the tables that you are linking to on the SQL Server database
+' Out:       Done (T/F)
+'---------------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim td As TableDef
+    Dim tbl As Variant
+
+    '//Delete table links
+    For Each td In CurrentDb.TableDefs
+        For Each tbl In remoteTables
+            If td.name = tbl Then
+                CurrentDb.TableDefs.Delete tbl
+            End If
+        Next
+    Next
+    
+    '//Delete all temporary tables
+    For Each tbl In CurrentDb.TableDefs
+        If tbl.name Like "tmp_*" Then CurrentDb.TableDefs.Delete tbl.name
+    Next
+    
+    UnAttachDSNLessTables = True
+
+Exit_Function:
+    Exit Function
+Catch_Error:
+    UnAttachDSNLessTables = False
+    'MsgBox "Error (mdlConnect - UnlinkDSNLessTables): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function

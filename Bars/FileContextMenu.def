@@ -79,5 +79,28 @@
       <OnAction value="fnCall"/>
       <FaceId value="28"/>
     </Control>
+    <Control id="1">
+      <BeginGroup value="true"/>
+      <BuiltIn value="false"/>
+      <Caption value="Show audit trail"/>
+      <DescriptionText value=""/>
+      <Enabled value="true"/>
+      <HelpContextId value="0"/>
+      <HelpFile value=""/>
+      <Id value="1"/>
+      <Index value="4"/>
+      <Parameter value="audit_trail_subform"/>
+      <Priority value="3"/>
+      <Tag value=""/>
+      <TooltipText value="Show audit trail"/>
+      <Type value="1"/>
+      <Visible value="true"/>
+      <BuiltInFace value="true"/>
+      <Style value="0"/>
+      <ShortcutText value=""/>
+      <HyperlinkType value="0"/>
+      <OnAction value="fnCall"/>
+      <FaceId value="29"/>
+    </Control>
   </Controls>
 </CommandBar>
