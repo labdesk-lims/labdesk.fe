@@ -200,10 +200,8 @@ On Error GoTo Catch_Error
         If MsgBox("Press OK to initialize application. This may take a while.", vbOKCancel, "Information") = vbOK Then
             sysinit
             MsgBox "System initialization finished. Restart application to proceed.", vbInformation, "Information"
-            Exit Function
-        Else
-            Exit Function
         End If
+        Exit Function
     End If
     
     'Clean Cache (stored in the user folder under pCacheFolder)
@@ -227,7 +225,7 @@ On Error GoTo Catch_Error
     AddUser
     
     'Open desktop tab
-    If Application.SysCmd(acSysCmdGetObjectState, acForm, "desktop") <> acObjStateOpen Then DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
+    'If Application.SysCmd(acSysCmdGetObjectState, acForm, "desktop") <> acObjStateOpen Then DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
     
     'Interface cosmetics
     AddAppProperty "AppTitle", dbText, pAppTitle

@@ -70,9 +70,6 @@ On Error GoTo Catch_Error
     'Check if server and database is set
     If server = "" Or database = "" Then Err.Raise vbObjectError + 513, , "Server and/or database not set."
     
-    'Check if server is reachable
-    If fShellRun("%ComSpec% /C %SystemRoot%\system32\ping.exe -n 1 -w 500 " & Split(server, "\")(0) & " | " & "%SystemRoot%\system32\find.exe /i " & Chr(34) & "TTL=" & Chr(34)) = 1 Then Err.Raise vbObjectError + 513, , "Server not available."
-    
     'Set connection string
     If Len(user) = 0 Then
         SetConStr server, database
@@ -85,7 +82,7 @@ On Error GoTo Catch_Error
     AttachDSNLessTables (remoteTables)
     
     ConnectDb = True
-    
+
 Exit_Function:
     Exit Function
 Catch_Error:

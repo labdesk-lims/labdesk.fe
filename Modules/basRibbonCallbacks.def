@@ -690,11 +690,6 @@ Sub GetLabel(control As IRibbonControl, ByRef label)
             ' In Tab:   tab_testing
             ' In Group: grp_order
             label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
-        Case "btn_request_customer"
-            ' Button
-            ' In Tab:   tab_testing
-            ' In Group: grp_order
-            label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
         Case "btn_batch"
             ' Button
             ' In Tab:   tab_testing

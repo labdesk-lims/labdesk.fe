@@ -10,9 +10,9 @@
     <AllowToolbarChanges name="AllowToolbarChanges" type="1" value="True" sort="1"/>
     <ANSIQueryMode name="ANSI Query Mode" type="4" value="0" sort="1"/>
     <AppTitle name="AppTitle" type="10" value="LABDESK LIMS" sort="1"/>
-    <AutoCompact name="Auto Compact" type="4" value="0" sort="1"/>
+    <AutoCompact name="Auto Compact" type="4" value="1" sort="1"/>
     <CheckTruncatedNumFields name="CheckTruncatedNumFields" type="4" value="1" sort="1"/>
-    <ClearCacheonClose name="Clear Cache on Close" type="4" value="0" sort="1"/>
+    <ClearCacheonClose name="Clear Cache on Close" type="4" value="1" sort="1"/>
     <ContinuousFormNavigationKeys name="Continuous Form Navigation Keys" type="4" value="0" sort="1"/>
     <CustomRibbonID name="CustomRibbonID" type="10" value="custom_ribbon" sort="1"/>
     <DesignWithData name="DesignWithData" type="1" value="True" sort="1"/>
@@ -27,6 +27,7 @@
     <ProjVer name="ProjVer" type="3" value="142" sort="1"/>
     <PropertySheetLabelWidth name="Property Sheet Label Width" type="4" value="3330" sort="1"/>
     <QueryTimeout name="QueryTimeout" type="3" value="60" sort="1"/>
+    <RemovePersonalInformation name="Remove Personal Information" type="4" value="1" sort="1"/>
     <ShowNavigationPaneSearchBar name="Show Navigation Pane Search Bar" type="4" value="1" sort="1"/>
     <ShowValuesinIndexed name="Show Values in Indexed" type="4" value="1" sort="1"/>
     <ShowValuesinNonIndexed name="Show Values in Non-Indexed" type="4" value="1" sort="1"/>
@@ -46,7 +47,6 @@
     <WebDesignMode name="WebDesignMode" type="2" value="0" sort="1"/>
   </CurrentDb>
   <SummaryInfo context="2">
-    <Author name="Author" type="10" value="Lutz Kogel" sort="3"/>
     <Title name="Title" type="10" value="Database1" sort="3"/>
   </SummaryInfo>
   <GetOptions context="5">
@@ -54,7 +54,7 @@
     <ActiveServerPagesURL name="Active Server Pages URL" type="1" value="" sort="6"/>
     <AlwaysUseEventProcedures name="Always Use Event Procedures" type="2" value="0" sort="6"/>
     <ArrowKeyBehavior name="Arrow Key Behavior" type="3" value="0" sort="6"/>
-    <AutoCompact name="Auto Compact" type="4" value="0" sort="6"/>
+    <AutoCompact name="Auto Compact" type="4" value="-1" sort="6"/>
     <AutoCompactPercentage name="Auto Compact Percentage" type="5" value="25" sort="6"/>
     <AutoIndexonImportCreate name="AutoIndex on Import/Create" type="6" value="ID;key;code;num" sort="6"/>
     <BehaviorEnteringField name="Behavior Entering Field" type="7" value="0" sort="6"/>
