@@ -65,10 +65,10 @@ On Error GoTo Catch_Error
     End If
 
     ' Config subforms if ID is not null
-    If Not IsNull(rfrm.ID) Then
+    If Not IsNull(rfrm.id) Then
         For Each ctrl In rfrm.Controls
             If ctrl.ControlType = acSubform Then
-                rfrm.Form(ctrl.name).Form.Form_Init readOnly, "WHERE " & rfrm.DataTable & " = " & rfrm.ID
+                rfrm.Form(ctrl.name).Form.Form_Init readOnly, "WHERE " & rfrm.DataTable & " = " & rfrm.id
             End If
         Next
     Else
@@ -191,7 +191,7 @@ On Error GoTo Catch_Error
     
     ' Check for changes on subforms
     For Each ctrl In rfrm.Controls
-        If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
+        If ctrl.ControlType = acSubform And Not IsNull(rfrm.id) Then
             subFormChanged = subFormChanged Or rfrm.Form(ctrl.name).Form.FormChanged
         End If
     Next
@@ -199,7 +199,7 @@ On Error GoTo Catch_Error
     ' Check validity of subForms
     subFormValidity = True
     For Each ctrl In rfrm.Controls
-        If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
+        If ctrl.ControlType = acSubform And Not IsNull(rfrm.id) Then
             subFormValidity = subFormValidity And rfrm.Form(ctrl.name).Form.Form_Check_Validity
         End If
     Next
@@ -225,7 +225,7 @@ On Error GoTo Catch_Error
             If rfrm.FormChanged Then UpdateTable rfrm.DataTable, GetTableNameFromGuid(rfrm.tmpGuid)
         Else
             For Each ctrl In rfrm.Controls
-                If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
+                If ctrl.ControlType = acSubform And Not IsNull(rfrm.id) Then
                     rfrm.Form(ctrl.name).Form.FormChanged = False
                 End If
             Next
@@ -264,7 +264,7 @@ On Error GoTo Catch_Error
 
     ' Check for changes on subforms
     For Each ctrl In rfrm.Controls
-        If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
+        If ctrl.ControlType = acSubform And Not IsNull(rfrm.id) Then
             subFormChanged = subFormChanged Or rfrm.Form(ctrl.name).Form.FormChanged
         End If
     Next
@@ -272,7 +272,7 @@ On Error GoTo Catch_Error
      ' Check validity of subForms
     subFormValidity = True
     For Each ctrl In rfrm.Controls
-        If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
+        If ctrl.ControlType = acSubform And Not IsNull(rfrm.id) Then
             subFormValidity = subFormValidity And rfrm.Form(ctrl.name).Form.Form_Check_Validity
         End If
     Next
@@ -287,7 +287,7 @@ On Error GoTo Catch_Error
     If rfrm.FormChanged Or subFormChanged And Not rfrm.ForceClose Then
         UpdateTable rfrm.DataTable, GetTableNameFromGuid(rfrm.tmpGuid)
         For Each ctrl In rfrm.Controls
-                If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
+                If ctrl.ControlType = acSubform And Not IsNull(rfrm.id) Then
                     AsyncSubFormSaveData rfrm.Form(ctrl.name).Form
                 End If
             Next
@@ -464,7 +464,7 @@ Skip_hide:
     End If
     
     ' The ID column is used as hyperlink to open the responsible form to edit records
-    rfrm.ID.IsHyperlink = True
+    rfrm.id.IsHyperlink = True
     
     ' Adjust to best fit width
     For Each ctrl In rfrm.Controls
@@ -540,12 +540,12 @@ On Error GoTo Catch_Error
     End If
 
     ' Open the form to edit a record. Add new record if ID is null.
-    If IsNull(rfrm.ID) Then
+    If IsNull(rfrm.id) Then
         DoCmd.OpenForm rfrm.EditForm, acNormal, , , acFormAdd, acWindowNormal
         Forms(rfrm.EditForm).Form_Init
     Else
-        DoCmd.OpenForm rfrm.EditForm, acNormal, , "id = " & rfrm.ID, acFormEdit
-        Forms(rfrm.EditForm).Form_Init "WHERE id = " & rfrm.ID
+        DoCmd.OpenForm rfrm.EditForm, acNormal, , "id = " & rfrm.id, acFormEdit
+        Forms(rfrm.EditForm).Form_Init "WHERE id = " & rfrm.id
     End If
 
 Exit_Function:
@@ -579,9 +579,9 @@ Catch_Error:
     Resume Exit_Function
 End Sub
 
-Public Sub SyncFormDuplicateRecord(ByVal table As String, ByVal ID As Integer)
+Public Sub SyncFormDuplicateRecord(ByVal table As String, ByVal id As Integer)
      ' This sub is called by the context menu, add any code of relevance
-     DuplicateRecord table, ID
+     DuplicateRecord table, id
 End Sub
 
 Public Sub SyncFormSaveFilter(rfrm As Form)
@@ -634,7 +634,7 @@ On Error GoTo Catch_Error
     End If
     
     ' The ID column is used as hyperlink to open the responsible form to edit records
-    rfrm.ID.IsHyperlink = True
+    rfrm.id.IsHyperlink = True
     
     ' Adjust to best fit width
     For Each ctrl In rfrm.Controls
@@ -682,12 +682,12 @@ On Error GoTo Catch_Error
     End If
 
     ' Open the form to edit a record. Add new record if ID is null.
-    If IsNull(rfrm.ID) Then
+    If IsNull(rfrm.id) Then
         DoCmd.OpenForm rfrm.EditForm, acNormal, , , acFormAdd, acWindowNormal
         Forms(rfrm.EditForm).Form_Init
     Else
-        DoCmd.OpenForm rfrm.EditForm, acNormal, , "id = " & rfrm.ID, acFormEdit
-        Forms(rfrm.EditForm).Form_Init "WHERE id = " & rfrm.ID
+        DoCmd.OpenForm rfrm.EditForm, acNormal, , "id = " & rfrm.id, acFormEdit
+        Forms(rfrm.EditForm).Form_Init "WHERE id = " & rfrm.id
     End If
 
 Exit_Function:

@@ -198,7 +198,7 @@ On Error GoTo Skip
         Set rx = db.OpenRecordset("SELECT * FROM _permission WHERE id = " & rs!permission)
         Set ry = db.OpenRecordset("SELECT * FROM permission WHERE title = '" & rx!title & "'", dbOpenDynaset, dbSeeChanges)
         
-        AddRolePermission rb!ID, ry!ID, True, rs!can_read, rs!can_update, rs!can_delete
+        AddRolePermission rb!id, ry!id, True, rs!can_read, rs!can_update, rs!can_delete
         rs.MoveNext
     Loop
 Skip:
