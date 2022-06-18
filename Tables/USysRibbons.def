@@ -87,18 +87,4 @@
       <VisibleValue name="VisibleValue" type="12"/>
     </Field_2>
   </FieldDefs>
-  <Indexes>
-    <Index_0 name="lngID">
-      <Name value="lngID"/>
-      <Unique value="true"/>
-      <Clustered value="false"/>
-      <Primary value="true"/>
-      <Foreign value="false"/>
-      <Required value="true"/>
-      <IgnoreNulls value="false"/>
-      <Fields>
-        <FieldNames value="+lngID"/>
-      </Fields>
-    </Index_0>
-  </Indexes>
 </TableDef>

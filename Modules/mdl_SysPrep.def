@@ -198,7 +198,7 @@ On Error GoTo Skip
         Set rx = db.OpenRecordset("SELECT * FROM _permission WHERE id = " & rs!permission)
         Set ry = db.OpenRecordset("SELECT * FROM permission WHERE title = '" & rx!title & "'", dbOpenDynaset, dbSeeChanges)
         
-        AddRolePermission rb!id, ry!id, True, rs!can_read, rs!can_update, rs!can_delete
+        AddRolePermission rb!ID, ry!ID, True, rs!can_read, rs!can_update, rs!can_delete
         rs.MoveNext
     Loop
 Skip:
@@ -239,6 +239,9 @@ Public Sub SysPrep()
     
     ' Disable shift
     ap_DisableShift
+    
+    ' Reset db settings
+    CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, token = Null, navpane = 0, sysinit = 1"
 End Sub
 
 Public Sub sysinit()
@@ -253,10 +256,16 @@ Public Sub sysinit()
     UpdatePermission
     UpdateRolePermission
     AddAdmin
+    
     'Hide the navigation pane
     HideNavPane True
+    
+    'Disable full menu
+    AddAppProperty "AllowFullMenus", dbBoolean, False
+    
     'Disable shift
-    ap_DisableShift
+    'ap_DisableShift
+    
     ' Deactivate initialization
-    CurrentDb.Execute "UPDATE dbsetup SET sysinit = 0"
+    CurrentDb.Execute "UPDATE dbsetup SET sysinit = 0" 'reset connection settings
 End Sub

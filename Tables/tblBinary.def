@@ -88,18 +88,4 @@
       <VisibleValue name="VisibleValue" type="11"/>
     </Field_2>
   </FieldDefs>
-  <Indexes>
-    <Index_0 name="ID">
-      <Name value="ID"/>
-      <Unique value="true"/>
-      <Clustered value="false"/>
-      <Primary value="true"/>
-      <Foreign value="false"/>
-      <Required value="true"/>
-      <IgnoreNulls value="false"/>
-      <Fields>
-        <FieldNames value="+ID"/>
-      </Fields>
-    </Index_0>
-  </Indexes>
 </TableDef>
