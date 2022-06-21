@@ -296,4 +296,18 @@
       <CurrencyLCID name="CurrencyLCID" type="4" value="0"/>
     </Field_7>
   </FieldDefs>
+  <Indexes>
+    <Index_0 name="PrimaryKey">
+      <Name value="PrimaryKey"/>
+      <Unique value="true"/>
+      <Clustered value="false"/>
+      <Primary value="true"/>
+      <Foreign value="false"/>
+      <Required value="true"/>
+      <IgnoreNulls value="false"/>
+      <Fields>
+        <FieldNames value="+ID"/>
+      </Fields>
+    </Index_0>
+  </Indexes>
 </TableDef>

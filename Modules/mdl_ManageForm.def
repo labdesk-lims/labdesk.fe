@@ -57,24 +57,28 @@ Public Function TranslateForm(ByRef rfrm As Form, ByVal language As String) As B
 On Error GoTo Catch_Error
     Dim ctrl As control
     Dim i As Integer
+    Dim s As String
     
     rfrm.Caption = GetTranslation(rfrm.name, "caption_", language)
     
     For Each ctrl In rfrm.Controls
         'Translate labels
         If TypeName(ctrl) = "Label" Then
-            rfrm.Controls(ctrl.name).Caption = GetTranslation(rfrm.name, ctrl.name, language)
+            s = GetTranslation(rfrm.name, ctrl.name, language)
+            If s <> "" Then rfrm.Controls(ctrl.name).Caption = s
         End If
         
         'Translate buttons
         If TypeName(ctrl) = "CommandButton" Then
-            rfrm.Controls(ctrl.name).Caption = GetTranslation(rfrm.name, ctrl.name, language)
+            s = GetTranslation(rfrm.name, ctrl.name, language)
+            If s <> "" Then rfrm.Controls(ctrl.name).Caption = s
         End If
         
         'Translate register tabs
         If TypeName(ctrl) = "TabControl" Then
             While i < rfrm.Controls(ctrl.name).Pages.count
-                rfrm.Controls(ctrl.name).Pages(i).Caption = GetTranslation(rfrm.name, rfrm.Controls(ctrl.name).Pages(i).name, language)
+                s = GetTranslation(rfrm.name, rfrm.Controls(ctrl.name).Pages(i).name, language)
+                If s <> "" Then rfrm.Controls(ctrl.name).Pages(i).Caption = s
                 i = i + 1
             Wend
             i = 0

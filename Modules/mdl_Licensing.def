@@ -6,6 +6,12 @@ Option Compare Database
 Option Explicit
 
 Public Function GetLicenceString() As Variant
+'-------------------------------------------------------------------------------
+' Function:         GetLicenceString
+' Date:             2022 June
+' Purpose:          Reads the licence string from the database
+' Out:              Licence as string
+'-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     Dim db As database
     Dim rs As Recordset
@@ -25,6 +31,12 @@ Catch_Error:
 End Function
 
 Public Function SetLicenceString(ByVal licence As String) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         SetLicenceString
+' Date:             2022 June
+' Purpose:          Sets the licence string in the database
+' In:               Licence as string
+'-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     Dim db As database
     Dim rs As Recordset
@@ -49,6 +61,13 @@ Catch_Error:
 End Function
 
 Public Function ValidLicence(ByVal silent As Boolean) As Variant
+'-------------------------------------------------------------------------------
+' Function:         ValidLicence
+' Date:             2022 June
+' Purpose:          Checks if the licence is valid
+' In:               Silent mode hides any error messages
+' Out:              Valid (T/F)
+'-------------------------------------------------------------------------------
     Dim Json As Object
     Dim s As String
     Dim rs As Recordset

@@ -238,7 +238,7 @@ Public Sub SysPrep()
     CurrentDb.Execute "UPDATE dbsetup SET sysinit = 1"
     
     ' Disable shift
-    ap_DisableShift
+    'DisableShift
     
     ' Reset db settings
     CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, token = Null, navpane = 0, sysinit = 1"
@@ -264,7 +264,7 @@ Public Sub sysinit()
     AddAppProperty "AllowFullMenus", dbBoolean, False
     
     'Disable shift
-    'ap_DisableShift
+    'DisableShift
     
     ' Deactivate initialization
     CurrentDb.Execute "UPDATE dbsetup SET sysinit = 0" 'reset connection settings

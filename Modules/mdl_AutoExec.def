@@ -20,12 +20,12 @@ Public Const pAppTitle = "LABDESK LIMS"
 ' MAJOR-MINOR-PATCH
 Public Const pBeVersion = "v1.0.0" 'Backend version
 Public Const pFeVersion = "v1.0.0" 'Frontend version
-Public Const pReVersion = "v1.0.0" 'Release version (used for licence check)
+Public Const pReVersion = "v1.0.0" 'Release version (used for licence validation)
 Public Const pLcSecret = "_gfmf!jshd*n#jü7/hhs&" 'Licence secret for encryption
-Public Const pReportTemplate = "labreport_main" 'Separate report names using comma
+Public Const pReportTemplate = "labreport_main" 'Separate report names using comma (e.g A,B,C,...)
 
 ' Cache folder setting
-Public Const pCacheFolder = ".labdesk"
+Public Const pCacheFolder = ".labdesk" 'The local user folder will be used for labdesk
 
 ' Licence server address
 Public Const pLicenceServer = "https://licence.labdesk.net/licence.php?"
@@ -100,9 +100,14 @@ Catch_Error:
     Resume Exit_Function
 End Sub
 
-Function ap_DisableShift()
-'This function disable the shift at startup. This action causes
-'the Autoexec macro and Startup properties to always be executed.
+Function DisableShift()
+'-------------------------------------------------------------------------------
+' Function:     HDisableShift
+' Date:         2022 January
+' Purpose:      This function disable the shift at startup
+' Parameters:   -
+' Out:          -
+'-------------------------------------------------------------------------------
 
 On Error GoTo errDisableShift
 
@@ -127,15 +132,19 @@ dbBoolean, False)
 db.Properties.Append prop
 Resume Next
 Else
-MsgBox "Function 'ap_DisableShift' did not complete successfully."
+MsgBox "Function 'DisableShift' did not complete successfully."
 Exit Function
 End If
 End Function
 
-Function ap_EnableShift()
-'This function enables the SHIFT key at startup. This action causes
-'the Autoexec macro and the Startup properties to be bypassed
-'if the user holds down the SHIFT key when the user opens the database.
+Function EnableShift()
+'-------------------------------------------------------------------------------
+' Function:     HDisableShift
+' Date:         2022 January
+' Purpose:      This function enables the shift at startup
+' Parameters:   -
+' Out:          -
+'-------------------------------------------------------------------------------
 
 On Error GoTo errEnableShift
 
@@ -160,7 +169,7 @@ dbBoolean, True)
 db.Properties.Append prop
 Resume Next
 Else
-MsgBox "Function 'ap_DisableShift' did not complete successfully."
+MsgBox "Function 'EnableShift' did not complete successfully."
 Exit Function
 End If
 End Function
@@ -182,7 +191,7 @@ On Error GoTo Catch_Error
     "request", "measurement_cfield", "measurement", "measurement_condition", "view_request_measurement", _
     "profile_analysis", "profile", "request_analysis", "step", "state", "workflow", "smptype", "smpcondition", "smppreservation", "priority", "technique", _
     "batch", "btcposition", "storage", "strposition", "handbook", _
-    "project", "project_member", "formulation", "component", _
+    "project", "project_member", "formulation", "component", "task", "workload", "view_task", _
     "view_measurement", _
     "users", "role", "role_permission", "permission", "traversal", "audit", "spa", "columns", _
     "view_labreport_details", _

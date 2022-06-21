@@ -300,10 +300,14 @@ On Error GoTo Catch_Error
     Set rs = db.OpenRecordset("SELECT " & language & " FROM translation WHERE container ='" & container & "' AND item = '" & item & "'")
     
     If rs.EOF Or rs.BOF Then
-        db.Execute "INSERT INTO translation(container, item, " & language & ") VALUES('" & container & "', '" & item & "', '" & item & "')"
+        db.Execute "INSERT INTO translation(container, item) VALUES('" & container & "', '" & item & "')"
         GetTranslation = item
     Else
-        GetTranslation = rs(0)
+        If IsNull(rs(0)) Then
+            GetTranslation = ""
+        Else
+            GetTranslation = rs(0)
+        End If
     End If
 
 Exit_Function:
@@ -311,7 +315,7 @@ Exit_Function:
     Set rs = Nothing
     Exit Function
 Catch_Error:
-    GetTranslation = Null
+    GetTranslation = ""
     Resume Exit_Function
 End Function
 
@@ -732,7 +736,7 @@ Public Function ActiveUsers() As Integer
 '-------------------------------------------------------------------------------
 ' Function:         ActiveUsers
 ' Date:             2022 April
-' Purpose:          Count number of active users
+' Purpose:          Count number of users with an associated role
 ' Out:              Amount of users
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
