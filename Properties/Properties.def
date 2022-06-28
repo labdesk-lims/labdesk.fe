@@ -49,9 +49,6 @@
   <SummaryInfo context="2">
     <Title name="Title" type="10" value="Database1" sort="3"/>
   </SummaryInfo>
-  <ActiveVBProject context="4">
-    <Name name="Name" type="10" value="labdesk" sort="5"/>
-  </ActiveVBProject>
   <GetOptions context="5">
     <ActiveServerPagesSessionTimeout name="Active Server Pages Session Timeout" type="0" value="" sort="6"/>
     <ActiveServerPagesURL name="Active Server Pages URL" type="1" value="" sort="6"/>
