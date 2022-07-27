@@ -37,6 +37,8 @@
       <FieldSize name="FieldSize" type="4"/>
       <OriginalValue name="OriginalValue" type="4"/>
       <VisibleValue name="VisibleValue" type="4"/>
+      <Precision name="Precision" type="4" value="1033"/>
+      <Scale name="Scale" type="4" value="0"/>
     </Field_0>
     <Field_1 name="FileName">
       <Value name="Value" type="10"/>
@@ -59,8 +61,10 @@
       <AppendOnly name="AppendOnly" type="1" value="False"/>
       <Expression name="Expression" type="12" value=""/>
       <FieldSize name="FieldSize" type="4"/>
-      <OriginalValue name="OriginalValue" type="10"/>
-      <VisibleValue name="VisibleValue" type="10"/>
+      <OriginalValue name="OriginalValue" type="4"/>
+      <VisibleValue name="VisibleValue" type="4"/>
+      <Precision name="Precision" type="10" value="1033"/>
+      <Scale name="Scale" type="10" value="0"/>
       <UnicodeCompression name="UnicodeCompression" type="1" value="True"/>
     </Field_1>
     <Field_2 name="binary">
@@ -84,8 +88,10 @@
       <AppendOnly name="AppendOnly" type="1" value="False"/>
       <Expression name="Expression" type="12" value=""/>
       <FieldSize name="FieldSize" type="4"/>
-      <OriginalValue name="OriginalValue" type="11"/>
-      <VisibleValue name="VisibleValue" type="11"/>
+      <OriginalValue name="OriginalValue" type="4"/>
+      <VisibleValue name="VisibleValue" type="4"/>
+      <Precision name="Precision" type="11" value="1033"/>
+      <Scale name="Scale" type="11" value="0"/>
     </Field_2>
   </FieldDefs>
   <Indexes>

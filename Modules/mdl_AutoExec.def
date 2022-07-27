@@ -23,6 +23,7 @@ Public Const pFeVersion = "v1.0.0" 'Frontend version
 Public Const pReVersion = "v1.0.0" 'Release version (used for licence validation)
 Public Const pLcSecret = "_gfmf!jshd*n#jü7/hhs&" 'Licence secret for encryption
 Public Const pReportTemplate = "labreport_main" 'Separate report names using comma (e.g A,B,C,...)
+Public Const pLabelTemplate = "sticker_pdf,sticker_zebra_103x199" 'Separate label names using comma (e.g A,B,C,...)
 
 ' Cache folder setting
 Public Const pCacheFolder = ".labdesk" 'The local user folder will be used for labdesk
@@ -111,8 +112,8 @@ Function DisableShift()
 
 On Error GoTo errDisableShift
 
-Dim db As DAO.database
-Dim prop As DAO.Property
+Dim db As dao.database
+Dim prop As dao.Property
 Const conPropNotFound = 3270
 
 Set db = CurrentDb()
@@ -148,8 +149,8 @@ Function EnableShift()
 
 On Error GoTo errEnableShift
 
-Dim db As DAO.database
-Dim prop As DAO.Property
+Dim db As dao.database
+Dim prop As dao.Property
 Const conPropNotFound = 3270
 
 Set db = CurrentDb()

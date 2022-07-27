@@ -787,3 +787,65 @@ Exit_Function:
 Catch_Error:
     Resume Exit_Function
 End Function
+
+Public Function ReplaceSql(ByVal message As String) As String
+'-------------------------------------------------------------------------------
+' Function:         PrepareSqlMessage
+' Date:             2022 July
+' Purpose:          Substitute SQL statement by value in string
+' In:               Message with SQL statement to be processed
+' Out:              Message
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    Dim rs As ADODB.Recordset
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "message_substitute_sql"
+    cmd.Parameters.Append cmd.CreateParameter("@p_message", adLongVarWChar, adParamInput, -1, message)
+    cmd.Parameters.Append cmd.CreateParameter("@return_message", adBSTR, adParamOutput, -1)
+    cmd.Execute
+    
+    ReplaceSql = cmd.Parameters.item("@return_message")
+    
+    Set rs = cmd.Execute()
+
+Exit_Function:
+    Set cmd = Nothing
+    Exit Function
+Catch_Error:
+    ReplaceSql = "Error rendering sticker. Check for missing informations."
+    Resume Exit_Function
+End Function
+
+Public Function PoolMeasurement(ByVal measurement As Integer) As Variant
+'-------------------------------------------------------------------------------
+' Function:         PoolMeasurement
+' Date:             2022 January
+' Purpose:          Pool measurements in batch
+' In:
+' -> Measurement:   ID of measurement to pool in batch
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "measurement_pool"
+    cmd.Parameters.Append cmd.CreateParameter("@p_id", adInteger, adParamInput, , measurement)
+    cmd.Execute
+    
+Exit_Function:
+    Set cmd = Nothing
+    Exit Function
+Catch_Error:
+    MsgBox "Error (mdlDbProcedures - PoolMeasurement): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function

@@ -37,6 +37,8 @@
       <FieldSize name="FieldSize" type="4"/>
       <OriginalValue name="OriginalValue" type="4"/>
       <VisibleValue name="VisibleValue" type="4"/>
+      <Precision name="Precision" type="4" value="1033"/>
+      <Scale name="Scale" type="4" value="0"/>
     </Field_0>
     <Field_1 name="RibbonName">
       <Value name="Value" type="10"/>
@@ -59,8 +61,10 @@
       <AppendOnly name="AppendOnly" type="1" value="False"/>
       <Expression name="Expression" type="12" value=""/>
       <FieldSize name="FieldSize" type="4"/>
-      <OriginalValue name="OriginalValue" type="10"/>
-      <VisibleValue name="VisibleValue" type="10"/>
+      <OriginalValue name="OriginalValue" type="4"/>
+      <VisibleValue name="VisibleValue" type="4"/>
+      <Precision name="Precision" type="10" value="1033"/>
+      <Scale name="Scale" type="10" value="0"/>
     </Field_1>
     <Field_2 name="RibbonXml">
       <Value name="Value" type="12"/>
@@ -83,8 +87,10 @@
       <AppendOnly name="AppendOnly" type="1" value="False"/>
       <Expression name="Expression" type="12" value=""/>
       <FieldSize name="FieldSize" type="4"/>
-      <OriginalValue name="OriginalValue" type="12"/>
-      <VisibleValue name="VisibleValue" type="12"/>
+      <OriginalValue name="OriginalValue" type="4"/>
+      <VisibleValue name="VisibleValue" type="4"/>
+      <Precision name="Precision" type="12" value="1033"/>
+      <Scale name="Scale" type="12" value="0"/>
     </Field_2>
   </FieldDefs>
   <Indexes>

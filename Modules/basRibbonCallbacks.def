@@ -1346,7 +1346,7 @@ Public Function getIconFromTable(strFilename As String) As Picture
 
 Dim lSize As Long
 Dim arrBin() As Byte
-Dim rs As DAO.Recordset
+Dim rs As dao.Recordset
  
     On Error GoTo Errr
  

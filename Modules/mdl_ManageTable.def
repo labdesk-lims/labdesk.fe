@@ -55,8 +55,8 @@ Public Function GetIdentityColumn(ByVal table As String) As String
 'Out:       Name of identity column
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim db As DAO.database, tbl As DAO.TableDef
-    Dim f As DAO.field
+    Dim db As dao.database, tbl As dao.TableDef
+    Dim f As dao.field
     Dim id_clmn As String
     
     Set db = CurrentDb()
@@ -134,7 +134,7 @@ On Error GoTo Catch_Error
     Dim db As database
     Dim tdf As TableDef, fldNew As field
     Dim fldOld As field, rst As Recordset
-    Dim fldPrp As DAO.Property
+    Dim fldPrp As dao.Property
     
     Set db = CurrentDb
     Set rst = CurrentDb.OpenRecordset("Select * FROM " & table, dbOpenDynaset, dbSeeChanges, dbOptimistic)

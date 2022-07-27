@@ -109,7 +109,7 @@ Private Function DecodeBase64(ByVal strData As String) As Byte()
     Set objXML = New MSXML2.DOMDocument60
     Set objNode = objXML.createElement("b64")
     objNode.DataType = "bin.base64"
-    objNode.Text = strData
+    objNode.text = strData
     DecodeBase64 = objNode.nodeTypedValue
    
     ' thanks, bye
@@ -128,7 +128,7 @@ Private Function EncodeBase64(ByRef arrData() As Byte) As String
     Set objNode = objXML.createElement("b64")
     objNode.DataType = "bin.base64"
     objNode.nodeTypedValue = arrData
-    EncodeBase64 = objNode.Text
+    EncodeBase64 = objNode.text
 
     ' thanks, bye
     Set objNode = Nothing
@@ -188,6 +188,34 @@ Public Function SelectReport() As Variant
         SelectReport = Forms("*SelectDialog").comboBox.Column(0)
     Else
         SelectReport = Null
+    End If
+    
+    DoCmd.Close acForm, "*SelectDialog", acSaveNo
+End Function
+
+Public Function SelectLabel() As Variant
+    Dim db As database
+    Dim a, s As Variant
+    Dim i As Integer
+    
+    Set db = CurrentDb()
+    
+    db.Execute "DELETE * FROM keyvalue"
+    
+    a = Split(pLabelTemplate, ",")
+    
+    i = 0
+    For Each s In a
+        db.Execute "INSERT INTO keyvalue (key, value_txt) VALUES(" & i & ",'" & s & "')"
+        i = i + 1
+    Next
+    
+    DoCmd.OpenForm "*SelectDialog", acNormal, , , acFormEdit, acDialog, "SELECT value_txt, key FROM keyvalue"
+    
+    If Not IsNull(Forms("*SelectDialog").comboBox.Column(1)) Then
+        SelectLabel = Forms("*SelectDialog").comboBox.Column(0)
+    Else
+        SelectLabel = Null
     End If
     
     DoCmd.Close acForm, "*SelectDialog", acSaveNo
