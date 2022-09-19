@@ -275,9 +275,9 @@ On Error GoTo Catch_Error
     
     'Check and set form permissions
     If Not GetPermission(rfrm.name).Read Then Err.Raise vbObjectError + 513, , GetTranslation("mdlManageForm", "msgbox_permission_denied", GetDbSetting("language"))
-    If Not GetPermission(rfrm.name).Update Or readOnly Or Not pValidLic Then rfrm.AllowEdits = False Else rfrm.AllowEdits = True
-    If Not GetPermission(rfrm.name).Create Or readOnly Or Not pValidLic Then rfrm.AllowAdditions = False Else rfrm.AllowAdditions = True
-    If Not GetPermission(rfrm.name).Delete Or readOnly Or Not pValidLic Then rfrm.AllowDeletions = False Else rfrm.AllowDeletions = True
+    If Not GetPermission(rfrm.name).Update Or readOnly Then rfrm.AllowEdits = False Else rfrm.AllowEdits = True
+    If Not GetPermission(rfrm.name).Create Or readOnly Then rfrm.AllowAdditions = False Else rfrm.AllowAdditions = True
+    If Not GetPermission(rfrm.name).Delete Or readOnly Then rfrm.AllowDeletions = False Else rfrm.AllowDeletions = True
     
     'Set all labels to read only if edit permission is not set
     For Each ctrl In rfrm.Controls

@@ -1,0 +1,78 @@
+Option Compare Database
+Option Explicit
+
+Dim lastCheckup As Variant
+
+Private Function LastChanged(ByVal table As String) As Variant
+'-------------------------------------------------------------------------------
+'Function:  LastChanged
+'Date:      2022 September
+'Purpose:   Turns back the date and time of the last modification of a table
+'Out:       DateTime or False
+'Parameter:
+'table      Table to check
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT changed_at FROM audit WHERE table_name = '" & table & "' ORDER BY changed_at", dbOpenDynaset, dbSeeChanges)
+    
+    If Not rs.EOF Then
+        LastChanged = rs(0)
+    Else
+        LastChanged = False
+    End If
+
+    Exit Function
+    
+Exit_Function:
+    LastChanged = False
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
+Private Sub CopyLocal(ByVal table As String)
+'-------------------------------------------------------------------------------
+'Function:  CopyLocal
+'Date:      2022 September
+'Purpose:   Creates a local copy of the table
+'Out:       DateTime or False
+'Parameter:
+'table      Table to copy
+'-------------------------------------------------------------------------------
+    If Not TableExists("lcl_" & table) Then
+        CopyTable table, "lcl_" & table
+    End If
+    
+    If LastChanged(table) > lastCheckup Then
+        CurrentDb.TableDefs.Delete "lcl_" & table
+        CopyTable table, "lcl_" & table
+    End If
+    
+    CopyTable table, "lcl_" & table
+    
+    lastCheckup = Now()
+End Sub
+
+Public Sub UpdateLocalTables()
+    ' Load a local copy of all
+    
+    ' Tranlsations
+    CopyLocal "translation"
+    
+    ' Column settings
+    CopyLocal "columns"
+    
+    ' Users
+    CopyLocal "users"
+    
+    ' Permissions
+    CopyLocal "permission"
+    
+    ' Cross table settings
+    CopyLocal "role_permission"
+End Sub

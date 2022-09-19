@@ -56,7 +56,7 @@ On Error GoTo Catch_Error
     rfrm.tmpGuid = CreateGuid()
    
     ' Check read only condidtion
-    If Not GetPermission(rfrm.name).Update Or rfrm.Form_Init_Individual_Permission() Or (Not pValidLic And Not rfrm.Form_Init_Individual_Permission()) Then readOnly = True
+    If Not GetPermission(rfrm.name).Update Or rfrm.Form_Init_Individual_Permission() Then readOnly = True
     
     ' Config main form
     If ConfigAsyncForm(rfrm.Form, rfrm.DataTable, rfrm.tmpGuid, , readOnly, rfrm.whereClause) = False Then
@@ -586,7 +586,7 @@ End Sub
 
 Public Sub SyncFormSaveFilter(rfrm As Form)
     ' Will call the form to save the filter settings
-    If rfrm.FilterOn And Not IsNull(rfrm.filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
+    If rfrm.FilterOn And Not IsNull(rfrm.Filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
 End Sub
 
 Public Sub SyncFormApplyFilter(rfrm As Form)
@@ -699,7 +699,7 @@ End Sub
 
 Public Sub SyncSubFormSaveFilter(rfrm As Form)
     ' Open form to save filter settings
-    If rfrm.FilterOn And Not IsNull(rfrm.filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
+    If rfrm.FilterOn And Not IsNull(rfrm.Filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
 End Sub
 
 Public Sub SyncSubFormApplyFilter(rfrm As Form)

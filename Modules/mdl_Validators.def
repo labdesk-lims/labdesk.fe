@@ -25,10 +25,10 @@ On Error GoTo Catch_Error
     If IsNull(strEmailAddress) Then Resume Exit_Function
     
     objRegExp.IgnoreCase = True
-    objRegExp.global = True
+    objRegExp.Global = True
     objRegExp.Pattern = "^([a-zA-Z0-9_\-\.]+)@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$"
     
-    blnIsValidEmail = objRegExp.Test(strEmailAddress)
+    blnIsValidEmail = objRegExp.test(strEmailAddress)
     ValidEmailAddress = blnIsValidEmail
       
 Exit_Function:
@@ -80,7 +80,7 @@ On Error GoTo Catch_Error
     
     'Check to see if any illegal characters have been used
     objRegExp.Pattern = "[&lt;&gt;:""/\\\|\?\*]"
-    IsValidFolderName = objRegExp.Test(sFolderName)
+    IsValidFolderName = objRegExp.test(sFolderName)
     
     'Ensure the folder name does end with a . or a blank space
     If Right(sFolderName, 1) = "." Then IsValidFolderName = False

@@ -72,7 +72,7 @@ On Error GoTo Catch_Error
     Dim cs As ColumnStyle
     
     Set db = CurrentDb()
-    Set rs = db.OpenRecordset("SELECT * FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    Set rs = db.OpenRecordset("SELECT * FROM lcl_columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
     
     If rs.EOF Or rs.BOF Then
         cs.Width = -3
@@ -297,7 +297,7 @@ On Error GoTo Catch_Error
     Dim rs As Recordset
     
     Set db = CurrentDb()
-    Set rs = db.OpenRecordset("SELECT " & language & " FROM translation WHERE container ='" & container & "' AND item = '" & item & "'")
+    Set rs = db.OpenRecordset("SELECT " & language & " FROM lcl_translation WHERE container ='" & container & "' AND item = '" & item & "'")
     
     If rs.EOF Or rs.BOF Then
         db.Execute "INSERT INTO translation(container, item) VALUES('" & container & "', '" & item & "')"
@@ -334,8 +334,8 @@ On Error GoTo Catch_Error
     Dim rsa, rsb, rsc As Recordset
     
     Set db = CurrentDb()
-    Set rsa = db.OpenRecordset("SELECT id FROM permission WHERE title = '" & title & "'", dbOpenDynaset, dbSeeChanges)
-    Set rsb = db.OpenRecordset("SELECT role FROM users WHERE name = '" & GetUserName & "'", dbOpenDynaset, dbSeeChanges)
+    Set rsa = db.OpenRecordset("SELECT id FROM lcl_permission WHERE title = '" & title & "'", dbOpenDynaset, dbSeeChanges)
+    Set rsb = db.OpenRecordset("SELECT role FROM lcl_users WHERE name = '" & GetUserName & "'", dbOpenDynaset, dbSeeChanges)
     
     If rsa.EOF Or rsa.BOF Or rsb.EOF Or rsb.BOF Then
         GetPermission = response
@@ -343,7 +343,7 @@ On Error GoTo Catch_Error
         Exit Function
     End If
     
-    Set rsc = db.OpenRecordset("SELECT * FROM role_permission WHERE role = " & rsb(0) & " AND permission = " & rsa(0), dbOpenDynaset, dbSeeChanges)
+    Set rsc = db.OpenRecordset("SELECT * FROM lcl_role_permission WHERE role = " & rsb(0) & " AND permission = " & rsa(0), dbOpenDynaset, dbSeeChanges)
     
     response.Create = rsc("can_create")
     response.Read = rsc("can_read")
