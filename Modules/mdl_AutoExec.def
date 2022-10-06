@@ -20,7 +20,7 @@ Public Const pAppTitle = "LABDESK LIMS"
 ' MAJOR-MINOR-PATCH
 Public Const pBeVersion = "v1.0.0" 'Backend version
 Public Const pFeVersion = "v1.0.0" 'Frontend version
-Public Const pReportTemplate = "labreport_main" 'Separate report names using comma (e.g A,B,C,...)
+Public Const pReportTemplate = "labreport_single" 'Separate report names using comma (e.g A,B,C,...)
 Public Const pLabelTemplate = "sticker_pdf,sticker_zebra_103x199" 'Separate label names using comma (e.g A,B,C,...)
 
 ' Cache folder setting

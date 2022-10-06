@@ -93,7 +93,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function GetFieldValue(ByVal table As String, ByVal field As String, ByVal ID As Integer) As Variant
+Public Function GetFieldValue(ByVal table As String, ByVal field As String, ByVal id As Integer) As Variant
 '-------------------------------------------------------------------------------
 ' Function:         GetFieldValue
 ' Date:             2022 Feburary
@@ -108,7 +108,7 @@ On Error GoTo Catch_Error
     Dim rs As Recordset
     
     Set db = CurrentDb()
-    Set rs = db.OpenRecordset("SELECT " & field & " FROM " & table & " WHERE id = " & ID)
+    Set rs = db.OpenRecordset("SELECT " & field & " FROM " & table & " WHERE id = " & id)
     
     If rs(0) <> "" Then
         GetFieldValue = rs(0)
@@ -125,7 +125,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function SetFieldValue(ByVal table As String, ByVal field As String, ByVal ID As Integer, ByVal value As Variant) As Boolean
+Public Function SetFieldValue(ByVal table As String, ByVal field As String, ByVal id As Integer, ByVal value As Variant) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         GetFieldValue
 ' Date:             2022 Feburary
@@ -362,7 +362,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function DuplicateRecord(ByVal table As String, ByVal ID As Integer) As Boolean
+Public Function DuplicateRecord(ByVal table As String, ByVal id As Integer) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         DuplicateRecord
 ' Date:             2022 January
@@ -382,7 +382,7 @@ On Error GoTo Catch_Error
     Select Case table
         Case "role"
             cmd.CommandText = "role_duplicate"
-            cmd.Parameters.Append cmd.CreateParameter("@pRole", adInteger, adParamInput, , ID)
+            cmd.Parameters.Append cmd.CreateParameter("@pRole", adInteger, adParamInput, , id)
             cmd.Execute
         Case Else
             MsgBox GetTranslation("msgbox", "duplication_not_supported", GetDbSetting("language")), vbExclamation, GetTranslation("msgbox", "vbExclamation", GetDbSetting("language"))
@@ -605,7 +605,7 @@ On Error GoTo Catch_Error
     Set rs = db.OpenRecordset("SELECT COUNT(*) FROM users WHERE name = '" & GetUserName() & "'", dbOpenDynaset, dbSeeChanges)
     Set rx = db.OpenRecordset("SELECT id FROM role WHERE administrative = 1", dbOpenDynaset, dbSeeChanges)
 
-    If rs(0) = 0 Then db.Execute "INSERT INTO users (name, role) VALUES('" & GetUserName() & "', " & rx!ID & ")", dbOpenDynaset
+    If rs(0) = 0 Then db.Execute "INSERT INTO users (name, role) VALUES('" & GetUserName() & "', " & rx!id & ")", dbOpenDynaset
     
     AddAdmin = True
      
@@ -655,7 +655,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function GetAuditTrail(ByVal table As String, ByVal ID As Integer) As String
+Public Function GetAuditTrail(ByVal table As String, ByVal id As Integer) As String
 '-------------------------------------------------------------------------------
 ' Function:         etAuditTrail
 ' Date:             2022 March
@@ -680,7 +680,7 @@ On Error GoTo Catch_Error
     cmd.CommandType = adCmdStoredProc
     cmd.CommandText = "audit_xml_diff"
     cmd.Parameters.Append cmd.CreateParameter("@table_name", adVarChar, adParamInput, 128, table)
-    cmd.Parameters.Append cmd.CreateParameter("@id", adInteger, adParamInput, , ID)
+    cmd.Parameters.Append cmd.CreateParameter("@id", adInteger, adParamInput, , id)
     
     Set rs = cmd.Execute()
     

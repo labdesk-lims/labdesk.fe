@@ -348,7 +348,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">translation</field_2>
       <field_3 name="column_id" binary="false" null="false">en</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="16185"/>
+      <field_4 name="column_width" binary="false" null="false" value="5205"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="4"/>
     </Row_39>
@@ -357,7 +357,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">translation</field_2>
       <field_3 name="column_id" binary="false" null="false">de</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="11820"/>
+      <field_4 name="column_width" binary="false" null="false" value="7725"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="5"/>
     </Row_40>

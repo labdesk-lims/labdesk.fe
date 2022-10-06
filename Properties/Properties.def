@@ -10,7 +10,7 @@
     <AllowToolbarChanges name="AllowToolbarChanges" type="1" value="True" sort="1"/>
     <ANSIQueryMode name="ANSI Query Mode" type="4" value="0" sort="1"/>
     <AppTitle name="AppTitle" type="10" value="LABDESK LIMS" sort="1"/>
-    <AutoCompact name="Auto Compact" type="4" value="1" sort="1"/>
+    <AutoCompact name="Auto Compact" type="4" value="0" sort="1"/>
     <CheckTruncatedNumFields name="CheckTruncatedNumFields" type="4" value="1" sort="1"/>
     <ClearCacheonClose name="Clear Cache on Close" type="4" value="1" sort="1"/>
     <ContinuousFormNavigationKeys name="Continuous Form Navigation Keys" type="4" value="0" sort="1"/>
@@ -49,12 +49,15 @@
   <SummaryInfo context="2">
     <Title name="Title" type="10" value="Database1" sort="3"/>
   </SummaryInfo>
+  <ActiveVBProject context="4">
+    <Name name="Name" type="10" value="labdesk" sort="5"/>
+  </ActiveVBProject>
   <GetOptions context="5">
     <ActiveServerPagesSessionTimeout name="Active Server Pages Session Timeout" type="0" value="" sort="6"/>
     <ActiveServerPagesURL name="Active Server Pages URL" type="1" value="" sort="6"/>
     <AlwaysUseEventProcedures name="Always Use Event Procedures" type="2" value="0" sort="6"/>
     <ArrowKeyBehavior name="Arrow Key Behavior" type="3" value="0" sort="6"/>
-    <AutoCompact name="Auto Compact" type="4" value="-1" sort="6"/>
+    <AutoCompact name="Auto Compact" type="4" value="0" sort="6"/>
     <AutoCompactPercentage name="Auto Compact Percentage" type="5" value="25" sort="6"/>
     <AutoIndexonImportCreate name="AutoIndex on Import/Create" type="6" value="ID;key;code;num" sort="6"/>
     <BehaviorEnteringField name="Behavior Entering Field" type="7" value="0" sort="6"/>
@@ -100,7 +103,7 @@
     <EnableFontSwitching name="Enable Font Switching" type="47" value="0" sort="6"/>
     <EnableMRUFileList name="Enable MRU File List" type="48" value="-1" sort="6"/>
     <ErrorTrapping name="Error Trapping" type="49" value="2" sort="6"/>
-    <FDCategory name="FDCategory" type="50" value="4" sort="6"/>
+    <FDCategory name="FDCategory" type="50" value="255" sort="6"/>
     <FollowedHyperlinkColor name="Followed Hyperlink Color" type="51" value="5" sort="6"/>
     <FormTemplate name="Form Template" type="52" value="Normal" sort="6"/>
     <FourDigitYearFormatting name="Four-Digit Year Formatting" type="53" value="0" sort="6"/>
@@ -195,7 +198,7 @@
     </Reference>
     <Reference>
       <Name value="MSForms 2.0"/>
-      <FullPath value="%SystemRoot%\System32\FM20.DLL"/>
+      <FullPath value="C:\Windows\System32\FM20.DLL"/>
       <Position value="8"/>
       <GUID value="{0D452EE1-E08F-101A-852E-02608C4D0BB4}"/>
       <Major value="2"/>
@@ -203,7 +206,7 @@
     </Reference>
     <Reference>
       <Name value="MSXML2 6.0"/>
-      <FullPath value="%SystemRoot%\System32\msxml6.dll"/>
+      <FullPath value="C:\Windows\System32\msxml6.dll"/>
       <Position value="11"/>
       <GUID value="{F5078F18-C551-11D3-89B9-0000F81FE221}"/>
       <Major value="6"/>
@@ -219,7 +222,7 @@
     </Reference>
     <Reference>
       <Name value="Scripting 1.0"/>
-      <FullPath value="%SystemRoot%\System32\scrrun.dll"/>
+      <FullPath value="C:\Windows\System32\scrrun.dll"/>
       <Position value="6"/>
       <GUID value="{420B2830-E718-11CF-893D-00A0C9054228}"/>
       <Major value="1"/>
@@ -227,7 +230,7 @@
     </Reference>
     <Reference>
       <Name value="SHDocVw 1.1"/>
-      <FullPath value="%SystemRoot%\System32\ieframe.dll"/>
+      <FullPath value="C:\Windows\System32\ieframe.dll"/>
       <Position value="7"/>
       <GUID value="{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}"/>
       <Major value="1"/>
@@ -235,7 +238,7 @@
     </Reference>
     <Reference>
       <Name value="stdole 2.0"/>
-      <FullPath value="%SystemRoot%\System32\stdole2.tlb"/>
+      <FullPath value="C:\Windows\System32\stdole2.tlb"/>
       <Position value="3"/>
       <GUID value="{00020430-0000-0000-C000-000000000046}"/>
       <Major value="2"/>
@@ -243,7 +246,7 @@
     </Reference>
     <Reference>
       <Name value="VBScript_RegExp_55 5.5"/>
-      <FullPath value="%SystemRoot%\System32\vbscript.dll\3"/>
+      <FullPath value="C:\Windows\System32\vbscript.dll\3"/>
       <Position value="10"/>
       <GUID value="{3F4DACA7-160D-11D2-A8E9-00104B365C9F}"/>
       <Major value="5"/>
