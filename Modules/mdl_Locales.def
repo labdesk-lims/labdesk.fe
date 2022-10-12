@@ -35,44 +35,22 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Private Sub CopyLocal(ByVal table As String)
-'-------------------------------------------------------------------------------
-'Function:  CopyLocal
-'Date:      2022 September
-'Purpose:   Creates a local copy of the table
-'Out:       DateTime or False
-'Parameter:
-'table      Table to copy
-'-------------------------------------------------------------------------------
-    If Not TableExists("lcl_" & table) Then
-        CopyTable table, "lcl_" & table
-    End If
+Private Function UpdateLocal(ByVal table As String, Optional ByVal whereClause As String)
+    'Prepare local table
+    If TableExists("lcl_" & table) Then CurrentDb.TableDefs.Delete "lcl_" & table
+    CreateTable table, "lcl_" & table
     
-    If LastChanged(table) > lastCheckup Then
-        CurrentDb.TableDefs.Delete "lcl_" & table
-        CopyTable table, "lcl_" & table
-    End If
-    
-    CopyTable table, "lcl_" & table
-    
-    lastCheckup = Now()
+    'Copy table for async data handling
+    CopyTable table, "lcl_" & table, whereClause
+    If TableExists("lcl_" & table & "_cpy") Then CurrentDb.TableDefs.Delete "lcl_" & table & "_cpy"
+    CopyTable "lcl_" & table, "lcl_" & table & "_cpy"
+End Function
+
+Public Sub InitLocales()
+    UpdateLocal "translation"
+    UpdateLocal "columns", "WHERE user_id = '" & GetUserName() & "'"
 End Sub
 
-Public Sub UpdateLocalTables()
-    ' Load a local copy of all
-    
-    ' Tranlsations
-    CopyLocal "translation"
-    
-    ' Column settings
-    CopyLocal "columns"
-    
-    ' Users
-    CopyLocal "users"
-    
-    ' Permissions
-    CopyLocal "permission"
-    
-    ' Cross table settings
-    CopyLocal "role_permission"
+Public Sub UpdateRemotes()
+    UpdateTable "columns", "lcl_columns"
 End Sub

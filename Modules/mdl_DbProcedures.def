@@ -38,12 +38,12 @@ On Error GoTo Catch_Error
     Dim cs As ColumnStyle
     
     Set db = CurrentDb()
-    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM lcl_columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
     
     If Not rs(0) > 0 Then
-        db.Execute "INSERT INTO columns (user_id, table_id, column_id, column_width, column_hidden, column_order) VALUES('" & GetUserName() & "', '" & rfrm.name & "', '" & clmn & "', " & Width & ", " & CInt(hidden) & ", " & order & ")"
+        db.Execute "INSERT INTO lcl_columns (user_id, table_id, column_id, column_width, column_hidden, column_order) VALUES('" & GetUserName() & "', '" & rfrm.name & "', '" & clmn & "', " & Width & ", " & CInt(hidden) & ", " & order & ")"
     Else
-        db.Execute "UPDATE columns SET column_width = " & Width & ", column_hidden = " & CInt(hidden) & ", column_order = " & order & " WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'"
+        db.Execute "UPDATE lcl_columns SET column_width = " & Width & ", column_hidden = " & CInt(hidden) & ", column_order = " & order & " WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'"
     End If
     
     SetColumnStyle = True
@@ -93,7 +93,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function GetFieldValue(ByVal table As String, ByVal field As String, ByVal id As Integer) As Variant
+Public Function GetFieldValue(ByVal table As String, ByVal field As String, ByVal ID As Integer) As Variant
 '-------------------------------------------------------------------------------
 ' Function:         GetFieldValue
 ' Date:             2022 Feburary
@@ -108,7 +108,7 @@ On Error GoTo Catch_Error
     Dim rs As Recordset
     
     Set db = CurrentDb()
-    Set rs = db.OpenRecordset("SELECT " & field & " FROM " & table & " WHERE id = " & id)
+    Set rs = db.OpenRecordset("SELECT " & field & " FROM " & table & " WHERE id = " & ID)
     
     If rs(0) <> "" Then
         GetFieldValue = rs(0)
@@ -125,7 +125,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function SetFieldValue(ByVal table As String, ByVal field As String, ByVal id As Integer, ByVal value As Variant) As Boolean
+Public Function SetFieldValue(ByVal table As String, ByVal field As String, ByVal ID As Integer, ByVal value As Variant) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         GetFieldValue
 ' Date:             2022 Feburary
@@ -172,7 +172,11 @@ On Error GoTo Catch_Error
     Set db = CurrentDb()
     
     If key = "language" Then
-        Set rs = db.OpenRecordset("SELECT " & key & " FROM users WHERE id = " & GetUserId())
+        If TableExists("users") Then
+            Set rs = db.OpenRecordset("SELECT " & key & " FROM users WHERE id = " & GetUserId())
+        Else
+            GetDbSetting = "en"
+        End If
     Else
         Set rs = db.OpenRecordset("SELECT " & key & " FROM dbsetup")
     End If
@@ -188,7 +192,11 @@ Exit_Function:
     Set rs = Nothing
     Exit Function
 Catch_Error:
-    GetDbSetting = ""
+    If key = "language" Then
+        GetDbSetting = "en"
+    Else
+        GetDbSetting = ""
+    End If
     Resume Exit_Function
 End Function
 
@@ -232,6 +240,8 @@ Public Function GetUserName() As Variant
 On Error GoTo Catch_Error
     Dim cmd As ADODB.Command
     
+    If pUserName <> "" Then GoTo Exit_Function
+    
     Set cmd = New ADODB.Command
     
     cmd.ActiveConnection = ADODBConStr
@@ -262,6 +272,8 @@ Public Function GetUserId() As Variant
 On Error GoTo Catch_Error
     Dim db As database
     Dim rs As Recordset
+    
+    If pUserId <> 0 Then GoTo Exit_Function
     
     Set db = CurrentDb()
     Set rs = db.OpenRecordset("SELECT id FROM users WHERE name = '" & GetUserName() & "'", dbOpenDynaset, dbSeeChanges)
@@ -334,8 +346,8 @@ On Error GoTo Catch_Error
     Dim rsa, rsb, rsc As Recordset
     
     Set db = CurrentDb()
-    Set rsa = db.OpenRecordset("SELECT id FROM lcl_permission WHERE title = '" & title & "'", dbOpenDynaset, dbSeeChanges)
-    Set rsb = db.OpenRecordset("SELECT role FROM lcl_users WHERE name = '" & GetUserName & "'", dbOpenDynaset, dbSeeChanges)
+    Set rsa = db.OpenRecordset("SELECT id FROM permission WHERE title = '" & title & "'", dbOpenDynaset, dbSeeChanges)
+    Set rsb = db.OpenRecordset("SELECT role FROM users WHERE name = '" & GetUserName & "'", dbOpenDynaset, dbSeeChanges)
     
     If rsa.EOF Or rsa.BOF Or rsb.EOF Or rsb.BOF Then
         GetPermission = response
@@ -343,7 +355,7 @@ On Error GoTo Catch_Error
         Exit Function
     End If
     
-    Set rsc = db.OpenRecordset("SELECT * FROM lcl_role_permission WHERE role = " & rsb(0) & " AND permission = " & rsa(0), dbOpenDynaset, dbSeeChanges)
+    Set rsc = db.OpenRecordset("SELECT * FROM role_permission WHERE role = " & rsb(0) & " AND permission = " & rsa(0), dbOpenDynaset, dbSeeChanges)
     
     response.Create = rsc("can_create")
     response.Read = rsc("can_read")
@@ -362,7 +374,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function DuplicateRecord(ByVal table As String, ByVal id As Integer) As Boolean
+Public Function DuplicateRecord(ByVal table As String, ByVal ID As Integer) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         DuplicateRecord
 ' Date:             2022 January
@@ -382,7 +394,7 @@ On Error GoTo Catch_Error
     Select Case table
         Case "role"
             cmd.CommandText = "role_duplicate"
-            cmd.Parameters.Append cmd.CreateParameter("@pRole", adInteger, adParamInput, , id)
+            cmd.Parameters.Append cmd.CreateParameter("@pRole", adInteger, adParamInput, , ID)
             cmd.Execute
         Case Else
             MsgBox GetTranslation("msgbox", "duplication_not_supported", GetDbSetting("language")), vbExclamation, GetTranslation("msgbox", "vbExclamation", GetDbSetting("language"))
@@ -605,7 +617,7 @@ On Error GoTo Catch_Error
     Set rs = db.OpenRecordset("SELECT COUNT(*) FROM users WHERE name = '" & GetUserName() & "'", dbOpenDynaset, dbSeeChanges)
     Set rx = db.OpenRecordset("SELECT id FROM role WHERE administrative = 1", dbOpenDynaset, dbSeeChanges)
 
-    If rs(0) = 0 Then db.Execute "INSERT INTO users (name, role) VALUES('" & GetUserName() & "', " & rx!id & ")", dbOpenDynaset
+    If rs(0) = 0 Then db.Execute "INSERT INTO users (name, role) VALUES('" & GetUserName() & "', " & rx!ID & ")", dbOpenDynaset
     
     AddAdmin = True
      
@@ -655,7 +667,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function GetAuditTrail(ByVal table As String, ByVal id As Integer) As String
+Public Function GetAuditTrail(ByVal table As String, ByVal ID As Integer) As String
 '-------------------------------------------------------------------------------
 ' Function:         etAuditTrail
 ' Date:             2022 March
@@ -680,7 +692,7 @@ On Error GoTo Catch_Error
     cmd.CommandType = adCmdStoredProc
     cmd.CommandText = "audit_xml_diff"
     cmd.Parameters.Append cmd.CreateParameter("@table_name", adVarChar, adParamInput, 128, table)
-    cmd.Parameters.Append cmd.CreateParameter("@id", adInteger, adParamInput, , id)
+    cmd.Parameters.Append cmd.CreateParameter("@id", adInteger, adParamInput, , ID)
     
     Set rs = cmd.Execute()
     

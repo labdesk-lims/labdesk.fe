@@ -2,9 +2,14 @@
 <TableData>
   <Rows>
     <Row_1>
-      <field_0 name="id" binary="false" null="false" value="594"/>
+      <field_0 name="id" binary="false" null="false" value="601"/>
       <field_1 name="key" binary="false" null="false" value="0"/>
-      <field_2 name="value_txt" binary="false" null="false">labreport_single</field_2>
+      <field_2 name="value_txt" binary="false" null="false">sticker_pdf</field_2>
     </Row_1>
+    <Row_2>
+      <field_0 name="id" binary="false" null="false" value="602"/>
+      <field_1 name="key" binary="false" null="false" value="1"/>
+      <field_2 name="value_txt" binary="false" null="false">sticker_zebra_103x199</field_2>
+    </Row_2>
   </Rows>
 </TableData>

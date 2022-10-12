@@ -183,24 +183,8 @@ On Error GoTo Catch_Error
         CreateTable table, tableCopy
     End If
     
-    Set rstTemp = db.OpenRecordset(tableCopy, dbOpenDynaset)
-
-    Set rstTable = CurrentDb.OpenRecordset("Select * FROM " & table & " " & whereClause, dbOpenDynaset, dbSeeChanges, dbOptimistic)
-    'Check to make sure that the recordset is not empty
-    If Not (rstTable.BOF And rstTable.EOF) Or (rstTable.RecordCount > 0) Then
-        rstTable.MoveFirst
-        Do Until rstTable.EOF
-            rstTemp.AddNew
-            For lngi = 0 To rstTemp.Fields.count - 1
-                'Do not copy VarBinary fields
-                If rstTable(rstTemp(lngi).name).type <> dbLongBinary Then
-                    rstTemp(lngi) = rstTable(rstTemp(lngi).name)
-                End If
-            Next lngi
-            rstTemp.Update
-            rstTable.MoveNext
-        Loop
-    End If
+    'Copy data from table to copyTable
+    db.Execute "INSERT INTO " & tableCopy & " SELECT * FROM " & table & " " & whereClause, dbSeeChanges
     
     CopyTable = True
 

@@ -35,6 +35,10 @@ Public Const pRefresh = 60
 ' Remote tables to be linked
 Global DSNLessTables As Variant
 
+' User name and id of session
+Global pUserName As String
+Global pUserId As Integer
+
 ' -----------------------------------------------------------------------------------------------
 ' Any code goes from here
 ' -----------------------------------------------------------------------------------------------
@@ -203,9 +207,6 @@ On Error GoTo Catch_Error
         Err.Raise vbObjectError + 513, , "Connecting to database failed."
     End If
     
-    ' Update local tables
-    UpdateLocalTables
-    
     'Init application (initialization routine needs to be called just once for setup reasons)
     If GetFieldValue("dbsetup", "sysinit", 1) = True Then
         If MsgBox("Press OK to initialize application. This may take a while.", vbOKCancel, "Information") = vbOK Then
@@ -217,6 +218,9 @@ On Error GoTo Catch_Error
     
     'Clean Cache (stored in the user folder under pCacheFolder)
     CleanCache
+    
+    'Init local tables
+    InitLocales
     
     'Init context menus
     InitContextMenuStd

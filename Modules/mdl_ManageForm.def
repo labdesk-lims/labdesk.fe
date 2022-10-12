@@ -185,6 +185,7 @@ On Error GoTo Catch_Error
     If Not GetPermission(rfrm.name).Update Or readOnly Then rfrm.Caption = rfrm.Caption & " " & GetTranslation("form", "label_read_only", GetDbSetting("language"))
     
     'Prepare temporary table for actual session and set it as object source
+    If TableExists(GetTableNameFromGuid(tmpGuid)) Then CurrentDb.TableDefs.Delete GetTableNameFromGuid(tmpGuid)
     CreateTable table, GetTableNameFromGuid(tmpGuid)
     rfrm.RecordSource = GetTableNameFromGuid(tmpGuid)
     
@@ -192,6 +193,7 @@ On Error GoTo Catch_Error
     If whereClause <> "" Then CopyTable table, GetTableNameFromGuid(tmpGuid), whereClause
     If TableExists(GetCpyTableNameFromGuid(tmpGuid)) Then CurrentDb.TableDefs.Delete GetCpyTableNameFromGuid(tmpGuid)
     CopyTable GetTableNameFromGuid(tmpGuid), GetCpyTableNameFromGuid(tmpGuid)
+    
     rfrm.Requery
 
     ConfigAsyncForm = True
@@ -239,6 +241,7 @@ On Error GoTo Catch_Error
     TranslateForm rfrm.Form, GetDbSetting("language")
     
     'Prepare temporary table for actual session and set it as object source
+    If TableExists(GetTableNameFromGuid(tmpGuid)) Then CurrentDb.TableDefs.Delete GetTableNameFromGuid(tmpGuid)
     CreateTable table, GetTableNameFromGuid(tmpGuid)
     rfrm.RecordSource = GetTableNameFromGuid(tmpGuid)
     
