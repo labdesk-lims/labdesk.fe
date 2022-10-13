@@ -72,13 +72,13 @@ On Error GoTo Catch_Error
             End If
         Next
     Else
-        For Each ctrl In rfrm.Controlss
+        For Each ctrl In rfrm.Controls
             If ctrl.ControlType = acSubform Then
                 rfrm.Form(ctrl.name).Form.visible = False
             End If
         Next
     End If
-    
+
     ' Adjust to best fit width
     For Each ctrl In rfrm.Controls
         If (ctrl.ControlType = acTextBox Or ctrl.ControlType = acComboBox) Then
@@ -575,7 +575,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - SyncFormAddRecord): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlManageFormEvents - SyncFormAddRecord): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 
@@ -586,7 +586,7 @@ End Sub
 
 Public Sub SyncFormSaveFilter(rfrm As Form)
     ' Will call the form to save the filter settings
-    If rfrm.FilterOn And Not IsNull(rfrm.Filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
+    If rfrm.FilterOn And Not IsNull(rfrm.filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
 End Sub
 
 Public Sub SyncFormApplyFilter(rfrm As Form)
@@ -699,7 +699,7 @@ End Sub
 
 Public Sub SyncSubFormSaveFilter(rfrm As Form)
     ' Open form to save filter settings
-    If rfrm.FilterOn And Not IsNull(rfrm.Filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
+    If rfrm.FilterOn And Not IsNull(rfrm.filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
 End Sub
 
 Public Sub SyncSubFormApplyFilter(rfrm As Form)
