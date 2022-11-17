@@ -1491,7 +1491,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_cvalidate_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">cfield_id</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="600"/>
+      <field_4 name="column_width" binary="false" null="false" value="1530"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="2"/>
     </Row_166>
@@ -1500,7 +1500,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_cvalidate_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">analysis_id</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1185"/>
+      <field_4 name="column_width" binary="false" null="false" value="1530"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="4"/>
     </Row_167>
@@ -1518,7 +1518,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_cvalidate_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">cfield</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1935"/>
+      <field_4 name="column_width" binary="false" null="false" value="-1"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_169>
@@ -1527,7 +1527,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_cvalidate_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">value</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="960"/>
+      <field_4 name="column_width" binary="false" null="false" value="-1"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="6"/>
     </Row_170>
@@ -1536,7 +1536,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_cvalidate_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">analysis_title</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1260"/>
+      <field_4 name="column_width" binary="false" null="false" value="-1"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="5"/>
     </Row_171>
@@ -1545,7 +1545,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_cfield_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">id</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="615"/>
+      <field_4 name="column_width" binary="false" null="false" value="1701"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="1"/>
     </Row_172>
@@ -1554,7 +1554,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_cfield_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">title</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="840"/>
+      <field_4 name="column_width" binary="false" null="false" value="3000"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="2"/>
     </Row_173>
@@ -1563,7 +1563,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_cfield_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">unit</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="810"/>
+      <field_4 name="column_width" binary="false" null="false" value="3000"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_174>
@@ -1581,7 +1581,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_cfield_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">analysis_id</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1185"/>
+      <field_4 name="column_width" binary="false" null="false" value="-1"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="4"/>
     </Row_176>
@@ -1590,7 +1590,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_cfield_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">Kombinationsfeld21</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1260"/>
+      <field_4 name="column_width" binary="false" null="false" value="-1"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="5"/>
     </Row_177>
@@ -1599,7 +1599,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_condition_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">id</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="615"/>
+      <field_4 name="column_width" binary="false" null="false" value="1701"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="1"/>
     </Row_178>
@@ -1608,7 +1608,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_condition_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">title</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="840"/>
+      <field_4 name="column_width" binary="false" null="false" value="3000"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="2"/>
     </Row_179>
@@ -1617,7 +1617,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_condition_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">description</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1485"/>
+      <field_4 name="column_width" binary="false" null="false" value="3000"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="4"/>
     </Row_180>
@@ -1626,7 +1626,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_condition_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">attributes</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1365"/>
+      <field_4 name="column_width" binary="false" null="false" value="3000"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="5"/>
     </Row_181>
@@ -1644,7 +1644,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_condition_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">type</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="870"/>
+      <field_4 name="column_width" binary="false" null="false" value="-1"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_183>
@@ -1662,7 +1662,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_uncertainty_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">value_min</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="780"/>
+      <field_4 name="column_width" binary="false" null="false" value="1500"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="2"/>
     </Row_185>
@@ -1671,7 +1671,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_uncertainty_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">value_max</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="810"/>
+      <field_4 name="column_width" binary="false" null="false" value="1530"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_186>
@@ -1680,7 +1680,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_uncertainty_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">uncertainty</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1500"/>
+      <field_4 name="column_width" binary="false" null="false" value="1590"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="4"/>
     </Row_187>
@@ -1707,7 +1707,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_attribute_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">title</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="4568"/>
+      <field_4 name="column_width" binary="false" null="false" value="915"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="2"/>
     </Row_190>
@@ -1716,7 +1716,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_attribute_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">value</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="960"/>
+      <field_4 name="column_width" binary="false" null="false" value="2685"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_191>
@@ -1734,7 +1734,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_method_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">id</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="615"/>
+      <field_4 name="column_width" binary="false" null="false" value="-2"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="1"/>
     </Row_193>
@@ -1752,7 +1752,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_method_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">method</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1350"/>
+      <field_4 name="column_width" binary="false" null="false" value="-2"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="2"/>
     </Row_195>
@@ -2629,5 +2629,59 @@
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_292>
+    <Row_293>
+      <field_0 name="id" binary="false" null="false" value="12672"/>
+      <field_1 name="user_id" binary="false" null="false">sa</field_1>
+      <field_2 name="table_id" binary="false" null="false">smptype</field_2>
+      <field_3 name="column_id" binary="false" null="false">id</field_3>
+      <field_4 name="column_width" binary="false" null="false" value="630"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
+      <field_6 name="column_order" binary="false" null="false" value="1"/>
+    </Row_293>
+    <Row_294>
+      <field_0 name="id" binary="false" null="false" value="12673"/>
+      <field_1 name="user_id" binary="false" null="false">sa</field_1>
+      <field_2 name="table_id" binary="false" null="false">smptype</field_2>
+      <field_3 name="column_id" binary="false" null="false">title</field_3>
+      <field_4 name="column_width" binary="false" null="false" value="1478"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
+      <field_6 name="column_order" binary="false" null="false" value="2"/>
+    </Row_294>
+    <Row_295>
+      <field_0 name="id" binary="false" null="false" value="12674"/>
+      <field_1 name="user_id" binary="false" null="false">sa</field_1>
+      <field_2 name="table_id" binary="false" null="false">smptype</field_2>
+      <field_3 name="column_id" binary="false" null="false">description</field_3>
+      <field_4 name="column_width" binary="false" null="false" value="1335"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
+      <field_6 name="column_order" binary="false" null="false" value="3"/>
+    </Row_295>
+    <Row_296>
+      <field_0 name="id" binary="false" null="false" value="12675"/>
+      <field_1 name="user_id" binary="false" null="false">sa</field_1>
+      <field_2 name="table_id" binary="false" null="false">method_smptype_sbf</field_2>
+      <field_3 name="column_id" binary="false" null="false">id</field_3>
+      <field_4 name="column_width" binary="false" null="false" value="495"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
+      <field_6 name="column_order" binary="false" null="false" value="1"/>
+    </Row_296>
+    <Row_297>
+      <field_0 name="id" binary="false" null="false" value="12676"/>
+      <field_1 name="user_id" binary="false" null="false">sa</field_1>
+      <field_2 name="table_id" binary="false" null="false">method_smptype_sbf</field_2>
+      <field_3 name="column_id" binary="false" null="false">method</field_3>
+      <field_4 name="column_width" binary="false" null="false" value="1020"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
+      <field_6 name="column_order" binary="false" null="false" value="2"/>
+    </Row_297>
+    <Row_298>
+      <field_0 name="id" binary="false" null="false" value="12677"/>
+      <field_1 name="user_id" binary="false" null="false">sa</field_1>
+      <field_2 name="table_id" binary="false" null="false">method_smptype_sbf</field_2>
+      <field_3 name="column_id" binary="false" null="false">smptype</field_3>
+      <field_4 name="column_width" binary="false" null="false" value="1838"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
+      <field_6 name="column_order" binary="false" null="false" value="3"/>
+    </Row_298>
   </Rows>
 </TableData>

@@ -190,7 +190,7 @@ On Error GoTo Catch_Error
     DSNLessTables = Array( _
     "filter", "translation", "setup", _
     "contact", "laboratory", "customer", "manufacturer", "smppoint", "smpcontainer", "smpmatrix", "material", _
-    "cfield", "cvalidate", "condition", "uncertainty", "analysis", "attribute", "method_analysis", "method", "qualification", "instrument_method", "department", "workplace", "instrument", "certificate", "attachment", "instype", "supplier", _
+    "cfield", "cvalidate", "condition", "uncertainty", "analysis", "attribute", "method_analysis", "method_smptype", "method", "qualification", "instrument_method", "department", "workplace", "instrument", "certificate", "attachment", "instype", "supplier", _
     "request", "measurement_cfield", "measurement", "measurement_condition", "view_request_measurement", _
     "profile_analysis", "profile", "request_analysis", "step", "state", "workflow", "smptype", "smpcondition", "smppreservation", "priority", "technique", _
     "batch", "btcposition", "storage", "strposition", "handbook", _
