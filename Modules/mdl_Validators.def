@@ -28,7 +28,7 @@ On Error GoTo Catch_Error
     objRegExp.global = True
     objRegExp.Pattern = "^([a-zA-Z0-9_\-\.]+)@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$"
     
-    blnIsValidEmail = objRegExp.test(strEmailAddress)
+    blnIsValidEmail = objRegExp.Test(strEmailAddress)
     ValidEmailAddress = blnIsValidEmail
       
 Exit_Function:
@@ -80,7 +80,7 @@ On Error GoTo Catch_Error
     
     'Check to see if any illegal characters have been used
     objRegExp.Pattern = "[&lt;&gt;:""/\\\|\?\*]"
-    IsValidFolderName = objRegExp.test(sFolderName)
+    IsValidFolderName = objRegExp.Test(sFolderName)
     
     'Ensure the folder name does end with a . or a blank space
     If Right(sFolderName, 1) = "." Then IsValidFolderName = False
@@ -166,19 +166,20 @@ Catch_Error:
 End Function
 
 Public Function SelectReport() As Variant
-    Dim db As database
-    Dim a, s As Variant
-    Dim i As Integer
+    Dim rpt As AccessObject, dB As Object, a As ArrayList, i As Integer, s As Variant
     
-    Set db = CurrentDb()
+    Set a = New ArrayList
     
-    db.Execute "DELETE * FROM keyvalue"
+    Set dB = Application.CurrentProject
+    For Each rpt In dB.AllReports
+        If InStr(1, rpt.name, pReportTemplate, vbTextCompare) = 1 Then a.Add rpt.name
+    Next rpt
     
-    a = Split(pReportTemplate, ",")
-    
+    CurrentDb.Execute "DELETE * FROM keyvalue"
+     
     i = 0
     For Each s In a
-        db.Execute "INSERT INTO keyvalue (key, value_txt) VALUES(" & i & ",'" & s & "')"
+        CurrentDb.Execute "INSERT INTO keyvalue (key, value_txt) VALUES(" & i & ",'" & s & "')"
         i = i + 1
     Next
     
@@ -194,19 +195,20 @@ Public Function SelectReport() As Variant
 End Function
 
 Public Function SelectLabel() As Variant
-    Dim db As database
-    Dim a, s As Variant
-    Dim i As Integer
+    Dim rpt As AccessObject, dB As Object, a As ArrayList, i As Integer, s As Variant
     
-    Set db = CurrentDb()
+    Set a = New ArrayList
     
-    db.Execute "DELETE * FROM keyvalue"
+    Set dB = Application.CurrentProject
+    For Each rpt In dB.AllReports
+        If InStr(1, rpt.name, pLabelTemplate, vbTextCompare) = 1 Then a.Add rpt.name
+    Next rpt
     
-    a = Split(pLabelTemplate, ",")
-    
+    CurrentDb.Execute "DELETE * FROM keyvalue"
+     
     i = 0
     For Each s In a
-        db.Execute "INSERT INTO keyvalue (key, value_txt) VALUES(" & i & ",'" & s & "')"
+        CurrentDb.Execute "INSERT INTO keyvalue (key, value_txt) VALUES(" & i & ",'" & s & "')"
         i = i + 1
     Next
     

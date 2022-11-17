@@ -14,11 +14,11 @@ Private Function LastChanged(ByVal table As String) As Variant
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
 
-    Dim db As database
+    Dim dB As database
     Dim rs As Recordset
     
-    Set db = CurrentDb()
-    Set rs = db.OpenRecordset("SELECT changed_at FROM audit WHERE table_name = '" & table & "' ORDER BY changed_at", dbOpenDynaset, dbSeeChanges)
+    Set dB = CurrentDb()
+    Set rs = dB.OpenRecordset("SELECT changed_at FROM audit WHERE table_name = '" & table & "' ORDER BY changed_at", dbOpenDynaset, dbSeeChanges)
     
     If Not rs.EOF Then
         LastChanged = rs(0)

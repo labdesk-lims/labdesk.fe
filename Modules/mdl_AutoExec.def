@@ -20,8 +20,8 @@ Public Const pAppTitle = "LABDESK LIMS"
 ' MAJOR-MINOR-PATCH
 Public Const pBeVersion = "v1.0.0" 'Backend version
 Public Const pFeVersion = "v1.0.0" 'Frontend version
-Public Const pReportTemplate = "labreport_single" 'Separate report names using comma (e.g A,B,C,...)
-Public Const pLabelTemplate = "sticker_pdf,sticker_zebra_103x199" 'Separate label names using comma (e.g A,B,C,...)
+Public Const pReportTemplate = "RPT-" 'Identifier for selectable reports
+Public Const pLabelTemplate = "LBL-" 'Identifier for selectable labels
 
 ' Cache folder setting
 Public Const pCacheFolder = ".labdesk" 'The local user folder will be used for labdesk
@@ -114,14 +114,14 @@ Function DisableShift()
 
 On Error GoTo errDisableShift
 
-Dim db As dao.database
+Dim dB As dao.database
 Dim prop As dao.Property
 Const conPropNotFound = 3270
 
-Set db = CurrentDb()
+Set dB = CurrentDb()
 
 'This next line disables the shift key on startup.
-db.Properties("AllowByPassKey") = False
+dB.Properties("AllowByPassKey") = False
 
 'The function is successful.
 Exit Function
@@ -130,9 +130,9 @@ errDisableShift:
 'The first part of this error routine creates the "AllowByPassKey
 'property if it does not exist.
 If Err = conPropNotFound Then
-Set prop = db.CreateProperty("AllowByPassKey", _
+Set prop = dB.CreateProperty("AllowByPassKey", _
 dbBoolean, False)
-db.Properties.Append prop
+dB.Properties.Append prop
 Resume Next
 Else
 MsgBox "Function 'DisableShift' did not complete successfully."
@@ -151,14 +151,14 @@ Function EnableShift()
 
 On Error GoTo errEnableShift
 
-Dim db As dao.database
+Dim dB As dao.database
 Dim prop As dao.Property
 Const conPropNotFound = 3270
 
-Set db = CurrentDb()
+Set dB = CurrentDb()
 
 'This next line of code disables the SHIFT key on startup.
-db.Properties("AllowByPassKey") = True
+dB.Properties("AllowByPassKey") = True
 
 'function successful
 Exit Function
@@ -167,9 +167,9 @@ errEnableShift:
 'The first part of this error routine creates the "AllowByPassKey
 'property if it does not exist.
 If Err = conPropNotFound Then
-Set prop = db.CreateProperty("AllowByPassKey", _
+Set prop = dB.CreateProperty("AllowByPassKey", _
 dbBoolean, True)
-db.Properties.Append prop
+dB.Properties.Append prop
 Resume Next
 Else
 MsgBox "Function 'EnableShift' did not complete successfully."

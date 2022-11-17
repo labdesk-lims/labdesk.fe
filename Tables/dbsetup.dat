@@ -3,7 +3,7 @@
   <Rows>
     <Row_1>
       <field_0 name="ID" binary="false" null="false" value="1"/>
-      <field_1 name="server" binary="false" null="false">169.254.196.101\MSSQL</field_1>
+      <field_1 name="server" binary="false" null="false">169.254.64.88\MSSQL</field_1>
       <field_2 name="database" binary="false" null="false">labdesk</field_2>
       <field_3 name="user" binary="false" null="false">sa</field_3>
       <field_4 name="password" binary="false" null="false">260779</field_4>

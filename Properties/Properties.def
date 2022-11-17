@@ -49,6 +49,9 @@
   <SummaryInfo context="2">
     <Title name="Title" type="10" value="Database1" sort="3"/>
   </SummaryInfo>
+  <ActiveVBProject context="4">
+    <Name name="Name" type="10" value="labdesk" sort="5"/>
+  </ActiveVBProject>
   <GetOptions context="5">
     <ActiveServerPagesSessionTimeout name="Active Server Pages Session Timeout" type="0" value="" sort="6"/>
     <ActiveServerPagesURL name="Active Server Pages URL" type="1" value="" sort="6"/>
@@ -118,7 +121,7 @@
     <LastUser name="Last User" type="65" value="" sort="6"/>
     <LeftMargin name="Left Margin" type="66" value="0,635cm" sort="6"/>
     <LogNameAutoCorrectChanges name="Log Name AutoCorrect Changes" type="67" value="0" sort="6"/>
-    <Maximized name="Maximized" type="68" value="0" sort="6"/>
+    <Maximized name="Maximized" type="68" value="-1" sort="6"/>
     <MoveAfterEnter name="Move After Enter" type="69" value="1" sort="6"/>
     <MoveEnclosedControls name="Move Enclosed Controls" type="70" value="0" sort="6"/>
     <NavPaneCategory name="NavPane Category" type="71" value="0" sort="6"/>
@@ -192,6 +195,14 @@
       <GUID value="{4AC9E1DA-5BAD-4AC7-86E3-24F4CDCECA28}"/>
       <Major value="12"/>
       <Minor value="0"/>
+    </Reference>
+    <Reference>
+      <Name value="mscorlib 2.4"/>
+      <FullPath value="C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb"/>
+      <Position value="12"/>
+      <GUID value="{BED7F4EA-1A96-11D2-8F08-00A0C9A6186D}"/>
+      <Major value="2"/>
+      <Minor value="4"/>
     </Reference>
     <Reference>
       <Name value="MSForms 2.0"/>
