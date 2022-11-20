@@ -861,3 +861,125 @@ Catch_Error:
     MsgBox "Error (mdlDbProcedures - PoolMeasurement): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function
+
+Public Function SetTableFlag(ByVal username As String, ByVal tablename As String, ByVal tableid As Integer, Optional ByVal alert As Boolean = False) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         SetTableFlag
+' Date:             2022 November
+' Purpose:          Set a flag that specific record in table is in use.
+'                   Set alert to true if user needs to get notified.
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim dB As database
+    
+    Set dB = CurrentDb()
+    dB.Execute "INSERT INTO tableflag (user_name, table_name, table_id, alert) VALUES ('" & username & "', '" & tablename & "', " & tableid & ", " & CInt(alert) & ")"
+
+    SetTableFlag = True
+
+Exit_Function:
+    Set dB = Nothing
+    Exit Function
+Catch_Error:
+    SetTableFlag = False
+    MsgBox "Error (mdlDbProcedures - SetTableFlag): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function GetTableFlag(ByVal tablename As String, ByVal tableid As Integer) As Variant
+'-------------------------------------------------------------------------------
+' Function:         GetTableFlag
+' Date:             2022 November
+' Purpose:          Gets the flag of a specific record.
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim dB As database
+    Dim rs As Recordset
+    
+    Set dB = CurrentDb()
+    Set rs = dB.OpenRecordset("SELECT user_name FROM tableflag WHERE table_name = '" & tablename & "' AND table_id = " & tableid, dbOpenDynaset, dbSeeChanges)
+    
+    GetTableFlag = rs(0)
+
+Exit_Function:
+    Set dB = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    GetTableFlag = Null
+    'MsgBox "Error (mdlDbProcedures - GetTableFlag): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function GetTableFlagAlert(ByVal tablename As String, ByVal tableid As Integer) As Variant
+'-------------------------------------------------------------------------------
+' Function:         GetTableFlagAlert
+' Date:             2022 November
+' Purpose:          Gets the alert flag of a specific record.
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim dB As database
+    Dim rs As Recordset
+    
+    Set dB = CurrentDb()
+    Set rs = dB.OpenRecordset("SELECT count(*) FROM tableflag WHERE alert = 0 AND table_name = '" & tablename & "' AND table_id = " & tableid, dbOpenDynaset, dbSeeChanges)
+    
+    If Not rs.EOF Then
+        If rs(0) > 0 Then GetTableFlagAlert = False Else GetTableFlagAlert = True
+    End If
+
+Exit_Function:
+    Set dB = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    GetTableFlagAlert = Null
+    'MsgBox "Error (mdlDbProcedures - GetTableFlag): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function SetTableFlagAlert(ByVal tablename As String, ByVal tableid As Integer) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         SetTableFlagAlert
+' Date:             2022 November
+' Purpose:          Gets the alert flag of a specific record.
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim dB As database
+    
+    Set dB = CurrentDb()
+    dB.Execute ("UPDATE tableflag SET alert = 1 WHERE table_name = '" & tablename & "' AND table_id = " & tableid)
+
+    SetTableFlagAlert = True
+
+Exit_Function:
+    Set dB = Nothing
+    Exit Function
+Catch_Error:
+    SetTableFlagAlert = False
+    'MsgBox "Error (mdlDbProcedures - GetTableFlag): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function RemoveTableFlag(ByVal username As String, ByVal tablename As String, ByVal tableid As Integer) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         RemoveTableFlag
+' Date:             2022 November
+' Purpose:          Remove the flag for table in use.
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim dB As database
+    
+    Set dB = CurrentDb()
+    dB.Execute "DELETE FROM tableflag WHERE user_name = '" & username & "' AND table_name = '" & tablename & "' AND table_id = " & tableid, dbSeeChanges
+
+    RemoveTableFlag = True
+
+Exit_Function:
+    Set dB = Nothing
+    Exit Function
+Catch_Error:
+    RemoveTableFlag = False
+    'MsgBox "Error (mdlDbProcedures - RemoveTableFlag): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function

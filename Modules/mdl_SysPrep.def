@@ -8,6 +8,8 @@ Private Sub InitTranslations()
     GetTranslation "tooltip", "click_to_upload", GetDbSetting("language")
     GetTranslation "msgbox", "entries_not_valid", GetDbSetting("language")
     GetTranslation "msgbox", "record_deactivated", GetDbSetting("language")
+    GetTranslation "msgbox", "tableflag_set", GetDbSetting("language")
+    GetTranslation "msgbox", "tableflag_readonly", GetDbSetting("language")
     
     ' Translations of form certificate_edit
     GetTranslation "certificate_edit", "creation_date_wrong", GetDbSetting("language")

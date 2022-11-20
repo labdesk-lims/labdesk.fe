@@ -199,7 +199,8 @@ On Error GoTo Catch_Error
     "users", "role", "role_permission", "permission", "traversal", "audit", "spa", "columns", _
     "view_labreport_details", _
     "view_attachment_revision", _
-    "mailqueue" _
+    "mailqueue", _
+    "tableflag" _
     )
     
     'Try to attach tables

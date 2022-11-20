@@ -54,9 +54,30 @@ On Error GoTo Catch_Error
     ' Hide form during adjustment are made
     rfrm.visible = False
     rfrm.tmpGuid = CreateGuid()
-   
+    
+    ' Remove stale flags for actual user on table and subsquent id
+    If Not IsNull(rfrm.ID) Then RemoveTableFlag GetUserName, rfrm.DataTable, rfrm.ID
+    
+    'Skip table flag check if new record is created
+    If IsNull(rfrm.ID) Then GoTo Skip_Check
+    
+    ' Check if requested record is already in use by another user
+    If Not IsNull(GetTableFlag(rfrm.DataTable, rfrm.ID)) And Not GetTableFlagAlert(rfrm.DataTable, rfrm.ID) Then
+        If MsgBox(GetTranslation("msgbox", "tableflag_set", GetDbSetting("language")), vbYesNo, GetTranslation("msgbox", "vbInformation", GetDbSetting("language")) & " - " & GetTableFlag(rfrm.DataTable, rfrm.ID)) = vbYes Then
+            ' Set alert flag
+            SetTableFlagAlert rfrm.DataTable, rfrm.ID
+        End If
+    End If
+    
+Skip_Check:
+    
     ' Check read only condidtion
-    If Not GetPermission(rfrm.name).Update Or rfrm.Form_Init_Individual_Permission() Then readOnly = True
+    If Not GetPermission(rfrm.name).Update Or rfrm.Form_Init_Individual_Permission() Or Not GetTableFlagAlert(rfrm.DataTable, rfrm.ID) Then
+        readOnly = True
+    Else
+        ' Block record as in use by actual user
+        SetTableFlag GetUserName, rfrm.DataTable, rfrm.ID
+    End If
     
     ' Config main for
     If ConfigAsyncForm(rfrm.Form, rfrm.DataTable, rfrm.tmpGuid, , readOnly, rfrm.whereClause) = False Then
@@ -189,6 +210,9 @@ On Error GoTo Catch_Error
     Dim subFormChanged As Boolean
     Dim subFormValidity As Boolean
     
+    ' Remove flag to unblock record
+    If Not IsNull(rfrm.ID) Then RemoveTableFlag GetUserName, rfrm.DataTable, rfrm.ID
+    
     ' Check for changes on subforms
     For Each ctrl In rfrm.Controls
         If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
@@ -219,6 +243,14 @@ On Error GoTo Catch_Error
         End If
     End If
     
+    ' Check if record was taken over by antoher user and prevent update if applies
+    If Not IsNull(rfrm.ID) Then
+        If Not GetTableFlagAlert(rfrm.DataTable, rfrm.ID) And GetTableFlag(rfrm.DataTable, rfrm.ID) <> GetUserName And rfrm.FormChanged Or subFormChanged And Not rfrm.ForceClose Then
+            MsgBox GetTranslation("msgbox", "tableflag_readonly", GetDbSetting("language")), vbInformation, GetTranslation("msgbox", "vbInformation", GetDbSetting("language")) & " - " & GetTableFlag(rfrm.DataTable, rfrm.ID)
+            GoTo Skip_update
+        End If
+    End If
+    
     ' Save all changes for main form and subforms
     If rfrm.FormChanged Or subFormChanged And Not rfrm.ForceClose Then
         If MsgBox(GetTranslation("msgbox", "save_record", GetDbSetting("language")), vbYesNo, GetTranslation("msgbox", "vbYesNo", GetDbSetting("language"))) = vbYes Then
@@ -231,9 +263,11 @@ On Error GoTo Catch_Error
             Next
         End If
     End If
-    
+
     ' Call individual form unload routines
     rfrm.Form_Unload_Individual
+    
+Skip_update:
     
     ' Requery the listing form with the latest version of all records
     For Each myForm In Split(rfrm.RefreshForm, ",")
@@ -283,18 +317,22 @@ On Error GoTo Catch_Error
         Exit Sub
     End If
     
-    ' Save all changes for main form and subforms
-    If rfrm.FormChanged Or subFormChanged And Not rfrm.ForceClose Then
-        UpdateTable rfrm.DataTable, GetTableNameFromGuid(rfrm.tmpGuid)
-        For Each ctrl In rfrm.Controls
-                If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
-                    AsyncSubFormSaveData rfrm.Form(ctrl.name).Form
-                End If
-            Next
+    ' Check if record was taken over by antoher user and prevent update if applies
+    If Not IsNull(rfrm.ID) Then
+        If Not GetTableFlagAlert(rfrm.DataTable, rfrm.ID) And GetTableFlag(rfrm.DataTable, rfrm.ID) <> GetUserName And rfrm.FormChanged Or subFormChanged And Not rfrm.ForceClose Then
+            MsgBox GetTranslation("msgbox", "tableflag_readonly", GetDbSetting("language")), vbInformation, GetTranslation("msgbox", "vbInformation", GetDbSetting("language")) & " - " & GetTableFlag(rfrm.DataTable, rfrm.ID)
+            GoTo Skip_update
+        End If
     End If
     
+    ' Save all changes for main form and subforms
+    UpdateTable rfrm.DataTable, GetTableNameFromGuid(rfrm.tmpGuid)
+
     ' Call individual form unload routines
     rfrm.Form_Unload_Individual
+    
+Skip_update:
+    
 
 Exit_Function:
     Exit Sub

@@ -1623,7 +1623,7 @@
       <field_1 name="container" binary="false" null="false">instrument_method_sbf</field_1>
       <field_2 name="item" binary="false" null="false">applies_</field_2>
       <field_3 name="en" binary="false" null="false">Applies</field_3>
-      <field_4 name="de" binary="false" null="false">Gilt</field_4>
+      <field_4 name="de" binary="false" null="false">Anwenden</field_4>
     </Row_232>
     <Row_233>
       <field_0 name="id" binary="false" null="false" value="1391"/>
@@ -2855,7 +2855,7 @@
       <field_1 name="container" binary="false" null="false">method_analysis_sbf</field_1>
       <field_2 name="item" binary="false" null="false">applies_</field_2>
       <field_3 name="en" binary="false" null="false">Applies</field_3>
-      <field_4 name="de" binary="false" null="false">Gilt</field_4>
+      <field_4 name="de" binary="false" null="false">Anwenden</field_4>
     </Row_408>
     <Row_409>
       <field_0 name="id" binary="false" null="false" value="1569"/>
