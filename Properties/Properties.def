@@ -9,6 +9,7 @@
     <AllowSpecialKeys name="AllowSpecialKeys" type="1" value="True" sort="1"/>
     <AllowToolbarChanges name="AllowToolbarChanges" type="1" value="True" sort="1"/>
     <ANSIQueryMode name="ANSI Query Mode" type="4" value="0" sort="1"/>
+    <AppIcon name="AppIcon" type="10" value="C:\Users\lkoge\Documents\GitHub\labdesk.fe\assets\img\icon.ico" sort="1"/>
     <AppTitle name="AppTitle" type="10" value="LABDESK LIMS" sort="1"/>
     <AutoCompact name="Auto Compact" type="4" value="0" sort="1"/>
     <CheckTruncatedNumFields name="CheckTruncatedNumFields" type="4" value="1" sort="1"/>
@@ -21,7 +22,7 @@
     <NavPaneClosed name="NavPane Closed" type="4" value="0" sort="1"/>
     <NavPaneSortBy name="NavPane Sort By" type="4" value="1" sort="1"/>
     <NavPaneViewBy name="NavPane View By" type="4" value="0" sort="1"/>
-    <NavPaneWidth name="NavPane Width" type="4" value="540" sort="1"/>
+    <NavPaneWidth name="NavPane Width" type="4" value="588" sort="1"/>
     <NeverCache name="Never Cache" type="4" value="0" sort="1"/>
     <PicturePropertyStorageFormat name="Picture Property Storage Format" type="4" value="0" sort="1"/>
     <ProjVer name="ProjVer" type="3" value="142" sort="1"/>
@@ -42,7 +43,7 @@
     <UseBigIntforlinkingandimportingdata name="Use BigInt for linking and importing data" type="4" value="0" sort="1"/>
     <UseDateTime2forlinkingandimportingdata name="Use DateTime2 for linking and importing data" type="4" value="0" sort="1"/>
     <UseMicrosoftAccess2007compatiblecache name="Use Microsoft Access 2007 compatible cache" type="4" value="0" sort="1"/>
-    <UseAppIconForFrmRpt name="UseAppIconForFrmRpt" type="1" value="False" sort="1"/>
+    <UseAppIconForFrmRpt name="UseAppIconForFrmRpt" type="1" value="True" sort="1"/>
     <UseMDIMode name="UseMDIMode" type="2" value="0" sort="1"/>
     <WebDesignMode name="WebDesignMode" type="2" value="0" sort="1"/>
   </CurrentDb>
@@ -100,7 +101,7 @@
     <EnableFontSwitching name="Enable Font Switching" type="47" value="0" sort="6"/>
     <EnableMRUFileList name="Enable MRU File List" type="48" value="-1" sort="6"/>
     <ErrorTrapping name="Error Trapping" type="49" value="2" sort="6"/>
-    <FDCategory name="FDCategory" type="50" value="4" sort="6"/>
+    <FDCategory name="FDCategory" type="50" value="2" sort="6"/>
     <FollowedHyperlinkColor name="Followed Hyperlink Color" type="51" value="5" sort="6"/>
     <FormTemplate name="Form Template" type="52" value="Normal" sort="6"/>
     <FourDigitYearFormatting name="Four-Digit Year Formatting" type="53" value="0" sort="6"/>
@@ -126,7 +127,7 @@
     <NavPaneClosed name="NavPane Closed" type="73" value="0" sort="6"/>
     <NavPaneSortBy name="NavPane Sort By" type="74" value="1" sort="6"/>
     <NavPaneViewBy name="NavPane View By" type="75" value="0" sort="6"/>
-    <NavPaneWidth name="NavPane Width" type="76" value="540" sort="6"/>
+    <NavPaneWidth name="NavPane Width" type="76" value="588" sort="6"/>
     <NewDatabaseSortOrder name="New Database Sort Order" type="77" value="1033" sort="6"/>
     <NumberofUpdateRetries name="Number of Update Retries" type="78" value="2" sort="6"/>
     <ObjectsSnaptoGrid name="Objects Snap to Grid" type="79" value="-1" sort="6"/>
@@ -136,7 +137,7 @@
     <Password name="Password" type="83" value="" sort="6"/>
     <PerformNameAutoCorrect name="Perform Name AutoCorrect" type="84" value="-1" sort="6"/>
     <PrefsMigrated name="Prefs Migrated" type="85" value="-1" sort="6"/>
-    <ProjectName name="Project Name" type="86" value="labdesk" sort="6"/>
+    <ProjectName name="Project Name" type="86" value="Labdesk" sort="6"/>
     <ProvideFeedbackwithSound name="Provide Feedback with Sound" type="87" value="0" sort="6"/>
     <RefreshIntervalsec name="Refresh Interval (sec)" type="88" value="60" sort="6"/>
     <ReportTemplate name="Report Template" type="89" value="Normal" sort="6"/>

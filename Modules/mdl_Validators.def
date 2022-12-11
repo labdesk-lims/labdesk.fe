@@ -166,12 +166,12 @@ Catch_Error:
 End Function
 
 Public Function SelectReport() As Variant
-    Dim rpt As AccessObject, dB As Object, a As ArrayList, i As Integer, s As Variant
+    Dim rpt As AccessObject, db As Object, a As ArrayList, i As Integer, s As Variant
     
     Set a = New ArrayList
     
-    Set dB = Application.CurrentProject
-    For Each rpt In dB.AllReports
+    Set db = Application.CurrentProject
+    For Each rpt In db.AllReports
         If InStr(1, rpt.name, pReportTemplate, vbTextCompare) = 1 Then a.Add rpt.name
     Next rpt
     
@@ -195,12 +195,12 @@ Public Function SelectReport() As Variant
 End Function
 
 Public Function SelectLabel() As Variant
-    Dim rpt As AccessObject, dB As Object, a As ArrayList, i As Integer, s As Variant
+    Dim rpt As AccessObject, db As Object, a As ArrayList, i As Integer, s As Variant
     
     Set a = New ArrayList
     
-    Set dB = Application.CurrentProject
-    For Each rpt In dB.AllReports
+    Set db = Application.CurrentProject
+    For Each rpt In db.AllReports
         If InStr(1, rpt.name, pLabelTemplate, vbTextCompare) = 1 Then a.Add rpt.name
     Next rpt
     

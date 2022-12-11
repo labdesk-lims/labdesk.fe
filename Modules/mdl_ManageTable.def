@@ -55,13 +55,13 @@ Public Function GetIdentityColumn(ByVal table As String) As String
 'Out:       Name of identity column
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As dao.database, tbl As dao.TableDef
+    Dim db As dao.database, tbl As dao.TableDef
     Dim F As dao.field
     Dim id_clmn As String
     
-    Set dB = CurrentDb()
+    Set db = CurrentDb()
     
-    For Each tbl In dB.TableDefs
+    For Each tbl In db.TableDefs
         If tbl.name = table Then
             For Each F In tbl.Fields
                 If F.attributes = 17 And F.type = 4 Then    '(17 = dbAutoIncrField (16) + dbFixedField(1),  4 = dbLong)
@@ -131,15 +131,15 @@ Public Function CreateTable(ByVal table As String, ByVal tableCopy As String) As
 'Out:           Created (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     Dim tdf As TableDef, fldNew As field
     Dim fldOld As field, rst As Recordset
     Dim fldPrp As dao.Property
     
-    Set dB = CurrentDb
+    Set db = CurrentDb
     Set rst = CurrentDb.OpenRecordset("Select * FROM " & table, dbOpenDynaset, dbSeeChanges, dbOptimistic)
     'Create new table
-    Set tdf = dB.CreateTableDef(tableCopy)
+    Set tdf = db.CreateTableDef(tableCopy)
     
     'Copy record layout to new table
     For Each fldOld In rst.Fields
@@ -148,7 +148,7 @@ On Error GoTo Catch_Error
     Next fldOld
     
     'Append the table to the tabledefs collection
-    dB.TableDefs.Append tdf
+    db.TableDefs.Append tdf
 
     CreateTable = True
 
@@ -171,10 +171,10 @@ Public Function CopyTable(ByVal table As String, ByVal tableCopy As String, Opti
 'Out:               Copied (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database, rstTable As Recordset, rstTemp As Recordset
+    Dim db As database, rstTable As Recordset, rstTemp As Recordset
     Dim lngi As Long
     
-    Set dB = CurrentDb
+    Set db = CurrentDb
     
     'Clear old data from the temp table
     If TableExists(tableCopy) Then
@@ -184,7 +184,7 @@ On Error GoTo Catch_Error
     End If
     
     'Copy data from table to copyTable
-    dB.Execute "INSERT INTO " & tableCopy & " SELECT * FROM " & table & " " & whereClause, dbSeeChanges
+    db.Execute "INSERT INTO " & tableCopy & " SELECT * FROM " & table & " " & whereClause, dbSeeChanges
     
     CopyTable = True
 
@@ -206,11 +206,11 @@ Public Function UpdateTable(ByVal table As String, ByVal tableCopy As String) As
 'Out:           Updated (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database, rstForm As Recordset, rstTemp As Recordset
+    Dim db As database, rstForm As Recordset, rstTemp As Recordset
     Dim fld As field
     Dim id_column As String
     
-    Set dB = CurrentDb
+    Set db = CurrentDb
 
     Set rstTemp = CurrentDb.OpenRecordset("Select * FROM " & tableCopy & " WHERE id <> NULL", dbOpenDynaset, dbSeeChanges, dbOptimistic)
     id_column = GetIdentityColumn(table)
@@ -238,7 +238,7 @@ On Error GoTo Catch_Error
     End If
     
     Set rstTemp = CurrentDb.OpenRecordset("Select * FROM " & tableCopy & " WHERE id IS NULL", dbOpenDynaset, dbSeeChanges, dbOptimistic)
-    Set rstForm = dB.OpenRecordset(table, dbOpenDynaset, dbSeeChanges, dbOptimistic)
+    Set rstForm = db.OpenRecordset(table, dbOpenDynaset, dbSeeChanges, dbOptimistic)
     id_column = GetIdentityColumn(table)
 
     If Not (rstTemp.BOF And rstTemp.EOF) Then

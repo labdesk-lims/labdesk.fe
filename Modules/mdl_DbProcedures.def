@@ -33,23 +33,23 @@ Public Function SetColumnStyle(ByVal rfrm As Form, ByVal clmn As String, ByVal W
 ' Out:              Done (T/F)
 '------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     Dim rs As Recordset
     Dim cs As ColumnStyle
     
-    Set dB = CurrentDb()
-    Set rs = dB.OpenRecordset("SELECT COUNT(*) FROM lcl_columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM lcl_columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
     
     If Not rs(0) > 0 Then
-        dB.Execute "INSERT INTO lcl_columns (user_id, table_id, column_id, column_width, column_hidden, column_order) VALUES('" & GetUserName() & "', '" & rfrm.name & "', '" & clmn & "', " & Width & ", " & CInt(hidden) & ", " & order & ")"
+        db.Execute "INSERT INTO lcl_columns (user_id, table_id, column_id, column_width, column_hidden, column_order) VALUES('" & GetUserName() & "', '" & rfrm.name & "', '" & clmn & "', " & Width & ", " & CInt(hidden) & ", " & order & ")"
     Else
-        dB.Execute "UPDATE lcl_columns SET column_width = " & Width & ", column_hidden = " & CInt(hidden) & ", column_order = " & order & " WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'"
+        db.Execute "UPDATE lcl_columns SET column_width = " & Width & ", column_hidden = " & CInt(hidden) & ", column_order = " & order & " WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'"
     End If
     
     SetColumnStyle = True
     
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Set rs = Nothing
     Exit Function
 Catch_Error:
@@ -67,12 +67,12 @@ Public Function GetColumnStyle(ByVal rfrm As Form, ByVal clmn As String) As Colu
 ' Out:              ColumnStyle (returns width = -3 in case of errors)
 '------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     Dim rs As Recordset
     Dim cs As ColumnStyle
     
-    Set dB = CurrentDb()
-    Set rs = dB.OpenRecordset("SELECT * FROM lcl_columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT * FROM lcl_columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
     
     If rs.EOF Or rs.BOF Then
         cs.Width = -3
@@ -85,7 +85,7 @@ On Error GoTo Catch_Error
 
 Exit_Function:
     GetColumnStyle = cs
-    Set dB = Nothing
+    Set db = Nothing
     Set rs = Nothing
     Exit Function
 Catch_Error:
@@ -104,11 +104,11 @@ Public Function GetFieldValue(ByVal table As String, ByVal field As String, ByVa
 ' Out:              Response (Variant)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     Dim rs As Recordset
     
-    Set dB = CurrentDb()
-    Set rs = dB.OpenRecordset("SELECT " & field & " FROM " & table & " WHERE id = " & ID)
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT " & field & " FROM " & table & " WHERE id = " & ID)
     
     If rs(0) <> "" Then
         GetFieldValue = rs(0)
@@ -117,7 +117,7 @@ On Error GoTo Catch_Error
     End If
     
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Set rs = Nothing
     Exit Function
 Catch_Error:
@@ -136,21 +136,21 @@ Public Function SetFieldValue(ByVal table As String, ByVal field As String, ByVa
 ' Out:              Response (Variant)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     Dim rs As Recordset
     
-    Set dB = CurrentDb()
+    Set db = CurrentDb()
     
     If IsNumeric(value) Then
-        dB.Execute "UPDATE " & table & " SET " & field & " = " & value
+        db.Execute "UPDATE " & table & " SET " & field & " = " & value
     Else
-        dB.Execute "UPDATE " & table & " SET " & field & " = '" & value & "'"
+        db.Execute "UPDATE " & table & " SET " & field & " = '" & value & "'"
     End If
     
     SetFieldValue = True
     
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Set rs = Nothing
     Exit Function
 Catch_Error:
@@ -166,19 +166,19 @@ Public Function GetDbSetting(key As String) As String
 ' Out:       First value of the column
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     Dim rs As Recordset
     
-    Set dB = CurrentDb()
+    Set db = CurrentDb()
     
     If key = "language" Then
         If TableExists("users") Then
-            Set rs = dB.OpenRecordset("SELECT " & key & " FROM users WHERE id = " & GetUserId())
+            Set rs = db.OpenRecordset("SELECT " & key & " FROM users WHERE id = " & GetUserId())
         Else
             GetDbSetting = "en"
         End If
     Else
-        Set rs = dB.OpenRecordset("SELECT " & key & " FROM dbsetup")
+        Set rs = db.OpenRecordset("SELECT " & key & " FROM dbsetup")
     End If
     
     If rs(0) <> "" Then
@@ -188,7 +188,7 @@ On Error GoTo Catch_Error
     End If
     
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Set rs = Nothing
     Exit Function
 Catch_Error:
@@ -270,13 +270,13 @@ Public Function GetUserId() As Variant
 ' Out:       User id (will be null in case of any error)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     Dim rs As Recordset
     
     If pUserId <> 0 Then GoTo Exit_Function
     
-    Set dB = CurrentDb()
-    Set rs = dB.OpenRecordset("SELECT id FROM users WHERE name = '" & GetUserName() & "'", dbOpenDynaset, dbSeeChanges)
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT id FROM users WHERE name = '" & GetUserName() & "'", dbOpenDynaset, dbSeeChanges)
     
     If rs.EOF Or rs.BOF Then
         GetUserId = Null
@@ -285,7 +285,7 @@ On Error GoTo Catch_Error
     End If
 
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Set rs = Nothing
     Exit Function
 Catch_Error:
@@ -305,14 +305,14 @@ Public Function GetTranslation(ByVal container As String, ByVal item As String, 
 ' Out:              Translation (will be null in case of any error)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     Dim rs As Recordset
     
-    Set dB = CurrentDb()
-    Set rs = dB.OpenRecordset("SELECT " & language & " FROM lcl_translation WHERE container ='" & container & "' AND item = '" & item & "'")
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT " & language & " FROM lcl_translation WHERE container ='" & container & "' AND item = '" & item & "'")
     
     If rs.EOF Or rs.BOF Then
-        dB.Execute "INSERT INTO translation(container, item) VALUES('" & container & "', '" & item & "')"
+        db.Execute "INSERT INTO translation(container, item) VALUES('" & container & "', '" & item & "')"
         GetTranslation = item
     Else
         If IsNull(rs(0)) Then
@@ -323,7 +323,7 @@ On Error GoTo Catch_Error
     End If
 
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Set rs = Nothing
     Exit Function
 Catch_Error:
@@ -342,20 +342,20 @@ Public Function GetPermission(ByVal title As String) As CRUD
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     Dim response As CRUD
-    Dim dB As database
+    Dim db As database
     Dim rsa, rsb, rsc As Recordset
     
-    Set dB = CurrentDb()
-    Set rsa = dB.OpenRecordset("SELECT id FROM permission WHERE title = '" & title & "'", dbOpenDynaset, dbSeeChanges)
-    Set rsb = dB.OpenRecordset("SELECT role FROM users WHERE name = '" & GetUserName & "'", dbOpenDynaset, dbSeeChanges)
+    Set db = CurrentDb()
+    Set rsa = db.OpenRecordset("SELECT id FROM permission WHERE title = '" & title & "'", dbOpenDynaset, dbSeeChanges)
+    Set rsb = db.OpenRecordset("SELECT role FROM users WHERE name = '" & GetUserName & "'", dbOpenDynaset, dbSeeChanges)
     
     If rsa.EOF Or rsa.BOF Or rsb.EOF Or rsb.BOF Then
         GetPermission = response
-        dB.Execute "INSERT INTO permission(title) VALUES('" & title & "')"
+        db.Execute "INSERT INTO permission(title) VALUES('" & title & "')"
         Exit Function
     End If
     
-    Set rsc = dB.OpenRecordset("SELECT * FROM role_permission WHERE role = " & rsb(0) & " AND permission = " & rsa(0), dbOpenDynaset, dbSeeChanges)
+    Set rsc = db.OpenRecordset("SELECT * FROM role_permission WHERE role = " & rsb(0) & " AND permission = " & rsa(0), dbOpenDynaset, dbSeeChanges)
     
     response.Create = rsc("can_create")
     response.Read = rsc("can_read")
@@ -365,7 +365,7 @@ On Error GoTo Catch_Error
     GetPermission = response
 
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Set rsa = Nothing
     Set rsb = Nothing
     Set rsc = Nothing
@@ -520,22 +520,22 @@ Public Function AttachToMailQueue(ByVal request As Integer, ByVal subject As Str
 ' Out:              Done (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     
     If IsNull(recipients) And IsNull(request) Then Exit Function
     
-    Set dB = CurrentDb
+    Set db = CurrentDb
     
     If recipients = "" Then
-        dB.Execute "INSERT INTO mailqueue (subject, body, request) VALUES('" & subject & "', '" & Body & "', " & request & ")", dbOpenDynaset
+        db.Execute "INSERT INTO mailqueue (subject, body, request) VALUES('" & subject & "', '" & Body & "', " & request & ")", dbOpenDynaset
     Else
-        dB.Execute "INSERT INTO mailqueue (recipients, subject, body, request) VALUES('" & recipients & "', '" & subject & "', '" & Body & "', " & request & ")", dbOpenDynaset
+        db.Execute "INSERT INTO mailqueue (recipients, subject, body, request) VALUES('" & recipients & "', '" & subject & "', '" & Body & "', " & request & ")", dbOpenDynaset
     End If
     
     AttachToMailQueue = True
 
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Exit Function
 Catch_Error:
     MsgBox "Error (mdlDbProcedures - AttachToMailQueue): " & Err.description, vbCritical, "Error"
@@ -582,18 +582,18 @@ Public Function AddUser() As Boolean
 ' Out:              Done (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     Dim rs As Recordset
     
-    Set dB = CurrentDb()
-    Set rs = dB.OpenRecordset("SELECT COUNT(*) FROM users WHERE name = '" & GetUserName() & "'")
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM users WHERE name = '" & GetUserName() & "'")
     
-    If rs(0) = 0 Then dB.Execute "INSERT INTO users (name) VALUES('" & GetUserName() & "')", dbOpenDynaset
+    If rs(0) = 0 Then db.Execute "INSERT INTO users (name) VALUES('" & GetUserName() & "')", dbOpenDynaset
     
      AddUser = True
      
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Set rs = Nothing
     Exit Function
 Catch_Error:
@@ -609,20 +609,20 @@ Public Function AddAdmin() As Boolean
 ' Out:              Done (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     Dim rs As Recordset
     Dim rx As Recordset
     
-    Set dB = CurrentDb()
-    Set rs = dB.OpenRecordset("SELECT COUNT(*) FROM users WHERE name = '" & GetUserName() & "'", dbOpenDynaset, dbSeeChanges)
-    Set rx = dB.OpenRecordset("SELECT id FROM role WHERE administrative = 1", dbOpenDynaset, dbSeeChanges)
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM users WHERE name = '" & GetUserName() & "'", dbOpenDynaset, dbSeeChanges)
+    Set rx = db.OpenRecordset("SELECT id FROM role WHERE administrative = 1", dbOpenDynaset, dbSeeChanges)
 
-    If rs(0) = 0 Then dB.Execute "INSERT INTO users (name, role) VALUES('" & GetUserName() & "', " & rx!ID & ")", dbOpenDynaset
+    If rs(0) = 0 Then db.Execute "INSERT INTO users (name, role) VALUES('" & GetUserName() & "', " & rx!ID & ")", dbOpenDynaset
     
     AddAdmin = True
      
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Set rs = Nothing
     Exit Function
 Catch_Error:
@@ -722,11 +722,11 @@ Public Function GetStateCode(ByVal state As Integer) As Variant
 ' Out:              State Code
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     Dim rs As Recordset
     
-    Set dB = CurrentDb()
-    Set rs = dB.OpenRecordset("SELECT state FROM state WHERE id = " & state)
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT state FROM state WHERE id = " & state)
     
     If rs.EOF Or rs.BOF Then
         GetStateCode = Null
@@ -735,7 +735,7 @@ On Error GoTo Catch_Error
     End If
 
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Set rs = Nothing
     Exit Function
 Catch_Error:
@@ -752,16 +752,16 @@ Public Function ActiveUsers() As Integer
 ' Out:              Amount of users
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     Dim rs As Recordset
     
-    Set dB = CurrentDb
-    Set rs = dB.OpenRecordset("SELECT COUNT(*) As cnt FROM users WHERE role IS NOT NULL")
+    Set db = CurrentDb
+    Set rs = db.OpenRecordset("SELECT COUNT(*) As cnt FROM users WHERE role IS NOT NULL")
     
     If Not rs.EOF Then ActiveUsers = rs!cnt
     
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Set rs = Nothing
     Exit Function
 Catch_Error:
@@ -862,7 +862,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function SetTableFlag(ByVal username As String, ByVal tablename As String, ByVal tableid As Integer, Optional ByVal alert As Boolean = False) As Boolean
+Public Function SetTableFlag(ByVal username As String, ByVal tablename As String, ByVal tableid As Integer) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         SetTableFlag
 ' Date:             2022 November
@@ -870,19 +870,18 @@ Public Function SetTableFlag(ByVal username As String, ByVal tablename As String
 '                   Set alert to true if user needs to get notified.
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     
-    Set dB = CurrentDb()
-    dB.Execute "INSERT INTO tableflag (user_name, table_name, table_id, alert) VALUES ('" & username & "', '" & tablename & "', " & tableid & ", " & CInt(alert) & ")"
+    Set db = CurrentDb()
+    db.Execute "INSERT INTO tableflag (user_name, table_name, table_id) VALUES ('" & username & "', '" & tablename & "', " & tableid & ")"
 
     SetTableFlag = True
 
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Exit Function
 Catch_Error:
     SetTableFlag = False
-    MsgBox "Error (mdlDbProcedures - SetTableFlag): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function
 
@@ -893,93 +892,63 @@ Public Function GetTableFlag(ByVal tablename As String, ByVal tableid As Integer
 ' Purpose:          Gets the flag of a specific record.
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     Dim rs As Recordset
     
-    Set dB = CurrentDb()
-    Set rs = dB.OpenRecordset("SELECT user_name FROM tableflag WHERE table_name = '" & tablename & "' AND table_id = " & tableid, dbOpenDynaset, dbSeeChanges)
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT user_name FROM tableflag WHERE table_name = '" & tablename & "' AND table_id = " & tableid, dbOpenDynaset, dbSeeChanges)
     
     GetTableFlag = rs(0)
 
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Set rs = Nothing
     Exit Function
 Catch_Error:
     GetTableFlag = Null
-    'MsgBox "Error (mdlDbProcedures - GetTableFlag): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function
 
-Public Function GetTableFlagAlert(ByVal tablename As String, ByVal tableid As Integer) As Variant
-'-------------------------------------------------------------------------------
-' Function:         GetTableFlagAlert
-' Date:             2022 November
-' Purpose:          Gets the alert flag of a specific record.
-'-------------------------------------------------------------------------------
-On Error GoTo Catch_Error
-    Dim dB As database
-    Dim rs As Recordset
-    
-    Set dB = CurrentDb()
-    Set rs = dB.OpenRecordset("SELECT count(*) FROM tableflag WHERE alert = 0 AND table_name = '" & tablename & "' AND table_id = " & tableid, dbOpenDynaset, dbSeeChanges)
-    
-    If Not rs.EOF Then
-        If rs(0) > 0 Then GetTableFlagAlert = False Else GetTableFlagAlert = True
-    End If
-
-Exit_Function:
-    Set dB = Nothing
-    Set rs = Nothing
-    Exit Function
-Catch_Error:
-    GetTableFlagAlert = Null
-    'MsgBox "Error (mdlDbProcedures - GetTableFlag): " & Err.description, vbCritical, "Error"
-    Resume Exit_Function
-End Function
-
-Public Function SetTableFlagAlert(ByVal tablename As String, ByVal tableid As Integer) As Boolean
-'-------------------------------------------------------------------------------
-' Function:         SetTableFlagAlert
-' Date:             2022 November
-' Purpose:          Gets the alert flag of a specific record.
-'-------------------------------------------------------------------------------
-On Error GoTo Catch_Error
-    Dim dB As database
-    
-    Set dB = CurrentDb()
-    dB.Execute ("UPDATE tableflag SET alert = 1 WHERE table_name = '" & tablename & "' AND table_id = " & tableid)
-
-    SetTableFlagAlert = True
-
-Exit_Function:
-    Set dB = Nothing
-    Exit Function
-Catch_Error:
-    SetTableFlagAlert = False
-    'MsgBox "Error (mdlDbProcedures - GetTableFlag): " & Err.description, vbCritical, "Error"
-    Resume Exit_Function
-End Function
-
-Public Function RemoveTableFlag(ByVal username As String, ByVal tablename As String, ByVal tableid As Integer) As Boolean
+Public Function RemoveTableFlag(ByVal tablename As String, ByVal tableid As Integer) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         RemoveTableFlag
 ' Date:             2022 November
 ' Purpose:          Remove the flag for table in use.
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim dB As database
+    Dim db As database
     
-    Set dB = CurrentDb()
-    dB.Execute "DELETE FROM tableflag WHERE user_name = '" & username & "' AND table_name = '" & tablename & "' AND table_id = " & tableid, dbSeeChanges
+    Set db = CurrentDb()
+    db.Execute "DELETE FROM tableflag WHERE table_name = '" & tablename & "' AND table_id = " & tableid, dbSeeChanges
 
     RemoveTableFlag = True
 
 Exit_Function:
-    Set dB = Nothing
+    Set db = Nothing
     Exit Function
 Catch_Error:
     RemoveTableFlag = False
-    'MsgBox "Error (mdlDbProcedures - RemoveTableFlag): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function AddErrorLog(ByVal ID As Integer, ByVal description As String) As Boolean
+'-------------------------------------------------------------------------------
+' Function:  AddErrorLog
+' Date:      2022 November
+' Purpose:   Add a log entry into table errorlog
+' In:        error_id, error_description
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    
+    Set db = CurrentDb()
+    db.Execute "INSERT INTO errorlog (error_id, error_description) VALUES (" & ID & ", '" & description & "')"
+    
+    AddErrorLog = True
+
+Exit_Function:
+    Set db = Nothing
+    Exit Function
+Catch_Error:
     Resume Exit_Function
 End Function

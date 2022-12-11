@@ -114,14 +114,14 @@ Function DisableShift()
 
 On Error GoTo errDisableShift
 
-Dim dB As dao.database
+Dim db As dao.database
 Dim prop As dao.Property
 Const conPropNotFound = 3270
 
-Set dB = CurrentDb()
+Set db = CurrentDb()
 
 'This next line disables the shift key on startup.
-dB.Properties("AllowByPassKey") = False
+db.Properties("AllowByPassKey") = False
 
 'The function is successful.
 Exit Function
@@ -130,9 +130,9 @@ errDisableShift:
 'The first part of this error routine creates the "AllowByPassKey
 'property if it does not exist.
 If Err = conPropNotFound Then
-Set prop = dB.CreateProperty("AllowByPassKey", _
+Set prop = db.CreateProperty("AllowByPassKey", _
 dbBoolean, False)
-dB.Properties.Append prop
+db.Properties.Append prop
 Resume Next
 Else
 MsgBox "Function 'DisableShift' did not complete successfully."
@@ -151,14 +151,14 @@ Function EnableShift()
 
 On Error GoTo errEnableShift
 
-Dim dB As dao.database
+Dim db As dao.database
 Dim prop As dao.Property
 Const conPropNotFound = 3270
 
-Set dB = CurrentDb()
+Set db = CurrentDb()
 
 'This next line of code disables the SHIFT key on startup.
-dB.Properties("AllowByPassKey") = True
+db.Properties("AllowByPassKey") = True
 
 'function successful
 Exit Function
@@ -167,9 +167,9 @@ errEnableShift:
 'The first part of this error routine creates the "AllowByPassKey
 'property if it does not exist.
 If Err = conPropNotFound Then
-Set prop = dB.CreateProperty("AllowByPassKey", _
+Set prop = db.CreateProperty("AllowByPassKey", _
 dbBoolean, True)
-dB.Properties.Append prop
+db.Properties.Append prop
 Resume Next
 Else
 MsgBox "Function 'EnableShift' did not complete successfully."
@@ -200,7 +200,7 @@ On Error GoTo Catch_Error
     "view_labreport_details", _
     "view_attachment_revision", _
     "mailqueue", _
-    "tableflag" _
+    "tableflag", "errorlog" _
     )
     
     'Try to attach tables
