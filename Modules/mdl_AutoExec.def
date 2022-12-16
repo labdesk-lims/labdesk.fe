@@ -26,8 +26,11 @@ Public Const pLabelTemplate = "LBL-" 'Identifier for selectable labels
 ' Cache folder setting
 Public Const pCacheFolder = ".labdesk" 'The local user folder will be used for labdesk
 
+' Encryption key for user licenses
+Public Const pLicenceKey = "Q784F-H7If9-fO9fO-8Hgd9"
+
 ' Demo mode
-Public Const pDemoMode = False
+Global pDemoMode As Boolean
 
 ' Local refresh timer in seconds
 Public Const pRefresh = 60
@@ -253,8 +256,11 @@ On Error GoTo Catch_Error
     DoCmd.OpenForm "*background_worker_form", acNormal, , , acFormReadOnly, acWindowNormal
     Forms("*background_worker_form").visible = False
     
+    'Check licence
+    pDemoMode = Not UserHasLicence(GetUserId())
+    
     'Show licence message box
-    If pDemoMode = True Then MsgBox "This is demonstration software. Commercial use prohibited." & vbCrLf & "Report any violation to hello@labdesk.net" & vbCrLf & vbCrLf & "EULA: labdesk.net/licence", vbInformation, "Information"
+    If pDemoMode Then MsgBox "This is demonstration software. Commercial use prohibited." & vbCrLf & "Report any violation to hello@labdesk.net" & vbCrLf & vbCrLf & "EULA: labdesk.net/licence", vbInformation, "Information"
     
     InitApp = True
     

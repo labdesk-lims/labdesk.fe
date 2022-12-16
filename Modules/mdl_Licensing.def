@@ -1,92 +1,56 @@
 '################################################################################################
-' This module provides functions to call manage the licence
+' This module will activate user licenses based on a unique identifier in the table users.
+' The activation is done manually.
 '################################################################################################
 
 Option Compare Database
 Option Explicit
 
-Public Function GetLicenceString() As Variant
-'-------------------------------------------------------------------------------
-' Function:         GetLicenceString
-' Date:             2022 June
-' Purpose:          Reads the licence string from the database
-' Out:              Licence as string
-'-------------------------------------------------------------------------------
+Public Function ActivateUser(ByVal userid As Integer) As Boolean
 On Error GoTo Catch_Error
     Dim db As database
     Dim rs As Recordset
+
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT uid FROM users WHERE id = " & userid)
     
-    Set db = CurrentDb
-    Set rs = db.OpenRecordset("SELECT TOP 1 licence As lic FROM setup")
+    If IsNull(rs(0)) Then Err.Raise vbObjectError + 513, "", "UID not found in table users"
     
-    If Not rs.EOF Then GetLicenceString = rs!lic Else GetLicenceString = Null
+    CurrentDb.Execute "UPDATE users SET licence = '" & StoreEncryptAES(rs(0), pLicenceKey & CStr(userid)) & "' WHERE id = " & userid, dbSeeChanges
+    
+    ActivateUser = True
     
 Exit_Function:
     Set db = Nothing
     Set rs = Nothing
     Exit Function
 Catch_Error:
-    GetLicenceString = Null
+    MsgBox Err.description, vbCritical, "Critical error during activation"
     Resume Exit_Function
 End Function
 
-Public Function SetLicenceString(ByVal licence As String) As Boolean
-'-------------------------------------------------------------------------------
-' Function:         SetLicenceString
-' Date:             2022 June
-' Purpose:          Sets the licence string in the database
-' In:               Licence as string
-'-------------------------------------------------------------------------------
+Public Function UserHasLicence(ByVal userid As Integer) As Boolean
 On Error GoTo Catch_Error
     Dim db As database
-    Dim rs As Recordset
+    Dim rs_lc As Recordset
+    Dim rs_uid As Recordset
     
-    Set db = CurrentDb
-    Set rs = db.OpenRecordset("SELECT COUNT(*) As cnt FROM setup")
-    If rs!cnt > 0 Then
-        db.Execute "UPDATE setup SET licence = '" & licence & "'"
-    Else
-        db.Execute "INSERT INTO setup (licence) VALUES('" & licence & "')"
-    End If
+    Set db = CurrentDb()
+    Set rs_lc = db.OpenRecordset("SELECT licence FROM users WHERE id = " & userid)
+    Set rs_uid = db.OpenRecordset("SELECT uid FROM users WHERE id = " & userid)
     
-    SetLicenceString = True
+    If IsNull(rs_lc(0)) Then Err.Raise vbObjectError + 513, "", "Licence not found in table users"
+    If IsNull(rs_uid(0)) Then Err.Raise vbObjectError + 513, "", "UID not found in table users"
+    If RetrieveDecryptAES(rs_lc(0), pLicenceKey & CStr(userid)) <> rs_uid(0) Then Err.Raise vbObjectError + 513, "", "Not a valid licence."
+    
+    UserHasLicence = True
     
 Exit_Function:
     Set db = Nothing
-    Set rs = Nothing
+    Set rs_lc = Nothing
+    Set rs_uid = Nothing
     Exit Function
 Catch_Error:
-    SetLicenceString = False
-    Resume Exit_Function
-End Function
-
-Public Function ValidLicence(ByVal silent As Boolean) As Variant
-'-------------------------------------------------------------------------------
-' Function:         ValidLicence
-' Date:             2022 June
-' Purpose:          Checks if the licence is valid
-' In:               Silent mode hides any error messages
-' Out:              Valid (T/F)
-'-------------------------------------------------------------------------------
-    Dim Json As Object
-    Dim s As String
-    Dim rs As Recordset
-    
-On Error GoTo Catch_Error
-    Set rs = CurrentDb.OpenRecordset("SELECT COUNT(*) As seats FROM users WHERE role IS NOT NULL")
-    If IsNull(GetLicenceString) Then Err.Raise vbObjectError + 513, "function valid licence", "Licence not available from database."
-    s = RetrieveDecryptAES(GetLicenceString, pLcSecret, 100)
-    Set Json = JsonConverter.ParseJson(s)
-    If Json("version") <> pReVersion Then Err.Raise vbObjectError + 513, "function valid licence", "Version does not match licence."
-    If rs!seats > Json("seats") Then Err.Raise vbObjectError + 513, "function valid licence", "Maximum amount of seats reached."
-    If DateValue(Json("expiry")) < Now() Then Err.Raise vbObjectError + 513, "function valid licence", "Licence expired."
-    ValidLicence = True
-    
-Exit_Function:
-    Set rs = Nothing
-    Exit Function
-Catch_Error:
-    If Not silent Then MsgBox Err.description, vbInformation, "Wrong licence"
-    ValidLicence = False
+    UserHasLicence = False
     Resume Exit_Function
 End Function
