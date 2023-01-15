@@ -1,0 +1,56 @@
+'################################################################################################
+' This module will activate user licenses based on a unique identifier in the table users.
+' The activation is done manually.
+'################################################################################################
+
+Option Compare Database
+Option Explicit
+
+Public Function ActivateUser(ByVal userid As Integer) As Boolean
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT uid FROM users WHERE id = " & userid)
+    
+    If IsNull(rs(0)) Then Err.Raise vbObjectError + 513, "", "UID not found in table users"
+    
+    CurrentDb.Execute "UPDATE users SET licence = '" & StoreEncryptAES(rs(0), pLicenceKey & CStr(userid)) & "' WHERE id = " & userid, dbSeeChanges
+    
+    ActivateUser = True
+    
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    MsgBox Err.description, vbCritical, "Critical error during activation"
+    Resume Exit_Function
+End Function
+
+Public Function UserHasLicence(ByVal userid As Integer) As Boolean
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs_lc As Recordset
+    Dim rs_uid As Recordset
+    
+    Set db = CurrentDb()
+    Set rs_lc = db.OpenRecordset("SELECT licence FROM users WHERE id = " & userid)
+    Set rs_uid = db.OpenRecordset("SELECT uid FROM users WHERE id = " & userid)
+    
+    If IsNull(rs_lc(0)) Then Err.Raise vbObjectError + 513, "", "Licence not found in table users"
+    If IsNull(rs_uid(0)) Then Err.Raise vbObjectError + 513, "", "UID not found in table users"
+    If RetrieveDecryptAES(rs_lc(0), pLicenceKey & CStr(userid)) <> rs_uid(0) Then Err.Raise vbObjectError + 513, "", "Not a valid licence."
+    
+    UserHasLicence = True
+    
+Exit_Function:
+    Set db = Nothing
+    Set rs_lc = Nothing
+    Set rs_uid = Nothing
+    Exit Function
+Catch_Error:
+    UserHasLicence = False
+    Resume Exit_Function
+End Function

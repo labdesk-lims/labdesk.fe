@@ -1,0 +1,24 @@
+'################################################################################################
+' This module encompasses operating system funtions
+'################################################################################################
+
+Option Compare Database
+Option Explicit
+
+Public Function fShellRun(ByVal sCommandStringToExecute As String)
+'-------------------------------------------------------------------------------
+' Function:  fShellRun
+' Date:      2022 May
+' Purpose:   This function will accept a string as a DOS command to execute.
+'            It will then execute the command in a shell, and returns the command
+'            return code to the caller.
+' In:        -
+' Out:       Connection Valid (T/F)
+'-------------------------------------------------------------------------------
+    Dim oShellObject
+
+    Set oShellObject = CreateObject("Wscript.Shell")
+
+    On Error Resume Next
+    fShellRun = oShellObject.Run(sCommandStringToExecute, 0, True)
+End Function

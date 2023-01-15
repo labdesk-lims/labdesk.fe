@@ -1,0 +1,55 @@
+'################################################################################################
+' This module holds the configuration information of the application. This includes public and
+' global constants.
+'################################################################################################
+
+Option Compare Database
+Option Explicit
+
+' Database connection timeout in seconds
+Public Const pConnectionTimeout = 3
+
+' Application title shown as form title
+Public Const pAppTitle = "LABDESK LIMS"
+
+' Semantic Versioning according to https://semver.org/
+' MAJOR-MINOR-PATCH
+Public Const pBeVersion = "v1.0.0" 'Backend version
+Public Const pFeVersion = "v1.0.0" 'Frontend version
+
+' Identifiers used for reports and labels
+Public Const pReportTemplate = "RPT-" 'Identifier for selectable reports
+Public Const pLabelTemplate = "LBL-" 'Identifier for selectable labels
+
+' Temporary cache folder (the local user folder will be used)
+Public Const pCacheFolder = ".labdesk"
+
+' System wide used encryption key
+Public Const pLicenceKey = "Q784F-H7If9-fO9fO-8Hgd9"
+
+' Set to true for demo mode to be activated
+Global pDemoMode As Boolean
+
+' User name and id of session
+Global pUserName As String
+Global pUserId As Integer
+
+Public Function DSNLessTables() As Variant
+    Dim a As Variant
+    a = Array( _
+    "filter", "translation", "setup", _
+    "contact", "laboratory", "customer", "manufacturer", "smppoint", "smpcontainer", "smpmatrix", "material", _
+    "cfield", "cvalidate", "condition", "uncertainty", "analysis", "attribute", "method_analysis", "method_smptype", "method", "qualification", "instrument_method", "department", "workplace", "instrument", "certificate", "attachment", "instype", "supplier", _
+    "request", "measurement_cfield", "measurement", "measurement_condition", "view_request_measurement", _
+    "profile_analysis", "profile", "request_analysis", "step", "state", "workflow", "smptype", "smpcondition", "smppreservation", "priority", "technique", _
+    "batch", "btcposition", "storage", "strposition", "handbook", _
+    "project", "project_member", "formulation", "component", "task", "workload", "view_task", _
+    "view_measurement", _
+    "users", "role", "role_permission", "permission", "traversal", "audit", "spa", "columns", _
+    "view_labreport_details", _
+    "view_attachment_revision", _
+    "mailqueue", _
+    "tableflag", "errorlog" _
+    )
+    DSNLessTables = a
+End Function

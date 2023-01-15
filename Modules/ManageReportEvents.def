@@ -1,0 +1,63 @@
+'################################################################################################
+' This module manages events from reports and will be called from there
+'################################################################################################
+
+Option Compare Database
+Option Explicit
+
+Public Sub ReportOpen(ByRef rfrm As Report)
+'-------------------------------------------------------------------------------
+' Function:         ReportOpen
+' Date:             2022 September
+' Purpose:          Routines during opening a report
+' In:
+' -> rfrm:          Report of choice
+' Out:              -
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim ctrl As control
+    Dim cs As ColumnStyle
+    
+    ' Hide form during form adjustment are made
+    On Error GoTo Skip_hide
+        rfrm.visible = False
+Skip_hide:
+    
+    'Translate all controls
+    TranslateReport rfrm.Report, GetDbSetting("language")
+    
+    ' Init form with individual settings
+    rfrm.Report_Init_Individual
+    
+    ' Show form after adjustments are made
+    On Error GoTo Skip_show
+        rfrm.visible = True
+Skip_show:
+
+Exit_Function:
+    Exit Sub
+Catch_Error:
+    MsgBox "Error (mdlManageReportEvents - ReportOpen): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Sub
+
+Public Sub ReportClose(ByRef rfrm As Report)
+'-------------------------------------------------------------------------------
+' Function:         SyncFormClose
+' Date:             2022 March
+' Purpose:          Routines during closing a synchronous form
+' In:
+' -> rfrm:          Form of choice
+' Out:              -
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    
+    ' Place your code here
+    ' --------------------
+    
+Exit_Function:
+    Exit Sub
+Catch_Error:
+    MsgBox "Error (mdlManageReportEvents - ReportClose): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Sub

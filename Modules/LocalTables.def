@@ -1,0 +1,60 @@
+'################################################################################################
+' This module handles local tables
+'################################################################################################
+
+Option Compare Database
+Option Explicit
+
+Dim lastCheckup As Variant
+
+Private Function LastChanged(ByVal table As String) As Variant
+'-------------------------------------------------------------------------------
+'Function:  LastChanged
+'Date:      2022 September
+'Purpose:   Turns back the date and time of the last modification of a table
+'Out:       DateTime or False
+'Parameter:
+'table      Table to check
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT changed_at FROM audit WHERE table_name = '" & table & "' ORDER BY changed_at", dbOpenDynaset, dbSeeChanges)
+    
+    If Not rs.EOF Then
+        LastChanged = rs(0)
+    Else
+        LastChanged = False
+    End If
+
+    Exit Function
+    
+Exit_Function:
+    LastChanged = False
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
+Private Function UpdateLocal(ByVal table As String, Optional ByVal whereClause As String)
+    'Prepare local table
+    If TableExists("lcl_" & table) Then CurrentDb.TableDefs.Delete "lcl_" & table
+    CreateTable table, "lcl_" & table
+    
+    'Copy table for async data handling
+    CopyTable table, "lcl_" & table, whereClause
+    If TableExists("lcl_" & table & "_cpy") Then CurrentDb.TableDefs.Delete "lcl_" & table & "_cpy"
+    CopyTable "lcl_" & table, "lcl_" & table & "_cpy"
+End Function
+
+Public Sub InitLocales()
+    UpdateLocal "translation"
+    UpdateLocal "columns", "WHERE user_id = '" & GetUserName() & "'"
+End Sub
+
+Public Sub UpdateRemotes()
+    UpdateTable "columns", "lcl_columns"
+End Sub

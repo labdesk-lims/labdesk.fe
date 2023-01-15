@@ -1,0 +1,104 @@
+'################################################################################################
+' This module will initialize the application to work properly with all components of relevance.
+' InitApp will be called by the macro AutoExec during startup.
+'################################################################################################
+
+Option Compare Database
+Option Explicit
+
+' -----------------------------------------------------------------------------------------------
+' Any code goes from here
+' -----------------------------------------------------------------------------------------------
+
+Public Function InitApp() As Boolean
+'-------------------------------------------------------------------------------
+' Function:     InitApp
+' Date:         2022 January
+' Purpose:      Init the application settings
+' Parameters:   -
+' Out:          Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    
+    ' Tables to be attached need to be named here
+    'DSNLessTables = Array( _
+    '"filter", "translation", "setup", _
+    '"contact", "laboratory", "customer", "manufacturer", "smppoint", "smpcontainer", "smpmatrix", "material", _
+    '"cfield", "cvalidate", "condition", "uncertainty", "analysis", "attribute", "method_analysis", "method_smptype", "method", "qualification", "instrument_method", "department", "workplace", "instrument", "certificate", "attachment", "instype", "supplier", _
+    '"request", "measurement_cfield", "measurement", "measurement_condition", "view_request_measurement", _
+    '"profile_analysis", "profile", "request_analysis", "step", "state", "workflow", "smptype", "smpcondition", "smppreservation", "priority", "technique", _
+    '"batch", "btcposition", "storage", "strposition", "handbook", _
+    '"project", "project_member", "formulation", "component", "task", "workload", "view_task", _
+    '"view_measurement", _
+    '"users", "role", "role_permission", "permission", "traversal", "audit", "spa", "columns", _
+    '"view_labreport_details", _
+    '"view_attachment_revision", _
+    '"mailqueue", _
+    '"tableflag", "errorlog" _
+    ')
+    
+    'Try to attach tables
+    If DbConnect.ConnectDb(DbConnect.GetDbSetting("server"), DbConnect.GetDbSetting("database"), DSNLessTables, DbConnect.GetDbSetting("user"), DbConnect.GetDbSetting("password")) = False Then
+        Err.Raise vbObjectError + 513, , "Connection to database can not be established."
+    End If
+    
+    'Init application (initialization routine needs to be called just once for setup reasons)
+    If DbProcedures.GetFieldValue("dbsetup", "sysinit", 1) = True Then
+        If MsgBox("Press OK to initialize application. This may take a while.", vbOKCancel, "Information") = vbOK Then
+            SysPrep.sysinit
+            MsgBox "System initialization finished. Restart application to proceed.", vbInformation, "Information"
+        End If
+        Exit Function
+    End If
+    
+    'Clean Cache (stored in the user folder under pCacheFolder)
+    SysPrep.CleanCache
+    
+    'Init local tables
+    InitLocales
+    
+    'Init context menus
+    ContextMenus.InitContextMenuStd
+    ContextMenus.InitContextMenuStdDpl
+    ContextMenus.InitContextMenuRqst
+    ContextMenus.InitContextMenuFlt
+    ContextMenus.InitContextMenuFile
+    ContextMenus.InitContextMenuSubStd
+    
+    'Check Version (raise error if backend does not match)
+    If DbProcedures.GetBeVersion() <> Config.pBeVersion Then
+        MsgBox "Error (mdlAutoExec - InitApp): Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & Config.pBeVersion & ")", vbCritical, "Error"
+        Err.Raise vbObjectError + 513, , "Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & Config.pBeVersion & ")"
+    End If
+    
+    'Check if user exists otherwise add
+    DbProcedures.AddUser
+    
+    'Open desktop tab
+    'If Application.SysCmd(acSysCmdGetObjectState, acForm, "desktop") <> acObjStateOpen Then DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
+    
+    'Interface cosmetics
+    ManageGui.AddAppProperty "AppTitle", dbText, Config.pAppTitle
+    Application.RefreshTitleBar
+    SysCmd acSysCmdSetStatus, "User: " & DbProcedures.GetUserName()
+    HideNavPane DbConnect.GetDbSetting("navpane")
+    
+    'Open the closing event form
+    DoCmd.OpenForm "*background_worker_form", acNormal, , , acFormReadOnly, acWindowNormal
+    Forms("*background_worker_form").visible = False
+    
+    'Check licence
+    Config.pDemoMode = Not Licensing.UserHasLicence(DbProcedures.GetUserId())
+    
+    'Show licence message box
+    If Config.pDemoMode Then MsgBox "This is demonstration software. Commercial use prohibited." & vbCrLf & "Report any violation to hello@labdesk.net" & vbCrLf & vbCrLf & "EULA: labdesk.net/licence", vbInformation, "Information"
+    
+    InitApp = True
+    
+Exit_Function:
+    Exit Function
+Catch_Error:
+    InitApp = False
+    DoCmd.OpenForm "dbsetup", acNormal, , , acFormEdit
+    Resume Exit_Function
+End Function

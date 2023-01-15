@@ -101,7 +101,7 @@
     <EnableFontSwitching name="Enable Font Switching" type="47" value="0" sort="6"/>
     <EnableMRUFileList name="Enable MRU File List" type="48" value="-1" sort="6"/>
     <ErrorTrapping name="Error Trapping" type="49" value="2" sort="6"/>
-    <FDCategory name="FDCategory" type="50" value="4" sort="6"/>
+    <FDCategory name="FDCategory" type="50" value="2" sort="6"/>
     <FollowedHyperlinkColor name="Followed Hyperlink Color" type="51" value="5" sort="6"/>
     <FormTemplate name="Form Template" type="52" value="Normal" sort="6"/>
     <FourDigitYearFormatting name="Four-Digit Year Formatting" type="53" value="0" sort="6"/>
