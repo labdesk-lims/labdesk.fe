@@ -6,6 +6,13 @@
 Option Compare Database
 Option Explicit
 
+' System wide configuration
+Global config As New Configuration
+
+' User name and id of session
+Global pUserName As String
+Global pUserId As Integer
+
 ' -----------------------------------------------------------------------------------------------
 ' Any code goes from here
 ' -----------------------------------------------------------------------------------------------
@@ -19,28 +26,16 @@ Public Function InitApp() As Boolean
 ' Out:          Done (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
+    config.Init True, ".labdesk", "Q784F-H7If9-fO9fO-8Hgd9"
     
-    ' Tables to be attached need to be named here
-    'DSNLessTables = Array( _
-    '"filter", "translation", "setup", _
-    '"contact", "laboratory", "customer", "manufacturer", "smppoint", "smpcontainer", "smpmatrix", "material", _
-    '"cfield", "cvalidate", "condition", "uncertainty", "analysis", "attribute", "method_analysis", "method_smptype", "method", "qualification", "instrument_method", "department", "workplace", "instrument", "certificate", "attachment", "instype", "supplier", _
-    '"request", "measurement_cfield", "measurement", "measurement_condition", "view_request_measurement", _
-    '"profile_analysis", "profile", "request_analysis", "step", "state", "workflow", "smptype", "smpcondition", "smppreservation", "priority", "technique", _
-    '"batch", "btcposition", "storage", "strposition", "handbook", _
-    '"project", "project_member", "formulation", "component", "task", "workload", "view_task", _
-    '"view_measurement", _
-    '"users", "role", "role_permission", "permission", "traversal", "audit", "spa", "columns", _
-    '"view_labreport_details", _
-    '"view_attachment_revision", _
-    '"mailqueue", _
-    '"tableflag", "errorlog" _
-    ')
+    'Interface cosmetics
+    ManageGui.AddAppProperty "AppTitle", dbText, config.AppTitle
+    Application.RefreshTitleBar
+    HideNavPane DbConnect.GetDbSetting("navpane")
     
     'Try to attach tables
-    If DbConnect.ConnectDb(DbConnect.GetDbSetting("server"), DbConnect.GetDbSetting("database"), DSNLessTables, DbConnect.GetDbSetting("user"), DbConnect.GetDbSetting("password")) = False Then
-        Err.Raise vbObjectError + 513, , "Connection to database can not be established."
-    End If
+    SysCmd acSysCmdSetStatus, "Try to attach tables"
+    DbConnect.ConnectDb DbConnect.GetDbSetting("server"), DbConnect.GetDbSetting("database"), config.DSNLessTables, DbConnect.GetDbSetting("user"), DbConnect.GetDbSetting("password")
     
     'Init application (initialization routine needs to be called just once for setup reasons)
     If DbProcedures.GetFieldValue("dbsetup", "sysinit", 1) = True Then
@@ -52,46 +47,52 @@ On Error GoTo Catch_Error
     End If
     
     'Clean Cache (stored in the user folder under pCacheFolder)
+    SysCmd acSysCmdSetStatus, "Clean cache"
     SysPrep.CleanCache
     
     'Init local tables
+    SysCmd acSysCmdSetStatus, "Init local tables"
     InitLocales
     
     'Init context menus
+    SysCmd acSysCmdSetStatus, "Init context menus"
     ContextMenus.InitContextMenuStd
     ContextMenus.InitContextMenuStdDpl
     ContextMenus.InitContextMenuRqst
     ContextMenus.InitContextMenuFlt
     ContextMenus.InitContextMenuFile
     ContextMenus.InitContextMenuSubStd
+    ContextMenus.InitContextMenuLic
     
     'Check Version (raise error if backend does not match)
-    If DbProcedures.GetBeVersion() <> Config.pBeVersion Then
-        MsgBox "Error (mdlAutoExec - InitApp): Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & Config.pBeVersion & ")", vbCritical, "Error"
-        Err.Raise vbObjectError + 513, , "Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & Config.pBeVersion & ")"
+    SysCmd acSysCmdSetStatus, "Checking version integrity"
+    If DbProcedures.GetBeVersion() <> config.BeVersion Then
+        MsgBox "Error (mdlAutoExec - InitApp): Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & config.BeVersion & ")", vbCritical, "Error"
+        Err.Raise vbObjectError + 513, , "Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & config.BeVersion & ")"
     End If
     
     'Check if user exists otherwise add
+    SysCmd acSysCmdSetStatus, "Check user registration"
     DbProcedures.AddUser
     
     'Open desktop tab
     'If Application.SysCmd(acSysCmdGetObjectState, acForm, "desktop") <> acObjStateOpen Then DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
     
-    'Interface cosmetics
-    ManageGui.AddAppProperty "AppTitle", dbText, Config.pAppTitle
-    Application.RefreshTitleBar
-    SysCmd acSysCmdSetStatus, "User: " & DbProcedures.GetUserName()
-    HideNavPane DbConnect.GetDbSetting("navpane")
-    
     'Open the closing event form
+    SysCmd acSysCmdSetStatus, "Init background worker"
     DoCmd.OpenForm "*background_worker_form", acNormal, , , acFormReadOnly, acWindowNormal
+    Forms("*background_worker_form").TimerInterval = config.BackgroundWorkerInterval
     Forms("*background_worker_form").visible = False
     
-    'Check licence
-    Config.pDemoMode = Not Licensing.UserHasLicence(DbProcedures.GetUserId())
+    'Check for valid licence
+    SysCmd acSysCmdSetStatus, "Checking licence (will take a while)"
+    config.DemoMode = Not Licensing.UserHasLicence(DbProcedures.GetUserId())
     
     'Show licence message box
-    If Config.pDemoMode Then MsgBox "This is demonstration software. Commercial use prohibited." & vbCrLf & "Report any violation to hello@labdesk.net" & vbCrLf & vbCrLf & "EULA: labdesk.net/licence", vbInformation, "Information"
+    If config.DemoMode Then MsgBox "This is demonstration software. Commercial use prohibited." & vbCrLf & "Report any violation to hello@labdesk.net" & vbCrLf & vbCrLf & "EULA: labdesk.net/licence", vbInformation, "Information"
+    
+    'Fill status bar text with user name
+    SysCmd acSysCmdSetStatus, "User: " & DbProcedures.GetUserName()
     
     InitApp = True
     
@@ -99,6 +100,7 @@ Exit_Function:
     Exit Function
 Catch_Error:
     InitApp = False
+    MsgBox "Following error occured during startup: " & Err.description, vbCritical, "Error occurred"
     DoCmd.OpenForm "dbsetup", acNormal, , , acFormEdit
     Resume Exit_Function
 End Function

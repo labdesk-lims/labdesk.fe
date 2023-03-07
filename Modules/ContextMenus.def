@@ -347,6 +347,84 @@ skip:
     cmbBtn_CreateNew.OnAction = "fnCall"
 End Sub
 
+Public Sub InitContextMenuLic()
+'-------------------------------------------------------------------------------
+' Function:     InitContextMenuStd
+' Date:         2022 January
+' Purpose:      Registers the standard context menu
+' In:           -
+' Out:          -
+'-------------------------------------------------------------------------------
+    Dim cmbBar As CommandBar
+    Dim cmbBtn_CreateNew, cmbBtn_Edit As CommandBarButton
+    
+On Error GoTo skip
+    ' Delete context menu if already exists to register the new one
+    CommandBars("LicContextMenu").Delete
+skip:
+    
+    Set cmbBar = CommandBars.Add("LicContextMenu", msoBarPopup)
+    
+    ' Button to add record
+    Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
+    cmbBtn_CreateNew.FaceId = 18
+    cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "context_menu_std_add_record", DbConnect.GetDbSetting("language"))
+    cmbBtn_CreateNew.Parameter = "add_record"
+    cmbBtn_CreateNew.OnAction = "fnCall"
+    
+    ' Button to activate record
+    Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
+    cmbBtn_CreateNew.FaceId = 277
+    cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "context_menu_std_activate_user", DbConnect.GetDbSetting("language"))
+    cmbBtn_CreateNew.Parameter = "activate_user"
+    cmbBtn_CreateNew.OnAction = "fnCall"
+    
+    ' Button to deactivate record
+    Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
+    cmbBtn_CreateNew.FaceId = 330
+    cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "context_menu_std_deactivate_user", DbConnect.GetDbSetting("language"))
+    cmbBtn_CreateNew.Parameter = "deactivate_user"
+    cmbBtn_CreateNew.OnAction = "fnCall"
+    
+    ' Button to apply a filter
+    Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
+    cmbBtn_CreateNew.BeginGroup = True
+    cmbBtn_CreateNew.FaceId = 35
+    cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "context_menu_std_apply_filter", DbConnect.GetDbSetting("language"))
+    cmbBtn_CreateNew.Parameter = "apply_filter"
+    cmbBtn_CreateNew.OnAction = "fnCall"
+    
+    ' Button to create a filter
+    Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
+    cmbBtn_CreateNew.FaceId = 34
+    cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "context_menu_std_save_filter", DbConnect.GetDbSetting("language"))
+    cmbBtn_CreateNew.Parameter = "save_filter"
+    cmbBtn_CreateNew.OnAction = "fnCall"
+    
+    'Button to select columns
+    Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
+    cmbBtn_CreateNew.BeginGroup = True
+    cmbBtn_CreateNew.FaceId = 8
+    cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "context_menu_std_clmn_dlg", DbConnect.GetDbSetting("language"))
+    cmbBtn_CreateNew.Parameter = "clmn_dlg"
+    cmbBtn_CreateNew.OnAction = "fnCall"
+    
+    'Button to reset column size
+    Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
+    cmbBtn_CreateNew.FaceId = 6
+    cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "context_menu_std_clmn_std", DbConnect.GetDbSetting("language"))
+    cmbBtn_CreateNew.Parameter = "clmn_std"
+    cmbBtn_CreateNew.OnAction = "fnCall"
+    
+    'Audit trail
+    Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
+    cmbBtn_CreateNew.BeginGroup = True
+    cmbBtn_CreateNew.FaceId = 29
+    cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "context_menu_std_audit_trail", DbConnect.GetDbSetting("language"))
+    cmbBtn_CreateNew.Parameter = "audit_trail"
+    cmbBtn_CreateNew.OnAction = "fnCall"
+End Sub
+
 Public Sub fnCall()
 '----------------------------------------------------------------------------------------
 'Function:      fnCall
@@ -366,6 +444,12 @@ On Error GoTo Catch_Error
     Select Case strAction
         Case "add_record"
             Forms(frmCurrentForm.name).AddRecord
+        
+        Case "activate_user"
+            Forms(frmCurrentForm.name).ActivateUser
+        
+        Case "deactivate_user"
+            Forms(frmCurrentForm.name).DeactivateUser
             
         Case "duplicate_record"
             Forms(frmCurrentForm.name).DuplicateRecord

@@ -273,7 +273,7 @@ On Error GoTo Catch_Error
         GetTranslation = item
     Else
         If IsNull(rs(0)) Then
-            GetTranslation = ""
+            GetTranslation = item
         Else
             GetTranslation = rs(0)
         End If
@@ -905,6 +905,99 @@ On Error GoTo Catch_Error
 
 Exit_Function:
     Set db = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
+Public Function GetReports() As Variant
+'-------------------------------------------------------------------------------
+' Function:  GetReports
+' Date:      2023 January
+' Purpose:   Get a list of all reports
+'-------------------------------------------------------------------------------
+    Dim rpt As AccessObject, db As Object, a() As String, i As Integer
+    
+    Set db = Application.CurrentProject
+    
+    'Count reports
+    i = 0
+    For Each rpt In db.AllReports
+        If InStr(1, rpt.name, config.ReportId, vbTextCompare) = 1 Then i = i + 1
+    Next rpt
+    
+    'Fill array with report names
+    ReDim a(i)
+    i = 1
+    For Each rpt In db.AllReports
+        If InStr(1, rpt.name, config.ReportId, vbTextCompare) = 1 Then
+            a(i) = rpt.name
+            i = i + 1
+        End If
+    Next rpt
+    
+    GetReports = a
+End Function
+
+Public Function UploadPicture(ByRef fref As Object) As Boolean
+'-------------------------------------------------------------------------------
+'Function:          UploadPicture
+'Date:              2022 March
+'Purpose:           Uploads a picture to the database
+'In:
+' -> fref:          BLOB field to store the serialized data
+'Out:               Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim oShell As Object
+    Dim oFSO As Object
+    Dim fName As String
+    
+    Set oShell = CreateObject("WScript.Shell")
+    Set oFSO = CreateObject("Scripting.FileSystemObject")
+    
+    fName = Dialogs.OpenFileDialog()
+    If fName = "" Then Exit Function
+    DbBlob.FileToBlob fName, fref
+    
+    UploadPicture = True
+    
+Exit_Function:
+    Exit Function
+Catch_Error:
+    MsgBox "Error (dbProdures - UploadPicture): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function ShowPicture(ByRef fref As Object, ByRef pref As Object) As Boolean
+'-------------------------------------------------------------------------------
+'Function:          ShowPicture
+'Date:              2022 March
+'Purpose:           Show the picture of the BLOB
+'In:
+' -> fref:          BLOB field of the serialized data
+' -> pref           Picture field to present the picture
+'Out:               Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim oShell As Object
+    Dim oFSO As Object
+    Dim fPath As String
+    Dim fName As String
+    
+    Set oShell = CreateObject("WScript.Shell")
+    Set oFSO = CreateObject("Scripting.FileSystemObject")
+    
+    fPath = oShell.ExpandEnvironmentStrings("%USERPROFILE%\") + config.CacheFolder
+    If Not oFSO.FolderExists(fPath) Then MkDir fPath
+    
+    fName = fPath & "\" & "tmp_" & CreateGuid()
+    If Not IsNull(fref) Then DbBlob.BlobToFile fName, fref
+    pref.Picture = fName
+    
+    ShowPicture = True
+    
+Exit_Function:
     Exit Function
 Catch_Error:
     Resume Exit_Function

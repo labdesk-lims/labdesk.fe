@@ -25,7 +25,7 @@ On Error GoTo Catch_Error
     If IsNull(strEmailAddress) Then Resume Exit_Function
     
     objRegExp.IgnoreCase = True
-    objRegExp.Global = True
+    objRegExp.global = True
     objRegExp.Pattern = "^([a-zA-Z0-9_\-\.]+)@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$"
     
     blnIsValidEmail = objRegExp.test(strEmailAddress)
@@ -165,65 +165,18 @@ Catch_Error:
     IsFormView = False
 End Function
 
-Public Function SelectReport() As Variant
-    Dim rpt As AccessObject, db As Object, a As ArrayList, i As Integer, s As Variant
-    
-    Set a = New ArrayList
-    
-    Set db = Application.CurrentProject
-    For Each rpt In db.AllReports
-        If InStr(1, rpt.name, pReportTemplate, vbTextCompare) = 1 Then a.Add rpt.name
-    Next rpt
-    
-    CurrentDb.Execute "DELETE * FROM keyvalue"
-     
-    i = 0
-    For Each s In a
-        CurrentDb.Execute "INSERT INTO keyvalue (key, value_txt) VALUES(" & i & ",'" & s & "')"
-        i = i + 1
-    Next
-    
-    DoCmd.OpenForm "*SelectDialog", acNormal, , , acFormEdit, acDialog, "SELECT value_txt, key FROM keyvalue"
-    
-    If Not IsNull(Forms("*SelectDialog").comboBox.Column(1)) Then
-        SelectReport = Forms("*SelectDialog").comboBox.Column(0)
-    Else
-        SelectReport = Null
-    End If
-    
-    DoCmd.Close acForm, "*SelectDialog", acSaveNo
-End Function
-
-Public Function GetReports() As Variant
-    Dim rpt As AccessObject, db As Object, a As ArrayList
-    
-    Set a = New ArrayList
-    
-    Set db = Application.CurrentProject
-    For Each rpt In db.AllReports
-        If InStr(1, rpt.name, pReportTemplate, vbTextCompare) = 1 Then a.Add rpt.name
-    Next rpt
-    
-    Set GetReports = a
-End Function
-
 Public Function SelectLabel() As Variant
-    Dim rpt As AccessObject, db As Object, a As ArrayList, i As Integer, s As Variant
-    
-    Set a = New ArrayList
+    Dim rpt As AccessObject, db As Object, i As Integer, s As Variant
     
     Set db = Application.CurrentProject
-    For Each rpt In db.AllReports
-        If InStr(1, rpt.name, pLabelTemplate, vbTextCompare) = 1 Then a.Add rpt.name
-    Next rpt
     
     CurrentDb.Execute "DELETE * FROM keyvalue"
-     
+    
     i = 0
-    For Each s In a
-        CurrentDb.Execute "INSERT INTO keyvalue (key, value_txt) VALUES(" & i & ",'" & s & "')"
+    For Each rpt In db.AllReports
+        If InStr(1, rpt.name, config.LabelId, vbTextCompare) = 1 Then CurrentDb.Execute "INSERT INTO keyvalue (key, value_txt) VALUES(" & i & ",'" & rpt.name & "')"
         i = i + 1
-    Next
+    Next rpt
     
     DoCmd.OpenForm "*SelectDialog", acNormal, , , acFormEdit, acDialog, "SELECT value_txt, key FROM keyvalue"
     

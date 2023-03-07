@@ -1,6 +1,6 @@
 '################################################################################################
-' This module will activate user licenses based on a unique identifier in the table users.
-' The activation is done manually.
+' This class module will activate users by licensing based on a unique identifier
+' in the table users. The activation is performed manually.
 '################################################################################################
 
 Option Compare Database
@@ -16,7 +16,7 @@ On Error GoTo Catch_Error
     
     If IsNull(rs(0)) Then Err.Raise vbObjectError + 513, "", "UID not found in table users"
     
-    CurrentDb.Execute "UPDATE users SET licence = '" & StoreEncryptAES(rs(0), pLicenceKey & CStr(userid)) & "' WHERE id = " & userid, dbSeeChanges
+    CurrentDb.Execute "UPDATE users SET licence = '" & StoreEncryptAES(rs(0), config.EncryptionKey & CStr(userid)) & "' WHERE id = " & userid, dbSeeChanges
     
     ActivateUser = True
     
@@ -41,7 +41,7 @@ On Error GoTo Catch_Error
     
     If IsNull(rs_lc(0)) Then Err.Raise vbObjectError + 513, "", "Licence not found in table users"
     If IsNull(rs_uid(0)) Then Err.Raise vbObjectError + 513, "", "UID not found in table users"
-    If RetrieveDecryptAES(rs_lc(0), pLicenceKey & CStr(userid)) <> rs_uid(0) Then Err.Raise vbObjectError + 513, "", "Not a valid licence."
+    If RetrieveDecryptAES(rs_lc(0), config.EncryptionKey & CStr(userid)) <> rs_uid(0) Then Err.Raise vbObjectError + 513, "", "Not a valid licence."
     
     UserHasLicence = True
     
@@ -53,4 +53,31 @@ Exit_Function:
 Catch_Error:
     UserHasLicence = False
     Resume Exit_Function
+End Function
+
+Public Sub CreateLicenceFile(ByVal fileName As String, ByVal licensee As String, ByVal details As String, ByVal users As Integer)
+    Dim Json As String
+    Dim JsonTS As TextStream
+    Dim FSO As New FileSystemObject
+
+    Json = StoreEncryptAES("{""licensee"":""" & licensee & """,""details"":""" & details & """,""users"":" & users & "}", config.EncryptionKey)
+    
+    Set JsonTS = FSO.CreateTextFile(Application.CurrentProject.Path & "\" & fileName, True)
+    JsonTS.Write (Json)
+    JsonTS.Close
+End Sub
+
+Public Function GetLicenceByFile(ByVal fileName As String) As Object
+    Dim FSO As New FileSystemObject
+    Dim JsonTS As TextStream
+    Dim JsonText As String
+    Dim Parsed As Dictionary
+    
+    ' Read .json file
+    Set JsonTS = FSO.OpenTextFile(Application.CurrentProject.Path & "\" & fileName, ForReading)
+    JsonText = JsonTS.ReadAll
+    JsonTS.Close
+    
+    Dim Json As Object
+    Set GetLicenceByFile = JsonConverter.ParseJson(RetrieveDecryptAES(JsonText, config.EncryptionKey))
 End Function

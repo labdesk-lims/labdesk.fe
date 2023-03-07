@@ -234,7 +234,7 @@ Public Sub SysPrep()
     CopyTable "role_permission", "_role_permission"
     
     ' Unlink DSN less tables
-    UnAttachDSNLessTables DSNLessTables
+    UnAttachDSNLessTables config.DSNLessTables
     
     ' Activate initialization
     CurrentDb.Execute "UPDATE dbsetup SET sysinit = 1"
@@ -290,7 +290,7 @@ On Error GoTo Catch_Error
     Set oShell = CreateObject("WScript.Shell")
     Set oFSO = CreateObject("Scripting.FileSystemObject")
     
-    fPath = oShell.ExpandEnvironmentStrings("%USERPROFILE%\") + pCacheFolder
+    fPath = oShell.ExpandEnvironmentStrings("%USERPROFILE%\") + config.CacheFolder
     If oFSO.FolderExists(fPath) Then Kill fPath + "\*.*"
     
     CleanCache = True

@@ -9,30 +9,6 @@ Option Explicit
 Global ADODBConStr As String
 Global ODBCConStr As String
 
-Private Function IsValidADODBConnection() As Boolean
-'-------------------------------------------------------------------------------
-' Function:  IsValidADODBConnection
-' Date:      2022 January
-' Purpose:   Checks if connection string works
-' In:        -
-' Out:       Connection Valid (T/F)
-'-------------------------------------------------------------------------------
-On Error GoTo Catch_Error
-    Dim dbCon As ADODB.Connection
-    Set dbCon = CreateObject("adodb.connection")
-
-    dbCon.ConnectionTimeout = pConnectionTimeout
-    dbCon.Open ADODBConStr
-
-    IsValidADODBConnection = True
-
-Exit_Function:
-    Set dbCon = Nothing
-    Exit Function
-Catch_Error:
-    Resume Exit_Function
-End Function
-
 Public Function GetDbSetting(key As String) As String
 '-------------------------------------------------------------------------------
 ' Function:  GetDbSetting
@@ -76,42 +52,27 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function ConnectDb(ByVal server As String, ByVal database As String, ByVal remoteTables As Variant, Optional ByVal user As String, Optional ByVal password As String) As Boolean
+Private Function IsValidADODBConnection() As Boolean
 '-------------------------------------------------------------------------------
-' Function:         ConnectDb
-' Date:             2022 January
-' Purpose:          Connects to the database using the provided credentials
-' In:
-' -> server:        Server to connect to
-' -> database:      Database of choice
-' -> remoteTables:  Array of tables to be linked to the frontend
-' -> user:          Optional user credentials
-' -> password:      Optional password credentials
-' Note:             If user and password are not provided the connection will
-'                   be established using windows authentication.
-' Out:              Done (T/F)
+' Function:  IsValidADODBConnection
+' Date:      2022 January
+' Purpose:   Checks if connection string works
+' In:        -
+' Out:       Connection Valid (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    'Check if server and database is set
-    If server = "" Or database = "" Then Err.Raise vbObjectError + 513, , "Server and/or database not set."
-    
-    'Set connection string
-    If Len(user) = 0 Then
-        SetConStr server, database
-    Else
-        SetConStr server, database, user, password
-    End If
-    
-    If Not IsValidADODBConnection Then Err.Raise vbObjectError + 513, , "Invalid connection string."
-    
-    AttachDSNLessTables (remoteTables)
-    
-    ConnectDb = True
+    Dim dbCon As ADODB.Connection
+    Set dbCon = CreateObject("adodb.connection")
+
+    dbCon.ConnectionTimeout = config.ConnectionTimeout
+    dbCon.Open ADODBConStr
+
+    IsValidADODBConnection = True
 
 Exit_Function:
+    Set dbCon = Nothing
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlDbConnection - ConnectDb): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function
 
@@ -137,6 +98,38 @@ Private Sub SetConStr(ByVal server As String, ByVal database As String, Optional
         ODBCConStr = "ODBC;DRIVER=SQL Server;SERVER=" & server & ";DATABASE=" & database & ";UID=" & user & ";PWD=" & password & ";ColumnEncryption=Enabled;" & "APP=labdesk-ui;"
     End If
 End Sub
+
+Public Function ConnectDb(ByVal server As String, ByVal database As String, ByVal remoteTables As Variant, Optional ByVal user As String, Optional ByVal password As String) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         ConnectDb
+' Date:             2022 January
+' Purpose:          Connects to the database using the provided credentials
+' In:
+' -> server:        Server to connect to
+' -> database:      Database of choice
+' -> remoteTables:  Array of tables to be linked to the frontend
+' -> user:          Optional user credentials
+' -> password:      Optional password credentials
+' Note:             If user and password are not provided the connection will
+'                   be established using windows authentication.
+' Out:              Done (T/F)
+'-------------------------------------------------------------------------------
+    'Check if server and database is set
+    If server = "" Or database = "" Then Err.Raise vbObjectError + 513, , "Server and/or database not set."
+    
+    'Set connection string
+    If Len(user) = 0 Then
+        SetConStr server, database
+    Else
+        SetConStr server, database, user, password
+    End If
+    
+    If Not IsValidADODBConnection Then Err.Raise vbObjectError + 513, , "Server and/or database not found."
+    
+    AttachDSNLessTables (remoteTables)
+    
+    ConnectDb = True
+End Function
 
 Private Function AttachDSNLessTables(ByVal remoteTables As Variant) As Boolean
 '---------------------------------------------------------------------------------------
