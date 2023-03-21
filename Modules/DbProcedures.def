@@ -1002,3 +1002,27 @@ Exit_Function:
 Catch_Error:
     Resume Exit_Function
 End Function
+
+Public Function CountActivatedUsers() As Integer
+'-------------------------------------------------------------------------------
+'Function:          CountActivatedUsers
+'Date:              2023 March
+'Purpose:           Count the number of activated users
+'Out:               Activated Users (Integer)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM users WHERE users.licence IS NOT NULL", dbOpenDynaset, dbSeeChanges)
+    
+    CountActivatedUsers = rs(0)
+    
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function

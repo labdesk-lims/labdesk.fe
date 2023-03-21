@@ -26,6 +26,8 @@ Public Function InitApp() As Boolean
 ' Out:          Done (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
+    Dim lic As Object
+    
     config.Init False, ".labdesk", "Q784F-H7If9-fO9fO-8Hgd9"
     
     'Interface cosmetics
@@ -33,6 +35,9 @@ On Error GoTo Catch_Error
     ManageGui.AddAppProperty "AppTitle", dbText, config.AppTitle
     Application.RefreshTitleBar
     HideNavPane DbConnect.GetDbSetting("navpane")
+    ManageGui.AddAppProperty "AppIcon", dbText, CurrentProject.Path & "\assets\img\icon.ico"
+    CurrentDb.Properties("UseAppIconForFrmRpt").value = True
+    Application.RefreshTitleBar
     
     'Show login form
     SysCmd acSysCmdSetStatus, "User login"
@@ -72,7 +77,7 @@ On Error GoTo Catch_Error
     'Check Version (raise error if backend does not match)
     SysCmd acSysCmdSetStatus, "Checking version integrity"
     If DbProcedures.GetBeVersion() <> config.BeVersion Then
-        MsgBox "Error (mdlAutoExec - InitApp): Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & config.BeVersion & ")", vbCritical, "Error"
+        'MsgBox "Error (mdlAutoExec - InitApp): Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & config.BeVersion & ")", vbCritical, "Error"
         Err.Raise vbObjectError + 513, , "Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & config.BeVersion & ")"
     End If
     
@@ -87,11 +92,15 @@ On Error GoTo Catch_Error
     Forms("*background_worker_form").visible = False
     
     'Show licence message box
+    SysCmd acSysCmdSetStatus, "Check for valid user licence"
+    Set lic = GetLicenceByFile(config.LicenceFileName)
+    If CountActivatedUsers() > lic("seats") Then Err.Raise vbObjectError + 513, , "Corrupt user licence."
+    config.DemoMode = Not UserHasLicence(GetUserId)
     If config.DemoMode Then MsgBox "This is demonstration software. Commercial use prohibited." & vbCrLf & "Report any violation to hello@labdesk.net" & vbCrLf & vbCrLf & "EULA: labdesk.net/licence", vbInformation, "Information"
     
     'Open desktop tab
-    SysCmd acSysCmdSetStatus, "Open desktop"
-    If Application.SysCmd(acSysCmdGetObjectState, acForm, "desktop") <> acObjStateOpen Then DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
+    'SysCmd acSysCmdSetStatus, "Open desktop"
+    'If Application.SysCmd(acSysCmdGetObjectState, acForm, "desktop") <> acObjStateOpen Then DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
     
     'Fill status bar text with user name
     SysCmd acSysCmdSetStatus, "User: " & DbProcedures.GetUserName()

@@ -14,7 +14,7 @@ Option Explicit
 Private Const pConnectionTimeout = 3
 
 ' Application title shown as form title
-Private Const pAppTitle = "LABDESK LIMS"
+Private Const pAppTitle = "LABDESK - Laboratory Information Management System"
 
 ' Background worker timer interval in milliseconds
 Private Const pBackgroundWorkerInterval = 3 * 60000
