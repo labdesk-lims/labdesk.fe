@@ -787,7 +787,8 @@ Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
-    ReplaceSql = "Error rendering sticker. Check for missing informations."
+    'ReplaceSql = "Error rendering sticker. Check for missing informations."
+    ReplaceSql = message
     Resume Exit_Function
 End Function
 

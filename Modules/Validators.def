@@ -109,7 +109,7 @@ Private Function DecodeBase64(ByVal strData As String) As Byte()
     Set objXML = New MSXML2.DOMDocument60
     Set objNode = objXML.createElement("b64")
     objNode.DataType = "bin.base64"
-    objNode.text = strData
+    objNode.Text = strData
     DecodeBase64 = objNode.nodeTypedValue
    
     ' thanks, bye
@@ -128,7 +128,7 @@ Private Function EncodeBase64(ByRef arrData() As Byte) As String
     Set objNode = objXML.createElement("b64")
     objNode.DataType = "bin.base64"
     objNode.nodeTypedValue = arrData
-    EncodeBase64 = objNode.text
+    EncodeBase64 = objNode.Text
 
     ' thanks, bye
     Set objNode = Nothing
@@ -188,3 +188,10 @@ Public Function SelectLabel() As Variant
     
     DoCmd.Close acForm, "*SelectDialog", acSaveNo
 End Function
+
+Public Sub ComboBoxSearch(ByRef combo As comboBox, ByVal lookupField As String, ByVal pk As String)
+    Dim strSQL As String
+    strSQL = combo.RowSource
+    combo.RowSource = "SELECT " & lookupField & ", " & pk & " FROM (" & Replace(strSQL, ";", "") & ") WHERE " & lookupField & " Like '*" & combo.Text & "*'"
+    'combo.Dropdown
+End Sub

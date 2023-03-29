@@ -113,6 +113,5 @@ Catch_Error:
     InitApp = False
     MsgBox "Following error occured during startup: " & Err.description, vbCritical, "Error occurred"
     DoCmd.Quit
-    'DoCmd.OpenForm "dbsetup", acNormal, , , acFormEdit
     Resume Exit_Function
 End Function
