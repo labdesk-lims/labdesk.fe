@@ -243,7 +243,7 @@ Public Sub SysPrep()
     'DisableShift
     
     ' Reset db settings
-    CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, token = Null, navpane = 0, sysinit = 1"
+    CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, navpane = 0, sysinit = 1"
 End Sub
 
 Public Sub sysinit()

@@ -1050,7 +1050,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">analysis_method_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">method</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1350"/>
+      <field_4 name="column_width" binary="false" null="false" value="2100"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="2"/>
     </Row_117>
@@ -1293,7 +1293,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">users</field_2>
       <field_3 name="column_id" binary="false" null="false">id</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="765"/>
+      <field_4 name="column_width" binary="false" null="false" value="-2"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="1"/>
     </Row_144>
@@ -1302,7 +1302,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">users</field_2>
       <field_3 name="column_id" binary="false" null="false">name</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="2850"/>
+      <field_4 name="column_width" binary="false" null="false" value="3998"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="2"/>
     </Row_145>
@@ -1311,7 +1311,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">users</field_2>
       <field_3 name="column_id" binary="false" null="false">role</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1935"/>
+      <field_4 name="column_width" binary="false" null="false" value="-2"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_146>
@@ -1320,7 +1320,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">users</field_2>
       <field_3 name="column_id" binary="false" null="false">language</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1290"/>
+      <field_4 name="column_width" binary="false" null="false" value="-2"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="5"/>
     </Row_147>
@@ -1329,7 +1329,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">users</field_2>
       <field_3 name="column_id" binary="false" null="false">contact</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="2160"/>
+      <field_4 name="column_width" binary="false" null="false" value="-2"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="4"/>
     </Row_148>
@@ -1383,7 +1383,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">method_smptype_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">id</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="615"/>
+      <field_4 name="column_width" binary="false" null="false" value="1701"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="1"/>
     </Row_154>
@@ -1392,8 +1392,8 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">method_smptype_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">method</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1155"/>
-      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
+      <field_4 name="column_width" binary="false" null="false" value="1428"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="true"/>
       <field_6 name="column_order" binary="false" null="false" value="2"/>
     </Row_155>
     <Row_156>
@@ -1401,7 +1401,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">method_smptype_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">smptype</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1620"/>
+      <field_4 name="column_width" binary="false" null="false" value="2715"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_156>
@@ -1428,7 +1428,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">method_analysis_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">analysis</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1290"/>
+      <field_4 name="column_width" binary="false" null="false" value="2078"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_159>
@@ -1545,7 +1545,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">handbook_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">message_at</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="-1"/>
+      <field_4 name="column_width" binary="false" null="false" value="2970"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_172>
@@ -3220,7 +3220,7 @@
       <field_2 name="table_id" binary="false" null="false">profile_analysis_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">true_value</field_3>
       <field_4 name="column_width" binary="false" null="false" value="2220"/>
-      <field_5 name="column_hidden" binary="false" null="false" value="true"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="8"/>
     </Row_358>
     <Row_359>
@@ -3229,7 +3229,7 @@
       <field_2 name="table_id" binary="false" null="false">profile_analysis_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">acceptance</field_3>
       <field_4 name="column_width" binary="false" null="false" value="1710"/>
-      <field_5 name="column_hidden" binary="false" null="false" value="true"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="9"/>
     </Row_359>
     <Row_360>
@@ -3264,7 +3264,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">profile</field_2>
       <field_3 name="column_id" binary="false" null="false">reference_material</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="2010"/>
+      <field_4 name="column_width" binary="false" null="false" value="3188"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="7"/>
     </Row_363>
