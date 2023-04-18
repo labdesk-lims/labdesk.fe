@@ -77,8 +77,8 @@ Function DisableShift()
 
 On Error GoTo errDisableShift
 
-Dim db As dao.database
-Dim prop As dao.Property
+Dim db As DAO.database
+Dim prop As DAO.Property
 Const conPropNotFound = 3270
 
 Set db = CurrentDb()
@@ -114,8 +114,8 @@ Function EnableShift()
 
 On Error GoTo errEnableShift
 
-Dim db As dao.database
-Dim prop As dao.Property
+Dim db As DAO.database
+Dim prop As DAO.Property
 Const conPropNotFound = 3270
 
 Set db = CurrentDb()

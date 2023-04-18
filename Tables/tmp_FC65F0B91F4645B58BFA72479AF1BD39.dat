@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<TableData>
+  <Rows>
+    <Row_1>
+      <field_0 name="id" binary="false" null="false" value="5"/>
+      <field_1 name="salutation" binary="false" null="false">Mr.</field_1>
+      <field_2 name="first_name" binary="false" null="false">Lutz</field_2>
+      <field_3 name="last_name" binary="false" null="false">Kogel</field_3>
+      <field_4 name="job_title" binary="false" null="false">Project Manager</field_4>
+      <field_5 name="signature" binary="true" size="0" null="true"/>
+      <field_6 name="photo" null="false" binary="true" size="2">0000</field_6>
+      <field_7 name="email" binary="false" null="false">hello@labdesk.net</field_7>
+      <field_8 name="phone" binary="false" null="true"/>
+      <field_9 name="mobile" binary="false" null="true"/>
+      <field_10 name="fax" binary="false" null="true"/>
+      <field_11 name="website" binary="false" null="true"/>
+      <field_12 name="postal_country" binary="false" null="true"/>
+      <field_13 name="postal_state" binary="false" null="true"/>
+      <field_14 name="postal_district" binary="false" null="true"/>
+      <field_15 name="postal_city" binary="false" null="true"/>
+      <field_16 name="postal_postalcode" binary="false" null="true"/>
+      <field_17 name="postal_street" binary="false" null="true"/>
+      <field_18 name="postal_housenumber" binary="false" null="true"/>
+      <field_19 name="billing_country" binary="false" null="true"/>
+      <field_20 name="billing_state" binary="false" null="true"/>
+      <field_21 name="billing_district" binary="false" null="true"/>
+      <field_22 name="billing_city" binary="false" null="true"/>
+      <field_23 name="billing_postalcode" binary="false" null="true"/>
+      <field_24 name="billing_street" binary="false" null="true"/>
+      <field_25 name="billing_housenumber" binary="false" null="true"/>
+      <field_26 name="bank" binary="false" null="true"/>
+      <field_27 name="iban" binary="false" null="true"/>
+      <field_28 name="bic" binary="false" null="true"/>
+      <field_29 name="vatnr" binary="false" null="true"/>
+      <field_30 name="sampler" binary="false" null="false" value="true"/>
+      <field_31 name="deactivate" binary="false" null="false" value="false"/>
+      <field_32 name="customer" binary="false" null="false" value="4"/>
+    </Row_1>
+  </Rows>
+</TableData>

@@ -99,8 +99,8 @@ On Error GoTo Catch_Error
     If config.DemoMode Then MsgBox "This is demonstration software. Commercial use prohibited." & vbCrLf & "Report any violation to hello@labdesk.net" & vbCrLf & vbCrLf & "EULA: labdesk.net/licence", vbInformation, "Information"
     
     'Open desktop tab
-    'SysCmd acSysCmdSetStatus, "Open desktop"
-    'If Application.SysCmd(acSysCmdGetObjectState, acForm, "desktop") <> acObjStateOpen Then DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
+    SysCmd acSysCmdSetStatus, "Open desktop"
+    If Application.SysCmd(acSysCmdGetObjectState, acForm, "desktop") <> acObjStateOpen Then DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
     
     'Fill status bar text with user name
     SysCmd acSysCmdSetStatus, "User: " & DbProcedures.GetUserName()

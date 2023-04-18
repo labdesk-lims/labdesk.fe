@@ -717,7 +717,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">desktop_task_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">description</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1485"/>
+      <field_4 name="column_width" binary="false" null="false" value="5415"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_80>
@@ -1545,7 +1545,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">handbook_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">message_at</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="2970"/>
+      <field_4 name="column_width" binary="false" null="false" value="-1"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_172>
@@ -2625,7 +2625,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">project_task_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">title</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="720"/>
+      <field_4 name="column_width" binary="false" null="false" value="2220"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="2"/>
     </Row_292>
@@ -2634,7 +2634,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">project_task_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">description</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1335"/>
+      <field_4 name="column_width" binary="false" null="false" value="2775"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_293>
@@ -2679,7 +2679,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">project_task_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">workload_planned</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1958"/>
+      <field_4 name="column_width" binary="false" null="false" value="2385"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="7"/>
     </Row_298>
@@ -2715,7 +2715,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">project_task_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">responsible</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1380"/>
+      <field_4 name="column_width" binary="false" null="false" value="2505"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="4"/>
     </Row_302>
@@ -3192,7 +3192,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">profile_analysis_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">analysis</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1140"/>
+      <field_4 name="column_width" binary="false" null="false" value="1845"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="6"/>
     </Row_355>
@@ -3201,7 +3201,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">profile_analysis_sbf</field_2>
       <field_3 name="column_id" binary="false" null="false">method</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1298"/>
+      <field_4 name="column_width" binary="false" null="false" value="2430"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="7"/>
     </Row_356>
@@ -3255,7 +3255,7 @@
       <field_1 name="user_id" binary="false" null="false">sa</field_1>
       <field_2 name="table_id" binary="false" null="false">profile</field_2>
       <field_3 name="column_id" binary="false" null="false">description</field_3>
-      <field_4 name="column_width" binary="false" null="false" value="1335"/>
+      <field_4 name="column_width" binary="false" null="false" value="5295"/>
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_362>
@@ -3655,5 +3655,50 @@
       <field_5 name="column_hidden" binary="false" null="false" value="false"/>
       <field_6 name="column_order" binary="false" null="false" value="3"/>
     </Row_406>
+    <Row_407>
+      <field_0 name="id" binary="false" null="false" value="17357"/>
+      <field_1 name="user_id" binary="false" null="false">sa</field_1>
+      <field_2 name="table_id" binary="false" null="false">task_workload_sbf</field_2>
+      <field_3 name="column_id" binary="false" null="false">id</field_3>
+      <field_4 name="column_width" binary="false" null="false" value="1701"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
+      <field_6 name="column_order" binary="false" null="false" value="1"/>
+    </Row_407>
+    <Row_408>
+      <field_0 name="id" binary="false" null="false" value="17358"/>
+      <field_1 name="user_id" binary="false" null="false">sa</field_1>
+      <field_2 name="table_id" binary="false" null="false">task_workload_sbf</field_2>
+      <field_3 name="column_id" binary="false" null="false">workload</field_3>
+      <field_4 name="column_width" binary="false" null="false" value="3000"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
+      <field_6 name="column_order" binary="false" null="false" value="3"/>
+    </Row_408>
+    <Row_409>
+      <field_0 name="id" binary="false" null="false" value="17359"/>
+      <field_1 name="user_id" binary="false" null="false">sa</field_1>
+      <field_2 name="table_id" binary="false" null="false">task_workload_sbf</field_2>
+      <field_3 name="column_id" binary="false" null="false">workday</field_3>
+      <field_4 name="column_width" binary="false" null="false" value="-1"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
+      <field_6 name="column_order" binary="false" null="false" value="2"/>
+    </Row_409>
+    <Row_410>
+      <field_0 name="id" binary="false" null="false" value="17360"/>
+      <field_1 name="user_id" binary="false" null="false">sa</field_1>
+      <field_2 name="table_id" binary="false" null="false">profile_analysis_sbf</field_2>
+      <field_3 name="column_id" binary="false" null="false">Text145</field_3>
+      <field_4 name="column_width" binary="false" null="false" value="5400"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
+      <field_6 name="column_order" binary="false" null="false" value="14"/>
+    </Row_410>
+    <Row_411>
+      <field_0 name="id" binary="false" null="false" value="17361"/>
+      <field_1 name="user_id" binary="false" null="false">sa</field_1>
+      <field_2 name="table_id" binary="false" null="false">request_analysis_sbf</field_2>
+      <field_3 name="column_id" binary="false" null="false">method</field_3>
+      <field_4 name="column_width" binary="false" null="false" value="-2"/>
+      <field_5 name="column_hidden" binary="false" null="false" value="false"/>
+      <field_6 name="column_order" binary="false" null="false" value="5"/>
+    </Row_411>
   </Rows>
 </TableData>

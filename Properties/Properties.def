@@ -22,7 +22,7 @@
     <NavPaneClosed name="NavPane Closed" type="4" value="0" sort="1"/>
     <NavPaneSortBy name="NavPane Sort By" type="4" value="1" sort="1"/>
     <NavPaneViewBy name="NavPane View By" type="4" value="0" sort="1"/>
-    <NavPaneWidth name="NavPane Width" type="4" value="207" sort="1"/>
+    <NavPaneWidth name="NavPane Width" type="4" value="507" sort="1"/>
     <NeverCache name="Never Cache" type="4" value="0" sort="1"/>
     <PicturePropertyStorageFormat name="Picture Property Storage Format" type="4" value="0" sort="1"/>
     <ProjVer name="ProjVer" type="3" value="142" sort="1"/>
@@ -50,6 +50,10 @@
   <SummaryInfo context="2">
     <Title name="Title" type="10" value="Database1" sort="3"/>
   </SummaryInfo>
+  <ActiveVBProject context="4">
+    <Description name="Description" type="10" value="Laboratory Information Management System" sort="5"/>
+    <Name name="Name" type="10" value="LABDESK Lims" sort="5"/>
+  </ActiveVBProject>
   <GetOptions context="5">
     <ActiveServerPagesSessionTimeout name="Active Server Pages Session Timeout" type="0" value="" sort="6"/>
     <ActiveServerPagesURL name="Active Server Pages URL" type="1" value="" sort="6"/>
@@ -127,7 +131,7 @@
     <NavPaneClosed name="NavPane Closed" type="73" value="0" sort="6"/>
     <NavPaneSortBy name="NavPane Sort By" type="74" value="1" sort="6"/>
     <NavPaneViewBy name="NavPane View By" type="75" value="0" sort="6"/>
-    <NavPaneWidth name="NavPane Width" type="76" value="207" sort="6"/>
+    <NavPaneWidth name="NavPane Width" type="76" value="507" sort="6"/>
     <NewDatabaseSortOrder name="New Database Sort Order" type="77" value="1033" sort="6"/>
     <NumberofUpdateRetries name="Number of Update Retries" type="78" value="2" sort="6"/>
     <ObjectsSnaptoGrid name="Objects Snap to Grid" type="79" value="-1" sort="6"/>
@@ -137,7 +141,7 @@
     <Password name="Password" type="83" value="" sort="6"/>
     <PerformNameAutoCorrect name="Perform Name AutoCorrect" type="84" value="-1" sort="6"/>
     <PrefsMigrated name="Prefs Migrated" type="85" value="-1" sort="6"/>
-    <ProjectName name="Project Name" type="86" value="Labdesk" sort="6"/>
+    <ProjectName name="Project Name" type="86" value="LABDESK Lims" sort="6"/>
     <ProvideFeedbackwithSound name="Provide Feedback with Sound" type="87" value="0" sort="6"/>
     <RefreshIntervalsec name="Refresh Interval (sec)" type="88" value="3" sort="6"/>
     <ReportTemplate name="Report Template" type="89" value="Normal" sort="6"/>

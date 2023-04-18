@@ -55,29 +55,37 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Sub CreateLicenceFile(ByVal FileName As String, ByVal licensee As String, ByVal details As String, ByVal seats As Integer)
+Public Sub CreateLicenceFile(ByVal fileName As String, ByVal licensee As String, ByVal details As String, ByVal seats As Integer)
     Dim Json As String
     Dim JsonTS As TextStream
     Dim FSO As New FileSystemObject
 
     Json = StoreEncryptAES("{""licensee"":""" & licensee & """,""details"":""" & details & """,""seats"":" & seats & "}", config.EncryptionKey, 1)
     
-    Set JsonTS = FSO.CreateTextFile(Application.CurrentProject.Path & "\" & FileName, True)
+    Set JsonTS = FSO.CreateTextFile(Application.CurrentProject.Path & "\" & fileName, True)
     JsonTS.Write (Json)
     JsonTS.Close
 End Sub
 
-Public Function GetLicenceByFile(ByVal FileName As String) As Object
+Public Function GetLicenceByFile(ByVal fileName As String) As Object
+On Error GoTo Catch_Error
     Dim FSO As New FileSystemObject
     Dim JsonTS As TextStream
     Dim JsonText As String
     Dim Parsed As Dictionary
+    Dim Json As Object
     
     ' Read .json file
-    Set JsonTS = FSO.OpenTextFile(Application.CurrentProject.Path & "\" & FileName, ForReading)
+    Set JsonTS = FSO.OpenTextFile(Application.CurrentProject.Path & "\" & fileName, ForReading)
     JsonText = JsonTS.ReadAll
     JsonTS.Close
     
-    Dim Json As Object
     Set GetLicenceByFile = JsonConverter.ParseJson(RetrieveDecryptAES(JsonText, config.EncryptionKey, 1, True))
+    
+Exit_Function:
+    Set JsonTS = Nothing
+    Set Json = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
 End Function

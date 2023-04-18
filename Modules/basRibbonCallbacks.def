@@ -139,112 +139,112 @@ Sub GetEnabled(control As IRibbonControl, ByRef enabled)
     Select Case control.ID
         
         Case "btn_database"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
 
         Case "btn_setup"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_translation"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_user"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_role"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
         
         Case "btn_laboratory"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_department"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_workplace"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_instrument"
-           enabled = True
+           enabled = DbProcedures.GetPermission(control.ID).Read
           
         Case "btn_customer"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_contact"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_manufacturer"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_supplier"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_smpmatrix"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_smptype"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_smppoint"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_smpcondition"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_smppreservation"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_container"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
         
         Case "btn_storage"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_instype"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_technique"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_priority"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
         
         Case "btn_desktop"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_certificate"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_qualification"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_method"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_analysis"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_profile"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_workflow"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_request"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
         
         Case "btn_measurement"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
         
         Case "btn_batch"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
         
         Case "btn_material"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_formulation"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_project"
-            enabled = True
+            enabled = DbProcedures.GetPermission(control.ID).Read
 
         Case Else
             enabled = True
@@ -1337,7 +1337,7 @@ Public Function getAppPath() As String
     getAppPath = strDummy
 End Function
 
-Public Function getIconFromTable(strFilename As String) As Picture
+Public Function getIconFromTable(strFilename As String) As picture
 '*****************************************************************************
 'Funktion 'getIconFromTable' holt ein Bild aus der Binaer-Tabelle und gibt
 ' ein Picture Objekt zurueck
@@ -1346,7 +1346,7 @@ Public Function getIconFromTable(strFilename As String) As Picture
 
 Dim lSize As Long
 Dim arrBin() As Byte
-Dim rs As dao.Recordset
+Dim rs As DAO.Recordset
  
     On Error GoTo Errr
  

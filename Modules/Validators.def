@@ -190,8 +190,8 @@ Public Function SelectLabel() As Variant
 End Function
 
 Public Sub ComboBoxSearch(ByRef combo As comboBox, ByVal lookupField As String, ByVal pk As String)
-    Dim strSQL As String
-    strSQL = combo.RowSource
-    combo.RowSource = "SELECT " & lookupField & ", " & pk & " FROM (" & Replace(strSQL, ";", "") & ") WHERE " & lookupField & " Like '*" & combo.Text & "*'"
+    Dim strSql As String
+    strSql = combo.RowSource
+    combo.RowSource = "SELECT " & lookupField & ", " & pk & " FROM (" & Replace(strSql, ";", "") & ") WHERE " & lookupField & " Like '*" & combo.Text & "*'"
     'combo.Dropdown
 End Sub
