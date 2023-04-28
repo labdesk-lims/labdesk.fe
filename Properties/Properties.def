@@ -22,7 +22,7 @@
     <NavPaneClosed name="NavPane Closed" type="4" value="0" sort="1"/>
     <NavPaneSortBy name="NavPane Sort By" type="4" value="1" sort="1"/>
     <NavPaneViewBy name="NavPane View By" type="4" value="0" sort="1"/>
-    <NavPaneWidth name="NavPane Width" type="4" value="507" sort="1"/>
+    <NavPaneWidth name="NavPane Width" type="4" value="404" sort="1"/>
     <NeverCache name="Never Cache" type="4" value="0" sort="1"/>
     <PicturePropertyStorageFormat name="Picture Property Storage Format" type="4" value="0" sort="1"/>
     <ProjVer name="ProjVer" type="3" value="142" sort="1"/>
@@ -50,10 +50,6 @@
   <SummaryInfo context="2">
     <Title name="Title" type="10" value="Database1" sort="3"/>
   </SummaryInfo>
-  <ActiveVBProject context="4">
-    <Description name="Description" type="10" value="Laboratory Information Management System" sort="5"/>
-    <Name name="Name" type="10" value="LABDESK Lims" sort="5"/>
-  </ActiveVBProject>
   <GetOptions context="5">
     <ActiveServerPagesSessionTimeout name="Active Server Pages Session Timeout" type="0" value="" sort="6"/>
     <ActiveServerPagesURL name="Active Server Pages URL" type="1" value="" sort="6"/>
@@ -105,7 +101,7 @@
     <EnableFontSwitching name="Enable Font Switching" type="47" value="0" sort="6"/>
     <EnableMRUFileList name="Enable MRU File List" type="48" value="-1" sort="6"/>
     <ErrorTrapping name="Error Trapping" type="49" value="2" sort="6"/>
-    <FDCategory name="FDCategory" type="50" value="1" sort="6"/>
+    <FDCategory name="FDCategory" type="50" value="255" sort="6"/>
     <FollowedHyperlinkColor name="Followed Hyperlink Color" type="51" value="5" sort="6"/>
     <FormTemplate name="Form Template" type="52" value="Normal" sort="6"/>
     <FourDigitYearFormatting name="Four-Digit Year Formatting" type="53" value="0" sort="6"/>
@@ -123,7 +119,7 @@
     <LastUser name="Last User" type="65" value="" sort="6"/>
     <LeftMargin name="Left Margin" type="66" value="0,635cm" sort="6"/>
     <LogNameAutoCorrectChanges name="Log Name AutoCorrect Changes" type="67" value="0" sort="6"/>
-    <Maximized name="Maximized" type="68" value="-1" sort="6"/>
+    <Maximized name="Maximized" type="68" value="0" sort="6"/>
     <MoveAfterEnter name="Move After Enter" type="69" value="1" sort="6"/>
     <MoveEnclosedControls name="Move Enclosed Controls" type="70" value="0" sort="6"/>
     <NavPaneCategory name="NavPane Category" type="71" value="0" sort="6"/>
@@ -131,7 +127,7 @@
     <NavPaneClosed name="NavPane Closed" type="73" value="0" sort="6"/>
     <NavPaneSortBy name="NavPane Sort By" type="74" value="1" sort="6"/>
     <NavPaneViewBy name="NavPane View By" type="75" value="0" sort="6"/>
-    <NavPaneWidth name="NavPane Width" type="76" value="507" sort="6"/>
+    <NavPaneWidth name="NavPane Width" type="76" value="404" sort="6"/>
     <NewDatabaseSortOrder name="New Database Sort Order" type="77" value="1033" sort="6"/>
     <NumberofUpdateRetries name="Number of Update Retries" type="78" value="2" sort="6"/>
     <ObjectsSnaptoGrid name="Objects Snap to Grid" type="79" value="-1" sort="6"/>

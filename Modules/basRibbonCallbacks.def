@@ -924,7 +924,11 @@ Sub OnActionButton(control As IRibbonControl)
         Case "btn_request"
             ' In Tab:   tab_testing
             ' In Group: grp_order
-            DoCmd.OpenForm "request", acFormDS, , , acFormEdit, acWindowNormal
+            If DbProcedures.GetPermission("request").Read Then
+                DoCmd.OpenForm "request", acFormDS, , , acFormEdit, acWindowNormal
+            Else
+                If DbProcedures.GetPermission("request_owner").Read Then DoCmd.OpenForm "request_owner", acFormDS, , , acFormEdit, acWindowNormal
+            End If
         Case "btn_measurement"
             ' In Tab:   tab_testing
             ' In Group: grp_order
@@ -944,7 +948,11 @@ Sub OnActionButton(control As IRibbonControl)
         Case "btn_project"
             ' In Tab:   tab_testing
             ' In Group: grp_order
-            DoCmd.OpenForm "project", acFormDS, , , acFormEdit, acWindowNormal
+            If DbProcedures.GetPermission("project").Read Then
+                DoCmd.OpenForm "project", acFormDS, , , acFormEdit, acWindowNormal
+            Else
+                If DbProcedures.GetPermission("project_owner").Read Then DoCmd.OpenForm "project_owner", acFormDS, , , acFormEdit, acWindowNormal
+            End If
       
         Case Else
             MsgBox "Button """ & control.ID & """ clicked" & vbCrLf & _

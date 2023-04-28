@@ -98,7 +98,7 @@ Public Property Get DSNLessTables() As Variant
     "profile_analysis", "profile", "request_analysis", "step", "state", "workflow", "smptype", "smpcondition", "smppreservation", "priority", "technique", _
     "batch", "btcposition", "storage", "strposition", "handbook", _
     "project", "project_member", "formulation", "component", "task", "workload", "view_task", _
-    "view_measurement", _
+    "view_measurement", "view_request_owner", "view_project_owner", _
     "users", "role", "role_permission", "permission", "traversal", "audit", "spa", "columns", _
     "view_labreport_details", _
     "view_attachment_revision", _

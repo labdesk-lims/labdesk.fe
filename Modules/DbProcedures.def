@@ -1033,10 +1033,6 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-
-
-
-
 Public Function ConcatRelated(strField As String, strTable As String, Optional strWhere As String, Optional strOrderBy As String, Optional strSeparator = ", ") As Variant
 '-------------------------------------------------------------------------------
 'Function:          ConcatRelated
