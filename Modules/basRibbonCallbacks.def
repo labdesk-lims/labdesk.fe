@@ -152,6 +152,9 @@ Sub GetEnabled(control As IRibbonControl, ByRef enabled)
             
         Case "btn_role"
             enabled = DbProcedures.GetPermission(control.ID).Read
+            
+        Case "btn_mailqueue"
+            enabled = DbProcedures.GetPermission(control.ID).Read
         
         Case "btn_laboratory"
             enabled = DbProcedures.GetPermission(control.ID).Read
@@ -288,6 +291,11 @@ Sub GetVisible(control As IRibbonControl, ByRef visible)
             ' In Group: grp_config
             visible = True
         Case "btn_role"
+            ' Button
+            ' In Tab:   tab_setup
+            ' In Group: grp_config
+            visible = True
+        Case "btn_mailqueue"
             ' Button
             ' In Tab:   tab_setup
             ' In Group: grp_config
@@ -506,6 +514,15 @@ Sub GetLabel(control As IRibbonControl, ByRef label)
             ' In Group: grp_config
             label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
         Case "btn_role"
+            ' Button
+            ' In Tab:   tab_setup
+            ' In Group: grp_config
+            label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
+        Case "grp_log"
+            ' Group:    grp_server
+            ' In Tab:   tab_setup
+            label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
+        Case "btn_mailqueue"
             ' Button
             ' In Tab:   tab_setup
             ' In Group: grp_config
@@ -821,6 +838,10 @@ Sub OnActionButton(control As IRibbonControl)
             ' In Tab:   tab_setup
             ' In Group: grp_config
             DoCmd.OpenForm "role", acFormDS, , , acFormEdit, acWindowNormal
+        Case "btn_mailqueue"
+            ' In Tab:   tab_setup
+            ' In Group: grp_config
+            DoCmd.OpenForm "mailqueue", acFormDS, , , acFormEdit, acWindowNormal
         Case "btn_customer"
             ' In Tab:   tab_catalogs
             ' In Group: grp_address
