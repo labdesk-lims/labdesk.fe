@@ -144,6 +144,9 @@ Sub GetEnabled(control As IRibbonControl, ByRef enabled)
         Case "btn_setup"
             enabled = DbProcedures.GetPermission(control.ID).Read
             
+        Case "btn_customfield"
+            enabled = DbProcedures.GetPermission(control.ID).Read
+            
         Case "btn_translation"
             enabled = DbProcedures.GetPermission(control.ID).Read
             
@@ -276,6 +279,11 @@ Sub GetVisible(control As IRibbonControl, ByRef visible)
             ' In Tab:   tab_setup
             visible = True
         Case "btn_setup"
+            ' Button
+            ' In Tab:   tab_setup
+            ' In Group: grp_config
+            visible = True
+        Case "btn_customfield"
             ' Button
             ' In Tab:   tab_setup
             ' In Group: grp_config
@@ -499,6 +507,11 @@ Sub GetLabel(control As IRibbonControl, ByRef label)
             ' In Tab:   tab_setup
             label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
         Case "btn_setup"
+            ' Button
+            ' In Tab:   tab_setup
+            ' In Group: grp_config
+            label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
+        Case "btn_customfield"
             ' Button
             ' In Tab:   tab_setup
             ' In Group: grp_config
@@ -826,6 +839,10 @@ Sub OnActionButton(control As IRibbonControl)
             ' In Tab:   tab_setup
             ' In Group: grp_config
             DoCmd.OpenForm "setup", acFormDS, , , acFormEdit, acWindowNormal
+        Case "btn_customfield"
+            ' In Tab:   tab_setup
+            ' In Group: grp_config
+            DoCmd.OpenForm "customfield", acFormDS, , , acFormEdit, acWindowNormal
         Case "btn_translation"
             ' In Tab:   tab_setup
             ' In Group: grp_config

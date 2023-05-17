@@ -91,10 +91,10 @@ End Property
 Public Property Get DSNLessTables() As Variant
     Dim a As Variant
     a = Array( _
-    "filter", "translation", "setup", _
+    "filter", "translation", "customfield", "setup", _
     "contact", "laboratory", "customer", "manufacturer", "smppoint", "smpcontainer", "smpmatrix", "material", _
     "cfield", "cvalidate", "condition", "uncertainty", "analysis", "attribute", "method_analysis", "method_smptype", "method", "qualification", "instrument_method", "department", "workplace", "instrument", "certificate", "attachment", "instype", "supplier", _
-    "request", "measurement_cfield", "measurement", "measurement_condition", "view_request_measurement", _
+    "request", "request_customfield", "measurement_cfield", "measurement", "measurement_condition", "view_request_measurement", _
     "profile_analysis", "profile", "request_analysis", "step", "state", "workflow", "smptype", "smpcondition", "smppreservation", "priority", "technique", _
     "batch", "btcposition", "storage", "strposition", "handbook", _
     "project", "project_member", "formulation", "component", "task", "workload", "view_task", _

@@ -100,7 +100,7 @@ On Error GoTo Catch_Error
     
     'Open desktop tab
     SysCmd acSysCmdSetStatus, "Open desktop"
-    If Application.SysCmd(acSysCmdGetObjectState, acForm, "desktop") <> acObjStateOpen Then DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
+    If Application.SysCmd(acSysCmdGetObjectState, acForm, "desktop") <> acObjStateOpen And GetShowDesktop Then DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
     
     'Fill status bar text with user name
     SysCmd acSysCmdSetStatus, "User: " & DbProcedures.GetUserName()
@@ -113,5 +113,28 @@ Catch_Error:
     InitApp = False
     MsgBox "Following error occured during startup: " & Err.description, vbCritical, "Error occurred"
     DoCmd.Quit
+    Resume Exit_Function
+End Function
+
+Private Function GetShowDesktop() As Boolean
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT TOP 1 show_desktop FROM setup")
+    
+    If rs(0) <> "" Then
+        GetShowDesktop = rs(0)
+    Else
+        GetShowDesktop = ""
+    End If
+    
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    GetShowDesktop = False
     Resume Exit_Function
 End Function

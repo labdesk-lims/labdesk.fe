@@ -190,8 +190,18 @@ Public Function SelectLabel() As Variant
 End Function
 
 Public Sub ComboBoxSearch(ByRef combo As comboBox, ByVal lookupField As String, ByVal pk As String)
+'-------------------------------------------------------------------------------
+'Function:          ComboBoxSearch
+'Date:              2023 May
+'Purpose:           Google like search for combobox
+'In:
+'-> combo           ComboBox object
+'-> lookupField     Field to be selected for combobox
+'-> pk              Primary key of table
+'Out:               Valid (T/F)
+'-------------------------------------------------------------------------------
     Dim strSql As String
     strSql = combo.RowSource
     combo.RowSource = "SELECT " & lookupField & ", " & pk & " FROM (" & Replace(strSql, ";", "") & ") WHERE " & lookupField & " Like '*" & combo.Text & "*'"
-    'combo.Dropdown
+    'combo.Dropdown <- activate to open dropdown combobox automatically
 End Sub

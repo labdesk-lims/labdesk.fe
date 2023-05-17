@@ -397,7 +397,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function IterateCalculation(ByVal Request As Integer) As Boolean
+Public Function IterateCalculation(ByVal request As Integer) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         TestCalculation
 ' Date:             2022 January
@@ -415,7 +415,7 @@ On Error GoTo Catch_Error
     
     cmd.CommandType = adCmdStoredProc
     cmd.CommandText = "calculation_iterate"
-    cmd.Parameters.Append cmd.CreateParameter("@request", adInteger, adParamInput, , Request)
+    cmd.Parameters.Append cmd.CreateParameter("@request", adInteger, adParamInput, , request)
     cmd.Execute
     
     IterateCalculation = True
@@ -464,7 +464,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function AttachToMailQueue(ByVal Request As Integer, ByVal subject As String, ByVal body As String, Optional ByVal recipients As String = "") As Boolean
+Public Function AttachToMailQueue(ByVal request As Integer, ByVal subject As String, ByVal body As String, Optional ByVal recipients As String = "") As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         AttachToMailQueue
 ' Date:             2022 March
@@ -479,14 +479,14 @@ Public Function AttachToMailQueue(ByVal Request As Integer, ByVal subject As Str
 On Error GoTo Catch_Error
     Dim db As database
     
-    If IsNull(recipients) And IsNull(Request) Then Exit Function
+    If IsNull(recipients) And IsNull(request) Then Exit Function
     
     Set db = CurrentDb
     
     If recipients = "" Then
-        db.Execute "INSERT INTO mailqueue (subject, body, request) VALUES('" & subject & "', '" & body & "', " & Request & ")", dbOpenDynaset
+        db.Execute "INSERT INTO mailqueue (subject, body, request) VALUES('" & subject & "', '" & body & "', " & request & ")", dbOpenDynaset
     Else
-        db.Execute "INSERT INTO mailqueue (recipients, subject, body, request) VALUES('" & recipients & "', '" & subject & "', '" & body & "', " & Request & ")", dbOpenDynaset
+        db.Execute "INSERT INTO mailqueue (recipients, subject, body, request) VALUES('" & recipients & "', '" & subject & "', '" & body & "', " & request & ")", dbOpenDynaset
     End If
     
     AttachToMailQueue = True
@@ -499,7 +499,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function CreateSubRequest(ByVal Request As Integer) As Boolean
+Public Function CreateSubRequest(ByVal request As Integer) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         CreateSubRequest
 ' Date:             2022 February
@@ -517,7 +517,7 @@ On Error GoTo Catch_Error
     
     cmd.CommandType = adCmdStoredProc
     cmd.CommandText = "request_create_subrequest"
-    cmd.Parameters.Append cmd.CreateParameter("@p_id", adInteger, adParamInput, , Request)
+    cmd.Parameters.Append cmd.CreateParameter("@p_id", adInteger, adParamInput, , request)
     cmd.Execute
     
     CreateSubRequest = True
