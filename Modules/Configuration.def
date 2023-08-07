@@ -13,6 +13,9 @@ Option Explicit
 ' Database connection timeout in seconds
 Private Const pConnectionTimeout = 3
 
+' Application identifier
+Private Const pAppId = "labdesk-ui"
+
 ' Application title shown as form title
 Private Const pAppTitle = "LABDESK - Laboratory Information Management System"
 
@@ -29,7 +32,7 @@ Private Const pReportId = "RPT-" 'Identifier for selectable reports
 Private Const pLabelId = "LBL-" 'Identifier for selectable labels
 
 ' Licence key file name
-Private Const pLicenceFileName = "licence.lic"
+Private Const pLicenceFileName = "labdesk.lic"
 
 ' Temporary cache folder (the local user folder will be used) .labdesk
 Private pCacheFolder As String
@@ -42,6 +45,10 @@ Private pDemoMode As Boolean
 
 Public Property Get ConnectionTimeout() As Integer
     ConnectionTimeout = pConnectionTimeout
+End Property
+
+Public Property Get AppId() As String
+    AppId = pAppId
 End Property
 
 Public Property Get AppTitle() As String
@@ -97,7 +104,7 @@ Public Property Get DSNLessTables() As Variant
     "request", "request_customfield", "measurement_cfield", "measurement", "measurement_condition", "view_request_measurement", _
     "profile_analysis", "profile", "request_analysis", "step", "state", "workflow", "smptype", "smpcondition", "smppreservation", "priority", "technique", _
     "batch", "btcposition", "storage", "strposition", "handbook", _
-    "project", "project_member", "formulation", "component", "task", "workload", "view_task", _
+    "project", "project_customfield", "project_member", "formulation", "component", "task", "workload", "view_task", _
     "view_measurement", "view_request_owner", "view_project_owner", _
     "users", "role", "role_permission", "permission", "traversal", "audit", "spa", "columns", _
     "view_labreport_details", _

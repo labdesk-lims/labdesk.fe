@@ -28,6 +28,10 @@ Public Function OpenFileDialog() As String
       .Filters.Add "All Files", "*.*"
       If .Show = True Then
         OpenFileDialog = GetFileName(fDialog.SelectedItems(1))
+        If FileLen(GetFileName(fDialog.SelectedItems(1))) > GetMaxFileSize() Then
+            MsgBox GetTranslation("Dialogs", "max_filesize_exceeded", GetDbSetting("language")), vbInformation, GetTranslation("msgbox", "vbInformation", GetDbSetting("language"))
+            OpenFileDialog = ""
+        End If
       Else
         OpenFileDialog = ""
       End If
@@ -81,13 +85,36 @@ Public Function SelectReportDialog() As Variant
         i = i + 1
     Next rpt
     
-    DoCmd.OpenForm "*SelectDialog", acNormal, , , acFormEdit, acDialog, "SELECT value_txt, key FROM keyvalue"
+    DoCmd.OpenForm "~SelectDialog", acNormal, , , acFormEdit, acDialog, "SELECT value_txt, key FROM keyvalue"
     
-    If Not IsNull(Forms("*SelectDialog").comboBox.Column(1)) Then
-        SelectReportDialog = Forms("*SelectDialog").comboBox.Column(0)
+    If Not IsNull(Forms("~SelectDialog").comboBox.Column(1)) Then
+        SelectReportDialog = Forms("~SelectDialog").comboBox.Column(0)
     Else
         SelectReportDialog = Null
     End If
     
-    DoCmd.Close acForm, "*SelectDialog", acSaveNo
+    DoCmd.Close acForm, "~SelectDialog", acSaveNo
+End Function
+
+Private Function GetMaxFileSize() As Double
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT TOP 1 upload_max_byte FROM setup")
+    
+    If rs(0) <> "" Then
+        GetMaxFileSize = rs(0)
+    Else
+        GetMaxFileSize = 0
+    End If
+    
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    GetMaxFileSize = 0
+    Resume Exit_Function
 End Function

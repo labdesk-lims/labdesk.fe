@@ -150,6 +150,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
+    MsgBox Err.description
     Resume Exit_Function
 End Function
 

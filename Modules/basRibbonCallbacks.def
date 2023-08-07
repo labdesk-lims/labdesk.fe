@@ -1383,7 +1383,7 @@ Public Function getAppPath() As String
     getAppPath = strDummy
 End Function
 
-Public Function getIconFromTable(strFilename As String) As picture
+Public Function getIconFromTable(strFileName As String) As picture
 '*****************************************************************************
 'Funktion 'getIconFromTable' holt ein Bild aus der Binaer-Tabelle und gibt
 ' ein Picture Objekt zurueck
@@ -1397,7 +1397,7 @@ Dim rs As DAO.Recordset
     On Error GoTo Errr
  
     Set rs = DBEngine(0)(0).OpenRecordset("tblBinary", dbOpenDynaset)
-    rs.FindFirst "[FileName]='" & strFilename & "'"
+    rs.FindFirst "[FileName]='" & strFileName & "'"
     If rs.NoMatch Then
         Set getIconFromTable = Nothing
     Else

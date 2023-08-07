@@ -35,13 +35,18 @@ On Error GoTo Catch_Error
     ManageGui.AddAppProperty "AppTitle", dbText, config.AppTitle
     Application.RefreshTitleBar
     HideNavPane DbConnect.GetDbSetting("navpane")
-    ManageGui.AddAppProperty "AppIcon", dbText, CurrentProject.Path & "\assets\img\icon.ico"
+    
+    'ManageGui.AddAppProperty "AppIcon", DB_TEXT, CurrentProject.Path & "\assets\img\icon.ico"
     CurrentDb.Properties("UseAppIconForFrmRpt").value = True
     Application.RefreshTitleBar
     
     'Show login form
     SysCmd acSysCmdSetStatus, "User login"
-    DoCmd.OpenForm "dbsetup", acNormal, , , acFormEdit, acDialog
+    DoCmd.OpenForm "login", acNormal, , , acFormEdit, acDialog
+    
+    'Try to connect to server
+    SysCmd acSysCmdSetStatus, "Try to connect to server"
+    If Not PingOk(DbConnect.GetDbSetting("server")) Then Err.Raise vbObjectError + 513, , "Database Server unreachable."
     
     'Try to attach tables
     SysCmd acSysCmdSetStatus, "Try to attach tables"
@@ -87,9 +92,9 @@ On Error GoTo Catch_Error
     
     'Open the closing event form
     SysCmd acSysCmdSetStatus, "Init background worker"
-    DoCmd.OpenForm "*background_worker_form", acNormal, , , acFormReadOnly, acWindowNormal
-    Forms("*background_worker_form").TimerInterval = config.BackgroundWorkerInterval
-    Forms("*background_worker_form").visible = False
+    DoCmd.OpenForm "~background_worker_form", acNormal, , , acFormReadOnly, acWindowNormal
+    Forms("~background_worker_form").TimerInterval = config.BackgroundWorkerInterval
+    Forms("~background_worker_form").visible = False
     
     'Show licence message box
     SysCmd acSysCmdSetStatus, "Check for valid user licence"
@@ -112,7 +117,7 @@ Exit_Function:
 Catch_Error:
     InitApp = False
     MsgBox "Following error occured during startup: " & Err.description, vbCritical, "Error occurred"
-    DoCmd.Quit
+    Application.Quit
     Resume Exit_Function
 End Function
 

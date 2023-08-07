@@ -76,6 +76,10 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
+Public Function PingOk(Ip As String) As Boolean
+  PingOk = (0 = CreateObject("Wscript.Shell").Run("%SystemRoot%\system32\ping.exe -n 1 -l 1 -w 5000 " & Ip, 0, True))
+End Function
+
 Private Sub SetConStr(ByVal server As String, ByVal database As String, Optional ByVal user As String, Optional ByVal password As String)
 '-------------------------------------------------------------------------------
 ' Function:     SetConStr
@@ -90,12 +94,18 @@ Private Sub SetConStr(ByVal server As String, ByVal database As String, Optional
 '-------------------------------------------------------------------------------
     If Len(user) = 0 Then
         '//Use trusted authentication if stUsername is not supplied.
-        ADODBConStr = "Provider=SQLNCLI11;" & "Server=" & server & ";" & "Database=" & database & ";" & "Integrated Security=SSPI;" & "DataTypeCompatibility=80;" & "MARS Connection=True;" & "APP=labdesk-ui;"
-        ODBCConStr = "ODBC;DRIVER=SQL Server;SERVER=" & server & ";DATABASE=" & database & ";Trusted_Connection=Yes;ColumnEncryption=Enabled;" & "APP=labdesk-ui;"
+        'SQLNCLI11 is dated OLEDB should be used instead
+        'ADODBConStr = "Provider=SQLNCLI11;" & "Server=" & server & ";" & "Database=" & database & ";" & "Integrated Security=SSPI;" & "DataTypeCompatibility=80;" & "MARS Connection=True;" & "APP=labdesk-ui; Encrypt=yes;"
+        'ODBCConStr = "ODBC;DRIVER=SQL Server;SERVER=" & server & ";DATABASE=" & database & ";ColumnEncryption=Enabled;" & "APP=labdesk-ui;"
+        ADODBConStr = "Provider=SQLOLEDB;" & "Data Source=" & server & ";" & "Initial Catalog=" & database & ";" & "Integrated Security=SSPI;" & "APP=" & config.AppId & ";"
+        ODBCConStr = "ODBC;DRIVER=SQL Server;SERVER=" & server & ";DATABASE=" & database & ";" & "APP=" & config.AppId & ";"
     Else
         '//WARNING: This will save the username and the password with the linked table information.
-        ADODBConStr = "Provider=SQLNCLI11;" & "Server=" & server & ";" & "Database=" & database & ";" & " User Id=" & user & ";" & " Password=" & password & ";" & "DataTypeCompatibility=80;" & "MARS Connection=True;" & "APP=labdesk-ui;"
-        ODBCConStr = "ODBC;DRIVER=SQL Server;SERVER=" & server & ";DATABASE=" & database & ";UID=" & user & ";PWD=" & password & ";ColumnEncryption=Enabled;" & "APP=labdesk-ui;"
+        'SQLNCLI11 is dated OLEDB should be used instead
+        'ADODBConStr = "Provider=SQLNCLI11;" & "Server=" & server & ";" & "Database=" & database & ";" & " User Id=" & user & ";" & " Password=" & password & ";" & "DataTypeCompatibility=80;" & "MARS Connection=True;" & "APP=labdesk-ui; Encrypt=yes;"
+        'ODBCConStr = "ODBC;DRIVER=SQL Server;SERVER=" & server & ";DATABASE=" & database & ";UID=" & user & ";PWD=" & password & ";ColumnEncryption=Enabled;" & "APP=labdesk-ui;"
+        ADODBConStr = "Provider=SQLOLEDB;" & "Data Source=" & server & ";" & "Initial Catalog=" & database & ";" & " User ID=" & user & ";" & " Password=" & password & ";" & "APP=" & config.AppId & ";"
+        ODBCConStr = "ODBC;DRIVER=SQL Server;SERVER=" & server & ";DATABASE=" & database & ";UID=" & user & ";PWD=" & password & ";" & "APP=" & config.AppId & ";"
     End If
 End Sub
 

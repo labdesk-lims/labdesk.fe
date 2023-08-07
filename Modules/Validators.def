@@ -1,4 +1,4 @@
-'################################################################################################
+ '################################################################################################
 ' Here you will find functions to validate data of fields
 '################################################################################################
 
@@ -49,16 +49,16 @@ Public Function ValidEmailArray(ByVal strEmailArray As String) As Boolean
 On Error GoTo Catch_Error
     Dim cc_email As Variant
     Dim s As Variant
-    Dim B As Boolean
+    Dim b As Boolean
     
     cc_email = Split(strEmailArray, ";")
     
-    B = True
+    b = True
     For Each s In cc_email
-        B = B And ValidEmailAddress(s)
+        b = b And ValidEmailAddress(s)
     Next
 
-    ValidEmailArray = B
+    ValidEmailArray = b
     
 Exit_Function:
     Exit Function
@@ -178,15 +178,15 @@ Public Function SelectLabel() As Variant
         i = i + 1
     Next rpt
     
-    DoCmd.OpenForm "*SelectDialog", acNormal, , , acFormEdit, acDialog, "SELECT value_txt, key FROM keyvalue"
+    DoCmd.OpenForm "~SelectDialog", acNormal, , , acFormEdit, acDialog, "SELECT value_txt, key FROM keyvalue"
     
-    If Not IsNull(Forms("*SelectDialog").comboBox.Column(1)) Then
-        SelectLabel = Forms("*SelectDialog").comboBox.Column(0)
+    If Not IsNull(Forms("~SelectDialog").comboBox.Column(1)) Then
+        SelectLabel = Forms("~SelectDialog").comboBox.Column(0)
     Else
         SelectLabel = Null
     End If
     
-    DoCmd.Close acForm, "*SelectDialog", acSaveNo
+    DoCmd.Close acForm, "~SelectDialog", acSaveNo
 End Function
 
 Public Sub ComboBoxSearch(ByRef combo As comboBox, ByVal lookupField As String, ByVal pk As String)
