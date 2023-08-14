@@ -21,7 +21,7 @@
     <NavPaneClosed name="NavPane Closed" type="4" value="0" sort="1"/>
     <NavPaneSortBy name="NavPane Sort By" type="4" value="1" sort="1"/>
     <NavPaneViewBy name="NavPane View By" type="4" value="0" sort="1"/>
-    <NavPaneWidth name="NavPane Width" type="4" value="880" sort="1"/>
+    <NavPaneWidth name="NavPane Width" type="4" value="385" sort="1"/>
     <NeverCache name="Never Cache" type="4" value="0" sort="1"/>
     <PicturePropertyStorageFormat name="Picture Property Storage Format" type="4" value="0" sort="1"/>
     <ProjVer name="ProjVer" type="3" value="142" sort="1"/>
@@ -49,10 +49,6 @@
   <SummaryInfo context="2">
     <Title name="Title" type="10" value="Database1" sort="3"/>
   </SummaryInfo>
-  <ActiveVBProject context="4">
-    <Description name="Description" type="10" value="Laboratory Information Management System" sort="5"/>
-    <Name name="Name" type="10" value="LABDESK Lims" sort="5"/>
-  </ActiveVBProject>
   <References context="6">
     <Reference>
       <Name value="ADODB 6.1"/>

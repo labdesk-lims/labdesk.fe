@@ -92,9 +92,9 @@ On Error GoTo Catch_Error
     
     'Open the closing event form
     SysCmd acSysCmdSetStatus, "Init background worker"
-    DoCmd.OpenForm "~background_worker_form", acNormal, , , acFormReadOnly, acWindowNormal
-    Forms("~background_worker_form").TimerInterval = config.BackgroundWorkerInterval
-    Forms("~background_worker_form").visible = False
+    DoCmd.OpenForm "_background_worker_form", acNormal, , , acFormReadOnly, acWindowNormal
+    Forms("_background_worker_form").TimerInterval = config.BackgroundWorkerInterval
+    Forms("_background_worker_form").visible = False
     
     'Show licence message box
     SysCmd acSysCmdSetStatus, "Check for valid user licence"

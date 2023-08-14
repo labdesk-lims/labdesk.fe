@@ -178,15 +178,15 @@ Public Function SelectLabel() As Variant
         i = i + 1
     Next rpt
     
-    DoCmd.OpenForm "~SelectDialog", acNormal, , , acFormEdit, acDialog, "SELECT value_txt, key FROM keyvalue"
+    DoCmd.OpenForm "_SelectDialog", acNormal, , , acFormEdit, acDialog, "SELECT value_txt, key FROM keyvalue"
     
-    If Not IsNull(Forms("~SelectDialog").comboBox.Column(1)) Then
-        SelectLabel = Forms("~SelectDialog").comboBox.Column(0)
+    If Not IsNull(Forms("_SelectDialog").comboBox.Column(1)) Then
+        SelectLabel = Forms("_SelectDialog").comboBox.Column(0)
     Else
         SelectLabel = Null
     End If
     
-    DoCmd.Close acForm, "~SelectDialog", acSaveNo
+    DoCmd.Close acForm, "_SelectDialog", acSaveNo
 End Function
 
 Public Sub ComboBoxSearch(ByRef combo As comboBox, ByVal lookupField As String, ByVal pk As String)
