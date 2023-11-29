@@ -24,11 +24,7 @@
     <NavPaneClosed name="NavPane Closed" type="4" value="0" sort="1"/>
     <NavPaneSortBy name="NavPane Sort By" type="4" value="1" sort="1"/>
     <NavPaneViewBy name="NavPane View By" type="4" value="0" sort="1"/>
-<<<<<<< Updated upstream
-    <NavPaneWidth name="NavPane Width" type="4" value="385" sort="1"/>
-=======
     <NavPaneWidth name="NavPane Width" type="4" value="368" sort="1"/>
->>>>>>> Stashed changes
     <NeverCache name="Never Cache" type="4" value="0" sort="1"/>
     <PicturePropertyStorageFormat name="Picture Property Storage Format" type="4" value="0" sort="1"/>
     <ProjVer name="ProjVer" type="3" value="142" sort="1"/>
@@ -56,8 +52,6 @@
   <SummaryInfo context="2">
     <Title name="Title" type="10" value="Database1" sort="3"/>
   </SummaryInfo>
-<<<<<<< Updated upstream
-=======
   <GetOptions context="5">
     <ActiveServerPagesSessionTimeout name="Active Server Pages Session Timeout" type="0" value="" sort="6"/>
     <ActiveServerPagesURL name="Active Server Pages URL" type="1" value="" sort="6"/>
@@ -185,7 +179,6 @@
     <UserName name="User Name" type="123" value="" sort="6"/>
     <WarnWidth name="Warn Width" type="124" value="-1" sort="6"/>
   </GetOptions>
->>>>>>> Stashed changes
   <References context="6">
     <Reference>
       <Name value="ADODB 6.1"/>

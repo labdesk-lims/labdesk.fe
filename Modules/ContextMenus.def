@@ -264,12 +264,6 @@ On Error GoTo Catch_Error
             Forms(frmCurrentForm.name).ShowInvoice
         
         Case "audit_trail"
-<<<<<<< Updated upstream
-            DoCmd.OpenForm "_AuditTrail", acNormal, , , acFormReadOnly, acWindowNormal, Forms(frmCurrentForm.name).LinkedTable & ", " & Forms(frmCurrentForm.name).ID
-            
-        Case "audit_trail_subform"
-            DoCmd.OpenForm "_AuditTrail", acNormal, , , acFormReadOnly, acWindowNormal, Forms(frmCurrentForm.name).Form(Screen.ActiveControl.Parent.name).Form.DataTable & ", " & Forms(frmCurrentForm.name).Form(Screen.ActiveControl.Parent.name).Form.ID
-=======
             If Not IsNull(Forms(frmCurrentForm.name).ID) Then DoCmd.OpenForm "_AuditTrail", acNormal, , , acFormReadOnly, acWindowNormal, Forms(frmCurrentForm.name).LinkedTable & ", " & Forms(frmCurrentForm.name).ID
             
         Case "audit_trail_subform"
@@ -277,7 +271,6 @@ On Error GoTo Catch_Error
             
         Case "refresh"
             Forms(frmCurrentForm.name).Requery
->>>>>>> Stashed changes
     End Select
 
 Exit_Function:
