@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" standalone="yes"?>
-<CommandBar name="FltContextMenu">
+<CommandBar name="menu_fle">
   <AdaptiveMenu value="false"/>
   <Context value=""/>
-  <Description value="FltContextMenu pop-up menu"/>
+  <Description value="menu_fle pop-up menu"/>
   <Enabled value="true"/>
   <Position value="5"/>
   <Protection value="22"/>
@@ -11,19 +11,19 @@
   <Visible value="false"/>
   <Controls>
     <Control id="1">
-      <BeginGroup value="false"/>
+      <BeginGroup value="true"/>
       <BuiltIn value="false"/>
-      <Caption value="Apply filter"/>
+      <Caption value="Upload"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
       <HelpFile value=""/>
       <Id value="1"/>
       <Index value="1"/>
-      <Parameter value="apply_filter"/>
+      <Parameter value="upload_file"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Apply filter"/>
+      <TooltipText value="Upload"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -31,22 +31,22 @@
       <ShortcutText value=""/>
       <HyperlinkType value="0"/>
       <OnAction value="fnCall"/>
-      <FaceId value="35"/>
+      <FaceId value="1632"/>
     </Control>
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Save filter"/>
+      <Caption value="Download"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
       <HelpFile value=""/>
       <Id value="1"/>
       <Index value="2"/>
-      <Parameter value="save_filter"/>
+      <Parameter value="download_file"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Save filter"/>
+      <TooltipText value="Download"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -54,22 +54,22 @@
       <ShortcutText value=""/>
       <HyperlinkType value="0"/>
       <OnAction value="fnCall"/>
-      <FaceId value="34"/>
+      <FaceId value="1631"/>
     </Control>
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Manage columns"/>
+      <Caption value="Open"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
       <HelpFile value=""/>
       <Id value="1"/>
       <Index value="3"/>
-      <Parameter value="clmn_dlg"/>
+      <Parameter value="open_file"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Manage columns"/>
+      <TooltipText value="Open"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -77,30 +77,7 @@
       <ShortcutText value=""/>
       <HyperlinkType value="0"/>
       <OnAction value="fnCall"/>
-      <FaceId value="8"/>
-    </Control>
-    <Control id="1">
-      <BeginGroup value="true"/>
-      <BuiltIn value="false"/>
-      <Caption value="Show audit trail"/>
-      <DescriptionText value=""/>
-      <Enabled value="true"/>
-      <HelpContextId value="0"/>
-      <HelpFile value=""/>
-      <Id value="1"/>
-      <Index value="4"/>
-      <Parameter value="audit_trail"/>
-      <Priority value="3"/>
-      <Tag value=""/>
-      <TooltipText value="Show audit trail"/>
-      <Type value="1"/>
-      <Visible value="true"/>
-      <BuiltInFace value="true"/>
-      <Style value="0"/>
-      <ShortcutText value=""/>
-      <HyperlinkType value="0"/>
-      <OnAction value="fnCall"/>
-      <FaceId value="29"/>
+      <FaceId value="18"/>
     </Control>
   </Controls>
 </CommandBar>

@@ -254,6 +254,7 @@ On Error GoTo Catch_Error
                     rfrm.Form(ctrl.name).Form.FormChanged = False
                 End If
             Next
+            rfrm.FormChanged = False
         End If
     End If
 
@@ -606,6 +607,12 @@ Public Sub SyncFormAddRecord(ByRef rfrm As Form)
 ' Out:              -
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
+        ' If form is already open then exit sub to avoid data loss
+    If IsFormOpen(rfrm.EditForm) Then
+        MsgBox GetTranslation("msgbox", "edit_form_already_open", GetDbSetting("language")), vbExclamation, GetTranslation("msgbox", "vbExclamation", GetDbSetting("language"))
+        Exit Sub
+    End If
+    
     If Not GetPermission(rfrm.name).Create Then
         MsgBox GetTranslation("msgbox", "add_record_not_supported", GetDbSetting("language")), vbExclamation, GetTranslation("msgbox", "vbExclamation", GetDbSetting("language"))
     Else

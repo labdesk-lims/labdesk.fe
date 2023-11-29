@@ -3,12 +3,18 @@
   <Rows>
     <Row_1>
       <field_0 name="ID" binary="false" null="false" value="1"/>
+<<<<<<< Updated upstream
       <field_1 name="server" binary="false" null="false">169.254.196.116</field_1>
+=======
+      <field_1 name="server" binary="false" null="false">192.168.217.128</field_1>
+>>>>>>> Stashed changes
       <field_2 name="database" binary="false" null="false">labdesk</field_2>
       <field_3 name="user" binary="false" null="false">sa</field_3>
-      <field_4 name="password" binary="false" null="false">labdesk</field_4>
-      <field_5 name="navpane" binary="false" null="false" value="true"/>
-      <field_6 name="sysinit" binary="false" null="false" value="false"/>
+      <field_4 name="password" binary="false" null="false"></field_4>
+      <field_5 name="winauth" binary="false" null="false" value="false"/>
+      <field_6 name="navpane" binary="false" null="false" value="true"/>
+      <field_7 name="sysinit" binary="false" null="false" value="false"/>
+      <field_8 name="sysupdate" binary="false" null="false" value="false"/>
     </Row_1>
   </Rows>
 </TableData>

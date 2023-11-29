@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <TableDef name="USysRibbons" foreign="False">
-  <Properties/>
+  <Properties>
+    <RowHeight type="3" value="5880"/>
+  </Properties>
   <SQL>CREATE TABLE [USysRibbons] (
 [lngID] AUTOINCREMENT,
 [RibbonName] TEXT (255),
@@ -39,6 +41,12 @@
       <VisibleValue name="VisibleValue" type="4"/>
       <Precision name="Precision" type="4" value="1033"/>
       <Scale name="Scale" type="4" value="0"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="-1"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="1"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <TextAlign name="TextAlign" type="2" value="0"/>
+      <AggregateType name="AggregateType" type="4" value="-1"/>
+      <CurrencyLCID name="CurrencyLCID" type="4" value="0"/>
     </Field_0>
     <Field_1 name="RibbonName">
       <Value name="Value" type="10"/>
@@ -65,6 +73,12 @@
       <VisibleValue name="VisibleValue" type="4"/>
       <Precision name="Precision" type="10" value="1033"/>
       <Scale name="Scale" type="10" value="0"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="-1"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="2"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <TextAlign name="TextAlign" type="2" value="0"/>
+      <AggregateType name="AggregateType" type="4" value="-1"/>
+      <CurrencyLCID name="CurrencyLCID" type="4" value="0"/>
     </Field_1>
     <Field_2 name="RibbonXml">
       <Value name="Value" type="12"/>
@@ -91,6 +105,12 @@
       <VisibleValue name="VisibleValue" type="4"/>
       <Precision name="Precision" type="12" value="1033"/>
       <Scale name="Scale" type="12" value="0"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="20160"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="3"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <TextAlign name="TextAlign" type="2" value="0"/>
+      <AggregateType name="AggregateType" type="4" value="-1"/>
+      <CurrencyLCID name="CurrencyLCID" type="4" value="0"/>
     </Field_2>
   </FieldDefs>
   <Indexes>

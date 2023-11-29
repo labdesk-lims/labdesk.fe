@@ -9,7 +9,7 @@ Private Type FourBytes
     a As Byte
     b As Byte
     C As Byte
-    D As Byte
+    d As Byte
 End Type
 Private Type OneLong
     l As Long
@@ -35,11 +35,11 @@ Sub xSHA1(message() As Byte, ByVal Key1 As Long, ByVal Key2 As Long, ByVal Key3 
  'CA62C1D68F1BBCDC6ED9EBA15A827999 + "abc" = "A9993E36 4706816A BA3E2571 7850C26C 9CD0D89D"
  '"abc" = "A9993E36 4706816A BA3E2571 7850C26C 9CD0D89D"
 
- Dim U As Long, P As Long
+ Dim U As Long, p As Long
  Dim FB As FourBytes, OL As OneLong
  Dim i As Integer
  Dim W(80) As Long
- Dim a As Long, b As Long, C As Long, D As Long, E As Long
+ Dim a As Long, b As Long, C As Long, d As Long, E As Long
  Dim t As Long
 
  H1 = &H67452301: H2 = &HEFCDAB89: H3 = &H98BADCFE: H4 = &H10325476: H5 = &HC3D2E1F0
@@ -51,46 +51,46 @@ Sub xSHA1(message() As Byte, ByVal Key1 As Long, ByVal Key2 As Long, ByVal Key3 
 
  U = UBound(message)
  message(U - 4) = a
- message(U - 3) = FB.D
+ message(U - 3) = FB.d
  message(U - 2) = FB.C
  message(U - 1) = FB.b
  message(U) = FB.a
 
- While P < U
+ While p < U
      For i = 0 To 15
-         FB.D = message(P)
-         FB.C = message(P + 1)
-         FB.b = message(P + 2)
-         FB.a = message(P + 3)
+         FB.d = message(p)
+         FB.C = message(p + 1)
+         FB.b = message(p + 2)
+         FB.a = message(p + 3)
          LSet OL = FB
          W(i) = OL.l
-         P = P + 4
+         p = p + 4
      Next i
 
      For i = 16 To 79
          W(i) = U32RotateLeft1(W(i - 3) Xor W(i - 8) Xor W(i - 14) Xor W(i - 16))
      Next i
 
-     a = H1: b = H2: C = H3: D = H4: E = H5
+     a = H1: b = H2: C = H3: d = H4: E = H5
 
      For i = 0 To 19
-         t = U32Add(U32Add(U32Add(U32Add(U32RotateLeft5(a), E), W(i)), Key1), ((b And C) Or ((Not b) And D)))
-         E = D: D = C: C = U32RotateLeft30(b): b = a: a = t
+         t = U32Add(U32Add(U32Add(U32Add(U32RotateLeft5(a), E), W(i)), Key1), ((b And C) Or ((Not b) And d)))
+         E = d: d = C: C = U32RotateLeft30(b): b = a: a = t
      Next i
      For i = 20 To 39
-         t = U32Add(U32Add(U32Add(U32Add(U32RotateLeft5(a), E), W(i)), Key2), (b Xor C Xor D))
-         E = D: D = C: C = U32RotateLeft30(b): b = a: a = t
+         t = U32Add(U32Add(U32Add(U32Add(U32RotateLeft5(a), E), W(i)), Key2), (b Xor C Xor d))
+         E = d: d = C: C = U32RotateLeft30(b): b = a: a = t
      Next i
      For i = 40 To 59
-         t = U32Add(U32Add(U32Add(U32Add(U32RotateLeft5(a), E), W(i)), Key3), ((b And C) Or (b And D) Or (C And D)))
-         E = D: D = C: C = U32RotateLeft30(b): b = a: a = t
+         t = U32Add(U32Add(U32Add(U32Add(U32RotateLeft5(a), E), W(i)), Key3), ((b And C) Or (b And d) Or (C And d)))
+         E = d: d = C: C = U32RotateLeft30(b): b = a: a = t
      Next i
      For i = 60 To 79
-         t = U32Add(U32Add(U32Add(U32Add(U32RotateLeft5(a), E), W(i)), Key4), (b Xor C Xor D))
-         E = D: D = C: C = U32RotateLeft30(b): b = a: a = t
+         t = U32Add(U32Add(U32Add(U32Add(U32RotateLeft5(a), E), W(i)), Key4), (b Xor C Xor d))
+         E = d: d = C: C = U32RotateLeft30(b): b = a: a = t
      Next i
 
-     H1 = U32Add(H1, a): H2 = U32Add(H2, b): H3 = U32Add(H3, C): H4 = U32Add(H4, D): H5 = U32Add(H5, E)
+     H1 = U32Add(H1, a): H2 = U32Add(H2, b): H3 = U32Add(H3, C): H4 = U32Add(H4, d): H5 = U32Add(H5, E)
  Wend
 End Sub
 

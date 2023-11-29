@@ -22,3 +22,45 @@ Public Function fShellRun(ByVal sCommandStringToExecute As String)
     On Error Resume Next
     fShellRun = oShellObject.Run(sCommandStringToExecute, 0, True)
 End Function
+
+Public Function CleanCache() As Boolean
+'-------------------------------------------------------------------------------
+'Function:          CleanCache
+'Date:              2022 March
+'Purpose:           Clean the cache pictures have been saved to
+'In:
+' -> fref:          BLOB field of the serialized data
+' -> pref           Picture field to present the picture
+'Out:               Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim oShell As Object
+    Dim oFSO As Object
+    Dim fPath As String
+    
+    Set oShell = CreateObject("WScript.Shell")
+    Set oFSO = CreateObject("Scripting.FileSystemObject")
+    
+    fPath = oShell.ExpandEnvironmentStrings("%USERPROFILE%\") + config.CacheFolder
+    If oFSO.FolderExists(fPath) Then Kill fPath + "\*.*"
+    
+    CleanCache = True
+
+Exit_Function:
+    Set oShell = Nothing
+    Set oFSO = Nothing
+    Exit Function
+Catch_Error:
+    'MsgBox "Error (mdlSystem - CleanCache): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function RunTimeMode() As Boolean
+'-------------------------------------------------------------------------------
+'Function:          RunTimeMode
+'Date:              2023 October
+'Purpose:           Check if runtime mode is switched on
+'Out:               Switched On (T/F)
+'-------------------------------------------------------------------------------
+    RunTimeMode = SysCmd(acSysCmdRuntime)
+End Function

@@ -1,3 +1,7 @@
+'################################################################################################
+' This module will initialize the camera and capture a picture from it.
+'################################################################################################
+
 Option Compare Database
 Option Explicit
 

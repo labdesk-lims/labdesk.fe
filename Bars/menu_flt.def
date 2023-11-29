@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" standalone="yes"?>
-<CommandBar name="StdContextMenu">
+<CommandBar name="menu_flt">
   <AdaptiveMenu value="false"/>
   <Context value=""/>
-  <Description value="StdContextMenu pop-up menu"/>
+  <Description value="menu_flt pop-up menu"/>
   <Enabled value="true"/>
   <Position value="5"/>
   <Protection value="22"/>
@@ -10,29 +10,6 @@
   <Type value="2"/>
   <Visible value="false"/>
   <Controls>
-    <Control id="1">
-      <BeginGroup value="false"/>
-      <BuiltIn value="false"/>
-      <Caption value="Add record"/>
-      <DescriptionText value=""/>
-      <Enabled value="true"/>
-      <HelpContextId value="0"/>
-      <HelpFile value=""/>
-      <Id value="1"/>
-      <Index value="1"/>
-      <Parameter value="add_record"/>
-      <Priority value="3"/>
-      <Tag value=""/>
-      <TooltipText value="Add record"/>
-      <Type value="1"/>
-      <Visible value="true"/>
-      <BuiltInFace value="true"/>
-      <Style value="0"/>
-      <ShortcutText value=""/>
-      <HyperlinkType value="0"/>
-      <OnAction value="fnCall"/>
-      <FaceId value="18"/>
-    </Control>
     <Control id="1">
       <BeginGroup value="true"/>
       <BuiltIn value="false"/>
@@ -42,7 +19,7 @@
       <HelpContextId value="0"/>
       <HelpFile value=""/>
       <Id value="1"/>
-      <Index value="2"/>
+      <Index value="1"/>
       <Parameter value="apply_filter"/>
       <Priority value="3"/>
       <Tag value=""/>
@@ -54,7 +31,7 @@
       <ShortcutText value=""/>
       <HyperlinkType value="0"/>
       <OnAction value="fnCall"/>
-      <FaceId value="35"/>
+      <FaceId value="601"/>
     </Control>
     <Control id="1">
       <BeginGroup value="false"/>
@@ -65,7 +42,7 @@
       <HelpContextId value="0"/>
       <HelpFile value=""/>
       <Id value="1"/>
-      <Index value="3"/>
+      <Index value="2"/>
       <Parameter value="save_filter"/>
       <Priority value="3"/>
       <Tag value=""/>
@@ -77,22 +54,22 @@
       <ShortcutText value=""/>
       <HyperlinkType value="0"/>
       <OnAction value="fnCall"/>
-      <FaceId value="34"/>
+      <FaceId value="602"/>
     </Control>
     <Control id="1">
       <BeginGroup value="true"/>
       <BuiltIn value="false"/>
-      <Caption value="Manage columns"/>
+      <Caption value="Columns"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
       <HelpFile value=""/>
       <Id value="1"/>
-      <Index value="4"/>
+      <Index value="3"/>
       <Parameter value="clmn_dlg"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Manage columns"/>
+      <TooltipText value="Columns"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -105,17 +82,17 @@
     <Control id="1">
       <BeginGroup value="false"/>
       <BuiltIn value="false"/>
-      <Caption value="Reset column width"/>
+      <Caption value="Reset"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
       <HelpFile value=""/>
       <Id value="1"/>
-      <Index value="5"/>
+      <Index value="4"/>
       <Parameter value="clmn_std"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Reset column width"/>
+      <TooltipText value="Reset"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -128,17 +105,17 @@
     <Control id="1">
       <BeginGroup value="true"/>
       <BuiltIn value="false"/>
-      <Caption value="Show audit trail"/>
+      <Caption value="Audit Trail"/>
       <DescriptionText value=""/>
       <Enabled value="true"/>
       <HelpContextId value="0"/>
       <HelpFile value=""/>
       <Id value="1"/>
-      <Index value="6"/>
+      <Index value="5"/>
       <Parameter value="audit_trail"/>
       <Priority value="3"/>
       <Tag value=""/>
-      <TooltipText value="Show audit trail"/>
+      <TooltipText value="Audit Trail"/>
       <Type value="1"/>
       <Visible value="true"/>
       <BuiltInFace value="true"/>
@@ -147,6 +124,29 @@
       <HyperlinkType value="0"/>
       <OnAction value="fnCall"/>
       <FaceId value="29"/>
+    </Control>
+    <Control id="1">
+      <BeginGroup value="true"/>
+      <BuiltIn value="false"/>
+      <Caption value="Refresh"/>
+      <DescriptionText value=""/>
+      <Enabled value="true"/>
+      <HelpContextId value="0"/>
+      <HelpFile value=""/>
+      <Id value="1"/>
+      <Index value="6"/>
+      <Parameter value="refresh"/>
+      <Priority value="3"/>
+      <Tag value=""/>
+      <TooltipText value="Refresh"/>
+      <Type value="1"/>
+      <Visible value="true"/>
+      <BuiltInFace value="true"/>
+      <Style value="0"/>
+      <ShortcutText value=""/>
+      <HyperlinkType value="0"/>
+      <OnAction value="fnCall"/>
+      <FaceId value="37"/>
     </Control>
   </Controls>
 </CommandBar>

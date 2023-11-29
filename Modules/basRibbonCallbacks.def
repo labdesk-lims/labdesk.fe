@@ -158,6 +158,9 @@ Sub GetEnabled(control As IRibbonControl, ByRef enabled)
             
         Case "btn_mailqueue"
             enabled = DbProcedures.GetPermission(control.ID).Read
+            
+        Case "btn_billing"
+            enabled = DbProcedures.GetPermission(control.ID).Read
         
         Case "btn_laboratory"
             enabled = DbProcedures.GetPermission(control.ID).Read
@@ -215,6 +218,9 @@ Sub GetEnabled(control As IRibbonControl, ByRef enabled)
         
         Case "btn_desktop"
             enabled = DbProcedures.GetPermission(control.ID).Read
+        
+        Case "btn_info"
+            enabled = True
             
         Case "btn_certificate"
             enabled = DbProcedures.GetPermission(control.ID).Read
@@ -244,6 +250,9 @@ Sub GetEnabled(control As IRibbonControl, ByRef enabled)
             enabled = DbProcedures.GetPermission(control.ID).Read
         
         Case "btn_material"
+            enabled = DbProcedures.GetPermission(control.ID).Read
+        
+        Case "btn_service"
             enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_formulation"
@@ -497,6 +506,9 @@ Sub GetLabel(control As IRibbonControl, ByRef label)
         Case "tab_testing"
             label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
         
+        Case "tab_tools"
+            label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
+        
         Case "btn_database"
             ' Button
             ' In Tab:   tab_setup
@@ -536,6 +548,15 @@ Sub GetLabel(control As IRibbonControl, ByRef label)
             ' In Tab:   tab_setup
             label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
         Case "btn_mailqueue"
+            ' Button
+            ' In Tab:   tab_setup
+            ' In Group: grp_config
+            label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
+        Case "grp_billing"
+            ' Group:    grp_server
+            ' In Tab:   tab_setup
+            label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
+        Case "btn_billing"
             ' Button
             ' In Tab:   tab_setup
             ' In Group: grp_config
@@ -682,6 +703,11 @@ Sub GetLabel(control As IRibbonControl, ByRef label)
             ' In Tab:   tab_testing
             ' In Group: grp_testing
             label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
+        Case "btn_info"
+            ' Button
+            ' In Tab:   tab_testing
+            ' In Group: grp_testing
+            label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
         Case "grp_certificate"
             ' Group:    grp_certificate
             ' In Tab:   tab_testing
@@ -735,7 +761,16 @@ Sub GetLabel(control As IRibbonControl, ByRef label)
             ' In Tab:   tab_testing
             ' In Group: grp_order
             label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
+        Case "btn_service"
+            ' Button
+            ' In Tab:   tab_testing
+            ' In Group: grp_order
+            label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
         Case "grp_order"
+            ' Group:    grp_order
+            ' In Tab:   tab_testing
+            label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
+        Case "grp_info"
             ' Group:    grp_order
             ' In Tab:   tab_testing
             label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
@@ -757,7 +792,8 @@ Sub GetLabel(control As IRibbonControl, ByRef label)
         Case "btn_project"
             ' Tab:   tab_testing
             label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
-
+        
+        
         Case Else
             label = "*getLabel*"
 
@@ -859,6 +895,10 @@ Sub OnActionButton(control As IRibbonControl)
             ' In Tab:   tab_setup
             ' In Group: grp_config
             DoCmd.OpenForm "mailqueue", acFormDS, , , acFormEdit, acWindowNormal
+        Case "btn_billing"
+            ' In Tab:   tab_setup
+            ' In Group: grp_config
+            DoCmd.OpenForm "billing", acFormDS, , , acFormEdit, acWindowNormal
         Case "btn_customer"
             ' In Tab:   tab_catalogs
             ' In Group: grp_address
@@ -935,6 +975,10 @@ Sub OnActionButton(control As IRibbonControl)
             ' In Tab:   tab_testing
             ' In Group: grp_certificate
             DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
+        Case "btn_info"
+            ' In Tab:   tab_testing
+            ' In Group: grp_certificate
+            DoCmd.OpenForm "_info", acNormal, , , acFormReadOnly, acWindowNormal
         Case "btn_certificate"
             ' In Tab:   tab_testing
             ' In Group: grp_certificate
@@ -979,6 +1023,10 @@ Sub OnActionButton(control As IRibbonControl)
             ' In Tab:   tab_testing
             ' In Group: grp_order
             DoCmd.OpenForm "material", acFormDS, , , acFormEdit, acWindowNormal
+        Case "btn_service"
+            ' In Tab:   tab_testing
+            ' In Group: grp_order
+            DoCmd.OpenForm "service", acFormDS, , , acFormEdit, acWindowNormal
         Case "btn_formulation"
             ' In Tab:   tab_testing
             ' In Group: grp_order
@@ -1383,7 +1431,7 @@ Public Function getAppPath() As String
     getAppPath = strDummy
 End Function
 
-Public Function getIconFromTable(strFileName As String) As picture
+Public Function getIconFromTable(strFileName As String) As Picture
 '*****************************************************************************
 'Funktion 'getIconFromTable' holt ein Bild aus der Binaer-Tabelle und gibt
 ' ein Picture Objekt zurueck

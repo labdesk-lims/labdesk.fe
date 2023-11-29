@@ -26,7 +26,7 @@ Public Function OpenFileDialog() As String
         ' Clear out the current filters, and add our own.
       .Filters.Clear
       .Filters.Add "All Files", "*.*"
-      If .Show = True Then
+      If .show = True Then
         OpenFileDialog = GetFileName(fDialog.SelectedItems(1))
         If FileLen(GetFileName(fDialog.SelectedItems(1))) > GetMaxFileSize() Then
             MsgBox GetTranslation("Dialogs", "max_filesize_exceeded", GetDbSetting("language")), vbInformation, GetTranslation("msgbox", "vbInformation", GetDbSetting("language"))
@@ -58,7 +58,7 @@ Public Function SaveFileDialog(ByVal initialFileStr As String) As String
         .InitialFileName = initialFileStr
         ' Set the title of the dialog box.
         .title = "Save file to disk"
-      If .Show = True Then
+      If .show = True Then
         SaveFileDialog = fDialog.SelectedItems(1)
       Else
         SaveFileDialog = ""
@@ -66,7 +66,7 @@ Public Function SaveFileDialog(ByVal initialFileStr As String) As String
    End With
 End Function
 
-Public Function SelectReportDialog() As Variant
+Public Function SelectDialog(ByVal templateId As String) As Variant
 '-------------------------------------------------------------------------------
 'Function:          SelectReportDialog
 'Date:              2023 January
@@ -81,16 +81,20 @@ Public Function SelectReportDialog() As Variant
     
     i = 0
     For Each rpt In db.AllReports
-        If InStr(1, rpt.name, config.ReportId, vbTextCompare) = 1 Then CurrentDb.Execute "INSERT INTO keyvalue (key, value_txt) VALUES(" & i & ",'" & rpt.name & "')"
+        If InStr(1, rpt.name, templateId, vbTextCompare) = 1 Then CurrentDb.Execute "INSERT INTO keyvalue (key, value_txt) VALUES(" & i & ",'" & rpt.name & "')"
         i = i + 1
     Next rpt
     
     DoCmd.OpenForm "_SelectDialog", acNormal, , , acFormEdit, acDialog, "SELECT value_txt, key FROM keyvalue"
     
     If Not IsNull(Forms("_SelectDialog").comboBox.Column(1)) Then
+<<<<<<< Updated upstream
         SelectReportDialog = Forms("_SelectDialog").comboBox.Column(0)
+=======
+        SelectDialog = Forms("_SelectDialog").comboBox.Column(0)
+>>>>>>> Stashed changes
     Else
-        SelectReportDialog = Null
+        SelectDialog = Null
     End If
     
     DoCmd.Close acForm, "_SelectDialog", acSaveNo

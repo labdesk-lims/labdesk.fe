@@ -55,19 +55,22 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Sub CreateLicenceFile(ByVal fileName As String, ByVal licensee As String, ByVal details As String, ByVal seats As Integer)
+Public Sub CreateLicenceFile(ByVal FileName As String, ByVal licensee As String, ByVal details As String, ByVal seats As Integer, ByVal expiry As Variant, ByVal devmode As Boolean, Optional ByVal authentication As String)
     Dim Json As String
     Dim JsonTS As TextStream
     Dim FSO As New FileSystemObject
-
-    Json = StoreEncryptAES("{""licensee"":""" & licensee & """,""details"":""" & details & """,""seats"":" & seats & "}", config.EncryptionKey, 1)
     
-    Set JsonTS = FSO.CreateTextFile(Application.CurrentProject.Path & "\" & fileName, True)
+    If authentication <> "C3PO" Then Err.Raise vbObjectError + 513, "", "Authentication failed."
+    
+    If IsNull(config.EncryptionKey) Or config.EncryptionKey = "" Then Err.Raise vbObjectError + 513, , ", Encryption key must not be null or empty."
+
+    Json = StoreEncryptAES("{""licensee"":""" & licensee & """,""details"":""" & details & """,""devmode"":" & CInt(devmode) & ",""expiry"":""" & expiry & """,""seats"":" & seats & "}", config.EncryptionKey, 1)
+    Set JsonTS = FSO.CreateTextFile(Application.CurrentProject.Path & "\" & FileName, True)
     JsonTS.Write (Json)
     JsonTS.Close
 End Sub
 
-Public Function GetLicenceByFile(ByVal fileName As String) As Object
+Public Function GetLicenceByFile(ByVal FileName As String) As Object
 On Error GoTo Catch_Error
     Dim FSO As New FileSystemObject
     Dim JsonTS As TextStream
@@ -76,16 +79,18 @@ On Error GoTo Catch_Error
     Dim Json As Object
     
     ' Read .json file
-    Set JsonTS = FSO.OpenTextFile(Application.CurrentProject.Path & "\" & fileName, ForReading)
+    Set JsonTS = FSO.OpenTextFile(Application.CurrentProject.Path & "\" & FileName, ForReading)
     JsonText = JsonTS.ReadAll
     JsonTS.Close
     
     Set GetLicenceByFile = JsonConverter.ParseJson(RetrieveDecryptAES(JsonText, config.EncryptionKey, 1, True))
     
+    Exit Function
+    
 Exit_Function:
-    Set JsonTS = Nothing
-    Set Json = Nothing
+    MsgBox "Licence file corrupted.", vbCritical, "Corrupted Licence"
     Exit Function
 Catch_Error:
+    GetLicenceByFile = Null
     Resume Exit_Function
 End Function

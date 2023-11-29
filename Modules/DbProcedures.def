@@ -38,12 +38,20 @@ On Error GoTo Catch_Error
     Dim cs As ColumnStyle
     
     Set db = CurrentDb()
+    'Local column style switch off
     Set rs = db.OpenRecordset("SELECT COUNT(*) FROM lcl_columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    'Set rs = db.OpenRecordset("SELECT COUNT(*) FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    
+    If hidden Then Width = 0 'workaround to make the hidden property persistent
     
     If Not rs(0) > 0 Then
+        'Local column style switch off
         db.Execute "INSERT INTO lcl_columns (user_id, table_id, column_id, column_width, column_hidden, column_order) VALUES('" & GetUserName() & "', '" & rfrm.name & "', '" & clmn & "', " & Width & ", " & CInt(hidden) & ", " & order & ")"
+        'db.Execute "INSERT INTO columns (user_id, table_id, column_id, column_width, column_hidden, column_order) VALUES('" & GetUserName() & "', '" & rfrm.name & "', '" & clmn & "', " & Width & ", " & CInt(hidden) & ", " & order & ")"
     Else
+        'Local column style switch off
         db.Execute "UPDATE lcl_columns SET column_width = " & Width & ", column_hidden = " & CInt(hidden) & ", column_order = " & order & " WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'"
+        'db.Execute "UPDATE columns SET column_width = " & Width & ", column_hidden = " & CInt(hidden) & ", column_order = " & order & " WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'"
     End If
     
     SetColumnStyle = True
@@ -72,7 +80,10 @@ On Error GoTo Catch_Error
     Dim cs As ColumnStyle
     
     Set db = CurrentDb()
+    
+    'Local column style switch off
     Set rs = db.OpenRecordset("SELECT * FROM lcl_columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    'Set rs = db.OpenRecordset("SELECT * FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
     
     If rs.EOF Or rs.BOF Then
         cs.Width = -3
@@ -93,7 +104,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function GetFieldValue(ByVal table As String, ByVal field As String, ByVal ID As Integer) As Variant
+Public Function GetFieldValue(ByVal table As String, ByVal field As String, Optional ByVal ID As Integer) As Variant
 '-------------------------------------------------------------------------------
 ' Function:         GetFieldValue
 ' Date:             2022 Feburary
@@ -108,12 +119,16 @@ On Error GoTo Catch_Error
     Dim rs As Recordset
     
     Set db = CurrentDb()
-    Set rs = db.OpenRecordset("SELECT " & field & " FROM " & table & " WHERE id = " & ID)
+    If Nz(ID, 0) = 0 Then
+        Set rs = db.OpenRecordset("SELECT TOP 1 " & field & " FROM " & table)
+    Else
+        Set rs = db.OpenRecordset("SELECT " & field & " FROM " & table & " WHERE id = " & ID)
+    End If
     
     If rs(0) <> "" Then
         GetFieldValue = rs(0)
     Else
-        GetFieldValue = ""
+        GetFieldValue = Null
     End If
     
 Exit_Function:
@@ -121,13 +136,13 @@ Exit_Function:
     Set rs = Nothing
     Exit Function
 Catch_Error:
-    GetFieldValue = ""
+    GetFieldValue = Null
     Resume Exit_Function
 End Function
 
 Public Function SetFieldValue(ByVal table As String, ByVal field As String, ByVal ID As Integer, ByVal value As Variant) As Boolean
 '-------------------------------------------------------------------------------
-' Function:         GetFieldValue
+' Function:         SetFieldValue
 ' Date:             2022 Feburary
 ' Purpose:          Get value of a field
 ' In:
@@ -266,17 +281,15 @@ On Error GoTo Catch_Error
     Dim rs As Recordset
     
     Set db = CurrentDb()
+    'Local table call switch off
     Set rs = db.OpenRecordset("SELECT " & language & " FROM lcl_translation WHERE container ='" & container & "' AND item = '" & item & "'")
+   'Set rs = db.OpenRecordset("SELECT " & language & " FROM translation WHERE container ='" & container & "' AND item = '" & item & "'")
     
     If rs.EOF Or rs.BOF Then
         db.Execute "INSERT INTO translation(container, item) VALUES('" & container & "', '" & item & "')"
         GetTranslation = item
     Else
-        If IsNull(rs(0)) Then
-            GetTranslation = item
-        Else
-            GetTranslation = rs(0)
-        End If
+        GetTranslation = Nz(rs(0), item)
     End If
 
 Exit_Function:
@@ -284,7 +297,7 @@ Exit_Function:
     Set rs = Nothing
     Exit Function
 Catch_Error:
-    GetTranslation = ""
+    GetTranslation = item
     Resume Exit_Function
 End Function
 
@@ -464,7 +477,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function AttachToMailQueue(ByVal request As Integer, ByVal subject As String, ByVal body As String, Optional ByVal recipients As String = "") As Boolean
+Public Function AttachToMailQueue(ByVal request As Variant, ByVal billing_customer As Variant, ByVal subject As String, ByVal body As String, Optional ByVal recipients As Variant) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         AttachToMailQueue
 ' Date:             2022 March
@@ -479,14 +492,14 @@ Public Function AttachToMailQueue(ByVal request As Integer, ByVal subject As Str
 On Error GoTo Catch_Error
     Dim db As database
     
-    If IsNull(recipients) And IsNull(request) Then Exit Function
+    If IsNull(recipients) Or recipients = "" Or IsNull(request) Then Err.Raise vbObjectError + 513, , GetTranslation("msgbox", "mailadress_error", GetDbSetting("language"))
     
     Set db = CurrentDb
     
     If recipients = "" Then
-        db.Execute "INSERT INTO mailqueue (subject, body, request) VALUES('" & subject & "', '" & body & "', " & request & ")", dbOpenDynaset
+        db.Execute "INSERT INTO mailqueue (subject, body, request, billing_customer) VALUES('" & subject & "', '" & body & "', " & Nz(request, "NULL") & ", " & Nz(billing_customer, "NULL") & ")", dbOpenDynaset
     Else
-        db.Execute "INSERT INTO mailqueue (recipients, subject, body, request) VALUES('" & recipients & "', '" & subject & "', '" & body & "', " & request & ")", dbOpenDynaset
+        db.Execute "INSERT INTO mailqueue (recipients, subject, body, request, billing_customer) VALUES('" & recipients & "', '" & subject & "', '" & body & "', " & Nz(request, "NULL") & ", " & Nz(billing_customer, "NULL") & ")", dbOpenDynaset
     End If
     
     AttachToMailQueue = True
@@ -654,10 +667,10 @@ On Error GoTo Catch_Error
     Set rs = cmd.Execute()
     
     While Not rs.EOF
-        If Len(SubstNull(rs!value_old, "null")) < 255 And Len(SubstNull(rs!value_new, "null")) < 255 Then
-            s = s & "[" & rs!changed_at & "] " & rs!changed_by & "<br>" & "<b>" & rs!elem_name & "</b> " & SubstNull(rs!value_old, "null") & " -> " & SubstNull(rs!value_new, "null") & "<br><br>"
+        If Len(Nz(rs!value_old, "null")) < 255 And Len(Nz(rs!value_new, "null")) < 255 Then
+            s = s & "[" & rs!changed_at & "] " & rs!changed_by & "<br>" & "<b>" & rs!elem_name & "</b> " & Nz(rs!value_old, "null") & " -> " & Nz(rs!value_new, "null") & "<br><br>"
         Else
-            s = s & "[" & rs!changed_at & "] " & rs!changed_by & "<br>" & "<b>" & rs!elem_name & "</b> " & SubstNull(Left(rs!value_old, 255) & " . . .", "null") & " -> " & SubstNull(Left(rs!value_new, 255) & " . . .", "null") & "<br><br>"
+            s = s & "[" & rs!changed_at & "] " & rs!changed_by & "<br>" & "<b>" & rs!elem_name & "</b> " & Nz(Left(rs!value_old, 255) & " . . .", "null") & " -> " & Nz(Left(rs!value_new, 255) & " . . .", "null") & "<br><br>"
         End If
         rs.MoveNext
     Wend
@@ -940,7 +953,7 @@ Public Function GetReports() As Variant
     GetReports = a
 End Function
 
-Public Function UploadPicture(ByRef fref As Object, Optional fileName As String) As Boolean
+Public Function UploadPicture(ByRef fref As Object, Optional FileName As String) As Boolean
 '-------------------------------------------------------------------------------
 'Function:          UploadPicture
 'Date:              2022 March
@@ -957,10 +970,10 @@ On Error GoTo Catch_Error
     Set oShell = CreateObject("WScript.Shell")
     Set oFSO = CreateObject("Scripting.FileSystemObject")
     
-    If fileName = "" Then
+    If FileName = "" Then
         fName = Dialogs.OpenFileDialog()
     Else
-        fName = fileName
+        fName = FileName
     End If
     
     If fName = "" Then Exit Function
@@ -999,7 +1012,7 @@ On Error GoTo Catch_Error
     
     fName = fPath & "\" & "tmp_" & CreateGuid()
     If Not IsNull(fref) Then DbBlob.BlobToFile fName, fref
-    pref.picture = fName
+    pref.Picture = fName
     
     ShowPicture = True
     
@@ -1102,4 +1115,56 @@ Exit_Handler:
 
 Err_Handler:
     Resume Exit_Handler
+End Function
+
+Public Function ResetLoginPassword() As Boolean
+'-------------------------------------------------------------------------------
+' Function:  ResetLoginPassword
+' Date:      2022 November
+' Purpose:   Reset login password
+' In:        -
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As DAO.Recordset
+    
+    Set db = CurrentDb()
+    db.Execute "UPDATE dbsetup SET password = ''"
+    
+    ResetLoginPassword = True
+
+Exit_Function:
+    Set db = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
+Public Function GetDbDate() As Date
+'-------------------------------------------------------------------------------
+' Function:  GetDbDate
+' Date:      2023 October
+' Purpose:   Get date from sql server
+' Out:       Date
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "datetime_get"
+    cmd.Parameters.Append cmd.CreateParameter("@response_message", adDate, adParamOutput, 256)
+    cmd.Execute
+    
+    GetDbDate = cmd.Parameters.item("@response_message")
+    
+Exit_Function:
+    Set cmd = Nothing
+    Exit Function
+Catch_Error:
+    MsgBox "Error (mdlDbProcedures - GetDbDate): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
 End Function

@@ -1,0 +1,315 @@
+'################################################################################################
+' This module provides support for deployment of new lim-systems as well as updating existing
+' installations.
+'################################################################################################
+Option Compare Database
+Option Explicit
+
+Private Sub AddTranslation(ByVal container As String, ByVal item As String, ByVal en As String, ByVal de As String)
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT COUNT(id) As cnt FROM translation WHERE container = '" & container & "' AND item = '" & item & "'", dbOpenDynaset, dbSeeChanges)
+    
+    If rs!cnt = 0 Then
+        db.Execute "INSERT INTO translation (container, item, en, de) VALUES ('" & container & "', '" & item & "', '" & en & "', '" & de & "')"
+    Else
+        db.Execute "UPDATE translation SET en = '" & en & "', de = '" & de & "' WHERE container = '" & container & "' AND item = '" & item & "'"
+    End If
+    
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Sub
+Catch_Error:
+    MsgBox "Error (mdlSysPrep - AddTranslation): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Sub
+
+Private Sub UpdateTranslation()
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT * FROM _translation")
+    
+    Do While Not rs.EOF
+        AddTranslation Nz(rs!container, ""), Nz(rs!item, ""), Nz(rs!en, ""), Nz(rs!de, "")
+        rs.MoveNext
+    Loop
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Sub
+Catch_Error:
+    MsgBox "Error (mdlSysPrep - UpdateTranslation): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Sub
+
+Private Sub AddRole(ByVal title As String, ByVal description As String, ByVal administrative As Boolean)
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT COUNT(id) As cnt FROM role WHERE title = '" & title & "'", dbOpenDynaset, dbSeeChanges)
+    
+    If rs!cnt = 0 Then
+        db.Execute "INSERT INTO role (title, description, administrative) VALUES ('" & title & "', '" & description & "', " & CInt(administrative) & ")"
+    End If
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Sub
+Catch_Error:
+    MsgBox "Error (mdlSysPrep - AddRole): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Sub
+
+Private Sub UpdateRole()
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT * FROM _role")
+    
+    Do While Not rs.EOF
+        AddRole Nz(rs!title, ""), Nz(rs!description, ""), Nz(rs!administrative, "")
+        rs.MoveNext
+    Loop
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Sub
+Catch_Error:
+    MsgBox "Error (mdlSysPrep - UpdateRole): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Sub
+
+Private Sub AddPermission(ByVal title As String, ByVal description As String)
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT COUNT(id) As cnt FROM permission WHERE title = '" & title & "'", dbOpenDynaset, dbSeeChanges)
+    
+    If rs!cnt = 0 Then
+        db.Execute "INSERT INTO permission (title, description) VALUES ('" & title & "', '" & description & "')"
+    End If
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Sub
+Catch_Error:
+    MsgBox "Error (mdlSysPrep - AddPermission): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Sub
+
+Private Sub UpdatePermission()
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT * FROM _permission")
+    
+    Do While Not rs.EOF
+        If Not IsNull(rs!description) Then
+            AddPermission Nz(rs!title, ""), Nz(rs!description, "")
+        Else
+            AddPermission Nz(rs!title, ""), ""
+        End If
+        rs.MoveNext
+    Loop
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Sub
+Catch_Error:
+    MsgBox "Error (mdlSysPrep - UpdatePermission): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Sub
+
+Private Sub AddRolePermission(ByVal role As Integer, ByVal permission As Integer, ByVal can_create As Boolean, ByVal can_read As Boolean, ByVal can_update As Boolean, ByVal can_delete As Boolean)
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    
+    db.Execute "UPDATE role_permission SET can_create = " & CInt(can_create) & ", can_read = " & CInt(can_read) & ", can_update = " & CInt(can_update) & ", can_delete = " & CInt(can_delete) & " WHERE permission = " & permission & " AND role = " & role
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Sub
+Catch_Error:
+    MsgBox "Error (mdlSysPrep - AddRolePermission): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Sub
+
+Private Sub UpdateRolePermission()
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    Dim ra, rb, rx, ry As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT * FROM _role_permission")
+    
+    Do While Not rs.EOF
+        Set ra = db.OpenRecordset("SELECT * FROM _role WHERE id = " & rs!role)
+        Set rb = db.OpenRecordset("SELECT * FROM role WHERE title = '" & ra!title & "'", dbOpenDynaset, dbSeeChanges)
+        Set rx = db.OpenRecordset("SELECT * FROM _permission WHERE id = " & rs!permission)
+        Set ry = db.OpenRecordset("SELECT * FROM permission WHERE title = '" & rx!title & "'", dbOpenDynaset, dbSeeChanges)
+        
+        AddRolePermission rb!ID, ry!ID, True, rs!can_read, rs!can_update, rs!can_delete
+        rs.MoveNext
+    Loop
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Sub
+Catch_Error:
+    MsgBox "Error (mdlSysPrep - UpdateRolePermission): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Sub
+
+Public Sub SystemPrepUpdate()
+'-------------------------------------------------------------------------------
+'Function:          SystemPrepUpdate
+'Date:              2023 October
+'Purpose:           Prepare update
+'-------------------------------------------------------------------------------
+
+    ' Translations
+    If TableExists("_translation") Then CurrentDb.TableDefs.Delete "_translation"
+    CreateTable "translation", "_translation"
+    CopyTable "translation", "_translation"
+    
+    ' Roles
+    If TableExists("_role") Then CurrentDb.TableDefs.Delete "_role"
+    CreateTable "role", "_role"
+    CopyTable "role", "_role"
+    
+    ' Permissions
+    If TableExists("_permission") Then CurrentDb.TableDefs.Delete "_permission"
+    CreateTable "permission", "_permission"
+    CopyTable "permission", "_permission"
+    
+    ' Role permission cross table
+    If TableExists("_role_permission") Then CurrentDb.TableDefs.Delete "_role_permission"
+    CreateTable "role_permission", "_role_permission"
+    CopyTable "role_permission", "_role_permission"
+    
+    ' Unlink DSN less tables
+    UnAttachDSNLessTables config.DSNLessTables
+    
+    ' Reset db settings
+    CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, navpane = 0, sysupdate = 1"
+    
+    'Disable shift
+    DisableShift
+End Sub
+
+Public Sub SystemPrepInit()
+'-------------------------------------------------------------------------------
+'Function:          SysPrep
+'Date:              2022 February
+'Purpose:           Create s local copy of all configurations
+'-------------------------------------------------------------------------------
+
+    ' Translations
+    If TableExists("_translation") Then CurrentDb.TableDefs.Delete "_translation"
+    CreateTable "translation", "_translation"
+    CopyTable "translation", "_translation"
+    
+    ' Roles
+    If TableExists("_role") Then CurrentDb.TableDefs.Delete "_role"
+    CreateTable "role", "_role"
+    CopyTable "role", "_role"
+    
+    ' Permissions
+    If TableExists("_permission") Then CurrentDb.TableDefs.Delete "_permission"
+    CreateTable "permission", "_permission"
+    CopyTable "permission", "_permission"
+    
+    ' Role permission cross table
+    If TableExists("_role_permission") Then CurrentDb.TableDefs.Delete "_role_permission"
+    CreateTable "role_permission", "_role_permission"
+    CopyTable "role_permission", "_role_permission"
+    
+    ' Unlink DSN less tables
+    UnAttachDSNLessTables config.DSNLessTables
+    
+    ' Activate initialization
+    CurrentDb.Execute "UPDATE dbsetup SET sysinit = 1"
+    
+    ' Reset db settings
+    CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, navpane = 0, sysinit = 1"
+    
+    'Disable shift
+    DisableShift
+End Sub
+
+Public Sub SystemInit()
+'-------------------------------------------------------------------------------
+'Function:          SysInit
+'Date:              2021 October
+'Purpose:           Update the database with local a copy of all configurations
+'-------------------------------------------------------------------------------
+    ' InitTranslations
+    UpdateTranslation
+    UpdateRole
+    UpdatePermission
+    UpdateRolePermission
+    AddAdmin
+    
+    'Hide the navigation pane
+    HideNavPane True
+    
+    'Disable full menu
+    AddAppProperty "AllowFullMenus", dbBoolean, False
+    
+    'Disable shift
+    DisableShift
+    
+    ' Deactivate initialization
+    CurrentDb.Execute "UPDATE dbsetup SET sysinit = 0" 'reset connection settings
+End Sub
+
+Public Sub SystemUpdate()
+'-------------------------------------------------------------------------------
+'Function:          SysInit
+'Date:              2021 October
+'Purpose:           Update the database with local a copy of all configurations
+'-------------------------------------------------------------------------------
+    ' InitTranslations
+    UpdateTranslation
+    UpdateRole
+    UpdatePermission
+    UpdateRolePermission
+    
+    'Hide the navigation pane
+    HideNavPane True
+    
+    'Disable full menu
+    AddAppProperty "AllowFullMenus", dbBoolean, False
+    
+    'Disable shift
+    DisableShift
+    
+    ' Deactivate update
+    CurrentDb.Execute "UPDATE dbsetup SET sysupdate = 0" 'reset connection settings
+End Sub

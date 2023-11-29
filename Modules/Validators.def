@@ -93,14 +93,6 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function SubstNull(ByVal value As Variant, ByVal subst As Variant) As Variant
-    If IsNull(value) Then
-        SubstNull = subst
-    Else
-        SubstNull = value
-    End If
-End Function
-
 Private Function DecodeBase64(ByVal strData As String) As Byte()
     Dim objXML As MSXML2.DOMDocument60
     Dim objNode As MSXML2.IXMLDOMElement

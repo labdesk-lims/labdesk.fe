@@ -50,11 +50,11 @@ Private Function UpdateLocal(ByVal table As String, Optional ByVal whereClause A
     CopyTable "lcl_" & table, "lcl_" & table & "_cpy"
 End Function
 
-Public Sub InitLocales()
+Public Sub InitLocalTables()
     UpdateLocal "translation"
     UpdateLocal "columns", "WHERE user_id = '" & GetUserName() & "'"
 End Sub
 
-Public Sub UpdateRemotes()
+Public Sub UpdateRemoteTables()
     UpdateTable "columns", "lcl_columns"
 End Sub

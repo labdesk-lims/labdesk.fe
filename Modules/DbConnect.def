@@ -9,7 +9,7 @@ Option Explicit
 Global ADODBConStr As String
 Global ODBCConStr As String
 
-Public Function GetDbSetting(key As String) As String
+Public Function GetDbSetting(key As String) As Variant
 '-------------------------------------------------------------------------------
 ' Function:  GetDbSetting
 ' Date:      2022 January
@@ -25,7 +25,7 @@ On Error GoTo Catch_Error
     
     If key = "language" Then
         If TableExists("users") Then
-            Set rs = db.OpenRecordset("SELECT " & key & " FROM users WHERE id = " & GetUserId())
+            Set rs = db.OpenRecordset("SELECT " & key & " FROM users WHERE id = " & DbProcedures.GetUserId())
         Else
             GetDbSetting = "en"
         End If

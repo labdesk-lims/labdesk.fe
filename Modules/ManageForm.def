@@ -64,8 +64,12 @@ On Error GoTo Catch_Error
     For Each ctrl In rfrm.Controls
         'Translate labels
         If TypeName(ctrl) = "Label" Then
+            'labels
             s = GetTranslation(rfrm.name, ctrl.name, language)
             If s <> "" Then rfrm.Controls(ctrl.name).Caption = s
+            'tooltips
+            s = GetTranslation(rfrm.name, ctrl.name & "tooltip", language)
+            If s <> "" And s <> ctrl.name & "tooltip" Then rfrm.Controls(ctrl.name).ControlTipText = s
         End If
         
         'Translate buttons
@@ -118,7 +122,7 @@ On Error GoTo Catch_Error
                 rfrm.Controls(ctrl.name).BorderStyle = 0 'Transparent
                 rfrm.Controls(ctrl.name).ForeColor = CI.ForeColor_TabPage
                 rfrm.Controls(ctrl.name).BackColor = CI.BackColor_TabPage
-                rfrm.Controls(ctrl.name).Style = 0
+                rfrm.Controls(ctrl.name).style = 0
                 i = i + 1
             Wend
         End If
@@ -300,6 +304,7 @@ On Error GoTo Catch_Error
     
     'Translate all controls
     TranslateForm rfrm.Form, GetDbSetting("language")
+    
     'Attach a read only hint if applies
     If Not GetPermission(rfrm.name).Update Or readOnly Then rfrm.Caption = rfrm.Caption & " " & GetTranslation("form", "label_read_only", GetDbSetting("language"))
     

@@ -68,44 +68,43 @@ End Sub
 
 Function DisableShift()
 '-------------------------------------------------------------------------------
-' Function:     HDisableShift
+' Function:     DisableShift
 ' Date:         2022 January
 ' Purpose:      This function disable the shift at startup
 ' Parameters:   -
 ' Out:          -
 '-------------------------------------------------------------------------------
-
-On Error GoTo errDisableShift
-
-Dim db As DAO.database
-Dim prop As DAO.Property
-Const conPropNotFound = 3270
-
-Set db = CurrentDb()
-
-'This next line disables the shift key on startup.
-db.Properties("AllowByPassKey") = False
-
-'The function is successful.
-Exit Function
-
+    On Error GoTo errDisableShift
+    
+    Dim db As DAO.database
+    Dim prop As DAO.Property
+    Const conPropNotFound = 3270
+    
+    Set db = CurrentDb()
+    
+    'This next line disables the shift key on startup.
+    db.Properties("AllowByPassKey") = False
+    
+    'The function is successful.
+    Exit Function
+    
 errDisableShift:
-'The first part of this error routine creates the "AllowByPassKey
-'property if it does not exist.
-If Err = conPropNotFound Then
-Set prop = db.CreateProperty("AllowByPassKey", _
-dbBoolean, False)
-db.Properties.Append prop
-Resume Next
-Else
-MsgBox "Function 'DisableShift' did not complete successfully."
-Exit Function
-End If
+    'The first part of this error routine creates the "AllowByPassKey
+    'property if it does not exist.
+    If Err = conPropNotFound Then
+    Set prop = db.CreateProperty("AllowByPassKey", _
+    dbBoolean, False)
+    db.Properties.Append prop
+    Resume Next
+    Else
+    MsgBox "Function 'DisableShift' did not complete successfully."
+    Exit Function
+    End If
 End Function
 
 Function EnableShift()
 '-------------------------------------------------------------------------------
-' Function:     HDisableShift
+' Function:     EnableShift
 ' Date:         2022 January
 ' Purpose:      This function enables the shift at startup
 ' Parameters:   -
@@ -139,3 +138,20 @@ MsgBox "Function 'EnableShift' did not complete successfully."
 Exit Function
 End If
 End Function
+
+Public Sub ResetContextMenu()
+'-------------------------------------------------------------------------------
+' Function:     ResetContextMenu
+' Date:         2022 January
+' Purpose:      This sub deletes all customized context menus
+'-------------------------------------------------------------------------------
+Dim bar As CommandBar
+
+'Reset ContextMenu
+For Each bar In CommandBars
+    If (bar.BuiltIn = False) And _
+    (bar.visible = False) Then
+        bar.Delete
+    End If
+Next bar
+End Sub

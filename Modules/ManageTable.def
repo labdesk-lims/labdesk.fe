@@ -56,18 +56,18 @@ Public Function GetIdentityColumn(ByVal table As String) As String
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     Dim db As DAO.database, tbl As DAO.TableDef
-    Dim F As DAO.field
+    Dim f As DAO.field
     Dim id_clmn As String
     
     Set db = CurrentDb()
     
     For Each tbl In db.TableDefs
         If tbl.name = table Then
-            For Each F In tbl.Fields
-                If F.attributes = 17 And F.type = 4 Then    '(17 = dbAutoIncrField (16) + dbFixedField(1),  4 = dbLong)
-                    id_clmn = F.name
+            For Each f In tbl.Fields
+                If f.attributes = 17 And f.type = 4 Then    '(17 = dbAutoIncrField (16) + dbFixedField(1),  4 = dbLong)
+                    id_clmn = f.name
                 End If
-            Next F
+            Next f
         End If
     Next tbl
     
