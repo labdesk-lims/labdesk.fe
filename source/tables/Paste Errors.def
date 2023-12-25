@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:od="urn:schemas-microsoft-com:officedata">
+<xsd:schema>
+<xsd:element name="dataroot">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element ref="Paste_x0020_Errors" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+<xsd:attribute name="generated" type="xsd:dateTime"/>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Paste_x0020_Errors">
+<xsd:annotation>
+<xsd:appinfo>
+<od:tableProperty name="Orientation" type="2" value="0"/>
+<od:tableProperty name="LogTable" type="3" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="RibbonName" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="RibbonXml" minOccurs="0" od:jetType="memo" od:sqlSType="ntext">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="536870910"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-12-25T14:38:15">
+<Paste_x0020_Errors>
+<RibbonName>custom_ribbon</RibbonName>
+<RibbonXml>&lt;!-- Created with IDBE RibbonCreator 2021 (Version: 1.1001) --&gt;
+&lt;!--                http://www.RibbonCreator2021.com               --&gt;
+&lt;!--                 http://www.ribboncreator2021.de               --&gt;
+
+&lt;!--Images are store in current Database - Do NOT delete this remark--&gt;
+
+&lt;customUI xmlns=&quot;http://schemas.microsoft.com/office/2009/07/customui&quot; onLoad=&quot;OnRibbonLoad&quot; loadImage=&quot;LoadImages&quot;&gt;
+  &lt;commands&gt;
+      &lt;command idMso=&quot;Help&quot; enabled=&quot;true&quot;/&gt;
+      &lt;command idMso=&quot;WindowClose&quot; enabled=&quot;true&quot;/&gt;
+      &lt;command idMso=&quot;WindowRestore&quot; enabled=&quot;true&quot;/&gt;
+      &lt;command idMso=&quot;WindowMinimize&quot; enabled=&quot;true&quot;/&gt;
+  &lt;/commands&gt;
+
+  &lt;ribbon startFromScratch=&quot;false&quot;&gt;
+    &lt;tabs&gt;
+      &lt;tab id=&quot;tab_setup&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=custom_ribbon;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=&quot; &gt; 
+        &lt;group id=&quot;grp_desktop&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_desktop&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_desktop.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\labdesk\assets\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+        &lt;group id=&quot;grp_config&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_setup&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_config.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_customfield&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_customfield.png;CustomPicturePath:=C:\Users\lkoge\Documents\GitHub\labdesk.fe\assets\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_translation&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_translation.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_user&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_user.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_role&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_role.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_workflow&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_workflow.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+        &lt;group id=&quot;grp_log&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_mailqueue&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_mailqueue.png;CustomPicturePath:=C:\Users\lkoge\Documents\GitHub\labdesk.fe\assets\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+      &lt;/tab&gt;
+      &lt;tab id=&quot;tab_infrastructure&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=custom_ribbon;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=&quot; &gt; 
+        &lt;group id=&quot;grp_instance&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_laboratory&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_laboratory.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+        &lt;group id=&quot;grp_institution&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_department&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_department.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_workplace&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_workplace.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_instrument&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_instrument.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_storage&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_storage.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\lims\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+      &lt;/tab&gt;
+      &lt;tab id=&quot;tab_catalogs&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=custom_ribbon;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=&quot; &gt; 
+        &lt;group id=&quot;grp_address&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_customer&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_customer.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_contact&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_contact.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_manufacturer&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_manufacturer.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_supplier&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_supplier.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+        &lt;group id=&quot;grp_sampling&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_smpmatrix&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_smpmatrix.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_smptype&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_smptype.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_smppoint&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_smppoint.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_smpcondition&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_smpcondition.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_smppreservation&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_smppreservation.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_container&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_container.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_batch&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_batch.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\lims\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+        &lt;group id=&quot;grp_chemistry&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_material&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_material.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\labdesk\assets\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+        &lt;group id=&quot;grp_other&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_instype&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_instype.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_technique&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_technique.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\lims2go\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_priority&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_priority.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+      &lt;/tab&gt;
+      &lt;tab id=&quot;tab_testing&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=custom_ribbon;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=&quot; &gt; 
+        &lt;group id=&quot;grp_certificate&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_certificate&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_certificate.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_qualification&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_qualification.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+        &lt;group id=&quot;grp_testing&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_method&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_method.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_analysis&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_analysis.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_profile&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_profile.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+        &lt;group id=&quot;grp_order&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_request&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_request.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_measurement&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_measurement.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\labdesk\assets\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+      &lt;/tab&gt;
+      &lt;tab id=&quot;tab_project&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=custom_ribbon;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=&quot; &gt; 
+        &lt;group id=&quot;grp_technology&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_formulation&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_formulation.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\labdesk\assets\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+        &lt;group id=&quot;grp_project&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
+          &lt;button id=&quot;btn_project&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_project.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\labdesk\assets\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+        &lt;/group&gt;
+      &lt;/tab&gt;
+    &lt;/tabs&gt;
+  &lt;/ribbon&gt;
+&lt;/customUI&gt;</RibbonXml>
+</Paste_x0020_Errors>
+</dataroot>
+</root>
