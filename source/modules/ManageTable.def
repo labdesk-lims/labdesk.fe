@@ -277,6 +277,18 @@ Catch_Error:
 End Function
 
 Public Function CreateMultiReportTable(ByVal table As String, ByVal profile As Long, ByVal smppoint As Long, ByVal top As Long, ByVal startFrom As Long) As Recordset
+'-------------------------------------------------------------------------------
+'Function:      CreateMultiReportTable
+'Date:          2023 December
+'Purpose:       Create a RecordSet for a multi sample report
+'Parameters:
+'-> table:      Name of the table where data will be stored
+'-> profile:    The applied profile for each sample to be displayed
+'-> smppoint:   The sample point of interest
+'-> top:        Number of samples to be taken into account
+'-> startFrom:  The smalles uid to start from
+'Out:           Updated (T/F)
+'-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     Dim cmd As ADODB.Command
     Dim rs As ADODB.Recordset

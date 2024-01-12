@@ -269,7 +269,7 @@ On Error GoTo Catch_Error
     rfrm.Controls(GetIdentityColumn(table)).enabled = False
 
     'Translate all controls
-    ManageForm.TranslateForm rfrm.Form, GetDbSetting("language")
+    TranslateForm rfrm.Form, GetDbSetting("language")
     
     'Prepare temporary table for actual session and set it as object source
     If TableExists(GetTableNameFromGuid(tmpGuid)) Then CurrentDb.TableDefs.Delete GetTableNameFromGuid(tmpGuid)

@@ -29,8 +29,8 @@ Private Const pBackgroundWorkerInterval = 3 * 60000
 
 ' Semantic Versioning according to https://semver.org/
 ' MAJOR-MINOR-PATCH
-Private Const pBeVersion = "v2.0.0" 'Backend version
-Private Const pFeVersion = "v2.0.0" 'Frontend version
+Private Const pBeVersion = "v2.1.0" 'Required backend version
+Private Const pFeVersion = "v2.1.0" 'Presented frontend version
 
 ' Identifiers used for reports and labels
 Private Const pReportId = "RPT-" 'Identifier for selectable reports
