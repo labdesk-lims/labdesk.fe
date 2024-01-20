@@ -11,10 +11,10 @@
 		Dim objData, objStyle
 		
 		Set objData = CreateDOM
-		LoadDOM objData, "dbsetup.def", false
+		LoadDOM objData, "dbsetup.tbl", false
 		
 		Set objStyle = CreateDOM
-		LoadDOM objStyle, "dbsetup.def.XSL", true
+		LoadDOM objStyle, "dbsetup.tbl.XSL", true
 
 		Document.Open "text/html"
 		Document.Write objData.TransformNode(objStyle)

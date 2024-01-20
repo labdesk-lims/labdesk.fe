@@ -11,10 +11,10 @@
 		Dim objData, objStyle
 		
 		Set objData = CreateDOM
-		LoadDOM objData, "USysRibbons.def", false
+		LoadDOM objData, "USysRibbons.tbl", false
 		
 		Set objStyle = CreateDOM
-		LoadDOM objStyle, "USysRibbons.def.XSL", true
+		LoadDOM objStyle, "USysRibbons.tbl.XSL", true
 
 		Document.Open "text/html"
 		Document.Write objData.TransformNode(objStyle)

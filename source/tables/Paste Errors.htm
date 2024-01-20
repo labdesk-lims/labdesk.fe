@@ -11,10 +11,10 @@
 		Dim objData, objStyle
 		
 		Set objData = CreateDOM
-		LoadDOM objData, "Paste%20Errors.def", false
+		LoadDOM objData, "Paste%20Errors.tbl", false
 		
 		Set objStyle = CreateDOM
-		LoadDOM objStyle, "Paste%20Errors.def.XSL", true
+		LoadDOM objStyle, "Paste%20Errors.tbl.XSL", true
 
 		Document.Open "text/html"
 		Document.Write objData.TransformNode(objStyle)

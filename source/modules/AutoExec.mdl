@@ -1,0 +1,142 @@
+Attribute VB_Name = "AutoExec"
+'################################################################################################
+' This module will initialize the application to work properly with all components of relevance.
+' InitApp will be called by the macro AutoExec during startup.
+'################################################################################################
+
+Option Compare Database
+Option Explicit
+
+' System wide configuration
+Global config As New SysConfig
+
+' User name and id of session
+Global pUserName As String
+Global pUserId As Integer
+
+' -----------------------------------------------------------------------------------------------
+' Any code goes from here
+' -----------------------------------------------------------------------------------------------
+
+Public Function InitApp() As Boolean
+'-------------------------------------------------------------------------------
+' Function:     InitApp
+' Date:         2022 January
+' Purpose:      Init the application settings
+' Parameters:   -
+' Out:          Done (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim lic As Object
+    
+    config.Init False, ".labdesk", "Q794G-X7If9-fO9fO-8Hgd8"
+    
+    'Deploy dependencies
+    Deployment.DeployDependency
+    
+    'Acquire licence information
+    SysCmd acSysCmdSetStatus, "Read licence"
+    If FileExists(Application.CurrentProject.Path & "\" & config.LicenceFileName) Then licensing.UploadLicenceFromFile config.LicenceFileName
+    If IsNull(licensing.GetLicenceFromSetup) Then Err.Raise vbObjectError + 513, , "Invalid licence." Else Set lic = licensing.GetLicenceFromSetup
+    'Set lic = licensing.GetLicenceFromFile(config.LicenceFileName)
+    
+    'Reset login password
+    DbProcedures.ResetLoginPassword
+    
+    'Interface cosmetics
+    SysCmd acSysCmdSetStatus, "Applying some interface cosmetics"
+    ManageGui.AddAppProperty "AppTitle", dbText, config.AppTitle
+    Application.RefreshTitleBar
+    HideNavPane DbConnect.GetDbSetting("navpane")
+    ManageGui.AddAppProperty "AppIcon", dbText, CurrentProject.Path & "\icon.ico"
+    CurrentDb.Properties("UseAppIconForFrmRpt").value = True
+    Application.RefreshTitleBar
+    
+    'Check for Runtime-Mode and disable shift
+    SysCmd acSysCmdSetStatus, "Checking Runtime-Mode"
+    If Not System.RunTimeMode And Not lic("devmode") Then Err.Raise vbObjectError + 513, , "Runtime-Mode switched off. Startup aborted."
+    
+    'Show login form
+    SysCmd acSysCmdSetStatus, "User login"
+    DoCmd.OpenForm "login", acNormal, , , acFormEdit, acDialog
+    
+    'Try to connect to server
+    SysCmd acSysCmdSetStatus, "Try to connect to server"
+    If Not PingOk(CStr(Split(DbConnect.GetDbSetting("server"), "/")(0))) Then Err.Raise vbObjectError + 513, , "Can not connect to server " & DbConnect.GetDbSetting("server")
+    
+    'Try to attach tables
+    SysCmd acSysCmdSetStatus, "Try to attach tables"
+    DbConnect.ConnectDb DbConnect.GetDbSetting("server"), DbConnect.GetDbSetting("database"), config.DSNLessTables, DbConnect.GetDbSetting("user"), DbConnect.GetDbSetting("password")
+    
+    'Init application if selected (initialization routine needs to be called just once for setup reasons)
+    If DbProcedures.GetFieldValue("dbsetup", "sysinit", 1) = True Then
+        If MsgBox("Press OK to initialize application. This may take a while.", vbOKCancel, "Information") = vbOK Then
+            SysCmd acSysCmdSetStatus, "Init system"
+            Deployment.Setup
+            MsgBox "System initialization finished. Restart application to proceed.", vbInformation, "Information"
+        End If
+        Exit Function
+    End If
+    
+    'Update application if selected (initialization routine needs to be called just once for setup reasons)
+    If DbProcedures.GetFieldValue("dbsetup", "sysupdate", 1) = True Then
+        If MsgBox("Press OK to update application. This may take a while.", vbOKCancel, "Information") = vbOK Then
+            SysCmd acSysCmdSetStatus, "Update system"
+            Deployment.Update
+            MsgBox "System update finished. Restart application to proceed.", vbInformation, "Information"
+        End If
+        Exit Function
+    End If
+    
+    'Clean Cache (stored in the user folder under pCacheFolder)
+    SysCmd acSysCmdSetStatus, "Clean cache"
+    System.CleanCache
+    
+    'Init local tables
+    SysCmd acSysCmdSetStatus, "Init local tables"
+    LocalTables.InitLocalTables
+    
+    'Init context menus
+    SysCmd acSysCmdSetStatus, "Init context menus"
+    ContextMenus.InitContextMenus
+    
+    'Check Version (raise error if backend does not match)
+    SysCmd acSysCmdSetStatus, "Checking version integrity"
+    If DbProcedures.GetBeVersion() <> config.BeVersion Then
+        'MsgBox "Error (mdlAutoExec - InitApp): Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & config.BeVersion & ")", vbCritical, "Error"
+        Err.Raise vbObjectError + 513, , "Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & config.BeVersion & ")"
+    End If
+    
+    'Check if user exists otherwise add
+    SysCmd acSysCmdSetStatus, "Check user registration"
+    DbProcedures.AddUser
+    
+    'Open the closing event form
+    SysCmd acSysCmdSetStatus, "Init background worker"
+    DoCmd.OpenForm "_background_worker_form", acNormal, , , acFormReadOnly, acWindowNormal
+    Forms("_background_worker_form").TimerInterval = config.BackgroundWorkerInterval
+    Forms("_background_worker_form").visible = False
+    
+    'Show licence message box
+    SysCmd acSysCmdSetStatus, "Check for valid user licence"
+    If CountActivatedUsers() > lic("seats") Then Err.Raise vbObjectError + 513, , "Corrupt user licence."
+    config.DemoMode = Not UserHasLicence(GetUserId)
+    If config.DemoMode Then MsgBox "This is demonstration software. Commercial use prohibited." & vbCrLf & "Report any violation to hello@labdesk.net" & vbCrLf & vbCrLf & "EULA: labdesk.net/licence", vbInformation, "Information"
+    
+    'Open desktop tab
+    SysCmd acSysCmdSetStatus, "Open desktop"
+    If Application.SysCmd(acSysCmdGetObjectState, acForm, "desktop") <> acObjStateOpen And Nz(GetFieldValue("setup", "show_desktop"), False) Then DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
+    
+    'Fill status bar text with user name
+    SysCmd acSysCmdSetStatus, "User: " & DbProcedures.GetUserName()
+    
+    InitApp = True
+    
+Exit_Function:
+    Exit Function
+Catch_Error:
+    InitApp = False
+    MsgBox "The following error was detected during startup: " & vbCrLf & Err.description, vbCritical, "Critical Error"
+    Application.Quit
+    Resume Exit_Function
+End Function
