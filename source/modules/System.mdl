@@ -85,3 +85,41 @@ Public Function GetFileExtension(ByVal strFile As String) As String
     GetFileExtension = fso.GetExtensionName(strFile)
 End Function
 
+Function GetProcessorId(Optional sHost As String = ".") As String
+'--------------------------------------------------------------------------------------------
+'Function:          GetProcessorId
+'Date:              2024 January
+'Purpose:           Retrieve the specified PC's Processor(s) Id(s)
+'Out:               Processor id
+' sHost:            Name/IP Address of the PC to query assuming you have the rights to do so
+'                   optional, so by leaving it blank it will query the local computer
+'--------------------------------------------------------------------------------------------
+    On Error GoTo Error_Handler
+    Dim oWMI                  As Object           'WMI object to query about the PC's OS
+    Dim oProcessors           As Object           'Collection of OSs
+    Dim oProcessor            As Object           'Individual OS
+
+    Set oWMI = GetObject("winmgmts:{impersonationLevel=impersonate}!\\" & sHost & "\root\cimv2")
+    Set oProcessors = oWMI.ExecQuery("SELECT ProcessorId FROM Win32_Processor")
+
+    For Each oProcessor In oProcessors
+        GetProcessorId = GetProcessorId & oProcessor.ProcessorId & ","
+    Next
+    If Right(GetProcessorId, 1) = "," Then GetProcessorId = Left(GetProcessorId, Len(GetProcessorId) - 1)
+
+Error_Handler_Exit:
+    On Error Resume Next
+    If Not oProcessor Is Nothing Then Set oProcessor = Nothing
+    If Not oProcessors Is Nothing Then Set oProcessors = Nothing
+    If Not oWMI Is Nothing Then Set oWMI = Nothing
+    Exit Function
+
+Error_Handler:
+    MsgBox "The following error has occurred." & vbCrLf & vbCrLf & _
+           "Error Number: " & Err.Number & vbCrLf & _
+           "Error Source: GetProcessorId" & vbCrLf & _
+           "Error Description: " & Err.description, _
+           vbCritical, "An Error has Occurred!"
+    Resume Error_Handler_Exit
+End Function
+

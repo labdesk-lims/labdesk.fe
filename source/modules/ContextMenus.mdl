@@ -7,7 +7,26 @@ Attribute VB_Name = "ContextMenus"
 Option Compare Database
 Option Explicit
 
-Private Sub CreateContextMenu(ByVal name As String, ByVal Create As Boolean, ByVal createsub As Boolean, ByVal standard As Boolean, ByVal duplicate As Boolean, ByVal documents As Boolean, ByVal files As Boolean, ByVal subform As Boolean, ByVal licensing As Boolean)
+Public Sub InitContextMenus()
+    Dim bar As CommandBar
+    
+    'Reset all commandbars
+    For Each bar In Application.CommandBars
+        If (bar.BuiltIn = False) And (bar.visible = False) Then
+            bar.Delete
+        End If
+    Next bar
+    
+    'Create all commandbars
+    CreateContextMenu "menu_std", True, False, True, False, False, False, False
+    CreateContextMenu "menu_dpl", True, False, True, True, False, False, False
+    CreateContextMenu "menu_rqt", True, True, True, False, True, False, False
+    CreateContextMenu "menu_flt", False, False, True, False, False, False, False
+    CreateContextMenu "menu_fle", False, False, False, False, False, True, False
+    CreateContextMenu "menu_sub", False, False, False, False, False, False, True
+End Sub
+
+Private Sub CreateContextMenu(ByVal name As String, ByVal Create As Boolean, ByVal createsub As Boolean, ByVal standard As Boolean, ByVal duplicate As Boolean, ByVal documents As Boolean, ByVal files As Boolean, ByVal subform As Boolean)
     Dim cmbBar As CommandBar
     Dim cmbBtn_CreateNew, cmbBtn_Edit As CommandBarButton
     
@@ -159,44 +178,6 @@ Skip:
         cmbBtn_CreateNew.Parameter = "refresh"
         cmbBtn_CreateNew.OnAction = "fnCall"
     End If
-    
-    If licensing Then
-        ' Button to activate record
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.BeginGroup = True
-        cmbBtn_CreateNew.FaceId = 277
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_activate_user", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "activate_user"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-        
-        ' Button to deactivate record
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.FaceId = 330
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_deactivate_user", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "deactivate_user"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-        
-        'Refresh form
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.BeginGroup = True
-        cmbBtn_CreateNew.FaceId = 37
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_refresh", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "refresh"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-    End If
-
-End Sub
-
-Public Sub InitContextMenus()
-    Dim bar As CommandBar
-    
-    CreateContextMenu "menu_std", True, False, True, False, False, False, False, False
-    CreateContextMenu "menu_dpl", True, False, True, True, False, False, False, False
-    CreateContextMenu "menu_rqt", True, True, True, False, True, False, False, False
-    CreateContextMenu "menu_flt", False, False, True, False, False, False, False, False
-    CreateContextMenu "menu_fle", False, False, False, False, False, True, False, False
-    CreateContextMenu "menu_lic", False, False, True, False, False, False, False, True
-    CreateContextMenu "menu_sub", False, False, False, False, False, False, True, False
 End Sub
 
 Public Sub fnCall()

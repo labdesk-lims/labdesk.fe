@@ -27,20 +27,14 @@ Public Function InitApp() As Boolean
 ' Out:          Done (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    Dim lic As Object
-    
     config.Init False, ".labdesk", "Q794G-X7If9-fO9fO-8Hgd8"
     
     'Deploy dependencies
+    SysCmd acSysCmdSetStatus, "Deploy dependencies"
     Deployment.DeployDependency
     
-    'Acquire licence information
-    SysCmd acSysCmdSetStatus, "Read licence"
-    If FileExists(Application.CurrentProject.Path & "\" & config.LicenceFileName) Then licensing.UploadLicenceFromFile config.LicenceFileName
-    If IsNull(licensing.GetLicenceFromSetup) Then Err.Raise vbObjectError + 513, , "Invalid licence." Else Set lic = licensing.GetLicenceFromSetup
-    'Set lic = licensing.GetLicenceFromFile(config.LicenceFileName)
-    
     'Reset login password
+    SysCmd acSysCmdSetStatus, "System cleanup"
     DbProcedures.ResetLoginPassword
     
     'Interface cosmetics
@@ -54,7 +48,7 @@ On Error GoTo Catch_Error
     
     'Check for Runtime-Mode and disable shift
     SysCmd acSysCmdSetStatus, "Checking Runtime-Mode"
-    If Not System.RunTimeMode And Not lic("devmode") Then Err.Raise vbObjectError + 513, , "Runtime-Mode switched off. Startup aborted."
+    If Not System.RunTimeMode And Not GetDbSetting("devmode") Then Err.Raise vbObjectError + 513, , "Runtime-Mode switched off. Startup aborted."
     
     'Show login form
     SysCmd acSysCmdSetStatus, "User login"
@@ -71,7 +65,7 @@ On Error GoTo Catch_Error
     'Init application if selected (initialization routine needs to be called just once for setup reasons)
     If DbProcedures.GetFieldValue("dbsetup", "sysinit", 1) = True Then
         If MsgBox("Press OK to initialize application. This may take a while.", vbOKCancel, "Information") = vbOK Then
-            SysCmd acSysCmdSetStatus, "Init system"
+            SysCmd acSysCmdSetStatus, "Initialize application"
             Deployment.Setup
             MsgBox "System initialization finished. Restart application to proceed.", vbInformation, "Information"
         End If
@@ -81,7 +75,7 @@ On Error GoTo Catch_Error
     'Update application if selected (initialization routine needs to be called just once for setup reasons)
     If DbProcedures.GetFieldValue("dbsetup", "sysupdate", 1) = True Then
         If MsgBox("Press OK to update application. This may take a while.", vbOKCancel, "Information") = vbOK Then
-            SysCmd acSysCmdSetStatus, "Update system"
+            SysCmd acSysCmdSetStatus, "Update application"
             Deployment.Update
             MsgBox "System update finished. Restart application to proceed.", vbInformation, "Information"
         End If
@@ -103,7 +97,6 @@ On Error GoTo Catch_Error
     'Check Version (raise error if backend does not match)
     SysCmd acSysCmdSetStatus, "Checking version integrity"
     If DbProcedures.GetBeVersion() <> config.BeVersion Then
-        'MsgBox "Error (mdlAutoExec - InitApp): Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & config.BeVersion & ")", vbCritical, "Error"
         Err.Raise vbObjectError + 513, , "Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & config.BeVersion & ")"
     End If
     
@@ -118,9 +111,8 @@ On Error GoTo Catch_Error
     Forms("_background_worker_form").visible = False
     
     'Show licence message box
-    SysCmd acSysCmdSetStatus, "Check for valid user licence"
-    If CountActivatedUsers() > lic("seats") Then Err.Raise vbObjectError + 513, , "Corrupt user licence."
-    config.DemoMode = Not UserHasLicence(GetUserId)
+    SysCmd acSysCmdSetStatus, "Check for valid client licence"
+    config.DemoMode = Not licensing.ActivateApplication
     If config.DemoMode Then MsgBox "This is demonstration software. Commercial use prohibited." & vbCrLf & "Report any violation to hello@labdesk.net" & vbCrLf & vbCrLf & "EULA: labdesk.net/licence", vbInformation, "Information"
     
     'Open desktop tab

@@ -2,10 +2,10 @@
 
 
 # Introduction
-LABDESK.FE is the oasis script for LABDESK LIMS. The script encompasses all code neccessary to setup the Microsoft Access Frontend including eg. forms, queries and modules.
+LABDESK.FE is the frontend source code for LABDESK LIMS. The source encompasses all code neccessary to setup the Microsoft Access Frontend including eg. forms, queries and modules.
 
 # Requirements
-The script is exported from Microsoft Access by using the plugin OASIS from DEV2DEV (https://dev2dev.de/).
+The script is exported from Microsoft Access by the module svm which is included in this repository.
 
 # Licence
 LABDESK LIMS and its components are proprietary software. Further information is available at: https://labdesk.net/licence/

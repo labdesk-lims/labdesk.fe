@@ -449,7 +449,7 @@ End Function
     'If bIsIcon = TRUE, an Icon-Handle is commited
     Function BitmapToPicture(ByVal hBmp As LongPtr, Optional bIsIcon As Boolean = False) As StdPicture
         
-        Dim TPicConv As PICTDESC, UID As GUID
+        Dim TPicConv As PICTDESC, uid As GUID
     
         With TPicConv
             If bIsIcon Then
@@ -462,14 +462,14 @@ End Function
             .hImage = hBmp
         End With
     
-        CLSIDFromString StrPtr(GUID_IPicture), UID
-        OleCreatePictureIndirect TPicConv, UID, True, BitmapToPicture
+        CLSIDFromString StrPtr(GUID_IPicture), uid
+        OleCreatePictureIndirect TPicConv, uid, True, BitmapToPicture
     
     End Function
 #Else
     Function BitmapToPicture(ByVal hBmp As Long, Optional bIsIcon As Boolean = False) As StdPicture
         
-        Dim TPicConv As PICTDESC, UID As GUID
+        Dim TPicConv As PICTDESC, uid As GUID
     
         With TPicConv
             If bIsIcon Then
@@ -482,8 +482,8 @@ End Function
             .hImage = hBmp
         End With
     
-        CLSIDFromString StrPtr(GUID_IPicture), UID
-        OleCreatePictureIndirect TPicConv, UID, True, BitmapToPicture
+        CLSIDFromString StrPtr(GUID_IPicture), uid
+        OleCreatePictureIndirect TPicConv, uid, True, BitmapToPicture
     
     End Function
 #End If

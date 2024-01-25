@@ -282,9 +282,7 @@ On Error GoTo Catch_Error
     Dim rs As Recordset
     
     Set db = CurrentDb()
-    'Local table call switch off
     Set rs = db.OpenRecordset("SELECT " & language & " FROM lcl_translation WHERE container ='" & container & "' AND item = '" & item & "'")
-   'Set rs = db.OpenRecordset("SELECT " & language & " FROM translation WHERE container ='" & container & "' AND item = '" & item & "'")
     
     If rs.EOF Or rs.BOF Then
         db.Execute "INSERT INTO translation(container, item) VALUES('" & container & "', '" & item & "')"
@@ -600,7 +598,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function CreateSPA(ByVal UID As String, ByVal profile As Integer, ByVal analysis As Integer, ByVal from As Date, ByVal till As Date) As Boolean
+Public Function CreateSPA(ByVal uid As String, ByVal profile As Integer, ByVal analysis As Integer, ByVal from As Date, ByVal till As Date) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         CreateSPA
 ' Date:             2022 March
@@ -622,7 +620,7 @@ On Error GoTo Catch_Error
     
     cmd.CommandType = adCmdStoredProc
     cmd.CommandText = "spa_create"
-    cmd.Parameters.Append cmd.CreateParameter("@uid", adVarChar, adParamInput, 256, UID)
+    cmd.Parameters.Append cmd.CreateParameter("@uid", adVarChar, adParamInput, 256, uid)
     cmd.Parameters.Append cmd.CreateParameter("@profile", adInteger, adParamInput, , profile)
     cmd.Parameters.Append cmd.CreateParameter("@analysis", adInteger, adParamInput, , analysis)
     cmd.Parameters.Append cmd.CreateParameter("@from", adDate, adParamInput, , from)
