@@ -43,7 +43,7 @@ On Error GoTo Catch_Error
     Application.RefreshTitleBar
     HideNavPane DbConnect.GetDbSetting("navpane")
     ManageGui.AddAppProperty "AppIcon", dbText, CurrentProject.Path & "\icon.ico"
-    CurrentDb.Properties("UseAppIconForFrmRpt").value = True
+    CurrentDb.Properties("UseAppIconForFrmRpt") = True
     Application.RefreshTitleBar
     
     'Check for Runtime-Mode and disable shift

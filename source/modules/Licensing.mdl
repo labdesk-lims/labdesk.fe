@@ -14,7 +14,7 @@ On Error GoTo Catch_Error
 
     Set db = CurrentDb()
     Set rs = db.OpenRecordset("SELECT cpu_id FROM dbsetup")
-    
+
     If Nz(JsonConverter.ParseJson(GetLicence(GetDbSetting("licence"), GetProcessorId()))("licence_active"), False) Then
         db.Execute "UPDATE dbsetup SET cpu_id = '" & GetProcessorId() & "'"
         ActivateApplication = True
@@ -43,6 +43,6 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    GetLicence = Null
+    GetLicence = "{}"
     Resume Exit_Function
 End Function
