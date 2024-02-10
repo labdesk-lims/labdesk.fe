@@ -44,12 +44,6 @@ Private Const pLicenceFileName = "labdesk.lic"
 ' Temporary cache folder (the local user folder will be used) .labdesk
 Private pCacheFolder As String
 
-' System wide used encryption key
-Private pEncryptionKey As String
-
-' Set to true for demo mode to be activated
-Private pDemoMode As Boolean
-
 Public Property Get ConnectionTimeout() As Integer
     ConnectionTimeout = pConnectionTimeout
 End Property
@@ -98,18 +92,6 @@ Public Property Get CacheFolder() As String
     CacheFolder = pCacheFolder
 End Property
 
-Public Property Get EncryptionKey() As String
-    EncryptionKey = pEncryptionKey
-End Property
-
-Public Property Get DemoMode() As Boolean
-    DemoMode = pDemoMode
-End Property
-
-Public Property Let DemoMode(demo As Boolean)
-    pDemoMode = demo
-End Property
-
 Public Property Get DSNLessTables() As Variant
     Dim a As Variant
     a = Array( _
@@ -130,9 +112,7 @@ Public Property Get DSNLessTables() As Variant
     DSNLessTables = a
 End Property
 
-Public Sub Init(DemoMode As Boolean, CacheFolder As String, EncryptionKey As String)
-    pDemoMode = DemoMode
+Public Sub Init(DemoMode As Boolean, CacheFolder As String)
     pCacheFolder = CacheFolder
-    pEncryptionKey = EncryptionKey
 End Sub
 

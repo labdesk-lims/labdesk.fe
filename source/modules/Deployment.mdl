@@ -38,7 +38,7 @@ Public Sub PrepareUpdate()
     UnAttachDSNLessTables config.DSNLessTables
     
     ' Reset db settings
-    CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, licence = Null, cpu_id = null, navpane = 0, devmode = 0, sysupdate = 1"
+    CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, navpane = 0, devmode = 0, sysupdate = 1"
     
     'Disable shift
     DisableShift
@@ -75,7 +75,7 @@ Public Sub PrepareSetup()
     UnAttachDSNLessTables config.DSNLessTables
     
     ' Reset db settings
-    CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, licence = Null, cpu_id = null, navpane = 0, devmode = 0, sysinit = 1"
+    CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, navpane = 0, devmode = 0, sysinit = 1"
     
     'Disable shift
     DisableShift

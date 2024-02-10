@@ -27,8 +27,8 @@ Public Function InitApp() As Boolean
 ' Out:          Done (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    config.Init False, ".labdesk", "Q794G-X7If9-fO9fO-8Hgd8"
-    
+    config.Init False, ".labdesk"
+        
     'Deploy dependencies
     SysCmd acSysCmdSetStatus, "Deploy dependencies"
     Deployment.DeployDependency
@@ -109,11 +109,6 @@ On Error GoTo Catch_Error
     DoCmd.OpenForm "_background_worker_form", acNormal, , , acFormReadOnly, acWindowNormal
     Forms("_background_worker_form").TimerInterval = config.BackgroundWorkerInterval
     Forms("_background_worker_form").visible = False
-    
-    'Show licence message box
-    SysCmd acSysCmdSetStatus, "Check for valid client licence"
-    config.DemoMode = Not licensing.ActivateApplication
-    If config.DemoMode Then MsgBox "This is demonstration software. Commercial use prohibited." & vbCrLf & "Report any violation to hello@labdesk.net" & vbCrLf & vbCrLf & "EULA: labdesk.net/licence", vbInformation, "Information"
     
     'Open desktop tab
     SysCmd acSysCmdSetStatus, "Open desktop"

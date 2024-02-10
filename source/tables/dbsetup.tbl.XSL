@@ -21,8 +21,6 @@
 						<col style="TEXT-ALIGN: right; WIDTH: 2.38cm"/>
 						<col style="TEXT-ALIGN: right; WIDTH: 2.38cm"/>
 						<col style="TEXT-ALIGN: right; WIDTH: 2.38cm"/>
-						<col style="WIDTH: 2.407cm"/>
-						<col style="WIDTH: 2.38cm"/>
 					</colgroup>
 					<tbody>
 						<tr>
@@ -76,16 +74,6 @@
 									<strong>devmode</strong>
 								</div>
 							</td>
-							<td>
-								<div align="center">
-									<strong>licence</strong>
-								</div>
-							</td>
-							<td>
-								<div align="center">
-									<strong>cpu_id</strong>
-								</div>
-							</td>
 						</tr>
 					</tbody>
 					<tbody id="CTRL2">
@@ -122,12 +110,6 @@
 								</td>
 								<td>
 									<xsl:value-of select="fx:FormatFromXSL('devmode', 'Yes/No', '', '', 11)"/>
-								</td>
-								<td>
-									<xsl:value-of select="licence"/>
-								</td>
-								<td>
-									<xsl:value-of select="cpu_id"/>
 								</td>
 							</tr>
 						</xsl:for-each>

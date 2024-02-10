@@ -12,12 +12,11 @@
 <xsd:element name="dbsetup">
 <xsd:annotation>
 <xsd:appinfo>
-<od:index index-name="CpuId" index-key="cpu_id " primary="no" unique="no" clustered="no" order="asc"/>
 <od:index index-name="PrimaryKey" index-key="ID " primary="yes" unique="yes" clustered="no" order="asc"/>
 <od:tableProperty name="PublishToWeb" type="2" value="1"/>
 <od:tableProperty name="Orientation" type="2" value="0"/>
 <od:tableProperty name="OrderByOn" type="1" value="0"/>
-<od:tableProperty name="NameMap" type="11" value="CswOVQAAAAB1YwZCLjNDR4U1/xKJ0Me5AAAAACg4k8J6IOZAAAAAAAAAAABkAGIA
+<od:tableProperty name="NameMap" type="11" value="CswOVQAAAAB1YwZCLjNDR4U1/xKJ0Me5AAAAAG9BtZSQIuZAAAAAAAAAAABkAGIA
 cwBlAHQAdQBwAAAAAAAAAKVCR6bzCsxGmN1b9Z4bffQHAAAAdWMGQi4zQ0eFNf8S
 idDHuUkARAAAAAAAAABidtWTPU55Qb1/n9qoV+gkBwAAAHVjBkIuM0NHhTX/EonQ
 x7lzAGUAcgB2AGUAcgAAAAAAAADM1k66RYk6S5dBs12vGUBxBwAAAHVjBkIuM0NH
@@ -29,10 +28,8 @@ AAChH/Rgq5LHS45gmWaVrQfaBwAAAHVjBkIuM0NHhTX/EonQx7luAGEAdgBwAGEA
 bgBlAAAAAAAAAM/L32NCFCVHivYBwHVlqQIHAAAAdWMGQi4zQ0eFNf8SidDHuXMA
 eQBzAGkAbgBpAHQAAAAAAAAAT25sZkN4J0a04lmJ3Cz+BQcAAAB1YwZCLjNDR4U1
 /xKJ0Me5cwB5AHMAdQBwAGQAYQB0AGUAAAAAAAAA93DOInSNrUOnSoALY47qLgcA
-AAB1YwZCLjNDR4U1/xKJ0Me5ZABlAHYAbQBvAGQAZQAAAAAAAABqcIyiicEiQ61J
-f4vv+hiABwAAAHVjBkIuM0NHhTX/EonQx7lsAGkAYwBlAG4AYwBlAAAAAAAAACW+
-6xc4sA1DsVvOZ/0hPc4HAAAAdWMGQi4zQ0eFNf8SidDHuWMAcAB1AF8AaQBkAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAABQAAAAAAAAAAAAAAAAAAAAAA
+AAB1YwZCLjNDR4U1/xKJ0Me5ZABlAHYAbQBvAGQAZQAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAADAAAAAUAAAAAAAAAAAAAAAAAAAAAAA==
 "/>
 <od:tableProperty name="DefaultView" type="2" value="2"/>
 <od:tableProperty name="GUID" type="9" value="dWMGQi4zQ0eFNf8SidDHuQ==
@@ -61,7 +58,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAABQAAAAAAAAAAAAAAAAAAAAAA
 <od:fieldProperty name="GUID" type="9" value="pUJHpvMKzEaY3Vv1nht99A==
 "/>
 <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-<od:fieldProperty name="ColumnOrder" type="3" value="1"/>
+<od:fieldProperty name="ColumnOrder" type="3" value="0"/>
 <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
 <od:fieldProperty name="DecimalPlaces" type="2" value="255"/>
 <od:fieldProperty name="DefaultValue" type="12" value="0"/>
@@ -270,63 +267,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAABQAAAAAAAAAAAAAAAAAAAAAA
 </xsd:appinfo>
 </xsd:annotation>
 </xsd:element>
-<xsd:element name="licence" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
-<xsd:annotation>
-<xsd:appinfo>
-<od:fieldProperty name="GUID" type="9" value="anCMoonBIkOtSX+L7/oYgA==
-"/>
-<od:fieldProperty name="ColumnWidth" type="3" value="1365"/>
-<od:fieldProperty name="ColumnOrder" type="3" value="0"/>
-<od:fieldProperty name="ColumnHidden" type="1" value="0"/>
-<od:fieldProperty name="Required" type="1" value="0"/>
-<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
-<od:fieldProperty name="DisplayControl" type="3" value="109"/>
-<od:fieldProperty name="IMEMode" type="2" value="0"/>
-<od:fieldProperty name="IMESentenceMode" type="2" value="3"/>
-<od:fieldProperty name="UnicodeCompression" type="1" value="1"/>
-<od:fieldProperty name="TextAlign" type="2" value="0"/>
-<od:fieldProperty name="AggregateType" type="4" value="-1"/>
-<od:fieldProperty name="ResultType" type="2" value="0"/>
-<od:fieldProperty name="CurrencyLCID" type="4" value="0"/>
-</xsd:appinfo>
-</xsd:annotation>
-<xsd:simpleType>
-<xsd:restriction base="xsd:string">
-<xsd:maxLength value="50"/>
-</xsd:restriction>
-</xsd:simpleType>
-</xsd:element>
-<xsd:element name="cpu_id" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
-<xsd:annotation>
-<xsd:appinfo>
-<od:fieldProperty name="GUID" type="9" value="Jb7rFziwDUOxW85n/SE9zg==
-"/>
-<od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-<od:fieldProperty name="ColumnOrder" type="3" value="0"/>
-<od:fieldProperty name="ColumnHidden" type="1" value="0"/>
-<od:fieldProperty name="Required" type="1" value="0"/>
-<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
-<od:fieldProperty name="DisplayControl" type="3" value="109"/>
-<od:fieldProperty name="IMEMode" type="2" value="0"/>
-<od:fieldProperty name="IMESentenceMode" type="2" value="3"/>
-<od:fieldProperty name="UnicodeCompression" type="1" value="1"/>
-<od:fieldProperty name="TextAlign" type="2" value="0"/>
-<od:fieldProperty name="AggregateType" type="4" value="-1"/>
-<od:fieldProperty name="ResultType" type="2" value="0"/>
-<od:fieldProperty name="CurrencyLCID" type="4" value="0"/>
-</xsd:appinfo>
-</xsd:annotation>
-<xsd:simpleType>
-<xsd:restriction base="xsd:string">
-<xsd:maxLength value="255"/>
-</xsd:restriction>
-</xsd:simpleType>
-</xsd:element>
 </xsd:sequence>
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-02-03T17:45:26">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-02-10T13:08:23">
 <dbsetup>
 <ID>1</ID>
 <server>192.168.217.129</server>
@@ -338,8 +283,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAABQAAAAAAAAAAAAAAAAAAAAAA
 <sysinit>0</sysinit>
 <sysupdate>0</sysupdate>
 <devmode>1</devmode>
-<licence>2807a187-a1a7-11ee-a302-001a4a1516a8</licence>
-<cpu_id>BFEBFBFF000806D1</cpu_id>
 </dbsetup>
 </dataroot>
 </root>
