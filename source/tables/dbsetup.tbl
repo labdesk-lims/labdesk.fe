@@ -16,7 +16,7 @@
 <od:tableProperty name="PublishToWeb" type="2" value="1"/>
 <od:tableProperty name="Orientation" type="2" value="0"/>
 <od:tableProperty name="OrderByOn" type="1" value="0"/>
-<od:tableProperty name="NameMap" type="11" value="CswOVQAAAAB1YwZCLjNDR4U1/xKJ0Me5AAAAAG9BtZSQIuZAAAAAAAAAAABkAGIA
+<od:tableProperty name="NameMap" type="11" value="CswOVQAAAAB1YwZCLjNDR4U1/xKJ0Me5AAAAAHw2XRLbIuZAAAAAAAAAAABkAGIA
 cwBlAHQAdQBwAAAAAAAAAKVCR6bzCsxGmN1b9Z4bffQHAAAAdWMGQi4zQ0eFNf8S
 idDHuUkARAAAAAAAAABidtWTPU55Qb1/n9qoV+gkBwAAAHVjBkIuM0NHhTX/EonQ
 x7lzAGUAcgB2AGUAcgAAAAAAAADM1k66RYk6S5dBs12vGUBxBwAAAHVjBkIuM0NH
@@ -25,11 +25,9 @@ AAB1YwZCLjNDR4U1/xKJ0Me5dQBzAGUAcgAAAAAAAACd8c3dESFOQpGITe0W9tGd
 BwAAAHVjBkIuM0NHhTX/EonQx7lwAGEAcwBzAHcAbwByAGQAAAAAAAAAnk4PiZ+8
 a0e5SP33oH4wEAcAAAB1YwZCLjNDR4U1/xKJ0Me5dwBpAG4AYQB1AHQAaAAAAAAA
 AAChH/Rgq5LHS45gmWaVrQfaBwAAAHVjBkIuM0NHhTX/EonQx7luAGEAdgBwAGEA
-bgBlAAAAAAAAAM/L32NCFCVHivYBwHVlqQIHAAAAdWMGQi4zQ0eFNf8SidDHuXMA
-eQBzAGkAbgBpAHQAAAAAAAAAT25sZkN4J0a04lmJ3Cz+BQcAAAB1YwZCLjNDR4U1
-/xKJ0Me5cwB5AHMAdQBwAGQAYQB0AGUAAAAAAAAA93DOInSNrUOnSoALY47qLgcA
-AAB1YwZCLjNDR4U1/xKJ0Me5ZABlAHYAbQBvAGQAZQAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAADAAAAAUAAAAAAAAAAAAAAAAAAAAAAA==
+bgBlAAAAAAAAAPdwziJ0ja1Dp0qAC2OO6i4HAAAAdWMGQi4zQ0eFNf8SidDHuWQA
+ZQB2AG0AbwBkAGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAAAA
+AAAAAAAAAAA=
 "/>
 <od:tableProperty name="DefaultView" type="2" value="2"/>
 <od:tableProperty name="GUID" type="9" value="dWMGQi4zQ0eFNf8SidDHuQ==
@@ -213,42 +211,6 @@ AAAAAAAADAAAAAUAAAAAAAAAAAAAAAAAAAAAAA==
 </xsd:appinfo>
 </xsd:annotation>
 </xsd:element>
-<xsd:element name="sysinit" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
-<xsd:annotation>
-<xsd:appinfo>
-<od:fieldProperty name="GUID" type="9" value="z8vfY0IUJUeK9gHAdWWpAg==
-"/>
-<od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-<od:fieldProperty name="ColumnOrder" type="3" value="0"/>
-<od:fieldProperty name="ColumnHidden" type="1" value="0"/>
-<od:fieldProperty name="Format" type="10" value="Yes/No"/>
-<od:fieldProperty name="DefaultValue" type="12" value="No"/>
-<od:fieldProperty name="DisplayControl" type="3" value="106"/>
-<od:fieldProperty name="TextAlign" type="2" value="0"/>
-<od:fieldProperty name="AggregateType" type="4" value="-1"/>
-<od:fieldProperty name="ResultType" type="2" value="0"/>
-<od:fieldProperty name="CurrencyLCID" type="4" value="0"/>
-</xsd:appinfo>
-</xsd:annotation>
-</xsd:element>
-<xsd:element name="sysupdate" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
-<xsd:annotation>
-<xsd:appinfo>
-<od:fieldProperty name="GUID" type="9" value="T25sZkN4J0a04lmJ3Cz+BQ==
-"/>
-<od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-<od:fieldProperty name="ColumnOrder" type="3" value="0"/>
-<od:fieldProperty name="ColumnHidden" type="1" value="0"/>
-<od:fieldProperty name="Format" type="10" value="Yes/No"/>
-<od:fieldProperty name="DefaultValue" type="12" value="No"/>
-<od:fieldProperty name="DisplayControl" type="3" value="106"/>
-<od:fieldProperty name="TextAlign" type="2" value="0"/>
-<od:fieldProperty name="AggregateType" type="4" value="-1"/>
-<od:fieldProperty name="ResultType" type="2" value="0"/>
-<od:fieldProperty name="CurrencyLCID" type="4" value="0"/>
-</xsd:appinfo>
-</xsd:annotation>
-</xsd:element>
 <xsd:element name="devmode" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
 <xsd:annotation>
 <xsd:appinfo>
@@ -271,17 +233,15 @@ AAAAAAAADAAAAAUAAAAAAAAAAAAAAAAAAAAAAA==
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-02-10T13:08:23">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-04-21T11:27:14">
 <dbsetup>
 <ID>1</ID>
-<server>192.168.217.129</server>
+<server>192.168.10.88</server>
 <database>labdesk</database>
 <user>sa</user>
 <password></password>
 <winauth>0</winauth>
 <navpane>1</navpane>
-<sysinit>0</sysinit>
-<sysupdate>0</sysupdate>
 <devmode>1</devmode>
 </dbsetup>
 </dataroot>

@@ -29,17 +29,14 @@ Private Const pBackgroundWorkerInterval = 3 * 60000
 
 ' Semantic Versioning according to https://semver.org/
 ' MAJOR-MINOR-PATCH
+Private Const pFeVersion = "v2.1.1" 'Presented frontend version
 Private Const pBeVersion = "v2.1.0" 'Required backend version
-Private Const pFeVersion = "v2.1.0" 'Presented frontend version
 
 ' Identifiers used for reports and labels
 Private Const pReportId = "RPT-" 'Identifier for selectable reports
 Private Const pInvoiceId = "INV-" 'Identifier for selectable reports
 Private Const pLabelId = "LBL-" 'Identifier for selectable labels
 Private Const pWorksheetId = "WKS-" 'Identifier for selectable Worksheets
-
-' Licence key file name
-Private Const pLicenceFileName = "labdesk.lic"
 
 ' Temporary cache folder (the local user folder will be used) .labdesk
 Private pCacheFolder As String
@@ -60,16 +57,12 @@ Public Property Get BackgroundWorkerInterval()
     BackgroundWorkerInterval = pBackgroundWorkerInterval
 End Property
 
-Public Property Get BeVersion() As String
-    BeVersion = pBeVersion
-End Property
-
 Public Property Get FeVersion() As String
     FeVersion = pFeVersion
 End Property
 
-Public Property Get LicenceFileName() As String
-    LicenceFileName = pLicenceFileName
+Public Property Get BeVersion() As String
+    BeVersion = pBeVersion
 End Property
 
 Public Property Get ReportId() As String

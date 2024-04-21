@@ -94,55 +94,14 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Private Function DecodeBase64(ByVal strData As String) As Byte()
-    Dim objXML As MSXML2.DOMDocument60
-    Dim objNode As MSXML2.IXMLDOMElement
-   
-    ' help from MSXML
-    Set objXML = New MSXML2.DOMDocument60
-    Set objNode = objXML.createElement("b64")
-    objNode.DataType = "bin.base64"
-    objNode.Text = strData
-    DecodeBase64 = objNode.nodeTypedValue
-   
-    ' thanks, bye
-    Set objNode = Nothing
-    Set objXML = Nothing
-End Function
-
-Private Function EncodeBase64(ByRef arrData() As Byte) As String
-    Dim objXML As MSXML2.DOMDocument60
-    Dim objNode As MSXML2.IXMLDOMElement
-   
-    ' help from MSXML
-    Set objXML = New MSXML2.DOMDocument60
-   
-    ' byte array to base64
-    Set objNode = objXML.createElement("b64")
-    objNode.DataType = "bin.base64"
-    objNode.nodeTypedValue = arrData
-    EncodeBase64 = objNode.Text
-
-    ' thanks, bye
-    Set objNode = Nothing
-    Set objXML = Nothing
-End Function
-
-Public Function httpGET(fn As String) As String
-    Dim col As Collection
-    
-    Dim pHtml As Variant
-    pHtml = fn
-    Dim oHttp As Object
-    Set oHttp = CreateObject("Microsoft.XMLHTTP")
-    Call oHttp.Open("GET", fn, False)
-    Call oHttp.Send("")
-    httpGET = oHttp.ResponseText
-
-    Set oHttp = Nothing
-End Function
-
 Public Function IsSubForm(ByRef rfrm As Form) As Boolean
+'-------------------------------------------------------------------------------
+'Function:          IsSubForm
+'Date:              2024 February
+'Purpose:           Check if form is a subform
+'rfrm:              name of the form to check
+'Out:               T/F
+'-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     IsSubForm = Not (rfrm.Parent Is Nothing)
     Exit Function
@@ -151,35 +110,18 @@ Catch_Error:
 End Function
 
 Public Function IsFormView(ByRef rfrm As Form) As Boolean
+'-------------------------------------------------------------------------------
+'Function:          IsFormView
+'Date:              2024 February
+'Purpose:           Check form view
+'rfrm:              name of the form to check
+'Out:               T/F
+'-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     IsFormView = (rfrm.CurrentView = 1)
     Exit Function
 Catch_Error:
     IsFormView = False
-End Function
-
-Public Function SelectLabel() As Variant
-    Dim rpt As AccessObject, db As Object, i As Integer, s As Variant
-    
-    Set db = Application.CurrentProject
-    
-    CurrentDb.Execute "DELETE * FROM keyvalue"
-    
-    i = 0
-    For Each rpt In db.AllReports
-        If InStr(1, rpt.name, config.LabelId, vbTextCompare) = 1 Then CurrentDb.Execute "INSERT INTO keyvalue (key, value_txt) VALUES(" & i & ",'" & rpt.name & "')"
-        i = i + 1
-    Next rpt
-    
-    DoCmd.OpenForm "_SelectDialog", acNormal, , , acFormEdit, acDialog, "SELECT value_txt, key FROM keyvalue"
-    
-    If Not IsNull(Forms("_SelectDialog").comboBox.Column(1)) Then
-        SelectLabel = Forms("_SelectDialog").comboBox.Column(0)
-    Else
-        SelectLabel = Null
-    End If
-    
-    DoCmd.Close acForm, "_SelectDialog", acSaveNo
 End Function
 
 Public Sub ComboBoxSearch(ByRef combo As comboBox, ByVal lookupField As String, ByVal pk As String)
@@ -198,4 +140,3 @@ Public Sub ComboBoxSearch(ByRef combo As comboBox, ByVal lookupField As String, 
     combo.RowSource = "SELECT " & lookupField & ", " & pk & " FROM (" & Replace(strSQL, ";", "") & ") WHERE " & lookupField & " Like '*" & combo.Text & "*'"
     'combo.Dropdown <- activate to open dropdown combobox automatically
 End Sub
-

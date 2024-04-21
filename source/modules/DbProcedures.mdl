@@ -173,6 +173,80 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
+Public Function GetFeVersion() As Variant
+'-------------------------------------------------------------------------------
+' Function:         GetFeVersion
+' Date:             2024 February
+' Purpose:          Get the frontend version
+' Out:              Version
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    Dim cs As ColumnStyle
+    
+    Set db = CurrentDb()
+    
+    'Local column style switch off
+    Set rs = db.OpenRecordset("SELECT TOP 1 version_fe FROM setup", dbOpenDynaset, dbSeeChanges)
+    
+    If IsNull(rs!version_fe) Then db.Execute "UPDATE setup SET version_fe = '" & config.FeVersion & "'"
+    GetFeVersion = Nz(rs!version_fe, config.FeVersion)
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    GetFeVersion = ""
+    Resume Exit_Function
+End Function
+
+Public Sub SetFeVersion()
+'-------------------------------------------------------------------------------
+' Function:         SetFeVersion
+' Date:             2024 February
+' Purpose:          Set the frontend version
+' Out:              Version
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    
+    Set db = CurrentDb()
+    
+    db.Execute "UPDATE setup SET version_fe = '" & config.FeVersion & "'"
+
+Exit_Function:
+    Set db = Nothing
+    Exit Sub
+Catch_Error:
+    Resume Exit_Function
+End Sub
+
+Public Function InstallationPending() As Boolean
+'-------------------------------------------------------------------------------
+' Function:         SetFeVersion
+' Date:             2024 February
+' Purpose:          Set the frontend version
+' Out:              Version
+'-------------------------------------------------------------------------------
+  On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    
+    Set rs = db.OpenRecordset("SELECT COUNT(*) As cnt FROM users", dbOpenDynaset, dbSeeChanges)
+    
+    If Nz(rs!cnt, 0) = 0 Then InstallationPending = True
+
+Exit_Function:
+    Set db = Nothing
+    Exit Function
+Catch_Error:
+    Resume Exit_Function
+End Function
+
 Public Function GetBeVersion() As Variant
 '-------------------------------------------------------------------------------
 ' Function:         GetBeVersion
@@ -198,7 +272,7 @@ Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlDbProcedures - GetBeVersion): " & Err.description, vbCritical, "Error"
+    GetBeVersion = ""
     Resume Exit_Function
 End Function
 
@@ -713,31 +787,6 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function ActiveUsers() As Integer
-'-------------------------------------------------------------------------------
-' Function:         ActiveUsers
-' Date:             2022 April
-' Purpose:          Count number of users with an associated role
-' Out:              Amount of users
-'-------------------------------------------------------------------------------
-On Error GoTo Catch_Error
-    Dim db As database
-    Dim rs As Recordset
-    
-    Set db = CurrentDb
-    Set rs = db.OpenRecordset("SELECT COUNT(*) As cnt FROM users WHERE role IS NOT NULL")
-    
-    If Not rs.EOF Then ActiveUsers = rs!cnt
-    
-Exit_Function:
-    Set db = Nothing
-    Set rs = Nothing
-    Exit Function
-Catch_Error:
-    ActiveUsers = 0
-    Resume Exit_Function
-End Function
-
 Public Function GetCustomerID() As Variant
 '-------------------------------------------------------------------------------
 ' Function:         GetCustomerID
@@ -1016,30 +1065,6 @@ On Error GoTo Catch_Error
     ShowPicture = True
     
 Exit_Function:
-    Exit Function
-Catch_Error:
-    Resume Exit_Function
-End Function
-
-Public Function CountActivatedUsers() As Integer
-'-------------------------------------------------------------------------------
-'Function:          CountActivatedUsers
-'Date:              2023 March
-'Purpose:           Count the number of activated users
-'Out:               Activated Users (Integer)
-'-------------------------------------------------------------------------------
-On Error GoTo Catch_Error
-    Dim db As database
-    Dim rs As Recordset
-    
-    Set db = CurrentDb()
-    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM users WHERE users.licence IS NOT NULL", dbOpenDynaset, dbSeeChanges)
-    
-    CountActivatedUsers = rs(0)
-    
-Exit_Function:
-    Set db = Nothing
-    Set rs = Nothing
     Exit Function
 Catch_Error:
     Resume Exit_Function

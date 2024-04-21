@@ -7,44 +7,7 @@ Attribute VB_Name = "Deployment"
 Option Compare Database
 Option Explicit
 
-Public Sub PrepareUpdate()
-'-------------------------------------------------------------------------------
-'Function:          PrepareUpdate
-'Date:              2023 October
-'Purpose:           Prepare to update labdesk database
-'-------------------------------------------------------------------------------
-
-    ' Translations
-    If TableExists("_translation") Then CurrentDb.TableDefs.Delete "_translation"
-    CreateTable "translation", "_translation"
-    CopyTable "translation", "_translation"
-    
-    ' Roles
-    If TableExists("_role") Then CurrentDb.TableDefs.Delete "_role"
-    CreateTable "role", "_role"
-    CopyTable "role", "_role"
-    
-    ' Permissions
-    If TableExists("_permission") Then CurrentDb.TableDefs.Delete "_permission"
-    CreateTable "permission", "_permission"
-    CopyTable "permission", "_permission"
-    
-    ' Role permission cross table
-    If TableExists("_role_permission") Then CurrentDb.TableDefs.Delete "_role_permission"
-    CreateTable "role_permission", "_role_permission"
-    CopyTable "role_permission", "_role_permission"
-    
-    ' Unlink DSN less tables
-    UnAttachDSNLessTables config.DSNLessTables
-    
-    ' Reset db settings
-    CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, navpane = 0, devmode = 0, sysupdate = 1"
-    
-    'Disable shift
-    DisableShift
-End Sub
-
-Public Sub PrepareSetup()
+Public Sub Prepare()
 '-------------------------------------------------------------------------------
 'Function:          PrepareSetup
 'Date:              2022 February
@@ -52,36 +15,47 @@ Public Sub PrepareSetup()
 '-------------------------------------------------------------------------------
 
     ' Translations
+    SysCmd acSysCmdSetStatus, "Copy translations"
     If TableExists("_translation") Then CurrentDb.TableDefs.Delete "_translation"
     CreateTable "translation", "_translation"
     CopyTable "translation", "_translation"
     
     ' Roles
+    SysCmd acSysCmdSetStatus, "Copy roles"
     If TableExists("_role") Then CurrentDb.TableDefs.Delete "_role"
     CreateTable "role", "_role"
     CopyTable "role", "_role"
     
     ' Permissions
+    SysCmd acSysCmdSetStatus, "Copy permissions"
     If TableExists("_permission") Then CurrentDb.TableDefs.Delete "_permission"
     CreateTable "permission", "_permission"
     CopyTable "permission", "_permission"
     
     ' Role permission cross table
+    SysCmd acSysCmdSetStatus, "Copy role configuration"
     If TableExists("_role_permission") Then CurrentDb.TableDefs.Delete "_role_permission"
     CreateTable "role_permission", "_role_permission"
     CopyTable "role_permission", "_role_permission"
     
     ' Unlink DSN less tables
+    SysCmd acSysCmdSetStatus, "Unlink remote tables"
     UnAttachDSNLessTables config.DSNLessTables
     
     ' Reset db settings
-    CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, navpane = 0, devmode = 0, sysinit = 1"
+    SysCmd acSysCmdSetStatus, "Reset database"
+    CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, navpane = 0, devmode = 0"
     
     'Disable shift
+    SysCmd acSysCmdSetStatus, "Disable shift"
     DisableShift
+    
+    'Set deployment mode
+    pDeploy = True
+    SysCmd acSysCmdSetStatus, "Preparation finished"
 End Sub
 
-Public Sub Setup()
+Public Sub Install()
 '-------------------------------------------------------------------------------
 'Function:          SysInit
 'Date:              2021 October
