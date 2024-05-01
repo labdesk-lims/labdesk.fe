@@ -61,7 +61,7 @@ On Error GoTo Catch_Error
     
     'Try to attach tables
     SysCmd acSysCmdSetStatus, "Try to attach tables"
-    DbConnect.ConnectDb DbConnect.GetDbSetting("server"), DbConnect.GetDbSetting("database"), config.DSNLessTables, DbConnect.GetDbSetting("user"), DbConnect.GetDbSetting("password")
+    DbConnect.ConnectDb DbConnect.GetDbSetting("server"), DbConnect.GetDbSetting("database"), config.DSNLessTables, DbConnect.GetDbSetting("winauth"), DbConnect.GetDbSetting("user"), DbConnect.GetDbSetting("password")
     
     'Install appplication if no users exists
     If InstallationPending Then

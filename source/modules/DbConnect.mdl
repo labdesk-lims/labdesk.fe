@@ -88,7 +88,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Private Sub SetConStr(ByVal server As String, ByVal database As String, Optional ByVal user As String, Optional ByVal password As String)
+Private Sub SetConStr(ByVal server As String, ByVal database As String, ByVal winauth As Boolean, Optional ByVal user As String, Optional ByVal password As String)
 '-------------------------------------------------------------------------------
 ' Function:     SetConStr
 ' Date:         2022 January
@@ -100,8 +100,8 @@ Private Sub SetConStr(ByVal server As String, ByVal database As String, Optional
 ' -> password:      Optional password credentials
 ' Out:                Done (T/F)
 '-------------------------------------------------------------------------------
-    If Len(user) = 0 Then
-        '//Use trusted authentication if stUsername is not supplied.
+    If winauth Then
+        '//Use trusted authentication if ainauth is set
         'SQLNCLI11 is dated OLEDB should be used instead
         'ADODBConStr = "Provider=SQLNCLI11;" & "Server=" & server & ";" & "Database=" & database & ";" & "Integrated Security=SSPI;" & "DataTypeCompatibility=80;" & "MARS Connection=True;" & "APP=labdesk-ui; Encrypt=yes;"
         'ODBCConStr = "ODBC;DRIVER=SQL Server;SERVER=" & server & ";DATABASE=" & database & ";ColumnEncryption=Enabled;" & "APP=labdesk-ui;"
@@ -117,7 +117,7 @@ Private Sub SetConStr(ByVal server As String, ByVal database As String, Optional
     End If
 End Sub
 
-Public Function ConnectDb(ByVal server As String, ByVal database As String, ByVal remoteTables As Variant, Optional ByVal user As String, Optional ByVal password As String) As Boolean
+Public Function ConnectDb(ByVal server As String, ByVal database As String, ByVal remoteTables As Variant, ByVal winauth As Boolean, Optional ByVal user As String, Optional ByVal password As String) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         ConnectDb
 ' Date:             2022 January
@@ -136,10 +136,10 @@ Public Function ConnectDb(ByVal server As String, ByVal database As String, ByVa
     If server = "" Or database = "" Then Err.Raise vbObjectError + 513, , "Server and/or database not set."
     
     'Set connection string
-    If Len(user) = 0 Then
-        SetConStr server, database
+    If winauth Then
+        SetConStr server, database, True
     Else
-        SetConStr server, database, user, password
+        SetConStr server, database, False, user, password
     End If
     
     If Not IsValidADODBConnection Then Err.Raise vbObjectError + 513, , "Wrong authentication credentials provided."
