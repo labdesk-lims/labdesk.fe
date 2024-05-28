@@ -77,8 +77,8 @@ Public Sub Install()
     'Disable shift
     DisableShift
     
-    ' Deactivate initialization
-    CurrentDb.Execute "UPDATE dbsetup SET sysinit = 0" 'reset connection settings
+    'Set Frontend Version
+    SetFeVersion
 End Sub
 
 Public Sub Update()
@@ -102,8 +102,8 @@ Public Sub Update()
     'Disable shift
     DisableShift
     
-    ' Deactivate update
-    CurrentDb.Execute "UPDATE dbsetup SET sysupdate = 0" 'reset connection settings
+    'Set Frontend Version
+    SetFeVersion
 End Sub
 
 Public Function UploadDependency(ByVal fname As String) As Boolean
@@ -150,7 +150,7 @@ On Error GoTo Catch_Error
     
     rs.MoveFirst
     Do Until rs.EOF
-        If rs!deploy Then DbBlob.BlobToFile CurrentProject.Path & "\" & rs!filename, rs!binary
+        If rs!deploy Then DbBlob.BlobToFile CurrentProject.Path & "\" & rs!FileName, rs!binary
         rs.MoveNext
     Loop
     

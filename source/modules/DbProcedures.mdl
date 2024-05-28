@@ -21,6 +21,61 @@ Public Type ColumnStyle
     order As Integer
 End Type
 
+Public Function GetFilterSetting(ByVal rfrm As String) As Variant
+'-------------------------------------------------------------------------------
+' Function:         GetFilterSetting
+' Date:             2025 May
+' Purpose:          Get the actual filter setting
+' In:
+' -> rfrm:          Form of interest to get filter settings from
+' Out:              String Or Null
+'------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    'Get filter setting
+    Set rs = db.OpenRecordset("SELECT filter FROM filter WHERE active = 1 AND userid = '" & DbProcedures.GetUserName & "' AND form = '" & rfrm & "'", dbOpenDynaset, dbSeeChanges)
+    
+    If Not rs.EOF Then GetFilterSetting = rs(0) Else GetFilterSetting = Null
+    
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    GetFilterSetting = Null
+    Resume Exit_Function
+End Function
+
+Public Sub SetFilterSetting(ByVal rfrm As String, filter As String)
+'-------------------------------------------------------------------------------
+' Function:         GetFilterSetting
+' Date:             2025 May
+' Purpose:          Get the actual filter setting
+' In:
+' -> rfrm:          Form of interest to get filter settings from
+' Out:              String Or Null
+'------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    'Get filter setting
+    Set rs = db.OpenRecordset("SELECT id FROM filter WHERE global = False AND userid = '" & DbProcedures.GetUserName & "' AND form = '" & rfrm & "' AND filter = '" & filter & "'", dbOpenDynaset, dbSeeChanges)
+    
+    If Not rs.EOF Then db.Execute "UPDATE filter SET active = 1 WHERE id = " & rs(0), dbSeeChanges
+    
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Sub
+Catch_Error:
+    Resume Exit_Function
+End Sub
+
 Public Function SetColumnStyle(ByVal rfrm As Form, ByVal clmn As String, ByVal Width As Integer, ByVal hidden As Boolean, ByVal order As Integer) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         SetColumnStyle
@@ -211,10 +266,17 @@ Public Sub SetFeVersion()
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     Dim db As database
+    Dim rs As Recordset
     
     Set db = CurrentDb()
     
-    db.Execute "UPDATE setup SET version_fe = '" & config.FeVersion & "'"
+    Set rs = db.OpenRecordset("SELECT COUNT(*) As cnt FROM setup", dbOpenDynaset, dbSeeChanges)
+    
+    If Nz(rs!cnt, 0) = 0 Then
+        db.Execute "INSERT INTO setup (version_fe) VALUES ('" & config.FeVersion & "')"
+    Else
+        db.Execute "UPDATE setup SET version_fe = '" & config.FeVersion & "'"
+    End If
 
 Exit_Function:
     Set db = Nothing
@@ -1001,7 +1063,7 @@ Public Function GetReports() As Variant
     GetReports = a
 End Function
 
-Public Function UploadPicture(ByRef fref As Object, Optional filename As String) As Boolean
+Public Function UploadPicture(ByRef fref As Object, Optional FileName As String) As Boolean
 '-------------------------------------------------------------------------------
 'Function:          UploadPicture
 'Date:              2022 March
@@ -1018,10 +1080,10 @@ On Error GoTo Catch_Error
     Set oShell = CreateObject("WScript.Shell")
     Set oFSO = CreateObject("Scripting.FileSystemObject")
     
-    If filename = "" Then
+    If FileName = "" Then
         fname = Dialog.OpenFileDialog()
     Else
-        fname = filename
+        fname = FileName
     End If
     
     If fname = "" Then Exit Function
@@ -1190,5 +1252,34 @@ Exit_Function:
     Exit Function
 Catch_Error:
     MsgBox "Error (mdlDbProcedures - GetDbDate): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function RunTemplate(ByVal template As Integer, ByVal priority As Integer, ByVal workflow As Integer) As Variant
+'-------------------------------------------------------------------------------
+' Function:         RunTemplate
+' Date:             2024 May
+' Purpose:          Run/Execute template and create sample with subsamples
+' Out:              Customer ID
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "template_run"
+    cmd.Parameters.Append cmd.CreateParameter("@template", adInteger, adParamInput, -1, template)
+    cmd.Parameters.Append cmd.CreateParameter("@priority", adInteger, adParamInput, -1, priority)
+    cmd.Parameters.Append cmd.CreateParameter("@workflow", adInteger, adParamInput, -1, workflow)
+    cmd.Execute
+
+Exit_Function:
+    Set cmd = Nothing
+    Exit Function
+Catch_Error:
+    MsgBox "Error (mdlDbProcedures - RunTemplate): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function

@@ -230,6 +230,8 @@ On Error GoTo Catch_Error
                     rfrm.Form(ctrl.name).Form.FormChanged = False
                 End If
             Next
+            ' Remove flag to unblock record
+            If Not IsNull(rfrm.ID) Then RemoveTableFlag rfrm.DataTable, rfrm.ID
             Exit Sub
         Else
             DoCmd.CancelEvent
@@ -528,6 +530,10 @@ Skip_hide:
     ' Individual initialisation routines
     rfrm.Form_Init_Individual
     
+    ' Init filter setting
+    rfrm.filter = Nz(DbProcedures.GetFilterSetting(rfrm.name), "")
+    rfrm.FilterOn = Not IsNull(DbProcedures.GetFilterSetting(rfrm.name))
+    
     ' Show form after adjustments are made
     On Error GoTo Skip_show
         rfrm.visible = True
@@ -558,6 +564,9 @@ On Error GoTo Catch_Error
             SetColumnStyle rfrm, ctrl.name, ctrl.ColumnWidth, ctrl.ColumnHidden, ctrl.ColumnOrder
         End If
     Next ctrl
+    
+    ' Save filter setting if apply
+    If rfrm.FilterOn Then DbProcedures.SetFilterSetting rfrm.name, rfrm.filter
     
 Exit_Function:
     Exit Sub

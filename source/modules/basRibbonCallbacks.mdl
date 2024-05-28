@@ -237,6 +237,9 @@ Sub GetEnabled(control As IRibbonControl, ByRef enabled)
             
         Case "btn_profile"
             enabled = DbProcedures.GetPermission(control.ID).Read
+        
+        Case "btn_template"
+            enabled = DbProcedures.GetPermission(control.ID).Read
             
         Case "btn_workflow"
             enabled = DbProcedures.GetPermission(control.ID).Read
@@ -456,6 +459,11 @@ Sub GetVisible(control As IRibbonControl, ByRef visible)
             ' In Group: grp_testing
             visible = True
         Case "btn_profile"
+            ' Button
+            ' In Tab:   tab_testing
+            ' In Group: grp_testing
+            visible = True
+        Case "btn_template"
             ' Button
             ' In Tab:   tab_testing
             ' In Group: grp_testing
@@ -724,6 +732,11 @@ Sub GetLabel(control As IRibbonControl, ByRef label)
             ' In Group: grp_testing
             label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
         Case "btn_profile"
+            ' Button
+            ' In Tab:   tab_testing
+            ' In Group: grp_testing
+            label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
+        Case "btn_template"
             ' Button
             ' In Tab:   tab_testing
             ' In Group: grp_testing
@@ -1000,6 +1013,10 @@ Sub OnActionButton(control As IRibbonControl)
             ' In Tab:   tab_testing
             ' In Group: grp_testing
             DoCmd.OpenForm "profile", acFormDS, , , acFormEdit, acWindowNormal
+        Case "btn_template"
+            ' In Tab:   tab_testing
+            ' In Group: grp_testing
+            DoCmd.OpenForm "template", acFormDS, , , acFormEdit, acWindowNormal
         Case "btn_workflow"
             ' In Tab:   tab_testing
             ' In Group: grp_order

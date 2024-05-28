@@ -30,7 +30,7 @@ Private Const pBackgroundWorkerInterval = 3 * 60000
 ' Semantic Versioning according to https://semver.org/
 ' MAJOR-MINOR-PATCH
 Private Const pFeVersion = "v2.1.1" 'Presented frontend version
-Private Const pBeVersion = "v2.1.0" 'Required backend version
+Private Const pBeVersion = "v2.2.0" 'Required backend version
 
 ' Identifiers used for reports and labels
 Private Const pReportId = "RPT-" 'Identifier for selectable reports
@@ -93,6 +93,7 @@ Public Property Get DSNLessTables() As Variant
     "cfield", "cvalidate", "condition", "uncertainty", "analysis", "attribute", "method_analysis", "method_smptype", "method", "qualification", "instrument_method", "department", "workplace", "instrument", "certificate", "attachment", "instype", "supplier", _
     "request", "request_customfield", "request_material", "request_service", "measurement_cfield", "measurement", "measurement_condition", "view_request_measurement", _
     "profile_analysis", "profile", "request_analysis", "step", "state", "workflow", "smptype", "smpcondition", "smppreservation", "priority", "technique", _
+    "template", "template_profile", _
     "batch", "btcposition", "storage", "strposition", "handbook", _
     "project", "project_customfield", "project_member", "formulation", "component", "task", "task_workload", "view_task", "task_service", "task_material", _
     "view_measurement", "view_request_owner", "view_project_owner", _

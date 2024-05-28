@@ -6,6 +6,7 @@ Attribute VB_Name = "CapCam"
 Option Compare Database
 Option Explicit
 
+' Type CapStatus describes the camera specific settings
 Public Type CapStatus
     uiImageWidth As Long                    '// Width of the image
     uiImageHeight As Long                   '// Height of the image
@@ -28,6 +29,7 @@ Public Type CapStatus
     wNumAudioAllocated As Long              '// Actual number of audio buffers
 End Type
 
+' Constats to address the vdieo settings
 Private Const WS_CHILD As Long = &H40000000
 Private Const WS_VISIBLE As Long = &H10000000
 Private Const WM_USER As Long = &H400
@@ -44,7 +46,7 @@ Private Const WM_CAP_GET_STATUS As Long = WM_CAP_START + 54
 Private Declare PtrSafe Function capCreateCaptureWindow _
     Lib "avicap32.dll" Alias "capCreateCaptureWindowA" _
          (ByVal lpszWindowName As String, ByVal dwStyle As Long _
-        , ByVal x As Long, ByVal y As Long, ByVal nWidth As Long _
+        , ByVal X As Long, ByVal Y As Long, ByVal nWidth As Long _
         , ByVal nHeight As Long, ByVal hwndParent As LongPtr _
         , ByVal nID As Long) As Long
 

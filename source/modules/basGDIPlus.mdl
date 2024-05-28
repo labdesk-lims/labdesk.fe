@@ -1,5 +1,6 @@
 Attribute VB_Name = "basGDIPlus"
 Option Compare Database
+Option Explicit
 
 
 '-------------------------------------------------
@@ -36,8 +37,8 @@ Public Type GUID
 End Type
 
 Public Type TSize
-    x As Double
-    y As Double
+    X As Double
+    Y As Double
 End Type
 
 
@@ -134,13 +135,13 @@ End Type
     'Tear down GDIP:
     Private Declare PtrSafe Function GdiplusShutdown Lib "gdiplus" (ByVal token As LongPtr) As Long
     'Load GDIP-Image from file :
-    Private Declare PtrSafe Function GdipCreateBitmapFromFile Lib "gdiplus" (ByVal filename As LongPtr, BITMAP As LongPtr) As Long
+    Private Declare PtrSafe Function GdipCreateBitmapFromFile Lib "gdiplus" (ByVal FileName As LongPtr, BITMAP As LongPtr) As Long
     'Create GDIP- graphical area from Windows-DeviceContext:
     Private Declare PtrSafe Function GdipCreateFromHDC Lib "gdiplus" (ByVal hdc As LongPtr, GpGraphics As LongPtr) As Long
     'Delete GDIP graphical area :
     Private Declare PtrSafe Function GdipDeleteGraphics Lib "gdiplus" (ByVal graphics As LongPtr) As Long
     'Copy GDIP-Image to graphical area:
-    Private Declare PtrSafe Function GdipDrawImageRect Lib "gdiplus" (ByVal graphics As LongPtr, ByVal Image As LongPtr, ByVal x As Single, ByVal y As Single, ByVal Width As Single, ByVal Height As Single) As Long
+    Private Declare PtrSafe Function GdipDrawImageRect Lib "gdiplus" (ByVal graphics As LongPtr, ByVal Image As LongPtr, ByVal X As Single, ByVal Y As Single, ByVal Width As Single, ByVal Height As Single) As Long
     'Clear allocated bitmap memory from GDIP :
     Private Declare PtrSafe Function GdipDisposeImage Lib "gdiplus" (ByVal Image As LongPtr) As Long
     'Retrieve windows bitmap handle from GDIP-Image:
@@ -158,7 +159,7 @@ End Type
     'Retrieve height of a GDIP-Image (Pixel):
     Private Declare PtrSafe Function GdipGetImageHeight Lib "gdiplus" (ByVal Image As LongPtr, Height As LongPtr) As Long
     'Save GDIP-Image to file in seletable format:
-    Private Declare PtrSafe Function GdipSaveImageToFile Lib "gdiplus" (ByVal Image As LongPtr, ByVal filename As LongPtr, clsidEncoder As GUID, encoderParams As Any) As Long
+    Private Declare PtrSafe Function GdipSaveImageToFile Lib "gdiplus" (ByVal Image As LongPtr, ByVal FileName As LongPtr, clsidEncoder As GUID, encoderParams As Any) As Long
     'Save GDIP-Image in OLE-Stream with seletable format:
     Private Declare PtrSafe Function GdipSaveImageToStream Lib "gdiplus" (ByVal Image As LongPtr, ByVal stream As IUnknown, clsidEncoder As GUID, encoderParams As Any) As Long
     'Retrieve GDIP-Image from OLE-Stream-Object:
@@ -216,13 +217,13 @@ End Type
     'Tear down GDIP:
     Private Declare Function GdiplusShutdown Lib "gdiplus" (ByVal token As Long) As Long
     'Load GDIP-Image from file :
-    Private Declare Function GdipCreateBitmapFromFile Lib "gdiplus" (ByVal filename As Long, BITMAP As Long) As Long
+    Private Declare Function GdipCreateBitmapFromFile Lib "gdiplus" (ByVal FileName As Long, BITMAP As Long) As Long
     'Create GDIP- graphical area from Windows-DeviceContext:
     Private Declare Function GdipCreateFromHDC Lib "gdiplus" (ByVal hdc As Long, GpGraphics As Long) As Long
     'Delete GDIP graphical area :
     Private Declare Function GdipDeleteGraphics Lib "gdiplus" (ByVal graphics As Long) As Long
     'Copy GDIP-Image to graphical area:
-    Private Declare Function GdipDrawImageRect Lib "gdiplus" (ByVal graphics As Long, ByVal Image As Long, ByVal x As Single, ByVal y As Single, ByVal Width As Single, ByVal Height As Single) As Long
+    Private Declare Function GdipDrawImageRect Lib "gdiplus" (ByVal graphics As Long, ByVal Image As Long, ByVal X As Single, ByVal Y As Single, ByVal Width As Single, ByVal Height As Single) As Long
     'Clear allocated bitmap memory from GDIP :
     Private Declare Function GdipDisposeImage Lib "gdiplus" (ByVal Image As Long) As Long
     'Retrieve windows bitmap handle from GDIP-Image:
@@ -240,7 +241,7 @@ End Type
     'Retrieve height of a GDIP-Image (Pixel):
     Private Declare Function GdipGetImageHeight Lib "gdiplus" (ByVal Image As Long, Height As Long) As Long
     'Save GDIP-Image to file in seletable format:
-    Private Declare Function GdipSaveImageToFile Lib "gdiplus" (ByVal Image As Long, ByVal filename As Long, clsidEncoder As GUID, encoderParams As Any) As Long
+    Private Declare Function GdipSaveImageToFile Lib "gdiplus" (ByVal Image As Long, ByVal FileName As Long, clsidEncoder As GUID, encoderParams As Any) As Long
     'Save GDIP-Image in OLE-Stream with seletable format:
     Private Declare Function GdipSaveImageToStream Lib "gdiplus" (ByVal Image As Long, ByVal stream As IUnknown, clsidEncoder As GUID, encoderParams As Any) As Long
     'Retrieve GDIP-Image from OLE-Stream-Object:
