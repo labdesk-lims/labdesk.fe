@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:od="urn:schemas-microsoft-com:officedata">
+<xsd:schema>
+<xsd:element name="dataroot">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element ref="_permission" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+<xsd:attribute name="generated" type="xsd:dateTime"/>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="_permission">
+<xsd:annotation>
+<xsd:appinfo/>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="id" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="0"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="title" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="0"/>
+<od:fieldProperty name="Required" type="1" value="0"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="description" minOccurs="0" od:jetType="memo" od:sqlSType="ntext">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="0"/>
+<od:fieldProperty name="Required" type="1" value="0"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="536870910"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-07-22T15:24:19">
+<_permission>
+<id>39</id>
+<title>role</title>
+<description>Role Datasheet</description>
+</_permission>
+<_permission>
+<id>40</id>
+<title>role_edit</title>
+<description>Role Form</description>
+</_permission>
+<_permission>
+<id>44</id>
+<title>attachment_sbf</title>
+<description>Attachment Subform</description>
+</_permission>
+<_permission>
+<id>61</id>
+<title>role_edit_permission_sbf</title>
+<description>Role Form -&gt; Permission Subform</description>
+</_permission>
+<_permission>
+<id>96</id>
+<title>users</title>
+<description>Users Datasheet</description>
+</_permission>
+<_permission>
+<id>99</id>
+<title>users_edit</title>
+<description>Users Form</description>
+</_permission>
+<_permission>
+<id>100</id>
+<title>translation</title>
+<description>Translation Datasheet</description>
+</_permission>
+<_permission>
+<id>110</id>
+<title>laboratory</title>
+<description>Laboratory Datasheet</description>
+</_permission>
+<_permission>
+<id>120</id>
+<title>laboratory_edit</title>
+<description>Laboratory Form</description>
+</_permission>
+<_permission>
+<id>133</id>
+<title>contact</title>
+<description>Contact Datasheet</description>
+</_permission>
+<_permission>
+<id>134</id>
+<title>contact_edit</title>
+<description>Contact Form</description>
+</_permission>
+<_permission>
+<id>168</id>
+<title>department</title>
+<description>Department Datasheet</description>
+</_permission>
+<_permission>
+<id>170</id>
+<title>department_edit</title>
+<description>Department Form</description>
+</_permission>
+<_permission>
+<id>171</id>
+<title>workplace</title>
+<description>Workplace Datasheet</description>
+</_permission>
+<_permission>
+<id>172</id>
+<title>workplace_edit</title>
+<description>Workplace Form</description>
+</_permission>
+<_permission>
+<id>173</id>
+<title>workflow</title>
+<description>Workflow Datasheet</description>
+</_permission>
+<_permission>
+<id>174</id>
+<title>workflow_edit</title>
+<description>Workflow Form</description>
+</_permission>
+<_permission>
+<id>177</id>
+<title>workflow_state_sbf</title>
+<description>Workflow Form -&gt; State Subform</description>
+</_permission>
+<_permission>
+<id>180</id>
+<title>workflow_step_dlg</title>
+<description>Workflow Form -&gt; Step Dialogue</description>
+</_permission>
+<_permission>
+<id>183</id>
+<title>instrument</title>
+<description>Instrument Datasheet</description>
+</_permission>
+<_permission>
+<id>184</id>
+<title>instrument_edit</title>
+<description>Instrument Form</description>
+</_permission>
+<_permission>
+<id>194</id>
+<title>instype</title>
+<description>Instrument-Type Datasheet</description>
+</_permission>
+<_permission>
+<id>195</id>
+<title>instype_edit</title>
+<description>Instrument-Type Form</description>
+</_permission>
+<_permission>
+<id>196</id>
+<title>supplier</title>
+<description>Supplier Datasheet</description>
+</_permission>
+<_permission>
+<id>198</id>
+<title>supplier_edit</title>
+<description>Supplier Form</description>
+</_permission>
+<_permission>
+<id>199</id>
+<title>certificate</title>
+<description>Certificate Datasheet</description>
+</_permission>
+<_permission>
+<id>200</id>
+<title>certificate_edit</title>
+<description>Certificate Form</description>
+</_permission>
+<_permission>
+<id>201</id>
+<title>customer</title>
+<description>Customer Datasheet</description>
+</_permission>
+<_permission>
+<id>204</id>
+<title>manufacturer</title>
+<description>Manufacturer Datasheet</description>
+</_permission>
+<_permission>
+<id>205</id>
+<title>manufacturer_edit</title>
+<description>Manufacturer Form</description>
+</_permission>
+<_permission>
+<id>212</id>
+<title>priority</title>
+<description>Priority Datasheet</description>
+</_permission>
+<_permission>
+<id>213</id>
+<title>priority_edit</title>
+<description>Priority Form</description>
+</_permission>
+<_permission>
+<id>214</id>
+<title>smpcondition</title>
+<description>Sample-Condition Datasheet</description>
+</_permission>
+<_permission>
+<id>215</id>
+<title>smpcondition_edit</title>
+<description>Sample-Condition Form</description>
+</_permission>
+<_permission>
+<id>216</id>
+<title>smppoint</title>
+<description>Sample-Point Datasheet</description>
+</_permission>
+<_permission>
+<id>217</id>
+<title>smppoint_edit</title>
+<description>Sample-Point Form</description>
+</_permission>
+<_permission>
+<id>218</id>
+<title>smppreservation</title>
+<description>Sample-Preservation Datasheet</description>
+</_permission>
+<_permission>
+<id>219</id>
+<title>smppreservation_edit</title>
+<description>Sample-Preservation Form</description>
+</_permission>
+<_permission>
+<id>220</id>
+<title>smptype</title>
+<description>Sample-Type Datasheet</description>
+</_permission>
+<_permission>
+<id>221</id>
+<title>smptype_edit</title>
+<description>Sample-Type Form</description>
+</_permission>
+<_permission>
+<id>224</id>
+<title>customer_edit</title>
+<description>Customer Form</description>
+</_permission>
+<_permission>
+<id>225</id>
+<title>customer_contact_sbf</title>
+<description>Customer Form -&gt; Contact Subform</description>
+</_permission>
+<_permission>
+<id>226</id>
+<title>profile</title>
+<description>Profile Datasheet</description>
+</_permission>
+<_permission>
+<id>227</id>
+<title>profile_edit</title>
+<description>Profile Form</description>
+</_permission>
+<_permission>
+<id>228</id>
+<title>profile_analysis_sbf</title>
+<description>Profile Form -&gt; Analysis Subform</description>
+</_permission>
+<_permission>
+<id>229</id>
+<title>analysis</title>
+<description>Analysis Datasheet</description>
+</_permission>
+<_permission>
+<id>230</id>
+<title>analysis_edit</title>
+<description>Analysis Form</description>
+</_permission>
+<_permission>
+<id>232</id>
+<title>analysis_method_sbf</title>
+<description>Analysis Form -&gt; Method Subform</description>
+</_permission>
+<_permission>
+<id>235</id>
+<title>analysis_attribute_sbf</title>
+<description>Analysis Form -&gt; Atribute Subform</description>
+</_permission>
+<_permission>
+<id>238</id>
+<title>analysis_uncertainty_sbf</title>
+<description>Analysis Form -&gt; Uncertainty Subform</description>
+</_permission>
+<_permission>
+<id>240</id>
+<title>analysis_condition_sbf</title>
+<description>Analysis Form -&gt; Condition Subform</description>
+</_permission>
+<_permission>
+<id>241</id>
+<title>analysis_cfield_sbf</title>
+<description>Analysis Form -&gt; Calculation fields Subform</description>
+</_permission>
+<_permission>
+<id>242</id>
+<title>analysis_cvalidate_sbf</title>
+<description>Analysis Form -&gt; Validation Subform</description>
+</_permission>
+<_permission>
+<id>248</id>
+<title>smpcontainer</title>
+<description>Sample-Container Datasheet</description>
+</_permission>
+<_permission>
+<id>250</id>
+<title>smpcontainer_edit</title>
+<description>Sample-Container Form</description>
+</_permission>
+<_permission>
+<id>251</id>
+<title>request</title>
+<description>Request Datasheet</description>
+</_permission>
+<_permission>
+<id>252</id>
+<title>request_edit</title>
+<description>Request Form</description>
+</_permission>
+<_permission>
+<id>259</id>
+<title>request_analysis_sbf</title>
+<description>Request Form -&gt; Analysis Subform</description>
+</_permission>
+<_permission>
+<id>260</id>
+<title>request_measurement_sbf</title>
+<description>Request Form - &gt; Measurement Subform</description>
+</_permission>
+<_permission>
+<id>264</id>
+<title>method</title>
+<description>Method Datasheet</description>
+</_permission>
+<_permission>
+<id>265</id>
+<title>method_edit</title>
+<description>Method Form</description>
+</_permission>
+<_permission>
+<id>269</id>
+<title>measurement_edit</title>
+<description>Measurement Form</description>
+</_permission>
+<_permission>
+<id>270</id>
+<title>measurement_condition_sbf</title>
+<description>Measurement Form -&gt; Condition Subform</description>
+</_permission>
+<_permission>
+<id>273</id>
+<title>instrument_method_sbf</title>
+<description>Instrument Form -&gt; Method Subform</description>
+</_permission>
+<_permission>
+<id>283</id>
+<title>method_analysis_sbf</title>
+<description>Method Form -&gt; Analysis Subform</description>
+</_permission>
+<_permission>
+<id>293</id>
+<title>qualification</title>
+<description>Qualification Datasheet</description>
+</_permission>
+<_permission>
+<id>294</id>
+<title>qualification_edit</title>
+<description>Qualification Form</description>
+</_permission>
+<_permission>
+<id>295</id>
+<title>smpmatrix</title>
+<description>Sample-Matrix Datasheet</description>
+</_permission>
+<_permission>
+<id>296</id>
+<title>smpmatrix_edit</title>
+<description>Sample-Matrix Form</description>
+</_permission>
+<_permission>
+<id>332</id>
+<title>measurement_cfield_sbf</title>
+<description>Measurement Form -&gt; Calculation Field Subform</description>
+</_permission>
+<_permission>
+<id>352</id>
+<title>setup</title>
+<description>Setup Datasheet</description>
+</_permission>
+<_permission>
+<id>354</id>
+<title>setup_edit</title>
+<description>Setup Form</description>
+</_permission>
+<_permission>
+<id>373</id>
+<title>request-sub</title>
+<description>Request-Sub Datasheet</description>
+</_permission>
+<_permission>
+<id>383</id>
+<title>traversal_sbf</title>
+<description>Traversal Subform (Used in Request)</description>
+</_permission>
+<_permission>
+<id>387</id>
+<title>technique</title>
+<description>Technique Datasheet</description>
+</_permission>
+<_permission>
+<id>388</id>
+<title>technique_edit</title>
+<description>Technique Form</description>
+</_permission>
+<_permission>
+<id>391</id>
+<title>btn_database</title>
+<description>Ribbon Control -&gt; Button Database</description>
+</_permission>
+<_permission>
+<id>392</id>
+<title>btn_setup</title>
+<description>Ribbon Control -&gt; Button Setup</description>
+</_permission>
+<_permission>
+<id>393</id>
+<title>btn_translation</title>
+<description>Ribbon Control -&gt; Button Translation</description>
+</_permission>
+<_permission>
+<id>394</id>
+<title>btn_user</title>
+<description>Ribbon Control -&gt; Button User</description>
+</_permission>
+<_permission>
+<id>395</id>
+<title>btn_role</title>
+<description>Ribbon Control -&gt; Button Role</description>
+</_permission>
+<_permission>
+<id>396</id>
+<title>btn_workflow</title>
+<description>Ribbon Control -&gt; Button Workflow</description>
+</_permission>
+<_permission>
+<id>397</id>
+<title>btn_laboratory</title>
+<description>Ribbon Control -&gt; Button Laboratory</description>
+</_permission>
+<_permission>
+<id>398</id>
+<title>btn_department</title>
+<description>Ribbon Control -&gt; Button Department</description>
+</_permission>
+<_permission>
+<id>399</id>
+<title>btn_workplace</title>
+<description>Ribbon Control -&gt; Button Workplace</description>
+</_permission>
+<_permission>
+<id>400</id>
+<title>btn_instrument</title>
+<description>Ribbon Control -&gt; Button Instrument</description>
+</_permission>
+<_permission>
+<id>401</id>
+<title>btn_certificate</title>
+<description>Ribbon Control -&gt; Button Certificate</description>
+</_permission>
+<_permission>
+<id>402</id>
+<title>btn_qualification</title>
+<description>Ribbon Control -&gt; Button Qualification</description>
+</_permission>
+<_permission>
+<id>403</id>
+<title>btn_method</title>
+<description>Ribbon Control -&gt; Button Method</description>
+</_permission>
+<_permission>
+<id>404</id>
+<title>btn_analysis</title>
+<description>Ribbon Control -&gt; Button Analysis</description>
+</_permission>
+<_permission>
+<id>405</id>
+<title>btn_profile</title>
+<description>Ribbon Control -&gt; Button Profile</description>
+</_permission>
+<_permission>
+<id>406</id>
+<title>btn_request</title>
+<description>Ribbon Control -&gt; Button Request</description>
+</_permission>
+<_permission>
+<id>407</id>
+<title>btn_customer</title>
+<description>Ribbon Control -&gt; Button Customer</description>
+</_permission>
+<_permission>
+<id>408</id>
+<title>btn_contact</title>
+<description>Ribbon Control -&gt; Button Contact</description>
+</_permission>
+<_permission>
+<id>409</id>
+<title>btn_manufacturer</title>
+<description>Ribbon Control -&gt; Button Manufacturer</description>
+</_permission>
+<_permission>
+<id>410</id>
+<title>btn_supplier</title>
+<description>Ribbon Control -&gt; Button Supplier</description>
+</_permission>
+<_permission>
+<id>411</id>
+<title>btn_smpmatrix</title>
+<description>Ribbon Control -&gt; Button Sample Matrix</description>
+</_permission>
+<_permission>
+<id>412</id>
+<title>btn_smptype</title>
+<description>Ribbon Control -&gt; Button Sample Type</description>
+</_permission>
+<_permission>
+<id>413</id>
+<title>btn_smppoint</title>
+<description>Ribbon Control -&gt; Button Sampling point</description>
+</_permission>
+<_permission>
+<id>414</id>
+<title>btn_smpcondition</title>
+<description>Ribbon Control -&gt; Button Sample Condition</description>
+</_permission>
+<_permission>
+<id>415</id>
+<title>btn_smppreservation</title>
+<description>Ribbon Control -&gt; Button Sample Preservation</description>
+</_permission>
+<_permission>
+<id>416</id>
+<title>btn_container</title>
+<description>Ribbon Control -&gt; Button Container</description>
+</_permission>
+<_permission>
+<id>417</id>
+<title>btn_instype</title>
+<description>Ribbon Control -&gt; Button Instrument Type</description>
+</_permission>
+<_permission>
+<id>418</id>
+<title>btn_technique</title>
+<description>Ribbon Control -&gt; Button Technique</description>
+</_permission>
+<_permission>
+<id>419</id>
+<title>btn_priority</title>
+<description>Ribbon Control -&gt; Button Priority</description>
+</_permission>
+<_permission>
+<id>420</id>
+<title>batch</title>
+<description>Batch Datasheet</description>
+</_permission>
+<_permission>
+<id>422</id>
+<title>batch_edit</title>
+<description>Batch Form</description>
+</_permission>
+<_permission>
+<id>423</id>
+<title>storage</title>
+<description>Storage Datasheet</description>
+</_permission>
+<_permission>
+<id>424</id>
+<title>storage_edit</title>
+<description>Storage Form</description>
+</_permission>
+<_permission>
+<id>427</id>
+<title>strposition_sbf</title>
+<description>Storage Form -&gt; Position Subform</description>
+</_permission>
+<_permission>
+<id>434</id>
+<title>translation_edit</title>
+<description>Translation Form</description>
+</_permission>
+<_permission>
+<id>443</id>
+<title>btn_batch</title>
+<description>Ribbon Control -&gt; Button Batch</description>
+</_permission>
+<_permission>
+<id>444</id>
+<title>btn_storage</title>
+<description>Ribbon Control -&gt; Button Storage</description>
+</_permission>
+<_permission>
+<id>480</id>
+<title>filter_set_global</title>
+<description>Filter -&gt; Show globally</description>
+</_permission>
+<_permission>
+<id>484</id>
+<title>spa_sbf</title>
+<description>SPC Subform (Used in Analysis)</description>
+</_permission>
+<_permission>
+<id>488</id>
+<title>request_edit_RC</title>
+<description>Request Form -&gt; Allow State RC</description>
+</_permission>
+<_permission>
+<id>489</id>
+<title>request_edit_CP</title>
+<description>Request Form -&gt; Allow State CP</description>
+</_permission>
+<_permission>
+<id>490</id>
+<title>request_edit_RT</title>
+<description>Request Form -&gt; Allow State RT</description>
+</_permission>
+<_permission>
+<id>491</id>
+<title>request_edit_VD</title>
+<description>Request Form -&gt; Allow State VD</description>
+</_permission>
+<_permission>
+<id>492</id>
+<title>request_edit_MA</title>
+<description>Request Form -&gt; Allow State MA</description>
+</_permission>
+<_permission>
+<id>493</id>
+<title>request_edit_DP</title>
+<description>Request Form -&gt; Allow State DP</description>
+</_permission>
+<_permission>
+<id>494</id>
+<title>request_edit_ST</title>
+<description>Request Form -&gt; Allow State ST</description>
+</_permission>
+<_permission>
+<id>495</id>
+<title>request_edit_DX</title>
+<description>Request Form -&gt; Allow State DX</description>
+</_permission>
+<_permission>
+<id>496</id>
+<title>measurement_edit_AQ</title>
+<description>Measurement Form -&gt; Allow State AQ</description>
+</_permission>
+<_permission>
+<id>497</id>
+<title>measurement_edit_CP</title>
+<description>Measurement Form -&gt; Allow State CP</description>
+</_permission>
+<_permission>
+<id>498</id>
+<title>measurement_edit_RT</title>
+<description>Measurement Form -&gt; Allow State RT</description>
+</_permission>
+<_permission>
+<id>499</id>
+<title>measurement_edit_RE</title>
+<description>Measurement Form -&gt; Allow State RE</description>
+</_permission>
+<_permission>
+<id>500</id>
+<title>measurement_edit_VD</title>
+<description>Measurement Form -&gt; Allow State VD</description>
+</_permission>
+<_permission>
+<id>501</id>
+<title>handbook_sbf</title>
+<description>Handbook Subform (Used in Requests)</description>
+</_permission>
+<_permission>
+<id>503</id>
+<title>request-sub_sbf</title>
+<description>Request-Sub Form</description>
+</_permission>
+<_permission>
+<id>508</id>
+<title>material</title>
+<description>Material Datasheet</description>
+</_permission>
+<_permission>
+<id>516</id>
+<title>material_edit</title>
+<description>Material Form</description>
+</_permission>
+<_permission>
+<id>517</id>
+<title>btn_material</title>
+<description>Ribbon Control -&gt; Button Material</description>
+</_permission>
+<_permission>
+<id>518</id>
+<title>btn_desktop</title>
+<description>Ribbon Control -&gt; Button Desktop</description>
+</_permission>
+<_permission>
+<id>521</id>
+<title>view_measurement</title>
+<description>Measurement-View Datasheet</description>
+</_permission>
+<_permission>
+<id>523</id>
+<title>btn_measurement</title>
+<description>Ribbon Control -&gt; Button Measurement</description>
+</_permission>
+<_permission>
+<id>528</id>
+<title>formulation</title>
+<description>Formulation Datasheet</description>
+</_permission>
+<_permission>
+<id>531</id>
+<title>formulation_edit</title>
+<description>Formulation Form</description>
+</_permission>
+<_permission>
+<id>533</id>
+<title>formulation_component_sbf</title>
+<description>Formulation Form -&gt; Component Subform</description>
+</_permission>
+<_permission>
+<id>535</id>
+<title>btn_formulation</title>
+<description>Ribbon Control -&gt; Button Formulation</description>
+</_permission>
+<_permission>
+<id>1540</id>
+<title>project</title>
+<description>Project Datasheet</description>
+</_permission>
+<_permission>
+<id>1543</id>
+<title>project_edit</title>
+<description>Project Form</description>
+</_permission>
+<_permission>
+<id>1545</id>
+<title>project_member_sbf</title>
+<description>Project Form -&gt; Member Subform</description>
+</_permission>
+<_permission>
+<id>1547</id>
+<title>project_formulation_sbf</title>
+<description>Project Form -&gt; Formulation Subform</description>
+</_permission>
+<_permission>
+<id>1548</id>
+<title>btn_project</title>
+<description>Ribbon Control -&gt; Button Project</description>
+</_permission>
+<_permission>
+<id>2670</id>
+<title>desktop_attachment_revision</title>
+<description>Desktop Form -&gt; Attachment Revision Datasheet</description>
+</_permission>
+<_permission>
+<id>2683</id>
+<title>project_task_sbf</title>
+<description>Project Form -&gt; Task</description>
+</_permission>
+<_permission>
+<id>2684</id>
+<title>desktop_task_sbf</title>
+<description>Desktop Form -&gt; Task Subform</description>
+</_permission>
+<_permission>
+<id>2710</id>
+<title>task_edit</title>
+<description>Task Form</description>
+</_permission>
+<_permission>
+<id>2711</id>
+<title>task_workload_sbf</title>
+<description>Task Form -&gt; Workload Subform</description>
+</_permission>
+<_permission>
+<id>7882</id>
+<title>method_smptype_sbf</title>
+<description>Method Form -&gt; Sample Type Subform</description>
+</_permission>
+<_permission>
+<id>10955</id>
+<title>request_owner</title>
+<description>Request Owner Only Datasheet</description>
+</_permission>
+<_permission>
+<id>10966</id>
+<title>project_owner</title>
+<description>Project Owner Datasheet</description>
+</_permission>
+<_permission>
+<id>11955</id>
+<title>mailqueue</title>
+<description>Mailqueue Datasheet</description>
+</_permission>
+<_permission>
+<id>11964</id>
+<title>btn_mailqueue</title>
+<description>Ribbon Control -&gt; Button Mailqueue</description>
+</_permission>
+<_permission>
+<id>11973</id>
+<title>request_customfield_sbf</title>
+<description>Request Form -&gt; Customfield Subform</description>
+</_permission>
+<_permission>
+<id>11974</id>
+<title>customfield</title>
+<description>Customfield Form</description>
+</_permission>
+<_permission>
+<id>11976</id>
+<title>btn_customfield</title>
+<description>Ribbon Control -&gt; Button Custom field</description>
+</_permission>
+<_permission>
+<id>12969</id>
+<title>project_customfield_sbf</title>
+<description>Project Form -&gt; Customfield Subform</description>
+</_permission>
+<_permission>
+<id>14075</id>
+<title>request_edit_customer_read</title>
+<description>Request Form -&gt; Show Customers</description>
+</_permission>
+<_permission>
+<id>15082</id>
+<title>request_edit_IV</title>
+<description>Request Form -&gt; Allow State IV</description>
+</_permission>
+<_permission>
+<id>15226</id>
+<title>request_material_sbf</title>
+<description>Request Form -&gt; Material Subform</description>
+</_permission>
+<_permission>
+<id>15227</id>
+<title>request_service_sbf</title>
+<description>Request Form -&gt; Service Subform</description>
+</_permission>
+<_permission>
+<id>15254</id>
+<title>service</title>
+<description>Service Datasheet</description>
+</_permission>
+<_permission>
+<id>15255</id>
+<title>service_edit</title>
+<description>Service Form</description>
+</_permission>
+<_permission>
+<id>15256</id>
+<title>btn_service</title>
+<description>Ribbon Control -&gt; Service</description>
+</_permission>
+<_permission>
+<id>15265</id>
+<title>billing</title>
+<description>Billing Datasheet</description>
+</_permission>
+<_permission>
+<id>15308</id>
+<title>billing_customer</title>
+<description>Billing Customer Datasheet</description>
+</_permission>
+<_permission>
+<id>15310</id>
+<title>billing_customer_edit</title>
+<description>Billing Customer Form</description>
+</_permission>
+<_permission>
+<id>15320</id>
+<title>billing_position_sbf</title>
+<description>Billing Customer Form - &gt; Position Subform</description>
+</_permission>
+<_permission>
+<id>15333</id>
+<title>btn_billing</title>
+<description>Ribbon Control -&gt; Button Billing</description>
+</_permission>
+<_permission>
+<id>15392</id>
+<title>task_material_sbf</title>
+<description>Task Form -&gt; Material Subform</description>
+</_permission>
+<_permission>
+<id>15393</id>
+<title>task_service_sbf</title>
+<description>Task Form -&gt; Service Subform</description>
+</_permission>
+<_permission>
+<id>15398</id>
+<title>batch_position_sbf</title>
+<description>Batch Form -&gt; Position Subform</description>
+</_permission>
+<_permission>
+<id>15536</id>
+<title>template</title>
+<description>Template Datasheet</description>
+</_permission>
+<_permission>
+<id>15539</id>
+<title>template_edit</title>
+<description>Template Form</description>
+</_permission>
+<_permission>
+<id>15540</id>
+<title>template_profile_sbf</title>
+<description>Template Form -&gt; Profile Subform</description>
+</_permission>
+<_permission>
+<id>15551</id>
+<title>btn_template</title>
+<description>Ribbon Control -&gt; Button Template</description>
+</_permission>
+</dataroot>
+</root>

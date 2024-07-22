@@ -7,7 +7,7 @@ Attribute VB_Name = "Deployment"
 Option Compare Database
 Option Explicit
 
-Public Sub Prepare()
+Public Sub Prepare(Optional ByVal deploy As Boolean = True)
 '-------------------------------------------------------------------------------
 'Function:          PrepareSetup
 'Date:              2022 February
@@ -38,20 +38,23 @@ Public Sub Prepare()
     CreateTable "role_permission", "_role_permission"
     CopyTable "role_permission", "_role_permission"
     
-    ' Unlink DSN less tables
-    SysCmd acSysCmdSetStatus, "Unlink remote tables"
-    UnAttachDSNLessTables config.DSNLessTables
+    If deploy Then
+        ' Unlink DSN less tables
+        SysCmd acSysCmdSetStatus, "Unlink remote tables"
+        UnAttachDSNLessTables config.DSNLessTables
+        
+        ' Reset db settings
+        SysCmd acSysCmdSetStatus, "Reset database"
+        CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, navpane = 0, devmode = 0"
+        
+        'Disable shift
+        SysCmd acSysCmdSetStatus, "Disable shift"
+        DisableShift
+        
+        'Set deployment mode
+        pDeploy = True
+    End If
     
-    ' Reset db settings
-    SysCmd acSysCmdSetStatus, "Reset database"
-    CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, navpane = 0, devmode = 0"
-    
-    'Disable shift
-    SysCmd acSysCmdSetStatus, "Disable shift"
-    DisableShift
-    
-    'Set deployment mode
-    pDeploy = True
     SysCmd acSysCmdSetStatus, "Preparation finished"
 End Sub
 

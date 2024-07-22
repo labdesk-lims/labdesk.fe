@@ -1,4 +1,4 @@
-![Screenshot 2022-05-06 084755](https://user-images.githubusercontent.com/77008074/167081062-e7dbc084-dfbc-4f50-a37c-6aa4e201300c.png)
+![LOGO](https://github.com/user-attachments/assets/56d40260-8dec-4ee1-90c4-ee9ce22335fe)
 
 
 # Introduction
@@ -8,4 +8,4 @@ LABDESK.FE is the frontend source code for LABDESK LIMS. The source encompasses 
 The script is exported from Microsoft Access by the module svm which is included in this repository.
 
 # Licence
-LABDESK LIMS and its components are proprietary software. Further information is available at: https://labdesk.net/licence/
+LABDESK LIMS and its components are available as licence software. Further information is available at: https://labdesk.net/licence/
