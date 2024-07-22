@@ -9,3 +9,4 @@ The script is exported from Microsoft Access by the module svm which is included
 
 # Licence
 LABDESK LIMS and its components are available as licence software. Further information is available at: https://labdesk.net/licence/
+LABDESK LIMS and its components are available as free software. Further information is available at: https://labdesk.net/licence/
