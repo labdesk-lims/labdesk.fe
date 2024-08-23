@@ -5,7 +5,7 @@
 LABDESK.FE is the frontend source code for LABDESK LIMS. The source encompasses all code neccessary to setup the Microsoft Access Frontend including eg. forms, queries and modules.
 
 # Requirements
-The script is exported from Microsoft Access by the module svm which is included in this repository.
+The source code is exported with OASIS available at https://dev2dev.de/
 
 # Licence
 LABDESK LIMS and its components are available as free software. Further information is available at: https://labdesk.net/licence/

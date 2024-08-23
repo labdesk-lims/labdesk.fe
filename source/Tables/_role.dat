@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<TableData>
+  <Rows>
+    <Row_1>
+      <field_0 name="id" binary="false" null="false" value="1"/>
+      <field_1 name="title" binary="false" null="false">Administrator</field_1>
+      <field_2 name="description" binary="false" null="false">&lt;div&gt;Full access. Should only be applied for administrators.&lt;/div&gt;</field_2>
+      <field_3 name="hourly_rate" binary="false" null="false" value="120"/>
+      <field_4 name="administrative" binary="false" null="false" value="true"/>
+      <field_5 name="deactivate" binary="false" null="false" value="false"/>
+    </Row_1>
+  </Rows>
+</TableData>

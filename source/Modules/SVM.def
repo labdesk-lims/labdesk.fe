@@ -1,0 +1,292 @@
+'################################################################################################
+' This class exports and imports all source code, properties and references.
+' To properly import reference Microsoft.Scripting and Microsoft.XML need to be activated
+'################################################################################################
+
+
+Option Compare Database
+Option Explicit
+
+Private Const VB_MODULE As Integer = 1
+Private Const VB_CLASS As Integer = 2
+Private Const VB_FORM As Integer = 100
+Private Const EXT_TABLE = ".tbl"
+Private Const EXT_QUERY = ".qry"
+Private Const EXT_FORM = ".frm"
+Private Const EXT_REPORT = ".rpt"
+Private Const EXT_MACRO = ".bas"
+Private Const EXT_MODULE = ".bas"
+Private Const EXT_PROPERTY = ".prp"
+Private Const EXT_REFERENCE = ".ref"
+Private Const SRC_FLD As String = "source"
+
+Public Sub Export()
+'-------------------------------------------------------------------------------
+' Function:         Export
+' Date:             2023 December
+' Purpose:          Exports all code as separate files to the folder $SRC_FLD
+' Out:              -
+'-------------------------------------------------------------------------------
+    Dim obj As Object
+    Dim fso As Object
+    Dim strPath As String
+    Dim strFileName As String
+
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    strPath = addFolder(fso, CurrentProject.Path, SRC_FLD)
+    
+    'Tables
+    SysCmd acSysCmdSetStatus, "Export tables . . ."
+    For Each obj In CurrentDb.TableDefs
+        If Left(obj.name, 4) <> "MSys" Then
+            SysCmd acSysCmdSetStatus, "Export table " & obj.name
+            strFileName = addFolder(fso, strPath, "tables") & "\" & obj.name & EXT_TABLE
+            Application.ExportXML acExportTable, obj.name, strFileName, strFileName & ".XSD", strFileName & ".XSL", , acUTF8, acEmbedSchema + acExportAllTableAndFieldProperties
+        End If
+    Next
+    
+    'Queries
+    SysCmd acSysCmdSetStatus, "Export queries . . ."
+    For Each obj In CurrentDb.QueryDefs
+        If Left(obj.name, 1) <> "~" Then
+            SysCmd acSysCmdSetStatus, "Export query " & obj.name
+            strFileName = addFolder(fso, strPath, "queries") & "\" & obj.name & EXT_QUERY
+            Application.SaveAsText acQuery, obj.name, strFileName
+        End If
+    Next
+    
+    'Forms
+    SysCmd acSysCmdSetStatus, "Export forms . . ."
+    For Each obj In CurrentProject.AllForms
+        SysCmd acSysCmdSetStatus, "Export form " & obj.name
+        strFileName = addFolder(fso, strPath, "forms") & "\" & obj.name & EXT_FORM
+        Application.SaveAsText acForm, obj.name, strFileName
+    Next
+    
+    'Reports
+    SysCmd acSysCmdSetStatus, "Export reports . . ."
+    For Each obj In CurrentProject.AllReports
+        SysCmd acSysCmdSetStatus, "Export report " & obj.name
+        strFileName = addFolder(fso, strPath, "reports") & "\" & obj.name & EXT_REPORT
+        Application.SaveAsText acReport, obj.name, strFileName
+    Next
+
+    'Macros
+    SysCmd acSysCmdSetStatus, "Export macros . . ."
+    For Each obj In CurrentProject.AllMacros
+        SysCmd acSysCmdSetStatus, "Export macro " & obj.name
+        strFileName = addFolder(fso, strPath, "macros") & "\" & obj.name & EXT_MACRO
+        Application.SaveAsText acMacro, obj.name, strFileName
+    Next
+    
+    'Modules
+    SysCmd acSysCmdSetStatus, "Export modules . . ."
+    For Each obj In Application.VBE.ActiveVBProject.VBComponents
+        SysCmd acSysCmdSetStatus, "Export  module " & obj.name
+        strFileName = addFolder(fso, strPath, "modules") & "\" & obj.name & EXT_MODULE
+        Select Case obj.type
+            Case VB_MODULE
+                obj.Export strFileName
+            Case VB_CLASS
+                obj.Export strFileName
+            Case VB_FORM
+                ' Do not export form modules (already exported the complete forms)
+            Case Else
+                Debug.Print "Unknown module type: " & obj.type, obj.name
+        End Select
+    Next
+    
+    'Properties
+    SysCmd acSysCmdSetStatus, "Export properties . . ."
+    strFileName = addFolder(fso, strPath, "properties") & "\" & "properties" & EXT_PROPERTY
+    Application.SaveAsAXL acDatabaseProperties, CurrentProject.name, strFileName
+    
+    'References
+    SysCmd acSysCmdSetStatus, "Export references . . ."
+    strFileName = addFolder(fso, strPath, "references") & "\" & "references" & EXT_REFERENCE
+    ExportReferences strFileName
+    
+    SysCmd acSysCmdSetStatus, "Export successfully finished!"
+End Sub
+
+Public Sub Import()
+'-------------------------------------------------------------------------------
+' Function:         Import
+' Date:             2023 December
+' Purpose:          Imports all code as separate files to the folder $SRC_FLD
+' Note:             For proper import all tables need to be attached dto atabase
+' Out:              -
+'-------------------------------------------------------------------------------
+    Dim obj As Object
+    Dim fso As Object
+    Dim oFile As File
+    Dim strPath As String
+    Dim strFileName As String
+
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    strPath = addFolder(fso, CurrentProject.Path, SRC_FLD)
+    
+    'Tables
+    SysCmd acSysCmdSetStatus, "Import tables . . ."
+    For Each oFile In fso.GetFolder(strPath & "\tables").files
+        SysCmd acSysCmdSetStatus, "Import table " & oFile.Path
+        If fso.GetExtensionName(oFile.Path) = Replace(EXT_TABLE, ".", "") Then
+            DeleteObject acTable, fso.GetBaseName(oFile.Path)
+            Application.ImportXML oFile.Path, acStructureAndData
+        End If
+    Next
+    
+    'Queries
+    SysCmd acSysCmdSetStatus, "Import queries . . ."
+     For Each oFile In fso.GetFolder(strPath & "\queries").files
+        SysCmd acSysCmdSetStatus, "Import query " & oFile.Path
+        If fso.GetExtensionName(oFile.Path) = Replace(EXT_QUERY, ".", "") Then
+            DeleteObject acQuery, fso.GetBaseName(oFile.Path)
+            Application.LoadFromText acQuery, fso.GetBaseName(oFile.Path), oFile.Path
+        End If
+    Next
+    
+    'Forms
+    SysCmd acSysCmdSetStatus, "Import forms . . ."
+     For Each oFile In fso.GetFolder(strPath & "\forms").files
+        SysCmd acSysCmdSetStatus, "Import form " & oFile.Path
+        If fso.GetExtensionName(oFile.Path) = Replace(EXT_FORM, ".", "") Then
+            DeleteObject acForm, fso.GetBaseName(oFile.Path)
+            Application.LoadFromText acForm, fso.GetBaseName(oFile.Path), oFile.Path
+        End If
+    Next
+    
+    'Reports
+    SysCmd acSysCmdSetStatus, "Import reports . . ."
+    For Each oFile In fso.GetFolder(strPath & "\reports").files
+        SysCmd acSysCmdSetStatus, "Import report " & oFile.Path
+        If fso.GetExtensionName(oFile.Path) = Replace(EXT_REPORT, ".", "") Then
+            DeleteObject acReport, fso.GetBaseName(oFile.Path)
+            Application.LoadFromText acReport, fso.GetBaseName(oFile.Path), oFile.Path
+        End If
+    Next
+    
+    'Macros
+    SysCmd acSysCmdSetStatus, "Import macros . . ."
+    For Each oFile In fso.GetFolder(strPath & "\macros").files
+        SysCmd acSysCmdSetStatus, "Import macro " & oFile.Path
+        If fso.GetExtensionName(oFile.Path) = Replace(EXT_MACRO, ".", "") Then
+            DeleteObject acMacro, fso.GetBaseName(oFile.Path)
+            Application.LoadFromText acMacro, fso.GetBaseName(oFile.Path), oFile.Path
+        End If
+    Next
+    
+    'Modules
+    SysCmd acSysCmdSetStatus, "Import modules . . ."
+    For Each oFile In fso.GetFolder(strPath & "\modules").files
+        SysCmd acSysCmdSetStatus, "Import module " & oFile.Path
+        If fso.GetExtensionName(oFile.Path) = Replace(EXT_MODULE, ".", "") And fso.GetBaseName(oFile.Path) <> "Svm" Then
+            DeleteObject acModule, fso.GetBaseName(oFile.Path)
+            Application.VBE.ActiveVBProject.VBComponents.Import oFile.Path
+        End If
+    Next
+    
+    'Properties
+    SysCmd acSysCmdSetStatus, "Import properties . . ."
+    For Each oFile In fso.GetFolder(strPath & "\properties").files
+        If fso.GetExtensionName(oFile.Path) = Replace(EXT_PROPERTY, ".", "") Then
+            Application.LoadFromAXL acDatabaseProperties, fso.GetBaseName(oFile.Path), oFile.Path
+        End If
+    Next
+    
+    'References
+    SysCmd acSysCmdSetStatus, "Import references . . ."
+    For Each oFile In fso.GetFolder(strPath & "\references").files
+        If fso.GetExtensionName(oFile.Path) = Replace(EXT_REFERENCE, ".", "") Then
+            ImportReferences oFile.Path
+        End If
+    Next
+    
+    SysCmd acSysCmdSetStatus, "Import successfully finished!"
+End Sub
+
+Private Function ImportReferences(ByVal fname As String) As Boolean
+    Dim objXML As DOMDocument60
+    Dim objRoot As IXMLDOMElement
+    Dim objL1 As Object
+    Dim objL2 As Object
+    Dim str As String
+    
+    Set objXML = New DOMDocument60
+    
+    If Not objXML.Load(fname) Then Err.Raise vbObjectError + 513, , "Loading references failed."
+    
+    Set objRoot = objXML.DocumentElement
+    
+    For Each objL1 In objXML.DocumentElement.ChildNodes
+        For Each objL2 In objL1.ChildNodes
+            If objL2.nodeName = "FullPath" Then
+                str = Replace(objL2.Text, "%SystemRoot%", Environ$("SystemRoot"))
+                str = Replace(str, "%CommonProgramFiles%", Environ$("CommonProgramFiles"))
+                str = Replace(str, "%ProgramFiles%", Environ$("ProgramFiles"))
+                str = Replace(str, "%CurrentPath%", CurrentProject.Path)
+                
+                If Not ReferenceExists(str) Then Access.References.AddFromFile str
+            End If
+        Next
+    Next
+    
+    ImportReferences = True
+End Function
+
+Private Function ExportReferences(ByVal fname As String) As Boolean
+    Dim obj As Object
+    Dim objFile As Object
+    Dim fso As Object
+    Dim str As String
+    
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    Set objFile = fso.CreateTextFile(fname, True, True)
+    
+    objFile.Write "<?xml version=""1.0""?>" & vbCrLf
+    
+    objFile.Write "<References context=" & """" & Application.References.count & """" & ">" & vbCrLf
+    For Each obj In Application.References
+        str = Replace(obj.fullPath, Environ$("SystemRoot"), "%SystemRoot%")
+        str = Replace(str, Environ$("CommonProgramFiles"), "%CommonProgramFiles%")
+        str = Replace(str, Environ$("ProgramFiles"), "%ProgramFiles%")
+        str = Replace(str, CurrentProject.Path, "%CurrentPath%")
+        
+        objFile.Write "  <Reference>" & vbCrLf
+        objFile.Write "    <Name>" & obj.name & "</Name>" & vbCrLf
+        objFile.Write "    <FullPath>" & str & "</FullPath>" & vbCrLf
+        objFile.Write "    <GUID>" & obj.GUID & "</GUID>" & vbCrLf
+        objFile.Write "    <MajorValue>" & obj.Major & "</MajorValue>" & vbCrLf
+        objFile.Write "    <MinorValue>" & obj.Minor & "</MinorValue>" & vbCrLf
+        objFile.Write "  </Reference>" & vbCrLf
+    Next
+    objFile.Write "</References>" & vbCrLf
+    
+    ExportReferences = True
+End Function
+
+Private Function ReferenceExists(ByVal fname As String) As Boolean
+    Dim obj As Object
+    For Each obj In Access.References
+        If fname = obj.fullPath Then
+            ReferenceExists = True
+            Exit Function
+        End If
+    Next
+    ReferenceExists = False
+End Function
+
+Private Function addFolder(ByRef fso As Object, ByVal strPath As String, ByVal strAdd As String) As String
+    addFolder = strPath & "\" & strAdd
+    If Not fso.FolderExists(addFolder) Then MkDir addFolder
+End Function
+
+Private Function DeleteObject(acObject As AcObjectType, name As String) As Boolean
+On Error GoTo Skip
+    DoCmd.DeleteObject acObject, name
+    DeleteObject = True
+    Exit Function
+Skip:
+    DeleteObject = False
+    Exit Function
+End Function

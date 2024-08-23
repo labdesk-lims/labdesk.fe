@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<TableData>
+  <Rows>
+    <Row_1>
+      <field_0 name="id" binary="false" null="false" value="1664"/>
+      <field_1 name="key" binary="false" null="false" value="7"/>
+      <field_2 name="value_txt" binary="false" null="false">RPT-labreport_single</field_2>
+    </Row_1>
+    <Row_2>
+      <field_0 name="id" binary="false" null="false" value="1665"/>
+      <field_1 name="key" binary="false" null="false" value="16"/>
+      <field_2 name="value_txt" binary="false" null="false">RPT-labreport_multi</field_2>
+    </Row_2>
+  </Rows>
+</TableData>
