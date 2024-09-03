@@ -109,7 +109,7 @@ Skip:
         cmbBtn_CreateNew.BeginGroup = True
         cmbBtn_CreateNew.FaceId = 19
         cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_duplicate", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "duplicate"
+        cmbBtn_CreateNew.Parameter = "duplicate_record"
         cmbBtn_CreateNew.OnAction = "fnCall"
     End If
     
