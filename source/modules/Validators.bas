@@ -138,5 +138,5 @@ Public Sub ComboBoxSearch(ByRef combo As comboBox, ByVal lookupField As String, 
     Dim strSQL As String
     strSQL = combo.RowSource
     combo.RowSource = "SELECT " & lookupField & ", " & pk & " FROM (" & Replace(strSQL, ";", "") & ") WHERE " & lookupField & " Like '*" & combo.Text & "*'"
-    'combo.Dropdown <- activate to open dropdown combobox automatically
+    'combo.Dropdown '<- activate to open dropdown combobox automatically
 End Sub

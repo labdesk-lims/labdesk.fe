@@ -13,7 +13,15 @@ Public Sub Prepare(Optional ByVal deploy As Boolean = True)
 'Date:              2022 February
 'Purpose:           Create to setup a new installation of labdesk
 '-------------------------------------------------------------------------------
-
+    
+    Dim td As TableDef
+    Dim tbl As Variant
+    
+    '//Delete all temporary installation tables
+    For Each tbl In CurrentDb.TableDefs
+        If tbl.name Like "_*" Then CurrentDb.TableDefs.Delete tbl.name
+    Next
+    
     ' Translations
     SysCmd acSysCmdSetStatus, "Copy translations"
     If TableExists("_translation") Then CurrentDb.TableDefs.Delete "_translation"
@@ -43,6 +51,12 @@ Public Sub Prepare(Optional ByVal deploy As Boolean = True)
         SysCmd acSysCmdSetStatus, "Unlink remote tables"
         UnAttachDSNLessTables config.DSNLessTables
         
+        'Hide the navigation pane
+        HideNavPane True
+    
+        'Disable full menu
+        AddAppProperty "AllowFullMenus", dbBoolean, False
+    
         ' Reset db settings
         SysCmd acSysCmdSetStatus, "Reset database"
         CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, navpane = 0, devmode = 0"
@@ -71,15 +85,6 @@ Public Sub Install()
     UpdateRolePermission
     AddAdmin
     
-    'Hide the navigation pane
-    HideNavPane True
-    
-    'Disable full menu
-    AddAppProperty "AllowFullMenus", dbBoolean, False
-    
-    'Disable shift
-    DisableShift
-    
     'Set Frontend Version
     SetFeVersion
 End Sub
@@ -95,15 +100,6 @@ Public Sub Update()
     UpdateRole
     UpdatePermission
     UpdateRolePermission
-    
-    'Hide the navigation pane
-    HideNavPane True
-    
-    'Disable full menu
-    AddAppProperty "AllowFullMenus", dbBoolean, False
-    
-    'Disable shift
-    DisableShift
     
     'Set Frontend Version
     SetFeVersion
