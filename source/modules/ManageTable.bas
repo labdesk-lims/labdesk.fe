@@ -341,6 +341,132 @@ Exit_Function:
     Set rx = Nothing
     Exit Function
 Catch_Error:
-    'MsgBox "Error (mdlDbProcedures - GetMultiReport): " & Err.description, vbCritical, "Error"
+    ' MsgBox "Error (mdlDbProcedures - CreateMultiReportTable): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function CreateHorizontalReportTable(ByVal table As String, ByVal request As Long) As Recordset
+'-------------------------------------------------------------------------------
+'Function:      CreateHorizontalReportTable
+'Date:          2024 September
+'Purpose:       Create a RecordSet for a multi sample report
+'Parameters:
+'-> table:      Name of the table where data will be stored
+'-> request:    Request profiles will be chosen from
+'Out:           Updated (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    Dim rs As ADODB.Recordset
+    Dim rx As Recordset
+    Dim i As Long
+    Dim tdf As TableDef
+    Dim fld As field
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "report_horizontal"
+    cmd.Parameters.Append cmd.CreateParameter("@request", adInteger, adParamInput, , Nz(request, 0))
+    
+    Set rs = cmd.Execute
+    
+    If TableExists(table) Then CurrentDb.TableDefs.Delete table
+    
+    Set tdf = CurrentDb.CreateTableDef(table)
+    
+    ' Create columns
+    For i = 0 To rs.Fields.count - 1
+        Set fld = tdf.CreateField(rs.Fields(i).name, dbText, 255)
+        tdf.Fields.Append fld
+    Next i
+    
+    CurrentDb.TableDefs.Append tdf
+    
+    ' Update data
+    Set rx = CurrentDb.OpenRecordset(table, dbOpenDynaset)
+    rs.MoveFirst
+    Do While Not rs.EOF
+        rx.AddNew
+        For i = 0 To rs.Fields.count - 1
+            rx(i) = IIf(rs(i) = "", " ", rs(i))
+        Next i
+        rs.MoveNext
+        rx.Update
+    Loop
+    
+    Set CreateHorizontalReportTable = rx
+    
+Exit_Function:
+    Set cmd = Nothing
+    Set rs = Nothing
+    Set rx = Nothing
+    Exit Function
+Catch_Error:
+    ' MsgBox "Error (mdlDbProcedures - CreateHorizontalReportTable): " & Err.description, vbCritical, "Error"
+    Resume Exit_Function
+End Function
+
+Public Function CreateHorizontalProfileTable(ByVal table As String, ByVal request As Long) As Recordset
+'-------------------------------------------------------------------------------
+'Function:      CreateHorizontalReportTable
+'Date:          2024 September
+'Purpose:       Create a RecordSet for a multi sample report
+'Parameters:
+'-> table:      Name of the table where data will be stored
+'-> request:    Request profiles will be chosen from
+'Out:           Updated (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim cmd As ADODB.Command
+    Dim rs As ADODB.Recordset
+    Dim rx As Recordset
+    Dim i As Long
+    Dim tdf As TableDef
+    Dim fld As field
+    
+    Set cmd = New ADODB.Command
+    
+    cmd.ActiveConnection = ADODBConStr
+    cmd.CommandType = adCmdStoredProc
+    cmd.CommandText = "report_horizontal_profile"
+    cmd.Parameters.Append cmd.CreateParameter("@request", adInteger, adParamInput, , Nz(request, 0))
+    
+    Set rs = cmd.Execute
+    
+    If TableExists(table) Then CurrentDb.TableDefs.Delete table
+    
+    Set tdf = CurrentDb.CreateTableDef(table)
+    
+    ' Create columns
+    For i = 0 To rs.Fields.count - 1
+        Set fld = tdf.CreateField(rs.Fields(i).name, dbText, 255)
+        tdf.Fields.Append fld
+    Next i
+    
+    CurrentDb.TableDefs.Append tdf
+    
+    ' Update data
+    Set rx = CurrentDb.OpenRecordset(table, dbOpenDynaset)
+    rs.MoveFirst
+    Do While Not rs.EOF
+        rx.AddNew
+        For i = 0 To rs.Fields.count - 1
+            rx(i) = IIf(rs(i) = "", " ", rs(i))
+        Next i
+        rs.MoveNext
+        rx.Update
+    Loop
+    
+    Set CreateHorizontalProfileTable = rx
+    
+Exit_Function:
+    Set cmd = Nothing
+    Set rs = Nothing
+    Set rx = Nothing
+    Exit Function
+Catch_Error:
+    ' MsgBox "Error (mdlDbProcedures - CreateHorizontalProfileTable): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function
