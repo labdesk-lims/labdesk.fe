@@ -63,6 +63,12 @@ On Error GoTo Catch_Error
     SysCmd acSysCmdSetStatus, "Try to attach tables"
     DbConnect.ConnectDb DbConnect.GetDbSetting("server"), DbConnect.GetDbSetting("database"), config.DSNLessTables, DbConnect.GetDbSetting("winauth"), DbConnect.GetDbSetting("user"), DbConnect.GetDbSetting("password")
     
+    'Check Version (raise error if backend does not match)
+    SysCmd acSysCmdSetStatus, "Checking version integrity"
+    If DbProcedures.GetBeVersion() <> config.BeVersion Then
+        Err.Raise vbObjectError + 513, , "Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & config.BeVersion & ")"
+    End If
+    
     'Install appplication if no users exists
     If InstallationPending Then
         If MsgBox("Press OK to install application. This may take a while.", vbOKCancel, "Information") = vbOK Then
@@ -95,12 +101,6 @@ On Error GoTo Catch_Error
     'Init context menus
     SysCmd acSysCmdSetStatus, "Init context menus"
     ContextMenus.InitContextMenus
-    
-    'Check Version (raise error if backend does not match)
-    SysCmd acSysCmdSetStatus, "Checking version integrity"
-    If DbProcedures.GetBeVersion() <> config.BeVersion Then
-        Err.Raise vbObjectError + 513, , "Backend version not supported. (Actual: " & DbProcedures.GetBeVersion() & " | Required: " & config.BeVersion & ")"
-    End If
     
     'Check if user exists otherwise add
     SysCmd acSysCmdSetStatus, "Check user registration"
