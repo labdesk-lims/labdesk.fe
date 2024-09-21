@@ -35,5 +35,6 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "ManageReport.TranslateReport: " & Err.description
     Resume Exit_Function
 End Function

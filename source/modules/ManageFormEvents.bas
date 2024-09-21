@@ -35,7 +35,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncFormGetChanged): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.AsyncFormGetChanged: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -118,7 +118,7 @@ Skip_Check:
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncFormInit): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.AsyncFormInit: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -145,7 +145,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncFormOkClick): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.AsyncFOrmOkClick: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -188,7 +188,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncFormCancelClick): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.AsyncFormCancelClick: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -277,7 +277,7 @@ Skip_update:
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncFormUnload): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.AsyncFormUnload: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -344,13 +344,20 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncFormSave): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.AsyncFormSave: " & Err.description
     Resume Exit_Function
 End Sub
 
 Public Sub AsyncFormAuditClick(rfrm As Form)
+    On Error GoTo Catch_Error
     ' Open the audit log form
-    'If Not IsNull(rfrm.id) Then DoCmd.OpenForm "audit", acNormal, , "table_name = '" & rfrm.DataTable & "' AND table_id = " & rfrm.id, acFormReadOnly, acWindowNormal
+    If Not IsNull(rfrm.ID) Then DoCmd.OpenForm "audit", acNormal, , "table_name = '" & rfrm.DataTable & "' AND table_id = " & rfrm.ID, acFormReadOnly, acWindowNormal
+
+Exit_Function:
+    Exit Sub
+Catch_Error:
+    AddErrorLog Err.Number, "ManageFormEvents.AsyncFormAuditClick: " & Err.description
+    Resume Exit_Function
 End Sub
 
 ' -----------------------------------------------------------------------------------------------
@@ -399,7 +406,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncSubFormInit): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.AsyncSubFormInit: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -422,7 +429,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncSubFormSaveData): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.AsyncSubFormSaveData: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -448,7 +455,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncSubFormUndoChanges): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.AsyncSubFormUndoChanges: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -476,7 +483,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - AsyncSubFormClose): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.AsyncSubFormClose: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -542,7 +549,7 @@ Skip_show:
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - SyncFormOpen): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.SyncFormOpen: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -571,7 +578,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - SyncFormClose): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.SyncFormClose: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -603,7 +610,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - SyncFormIdClick): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.SyncFormIdClick: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -633,7 +640,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageFormEvents - SyncFormAddRecord): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.SyncFormAddRecord: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -720,7 +727,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - SyncSubFormOpen): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.SyncSubFormOpen: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -752,7 +759,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageForm - SyncSubFormIdClick): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageFormEvents.SyncSubFormIdClick: " & Err.description
     Resume Exit_Function
 End Sub
 

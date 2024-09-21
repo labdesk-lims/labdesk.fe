@@ -57,12 +57,19 @@ Private Declare PtrSafe Function SendMessage Lib "user32" _
 Dim hCap As LongPtr
 
 Public Sub CreateCaptureWindow(ByRef picwin As Object, ByVal message As String)
+On Error GoTo Catch_Error
     hCap = capCreateCaptureWindow(message, WS_CHILD Or WS_VISIBLE, 0, 0, picwin.Width, picwin.Height, picwin.Form.hWnd, 0)
     If hCap <> 0 Then
         Call SendMessage(hCap, WM_CAP_DRIVER_CONNECT, 0, 0)
         Call SendMessage(hCap, WM_CAP_SET_PREVIEWRATE, 66, 0&)
         Call SendMessage(hCap, WM_CAP_SET_PREVIEW, CLng(True), 0&)
     End If
+    
+Exit_Function:
+    Exit Sub
+Catch_Error:
+    AddErrorLog Err.Number, "CapCam.CreateCaptureWindows: " & Err.description
+    Resume Exit_Function
 End Sub
 
 Public Function FormatPictureDlg() As Long

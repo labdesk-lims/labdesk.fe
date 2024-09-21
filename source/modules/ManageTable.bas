@@ -43,7 +43,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlAsyncTable - CreateGuid): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageTable.CreateGuid: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -77,7 +77,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlAsyncTable - GetIdentityColumn): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageTable.GetIdentityColumn: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -117,7 +117,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlAsyncTable - CleanTable): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageTable.CleanTable: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -156,7 +156,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlAsyncTable - CreateTable): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageTable.CreateTable: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -192,7 +192,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlAsyncTable - CopyTable): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageTable.CopyTable: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -272,7 +272,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlAsyncTable - UpdateTable): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageTable.UpdateTable: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -341,7 +341,7 @@ Exit_Function:
     Set rx = Nothing
     Exit Function
 Catch_Error:
-    ' MsgBox "Error (mdlDbProcedures - CreateMultiReportTable): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageTable.CreateMultiReportTable: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -404,7 +404,7 @@ Exit_Function:
     Set rx = Nothing
     Exit Function
 Catch_Error:
-    ' MsgBox "Error (mdlDbProcedures - CreateHorizontalReportTable): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageTable.CreateHorizontalReportTable: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -467,6 +467,6 @@ Exit_Function:
     Set rx = Nothing
     Exit Function
 Catch_Error:
-    ' MsgBox "Error (mdlDbProcedures - CreateHorizontalProfileTable): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageTable.CreateHorizontalProfileTable: " & Err.description
     Resume Exit_Function
 End Function

@@ -38,7 +38,7 @@ Skip_show:
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageReportEvents - ReportOpen): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageReportEvents.ReportOpen: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -59,6 +59,6 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlManageReportEvents - ReportClose): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageReportEvents.ReportClose: " & Err.description
     Resume Exit_Function
 End Sub

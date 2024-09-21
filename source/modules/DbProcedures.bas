@@ -46,6 +46,7 @@ Exit_Function:
     Exit Function
 Catch_Error:
     GetFilterSetting = Null
+    AddErrorLog Err.Number, "DbProcedures.GetFilterSetting: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -73,6 +74,7 @@ Exit_Function:
     Set rs = Nothing
     Exit Sub
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.SetFilterSetting: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -117,6 +119,7 @@ Exit_Function:
     Set rs = Nothing
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.SetColumnStyle: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -157,6 +160,7 @@ Exit_Function:
     Exit Function
 Catch_Error:
     cs.Width = -3
+    AddErrorLog Err.Number, "DbProcedures.GetColumnStyle: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -193,6 +197,7 @@ Exit_Function:
     Exit Function
 Catch_Error:
     GetFieldValue = Null
+    AddErrorLog Err.Number, "DbProcedures.GetFieldValue: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -225,6 +230,7 @@ Exit_Function:
     Set rs = Nothing
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.SetFieldValue: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -254,6 +260,7 @@ Exit_Function:
     Exit Function
 Catch_Error:
     GetFeVersion = ""
+    AddErrorLog Err.Number, "DbProcedures.GetFeVersion: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -282,14 +289,15 @@ Exit_Function:
     Set db = Nothing
     Exit Sub
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.SetFeVersion: " & Err.description
     Resume Exit_Function
 End Sub
 
 Public Function InstallationPending() As Boolean
 '-------------------------------------------------------------------------------
-' Function:         SetFeVersion
+' Function:         InstallationPending
 ' Date:             2024 February
-' Purpose:          Set the frontend version
+' Purpose:          Check if any user exists
 ' Out:              Version
 '-------------------------------------------------------------------------------
   On Error GoTo Catch_Error
@@ -306,6 +314,7 @@ Exit_Function:
     Set db = Nothing
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.InstallationPending: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -335,6 +344,7 @@ Exit_Function:
     Exit Function
 Catch_Error:
     GetBeVersion = ""
+    AddErrorLog Err.Number, "DbProcedures.GetBeVersion: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -367,6 +377,7 @@ Exit_Function:
     Exit Function
 Catch_Error:
     GetUserName = Null
+    AddErrorLog Err.Number, "DbProcedures.GetUserName: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -398,6 +409,7 @@ Exit_Function:
     Set rs = Nothing
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.GetUserId: " & Err.description
     GetUserId = Null
     Resume Exit_Function
 End Function
@@ -432,6 +444,7 @@ Exit_Function:
     Set rs = Nothing
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.GetTranslation: " & Err.description
     GetTranslation = item
     Resume Exit_Function
 End Function
@@ -476,6 +489,7 @@ Exit_Function:
     Set rsc = Nothing
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.GetPermission: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -509,7 +523,7 @@ Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlDbProcedures - DuplicateRecord): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "DbProcedures.DuplicateRecord: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -541,7 +555,7 @@ Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlDbProcedures - TestCalculation): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "DbProcedures.TestCalculation: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -572,7 +586,7 @@ Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlDbProcedures - IterateCalculation): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "DbProcedures.IterateCalculation: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -608,7 +622,7 @@ Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlDbProcedures - SendMail): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "DbProcedures.SendMail: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -643,7 +657,7 @@ Exit_Function:
     Set db = Nothing
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlDbProcedures - AttachToMailQueue): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "DbProcedures.AttachToMailQueue: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -674,7 +688,7 @@ Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlDbProcedures - CreateSubRequest): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "DbProcedures.CreateSubRequest: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -702,6 +716,7 @@ Exit_Function:
     Set rs = Nothing
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.AddUser: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -731,6 +746,7 @@ Exit_Function:
     Set rs = Nothing
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.AddAdmin: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -769,6 +785,7 @@ Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.CreateSPA: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -816,6 +833,7 @@ Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.GetAuditTrail: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -845,7 +863,7 @@ Exit_Function:
     Exit Function
 Catch_Error:
     GetStateCode = Null
-    MsgBox "Error (mdlDbProcedures - GetVersion): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "DbProcedures.GetStateCode: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -877,6 +895,7 @@ Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.GetCustomerID: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -912,6 +931,7 @@ Exit_Function:
 Catch_Error:
     'ReplaceSql = "Error rendering sticker. Check for missing informations."
     ReplaceSql = message
+    AddErrorLog Err.Number, "DbProcedures.ReplaceSQL: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -939,7 +959,7 @@ Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlDbProcedures - PoolMeasurement): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "DbProcedures.PoolMeasurement: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -963,6 +983,7 @@ Exit_Function:
     Exit Function
 Catch_Error:
     SetTableFlag = False
+    AddErrorLog Err.Number, "DbProcedures.SetTableFlag: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -979,7 +1000,11 @@ On Error GoTo Catch_Error
     Set db = CurrentDb()
     Set rs = db.OpenRecordset("SELECT user_name FROM tableflag WHERE table_name = '" & tablename & "' AND table_id = " & tableid, dbOpenDynaset, dbSeeChanges)
     
-    GetTableFlag = rs(0)
+    If Not (rs.EOF And rs.BOF) Then
+        GetTableFlag = rs(0)
+    Else
+        GetTableFlag = Null
+    End If
 
 Exit_Function:
     Set db = Nothing
@@ -987,6 +1012,7 @@ Exit_Function:
     Exit Function
 Catch_Error:
     GetTableFlag = Null
+    AddErrorLog Err.Number, "DbProcedures.GetTableFlag: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -1009,28 +1035,7 @@ Exit_Function:
     Exit Function
 Catch_Error:
     RemoveTableFlag = False
-    Resume Exit_Function
-End Function
-
-Public Function AddErrorLog(ByVal ID As Long, ByVal description As String) As Boolean
-'-------------------------------------------------------------------------------
-' Function:  AddErrorLog
-' Date:      2022 November
-' Purpose:   Add a log entry into table errorlog
-' In:        error_id, error_description
-'-------------------------------------------------------------------------------
-On Error GoTo Catch_Error
-    Dim db As database
-    
-    Set db = CurrentDb()
-    db.Execute "INSERT INTO errorlog (error_id, error_description) VALUES (" & ID & ", '" & description & "')"
-    
-    AddErrorLog = True
-
-Exit_Function:
-    Set db = Nothing
-    Exit Function
-Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.RemoveTableFlag: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -1040,6 +1045,7 @@ Public Function GetReports() As Variant
 ' Date:      2023 January
 ' Purpose:   Get a list of all reports
 '-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
     Dim rpt As AccessObject, db As Object, a() As String, i As Integer
     
     Set db = Application.CurrentProject
@@ -1061,6 +1067,13 @@ Public Function GetReports() As Variant
     Next rpt
     
     GetReports = a
+    
+Exit_Function:
+    Exit Function
+Catch_Error:
+    GetReports = Null
+    AddErrorLog Err.Number, "DbProcedures.GetReports: " & Err.description
+    Resume Exit_Function
 End Function
 
 Public Function UploadPicture(ByRef fref As Object, Optional FileName As String) As Boolean
@@ -1095,6 +1108,7 @@ Exit_Function:
     Exit Function
 Catch_Error:
     MsgBox "Error (dbProdures - UploadPicture): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "DbProcedures.UploadPicture: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -1121,14 +1135,18 @@ On Error GoTo Catch_Error
     If Not oFSO.FolderExists(fpath) Then MkDir fpath
     
     fname = fpath & "\" & "tmp_" & CreateGuid()
+
     If Not IsNull(fref) Then DbBlob.BlobToFile fname, fref
-    pref.Picture = fname
     
-    ShowPicture = True
+    If FileExists(fname) Then
+        pref.Picture = fname
+        ShowPicture = True
+    End If
     
 Exit_Function:
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.ShowPicture: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -1200,6 +1218,7 @@ Exit_Handler:
     Exit Function
 
 Err_Handler:
+    AddErrorLog Err.Number, "DbProcedures.ConcatRelated: " & Err.description
     Resume Exit_Handler
 End Function
 
@@ -1223,6 +1242,7 @@ Exit_Function:
     Set db = Nothing
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.ResetLoginPassword: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -1251,7 +1271,7 @@ Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlDbProcedures - GetDbDate): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "DbProcedures.GetDbDate: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -1280,6 +1300,29 @@ Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlDbProcedures - RunTemplate): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "DbProcedures.RunTemplate: " & Err.description
+    Resume Exit_Function
+End Function
+
+Public Function AddErrorLog(ByVal ID As Long, ByVal description As String) As Boolean
+'-------------------------------------------------------------------------------
+' Function:  AddErrorLog
+' Date:      2022 November
+' Purpose:   Add a log entry into table errorlog
+' In:        error_id, error_description
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    
+    Set db = CurrentDb()
+    If GetFieldValue("setup", "verbous") Then MsgBox "(" & ID & ") " & description, vbExclamation, "Labdesk Error"
+    db.Execute "INSERT INTO errorlog (error_id, error_description) VALUES (" & ID & ", '" & description & "')"
+    
+    AddErrorLog = True
+
+Exit_Function:
+    Set db = Nothing
+    Exit Function
+Catch_Error:
     Resume Exit_Function
 End Function

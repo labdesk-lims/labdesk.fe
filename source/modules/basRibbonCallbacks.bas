@@ -160,6 +160,9 @@ Sub GetEnabled(control As IRibbonControl, ByRef enabled)
         Case "btn_mailqueue"
             enabled = DbProcedures.GetPermission(control.ID).Read
             
+        Case "btn_error"
+            enabled = DbProcedures.GetPermission(control.ID).Read
+            
         Case "btn_billing"
             enabled = DbProcedures.GetPermission(control.ID).Read
         
@@ -317,6 +320,11 @@ Sub GetVisible(control As IRibbonControl, ByRef visible)
             ' In Group: grp_config
             visible = True
         Case "btn_mailqueue"
+            ' Button
+            ' In Tab:   tab_setup
+            ' In Group: grp_config
+            visible = True
+        Case "btn_error"
             ' Button
             ' In Tab:   tab_setup
             ' In Group: grp_config
@@ -557,6 +565,11 @@ Sub GetLabel(control As IRibbonControl, ByRef label)
             ' In Tab:   tab_setup
             label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
         Case "btn_mailqueue"
+            ' Button
+            ' In Tab:   tab_setup
+            ' In Group: grp_config
+            label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
+        Case "btn_error"
             ' Button
             ' In Tab:   tab_setup
             ' In Group: grp_config
@@ -909,6 +922,10 @@ Sub OnActionButton(control As IRibbonControl)
             ' In Tab:   tab_setup
             ' In Group: grp_config
             DoCmd.OpenForm "mailqueue", acFormDS, , , acFormEdit, acWindowNormal
+        Case "btn_error"
+            ' In Tab:   tab_setup
+            ' In Group: grp_config
+            DoCmd.OpenForm "errorlog", acFormDS, , , acFormEdit, acWindowNormal
         Case "btn_billing"
             ' In Tab:   tab_setup
             ' In Group: grp_config

@@ -16,11 +16,13 @@ Public Function AddAppProperty(strName As String, varType As Variant, varValue A
 ' -> title:     Title of the application
 ' Out:          Done (T/F)
 '-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+
 Dim dbs As Object, prp As Variant
 Const conPropNotFoundError = 3270
  
 Set dbs = CurrentDb
-On Error GoTo Catch_Error
+
 dbs.Properties(strName) = varValue
 AddAppProperty = True
  
@@ -47,7 +49,7 @@ Public Sub HideNavPane(bVisible As Boolean)
 ' -> bVisible   True/False - whether the Nav Pane should be visible or not
 ' Out:          -
 '-------------------------------------------------------------------------------
-    On Error GoTo Catch_Error
+On Error GoTo Catch_Error
  
     If SysCmd(acSysCmdRuntime) = False Then
         If bVisible = True Then
@@ -63,7 +65,7 @@ Public Sub HideNavPane(bVisible As Boolean)
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlAutoExec - HideNavPane): " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageGui.HideNavPane: " & Err.description
     Resume Exit_Function
 End Sub
 
@@ -75,7 +77,7 @@ Function DisableShift()
 ' Parameters:   -
 ' Out:          -
 '-------------------------------------------------------------------------------
-    On Error GoTo errDisableShift
+On Error GoTo Catch_Error
     
     Dim db As DAO.database
     Dim prop As DAO.Property
@@ -85,22 +87,19 @@ Function DisableShift()
     
     'This next line disables the shift key on startup.
     db.Properties("AllowByPassKey") = False
-    
-    'The function is successful.
+        
+Exit_Function:
     Exit Function
-    
-errDisableShift:
-    'The first part of this error routine creates the "AllowByPassKey
-    'property if it does not exist.
+Catch_Error:
     If Err = conPropNotFound Then
-    Set prop = db.CreateProperty("AllowByPassKey", _
-    dbBoolean, False)
-    db.Properties.Append prop
-    Resume Next
+        Set prop = db.CreateProperty("AllowByPassKey", dbBoolean, False)
+        db.Properties.Append prop
+        Resume Next
     Else
-    MsgBox "Function 'DisableShift' did not complete successfully."
-    Exit Function
+        MsgBox "Function 'DisableShift' did not complete successfully."
     End If
+    AddErrorLog Err.Number, "ManageGui.DisableShift: " & Err.description
+    Resume Exit_Function
 End Function
 
 Function EnableShift()
@@ -111,8 +110,7 @@ Function EnableShift()
 ' Parameters:   -
 ' Out:          -
 '-------------------------------------------------------------------------------
-
-On Error GoTo errEnableShift
+On Error GoTo Catch_Error
 
 Dim db As DAO.database
 Dim prop As DAO.Property
@@ -123,21 +121,18 @@ Set db = CurrentDb()
 'This next line of code disables the SHIFT key on startup.
 db.Properties("AllowByPassKey") = True
 
-'function successful
-Exit Function
-
-errEnableShift:
-'The first part of this error routine creates the "AllowByPassKey
-'property if it does not exist.
-If Err = conPropNotFound Then
-Set prop = db.CreateProperty("AllowByPassKey", _
-dbBoolean, True)
-db.Properties.Append prop
-Resume Next
-Else
-MsgBox "Function 'EnableShift' did not complete successfully."
-Exit Function
-End If
+Exit_Function:
+    Exit Function
+Catch_Error:
+    If Err = conPropNotFound Then
+        Set prop = db.CreateProperty("AllowByPassKey", dbBoolean, True)
+        db.Properties.Append prop
+        Resume Next
+    Else
+        MsgBox "Function 'EnableShift' did not complete successfully."
+    End If
+    AddErrorLog Err.Number, "ManageGui.EnableShift: " & Err.description
+    Resume Exit_Function
 End Function
 
 Public Sub ResetContextMenu()
@@ -146,6 +141,8 @@ Public Sub ResetContextMenu()
 ' Date:         2022 January
 ' Purpose:      This sub deletes all customized context menus
 '-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+
 Dim bar As CommandBar
 
 'Reset ContextMenu
@@ -155,4 +152,10 @@ For Each bar In CommandBars
         bar.Delete
     End If
 Next bar
+
+Exit_Function:
+    Exit Sub
+Catch_Error:
+    AddErrorLog Err.Number, "ManageGui.ResetContextMenu: " & Err.description
+    Resume Exit_Function
 End Sub

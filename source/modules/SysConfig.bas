@@ -22,15 +22,15 @@ Private Const pConnectionTimeout = 3
 Private Const pAppId = "labdesk-ui"
 
 ' Application title shown as form title
-Private Const pAppTitle = "LABDESK - Laboratory Information Management System"
+Private Const pAppTitle = "LABDESK by KOLUMA GmbH - Laboratory Information Management System"
 
 ' Background worker timer interval in milliseconds
 Private Const pBackgroundWorkerInterval = 3 * 60000
 
 ' Semantic Versioning according to https://semver.org/
 ' MAJOR-MINOR-PATCH
-Private Const pFeVersion = "v2.2.0" 'Presented frontend version
-Private Const pBeVersion = "v2.3.1" 'Required backend version
+Private Const pFeVersion = "v2.3.0" 'Presented frontend version
+Private Const pBeVersion = "v2.4.1" 'Required backend version
 
 ' Identifiers used for reports and labels
 Private Const pReportId = "RPT-" 'Identifier for selectable reports

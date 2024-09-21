@@ -101,7 +101,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAAAAAAAAAAAAAAA=
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-09-20T15:18:20">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-09-21T20:08:34">
 <USysRibbons>
 <lngID>4</lngID>
 <RibbonName>custom_ribbon</RibbonName>
@@ -138,6 +138,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAAAAAAAAAAAAAAA=
         &lt;/group&gt;
         &lt;group id=&quot;grp_log&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
           &lt;button id=&quot;btn_mailqueue&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_mailqueue.png;CustomPicturePath:=C:\Users\lkoge\Documents\GitHub\labdesk.fe\assets\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_error&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_warning.png;CustomPicturePath:=C:\Users\lkoge\Documents\GitHub\labdesk.fe\assets\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
         &lt;/group&gt;
         &lt;group id=&quot;grp_info&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
           &lt;button id=&quot;btn_info&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_info.png;CustomPicturePath:=C:\Users\lkoge\Documents\LABDESK\labdesk.fe\assets\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;

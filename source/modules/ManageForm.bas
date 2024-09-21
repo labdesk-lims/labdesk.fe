@@ -48,6 +48,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "ManageForm.FormExists: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -67,6 +68,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "ManageForm.IsFormOpen: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -120,6 +122,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
+    AddErrorLog Err.Number, "ManageForm.TranslateForm: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -180,7 +183,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox Err.description
+    AddErrorLog Err.Number, "ManageForm.CustomizeForm: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -232,7 +235,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlManageForm - ConfigAsyncForm): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageForm.ConfigAsynForm: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -287,7 +290,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlManageForm - ConfigAsyncSubForm): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageForm.ConfigAsyncSubForm: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -339,6 +342,6 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (mdlManageForm - ConfigSyncForm): " & rfrm.name & ", " & Err.description, vbCritical, "Error"
+    AddErrorLog Err.Number, "ManageForm.ConfigSyncForm: " & Err.description
     Resume Exit_Function
 End Function

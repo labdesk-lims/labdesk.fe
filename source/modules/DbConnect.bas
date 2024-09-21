@@ -232,6 +232,6 @@ Exit_Function:
     Exit Function
 Catch_Error:
     UnAttachDSNLessTables = False
-    'MsgBox "Error (mdlConnect - UnlinkDSNLessTables): " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlConnect - UnlinkDSNLessTables): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function

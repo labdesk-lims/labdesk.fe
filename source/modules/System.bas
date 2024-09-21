@@ -57,7 +57,7 @@ Exit_Function:
     Set oFSO = Nothing
     Exit Function
 Catch_Error:
-    'MsgBox "Error (mdlSystem - CleanCache): " & Err.description, vbCritical, "Error"
+    'MsgBox "Error (System - CleanCache): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function
 
@@ -97,7 +97,10 @@ End Function
 '-------------------------------------------------------------------------------
 
 Public Function FileExists(ByVal path_ As String) As Boolean
-    FileExists = (Len(Dir(path_)) > 0)
+    Dim fpath As Object
+    
+    Set fpath = CreateObject("Scripting.FileSystemObject")
+    FileExists = fpath.FileExists(path_)
 End Function
     
 Public Function GetFileName(ByVal strFile As String) As String

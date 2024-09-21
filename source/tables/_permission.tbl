@@ -52,7 +52,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-09-20T15:18:19">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-09-21T20:08:33">
 <_permission>
 <id>1</id>
 <title>role</title>
@@ -942,6 +942,14 @@
 <id>178</id>
 <title>btn_template</title>
 <description>Ribbon Control -&gt; Button Template</description>
+</_permission>
+<_permission>
+<id>346</id>
+<title>btn_error</title>
+</_permission>
+<_permission>
+<id>347</id>
+<title>errorlog</title>
 </_permission>
 </dataroot>
 </root>
