@@ -170,6 +170,14 @@ Skip:
         cmbBtn_CreateNew.Parameter = "audit_trail_subform"
         cmbBtn_CreateNew.OnAction = "fnCall"
         
+        'Button to select columns
+        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
+        cmbBtn_CreateNew.BeginGroup = True
+        cmbBtn_CreateNew.FaceId = 8
+        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_clmn_dlg", DbConnect.GetDbSetting("language"))
+        cmbBtn_CreateNew.Parameter = "clmn_dlg"
+        cmbBtn_CreateNew.OnAction = "fnCall"
+        
         'Refresh form
         Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
         cmbBtn_CreateNew.BeginGroup = True

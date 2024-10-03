@@ -101,7 +101,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAAAAAAAAAAAAAAA=
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-09-21T20:08:34">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-10-03T11:42:27">
 <USysRibbons>
 <lngID>4</lngID>
 <RibbonName>custom_ribbon</RibbonName>
@@ -132,6 +132,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAAAAAAAAAAAAAAA=
           &lt;button id=&quot;btn_user&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_user.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
           &lt;button id=&quot;btn_role&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_role.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
           &lt;button id=&quot;btn_workflow&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_workflow.png;CustomPicturePath:=C:\Users\lkoge\OneDrive\Desktop\nobel\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
+          &lt;button id=&quot;btn_mdi&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_mdi.png;CustomPicturePath:=C:\Users\lkoge\Documents\GitHub\labdesk.fe\assets\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
         &lt;/group&gt;
         &lt;group id=&quot;grp_billing&quot; autoScale=&quot;false&quot; centerVertically=&quot;false&quot; getLabel=&quot;GetLabel&quot; getVisible =&quot;GetVisible&quot; tag = &quot;RibbonName:=;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=;CustomPicturePath:=&quot; &gt;
           &lt;button id=&quot;btn_billing&quot; size=&quot;large&quot; getLabel=&quot;GetLabel&quot; getImage=&quot;GetImages&quot; tag=&quot;RibbonName:=custom_ribbon;inMenu:=;CustomTagValue1:=;CustomTagValue2:=;CustomTagValue3:=;CustomPicture:=btn_billing.png;CustomPicturePath:=C:\Users\lkoge\Documents\LABDESK\labdesk.fe\assets\img\&quot; onAction=&quot;OnActionButton&quot; getVisible=&quot;GetVisible&quot; getEnabled=&quot;GetEnabled&quot; /&gt;
@@ -209,6 +210,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAAAAAAAAAAAAAAA=
         &lt;group idMso=&quot;GroupFontAccess&quot; getVisible =&quot;GetVisible&quot; &gt;
         &lt;/group&gt;
         &lt;group idMso=&quot;GroupExport&quot; getVisible =&quot;GetVisible&quot; &gt;
+        &lt;/group&gt;
+        &lt;group idMso=&quot;GroupWindowAccess&quot; getVisible =&quot;GetVisible&quot; &gt;
         &lt;/group&gt;
       &lt;/tab&gt;
     &lt;/tabs&gt;

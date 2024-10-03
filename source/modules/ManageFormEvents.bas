@@ -572,9 +572,6 @@ On Error GoTo Catch_Error
         End If
     Next ctrl
     
-    ' Save filter setting if apply
-    If rfrm.FilterOn Then DbProcedures.SetFilterSetting rfrm.name, rfrm.filter
-    
 Exit_Function:
     Exit Sub
 Catch_Error:

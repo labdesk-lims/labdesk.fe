@@ -29,7 +29,7 @@ Public Function InitApp() As Boolean
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     config.Init False, ".labdesk"
-        
+    
     'Deploy dependencies
     SysCmd acSysCmdSetStatus, "Deploy dependencies"
     Deployment.DeployDependency
@@ -51,17 +51,25 @@ On Error GoTo Catch_Error
     SysCmd acSysCmdSetStatus, "Checking Runtime-Mode"
     If Not System.RunTimeMode And Not GetDbSetting("devmode") Then Err.Raise vbObjectError + 513, , "Runtime-Mode switched off. Startup aborted."
     
+login_form:
     'Show login form
     SysCmd acSysCmdSetStatus, "User login"
     DoCmd.OpenForm "login", acNormal, , , acFormEdit, acDialog
     
     'Try to connect to server
     SysCmd acSysCmdSetStatus, "Try to connect to server"
-    If Not PingOk(CStr(Split(DbConnect.GetDbSetting("server"), "/")(0))) Then Err.Raise vbObjectError + 513, , "Can not connect to server " & DbConnect.GetDbSetting("server")
+    If Not PingOk(CStr(Split(DbConnect.GetDbSetting("server"), "/")(0))) Then
+        'Show login form
+        MsgBox "Can not connect to server " & DbConnect.GetDbSetting("server"), vbExclamation
+        GoTo login_form
+    End If
     
     'Try to attach tables
     SysCmd acSysCmdSetStatus, "Try to attach tables"
-    DbConnect.ConnectDb DbConnect.GetDbSetting("server"), DbConnect.GetDbSetting("database"), config.DSNLessTables, DbConnect.GetDbSetting("winauth"), DbConnect.GetDbSetting("user"), DbConnect.GetDbSetting("password")
+    If Not DbConnect.ConnectDb(DbConnect.GetDbSetting("server"), DbConnect.GetDbSetting("database"), config.DSNLessTables, DbConnect.GetDbSetting("winauth"), DbConnect.GetDbSetting("user"), DbConnect.GetDbSetting("password")) Then
+        MsgBox "Wrong login credential provided", vbExclamation
+        GoTo login_form
+    End If
     
     'Check Version (raise error if backend does not match)
     SysCmd acSysCmdSetStatus, "Checking version integrity"

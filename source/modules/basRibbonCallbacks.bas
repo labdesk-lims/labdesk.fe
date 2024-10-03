@@ -247,6 +247,9 @@ Sub GetEnabled(control As IRibbonControl, ByRef enabled)
         Case "btn_workflow"
             enabled = DbProcedures.GetPermission(control.ID).Read
             
+        Case "btn_mdi"
+            enabled = DbProcedures.GetPermission(control.ID).Read
+            
         Case "btn_request"
             enabled = DbProcedures.GetPermission(control.ID).Read
         
@@ -481,6 +484,11 @@ Sub GetVisible(control As IRibbonControl, ByRef visible)
             ' In Tab:   tab_testing
             visible = True
         Case "btn_workflow"
+            ' Button
+            ' In Tab:   tab_testing
+            ' In Group: grp_order
+            visible = True
+        Case "btn_mdi"
             ' Button
             ' In Tab:   tab_testing
             ' In Group: grp_order
@@ -763,6 +771,11 @@ Sub GetLabel(control As IRibbonControl, ByRef label)
             ' In Tab:   tab_testing
             ' In Group: grp_order
             label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
+        Case "btn_mdi"
+            ' Button
+            ' In Tab:   tab_testing
+            ' In Group: grp_order
+            label = GetTranslation("ribbon_bar", control.ID, GetDbSetting("language"))
         Case "btn_request"
             ' Button
             ' In Tab:   tab_testing
@@ -1038,6 +1051,10 @@ Sub OnActionButton(control As IRibbonControl)
             ' In Tab:   tab_testing
             ' In Group: grp_order
             DoCmd.OpenForm "workflow", acFormDS, , , acFormEdit, acWindowNormal
+        Case "btn_mdi"
+            ' In Tab:   tab_testing
+            ' In Group: grp_order
+            useMDIMode
         Case "btn_request"
             ' In Tab:   tab_testing
             ' In Group: grp_order

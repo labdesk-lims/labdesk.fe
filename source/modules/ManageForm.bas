@@ -345,3 +345,26 @@ Catch_Error:
     AddErrorLog Err.Number, "ManageForm.ConfigSyncForm: " & Err.description
     Resume Exit_Function
 End Function
+
+Public Sub useMDIMode()
+'-------------------------------------------------------------------------------
+' Function:  UseMDIMode
+' Date:      2022 November
+' Purpose:   Set the multi document interface mode (MDI)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+
+    If CurrentDb.Properties("UseMDIMode").value Then
+        CurrentDb.Properties("UseMDIMode").value = 0
+        MsgBox GetTranslation("system", "MDIMode-Off", GetDbSetting("language")), vbInformation, GetTranslation("msgbox", "vbInformation", GetDbSetting("language"))
+    Else
+        CurrentDb.Properties("UseMDIMode").value = 1
+        MsgBox GetTranslation("system", "MDIMode-On", GetDbSetting("language")), vbInformation, GetTranslation("msgbox", "vbInformation", GetDbSetting("language"))
+    End If
+    
+Exit_Function:
+    Exit Sub
+Catch_Error:
+    AddErrorLog Err.Number, "ManageForm.UseMDIMode: " & Err.description
+    Resume Exit_Function
+End Sub

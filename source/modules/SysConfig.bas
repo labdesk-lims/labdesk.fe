@@ -22,7 +22,7 @@ Private Const pConnectionTimeout = 3
 Private Const pAppId = "labdesk-ui"
 
 ' Application title shown as form title
-Private Const pAppTitle = "LABDESK by KOLUMA GmbH - Laboratory Information Management System"
+Private Const pAppTitle = "LABDESK - Laboratory Information Management System"
 
 ' Background worker timer interval in milliseconds
 Private Const pBackgroundWorkerInterval = 3 * 60000

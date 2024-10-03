@@ -142,7 +142,10 @@ Public Function ConnectDb(ByVal server As String, ByVal database As String, ByVa
         SetConStr server, database, False, user, password
     End If
     
-    If Not IsValidADODBConnection Then Err.Raise vbObjectError + 513, , "Wrong authentication credentials provided."
+    If Not IsValidADODBConnection Then
+        ConnectDb = False
+        Exit Function
+    End If
     
     AttachDSNLessTables (remoteTables)
     

@@ -50,34 +50,6 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Sub SetFilterSetting(ByVal rfrm As String, filter As String)
-'-------------------------------------------------------------------------------
-' Function:         GetFilterSetting
-' Date:             2025 May
-' Purpose:          Get the actual filter setting
-' In:
-' -> rfrm:          Form of interest to get filter settings from
-' Out:              String Or Null
-'------------------------------------------------------------------------------
-On Error GoTo Catch_Error
-    Dim db As database
-    Dim rs As Recordset
-    
-    Set db = CurrentDb()
-    'Get filter setting
-    Set rs = db.OpenRecordset("SELECT id FROM filter WHERE global = False AND userid = '" & DbProcedures.GetUserName & "' AND form = '" & rfrm & "' AND filter = '" & filter & "'", dbOpenDynaset, dbSeeChanges)
-    
-    If Not rs.EOF Then db.Execute "UPDATE filter SET active = 1 WHERE id = " & rs(0), dbSeeChanges
-    
-Exit_Function:
-    Set db = Nothing
-    Set rs = Nothing
-    Exit Sub
-Catch_Error:
-    AddErrorLog Err.Number, "DbProcedures.SetFilterSetting: " & Err.description
-    Resume Exit_Function
-End Sub
-
 Public Function SetColumnStyle(ByVal rfrm As Form, ByVal clmn As String, ByVal Width As Integer, ByVal hidden As Boolean, ByVal order As Integer) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         SetColumnStyle
