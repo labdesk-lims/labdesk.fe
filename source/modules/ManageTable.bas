@@ -228,7 +228,7 @@ On Error GoTo Catch_Error
                         If fld.type <> dbLongBinary Then
                             rstForm(fld.name).value = fld
                         Else
-                            If Not IsNull(fld) Then rstForm(fld.name).value = fld
+                            If Not IsNull(fld) Then rstForm(fld.name).value = fld Else rstForm(fld.name).value = Null
                         End If
                     End If
                 Next fld

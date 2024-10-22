@@ -487,6 +487,10 @@ On Error GoTo Catch_Error
             cmd.CommandText = "role_duplicate"
             cmd.Parameters.Append cmd.CreateParameter("@pRole", adInteger, adParamInput, , ID)
             cmd.Execute
+        Case "template"
+            cmd.CommandText = "template_duplicate"
+            cmd.Parameters.Append cmd.CreateParameter("@pTemplate", adInteger, adParamInput, , ID)
+            cmd.Execute
         Case Else
             MsgBox GetTranslation("msgbox", "duplication_not_supported", GetDbSetting("language")), vbExclamation, GetTranslation("msgbox", "vbExclamation", GetDbSetting("language"))
     End Select
@@ -1048,7 +1052,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function UploadPicture(ByRef fref As Object, Optional FileName As String) As Boolean
+Public Function UploadPicture(ByRef fref As Object, Optional filename As String) As Boolean
 '-------------------------------------------------------------------------------
 'Function:          UploadPicture
 'Date:              2022 March
@@ -1065,10 +1069,10 @@ On Error GoTo Catch_Error
     Set oShell = CreateObject("WScript.Shell")
     Set oFSO = CreateObject("Scripting.FileSystemObject")
     
-    If FileName = "" Then
+    If filename = "" Then
         fname = Dialog.OpenFileDialog()
     Else
-        fname = FileName
+        fname = filename
     End If
     
     If fname = "" Then Exit Function

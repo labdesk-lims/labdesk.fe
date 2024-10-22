@@ -140,3 +140,7 @@ Public Sub ComboBoxSearch(ByRef combo As comboBox, ByVal lookupField As String, 
     combo.RowSource = "SELECT " & lookupField & ", " & pk & " FROM (" & Replace(strSQL, ";", "") & ") WHERE " & lookupField & " Like '*" & combo.Text & "*'"
     'combo.Dropdown '<- activate to open dropdown combobox automatically
 End Sub
+
+Public Sub EncryptTest()
+    MsgBox RetrieveDecryptAES(StoreEncryptAES("test", "123", 1), "123", 1, True)
+End Sub
