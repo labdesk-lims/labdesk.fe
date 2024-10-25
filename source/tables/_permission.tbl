@@ -52,7 +52,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-10-22T14:07:47">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-10-25T10:28:40">
 <_permission>
 <id>1</id>
 <title>role</title>
@@ -946,10 +946,22 @@
 <_permission>
 <id>346</id>
 <title>btn_error</title>
+<description>Ribbon Control -&gt; Button Error</description>
 </_permission>
 <_permission>
 <id>347</id>
 <title>errorlog</title>
+<description>Errorlog Form</description>
+</_permission>
+<_permission>
+<id>350</id>
+<title>btn_mdi</title>
+<description>Ribbon Control -&gt; Button MDI</description>
+</_permission>
+<_permission>
+<id>1383</id>
+<title>desktop_request_sbf</title>
+<description>Desktop Form -&gt; Request Subform</description>
 </_permission>
 </dataroot>
 </root>
