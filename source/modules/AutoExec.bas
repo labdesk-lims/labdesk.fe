@@ -28,7 +28,7 @@ Public Function InitApp() As Boolean
 ' Out:          Done (T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    config.Init False, ".labdesk"
+    config.Init ".labdesk"
     
     'Deploy dependencies
     SysCmd acSysCmdSetStatus, "Deploy dependencies"
@@ -43,7 +43,7 @@ On Error GoTo Catch_Error
     ManageGui.AddAppProperty "AppTitle", dbText, config.AppTitle
     Application.RefreshTitleBar
     HideNavPane DbConnect.GetDbSetting("navpane")
-    ManageGui.AddAppProperty "AppIcon", dbText, CurrentProject.Path & "\icon.ico"
+    ManageGui.AddAppProperty "AppIcon", dbText, CurrentProject.path & "\icon.ico"
     CurrentDb.Properties("UseAppIconForFrmRpt") = True
     Application.RefreshTitleBar
     

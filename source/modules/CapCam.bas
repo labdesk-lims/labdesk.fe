@@ -46,7 +46,7 @@ Private Const WM_CAP_GET_STATUS As Long = WM_CAP_START + 54
 Private Declare PtrSafe Function capCreateCaptureWindow _
     Lib "avicap32.dll" Alias "capCreateCaptureWindowA" _
          (ByVal lpszWindowName As String, ByVal dwStyle As Long _
-        , ByVal x As Long, ByVal y As Long, ByVal nWidth As Long _
+        , ByVal X As Long, ByVal Y As Long, ByVal nWidth As Long _
         , ByVal nHeight As Long, ByVal hwndParent As LongPtr _
         , ByVal nID As Long) As Long
 

@@ -1054,7 +1054,7 @@ Sub OnActionButton(control As IRibbonControl)
         Case "btn_mdi"
             ' In Tab:   tab_testing
             ' In Group: grp_order
-            useMDIMode
+            applyMDIMode
         Case "btn_request"
             ' In Tab:   tab_testing
             ' In Group: grp_order
@@ -1478,7 +1478,7 @@ End Function
 
 Public Function getAppPath() As String
     Dim strDummy As String
-    strDummy = CurrentProject.Path
+    strDummy = CurrentProject.path
     If Right(strDummy, 1) <> "\" Then strDummy = strDummy & "\"
     getAppPath = strDummy
 End Function

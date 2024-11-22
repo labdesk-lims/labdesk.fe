@@ -26,7 +26,7 @@ On Error GoTo Catch_Error
     If IsNull(strEmailAddress) Then Resume Exit_Function
     
     objRegExp.IgnoreCase = True
-    objRegExp.Global = True
+    objRegExp.global = True
     objRegExp.Pattern = "^([a-zA-Z0-9_\-\.]+)@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$"
     
     blnIsValidEmail = objRegExp.test(strEmailAddress)
@@ -139,8 +139,4 @@ Public Sub ComboBoxSearch(ByRef combo As comboBox, ByVal lookupField As String, 
     strSQL = combo.RowSource
     combo.RowSource = "SELECT " & lookupField & ", " & pk & " FROM (" & Replace(strSQL, ";", "") & ") WHERE " & lookupField & " Like '*" & combo.Text & "*'"
     'combo.Dropdown '<- activate to open dropdown combobox automatically
-End Sub
-
-Public Sub EncryptTest()
-    MsgBox RetrieveDecryptAES(StoreEncryptAES("test", "123", 1), "123", 1, True)
 End Sub

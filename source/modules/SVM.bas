@@ -1,10 +1,11 @@
-Attribute VB_Name = "SVM"
+Attribute VB_Name = "Svm"
 '################################################################################################
 ' This class exports and imports all source code, properties and references.
 ' To properly import reference Microsoft.Scripting and Microsoft.XML need to be activated
 '################################################################################################
 
 Option Compare Database
+Option Private Module
 Option Explicit
 
 Private Const VB_MODULE As Integer = 1
@@ -19,7 +20,7 @@ Private Const EXT_MODULE = ".bas"
 Private Const EXT_PROPERTY = ".prp"
 Private Const EXT_REFERENCE = ".ref"
 Private Const SRC_FLD As String = "source"
-
+ 
 Public Sub Export()
 '-------------------------------------------------------------------------------
 ' Function:         Export
@@ -35,8 +36,8 @@ Public Sub Export()
     Set fso = CreateObject("Scripting.FilesystemObject")
     
     SysCmd acSysCmdSetStatus, "Delete dated files . . ."
-    deleteFolder fso.GetParentFolderName(CurrentProject.Path), SRC_FLD
-    strPath = addFolder(fso.GetParentFolderName(CurrentProject.Path), SRC_FLD)
+    deleteFolder fso.GetParentFolderName(CurrentProject.path), SRC_FLD
+    strPath = addFolder(fso.GetParentFolderName(CurrentProject.path), SRC_FLD)
     
     'Tables
     SysCmd acSysCmdSetStatus, "Export tables . . ."
@@ -128,157 +129,86 @@ Public Sub Import()
 
     Set fso = CreateObject("Scripting.FileSystemObject")
     
-    strPath = fso.GetParentFolderName(CurrentProject.Path) + "\" + SRC_FLD
+    strPath = fso.GetParentFolderName(CurrentProject.path) + "\" + SRC_FLD
     
     'Tables
     SysCmd acSysCmdSetStatus, "Import tables . . ."
     For Each oFile In fso.GetFolder(strPath & "\tables").files
-        SysCmd acSysCmdSetStatus, "Import table " & oFile.Path
-        If fso.GetExtensionName(oFile.Path) = Replace(EXT_TABLE, ".", "") Then
-            DeleteObject acTable, fso.GetBaseName(oFile.Path)
-            Application.ImportXML oFile.Path, acStructureAndData
+        SysCmd acSysCmdSetStatus, "Import table " & oFile.path
+        If fso.GetExtensionName(oFile.path) = Replace(EXT_TABLE, ".", "") Then
+            DeleteObject acTable, fso.GetBaseName(oFile.path)
+            Application.ImportXML oFile.path, acStructureAndData
         End If
     Next
     
     'Queries
     SysCmd acSysCmdSetStatus, "Import queries . . ."
      For Each oFile In fso.GetFolder(strPath & "\queries").files
-        SysCmd acSysCmdSetStatus, "Import query " & oFile.Path
-        If fso.GetExtensionName(oFile.Path) = Replace(EXT_QUERY, ".", "") Then
-            DeleteObject acQuery, fso.GetBaseName(oFile.Path)
-            Application.LoadFromText acQuery, fso.GetBaseName(oFile.Path), oFile.Path
+        SysCmd acSysCmdSetStatus, "Import query " & oFile.path
+        If fso.GetExtensionName(oFile.path) = Replace(EXT_QUERY, ".", "") Then
+            DeleteObject acQuery, fso.GetBaseName(oFile.path)
+            Application.LoadFromText acQuery, fso.GetBaseName(oFile.path), oFile.path
         End If
     Next
     
     'Forms
     SysCmd acSysCmdSetStatus, "Import forms . . ."
      For Each oFile In fso.GetFolder(strPath & "\forms").files
-        SysCmd acSysCmdSetStatus, "Import form " & oFile.Path
-        If fso.GetExtensionName(oFile.Path) = Replace(EXT_FORM, ".", "") Then
-            DeleteObject acForm, fso.GetBaseName(oFile.Path)
-            Application.LoadFromText acForm, fso.GetBaseName(oFile.Path), oFile.Path
+        SysCmd acSysCmdSetStatus, "Import form " & oFile.path
+        If fso.GetExtensionName(oFile.path) = Replace(EXT_FORM, ".", "") Then
+            DeleteObject acForm, fso.GetBaseName(oFile.path)
+            Application.LoadFromText acForm, fso.GetBaseName(oFile.path), oFile.path
         End If
     Next
     
     'Reports
     SysCmd acSysCmdSetStatus, "Import reports . . ."
     For Each oFile In fso.GetFolder(strPath & "\reports").files
-        SysCmd acSysCmdSetStatus, "Import report " & oFile.Path
-        If fso.GetExtensionName(oFile.Path) = Replace(EXT_REPORT, ".", "") Then
-            DeleteObject acReport, fso.GetBaseName(oFile.Path)
-            Application.LoadFromText acReport, fso.GetBaseName(oFile.Path), oFile.Path
+        SysCmd acSysCmdSetStatus, "Import report " & oFile.path
+        If fso.GetExtensionName(oFile.path) = Replace(EXT_REPORT, ".", "") Then
+            DeleteObject acReport, fso.GetBaseName(oFile.path)
+            Application.LoadFromText acReport, fso.GetBaseName(oFile.path), oFile.path
         End If
     Next
     
     'Macros
     SysCmd acSysCmdSetStatus, "Import macros . . ."
     For Each oFile In fso.GetFolder(strPath & "\macros").files
-        SysCmd acSysCmdSetStatus, "Import macro " & oFile.Path
-        If fso.GetExtensionName(oFile.Path) = Replace(EXT_MACRO, ".", "") Then
-            DeleteObject acMacro, fso.GetBaseName(oFile.Path)
-            Application.LoadFromText acMacro, fso.GetBaseName(oFile.Path), oFile.Path
+        SysCmd acSysCmdSetStatus, "Import macro " & oFile.path
+        If fso.GetExtensionName(oFile.path) = Replace(EXT_MACRO, ".", "") Then
+            DeleteObject acMacro, fso.GetBaseName(oFile.path)
+            Application.LoadFromText acMacro, fso.GetBaseName(oFile.path), oFile.path
         End If
     Next
     
     'Modules
     SysCmd acSysCmdSetStatus, "Import modules . . ."
     For Each oFile In fso.GetFolder(strPath & "\modules").files
-        SysCmd acSysCmdSetStatus, "Import module " & oFile.Path
-        If fso.GetExtensionName(oFile.Path) = Replace(EXT_MODULE, ".", "") And fso.GetBaseName(oFile.Path) <> "Svm" Then
-            DeleteObject acModule, fso.GetBaseName(oFile.Path)
-            Application.VBE.ActiveVBProject.VBComponents.Import oFile.Path
+        SysCmd acSysCmdSetStatus, "Import module " & oFile.path
+        If fso.GetExtensionName(oFile.path) = Replace(EXT_MODULE, ".", "") And fso.GetBaseName(oFile.path) <> "Svm" Then
+            DeleteObject acModule, fso.GetBaseName(oFile.path)
+            Application.VBE.ActiveVBProject.VBComponents.Import oFile.path
         End If
     Next
     
     'Properties
     SysCmd acSysCmdSetStatus, "Import properties . . ."
     For Each oFile In fso.GetFolder(strPath & "\properties").files
-        If fso.GetExtensionName(oFile.Path) = Replace(EXT_PROPERTY, ".", "") Then
-            Application.LoadFromAXL acDatabaseProperties, fso.GetBaseName(oFile.Path), oFile.Path
+        If fso.GetExtensionName(oFile.path) = Replace(EXT_PROPERTY, ".", "") Then
+            Application.LoadFromAXL acDatabaseProperties, fso.GetBaseName(oFile.path), oFile.path
         End If
     Next
     
     'References
     SysCmd acSysCmdSetStatus, "Import references . . ."
     For Each oFile In fso.GetFolder(strPath & "\references").files
-        If fso.GetExtensionName(oFile.Path) = Replace(EXT_REFERENCE, ".", "") Then
-            ImportReferences oFile.Path
+        If fso.GetExtensionName(oFile.path) = Replace(EXT_REFERENCE, ".", "") Then
+            ImportReferences oFile.path
         End If
     Next
     
     SysCmd acSysCmdSetStatus, "Import successfully finished!"
 End Sub
-
-Private Function ImportReferences(ByVal fname As String) As Boolean
-    Dim objXML As DOMDocument60
-    Dim objRoot As IXMLDOMElement
-    Dim objL1 As Object
-    Dim objL2 As Object
-    Dim str As String
-    
-    Set objXML = New DOMDocument60
-    
-    If Not objXML.Load(fname) Then Err.Raise vbObjectError + 513, , "Loading references failed."
-    
-    Set objRoot = objXML.DocumentElement
-    
-    For Each objL1 In objXML.DocumentElement.ChildNodes
-        For Each objL2 In objL1.ChildNodes
-            If objL2.nodeName = "FullPath" Then
-                str = Replace(objL2.Text, "%SystemRoot%", Environ$("SystemRoot"))
-                str = Replace(str, "%CommonProgramFiles%", Environ$("CommonProgramFiles"))
-                str = Replace(str, "%ProgramFiles%", Environ$("ProgramFiles"))
-                str = Replace(str, "%CurrentPath%", CurrentProject.Path)
-                
-                If Not ReferenceExists(str) Then Access.References.AddFromFile str
-            End If
-        Next
-    Next
-    
-    ImportReferences = True
-End Function
-
-Private Function ExportReferences(ByVal fname As String) As Boolean
-    Dim obj As Object
-    Dim objFile As Object
-    Dim fso As Object
-    Dim str As String
-    
-    Set fso = CreateObject("Scripting.FileSystemObject")
-    Set objFile = fso.CreateTextFile(fname, True, True)
-    
-    objFile.Write "<?xml version=""1.0""?>" & vbCrLf
-    
-    objFile.Write "<References context=" & """" & Application.References.count & """" & ">" & vbCrLf
-    For Each obj In Application.References
-        str = Replace(obj.fullPath, Environ$("SystemRoot"), "%SystemRoot%")
-        str = Replace(str, Environ$("CommonProgramFiles"), "%CommonProgramFiles%")
-        str = Replace(str, Environ$("ProgramFiles"), "%ProgramFiles%")
-        str = Replace(str, CurrentProject.Path, "%CurrentPath%")
-        
-        objFile.Write "  <Reference>" & vbCrLf
-        objFile.Write "    <Name>" & obj.name & "</Name>" & vbCrLf
-        objFile.Write "    <FullPath>" & str & "</FullPath>" & vbCrLf
-        objFile.Write "    <GUID>" & obj.GUID & "</GUID>" & vbCrLf
-        objFile.Write "    <MajorValue>" & obj.Major & "</MajorValue>" & vbCrLf
-        objFile.Write "    <MinorValue>" & obj.Minor & "</MinorValue>" & vbCrLf
-        objFile.Write "  </Reference>" & vbCrLf
-    Next
-    objFile.Write "</References>" & vbCrLf
-    
-    ExportReferences = True
-End Function
-
-Private Function ReferenceExists(ByVal fname As String) As Boolean
-    Dim obj As Object
-    For Each obj In Access.References
-        If fname = obj.fullPath Then
-            ReferenceExists = True
-            Exit Function
-        End If
-    Next
-    ReferenceExists = False
-End Function
 
 Private Function DeleteObject(acObject As AcObjectType, name As String) As Boolean
 On Error GoTo Skip
@@ -307,4 +237,102 @@ On Error GoTo Skip
     If Not fso.FolderExists(deleteFolder) Then Exit Function
     fso.deleteFolder deleteFolder
 Skip:
+End Function
+
+Private Function AddFormat(objXML As DOMDocument, strEncoding As String)
+    Dim objPI As IXMLDOMProcessingInstruction
+    
+    Set objPI = objXML.createProcessingInstruction("xml", "version='1.0' encoding='" & strEncoding & "'")
+    objXML.appendChild objPI
+End Function
+
+Private Function AppendElement(name As String, value As String, objRoot As IXMLDOMElement, objXML As DOMDocument)
+    Dim elm As IXMLDOMElement
+    
+    Set elm = objXML.createElement(name)
+    elm.Text = value
+    objRoot.appendChild elm
+End Function
+
+Private Function ReplacePathWithEnviron(path As String) As String
+    Dim str As String
+    
+    str = Replace(path, Environ$("SystemRoot"), "%SystemRoot%")
+    str = Replace(str, Environ$("CommonProgramFiles"), "%CommonProgramFiles%")
+    str = Replace(str, Environ$("ProgramFiles"), "%ProgramFiles%")
+    str = Replace(str, CurrentProject.path, "%CurrentPath%")
+    ReplacePathWithEnviron = str
+End Function
+
+Private Function ReplaceEnvironWithPath(path As String) As String
+    Dim str As String
+    
+    str = Replace(path, "%SystemRoot%", Environ$("SystemRoot"))
+    str = Replace(str, "%CommonProgramFiles%", Environ$("CommonProgramFiles"))
+    str = Replace(str, "%ProgramFiles%", Environ$("ProgramFiles"))
+    str = Replace(str, "%CurrentPath%", CurrentProject.path)
+    ReplaceEnvironWithPath = str
+End Function
+
+Private Function ReferenceExists(ByVal fname As String) As Boolean
+    Dim obj As Object
+    For Each obj In Access.References
+        If fname = obj.FullPath Then
+            ReferenceExists = True
+            Exit Function
+        End If
+    Next
+    ReferenceExists = False
+End Function
+
+Private Sub ExportReferences(ByVal fname As String)
+    Dim prj As VBProject
+    Dim ref As VBIDE.Reference
+    
+    Dim objXML As DOMDocument
+    Dim objPI As IXMLDOMProcessingInstruction
+    
+    Dim objReference As IXMLDOMElement
+
+    Set objXML = New DOMDocument
+    AddFormat objXML, "iso-8859-1"
+
+    For Each prj In VBE.VBProjects
+        Set objReference = objXML.createElement("Reference")
+        
+        For Each ref In prj.References
+            AppendElement "Name", ref.name, objReference, objXML
+            AppendElement "FullPath", ReplacePathWithEnviron(ref.FullPath), objReference, objXML
+            AppendElement "Guid", ref.GUID, objReference, objXML
+            AppendElement "Major", ref.Major, objReference, objXML
+            AppendElement "Minor", ref.Minor, objReference, objXML
+        Next ref
+    
+        objXML.appendChild objReference
+        objXML.Save fname
+    Next prj
+End Sub
+
+Private Function ImportReferences(ByVal fname As String) As Boolean
+    Dim objXML As DOMDocument
+    Dim objRoot As IXMLDOMElement
+    Dim objL1 As Object
+    Dim objL2 As Object
+    
+    Set objXML = New DOMDocument
+    
+    If Not objXML.Load(fname) Then Err.Raise vbObjectError + 513, , "Loading references failed."
+    
+    Set objRoot = objXML.DocumentElement
+    
+    For Each objL1 In objXML.DocumentElement.ChildNodes
+        For Each objL2 In objL1.ChildNodes
+
+            If objL1.nodeName = "FullPath" Then
+                If Not ReferenceExists(ReplaceEnvironWithPath(objL2.Text)) Then Access.References.AddFromFile ReplaceEnvironWithPath(objL2.Text)
+            End If
+        Next
+    Next
+    
+    ImportReferences = True
 End Function

@@ -346,7 +346,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Sub useMDIMode()
+Public Sub applyMDIMode()
 '-------------------------------------------------------------------------------
 ' Function:  UseMDIMode
 ' Date:      2022 November

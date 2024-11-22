@@ -106,7 +106,7 @@ Public Property Get DSNLessTables() As Variant
     DSNLessTables = a
 End Property
 
-Public Sub Init(DemoMode As Boolean, CacheFolder As String)
+Public Sub Init(CacheFolder As String)
     pCacheFolder = CacheFolder
 End Sub
 

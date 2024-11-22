@@ -1052,7 +1052,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function UploadPicture(ByRef fref As Object, Optional filename As String) As Boolean
+Public Function UploadPicture(ByRef fref As Object, Optional FileName As String) As Boolean
 '-------------------------------------------------------------------------------
 'Function:          UploadPicture
 'Date:              2022 March
@@ -1069,10 +1069,10 @@ On Error GoTo Catch_Error
     Set oShell = CreateObject("WScript.Shell")
     Set oFSO = CreateObject("Scripting.FileSystemObject")
     
-    If filename = "" Then
+    If FileName = "" Then
         fname = Dialog.OpenFileDialog()
     Else
-        fname = filename
+        fname = FileName
     End If
     
     If fname = "" Then Exit Function

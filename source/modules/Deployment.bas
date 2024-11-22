@@ -149,7 +149,7 @@ On Error GoTo Catch_Error
     
     rs.MoveFirst
     Do Until rs.EOF
-        If rs!deploy Then DbBlob.BlobToFile CurrentProject.Path & "\" & rs!filename, rs!binary
+        If rs!deploy Then DbBlob.BlobToFile CurrentProject.path & "\" & rs!FileName, rs!binary
         rs.MoveNext
     Loop
     
