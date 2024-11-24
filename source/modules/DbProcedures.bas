@@ -1251,7 +1251,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function RunTemplate(ByVal template As Integer, ByVal priority As Integer, ByVal workflow As Integer) As Variant
+Public Function RunTemplate(ByVal template As Integer, ByVal priority As Integer, ByVal workflow As Integer, ByVal clientOrderId As String) As Variant
 '-------------------------------------------------------------------------------
 ' Function:         RunTemplate
 ' Date:             2024 May
@@ -1270,6 +1270,7 @@ On Error GoTo Catch_Error
     cmd.Parameters.Append cmd.CreateParameter("@template", adInteger, adParamInput, -1, template)
     cmd.Parameters.Append cmd.CreateParameter("@priority", adInteger, adParamInput, -1, priority)
     cmd.Parameters.Append cmd.CreateParameter("@workflow", adInteger, adParamInput, -1, workflow)
+    cmd.Parameters.Append cmd.CreateParameter("@client_order_id", adVarChar, adParamInput, 256, clientOrderId)
     cmd.Execute
 
 Exit_Function:
