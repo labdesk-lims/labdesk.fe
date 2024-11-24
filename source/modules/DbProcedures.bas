@@ -491,6 +491,10 @@ On Error GoTo Catch_Error
             cmd.CommandText = "template_duplicate"
             cmd.Parameters.Append cmd.CreateParameter("@pTemplate", adInteger, adParamInput, , ID)
             cmd.Execute
+        Case "profile"
+            cmd.CommandText = "profile_duplicate"
+            cmd.Parameters.Append cmd.CreateParameter("@pProfile", adInteger, adParamInput, , ID)
+            cmd.Execute
         Case Else
             MsgBox GetTranslation("msgbox", "duplication_not_supported", GetDbSetting("language")), vbExclamation, GetTranslation("msgbox", "vbExclamation", GetDbSetting("language"))
     End Select

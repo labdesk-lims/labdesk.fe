@@ -91,7 +91,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-24T11:15:34">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-24T18:09:18">
 <_translation>
 <id>1</id>
 <container>laboratory</container>
@@ -3289,7 +3289,7 @@
 <container>request</container>
 <item>client_order_id_</item>
 <en>Client Order ID</en>
-<de>Kundenauftrags-ID</de>
+<de>Kundenbestell-Nr</de>
 </_translation>
 <_translation>
 <id>458</id>
@@ -4100,8 +4100,8 @@
 <id>573</id>
 <container>request_edit</container>
 <item>client_order_id_</item>
-<en>Client order ID</en>
-<de>Kundenauftrags-ID</de>
+<en>Client Order ID</en>
+<de>Kundenbestell-Nr</de>
 </_translation>
 <_translation>
 <id>574</id>
@@ -5661,8 +5661,8 @@
 <id>796</id>
 <container>request-sub</container>
 <item>client_order_id_</item>
-<en>Client oder id</en>
-<de>Kunde oder ID</de>
+<en>Client Order ID</en>
+<de>Kundenbestell-Nr</de>
 </_translation>
 <_translation>
 <id>797</id>
@@ -6607,8 +6607,8 @@
 <id>931</id>
 <container>request-sub_sbf</container>
 <item>client_order_id_</item>
-<en>Client order ID</en>
-<de>Kundenauftrags-ID</de>
+<en>Client Order ID</en>
+<de>Kundenbestell-Nr</de>
 </_translation>
 <_translation>
 <id>932</id>
@@ -6712,8 +6712,8 @@
 <id>946</id>
 <container>request_customer</container>
 <item>client_order_id_</item>
-<en>Client order ID</en>
-<de>Kundenauftrags-ID</de>
+<en>Client Order ID</en>
+<de>Kundenbestell-Nr</de>
 </_translation>
 <_translation>
 <id>947</id>
@@ -9324,7 +9324,7 @@
 <container>S001_header</container>
 <item>client_order_id_</item>
 <en>Client Order ID</en>
-<de>Kunden Bestell-Nr.</de>
+<de>Kundenbestell-Nr</de>
 </_translation>
 <_translation>
 <id>1525</id>
@@ -9974,8 +9974,8 @@
 <id>1617</id>
 <container>request_owner</container>
 <item>client_order_id_</item>
-<en>Client order id</en>
-<de>Kundennummer</de>
+<en>Client Order ID</en>
+<de>Kundenbestell-Nr</de>
 </_translation>
 <_translation>
 <id>1618</id>
@@ -12600,7 +12600,7 @@
 <container>S001_subrequest</container>
 <item>client_order_id_</item>
 <en>Client Order ID</en>
-<de>Kundenauftrags-Nr</de>
+<de>Kundenbestell-Nr</de>
 </_translation>
 <_translation>
 <id>20476</id>
@@ -13215,7 +13215,7 @@ RT - Zurückziehen</de>
 <container>desktop_request_sbf</container>
 <item>client_order_id_</item>
 <en>Client Order ID</en>
-<de>Kunden Auftragsnummer</de>
+<de>Client Order ID</de>
 </_translation>
 <_translation>
 <id>105736</id>
@@ -13317,6 +13317,98 @@ RT - Zurückziehen</de>
 <id>105752</id>
 <container>desktop_request_sbf</container>
 <item>sampler_tooltip</item>
+</_translation>
+<_translation>
+<id>111483</id>
+<container>analysis_translation</container>
+<item>Sauerstoff</item>
+</_translation>
+<_translation>
+<id>111485</id>
+<container>analysis_translation</container>
+<item>TOC</item>
+</_translation>
+<_translation>
+<id>111487</id>
+<container>analysis_translation</container>
+<item>Sulfat</item>
+</_translation>
+<_translation>
+<id>111489</id>
+<container>analysis_translation</container>
+<item>Sulfit</item>
+</_translation>
+<_translation>
+<id>115557</id>
+<container>setup</container>
+<item>num_format_</item>
+<en>Numerical Format</en>
+<de>Numerical Format</de>
+</_translation>
+<_translation>
+<id>115558</id>
+<container>setup</container>
+<item>num_format_tooltip</item>
+</_translation>
+<_translation>
+<id>115559</id>
+<container>setup</container>
+<item>num_culture_</item>
+<en>Culture Code</en>
+<de>Culture Code</de>
+</_translation>
+<_translation>
+<id>115560</id>
+<container>setup</container>
+<item>num_culture_tooltip</item>
+</_translation>
+<_translation>
+<id>115567</id>
+<container>setup_edit</container>
+<item>num_format_</item>
+<en>Numerical Format</en>
+<de>Numerical Format</de>
+</_translation>
+<_translation>
+<id>115568</id>
+<container>setup_edit</container>
+<item>num_format_tooltip</item>
+</_translation>
+<_translation>
+<id>115569</id>
+<container>setup_edit</container>
+<item>num_culture_</item>
+<en>Culture Code</en>
+<de>Culture Code</de>
+</_translation>
+<_translation>
+<id>115570</id>
+<container>setup_edit</container>
+<item>num_culture_tooltip</item>
+</_translation>
+<_translation>
+<id>116211</id>
+<container>template</container>
+<item>client_order_id_</item>
+<en>Client Order ID</en>
+<de>Client Order ID</de>
+</_translation>
+<_translation>
+<id>116212</id>
+<container>template</container>
+<item>client_order_id_tooltip</item>
+</_translation>
+<_translation>
+<id>116215</id>
+<container>template_edit</container>
+<item>client_order_id_</item>
+<en>Client Order ID</en>
+<de>Client Order ID</de>
+</_translation>
+<_translation>
+<id>116216</id>
+<container>template_edit</container>
+<item>client_order_id_tooltip</item>
 </_translation>
 </dataroot>
 </root>
