@@ -108,7 +108,7 @@ login_form:
     
     'Init context menus
     SysCmd acSysCmdSetStatus, "Init context menus"
-    ContextMenus.InitContextMenus
+    ContextMenus.ContextMenuInit
     
     'Check if user exists otherwise add
     SysCmd acSysCmdSetStatus, "Check user registration"

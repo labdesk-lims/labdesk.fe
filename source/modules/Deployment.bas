@@ -97,7 +97,7 @@ Public Sub Update()
 '-------------------------------------------------------------------------------
     ' InitTranslations
     UpdateTranslation
-    UpdateRole
+    'UpdateRole
     UpdatePermission
     UpdateRolePermission
     

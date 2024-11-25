@@ -7,185 +7,97 @@ Attribute VB_Name = "ContextMenus"
 Option Compare Database
 Option Explicit
 
-Public Sub InitContextMenus()
+Private Function ContextMenuExist(ByVal name As String) As Boolean
+    Dim cmbBar As CommandBar
+    
+    For Each cmbBar In Application.CommandBars
+        If cmbBar.name = name Then ContextMenuExist = True
+    Next
+End Function
+
+Private Sub ContextMenuReset()
     Dim bar As CommandBar
     
-    'Reset all commandbars
+    'Reset all custom commandbars
     For Each bar In Application.CommandBars
         If (bar.BuiltIn = False) And (bar.visible = False) Then
             bar.Delete
         End If
     Next bar
-    
-    'Create all commandbars
-    CreateContextMenu "menu_std", True, False, True, False, False, False, False
-    CreateContextMenu "menu_dpl", True, False, True, True, False, False, False
-    CreateContextMenu "menu_rqt", True, True, True, False, True, False, False
-    CreateContextMenu "menu_flt", False, False, True, False, False, False, False
-    CreateContextMenu "menu_fle", False, False, False, False, False, True, False
-    CreateContextMenu "menu_sub", False, False, False, False, False, False, True
 End Sub
 
-Private Sub CreateContextMenu(ByVal name As String, ByVal Create As Boolean, ByVal createsub As Boolean, ByVal standard As Boolean, ByVal duplicate As Boolean, ByVal documents As Boolean, ByVal files As Boolean, ByVal subform As Boolean)
+Private Function ContextMenuAdd(ByVal name As String, ByVal parameter As String, ByVal faceId As Integer, Optional ByVal beginGroup As Boolean) As Boolean
     Dim cmbBar As CommandBar
     Dim cmbBtn_CreateNew, cmbBtn_Edit As CommandBarButton
     
-On Error GoTo Skip
-    ' Delete context menu if already exists to register the new one
-    CommandBars(name).Delete
-Skip:
+    If ContextMenuExist(name) Then
+        Set cmbBar = CommandBars(name)
+    Else
+        Set cmbBar = CommandBars.Add(name, msoBarPopup)
+    End If
+    
+    Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
+    
+    If beginGroup Then cmbBtn_CreateNew.beginGroup = True
+    cmbBtn_CreateNew.faceId = faceId
+    cmbBtn_CreateNew.caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_" & parameter, DbConnect.GetDbSetting("language"))
+    cmbBtn_CreateNew.parameter = parameter
+    cmbBtn_CreateNew.OnAction = "fnCall"
+End Function
 
-    Set cmbBar = CommandBars.Add(name, msoBarPopup)
-
-    If Create Then
-        ' Button to add record
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.FaceId = 192
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_add_record", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "add_record"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-    End If
+Public Sub ContextMenuInit()
+    ContextMenuReset
     
-    If createsub Then
-        ' Button to add sub request
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.FaceId = 188
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_add_subrequest", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "add_subrequest"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-    End If
+    'Create menu_std entries
+    ContextMenuAdd "menu_std", "add_record", 192
+    ContextMenuAdd "menu_std", "apply_filter", 601, True
+    ContextMenuAdd "menu_std", "save_filter", 602
+    ContextMenuAdd "menu_std", "clmn_dlg", 8, True
+    ContextMenuAdd "menu_std", "clmn_std", 6
+    ContextMenuAdd "menu_std", "audit_trail", 29, True
+    ContextMenuAdd "menu_std", "refresh", 37, True
     
-    If standard Then
-        ' Button to apply a filter
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.BeginGroup = True
-        cmbBtn_CreateNew.FaceId = 601
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_apply_filter", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "apply_filter"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-        
-        ' Button to create a filter
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.FaceId = 602
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_save_filter", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "save_filter"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-        
-        'Button to select columns
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.BeginGroup = True
-        cmbBtn_CreateNew.FaceId = 8
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_clmn_dlg", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "clmn_dlg"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-        
-        'Button to reset column size
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.FaceId = 6
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_clmn_std", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "clmn_std"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-        
-        'Audit trail
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.BeginGroup = True
-        cmbBtn_CreateNew.FaceId = 29
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_audit_trail", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "audit_trail"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-        
-        'Refresh form
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.BeginGroup = True
-        cmbBtn_CreateNew.FaceId = 37
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_refresh", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "refresh"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-    End If
+    'Create menu_dpl entries
+    ContextMenuAdd "menu_dpl", "add_record", 192
+    ContextMenuAdd "menu_dpl", "duplicate_record", 19
+    ContextMenuAdd "menu_dpl", "apply_filter", 601, True
+    ContextMenuAdd "menu_dpl", "save_filter", 602
+    ContextMenuAdd "menu_dpl", "clmn_dlg", 8, True
+    ContextMenuAdd "menu_dpl", "clmn_std", 6
+    ContextMenuAdd "menu_dpl", "audit_trail", 29, True
+    ContextMenuAdd "menu_dpl", "refresh", 37, True
     
-    If duplicate Then
-        'Duplicate form
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.BeginGroup = True
-        cmbBtn_CreateNew.FaceId = 19
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_duplicate", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "duplicate_record"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-    End If
     
-    If documents Then
-        'Button to show preliminary report
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.BeginGroup = True
-        cmbBtn_CreateNew.FaceId = 195
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_print_report", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "show_report"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-        
-        'Button to show worksheet
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.FaceId = 144
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_print_worksheet", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "show_worksheet"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-        
-        'Button to show sticker
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.FaceId = 191
-        cmbBtn_CreateNew.Caption = GetTranslation("mdlContextMenu", "contextmnu_" & name & "_print_sticker", GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "show_sticker"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-    End If
+    'Create menu_rqt entries
+    ContextMenuAdd "menu_rqt", "add_record", 192
+    ContextMenuAdd "menu_rqt", "add_subrequest", 188
+    ContextMenuAdd "menu_rqt", "apply_filter", 601, True
+    ContextMenuAdd "menu_rqt", "save_filter", 602
+    ContextMenuAdd "menu_rqt", "clmn_dlg", 8, True
+    ContextMenuAdd "menu_rqt", "clmn_std", 6
+    ContextMenuAdd "menu_rqt", "show_report", 195, True
+    ContextMenuAdd "menu_rqt", "show_worksheet", 144
+    ContextMenuAdd "menu_rqt", "show_sticker", 191
+    ContextMenuAdd "menu_rqt", "audit_trail", 29, True
+    ContextMenuAdd "menu_rqt", "refresh", 37, True
     
-    If files Then
-        ' Button to down- or upload files
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.BeginGroup = True
-        cmbBtn_CreateNew.FaceId = 1632
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_upload", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "upload_file"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-        
-        ' Button to download files
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.FaceId = 1631
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_download", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "download_file"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-        
-        ' Button to open files
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.FaceId = 18
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_open", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "open_file"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-    End If
+    'Create menu_flt entries
+    ContextMenuAdd "menu_flt", "apply_filter", 601
+    ContextMenuAdd "menu_flt", "save_filter", 602
+    ContextMenuAdd "menu_flt", "clmn_dlg", 8, True
+    ContextMenuAdd "menu_flt", "clmn_std", 6
+    ContextMenuAdd "menu_flt", "audit_trail", 29, True
+    ContextMenuAdd "menu_flt", "refresh", 37, True
     
-    If subform Then
-        'Audit trail
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.BeginGroup = True
-        cmbBtn_CreateNew.FaceId = 29
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_audit_trail", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "audit_trail_subform"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-        
-        'Button to select columns
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.BeginGroup = True
-        cmbBtn_CreateNew.FaceId = 8
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_clmn_dlg", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "clmn_dlg"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-        
-        'Refresh form
-        Set cmbBtn_CreateNew = cmbBar.Controls.Add(msoControlButton)
-        cmbBtn_CreateNew.BeginGroup = True
-        cmbBtn_CreateNew.FaceId = 37
-        cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_refresh", DbConnect.GetDbSetting("language"))
-        cmbBtn_CreateNew.Parameter = "refresh"
-        cmbBtn_CreateNew.OnAction = "fnCall"
-    End If
+    'Create menu_fle entries
+    ContextMenuAdd "menu_fle", "open_file", 18
+    ContextMenuAdd "menu_fle", "upload_file", 1632
+    ContextMenuAdd "menu_fle", "download_file", 1631
+    
+    'Create menu_sub entries
+    ContextMenuAdd "menu_sub", "audit_trail_subform", 29
+    ContextMenuAdd "menu_sub", "clmn_dlg", 8
+    ContextMenuAdd "menu_sub", "refresh", 37
 End Sub
 
 Public Sub fnCall()
@@ -200,7 +112,7 @@ On Error GoTo Catch_Error
     Dim frmCurrentForm As Form
     Dim strAction As String
     
-    strAction = CommandBars.ActionControl.Parameter
+    strAction = CommandBars.ActionControl.parameter
     
     Set frmCurrentForm = Screen.ActiveForm
     
@@ -266,7 +178,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Sub
 Catch_Error:
-    MsgBox "Error (mdlContextMenu - " & CommandBars.ActionControl.Parameter & "): " & Err.description, vbCritical, "Error"
+    MsgBox "Error (mdlContextMenu - " & CommandBars.ActionControl.parameter & "): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Sub
 

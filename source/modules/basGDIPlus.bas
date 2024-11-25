@@ -92,7 +92,7 @@ End Type
 
 Private Type EncoderParameters
     count As Long
-    Parameter As EncoderParameter
+    parameter As EncoderParameter
 End Type
 
 #If Win64 Then
