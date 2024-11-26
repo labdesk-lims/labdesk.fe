@@ -99,7 +99,7 @@ Public Sub Update()
     UpdateTranslation
     'UpdateRole
     UpdatePermission
-    UpdateRolePermission
+    'UpdateRolePermission
     
     'Set Frontend Version
     SetFeVersion
