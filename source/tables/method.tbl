@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:od="urn:schemas-microsoft-com:officedata">
+<xsd:schema>
+<xsd:element name="dataroot">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element ref="method" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+<xsd:attribute name="generated" type="xsd:dateTime"/>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="method">
+<xsd:annotation>
+<xsd:appinfo/>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="id" minOccurs="1" od:jetType="autonumber" od:sqlSType="int" od:autoUnique="yes" od:nonNullable="yes" type="xsd:int">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="title" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="edition" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="description" minOccurs="0" od:jetType="memo" od:sqlSType="ntext">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="536870910"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="price" minOccurs="1" od:jetType="currency" od:sqlSType="money" od:nonNullable="yes" type="xsd:double">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="subcontraction" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="deactivate" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-29T16:48:44">
+<method>
+<id>1</id>
+<title>SOP-001</title>
+<description>&lt;div&gt;Bestimmung der Leitfähigkeit in wässrigen Lösungen&lt;/div&gt;</description>
+<price>0</price>
+<subcontraction>0</subcontraction>
+<deactivate>0</deactivate>
+</method>
+<method>
+<id>2</id>
+<title>SOP-002</title>
+<description>&lt;div&gt;Bestimmung des p-, m-Werts&lt;/div&gt;</description>
+<price>0</price>
+<subcontraction>0</subcontraction>
+<deactivate>0</deactivate>
+</method>
+<method>
+<id>3</id>
+<title>SOP-003</title>
+<description>&lt;div&gt;Bestimmung des Gehalts an ODACON in wässrigen Medien&lt;/div&gt;</description>
+<price>0</price>
+<subcontraction>0</subcontraction>
+<deactivate>0</deactivate>
+</method>
+<method>
+<id>4</id>
+<title>SOP-004</title>
+<description>&lt;div&gt;Bestimmung des Eisen und Chloridgehalts mittels eines Photometers&lt;/div&gt;</description>
+<price>0</price>
+<subcontraction>0</subcontraction>
+<deactivate>0</deactivate>
+</method>
+<method>
+<id>5</id>
+<title>SOP-005</title>
+<description>&lt;div&gt;Optische Begutachtung (Aussehen) von wässrigen Medien&lt;/div&gt;</description>
+<price>0</price>
+<subcontraction>0</subcontraction>
+<deactivate>0</deactivate>
+</method>
+<method>
+<id>6</id>
+<title>SOP-006</title>
+<description>&lt;div&gt;Bestimmung des pH-Werts in wässrigen Lösungen&lt;/div&gt;</description>
+<price>0</price>
+<subcontraction>0</subcontraction>
+<deactivate>0</deactivate>
+</method>
+<method>
+<id>7</id>
+<title>SOP-007</title>
+<description>&lt;div&gt;Bestimmung der Wasserhärte&lt;/div&gt;</description>
+<price>0</price>
+<subcontraction>0</subcontraction>
+<deactivate>0</deactivate>
+</method>
+</dataroot>
+</root>

@@ -192,8 +192,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    AttachDSNLessTables = False
-    MsgBox "Error (mdlConnect - AttachDSNLessTables): " & Err.description, vbCritical, "Error"
+    MsgBox "Error (DbConnect - AttachDSNLessTables): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function
 
@@ -234,7 +233,6 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    UnAttachDSNLessTables = False
-    MsgBox "Error (mdlConnect - UnlinkDSNLessTables): " & Err.description, vbCritical, "Error"
+    MsgBox "Error (DbConnect - UnAttachDSNLessTables): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function

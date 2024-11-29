@@ -59,7 +59,7 @@ Public Sub Prepare(Optional ByVal deploy As Boolean = True)
     
         ' Reset db settings
         SysCmd acSysCmdSetStatus, "Reset database"
-        CurrentDb.Execute "UPDATE dbsetup SET server = Null, user = Null, password = Null, navpane = 0, devmode = 0"
+        CurrentDb.Execute "UPDATE dbsetup SET server = Null, database = null, user = Null, password = Null, navpane = 0, devmode = 0"
         
         'Disable shift
         SysCmd acSysCmdSetStatus, "Disable shift"

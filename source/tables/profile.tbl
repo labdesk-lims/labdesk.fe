@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:od="urn:schemas-microsoft-com:officedata">
+<xsd:schema>
+<xsd:element name="dataroot">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element ref="profile" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+<xsd:attribute name="generated" type="xsd:dateTime"/>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="profile">
+<xsd:annotation>
+<xsd:appinfo/>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="id" minOccurs="1" od:jetType="autonumber" od:sqlSType="int" od:autoUnique="yes" od:nonNullable="yes" type="xsd:int">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="title" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="description" minOccurs="0" od:jetType="memo" od:sqlSType="ntext">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="536870910"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="use_profile_qc" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="reference_material" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int"/>
+<xsd:element name="report_template" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="customer" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int"/>
+<xsd:element name="price" minOccurs="1" od:jetType="currency" od:sqlSType="money" od:nonNullable="yes" type="xsd:double">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="deactivate" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-29T16:48:45">
+<profile>
+<id>1</id>
+<title>Speisewasser (Dampfkessel, Salzhaltige Fahrweise, 20 bar)</title>
+<description>&lt;div&gt;Speisewasser (Dampfkessel, Salzhaltige Fahrweise, 20 bar)&lt;/div&gt;</description>
+<use_profile_qc>0</use_profile_qc>
+<price>0</price>
+<deactivate>0</deactivate>
+</profile>
+<profile>
+<id>2</id>
+<title>Speisewasser (Dampfkessel, Salzarme Fahrweise, 20 bar)</title>
+<description>&lt;div&gt;Speisewasser (Dampfkessel, Salzarme Fahrweise, 20 bar)&lt;/div&gt;</description>
+<use_profile_qc>0</use_profile_qc>
+<price>0</price>
+<deactivate>0</deactivate>
+</profile>
+<profile>
+<id>3</id>
+<title>Speisewasser (Heißwasserkessel, Salzhaltige Fahrweise, 20 bar)</title>
+<description>&lt;div&gt;Speisewasser (Heißwasserkessel, Salzhaltige Fahrweise, 20 bar)&lt;/div&gt;</description>
+<use_profile_qc>0</use_profile_qc>
+<price>0</price>
+<deactivate>0</deactivate>
+</profile>
+<profile>
+<id>4</id>
+<title>Kesselwasser (Dampfkessel, Salzhaltige Fahrweise, 20 bar)</title>
+<description>&lt;div&gt;Kesselwasser (Dampfkessel, Salzhaltige Fahrweise, 20 bar)&lt;/div&gt;</description>
+<use_profile_qc>0</use_profile_qc>
+<price>0</price>
+<deactivate>0</deactivate>
+</profile>
+<profile>
+<id>5</id>
+<title>Kesselwasser (Dampfkessel, Salzarme Fahrweise, 20 bar)</title>
+<description>&lt;div&gt;Kesselwasser (Dampfkessel, Salzarme Fahrweise, 20 bar)&lt;/div&gt;</description>
+<use_profile_qc>0</use_profile_qc>
+<price>0</price>
+<deactivate>0</deactivate>
+</profile>
+<profile>
+<id>6</id>
+<title>Kesselwasser (Heißwasserkessel, Salzhaltige Fahrweise, 20 bar)</title>
+<description>&lt;div&gt;Kesselwasser (Heißwasserkessel, Salzhaltige Fahrweise, 20 bar)&lt;/div&gt;</description>
+<use_profile_qc>0</use_profile_qc>
+<price>0</price>
+<deactivate>0</deactivate>
+</profile>
+<profile>
+<id>7</id>
+<title>pH-SQC</title>
+<description>&lt;div&gt;pH 5 Standard für die statistische Qualitätskontrolle&lt;/div&gt;</description>
+<use_profile_qc>1</use_profile_qc>
+<reference_material>2</reference_material>
+<price>0</price>
+<deactivate>0</deactivate>
+</profile>
+<profile>
+<id>8</id>
+<title>Test</title>
+<use_profile_qc>0</use_profile_qc>
+<price>0</price>
+<deactivate>0</deactivate>
+</profile>
+</dataroot>
+</root>

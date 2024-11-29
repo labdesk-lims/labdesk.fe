@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:od="urn:schemas-microsoft-com:officedata">
+<xsd:schema>
+<xsd:element name="dataroot">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element ref="analysis" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+<xsd:attribute name="generated" type="xsd:dateTime"/>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="analysis">
+<xsd:annotation>
+<xsd:appinfo/>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="id" minOccurs="1" od:jetType="autonumber" od:sqlSType="int" od:autoUnique="yes" od:nonNullable="yes" type="xsd:int">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="title" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="technique" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int"/>
+<xsd:element name="description" minOccurs="0" od:jetType="memo" od:sqlSType="ntext">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="536870910"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="unit" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="type" minOccurs="1" od:jetType="text" od:sqlSType="nvarchar" od:nonNullable="yes">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="precision" minOccurs="1" od:jetType="longinteger" od:sqlSType="int" od:nonNullable="yes" type="xsd:int">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="ldl" minOccurs="0" od:jetType="double" od:sqlSType="float" type="xsd:double"/>
+<xsd:element name="udl" minOccurs="0" od:jetType="double" od:sqlSType="float" type="xsd:double"/>
+<xsd:element name="calculation" minOccurs="0" od:jetType="memo" od:sqlSType="ntext">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="536870910"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="calculation_activate" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="condition_activate" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="uncertainty_activate" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="sortkey" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int"/>
+<xsd:element name="deactivate" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="price" minOccurs="1" od:jetType="currency" od:sqlSType="money" od:nonNullable="yes" type="xsd:double">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-29T16:48:33">
+<analysis>
+<id>1</id>
+<title>pH</title>
+<technique>3</technique>
+<unit>pH</unit>
+<type>N</type>
+<precision>2</precision>
+<calculation>1</calculation>
+<calculation_activate>0</calculation_activate>
+<condition_activate>0</condition_activate>
+<uncertainty_activate>0</uncertainty_activate>
+<sortkey>3</sortkey>
+<deactivate>0</deactivate>
+<price>0</price>
+</analysis>
+<analysis>
+<id>2</id>
+<title>Leitf.</title>
+<technique>2</technique>
+<unit>µS/cm</unit>
+<type>N</type>
+<precision>0</precision>
+<calculation>1</calculation>
+<calculation_activate>0</calculation_activate>
+<condition_activate>0</condition_activate>
+<uncertainty_activate>0</uncertainty_activate>
+<sortkey>2</sortkey>
+<deactivate>0</deactivate>
+<price>0</price>
+</analysis>
+<analysis>
+<id>3</id>
+<title>p-Wert</title>
+<technique>3</technique>
+<unit>mmol/L</unit>
+<type>N</type>
+<precision>0</precision>
+<calculation>1</calculation>
+<calculation_activate>0</calculation_activate>
+<condition_activate>0</condition_activate>
+<uncertainty_activate>0</uncertainty_activate>
+<sortkey>4</sortkey>
+<deactivate>0</deactivate>
+<price>0</price>
+</analysis>
+<analysis>
+<id>4</id>
+<title>m-Wert</title>
+<technique>3</technique>
+<unit>mmol/L</unit>
+<type>N</type>
+<precision>0</precision>
+<calculation>1</calculation>
+<calculation_activate>0</calculation_activate>
+<condition_activate>0</condition_activate>
+<uncertainty_activate>0</uncertainty_activate>
+<sortkey>5</sortkey>
+<deactivate>0</deactivate>
+<price>0</price>
+</analysis>
+<analysis>
+<id>5</id>
+<title>Härte</title>
+<technique>4</technique>
+<unit>°dH</unit>
+<type>N</type>
+<precision>2</precision>
+<calculation>1</calculation>
+<calculation_activate>0</calculation_activate>
+<condition_activate>0</condition_activate>
+<uncertainty_activate>0</uncertainty_activate>
+<sortkey>6</sortkey>
+<deactivate>0</deactivate>
+<price>0</price>
+</analysis>
+<analysis>
+<id>6</id>
+<title>Eisen</title>
+<technique>1</technique>
+<unit>mg/L</unit>
+<type>N</type>
+<precision>3</precision>
+<calculation>1</calculation>
+<calculation_activate>0</calculation_activate>
+<condition_activate>0</condition_activate>
+<uncertainty_activate>0</uncertainty_activate>
+<sortkey>8</sortkey>
+<deactivate>0</deactivate>
+<price>0</price>
+</analysis>
+<analysis>
+<id>7</id>
+<title>Chlorid</title>
+<technique>1</technique>
+<unit>mg/L</unit>
+<type>N</type>
+<precision>2</precision>
+<calculation>1</calculation>
+<calculation_activate>0</calculation_activate>
+<condition_activate>0</condition_activate>
+<uncertainty_activate>0</uncertainty_activate>
+<sortkey>9</sortkey>
+<deactivate>0</deactivate>
+<price>0</price>
+</analysis>
+<analysis>
+<id>8</id>
+<title>ODACON</title>
+<technique>4</technique>
+<unit>mg/L</unit>
+<type>N</type>
+<precision>3</precision>
+<calculation>1</calculation>
+<calculation_activate>0</calculation_activate>
+<condition_activate>0</condition_activate>
+<uncertainty_activate>0</uncertainty_activate>
+<sortkey>7</sortkey>
+<deactivate>0</deactivate>
+<price>0</price>
+</analysis>
+<analysis>
+<id>9</id>
+<title>Aussehen</title>
+<technique>5</technique>
+<type>A</type>
+<precision>0</precision>
+<calculation>1</calculation>
+<calculation_activate>0</calculation_activate>
+<condition_activate>0</condition_activate>
+<uncertainty_activate>0</uncertainty_activate>
+<sortkey>1</sortkey>
+<deactivate>0</deactivate>
+<price>0</price>
+</analysis>
+<analysis>
+<id>10</id>
+<title>Sauerstoff</title>
+<unit>mg/L</unit>
+<type>N</type>
+<precision>0</precision>
+<calculation>1</calculation>
+<calculation_activate>0</calculation_activate>
+<condition_activate>0</condition_activate>
+<uncertainty_activate>0</uncertainty_activate>
+<deactivate>0</deactivate>
+<price>0</price>
+</analysis>
+<analysis>
+<id>11</id>
+<title>TOC</title>
+<unit>mg/L</unit>
+<type>N</type>
+<precision>0</precision>
+<calculation>1</calculation>
+<calculation_activate>0</calculation_activate>
+<condition_activate>0</condition_activate>
+<uncertainty_activate>0</uncertainty_activate>
+<deactivate>0</deactivate>
+<price>0</price>
+</analysis>
+<analysis>
+<id>12</id>
+<title>Sulfat</title>
+<unit>mg/L</unit>
+<type>N</type>
+<precision>0</precision>
+<calculation>1</calculation>
+<calculation_activate>0</calculation_activate>
+<condition_activate>0</condition_activate>
+<uncertainty_activate>0</uncertainty_activate>
+<deactivate>0</deactivate>
+<price>0</price>
+</analysis>
+<analysis>
+<id>13</id>
+<title>Sulfit</title>
+<unit>mg/L</unit>
+<type>N</type>
+<precision>0</precision>
+<calculation>1</calculation>
+<calculation_activate>0</calculation_activate>
+<condition_activate>0</condition_activate>
+<uncertainty_activate>0</uncertainty_activate>
+<deactivate>0</deactivate>
+<price>0</price>
+</analysis>
+</dataroot>
+</root>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:od="urn:schemas-microsoft-com:officedata">
+<xsd:schema>
+<xsd:element name="dataroot">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+<xsd:attribute name="generated" type="xsd:dateTime"/>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="filter">
+<xsd:annotation>
+<xsd:appinfo/>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="id" minOccurs="1" od:jetType="autonumber" od:sqlSType="int" od:autoUnique="yes" od:nonNullable="yes" type="xsd:int">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="form" minOccurs="1" od:jetType="text" od:sqlSType="nvarchar" od:nonNullable="yes">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="userid" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="title" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="filter" minOccurs="0" od:jetType="memo" od:sqlSType="ntext">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="536870910"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="global" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="active" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-29T16:48:43">
+<filter>
+<id>2133</id>
+<form>request</form>
+<userid>LABDESK-SERVER\Administrator</userid>
+<title>Erfasst</title>
+<filter>([Lookup_state].[title]=&quot;Erfasst&quot;)</filter>
+<global>1</global>
+<active>0</active>
+</filter>
+<filter>
+<id>2134</id>
+<form>request</form>
+<userid>LABDESK-SERVER\Administrator</userid>
+<title>Empfangen</title>
+<filter>([Lookup_state].[title]=&quot;Empfangen&quot;)</filter>
+<global>0</global>
+<active>0</active>
+</filter>
+<filter>
+<id>2136</id>
+<form>view_measurement</form>
+<userid>sa</userid>
+<title>AQ</title>
+<filter>([view_measurement].[state]=&apos;AQ&apos;)</filter>
+<global>1</global>
+<active>0</active>
+</filter>
+<filter>
+<id>2137</id>
+<form>view_measurement</form>
+<userid>LABDESK-SERVER\Administrator</userid>
+<title>CP</title>
+<filter>([view_measurement].[state]=&apos;CP&apos;)</filter>
+<global>1</global>
+<active>0</active>
+</filter>
+<filter>
+<id>2139</id>
+<form>view_measurement</form>
+<userid>sa</userid>
+<title>SOP-001</title>
+<filter>([view_measurement].[method]=&apos;SOP-001&apos;)</filter>
+<global>1</global>
+<active>0</active>
+</filter>
+<filter>
+<id>2140</id>
+<form>request</form>
+<userid>sa</userid>
+<title>Berichtet</title>
+<filter>([Lookup_state].[title]=&quot;Berichtet&quot;)</filter>
+<global>0</global>
+<active>0</active>
+</filter>
+<filter>
+<id>2141</id>
+<form>request</form>
+<userid>LABDESK-SERVER\Administrator</userid>
+<title>Eingelagert</title>
+<filter>([Lookup_state].[title] Like &quot;*Eingelagert*&quot;)</filter>
+<global>0</global>
+<active>0</active>
+</filter>
+<filter>
+<id>3139</id>
+<form>request</form>
+<userid>sa</userid>
+<title>Entsorgt</title>
+<filter>([Lookup_state].[title]=&quot;Entsorgt&quot;)</filter>
+<global>1</global>
+<active>0</active>
+</filter>
+<filter>
+<id>4139</id>
+<form>translation</form>
+<userid>sa</userid>
+<title>Ohne Tooltip</title>
+<filter>([translation].[item] Not Like &apos;*_tooltip*&apos;)</filter>
+<global>1</global>
+<active>0</active>
+</filter>
+</dataroot>
+</root>

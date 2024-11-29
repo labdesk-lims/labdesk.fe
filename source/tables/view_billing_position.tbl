@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:od="urn:schemas-microsoft-com:officedata">
+<xsd:schema>
+<xsd:element name="dataroot">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element ref="view_billing_position" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+<xsd:attribute name="generated" type="xsd:dateTime"/>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="view_billing_position">
+<xsd:annotation>
+<xsd:appinfo/>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="id" minOccurs="1" od:jetType="longinteger" od:sqlSType="int" od:nonNullable="yes" type="xsd:int">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="category" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int"/>
+<xsd:element name="article_no" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int"/>
+<xsd:element name="description" minOccurs="1" od:jetType="memo" od:sqlSType="ntext" od:nonNullable="yes">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+<od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="536870910"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="amount" minOccurs="1" od:jetType="longinteger" od:sqlSType="int" od:nonNullable="yes" type="xsd:int">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="price" minOccurs="1" od:jetType="currency" od:sqlSType="money" od:nonNullable="yes" type="xsd:double">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="extended_price" minOccurs="0" od:jetType="currency" od:sqlSType="money" type="xsd:double"/>
+<xsd:element name="billing_customer" minOccurs="1" od:jetType="longinteger" od:sqlSType="int" od:nonNullable="yes" type="xsd:int">
+<xsd:annotation>
+<xsd:appinfo>
+<od:fieldProperty name="Required" type="1" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-29T16:48:46">
+<view_billing_position>
+<id>143</id>
+<category>1</category>
+<article_no>1</article_no>
+<description>Speisewasser (Dampfkessel, Salzhaltige Fahrweise, 20 bar)</description>
+<amount>1</amount>
+<price>0</price>
+<extended_price>0</extended_price>
+<billing_customer>52</billing_customer>
+</view_billing_position>
+<view_billing_position>
+<id>144</id>
+<category>1</category>
+<article_no>2</article_no>
+<description>Speisewasser (Dampfkessel, Salzarme Fahrweise, 20 bar)</description>
+<amount>1</amount>
+<price>0</price>
+<extended_price>0</extended_price>
+<billing_customer>52</billing_customer>
+</view_billing_position>
+<view_billing_position>
+<id>145</id>
+<category>1</category>
+<article_no>3</article_no>
+<description>Speisewasser (Heißwasserkessel, Salzhaltige Fahrweise, 20 bar)</description>
+<amount>1</amount>
+<price>0</price>
+<extended_price>0</extended_price>
+<billing_customer>52</billing_customer>
+</view_billing_position>
+<view_billing_position>
+<id>146</id>
+<category>2</category>
+<article_no>5</article_no>
+<description>SOP-005</description>
+<amount>1</amount>
+<price>0</price>
+<extended_price>0</extended_price>
+<billing_customer>52</billing_customer>
+</view_billing_position>
+<view_billing_position>
+<id>147</id>
+<category>1</category>
+<article_no>7</article_no>
+<description>pH-SQC</description>
+<amount>4</amount>
+<price>0</price>
+<extended_price>0</extended_price>
+<billing_customer>53</billing_customer>
+</view_billing_position>
+</dataroot>
+</root>
