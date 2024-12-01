@@ -78,12 +78,17 @@ Public Sub Install()
 'Date:              2021 October
 'Purpose:           Update the database with a local copy of all configurations
 '-------------------------------------------------------------------------------
-    ' InitTranslations
+    ' Init translations
     UpdateTranslation
+    
+    ' Init roles and permissions
     UpdateRole
     UpdatePermission
     UpdateRolePermission
+    
+    'Add admin and activate licence
     AddAdmin
+    ManageLicence.ActivateUser 1
     
     'Set Frontend Version
     SetFeVersion

@@ -98,6 +98,17 @@ Public Sub ContextMenuInit()
     ContextMenuAdd "menu_sub", "audit_trail_subform", 29
     ContextMenuAdd "menu_sub", "clmn_dlg", 8
     ContextMenuAdd "menu_sub", "refresh", 37
+    
+    'Create menu_usr entires
+    ContextMenuAdd "menu_usr", "add_record", 192
+    ContextMenuAdd "menu_usr", "activate_user", 343, True
+    ContextMenuAdd "menu_usr", "deactivate_user", 342
+    ContextMenuAdd "menu_usr", "apply_filter", 601, True
+    ContextMenuAdd "menu_usr", "save_filter", 602
+    ContextMenuAdd "menu_usr", "clmn_dlg", 8, True
+    ContextMenuAdd "menu_usr", "clmn_std", 6
+    ContextMenuAdd "menu_usr", "audit_trail", 29, True
+    ContextMenuAdd "menu_usr", "refresh", 37, True
 End Sub
 
 Public Sub fnCall()
@@ -119,12 +130,6 @@ On Error GoTo Catch_Error
     Select Case strAction
         Case "add_record"
             Forms(frmCurrentForm.name).AddRecord
-        
-        Case "activate_user"
-            Forms(frmCurrentForm.name).ActivateUser
-        
-        Case "deactivate_user"
-            Forms(frmCurrentForm.name).DeactivateUser
             
         Case "duplicate_record"
             Forms(frmCurrentForm.name).DuplicateRecord
@@ -172,6 +177,13 @@ On Error GoTo Catch_Error
             If Not IsNull(Forms(frmCurrentForm.name).Form(Screen.ActiveControl.Parent.name).Form.ID) Then DoCmd.OpenForm "_AuditTrail", acNormal, , , acFormReadOnly, acWindowNormal, Forms(frmCurrentForm.name).Form(Screen.ActiveControl.Parent.name).Form.DataTable & ", " & Forms(frmCurrentForm.name).Form(Screen.ActiveControl.Parent.name).Form.ID
             
         Case "refresh"
+            Forms(frmCurrentForm.name).Requery
+            
+        Case "activate_user"
+            Forms(frmCurrentForm.name).ActivateUser
+        
+         Case "deactivate_user"
+            If Not IsNull(Forms(frmCurrentForm.name).ID) Then ManageLicence.DeActivateUser Forms(frmCurrentForm.name).ID
             Forms(frmCurrentForm.name).Requery
     End Select
 

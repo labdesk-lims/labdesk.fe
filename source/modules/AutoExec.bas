@@ -114,7 +114,13 @@ login_form:
     SysCmd acSysCmdSetStatus, "Check user registration"
     DbProcedures.AddUser
     
-    'Open the closing event form
+    ' Check users licence
+    If Not UserHasLicence(GetUserId()) Then
+        config.DemoMode = True
+        MsgBox "User has no active licence. Demo mode only.", vbInformation, "Information"
+    End If
+    
+    'Open the background worker form
     SysCmd acSysCmdSetStatus, "Init background worker"
     DoCmd.OpenForm "_background_worker_form", acNormal, , , acFormReadOnly, acWindowNormal
     Forms("_background_worker_form").TimerInterval = config.BackgroundWorkerInterval

@@ -27,10 +27,16 @@ Private Const pAppTitle = "LABDESK - Laboratory Information Management System"
 ' Background worker timer interval in milliseconds
 Private Const pBackgroundWorkerInterval = 3 * 60000
 
+' Encryption master key
+Private Const pMasterKey = "d9!7*G7vBd/bs778#"
+
+' Demo mode
+Public DemoMode As Boolean
+
 ' Semantic Versioning according to https://semver.org/
 ' MAJOR-MINOR-PATCH
-Private Const pFeVersion = "v2.6.5" 'Presented frontend version
-Private Const pBeVersion = "v2.6.0" 'Required backend version
+Private Const pFeVersion = "v2.7.0" 'Presented frontend version
+Private Const pBeVersion = "v2.7.0" 'Required backend version
 
 ' Identifiers used for reports and labels
 Private Const pReportId = "RPT-" 'Identifier for selectable reports
@@ -55,6 +61,10 @@ End Property
 
 Public Property Get BackgroundWorkerInterval()
     BackgroundWorkerInterval = pBackgroundWorkerInterval
+End Property
+
+Public Property Get MasterKey() As String
+    MasterKey = pMasterKey
 End Property
 
 Public Property Get FeVersion() As String

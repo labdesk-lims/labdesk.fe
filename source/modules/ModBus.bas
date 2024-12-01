@@ -1178,7 +1178,7 @@ Public Function MB_LoopBack(mb_add As Integer, subFunction As Integer, writeBuff
     Dim CRC As Long
     Dim lTemp As Long
     Dim MsgStr As String
-    Dim i As Integer, X As Integer
+    Dim i As Integer, x As Integer
     Dim temp_string As String
     Dim byte_counter As Integer
     Dim lngStatus As Long
@@ -1389,7 +1389,7 @@ Public Function MB_Read(mb_add As Integer, start As Integer, Length As Integer, 
     Dim CRC As Long
     Dim lTemp As Long
     Dim MsgStr As String
-    Dim i As Integer, X As Integer
+    Dim i As Integer, x As Integer
     Dim temp_string As String
     Dim byte_counter As Integer
     Dim lngStatus As Long
@@ -1569,7 +1569,7 @@ Public Function MB_Write(mb_add As Byte, start As Integer, data_2_write() As Lon
     Dim CRC As Long
     Dim lTemp As Long
     Dim MsgStr As String
-    Dim i As Integer, X As Integer
+    Dim i As Integer, x As Integer
     Dim temp_string As String
     Dim byte_counter As Integer
     Dim lngStatus As Long
