@@ -149,3 +149,7 @@ Exit_Function:
 Catch_Error:
     Resume Exit_Function
 End Function
+
+Public Function GetLicenceKey(ByVal ID As Integer, ByVal uid As String) As String
+    GetLicenceKey = CipherAES.StoreEncryptAES(uid, config.MasterKey & ID, 1)
+End Function
