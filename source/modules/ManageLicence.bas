@@ -14,7 +14,6 @@ On Error GoTo Catch_Error
     
     Set db = CurrentDb()
     
-    'Write activation key
     Set rs1 = db.OpenRecordset("SELECT uid FROM users WHERE id = " & ID, dbOpenDynaset, dbSeeChanges)
     
     If rs1.EOF Then Err.Raise vbObjectError + 513, , "User ID not found."
@@ -39,11 +38,10 @@ On Error GoTo Catch_Error
     
     Set db = CurrentDb()
     
-    'Write activation key
     Set rs1 = db.OpenRecordset("SELECT uid FROM users WHERE id = " & ID, dbOpenDynaset, dbSeeChanges)
     
     If rs1.EOF Then Err.Raise vbObjectError + 513, , "User ID not found."
-    
+
     encryptedString = CipherAES.StoreEncryptAES(rs1(0), config.MasterKey & ID, 1)
     GetUserUak = encryptedString
     
