@@ -91,7 +91,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-01T11:17:00">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-03T16:29:02">
 <_translation>
 <id>1</id>
 <container>laboratory</container>
@@ -8829,6 +8829,2902 @@
 <custom>Kategorie</custom>
 </_translation>
 <_translation>
+<id>39822</id>
+<container>RPT-M001</container>
+<item>bic_</item>
+<en>BIC</en>
+<de>BIC</de>
+<custom>BIC</custom>
+</_translation>
+<_translation>
+<id>39824</id>
+<container>RPT-M001</container>
+<item>hrg_not_translateable</item>
+<en>Leipzig</en>
+<de>Leipzig</de>
+<custom>Leipzig</custom>
+</_translation>
+<_translation>
+<id>39825</id>
+<container>RPT-M001</container>
+<item>hrg_</item>
+<en>HRG</en>
+<de>HRG</de>
+<custom>HRG</custom>
+</_translation>
+<_translation>
+<id>39826</id>
+<container>RPT-M001</container>
+<item>hrgid_not_translateable</item>
+<en>EB191918</en>
+<de>EB10101923</de>
+<custom>EB10101923</custom>
+</_translation>
+<_translation>
+<id>39827</id>
+<container>RPT-M001</container>
+<item>hrgid_</item>
+<en>HRG DI</en>
+<de>HRG ID</de>
+<custom>HRG ID</custom>
+</_translation>
+<_translation>
+<id>39829</id>
+<container>RPT-M001</container>
+<item>ustdid_</item>
+<en>VAT</en>
+<de>Ust-Id</de>
+<custom>Ust-Id</custom>
+</_translation>
+<_translation>
+<id>39831</id>
+<container>RPT-M001</container>
+<item>CEO_</item>
+<en>CEO</en>
+<de>CEO</de>
+<custom>CEO</custom>
+</_translation>
+<_translation>
+<id>39832</id>
+<container>RPT-M001</container>
+<item>company_</item>
+<en>Company</en>
+<de>Firma</de>
+<custom>Firma</custom>
+</_translation>
+<_translation>
+<id>39836</id>
+<container>RPT-M001</container>
+<item>telefone_</item>
+<en>Telefone</en>
+<de>Telefon</de>
+<custom>Telefon</custom>
+</_translation>
+<_translation>
+<id>39866</id>
+<container>M001_header</container>
+<item>caption_</item>
+<en>Labreport</en>
+<de>Laborbericht</de>
+<custom>Laborbericht</custom>
+</_translation>
+<_translation>
+<id>39867</id>
+<container>M001_header</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>39868</id>
+<container>M001_header</container>
+<item>customer_</item>
+<en>Customer</en>
+<de>Kunde</de>
+<custom>Kunde</custom>
+</_translation>
+<_translation>
+<id>39869</id>
+<container>M001_header</container>
+<item>client_order_id_</item>
+<en>Client Order ID</en>
+<de>Kundenbestell-Nr</de>
+<custom>Kundenbestell-Nr</custom>
+</_translation>
+<_translation>
+<id>39870</id>
+<container>M001_header</container>
+<item>address_</item>
+<en>Address</en>
+<de>Adresse</de>
+<custom>Adresse</custom>
+</_translation>
+<_translation>
+<id>39871</id>
+<container>M001_header</container>
+<item>contact_</item>
+<en>Contact</en>
+<de>Kontakt</de>
+<custom>Kontakt</custom>
+</_translation>
+<_translation>
+<id>39872</id>
+<container>M001_header</container>
+<item>email_</item>
+<en>Email</en>
+<de>E-Mail</de>
+<custom>E-Mail</custom>
+</_translation>
+<_translation>
+<id>40808</id>
+<container>RPT-M001</container>
+<item>smp_id</item>
+<en>=&quot;SMP-&quot; &amp; [id]</en>
+<de>=&quot;SMP-&quot; &amp; [id]</de>
+<custom>=&quot;SMP-&quot; &amp; [id]</custom>
+</_translation>
+<_translation>
+<id>45687</id>
+<container>ribbon_bar</container>
+<item>btn_error</item>
+<en>Errors</en>
+<de>Errors</de>
+<custom>Errors</custom>
+</_translation>
+<_translation>
+<id>45732</id>
+<container>errorlog</container>
+<item>caption_</item>
+<en>Errors</en>
+<de>Errors</de>
+<custom>Errors</custom>
+</_translation>
+<_translation>
+<id>45733</id>
+<container>errorlog</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>45735</id>
+<container>errorlog</container>
+<item>user_id_</item>
+<en>User ID</en>
+<de>User ID</de>
+<custom>User ID</custom>
+</_translation>
+<_translation>
+<id>45739</id>
+<container>errorlog</container>
+<item>error_description_</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>45741</id>
+<container>errorlog</container>
+<item>created_at_</item>
+<en>Created at</en>
+<de>Erstell am</de>
+<custom>Erstell am</custom>
+</_translation>
+<_translation>
+<id>45748</id>
+<container>errorlog</container>
+<item>error_id_</item>
+<en>Error ID</en>
+<de>Error ID</de>
+<custom>Error ID</custom>
+</_translation>
+<_translation>
+<id>47211</id>
+<container>setup</container>
+<item>verbous_</item>
+<en>Verbous</en>
+<de>Verbous</de>
+<custom>Verbous</custom>
+</_translation>
+<_translation>
+<id>47212</id>
+<container>setup</container>
+<item>verbous_tooltip</item>
+<en>Report all errors</en>
+<de>Fehler berichten</de>
+<custom>Fehler berichten</custom>
+</_translation>
+<_translation>
+<id>51196</id>
+<container>system</container>
+<item>MDIMode-On</item>
+<en>Multi Document Interface switched on. Restart to take effect.</en>
+<de>Multi Document Interface ist eingeschaltet. Starten Sie neu, damit es wirksam wird.</de>
+<custom>Multi Document Interface ist eingeschaltet. Starten Sie neu, damit es wirksam wird.</custom>
+</_translation>
+<_translation>
+<id>51197</id>
+<container>system</container>
+<item>MDIMode-Off</item>
+<en>Multi Document Interface switched off. Restart to take effect.</en>
+<de>Multi Document Interface ist ausgeschaltet. Starten Sie neu, damit es wirksam wird.</de>
+<custom>Multi Document Interface ist ausgeschaltet. Starten Sie neu, damit es wirksam wird.</custom>
+</_translation>
+<_translation>
+<id>51485</id>
+<container>ribbon_bar</container>
+<item>btn_mdi</item>
+<en>MDI</en>
+<de>MDI</de>
+<custom>MDI</custom>
+</_translation>
+<_translation>
+<id>54859</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_sub_clmn_dlg</item>
+<en>Columns</en>
+<de>Spalten</de>
+<custom>Spalten</custom>
+</_translation>
+<_translation>
+<id>54860</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_sub_clmn_std</item>
+<en>Reset</en>
+<de>Zurücksetzen</de>
+<custom>Zurücksetzen</custom>
+</_translation>
+<_translation>
+<id>66560</id>
+<container>request-sub</container>
+<item>invoice_</item>
+<en>Invoice</en>
+<de>Abrechnen</de>
+<custom>Abrechnen</custom>
+</_translation>
+<_translation>
+<id>68337</id>
+<container>S001_header</container>
+<item>smp_id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>68338</id>
+<container>S001_header</container>
+<item>smp_id</item>
+<en>=&quot;SMP-&quot;&amp;[ID]</en>
+<de>=&quot;SMP-&quot;&amp;[ID]</de>
+<custom>=&quot;SMP-&quot;&amp;[ID]</custom>
+</_translation>
+<_translation>
+<id>68500</id>
+<container>M001_header</container>
+<item>smp_id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>68547</id>
+<container>M001_header</container>
+<item>smp_id</item>
+<en>=&quot;SMP-&quot;&amp;[ID]</en>
+<de>=&quot;SMP-&quot;&amp;[ID]</de>
+<custom>=&quot;SMP-&quot;&amp;[ID]</custom>
+</_translation>
+<_translation>
+<id>86876</id>
+<container>setup_edit</container>
+<item>verbous_</item>
+<en>Verbous</en>
+<de>Verbous</de>
+<custom>Verbous</custom>
+</_translation>
+<_translation>
+<id>99297</id>
+<container>view_measurement</container>
+<item>smp_date_</item>
+<en>Sampling Date</en>
+<de>Probenahmedatum</de>
+<custom>Probenahmedatum</custom>
+</_translation>
+<_translation>
+<id>99299</id>
+<container>view_measurement</container>
+<item>profile_</item>
+<en>Profile</en>
+<de>Profil</de>
+<custom>Profil</custom>
+</_translation>
+<_translation>
+<id>99301</id>
+<container>view_measurement</container>
+<item>smppoint_</item>
+<en>Sample Point</en>
+<de>Probenahmestelle</de>
+<custom>Probenahmestelle</custom>
+</_translation>
+<_translation>
+<id>103685</id>
+<container>workflow_state_sbf</container>
+<item>role_</item>
+<en>Assigned Role</en>
+<de>Zugewiesene Rolle</de>
+<custom>Zugewiesene Rolle</custom>
+</_translation>
+<_translation>
+<id>103686</id>
+<container>workflow_state_sbf</container>
+<item>role_tooltip</item>
+<en>Choose role to get alert on pending requests in desktop</en>
+<de>Rolle auswähnlen um über ausstehende Analysenaufträge im Desktop informiert zu werden</de>
+<custom>Rolle auswähnlen um über ausstehende Analysenaufträge im Desktop informiert zu werden</custom>
+</_translation>
+<_translation>
+<id>103723</id>
+<container>desktop</container>
+<item>tab_request</item>
+<en>Requests to check</en>
+<de>Aufträge zur Prüfung</de>
+<custom>Aufträge zur Prüfung</custom>
+</_translation>
+<_translation>
+<id>105127</id>
+<container>request</container>
+<item>role_</item>
+<en>Responsible</en>
+<de>Zuständig</de>
+<custom>Zuständig</custom>
+</_translation>
+<_translation>
+<id>105726</id>
+<container>desktop_request_sbf</container>
+<item>caption_</item>
+<en>Requests</en>
+<de>Aufträge</de>
+<custom>Aufträge</custom>
+</_translation>
+<_translation>
+<id>105727</id>
+<container>desktop_request_sbf</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>105729</id>
+<container>desktop_request_sbf</container>
+<item>description_</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>105731</id>
+<container>desktop_request_sbf</container>
+<item>smp_date_</item>
+<en>Sample Date</en>
+<de>Probenahmedatum</de>
+<custom>Probenahmedatum</custom>
+</_translation>
+<_translation>
+<id>105733</id>
+<container>desktop_request_sbf</container>
+<item>client_sample_id_</item>
+<en>Client Sampe ID</en>
+<de>Kunden Probennummer</de>
+<custom>Kunden Probennummer</custom>
+</_translation>
+<_translation>
+<id>105735</id>
+<container>desktop_request_sbf</container>
+<item>client_order_id_</item>
+<en>Client Order ID</en>
+<de>Client Order ID</de>
+<custom>Client Order ID</custom>
+</_translation>
+<_translation>
+<id>105737</id>
+<container>desktop_request_sbf</container>
+<item>customer_</item>
+<en>Customer</en>
+<de>Kunde</de>
+<custom>Kunde</custom>
+</_translation>
+<_translation>
+<id>105739</id>
+<container>desktop_request_sbf</container>
+<item>smptype_</item>
+<en>Sample Type</en>
+<de>Probentyp</de>
+<custom>Probentyp</custom>
+</_translation>
+<_translation>
+<id>105741</id>
+<container>desktop_request_sbf</container>
+<item>smpmatrix_</item>
+<en>Sample Matrix</en>
+<de>Probenmatrix</de>
+<custom>Probenmatrix</custom>
+</_translation>
+<_translation>
+<id>105743</id>
+<container>desktop_request_sbf</container>
+<item>priority_</item>
+<en>Priority</en>
+<de>Priorität</de>
+<custom>Priorität</custom>
+</_translation>
+<_translation>
+<id>105745</id>
+<container>desktop_request_sbf</container>
+<item>profile_</item>
+<en>Profile</en>
+<de>Profil</de>
+<custom>Profil</custom>
+</_translation>
+<_translation>
+<id>105747</id>
+<container>desktop_request_sbf</container>
+<item>formulation_</item>
+<en>Formulation</en>
+<de>Formulierung</de>
+<custom>Formulierung</custom>
+</_translation>
+<_translation>
+<id>105749</id>
+<container>desktop_request_sbf</container>
+<item>project_</item>
+<en>Project</en>
+<de>Projekt</de>
+<custom>Projekt</custom>
+</_translation>
+<_translation>
+<id>105751</id>
+<container>desktop_request_sbf</container>
+<item>sampler_</item>
+<en>Sampler</en>
+<de>Probennehmer</de>
+<custom>Probennehmer</custom>
+</_translation>
+<_translation>
+<id>115557</id>
+<container>setup</container>
+<item>num_format_</item>
+<en>Numerical Format</en>
+<de>Numerical Format</de>
+<custom>Numerical Format</custom>
+</_translation>
+<_translation>
+<id>115559</id>
+<container>setup</container>
+<item>num_culture_</item>
+<en>Culture Code</en>
+<de>Culture Code</de>
+<custom>Culture Code</custom>
+</_translation>
+<_translation>
+<id>115567</id>
+<container>setup_edit</container>
+<item>num_format_</item>
+<en>Numerical Format</en>
+<de>Numerical Format</de>
+<custom>Numerical Format</custom>
+</_translation>
+<_translation>
+<id>115569</id>
+<container>setup_edit</container>
+<item>num_culture_</item>
+<en>Culture Code</en>
+<de>Culture Code</de>
+<custom>Culture Code</custom>
+</_translation>
+<_translation>
+<id>116211</id>
+<container>template</container>
+<item>client_order_id_</item>
+<en>Client Order ID</en>
+<de>Client Order ID</de>
+<custom>Client Order ID</custom>
+</_translation>
+<_translation>
+<id>116215</id>
+<container>template_edit</container>
+<item>client_order_id_</item>
+<en>Client Order ID</en>
+<de>Client Order ID</de>
+<custom>Client Order ID</custom>
+</_translation>
+<_translation>
+<id>120471</id>
+<container>template_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+<custom>Speichern</custom>
+</_translation>
+<_translation>
+<id>121066</id>
+<container>translation_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121100</id>
+<container>role_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121136</id>
+<container>workflow_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121192</id>
+<container>billing_customer_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121309</id>
+<container>laboratory_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121317</id>
+<container>department_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121335</id>
+<container>workplace_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121487</id>
+<container>customer_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121615</id>
+<container>contact_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121623</id>
+<container>manufacturer_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121649</id>
+<container>supplier_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121749</id>
+<container>priority_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121758</id>
+<container>technique_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121767</id>
+<container>instype_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121776</id>
+<container>service_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121809</id>
+<container>material_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121861</id>
+<container>smpcontainer_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121865</id>
+<container>smppreservation_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121873</id>
+<container>smpcondition_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121882</id>
+<container>smppoint_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121891</id>
+<container>smptype_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121899</id>
+<container>smpmatrix_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>122442</id>
+<container>_background_worker_form</container>
+<item>demo-mode</item>
+<en>Demo Mode. Labdesk will close automatically.</en>
+<de>Demo-Modus. Labdesk wird automatisch geschlossen.</de>
+<custom>Demo-Modus. Labdesk wird automatisch geschlossen.</custom>
+</_translation>
+<_translation>
+<id>122443</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_add_record</item>
+<en>Add record</en>
+<de>Hinzufügen</de>
+<custom>Hinzufügen</custom>
+</_translation>
+<_translation>
+<id>122444</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_activate_user</item>
+<en>Issue Licence</en>
+<de>Lizenz ausstellen</de>
+</_translation>
+<_translation>
+<id>122445</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_deactivate_user</item>
+<en>Revoke Licence</en>
+<de>Lizenz entziehen</de>
+</_translation>
+<_translation>
+<id>122446</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_apply_filter</item>
+<en>Apply filer</en>
+<de>Filter anwenden</de>
+</_translation>
+<_translation>
+<id>122447</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_save_filter</item>
+<en>Save filter</en>
+<de>Filter speichern</de>
+</_translation>
+<_translation>
+<id>122448</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_clmn_dlg</item>
+<en>Columns</en>
+<de>Spalten</de>
+<custom>Spalten</custom>
+</_translation>
+<_translation>
+<id>122449</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_clmn_std</item>
+<en>Reset</en>
+<de>Zurücksetzen</de>
+<custom>Zurücksetzen</custom>
+</_translation>
+<_translation>
+<id>122450</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_audit_trail</item>
+<en>Audit Trail</en>
+<de>Audit Trail</de>
+<custom>Audit Trail</custom>
+</_translation>
+<_translation>
+<id>122451</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_refresh</item>
+<en>Refresh</en>
+<de>Aktualisieren</de>
+<custom>Aktualisieren</custom>
+</_translation>
+<_translation>
+<id>122478</id>
+<container>users</container>
+<item>licence_</item>
+<en>Activated</en>
+<de>Aktiviert</de>
+</_translation>
+<_translation>
+<id>122646</id>
+<container>_TextBoxDialog</container>
+<item>btn_save</item>
+<en>OK</en>
+<de>OK</de>
+</_translation>
+<_translation>
+<id>122647</id>
+<container>_TextBoxDialog</container>
+<item>btn_cancel</item>
+<en>Cancel</en>
+<de>Abbrechen</de>
+</_translation>
+<_translation>
+<id>122648</id>
+<container>_TextBoxDialog</container>
+<item>comboBox</item>
+<en>UID/UAK</en>
+<de>UID/UAK</de>
+</_translation>
+<_translation>
+<id>122655</id>
+<container>_TextBoxDialog</container>
+<item>caption</item>
+<en>Activate User</en>
+<de>Benutzer Aktivierung</de>
+</_translation>
+<_translation>
+<id>122688</id>
+<container>users</container>
+<item>uak_not_valid</item>
+<en>UAK not valid. Contact the software vendor.</en>
+<de>UAK nicht gültig. Kontakieren Sie den Anbieter.</de>
+</_translation>
+<_translation>
+<id>1615</id>
+<container>request_owner</container>
+<item>smp_date_</item>
+<en>Sampling date</en>
+<de>Probenahmedatum</de>
+<custom>Probenahmedatum</custom>
+</_translation>
+<_translation>
+<id>1616</id>
+<container>request_owner</container>
+<item>client_sample_id_</item>
+<en>Client sample id</en>
+<de>Kunden Probennummer</de>
+<custom>Kunden Probennummer</custom>
+</_translation>
+<_translation>
+<id>1617</id>
+<container>request_owner</container>
+<item>client_order_id_</item>
+<en>Client Order ID</en>
+<de>Kundenbestell-Nr</de>
+<custom>Kundenbestell-Nr</custom>
+</_translation>
+<_translation>
+<id>1618</id>
+<container>request_owner</container>
+<item>smp_composit_</item>
+<en>Sample composit</en>
+<de>Mischprobe</de>
+<custom>Mischprobe</custom>
+</_translation>
+<_translation>
+<id>1619</id>
+<container>request_owner</container>
+<item>internal_use_</item>
+<en>Internal user</en>
+<de>Interne Verwendung</de>
+<custom>Interne Verwendung</custom>
+</_translation>
+<_translation>
+<id>1620</id>
+<container>request_owner</container>
+<item>exclude_invoice_</item>
+<en>Exclude from invoice</en>
+<de>Nicht berechnen</de>
+<custom>Nicht berechnen</custom>
+</_translation>
+<_translation>
+<id>1621</id>
+<container>request_owner</container>
+<item>state_</item>
+<en>State</en>
+<de>Status</de>
+<custom>Status</custom>
+</_translation>
+<_translation>
+<id>1622</id>
+<container>request_owner</container>
+<item>storage_</item>
+<en>Storage</en>
+<de>Aufbewahrung</de>
+<custom>Aufbewahrung</custom>
+</_translation>
+<_translation>
+<id>1623</id>
+<container>request_owner</container>
+<item>batch_</item>
+<en>Batch</en>
+<de>Batch</de>
+<custom>Batch</custom>
+</_translation>
+<_translation>
+<id>1624</id>
+<container>request_owner</container>
+<item>customer_</item>
+<en>Customer</en>
+<de>Kunde</de>
+<custom>Kunde</custom>
+</_translation>
+<_translation>
+<id>1625</id>
+<container>request_owner</container>
+<item>smptype_</item>
+<en>Sample type</en>
+<de>Probenart</de>
+<custom>Probenart</custom>
+</_translation>
+<_translation>
+<id>1626</id>
+<container>request_owner</container>
+<item>smpmatrix_</item>
+<en>Sample matrix</en>
+<de>Matrix</de>
+<custom>Matrix</custom>
+</_translation>
+<_translation>
+<id>1627</id>
+<container>request_owner</container>
+<item>smpcontainer_</item>
+<en>Sample container</en>
+<de>Probenbehälter</de>
+<custom>Probenbehälter</custom>
+</_translation>
+<_translation>
+<id>1628</id>
+<container>request_owner</container>
+<item>smpcondition_</item>
+<en>Sample condition</en>
+<de>Probenzustand</de>
+<custom>Probenzustand</custom>
+</_translation>
+<_translation>
+<id>1629</id>
+<container>request_owner</container>
+<item>smppreservation_</item>
+<en>Sample preservation</en>
+<de>Konservierung</de>
+<custom>Konservierung</custom>
+</_translation>
+<_translation>
+<id>1630</id>
+<container>request_owner</container>
+<item>smppoint_</item>
+<en>Sampling point</en>
+<de>Probenahmestelle</de>
+<custom>Probenahmestelle</custom>
+</_translation>
+<_translation>
+<id>1631</id>
+<container>request_owner</container>
+<item>priority_</item>
+<en>Priority</en>
+<de>Priorität</de>
+<custom>Priorität</custom>
+</_translation>
+<_translation>
+<id>1632</id>
+<container>request_owner</container>
+<item>profile_</item>
+<en>Profile</en>
+<de>Profil</de>
+<custom>Profil</custom>
+</_translation>
+<_translation>
+<id>1633</id>
+<container>request_owner</container>
+<item>workflow_</item>
+<en>Workflow</en>
+<de>Workflow</de>
+<custom>Workflow</custom>
+</_translation>
+<_translation>
+<id>1634</id>
+<container>request_owner</container>
+<item>formulation_</item>
+<en>Formulation</en>
+<de>Formulierung</de>
+<custom>Formulierung</custom>
+</_translation>
+<_translation>
+<id>1635</id>
+<container>request_owner</container>
+<item>project_</item>
+<en>Project</en>
+<de>Projekt</de>
+<custom>Projekt</custom>
+</_translation>
+<_translation>
+<id>1636</id>
+<container>request_owner</container>
+<item>sampler_</item>
+<en>Sampler</en>
+<de>Probenehmer</de>
+<custom>Probenehmer</custom>
+</_translation>
+<_translation>
+<id>1637</id>
+<container>project_owner</container>
+<item>caption_</item>
+<en>Project</en>
+<de>Projekt</de>
+<custom>Projekt</custom>
+</_translation>
+<_translation>
+<id>1638</id>
+<container>project_owner</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>1639</id>
+<container>project_owner</container>
+<item>title_</item>
+<en>Title</en>
+<de>Titel</de>
+<custom>Titel</custom>
+</_translation>
+<_translation>
+<id>1640</id>
+<container>project_owner</container>
+<item>description_</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>1641</id>
+<container>project_owner</container>
+<item>deactivate_</item>
+<en>Deactivate</en>
+<de>Deaktivieren</de>
+<custom>Deaktivieren</custom>
+</_translation>
+<_translation>
+<id>1642</id>
+<container>project_owner</container>
+<item>owner_</item>
+<en>Owner</en>
+<de>Ersteller</de>
+<custom>Ersteller</custom>
+</_translation>
+<_translation>
+<id>1093</id>
+<container>billing_customer</container>
+<item>invoiced_</item>
+<en>Invoiced at</en>
+<de>Abgerechnet am</de>
+<custom>Abgerechnet am</custom>
+</_translation>
+<_translation>
+<id>1094</id>
+<container>billing_customer_edit</container>
+<item>invoiced_</item>
+<en>Invoiced at</en>
+<de>Abgerechnet am</de>
+<custom>Abgerechnet am</custom>
+</_translation>
+<_translation>
+<id>1095</id>
+<container>request</container>
+<item>invoice_</item>
+<en>Invoice</en>
+<de>Abrechnen</de>
+<custom>Abrechnen</custom>
+</_translation>
+<_translation>
+<id>1096</id>
+<container>request</container>
+<item>billing_customer_</item>
+<en>Invoice-ID</en>
+<de>Abrechnungs-ID</de>
+<custom>Abrechnungs-ID</custom>
+</_translation>
+<_translation>
+<id>1097</id>
+<container>request_edit</container>
+<item>invoice_</item>
+<en>Invoice</en>
+<de>Abrechnen</de>
+<custom>Abrechnen</custom>
+</_translation>
+<_translation>
+<id>1098</id>
+<container>request_edit</container>
+<item>billing_customer_</item>
+<en>Invoice-ID</en>
+<de>Abrechnungs-ID</de>
+<custom>Abrechnungs-ID</custom>
+</_translation>
+<_translation>
+<id>1099</id>
+<container>ribbon_bar</container>
+<item>grp_info</item>
+<en>About</en>
+<de>About</de>
+<custom>About</custom>
+</_translation>
+<_translation>
+<id>1100</id>
+<container>project</container>
+<item>invoice_</item>
+<en>Invoice</en>
+<de>Abrechnen</de>
+<custom>Abrechnen</custom>
+</_translation>
+<_translation>
+<id>1101</id>
+<container>project</container>
+<item>billing_customer_</item>
+<en>Invoice-ID</en>
+<de>Rechnungs-ID</de>
+<custom>Rechnungs-ID</custom>
+</_translation>
+<_translation>
+<id>1102</id>
+<container>project_edit</container>
+<item>invoice_</item>
+<en>Invoice</en>
+<de>Abrechnen</de>
+<custom>Abrechnen</custom>
+</_translation>
+<_translation>
+<id>1103</id>
+<container>project_edit</container>
+<item>billing_customer_</item>
+<en>Invoice-ID</en>
+<de>Rechnungs-ID</de>
+<custom>Rechnungs-ID</custom>
+</_translation>
+<_translation>
+<id>1104</id>
+<container>billing</container>
+<item>billing_from_</item>
+<en>From</en>
+<de>Von</de>
+<custom>Von</custom>
+</_translation>
+<_translation>
+<id>1105</id>
+<container>billing</container>
+<item>billing_till_</item>
+<en>Till</en>
+<de>Bis</de>
+<custom>Bis</custom>
+</_translation>
+<_translation>
+<id>1106</id>
+<container>billing_customer</container>
+<item>projects_</item>
+<en>Projects</en>
+<de>Projekte</de>
+<custom>Projekte</custom>
+</_translation>
+<_translation>
+<id>1107</id>
+<container>technique_translation</container>
+<item>Sensorics</item>
+<en>Sensoric</en>
+<de>Sensorisch</de>
+<custom>Sensorisch</custom>
+</_translation>
+<_translation>
+<id>1108</id>
+<container>msgbox</container>
+<item>mailadress_error</item>
+<en>Email not sent. Mailadress not provided or with wrong format.</en>
+<de>E-Mail nicht gesendet. Mailadresse nicht angegeben oder mit falschem Format.</de>
+<custom>E-Mail nicht gesendet. Mailadresse nicht angegeben oder mit falschem Format.</custom>
+</_translation>
+<_translation>
+<id>1314</id>
+<container>project_formulation_sbf</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>1315</id>
+<container>project_formulation_sbf</container>
+<item>title_</item>
+<en>Title</en>
+<de>Titel</de>
+<custom>Titel</custom>
+</_translation>
+<_translation>
+<id>1316</id>
+<container>project_formulation_sbf</container>
+<item>description_</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>1317</id>
+<container>project_formulation_sbf</container>
+<item>instruction_</item>
+<en>Instruction</en>
+<de>Anleitung</de>
+<custom>Anleitung</custom>
+</_translation>
+<_translation>
+<id>1318</id>
+<container>project_formulation_sbf</container>
+<item>deactivate_</item>
+<en>Deactivate</en>
+<de>Deaktivieren</de>
+<custom>Deaktivieren</custom>
+</_translation>
+<_translation>
+<id>1319</id>
+<container>project_formulation_sbf</container>
+<item>project_</item>
+<en>Project</en>
+<de>Projekt</de>
+<custom>Projekt</custom>
+</_translation>
+<_translation>
+<id>1320</id>
+<container>project_formulation_sbf</container>
+<item>owner_</item>
+<en>Owner</en>
+<de>Eigentümer</de>
+<custom>Eigentümer</custom>
+</_translation>
+<_translation>
+<id>1321</id>
+<container>ribbon_bar</container>
+<item>grp_project</item>
+<en>Project</en>
+<de>Projekt</de>
+<custom>Projekt</custom>
+</_translation>
+<_translation>
+<id>1322</id>
+<container>ribbon_bar</container>
+<item>btn_project</item>
+<en>Project</en>
+<de>Projekte</de>
+<custom>Projekte</custom>
+</_translation>
+<_translation>
+<id>1323</id>
+<container>batch_position_sbf</container>
+<item>sample_already_stored</item>
+<en>Sample already stored. Correct or press ESC.</en>
+<de>Probe bereits gespeichert. Korrigieren Sie oder drücken Sie ESC.</de>
+<custom>Probe bereits gespeichert. Korrigieren Sie oder drücken Sie ESC.</custom>
+</_translation>
+<_translation>
+<id>1324</id>
+<container>technique</container>
+<item>deactivate_</item>
+<en>Deactivate</en>
+<de>Deaktivieren</de>
+<custom>Deaktivieren</custom>
+</_translation>
+<_translation>
+<id>1325</id>
+<container>technique_edit</container>
+<item>deactivate_</item>
+<en>Deactivate</en>
+<de>Deaktivieren</de>
+<custom>Deaktivieren</custom>
+</_translation>
+<_translation>
+<id>1326</id>
+<container>priority</container>
+<item>deactivate_</item>
+<en>Deactivate</en>
+<de>Deaktivieren</de>
+<custom>Deaktivieren</custom>
+</_translation>
+<_translation>
+<id>1327</id>
+<container>priority_edit</container>
+<item>deactivate_</item>
+<en>Deactivate</en>
+<de>Deaktivieren</de>
+<custom>Deaktivieren</custom>
+</_translation>
+<_translation>
+<id>1328</id>
+<container>qualification</container>
+<item>reviewed_by_</item>
+<en>Reviewed by</en>
+<de>Überprüft von</de>
+<custom>Überprüft von</custom>
+</_translation>
+<_translation>
+<id>1329</id>
+<container>qualification_edit</container>
+<item>reviewed_by_</item>
+<en>Reviewed by</en>
+<de>Überprüft von</de>
+<custom>Überprüft von</custom>
+</_translation>
+<_translation>
+<id>1330</id>
+<container>msgbox</container>
+<item>method_in_use</item>
+<en>Method still in use. Correct and try again.</en>
+<de>Die Methode wird immer noch verwendet. Bitte korrigieren und erneut versuchen.</de>
+<custom>Die Methode wird immer noch verwendet. Bitte korrigieren und erneut versuchen.</custom>
+</_translation>
+<_translation>
+<id>1331</id>
+<container>instrument_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+<custom>Speichern</custom>
+</_translation>
+<_translation>
+<id>1332</id>
+<container>method_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+<custom>Speichern</custom>
+</_translation>
+<_translation>
+<id>1333</id>
+<container>profile_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+<custom>Speichern</custom>
+</_translation>
+<_translation>
+<id>1334</id>
+<container>qualification</container>
+<item>user_id_</item>
+<en>User</en>
+<de>Benutzer</de>
+<custom>Benutzer</custom>
+</_translation>
+<_translation>
+<id>1335</id>
+<container>request_customfield_sbf</container>
+<item>field_key_</item>
+<en>Key</en>
+<de>Key</de>
+<custom>Key</custom>
+</_translation>
+<_translation>
+<id>1336</id>
+<container>request_customfield_sbf</container>
+<item>field_name_</item>
+<en>Name</en>
+<de>Name</de>
+<custom>Name</custom>
+</_translation>
+<_translation>
+<id>1337</id>
+<container>request_customfield_sbf</container>
+<item>field_value_</item>
+<en>Value</en>
+<de>Wert</de>
+<custom>Wert</custom>
+</_translation>
+<_translation>
+<id>1338</id>
+<container>request_customfield_sbf</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>1339</id>
+<container>customfield</container>
+<item>caption_</item>
+<en>Custom Field</en>
+<de>Benutzerdefiniertes Feld</de>
+<custom>Benutzerdefiniertes Feld</custom>
+</_translation>
+<_translation>
+<id>1340</id>
+<container>customfield</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>1341</id>
+<container>customfield</container>
+<item>table_name_</item>
+<en>Table</en>
+<de>Tabelle</de>
+<custom>Tabelle</custom>
+</_translation>
+<_translation>
+<id>1342</id>
+<container>customfield</container>
+<item>field_key_</item>
+<en>Key</en>
+<de>Schlüssel</de>
+<custom>Schlüssel</custom>
+</_translation>
+<_translation>
+<id>1343</id>
+<container>customfield</container>
+<item>field_name_</item>
+<en>Name</en>
+<de>Name</de>
+<custom>Name</custom>
+</_translation>
+<_translation>
+<id>1344</id>
+<container>ribbon_bar</container>
+<item>btn_customfield</item>
+<en>Add. Fields</en>
+<de>Zusatzfelder</de>
+<custom>Zusatzfelder</custom>
+</_translation>
+<_translation>
+<id>1345</id>
+<container>setup</container>
+<item>upload_max_byte_</item>
+<en>Max Filesize (byte)</en>
+<de>Max. Dateigröße (byte)</de>
+<custom>Max. Dateigröße (byte)</custom>
+</_translation>
+<_translation>
+<id>1346</id>
+<container>setup_edit</container>
+<item>upload_max_byte_</item>
+<en>Max Filesize (byte)</en>
+<de>Max. Dateigröße (byte)</de>
+<custom>Max. Dateigröße (byte)</custom>
+</_translation>
+<_translation>
+<id>1347</id>
+<container>Dialogs</container>
+<item>max_filesize_exceeded</item>
+<en>Maximum file size exceeded</en>
+<de>Maximale Dateigröße überschritten</de>
+<custom>Maximale Dateigröße überschritten</custom>
+</_translation>
+<_translation>
+<id>1348</id>
+<container>project_edit</container>
+<item>tab_other</item>
+<en>Other</en>
+<de>Andere</de>
+<custom>Andere</custom>
+</_translation>
+<_translation>
+<id>1349</id>
+<container>project_customfield_sbf</container>
+<item>caption_</item>
+<en>Custom Field</en>
+<de>Benutzerdefiniertes Feld</de>
+<custom>Benutzerdefiniertes Feld</custom>
+</_translation>
+<_translation>
+<id>1350</id>
+<container>project_customfield_sbf</container>
+<item>field_key_</item>
+<en>Key</en>
+<de>Schlüssel</de>
+<custom>Schlüssel</custom>
+</_translation>
+<_translation>
+<id>1351</id>
+<container>project_customfield_sbf</container>
+<item>field_name_</item>
+<en>Name</en>
+<de>Name</de>
+<custom>Name</custom>
+</_translation>
+<_translation>
+<id>1352</id>
+<container>project_customfield_sbf</container>
+<item>field_value_</item>
+<en>Value</en>
+<de>Wert</de>
+<custom>Wert</custom>
+</_translation>
+<_translation>
+<id>1353</id>
+<container>project_customfield_sbf</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>1354</id>
+<container>RPT-S001</container>
+<item>hrg_not_translateable</item>
+<en>Amtsgericht Landau</en>
+<de>Amtsgericht Landau</de>
+<custom>Amtsgericht Landau</custom>
+</_translation>
+<_translation>
+<id>1355</id>
+<container>RPT-S001</container>
+<item>hrg_</item>
+<en>HRG</en>
+<de>HRG</de>
+<custom>HRG</custom>
+</_translation>
+<_translation>
+<id>1356</id>
+<container>RPT-S001</container>
+<item>company_</item>
+<en>Company</en>
+<de>Firma</de>
+<custom>Firma</custom>
+</_translation>
+<_translation>
+<id>1357</id>
+<container>RPT-S001</container>
+<item>hrgid_not_translateable</item>
+<en>1123</en>
+<de>1123</de>
+<custom>1123</custom>
+</_translation>
+<_translation>
+<id>1358</id>
+<container>RPT-S001</container>
+<item>hrgid_</item>
+<en>HRG-Nr</en>
+<de>HRG-Nr</de>
+<custom>HRG-Nr</custom>
+</_translation>
+<_translation>
+<id>1359</id>
+<container>RPT-S001</container>
+<item>ustdid_</item>
+<en>VAT</en>
+<de>UstId-Nr</de>
+<custom>UstId-Nr</custom>
+</_translation>
+<_translation>
+<id>1360</id>
+<container>role</container>
+<item>deactivate_</item>
+<en>Deactivate</en>
+<de>Deaktivieren</de>
+<custom>Deaktivieren</custom>
+</_translation>
+<_translation>
+<id>1361</id>
+<container>qualification_edit</container>
+<item>user_id_</item>
+<en>User</en>
+<de>Benutzer</de>
+<custom>Benutzer</custom>
+</_translation>
+<_translation>
+<id>1362</id>
+<container>request_measurement_sbf</container>
+<item>request_id_</item>
+<en>Request</en>
+<de>Auftrag</de>
+<custom>Auftrag</custom>
+</_translation>
+<_translation>
+<id>1363</id>
+<container>batch_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+<custom>Speichern</custom>
+</_translation>
+<_translation>
+<id>1364</id>
+<container>storage_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+<custom>Speichern</custom>
+</_translation>
+<_translation>
+<id>1365</id>
+<container>project</container>
+<item>not_a_project_member</item>
+<en>Permission denied. Your are not a project member or owner.</en>
+<de>Erlaubnis verweigert. Sie sind kein Projektmitglied oder Projekteigner.</de>
+<custom>Erlaubnis verweigert. Sie sind kein Projektmitglied oder Projekteigner.</custom>
+</_translation>
+<_translation>
+<id>1366</id>
+<container>translation</container>
+<item>de_</item>
+<en>DE</en>
+<de>DE</de>
+<custom>DE</custom>
+</_translation>
+<_translation>
+<id>1367</id>
+<container>strposition_sbf</container>
+<item>batch_id_</item>
+<en>Ch.-B.</en>
+<de>Ch.-B.</de>
+<custom>Ch.-B.</custom>
+</_translation>
+<_translation>
+<id>1368</id>
+<container>strposition_sbf</container>
+<item>opened_on_</item>
+<en>Opened on</en>
+<de>Geöffnet am</de>
+<custom>Geöffnet am</custom>
+</_translation>
+<_translation>
+<id>1369</id>
+<container>strposition_sbf</container>
+<item>best_before_</item>
+<en>Best before</en>
+<de>Haltbar bis</de>
+<custom>Haltbar bis</custom>
+</_translation>
+<_translation>
+<id>1370</id>
+<container>profile_edit</container>
+<item>reference_material_</item>
+<en>Reference material</en>
+<de>Referenz Standard</de>
+<custom>Referenz Standard</custom>
+</_translation>
+<_translation>
+<id>1371</id>
+<container>profile</container>
+<item>reference_material_</item>
+<en>Reference material</en>
+<de>Referenz Standard</de>
+<custom>Referenz Standard</custom>
+</_translation>
+<_translation>
+<id>1372</id>
+<container>profile</container>
+<item>report_template_</item>
+<en>Report template</en>
+<de>Berichtsvorlage</de>
+<custom>Berichtsvorlage</custom>
+</_translation>
+<_translation>
+<id>1373</id>
+<container>profile_edit</container>
+<item>report_template_</item>
+<en>Report template</en>
+<de>Berichtsvorlage</de>
+<custom>Berichtsvorlage</custom>
+</_translation>
+<_translation>
+<id>1374</id>
+<container>profile</container>
+<item>expiration_</item>
+<en>Expiration</en>
+<de>Ablaufdatum</de>
+<custom>Ablaufdatum</custom>
+</_translation>
+<_translation>
+<id>1375</id>
+<container>profile_edit</container>
+<item>expiration_</item>
+<en>Expiration</en>
+<de>Ablaufdatum</de>
+<custom>Ablaufdatum</custom>
+</_translation>
+<_translation>
+<id>1376</id>
+<container>strposition_sbf</container>
+<item>expiration_</item>
+<en>Expiration</en>
+<de>Ablaufdatum</de>
+<custom>Ablaufdatum</custom>
+</_translation>
+<_translation>
+<id>1377</id>
+<container>project</container>
+<item>profile_</item>
+<en>Profile</en>
+<de>Profile</de>
+<custom>Profile</custom>
+</_translation>
+<_translation>
+<id>1378</id>
+<container>project_edit</container>
+<item>profile_</item>
+<en>Profile</en>
+<de>Profile</de>
+<custom>Profile</custom>
+</_translation>
+<_translation>
+<id>1379</id>
+<container>project_member</container>
+<item>member_exists</item>
+<en>Member exists</en>
+<de>Mitglied existiert bereits</de>
+<custom>Mitglied existiert bereits</custom>
+</_translation>
+<_translation>
+<id>1380</id>
+<container>method</container>
+<item>method_in_use</item>
+<en>Method still in use</en>
+<de>Methode in Verwendung</de>
+<custom>Methode in Verwendung</custom>
+</_translation>
+<_translation>
+<id>1381</id>
+<container>filter_apply_dlg</container>
+<item>deletion_aborted</item>
+<en>Permission denied. Deletion Aborted.</en>
+<de>Erlaubnis verweigert. Löschen abgebrochen.</de>
+<custom>Erlaubnis verweigert. Löschen abgebrochen.</custom>
+</_translation>
+<_translation>
+<id>1382</id>
+<container>attachment_sbf</container>
+<item>reminder_</item>
+<en>Reminder</en>
+<de>Erinnerung</de>
+<custom>Erinnerung</custom>
+</_translation>
+<_translation>
+<id>1383</id>
+<container>attachment_sbf</container>
+<item>responsible_</item>
+<en>Responsible Person</en>
+<de>Verantwortlicher</de>
+<custom>Verantwortlicher</custom>
+</_translation>
+<_translation>
+<id>1384</id>
+<container>request</container>
+<item>smp_composit_</item>
+<en>Composit</en>
+<de>Komposit</de>
+<custom>Komposit</custom>
+</_translation>
+<_translation>
+<id>1385</id>
+<container>request</container>
+<item>smptype_</item>
+<en>Sample type</en>
+<de>Probenart</de>
+<custom>Probenart</custom>
+</_translation>
+<_translation>
+<id>1386</id>
+<container>request</container>
+<item>smpmatrix_</item>
+<en>Sample matrix</en>
+<de>Matrix</de>
+<custom>Matrix</custom>
+</_translation>
+<_translation>
+<id>1387</id>
+<container>request</container>
+<item>smpcontainer_</item>
+<en>Sample container</en>
+<de>Probenbehälter</de>
+<custom>Probenbehälter</custom>
+</_translation>
+<_translation>
+<id>1388</id>
+<container>request</container>
+<item>smpcondition_</item>
+<en>Sample condition</en>
+<de>Probenzustand</de>
+<custom>Probenzustand</custom>
+</_translation>
+<_translation>
+<id>1389</id>
+<container>request</container>
+<item>smppreservation_</item>
+<en>Sample preservation</en>
+<de>Konservierung</de>
+<custom>Konservierung</custom>
+</_translation>
+<_translation>
+<id>1390</id>
+<container>request</container>
+<item>smppoint_</item>
+<en>Sample point</en>
+<de>Probenahmestelle</de>
+<custom>Probenahmestelle</custom>
+</_translation>
+<_translation>
+<id>1391</id>
+<container>request_edit</container>
+<item>smptype_</item>
+<en>Sample type</en>
+<de>Probenart</de>
+<custom>Probenart</custom>
+</_translation>
+<_translation>
+<id>1392</id>
+<container>request_edit</container>
+<item>smpmatrix_</item>
+<en>Sample matrix</en>
+<de>Matrix</de>
+<custom>Matrix</custom>
+</_translation>
+<_translation>
+<id>1393</id>
+<container>request_edit</container>
+<item>smpcontainer_</item>
+<en>Sample container</en>
+<de>Probenbehälter</de>
+<custom>Probenbehälter</custom>
+</_translation>
+<_translation>
+<id>1394</id>
+<container>request_edit</container>
+<item>smpcondition_</item>
+<en>Sample condition</en>
+<de>Probenzustand</de>
+<custom>Probenzustand</custom>
+</_translation>
+<_translation>
+<id>1395</id>
+<container>request_edit</container>
+<item>smppreservation_</item>
+<en>Sample preservation</en>
+<de>Konservierung</de>
+<custom>Konservierung</custom>
+</_translation>
+<_translation>
+<id>1396</id>
+<container>request_edit</container>
+<item>smppoint_</item>
+<en>Sample point</en>
+<de>Probenahmestelle</de>
+<custom>Probenahmestelle</custom>
+</_translation>
+<_translation>
+<id>1397</id>
+<container>request_edit</container>
+<item>smp_composit_</item>
+<en>Composit</en>
+<de>Komposit</de>
+<custom>Komposit</custom>
+</_translation>
+<_translation>
+<id>1398</id>
+<container>request</container>
+<item>smp_date_</item>
+<en>Sampling date</en>
+<de>Probenahmedatum</de>
+<custom>Probenahmedatum</custom>
+</_translation>
+<_translation>
+<id>1399</id>
+<container>request_edit</container>
+<item>smp_date_</item>
+<en>Sampling date</en>
+<de>Probenahmedatum</de>
+<custom>Probenahmedatum</custom>
+</_translation>
+<_translation>
+<id>1400</id>
+<container>attachment_sbf</container>
+<item>revision_</item>
+<en>Last revision</en>
+<de>Letzte Überarbeitung</de>
+<custom>Letzte Überarbeitung</custom>
+</_translation>
+<_translation>
+<id>1401</id>
+<container>attachment_sbf</container>
+<item>repetition_</item>
+<en>To be revised in (days)</en>
+<de>Zu überarbeiten in (Tage)</de>
+<custom>Zu überarbeiten in (Tage)</custom>
+</_translation>
+<_translation>
+<id>1402</id>
+<container>attachment_sbf</container>
+<item>version_control_</item>
+<en>Version control</en>
+<de>Versionskontrolle</de>
+<custom>Versionskontrolle</custom>
+</_translation>
+<_translation>
+<id>1403</id>
+<container>desktop_attachment_revision</container>
+<item>caption_</item>
+<en>Attachment revision</en>
+<de>Wiedervorlage Dokumente</de>
+<custom>Wiedervorlage Dokumente</custom>
+</_translation>
+<_translation>
+<id>1404</id>
+<container>desktop_attachment_revision</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>1405</id>
+<container>desktop_attachment_revision</container>
+<item>reminder_</item>
+<en>To be checked till</en>
+<de>Zu überprüfen bis</de>
+<custom>Zu überprüfen bis</custom>
+</_translation>
+<_translation>
+<id>1406</id>
+<container>desktop_attachment_revision</container>
+<item>title_</item>
+<en>Title</en>
+<de>Title</de>
+<custom>Title</custom>
+</_translation>
+<_translation>
+<id>1407</id>
+<container>desktop_attachment_revision</container>
+<item>file_name_</item>
+<en>Filename</en>
+<de>Dateiname</de>
+<custom>Dateiname</custom>
+</_translation>
+<_translation>
+<id>1408</id>
+<container>setup</container>
+<item>alert_document_</item>
+<en>Document revision alert (days)</en>
+<de>Warnung zur Dokumentüberarbeitung (Tage)</de>
+<custom>Warnung zur Dokumentüberarbeitung (Tage)</custom>
+</_translation>
+<_translation>
+<id>1409</id>
+<container>setup_edit</container>
+<item>alert_document_</item>
+<en>Document revision alert (days)</en>
+<de>Warnung zur Dokumentüberarbeitung (Tage)</de>
+<custom>Warnung zur Dokumentüberarbeitung (Tage)</custom>
+</_translation>
+<_translation>
+<id>1410</id>
+<container>desktop_attachment_revision</container>
+<item>responsible_</item>
+<en>Responsible User</en>
+<de>Verantwortlicher Benutzer</de>
+<custom>Verantwortlicher Benutzer</custom>
+</_translation>
+<_translation>
+<id>1411</id>
+<container>project</container>
+<item>started_</item>
+<en>Started</en>
+<de>Gestartet</de>
+<custom>Gestartet</custom>
+</_translation>
+<_translation>
+<id>1412</id>
+<container>project_edit</container>
+<item>started_</item>
+<en>Started</en>
+<de>Gestartet</de>
+<custom>Gestartet</custom>
+</_translation>
+<_translation>
+<id>1413</id>
+<container>project_edit</container>
+<item>tab_task</item>
+<en>Tasks</en>
+<de>Aufgabe</de>
+<custom>Aufgabe</custom>
+</_translation>
+<_translation>
+<id>1414</id>
+<container>project_task_sbf</container>
+<item>caption_</item>
+<en>Task</en>
+<de>Aufgabe</de>
+<custom>Aufgabe</custom>
+</_translation>
+<_translation>
+<id>1415</id>
+<container>project_task_sbf</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>1416</id>
+<container>project_task_sbf</container>
+<item>title_</item>
+<en>Title</en>
+<de>Titel</de>
+<custom>Titel</custom>
+</_translation>
+<_translation>
+<id>1417</id>
+<container>project_task_sbf</container>
+<item>description_</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>1418</id>
+<container>project_task_sbf</container>
+<item>created_by_</item>
+<en>Created by</en>
+<de>Erstellt von</de>
+<custom>Erstellt von</custom>
+</_translation>
+<_translation>
+<id>1419</id>
+<container>project_task_sbf</container>
+<item>created_at_</item>
+<en>Created at</en>
+<de>Erstellt am</de>
+<custom>Erstellt am</custom>
+</_translation>
+<_translation>
+<id>1420</id>
+<container>project_task_sbf</container>
+<item>planned_start_</item>
+<en>Planned start</en>
+<de>Geplanter Beginn</de>
+<custom>Geplanter Beginn</custom>
+</_translation>
+<_translation>
+<id>1421</id>
+<container>project_task_sbf</container>
+<item>planned_end_</item>
+<en>Planned end</en>
+<de>Geplantes Ende</de>
+<custom>Geplantes Ende</custom>
+</_translation>
+<_translation>
+<id>1422</id>
+<container>project_task_sbf</container>
+<item>workload_planned_</item>
+<en>Workload planned</en>
+<de>Geplante Arbeitsstunden</de>
+<custom>Geplante Arbeitsstunden</custom>
+</_translation>
+<_translation>
+<id>1423</id>
+<container>project_task_sbf</container>
+<item>realized_start_</item>
+<en>Realized start</en>
+<de>Realisierter Beginn</de>
+<custom>Realisierter Beginn</custom>
+</_translation>
+<_translation>
+<id>1424</id>
+<container>project_task_sbf</container>
+<item>realized_end_</item>
+<en>Realized end</en>
+<de>Realisiertes Ende</de>
+<custom>Realisiertes Ende</custom>
+</_translation>
+<_translation>
+<id>1425</id>
+<container>project_task_sbf</container>
+<item>deactivate_</item>
+<en>Deactivate</en>
+<de>Deaktiviert</de>
+<custom>Deaktiviert</custom>
+</_translation>
+<_translation>
+<id>1426</id>
+<container>project_task_sbf</container>
+<item>project_</item>
+<en>Project</en>
+<de>Projekt</de>
+<custom>Projekt</custom>
+</_translation>
+<_translation>
+<id>1427</id>
+<container>project_task_sbf</container>
+<item>responsible_</item>
+<en>Responsible</en>
+<de>Verantwortlich</de>
+<custom>Verantwortlich</custom>
+</_translation>
+<_translation>
+<id>1428</id>
+<container>project_task_sbf</container>
+<item>fulfillment_</item>
+<en>Fulfillment</en>
+<de>Erfüllung</de>
+<custom>Erfüllung</custom>
+</_translation>
+<_translation>
+<id>1429</id>
+<container>desktop_task_sbf</container>
+<item>caption_</item>
+<en>Task</en>
+<de>Aufgabe</de>
+<custom>Aufgabe</custom>
+</_translation>
+<_translation>
+<id>1430</id>
+<container>desktop_task_sbf</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>1431</id>
+<container>desktop_task_sbf</container>
+<item>title_</item>
+<en>Title</en>
+<de>Titel</de>
+<custom>Titel</custom>
+</_translation>
+<_translation>
+<id>1432</id>
+<container>desktop_task_sbf</container>
+<item>description_</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>1433</id>
+<container>desktop_task_sbf</container>
+<item>created_by_</item>
+<en>Created by</en>
+<de>Erstellt von</de>
+<custom>Erstellt von</custom>
+</_translation>
+<_translation>
+<id>1434</id>
+<container>desktop_task_sbf</container>
+<item>created_at_</item>
+<en>Created at</en>
+<de>Erstellt am</de>
+<custom>Erstellt am</custom>
+</_translation>
+<_translation>
+<id>1435</id>
+<container>desktop_task_sbf</container>
+<item>planned_start_</item>
+<en>Planned start</en>
+<de>Geplanter Beginn</de>
+<custom>Geplanter Beginn</custom>
+</_translation>
+<_translation>
+<id>1436</id>
+<container>desktop_task_sbf</container>
+<item>planned_end_</item>
+<en>Planned end</en>
+<de>Geplantes Ende</de>
+<custom>Geplantes Ende</custom>
+</_translation>
+<_translation>
+<id>1437</id>
+<container>desktop_task_sbf</container>
+<item>workload_planned_</item>
+<en>Workload planned</en>
+<de>Geplanter Workload</de>
+<custom>Geplanter Workload</custom>
+</_translation>
+<_translation>
+<id>1438</id>
+<container>desktop_task_sbf</container>
+<item>fulfillment_</item>
+<en>Fulfillment</en>
+<de>Erfüllung</de>
+<custom>Erfüllung</custom>
+</_translation>
+<_translation>
+<id>1439</id>
+<container>task_edit</container>
+<item>caption_</item>
+<en>Edit task</en>
+<de>Aufgabe bearbeiten</de>
+<custom>Aufgabe bearbeiten</custom>
+</_translation>
+<_translation>
+<id>1440</id>
+<container>task_edit</container>
+<item>tab_task</item>
+<en>Task</en>
+<de>Aufgabe</de>
+<custom>Aufgabe</custom>
+</_translation>
+<_translation>
+<id>1441</id>
+<container>task_edit</container>
+<item>tab_description</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>1442</id>
+<container>task_edit</container>
+<item>tab_workload</item>
+<en>Workload</en>
+<de>Workload</de>
+<custom>Workload</custom>
+</_translation>
+<_translation>
+<id>1443</id>
+<container>task_edit</container>
+<item>tab_attachment</item>
+<en>Attachment</en>
+<de>Anhang</de>
+<custom>Anhang</custom>
+</_translation>
+<_translation>
+<id>1444</id>
+<container>task_edit</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>1445</id>
+<container>task_edit</container>
+<item>title_</item>
+<en>Title</en>
+<de>Titel</de>
+<custom>Titel</custom>
+</_translation>
+<_translation>
+<id>1446</id>
+<container>task_edit</container>
+<item>created_by_</item>
+<en>Created by</en>
+<de>Erstellt von</de>
+<custom>Erstellt von</custom>
+</_translation>
+<_translation>
+<id>1447</id>
+<container>task_edit</container>
+<item>created_at_</item>
+<en>Created at</en>
+<de>Erstellt am</de>
+<custom>Erstellt am</custom>
+</_translation>
+<_translation>
+<id>1448</id>
+<container>task_edit</container>
+<item>planned_start_</item>
+<en>Planned start</en>
+<de>Geplanter Beginn</de>
+<custom>Geplanter Beginn</custom>
+</_translation>
+<_translation>
+<id>1449</id>
+<container>task_edit</container>
+<item>planned_end_</item>
+<en>Planned end</en>
+<de>Geplantes Ende</de>
+<custom>Geplantes Ende</custom>
+</_translation>
+<_translation>
+<id>1450</id>
+<container>task_edit</container>
+<item>workload_planned_</item>
+<en>Workload planned</en>
+<de>Geplanter Workload</de>
+<custom>Geplanter Workload</custom>
+</_translation>
+<_translation>
+<id>1451</id>
+<container>task_edit</container>
+<item>realized_start_</item>
+<en>Realized start</en>
+<de>Relisierter Beginn</de>
+<custom>Relisierter Beginn</custom>
+</_translation>
+<_translation>
+<id>1452</id>
+<container>task_edit</container>
+<item>realized_end_</item>
+<en>Realized end</en>
+<de>Realisiertes Ende</de>
+<custom>Realisiertes Ende</custom>
+</_translation>
+<_translation>
+<id>1453</id>
+<container>task_edit</container>
+<item>deactivate_</item>
+<en>Deactivate</en>
+<de>Daektivieren</de>
+<custom>Daektivieren</custom>
+</_translation>
+<_translation>
+<id>1454</id>
+<container>task_edit</container>
+<item>project_</item>
+<en>Project</en>
+<de>Projekt</de>
+<custom>Projekt</custom>
+</_translation>
+<_translation>
+<id>1455</id>
+<container>task_edit</container>
+<item>fulfillment_</item>
+<en>Fulfillment</en>
+<de>Erfüllung</de>
+<custom>Erfüllung</custom>
+</_translation>
+<_translation>
+<id>1456</id>
+<container>task_edit</container>
+<item>responsible_</item>
+<en>Responsible</en>
+<de>Verantwortlich</de>
+<custom>Verantwortlich</custom>
+</_translation>
+<_translation>
+<id>1457</id>
+<container>task_workload_sbf</container>
+<item>caption_</item>
+<en>Workload</en>
+<de>Workload</de>
+<custom>Workload</custom>
+</_translation>
+<_translation>
+<id>1458</id>
+<container>task_workload_sbf</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>1459</id>
+<container>task_workload_sbf</container>
+<item>workload_</item>
+<en>Workload</en>
+<de>Workload</de>
+<custom>Workload</custom>
+</_translation>
+<_translation>
+<id>1460</id>
+<container>task_workload_sbf</container>
+<item>workday_</item>
+<en>Workday</en>
+<de>Arbeitstag</de>
+<custom>Arbeitstag</custom>
+</_translation>
+<_translation>
+<id>1461</id>
+<container>desktop_task_sbf</container>
+<item>project_id_</item>
+<en>Project ID</en>
+<de>Projekt ID</de>
+<custom>Projekt ID</custom>
+</_translation>
+<_translation>
+<id>1462</id>
+<container>desktop_task_sbf</container>
+<item>project_title_</item>
+<en>Project title</en>
+<de>Projekt Titel</de>
+<custom>Projekt Titel</custom>
+</_translation>
+<_translation>
+<id>1463</id>
+<container>measurement_edit</container>
+<item>note_reference_expired_</item>
+<en>Reference standard expired. Check before measurement.</en>
+<de>Der Referenzstandard ist abgelaufen. Vor der Messung prüfen.</de>
+<custom>Der Referenzstandard ist abgelaufen. Vor der Messung prüfen.</custom>
+</_translation>
+<_translation>
+<id>1464</id>
+<container>analysis_edit</container>
+<item>type_tip_</item>
+<en>Choose between N-Numerical, T-Text or A-Attributive values to be applied to measurements.</en>
+<de>Wählen Sie zwischen N-Numerischen, T-Text oder A-Attributiven Werten, die auf die Messungen angewendet werden sollen.</de>
+<custom>Wählen Sie zwischen N-Numerischen, T-Text oder A-Attributiven Werten, die auf die Messungen angewendet werden sollen.</custom>
+</_translation>
+<_translation>
+<id>1465</id>
+<container>project_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Sichern</de>
+<custom>Sichern</custom>
+</_translation>
+<_translation>
+<id>1466</id>
+<container>project_task_sbf</container>
+<item>workload_sum_</item>
+<en>Actual workload</en>
+<de>Aktueller Workload</de>
+<custom>Aktueller Workload</custom>
+</_translation>
+<_translation>
+<id>1467</id>
+<container>material</container>
+<item>supplier_</item>
+<en>Supplier</en>
+<de>Lieferant</de>
+<custom>Lieferant</custom>
+</_translation>
+<_translation>
+<id>1468</id>
+<container>material_edit</container>
+<item>supplier_</item>
+<en>Supplier</en>
+<de>Lieferant</de>
+<custom>Lieferant</custom>
+</_translation>
+<_translation>
+<id>1469</id>
+<container>request</container>
+<item>formulation_</item>
+<en>Formulation</en>
+<de>Formulierung</de>
+<custom>Formulierung</custom>
+</_translation>
+<_translation>
+<id>1470</id>
+<container>request_edit</container>
+<item>formulation_</item>
+<en>Formulation</en>
+<de>Formulierung</de>
+<custom>Formulierung</custom>
+</_translation>
+<_translation>
+<id>1471</id>
+<container>sticker_zebra</container>
+<item>103x199</item>
+<en>^XA    ^FX Top section with logo, name and address.  ^CF0,60  ^FO50,50^GFA,2698,2698,19,,P07gKFE,:::::::::::::::::gR0JFE,:::::::::::::::::::7gKFEK0JFE,::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::7gKFE,:::::::::::::::::::::::::::::::::::::^FS  ^FO220,50^FDLABDESK LIMS^FS  ^CF0,30  ^FO220,115^FDLeipziger Ring 14 a^FS  ^FO220,155^FD59558 Lippstadt^FS  ^FO220,195^FDGermany (NRW)^FS  ^FO50,250^GB700,3,3^FS    ^FX Second section with recipient address and permit information.  ^CFA,30  ^FO50,300^FD[SELECT @value = CAST(customer.name As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^FO50,340^FD[SELECT @value = CAST(customer.postal_street As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}] [SELECT @value = CAST(customer.postal_housenumber As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^FO50,380^FD[SELECT @value = CAST(customer.postal_postalcode As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}] [SELECT @value = CAST(customer.postal_city As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^FO50,420^FD[SELECT @value = CAST(customer.postal_country As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^CFA,15  ^FO500,300^GB250,150,3^FS  ^FO538,340^FDPO No.^FS  ^FO538,390^FD[SELECT @value = CAST(client_order_id As nvarchar) FROM request WHERE id = {id}]^FS  ^FO50,500^GB700,3,3^FS    ^FX Third section with bar code.  ^BY3,2,270  ^FO100,550^BC^FDSMP-[SELECT @value = CAST(id As nvarchar) FROM request WHERE id = {id}]^FS    ^FX Fourth section (the two boxes on the bottom).  ^FO50,900^GB700,250,3^FS  ^FO400,900^GB3,250,3^FS  ^CF0,40  ^FO100,960^FDHAZARDOUS^FS  ^FO100,1010^FDMATERIAL^FS  ^FO100,1060^FDHandle with care!^FS  ^CF0,190  ^FO450,900^GFA,8192,8192,32,,::::::::::::::gQ07F,gP01FF8,gP07FFE,:gP0JF,gO01JF8,:gO03JFC,:gO07JFE,gO07KF,gO0LF,gN01LF8,:gN03LFC,:gN07LFE,gN07MF,gN0NF,gM01NF8,:gM03NFC,:gM07NFE,gM07OF,gM0PF,gL01PF8,:gL03PFC,:gL07PFE,gL07QF,gL0RF,gK01RF8,:gK03RFC,:gK07RFE,gK07SF,gK0TF,gJ01TF8,:gJ03TFC,:gJ07TFE,gJ07UF,gJ0VF,gI01VF8,:gI03VFC,:gI07VFE,gI07WF,gI0XF,gH01XF8,:gH03XFC,:gH07XFE,gH07YF,gH0gF,gG01gF8,:gG03gFC,:gG07gFE,gG07gGF,gG0gHF,g01gHF8,:g03gHFC,:g07gHFE,g07MFN0NF,g0NFN0NF,Y01NFN0NF8,:Y03NFN0NFC,:Y07NFN0NFE,Y07NFN0OF,Y0OFN0OF,X01OFN0OF8,:X03OFN0OFC,:X07OFN0OFE,:X0PFN0PF,W01PFN0PF8,:W03PFN0PFC,:W07PFN0PFE,:W0QFN0QF,W0QFN0QF8,V01QFN0QF8,V03QFN0QFC,:V07QFN0QFE,:V0RFN0RF,V0RFN0RF8,U01RFN0RF8,U03RFN0RFC,:U07RFN0RFE,:U0SFN0SF,U0SFN0SF8,T01SFN0SF8,T03SFN0SFC,:T07SFN0SFE,:T0TFN0TF,T0TFN0TF8,S01TFN0TF8,S03TFN0TFC,:S07TFN0TFE,:S0UFN0UF,S0UFN0UF8,R01UFN0UF8,R03UFN0UFC,:R07UFN0UFE,:R0VFN0VF,R0VFN0VF8,Q01VFN0VF8,Q03VFN0VFC,:Q07VFN0VFE,:Q0WFN0WF,Q0WFN0WF8,P01WFN0WF8,P03WFN0WFC,:P07WFN0WFE,:P0XFN0XF,P0XFN0XF8,O01XFN0XF8,O03XFN0XFC,:O07XFN0XFE,:O0YFN0YF,O0YFN0YF8,N01hLF8,N03hLFC,:N07hLFE,:N0hNF,N0hNF8,M01hNF8,M03hNFC,:M07hNFE,:M0hPF,:L01hPF8,L03hPFC,:L07hPFE,:L0hRF,L0gHFN0gHF,K01gHFN0gHF8,K03gHFN0gHFC,:K07gHFN0gHFE,:K0gIFN0gIF,:J01gIFN0gIF8,J01gIFN0gIFC,J03gIFN0gIFC,J07gIFN0gIFE,:J0gJFN0gJF,:I01gJFN0gJF8,I01gJFN0gJFC,I03gJFN0gJFC,I07gJFN0gJFE,:I0gKFN0gKF,:001gKFN0gKF8,001gKFN0gKFC,003gKFN0gKFC,007gKFN0gKFE,:00iF,:01iF8,01iFC,03iFC,07iFE,:0iHF,:1iHF81iHFC3iHFC7iHFE:7!!::::7iHFE:3iHFC1iHFC0iHF,07iFE,,::::::::::::::^FS    ^FX Fourth section (security notes).  ^FO50,1200^GB700,3,3^FS  ^CFA,30  ^FO50,1250^FDIn case of damaged packaging contact^FS  ^FO50,1300^FDTel. +49 123 44 55 66 10^FS    ^XZ</en>
+<de>-</de>
+<custom>-</custom>
+</_translation>
+<_translation>
+<id>1472</id>
+<container>customer</container>
+<item>postal_country_</item>
+<en>Country</en>
+<de>Land</de>
+<custom>Land</custom>
+</_translation>
+<_translation>
+<id>1473</id>
+<container>customer</container>
+<item>postal_state_</item>
+<en>State</en>
+<de>Bundesland</de>
+<custom>Bundesland</custom>
+</_translation>
+<_translation>
+<id>1474</id>
+<container>customer</container>
+<item>postal_district_</item>
+<en>District</en>
+<de>Disctrict</de>
+<custom>Disctrict</custom>
+</_translation>
+<_translation>
+<id>1475</id>
+<container>customer</container>
+<item>postal_city_</item>
+<en>City</en>
+<de>Stadt</de>
+<custom>Stadt</custom>
+</_translation>
+<_translation>
+<id>1476</id>
+<container>customer</container>
+<item>postal_postalcode_</item>
+<en>Postal code</en>
+<de>Postleitzahl</de>
+<custom>Postleitzahl</custom>
+</_translation>
+<_translation>
+<id>1477</id>
+<container>customer</container>
+<item>postal_street_</item>
+<en>Street</en>
+<de>Straße</de>
+<custom>Straße</custom>
+</_translation>
+<_translation>
+<id>1478</id>
+<container>customer</container>
+<item>postal_housenumber_</item>
+<en>Housenumber</en>
+<de>Hausnummer</de>
+<custom>Hausnummer</custom>
+</_translation>
+<_translation>
+<id>1479</id>
+<container>customer</container>
+<item>billing_country_</item>
+<en>Country</en>
+<de>Land</de>
+<custom>Land</custom>
+</_translation>
+<_translation>
+<id>1480</id>
+<container>customer</container>
+<item>billing_state_</item>
+<en>State</en>
+<de>Bundesland</de>
+<custom>Bundesland</custom>
+</_translation>
+<_translation>
+<id>1481</id>
+<container>customer</container>
+<item>billing_district_</item>
+<en>District</en>
+<de>District</de>
+<custom>District</custom>
+</_translation>
+<_translation>
+<id>1482</id>
+<container>customer</container>
+<item>billing_city_</item>
+<en>City</en>
+<de>Stadt</de>
+<custom>Stadt</custom>
+</_translation>
+<_translation>
+<id>1483</id>
+<container>customer</container>
+<item>billing_postalcode_</item>
+<en>Postal code</en>
+<de>Postleitzahl</de>
+<custom>Postleitzahl</custom>
+</_translation>
+<_translation>
+<id>1484</id>
+<container>customer</container>
+<item>billing_street_</item>
+<en>Street</en>
+<de>Straße</de>
+<custom>Straße</custom>
+</_translation>
+<_translation>
+<id>1485</id>
+<container>customer</container>
+<item>billing_housenumber_</item>
+<en>Housenumber</en>
+<de>Hausnummer</de>
+<custom>Hausnummer</custom>
+</_translation>
+<_translation>
+<id>1486</id>
+<container>customer</container>
+<item>bank_</item>
+<en>Bank</en>
+<de>Bank</de>
+<custom>Bank</custom>
+</_translation>
+<_translation>
+<id>1487</id>
+<container>customer</container>
+<item>iban_</item>
+<en>IBAN</en>
+<de>IBAN</de>
+<custom>IBAN</custom>
+</_translation>
+<_translation>
+<id>1488</id>
+<container>customer</container>
+<item>bic_</item>
+<en>BIC</en>
+<de>BIC</de>
+<custom>BIC</custom>
+</_translation>
+<_translation>
+<id>1489</id>
+<container>customer</container>
+<item>vatnr_</item>
+<en>Vat-No.</en>
+<de>USt-IdNr.</de>
+<custom>USt-IdNr.</custom>
+</_translation>
+<_translation>
+<id>1490</id>
+<container>customer_edit</container>
+<item>tab_address_postal</item>
+<en>Address postal</en>
+<de>Postadresse</de>
+<custom>Postadresse</custom>
+</_translation>
+<_translation>
+<id>1491</id>
+<container>customer_edit</container>
+<item>tab_address_billing</item>
+<en>Address billing</en>
+<de>Rechnungsadresse</de>
+<custom>Rechnungsadresse</custom>
+</_translation>
+<_translation>
+<id>1492</id>
+<container>customer_edit</container>
+<item>tab_bank</item>
+<en>Bank</en>
+<de>Bank</de>
+<custom>Bank</custom>
+</_translation>
+<_translation>
+<id>1493</id>
+<container>customer_edit</container>
+<item>postal_country_</item>
+<en>Country</en>
+<de>Land</de>
+<custom>Land</custom>
+</_translation>
+<_translation>
+<id>1494</id>
+<container>customer_edit</container>
+<item>postal_state_</item>
+<en>State</en>
+<de>Bundesland</de>
+<custom>Bundesland</custom>
+</_translation>
+<_translation>
+<id>1495</id>
+<container>customer_edit</container>
+<item>postal_district_</item>
+<en>District</en>
+<de>District</de>
+<custom>District</custom>
+</_translation>
+<_translation>
+<id>1496</id>
+<container>customer_edit</container>
+<item>postal_city_</item>
+<en>City</en>
+<de>Stadt</de>
+<custom>Stadt</custom>
+</_translation>
+<_translation>
+<id>1497</id>
+<container>customer_edit</container>
+<item>postal_postalcode_</item>
+<en>Postal code</en>
+<de>Postleitzahl</de>
+<custom>Postleitzahl</custom>
+</_translation>
+<_translation>
+<id>1498</id>
+<container>customer_edit</container>
+<item>postal_street_</item>
+<en>Street</en>
+<de>Straße</de>
+<custom>Straße</custom>
+</_translation>
+<_translation>
+<id>1499</id>
+<container>customer_edit</container>
+<item>postal_housenumber_</item>
+<en>Housenumber</en>
+<de>Hausnummer</de>
+<custom>Hausnummer</custom>
+</_translation>
+<_translation>
+<id>1500</id>
+<container>customer_edit</container>
+<item>billing_country_</item>
+<en>Country</en>
+<de>Land</de>
+<custom>Land</custom>
+</_translation>
+<_translation>
+<id>1501</id>
+<container>customer_edit</container>
+<item>billing_state_</item>
+<en>State</en>
+<de>Bundesland</de>
+<custom>Bundesland</custom>
+</_translation>
+<_translation>
+<id>1502</id>
+<container>customer_edit</container>
+<item>billing_district_</item>
+<en>District</en>
+<de>District</de>
+<custom>District</custom>
+</_translation>
+<_translation>
+<id>1503</id>
+<container>customer_edit</container>
+<item>billing_city_</item>
+<en>City</en>
+<de>Stadt</de>
+<custom>Stadt</custom>
+</_translation>
+<_translation>
+<id>1504</id>
+<container>customer_edit</container>
+<item>billing_postalcode_</item>
+<en>Postal code</en>
+<de>Postleitszahl</de>
+<custom>Postleitszahl</custom>
+</_translation>
+<_translation>
+<id>1505</id>
+<container>customer_edit</container>
+<item>billing_street_</item>
+<en>Street</en>
+<de>Straße</de>
+<custom>Straße</custom>
+</_translation>
+<_translation>
+<id>1506</id>
+<container>customer_edit</container>
+<item>billing_housenumber_</item>
+<en>Housenumber</en>
+<de>Hausnummer</de>
+<custom>Hausnummer</custom>
+</_translation>
+<_translation>
+<id>1507</id>
+<container>customer_edit</container>
+<item>bank_</item>
+<en>Bank</en>
+<de>Bank</de>
+<custom>Bank</custom>
+</_translation>
+<_translation>
+<id>1508</id>
+<container>customer_edit</container>
+<item>iban_</item>
+<en>IBAN</en>
+<de>IBAN</de>
+<custom>IBAN</custom>
+</_translation>
+<_translation>
+<id>1509</id>
+<container>customer_edit</container>
+<item>bic_</item>
+<en>BIC</en>
+<de>BIC</de>
+<custom>BIC</custom>
+</_translation>
+<_translation>
+<id>1510</id>
+<container>customer_edit</container>
+<item>vatnr_</item>
+<en>Vat-No.</en>
+<de>USt-IdNr.</de>
+<custom>USt-IdNr.</custom>
+</_translation>
+<_translation>
+<id>1511</id>
+<container>measurement_edit</container>
+<item>btn_pool</item>
+<en>Pool</en>
+<de>Pool</de>
+<custom>Pool</custom>
+</_translation>
+<_translation>
+<id>1512</id>
+<container>measurement_edit</container>
+<item>pooling_performed</item>
+<en>Pooling performed.</en>
+<de>Pooling durchgeführt.</de>
+<custom>Pooling durchgeführt.</custom>
+</_translation>
+<_translation>
+<id>1513</id>
+<container>traversal_sbf</container>
+<item>title_</item>
+<en>Report Title</en>
+<de>Bericht Bezeichnung</de>
+<custom>Bericht Bezeichnung</custom>
+</_translation>
+<_translation>
+<id>1514</id>
+<container>S001_header</container>
+<item>caption_</item>
+<en>Labreport Header</en>
+<de>Labreport Header</de>
+<custom>Labreport Header</custom>
+</_translation>
+<_translation>
+<id>1515</id>
+<container>S001_header</container>
+<item>id_</item>
+<en>Order ID</en>
+<de>Auftrags-Nr</de>
+<custom>Auftrags-Nr</custom>
+</_translation>
+<_translation>
+<id>1516</id>
+<container>S001_header</container>
+<item>smp__date_</item>
+<en>Sample Date</en>
+<de>Probenahmedatum</de>
+<custom>Probenahmedatum</custom>
+</_translation>
+<_translation>
+<id>1517</id>
+<container>S001_header</container>
+<item>smp_type_</item>
+<en>Sample Type</en>
+<de>Probentyp</de>
+<custom>Probentyp</custom>
+</_translation>
+<_translation>
+<id>1518</id>
+<container>S001_header</container>
+<item>profile_</item>
+<en>Profile</en>
+<de>Profil</de>
+<custom>Profil</custom>
+</_translation>
+<_translation>
+<id>1519</id>
+<container>S001_header</container>
+<item>customer_</item>
+<en>Customer</en>
+<de>Kunde</de>
+<custom>Kunde</custom>
+</_translation>
+<_translation>
+<id>1520</id>
+<container>S001_header</container>
+<item>smp_condition_</item>
+<en>Condition</en>
+<de>Zustand</de>
+<custom>Zustand</custom>
+</_translation>
+<_translation>
+<id>1521</id>
+<container>S001_header</container>
+<item>smp_preservation_</item>
+<en>Preservation</en>
+<de>Konservierung</de>
+<custom>Konservierung</custom>
+</_translation>
+<_translation>
+<id>1522</id>
+<container>S001_header</container>
+<item>smp_point_</item>
+<en>Sample Point</en>
+<de>Probenahmestelle</de>
+<custom>Probenahmestelle</custom>
+</_translation>
+<_translation>
+<id>1523</id>
+<container>S001_header</container>
+<item>client_sample_id_</item>
+<en>Client Sample-ID</en>
+<de>Kunden Proben-Nr.</de>
+<custom>Kunden Proben-Nr.</custom>
+</_translation>
+<_translation>
+<id>1524</id>
+<container>S001_header</container>
+<item>client_order_id_</item>
+<en>Client Order ID</en>
+<de>Kundenbestell-Nr</de>
+<custom>Kundenbestell-Nr</custom>
+</_translation>
+<_translation>
+<id>1525</id>
+<container>S001_header</container>
+<item>description_</item>
+<en>Comment</en>
+<de>Kommentar</de>
+<custom>Kommentar</custom>
+</_translation>
+<_translation>
+<id>1526</id>
+<container>S001_subrequest</container>
+<item>caption_</item>
+<en>Labreport Subrequest</en>
+<de>Labreport Subrequest</de>
+<custom>Labreport Subrequest</custom>
+</_translation>
+<_translation>
+<id>1527</id>
+<container>S001_subrequest</container>
+<item>id_</item>
+<en>Sample-ID</en>
+<de>Proben-Nr</de>
+<custom>Proben-Nr</custom>
+</_translation>
+<_translation>
+<id>1528</id>
+<container>S001_details</container>
+<item>caption_</item>
+<en>Labreport Details</en>
+<de>Labreport Details</de>
+<custom>Labreport Details</custom>
+</_translation>
+<_translation>
+<id>1529</id>
+<container>S001_details</container>
+<item>analysis_</item>
+<en>Analysis</en>
+<de>Analyse</de>
+<custom>Analyse</custom>
+</_translation>
+<_translation>
+<id>1530</id>
+<container>S001_details</container>
+<item>method_</item>
+<en>Method</en>
+<de>Methode</de>
+<custom>Methode</custom>
+</_translation>
+<_translation>
+<id>1531</id>
+<container>S001_details</container>
+<item>value_txt_</item>
+<en>Value</en>
+<de>Wert</de>
+<custom>Wert</custom>
+</_translation>
+<_translation>
+<id>1532</id>
+<container>S001_details</container>
+<item>uncertainty_</item>
+<en>+/-</en>
+<de>+/-</de>
+<custom>+/-</custom>
+</_translation>
+<_translation>
 <id>1533</id>
 <container>S001_details</container>
 <item>unit_</item>
@@ -9083,6 +11979,78 @@
 <en>This instrument has no valid calibration certificate.</en>
 <de>Das Instrument besitzt kein gültiges Kalibrierzertifikat.</de>
 <custom>Das Instrument besitzt kein gültiges Kalibrierzertifikat.</custom>
+</_translation>
+<_translation>
+<id>1565</id>
+<container>measurement_edit</container>
+<item>note_not_valid</item>
+<en>You are not qualified or instrument has a out of control situation.</en>
+<de>Sie haben keine gültige Qualifikation oder das Gerät hat eine außer Kontroll Situation.</de>
+<custom>Sie haben keine gültige Qualifikation oder das Gerät hat eine außer Kontroll Situation.</custom>
+</_translation>
+<_translation>
+<id>1566</id>
+<container>request_measurement_sbf</container>
+<item>udl_</item>
+<en>UDL</en>
+<de>OEG</de>
+<custom>OEG</custom>
+</_translation>
+<_translation>
+<id>1567</id>
+<container>request_measurement_sbf</container>
+<item>ldl_</item>
+<en>LDL</en>
+<de>UEG</de>
+<custom>UEG</custom>
+</_translation>
+<_translation>
+<id>1568</id>
+<container>analysis_translation</container>
+<item>Odour</item>
+<en>Odour</en>
+<de>Geruch</de>
+<custom>Geruch</custom>
+</_translation>
+<_translation>
+<id>1569</id>
+<container>analysis_translation</container>
+<item>Magnesium</item>
+<en>Magnesium</en>
+<de>Magnesium</de>
+<custom>Magnesium</custom>
+</_translation>
+<_translation>
+<id>1570</id>
+<container>analysis_translation</container>
+<item>Calcium</item>
+<en>Calcium</en>
+<de>Calcium</de>
+<custom>Calcium</custom>
+</_translation>
+<_translation>
+<id>1571</id>
+<container>analysis_translation</container>
+<item>Appearance</item>
+<en>Appearance</en>
+<de>Appearance</de>
+<custom>Appearance</custom>
+</_translation>
+<_translation>
+<id>1572</id>
+<container>users</container>
+<item>activated_</item>
+<en>Activated</en>
+<de>Aktiviert</de>
+<custom>Aktiviert</custom>
+</_translation>
+<_translation>
+<id>1573</id>
+<container>users</container>
+<item>activation_success</item>
+<en>User activated successfully.</en>
+<de>Benutzer erfolgreich aktiviert.</de>
+<custom>Benutzer erfolgreich aktiviert.</custom>
 </_translation>
 <_translation>
 <id>1574</id>
@@ -9411,230 +12379,6 @@
 <en>CC Email</en>
 <de>CC Email</de>
 <custom>CC Email</custom>
-</_translation>
-<_translation>
-<id>1615</id>
-<container>request_owner</container>
-<item>smp_date_</item>
-<en>Sampling date</en>
-<de>Probenahmedatum</de>
-<custom>Probenahmedatum</custom>
-</_translation>
-<_translation>
-<id>1616</id>
-<container>request_owner</container>
-<item>client_sample_id_</item>
-<en>Client sample id</en>
-<de>Kunden Probennummer</de>
-<custom>Kunden Probennummer</custom>
-</_translation>
-<_translation>
-<id>1617</id>
-<container>request_owner</container>
-<item>client_order_id_</item>
-<en>Client Order ID</en>
-<de>Kundenbestell-Nr</de>
-<custom>Kundenbestell-Nr</custom>
-</_translation>
-<_translation>
-<id>1618</id>
-<container>request_owner</container>
-<item>smp_composit_</item>
-<en>Sample composit</en>
-<de>Mischprobe</de>
-<custom>Mischprobe</custom>
-</_translation>
-<_translation>
-<id>1619</id>
-<container>request_owner</container>
-<item>internal_use_</item>
-<en>Internal user</en>
-<de>Interne Verwendung</de>
-<custom>Interne Verwendung</custom>
-</_translation>
-<_translation>
-<id>1620</id>
-<container>request_owner</container>
-<item>exclude_invoice_</item>
-<en>Exclude from invoice</en>
-<de>Nicht berechnen</de>
-<custom>Nicht berechnen</custom>
-</_translation>
-<_translation>
-<id>1621</id>
-<container>request_owner</container>
-<item>state_</item>
-<en>State</en>
-<de>Status</de>
-<custom>Status</custom>
-</_translation>
-<_translation>
-<id>1622</id>
-<container>request_owner</container>
-<item>storage_</item>
-<en>Storage</en>
-<de>Aufbewahrung</de>
-<custom>Aufbewahrung</custom>
-</_translation>
-<_translation>
-<id>1623</id>
-<container>request_owner</container>
-<item>batch_</item>
-<en>Batch</en>
-<de>Batch</de>
-<custom>Batch</custom>
-</_translation>
-<_translation>
-<id>1624</id>
-<container>request_owner</container>
-<item>customer_</item>
-<en>Customer</en>
-<de>Kunde</de>
-<custom>Kunde</custom>
-</_translation>
-<_translation>
-<id>1625</id>
-<container>request_owner</container>
-<item>smptype_</item>
-<en>Sample type</en>
-<de>Probenart</de>
-<custom>Probenart</custom>
-</_translation>
-<_translation>
-<id>1626</id>
-<container>request_owner</container>
-<item>smpmatrix_</item>
-<en>Sample matrix</en>
-<de>Matrix</de>
-<custom>Matrix</custom>
-</_translation>
-<_translation>
-<id>1627</id>
-<container>request_owner</container>
-<item>smpcontainer_</item>
-<en>Sample container</en>
-<de>Probenbehälter</de>
-<custom>Probenbehälter</custom>
-</_translation>
-<_translation>
-<id>1628</id>
-<container>request_owner</container>
-<item>smpcondition_</item>
-<en>Sample condition</en>
-<de>Probenzustand</de>
-<custom>Probenzustand</custom>
-</_translation>
-<_translation>
-<id>1629</id>
-<container>request_owner</container>
-<item>smppreservation_</item>
-<en>Sample preservation</en>
-<de>Konservierung</de>
-<custom>Konservierung</custom>
-</_translation>
-<_translation>
-<id>1630</id>
-<container>request_owner</container>
-<item>smppoint_</item>
-<en>Sampling point</en>
-<de>Probenahmestelle</de>
-<custom>Probenahmestelle</custom>
-</_translation>
-<_translation>
-<id>1631</id>
-<container>request_owner</container>
-<item>priority_</item>
-<en>Priority</en>
-<de>Priorität</de>
-<custom>Priorität</custom>
-</_translation>
-<_translation>
-<id>1632</id>
-<container>request_owner</container>
-<item>profile_</item>
-<en>Profile</en>
-<de>Profil</de>
-<custom>Profil</custom>
-</_translation>
-<_translation>
-<id>1633</id>
-<container>request_owner</container>
-<item>workflow_</item>
-<en>Workflow</en>
-<de>Workflow</de>
-<custom>Workflow</custom>
-</_translation>
-<_translation>
-<id>1634</id>
-<container>request_owner</container>
-<item>formulation_</item>
-<en>Formulation</en>
-<de>Formulierung</de>
-<custom>Formulierung</custom>
-</_translation>
-<_translation>
-<id>1635</id>
-<container>request_owner</container>
-<item>project_</item>
-<en>Project</en>
-<de>Projekt</de>
-<custom>Projekt</custom>
-</_translation>
-<_translation>
-<id>1636</id>
-<container>request_owner</container>
-<item>sampler_</item>
-<en>Sampler</en>
-<de>Probenehmer</de>
-<custom>Probenehmer</custom>
-</_translation>
-<_translation>
-<id>1637</id>
-<container>project_owner</container>
-<item>caption_</item>
-<en>Project</en>
-<de>Projekt</de>
-<custom>Projekt</custom>
-</_translation>
-<_translation>
-<id>1638</id>
-<container>project_owner</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>1639</id>
-<container>project_owner</container>
-<item>title_</item>
-<en>Title</en>
-<de>Titel</de>
-<custom>Titel</custom>
-</_translation>
-<_translation>
-<id>1640</id>
-<container>project_owner</container>
-<item>description_</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
-</_translation>
-<_translation>
-<id>1641</id>
-<container>project_owner</container>
-<item>deactivate_</item>
-<en>Deactivate</en>
-<de>Deaktivieren</de>
-<custom>Deaktivieren</custom>
-</_translation>
-<_translation>
-<id>1642</id>
-<container>project_owner</container>
-<item>owner_</item>
-<en>Owner</en>
-<de>Ersteller</de>
-<custom>Ersteller</custom>
 </_translation>
 <_translation>
 <id>1643</id>
@@ -12580,2750 +15324,6 @@ RT - Zurückziehen</custom>
 <en>IBAN</en>
 <de>IBAN</de>
 <custom>IBAN</custom>
-</_translation>
-<_translation>
-<id>115569</id>
-<container>setup_edit</container>
-<item>num_culture_</item>
-<en>Culture Code</en>
-<de>Culture Code</de>
-<custom>Culture Code</custom>
-</_translation>
-<_translation>
-<id>116211</id>
-<container>template</container>
-<item>client_order_id_</item>
-<en>Client Order ID</en>
-<de>Client Order ID</de>
-<custom>Client Order ID</custom>
-</_translation>
-<_translation>
-<id>116215</id>
-<container>template_edit</container>
-<item>client_order_id_</item>
-<en>Client Order ID</en>
-<de>Client Order ID</de>
-<custom>Client Order ID</custom>
-</_translation>
-<_translation>
-<id>120471</id>
-<container>template_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-<custom>Speichern</custom>
-</_translation>
-<_translation>
-<id>121066</id>
-<container>translation_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121100</id>
-<container>role_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121136</id>
-<container>workflow_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121192</id>
-<container>billing_customer_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121309</id>
-<container>laboratory_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121317</id>
-<container>department_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121335</id>
-<container>workplace_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121487</id>
-<container>customer_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121615</id>
-<container>contact_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121623</id>
-<container>manufacturer_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121649</id>
-<container>supplier_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121749</id>
-<container>priority_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121758</id>
-<container>technique_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121767</id>
-<container>instype_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121776</id>
-<container>service_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121809</id>
-<container>material_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121861</id>
-<container>smpcontainer_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121865</id>
-<container>smppreservation_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121873</id>
-<container>smpcondition_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121882</id>
-<container>smppoint_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121891</id>
-<container>smptype_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>121899</id>
-<container>smpmatrix_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-</_translation>
-<_translation>
-<id>122442</id>
-<container>_background_worker_form</container>
-<item>demo-mode</item>
-<en>Demo Mode. Labdesk will close automatically.</en>
-<de>Demo-Modus. Labdesk wird automatisch geschlossen.</de>
-<custom>Demo-Modus. Labdesk wird automatisch geschlossen.</custom>
-</_translation>
-<_translation>
-<id>122443</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_add_record</item>
-<en>Add record</en>
-<de>Hinzufügen</de>
-<custom>Hinzufügen</custom>
-</_translation>
-<_translation>
-<id>122444</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_activate_user</item>
-<en>Issue Licence</en>
-<de>Lizenz ausstellen</de>
-</_translation>
-<_translation>
-<id>122445</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_deactivate_user</item>
-<en>Revoke Licence</en>
-<de>Lizenz entziehen</de>
-</_translation>
-<_translation>
-<id>122446</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_apply_filter</item>
-<en>Apply filer</en>
-<de>Filter anwenden</de>
-</_translation>
-<_translation>
-<id>122447</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_save_filter</item>
-<en>Save filter</en>
-<de>Filter speichern</de>
-</_translation>
-<_translation>
-<id>122448</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_clmn_dlg</item>
-<en>Columns</en>
-<de>Spalten</de>
-<custom>Spalten</custom>
-</_translation>
-<_translation>
-<id>122449</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_clmn_std</item>
-<en>Reset</en>
-<de>Zurücksetzen</de>
-<custom>Zurücksetzen</custom>
-</_translation>
-<_translation>
-<id>122450</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_audit_trail</item>
-<en>Audit Trail</en>
-<de>Audit Trail</de>
-<custom>Audit Trail</custom>
-</_translation>
-<_translation>
-<id>122451</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_refresh</item>
-<en>Refresh</en>
-<de>Aktualisieren</de>
-<custom>Aktualisieren</custom>
-</_translation>
-<_translation>
-<id>122478</id>
-<container>users</container>
-<item>licence_</item>
-<en>Licenced</en>
-<de>Lizensiert</de>
-</_translation>
-<_translation>
-<id>122646</id>
-<container>_TextBoxDialog</container>
-<item>btn_save</item>
-<en>OK</en>
-<de>OK</de>
-</_translation>
-<_translation>
-<id>122647</id>
-<container>_TextBoxDialog</container>
-<item>btn_cancel</item>
-<en>Cancel</en>
-<de>Abbrechen</de>
-</_translation>
-<_translation>
-<id>122648</id>
-<container>_TextBoxDialog</container>
-<item>comboBox</item>
-<en>UID/UAK</en>
-<de>UID/UAK</de>
-</_translation>
-<_translation>
-<id>122655</id>
-<container>_TextBoxDialog</container>
-<item>caption</item>
-<en>Activate User</en>
-<de>Benutzer freischalten</de>
-</_translation>
-<_translation>
-<id>122688</id>
-<container>users</container>
-<item>uak_not_valid</item>
-<en>UAK not valid. Contact vendor.</en>
-<de>UAK nicht gültig. Anbieter kontaktieren.</de>
-</_translation>
-<_translation>
-<id>39822</id>
-<container>RPT-M001</container>
-<item>bic_</item>
-<en>BIC</en>
-<de>BIC</de>
-<custom>BIC</custom>
-</_translation>
-<_translation>
-<id>39824</id>
-<container>RPT-M001</container>
-<item>hrg_not_translateable</item>
-<en>Leipzig</en>
-<de>Leipzig</de>
-<custom>Leipzig</custom>
-</_translation>
-<_translation>
-<id>39825</id>
-<container>RPT-M001</container>
-<item>hrg_</item>
-<en>HRG</en>
-<de>HRG</de>
-<custom>HRG</custom>
-</_translation>
-<_translation>
-<id>39826</id>
-<container>RPT-M001</container>
-<item>hrgid_not_translateable</item>
-<en>EB191918</en>
-<de>EB10101923</de>
-<custom>EB10101923</custom>
-</_translation>
-<_translation>
-<id>39827</id>
-<container>RPT-M001</container>
-<item>hrgid_</item>
-<en>HRG DI</en>
-<de>HRG ID</de>
-<custom>HRG ID</custom>
-</_translation>
-<_translation>
-<id>39829</id>
-<container>RPT-M001</container>
-<item>ustdid_</item>
-<en>VAT</en>
-<de>Ust-Id</de>
-<custom>Ust-Id</custom>
-</_translation>
-<_translation>
-<id>39831</id>
-<container>RPT-M001</container>
-<item>CEO_</item>
-<en>CEO</en>
-<de>CEO</de>
-<custom>CEO</custom>
-</_translation>
-<_translation>
-<id>39832</id>
-<container>RPT-M001</container>
-<item>company_</item>
-<en>Company</en>
-<de>Firma</de>
-<custom>Firma</custom>
-</_translation>
-<_translation>
-<id>39836</id>
-<container>RPT-M001</container>
-<item>telefone_</item>
-<en>Telefone</en>
-<de>Telefon</de>
-<custom>Telefon</custom>
-</_translation>
-<_translation>
-<id>39866</id>
-<container>M001_header</container>
-<item>caption_</item>
-<en>Labreport</en>
-<de>Laborbericht</de>
-<custom>Laborbericht</custom>
-</_translation>
-<_translation>
-<id>39867</id>
-<container>M001_header</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>39868</id>
-<container>M001_header</container>
-<item>customer_</item>
-<en>Customer</en>
-<de>Kunde</de>
-<custom>Kunde</custom>
-</_translation>
-<_translation>
-<id>39869</id>
-<container>M001_header</container>
-<item>client_order_id_</item>
-<en>Client Order ID</en>
-<de>Kundenbestell-Nr</de>
-<custom>Kundenbestell-Nr</custom>
-</_translation>
-<_translation>
-<id>39870</id>
-<container>M001_header</container>
-<item>address_</item>
-<en>Address</en>
-<de>Adresse</de>
-<custom>Adresse</custom>
-</_translation>
-<_translation>
-<id>39871</id>
-<container>M001_header</container>
-<item>contact_</item>
-<en>Contact</en>
-<de>Kontakt</de>
-<custom>Kontakt</custom>
-</_translation>
-<_translation>
-<id>39872</id>
-<container>M001_header</container>
-<item>email_</item>
-<en>Email</en>
-<de>E-Mail</de>
-<custom>E-Mail</custom>
-</_translation>
-<_translation>
-<id>40808</id>
-<container>RPT-M001</container>
-<item>smp_id</item>
-<en>=&quot;SMP-&quot; &amp; [id]</en>
-<de>=&quot;SMP-&quot; &amp; [id]</de>
-<custom>=&quot;SMP-&quot; &amp; [id]</custom>
-</_translation>
-<_translation>
-<id>45687</id>
-<container>ribbon_bar</container>
-<item>btn_error</item>
-<en>Errors</en>
-<de>Errors</de>
-<custom>Errors</custom>
-</_translation>
-<_translation>
-<id>45732</id>
-<container>errorlog</container>
-<item>caption_</item>
-<en>Errors</en>
-<de>Errors</de>
-<custom>Errors</custom>
-</_translation>
-<_translation>
-<id>45733</id>
-<container>errorlog</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>45735</id>
-<container>errorlog</container>
-<item>user_id_</item>
-<en>User ID</en>
-<de>User ID</de>
-<custom>User ID</custom>
-</_translation>
-<_translation>
-<id>45739</id>
-<container>errorlog</container>
-<item>error_description_</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
-</_translation>
-<_translation>
-<id>45741</id>
-<container>errorlog</container>
-<item>created_at_</item>
-<en>Created at</en>
-<de>Erstell am</de>
-<custom>Erstell am</custom>
-</_translation>
-<_translation>
-<id>45748</id>
-<container>errorlog</container>
-<item>error_id_</item>
-<en>Error ID</en>
-<de>Error ID</de>
-<custom>Error ID</custom>
-</_translation>
-<_translation>
-<id>47211</id>
-<container>setup</container>
-<item>verbous_</item>
-<en>Verbous</en>
-<de>Verbous</de>
-<custom>Verbous</custom>
-</_translation>
-<_translation>
-<id>47212</id>
-<container>setup</container>
-<item>verbous_tooltip</item>
-<en>Report all errors</en>
-<de>Fehler berichten</de>
-<custom>Fehler berichten</custom>
-</_translation>
-<_translation>
-<id>51196</id>
-<container>system</container>
-<item>MDIMode-On</item>
-<en>Multi Document Interface switched on. Restart to take effect.</en>
-<de>Multi Document Interface ist eingeschaltet. Starten Sie neu, damit es wirksam wird.</de>
-<custom>Multi Document Interface ist eingeschaltet. Starten Sie neu, damit es wirksam wird.</custom>
-</_translation>
-<_translation>
-<id>51197</id>
-<container>system</container>
-<item>MDIMode-Off</item>
-<en>Multi Document Interface switched off. Restart to take effect.</en>
-<de>Multi Document Interface ist ausgeschaltet. Starten Sie neu, damit es wirksam wird.</de>
-<custom>Multi Document Interface ist ausgeschaltet. Starten Sie neu, damit es wirksam wird.</custom>
-</_translation>
-<_translation>
-<id>51485</id>
-<container>ribbon_bar</container>
-<item>btn_mdi</item>
-<en>MDI</en>
-<de>MDI</de>
-<custom>MDI</custom>
-</_translation>
-<_translation>
-<id>54859</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_sub_clmn_dlg</item>
-<en>Columns</en>
-<de>Spalten</de>
-<custom>Spalten</custom>
-</_translation>
-<_translation>
-<id>54860</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_sub_clmn_std</item>
-<en>Reset</en>
-<de>Zurücksetzen</de>
-<custom>Zurücksetzen</custom>
-</_translation>
-<_translation>
-<id>66560</id>
-<container>request-sub</container>
-<item>invoice_</item>
-<en>Invoice</en>
-<de>Abrechnen</de>
-<custom>Abrechnen</custom>
-</_translation>
-<_translation>
-<id>68337</id>
-<container>S001_header</container>
-<item>smp_id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>68338</id>
-<container>S001_header</container>
-<item>smp_id</item>
-<en>=&quot;SMP-&quot;&amp;[ID]</en>
-<de>=&quot;SMP-&quot;&amp;[ID]</de>
-<custom>=&quot;SMP-&quot;&amp;[ID]</custom>
-</_translation>
-<_translation>
-<id>68500</id>
-<container>M001_header</container>
-<item>smp_id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>68547</id>
-<container>M001_header</container>
-<item>smp_id</item>
-<en>=&quot;SMP-&quot;&amp;[ID]</en>
-<de>=&quot;SMP-&quot;&amp;[ID]</de>
-<custom>=&quot;SMP-&quot;&amp;[ID]</custom>
-</_translation>
-<_translation>
-<id>86876</id>
-<container>setup_edit</container>
-<item>verbous_</item>
-<en>Verbous</en>
-<de>Verbous</de>
-<custom>Verbous</custom>
-</_translation>
-<_translation>
-<id>99297</id>
-<container>view_measurement</container>
-<item>smp_date_</item>
-<en>Sampling Date</en>
-<de>Probenahmedatum</de>
-<custom>Probenahmedatum</custom>
-</_translation>
-<_translation>
-<id>99299</id>
-<container>view_measurement</container>
-<item>profile_</item>
-<en>Profile</en>
-<de>Profil</de>
-<custom>Profil</custom>
-</_translation>
-<_translation>
-<id>99301</id>
-<container>view_measurement</container>
-<item>smppoint_</item>
-<en>Sample Point</en>
-<de>Probenahmestelle</de>
-<custom>Probenahmestelle</custom>
-</_translation>
-<_translation>
-<id>103685</id>
-<container>workflow_state_sbf</container>
-<item>role_</item>
-<en>Assigned Role</en>
-<de>Zugewiesene Rolle</de>
-<custom>Zugewiesene Rolle</custom>
-</_translation>
-<_translation>
-<id>103686</id>
-<container>workflow_state_sbf</container>
-<item>role_tooltip</item>
-<en>Choose role to get alert on pending requests in desktop</en>
-<de>Rolle auswähnlen um über ausstehende Analysenaufträge im Desktop informiert zu werden</de>
-<custom>Rolle auswähnlen um über ausstehende Analysenaufträge im Desktop informiert zu werden</custom>
-</_translation>
-<_translation>
-<id>103723</id>
-<container>desktop</container>
-<item>tab_request</item>
-<en>Requests to check</en>
-<de>Aufträge zur Prüfung</de>
-<custom>Aufträge zur Prüfung</custom>
-</_translation>
-<_translation>
-<id>105127</id>
-<container>request</container>
-<item>role_</item>
-<en>Responsible</en>
-<de>Zuständig</de>
-<custom>Zuständig</custom>
-</_translation>
-<_translation>
-<id>105726</id>
-<container>desktop_request_sbf</container>
-<item>caption_</item>
-<en>Requests</en>
-<de>Aufträge</de>
-<custom>Aufträge</custom>
-</_translation>
-<_translation>
-<id>105727</id>
-<container>desktop_request_sbf</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>105729</id>
-<container>desktop_request_sbf</container>
-<item>description_</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
-</_translation>
-<_translation>
-<id>105731</id>
-<container>desktop_request_sbf</container>
-<item>smp_date_</item>
-<en>Sample Date</en>
-<de>Probenahmedatum</de>
-<custom>Probenahmedatum</custom>
-</_translation>
-<_translation>
-<id>105733</id>
-<container>desktop_request_sbf</container>
-<item>client_sample_id_</item>
-<en>Client Sampe ID</en>
-<de>Kunden Probennummer</de>
-<custom>Kunden Probennummer</custom>
-</_translation>
-<_translation>
-<id>105735</id>
-<container>desktop_request_sbf</container>
-<item>client_order_id_</item>
-<en>Client Order ID</en>
-<de>Client Order ID</de>
-<custom>Client Order ID</custom>
-</_translation>
-<_translation>
-<id>105737</id>
-<container>desktop_request_sbf</container>
-<item>customer_</item>
-<en>Customer</en>
-<de>Kunde</de>
-<custom>Kunde</custom>
-</_translation>
-<_translation>
-<id>105739</id>
-<container>desktop_request_sbf</container>
-<item>smptype_</item>
-<en>Sample Type</en>
-<de>Probentyp</de>
-<custom>Probentyp</custom>
-</_translation>
-<_translation>
-<id>105741</id>
-<container>desktop_request_sbf</container>
-<item>smpmatrix_</item>
-<en>Sample Matrix</en>
-<de>Probenmatrix</de>
-<custom>Probenmatrix</custom>
-</_translation>
-<_translation>
-<id>105743</id>
-<container>desktop_request_sbf</container>
-<item>priority_</item>
-<en>Priority</en>
-<de>Priorität</de>
-<custom>Priorität</custom>
-</_translation>
-<_translation>
-<id>105745</id>
-<container>desktop_request_sbf</container>
-<item>profile_</item>
-<en>Profile</en>
-<de>Profil</de>
-<custom>Profil</custom>
-</_translation>
-<_translation>
-<id>105747</id>
-<container>desktop_request_sbf</container>
-<item>formulation_</item>
-<en>Formulation</en>
-<de>Formulierung</de>
-<custom>Formulierung</custom>
-</_translation>
-<_translation>
-<id>105749</id>
-<container>desktop_request_sbf</container>
-<item>project_</item>
-<en>Project</en>
-<de>Projekt</de>
-<custom>Projekt</custom>
-</_translation>
-<_translation>
-<id>105751</id>
-<container>desktop_request_sbf</container>
-<item>sampler_</item>
-<en>Sampler</en>
-<de>Probennehmer</de>
-<custom>Probennehmer</custom>
-</_translation>
-<_translation>
-<id>115557</id>
-<container>setup</container>
-<item>num_format_</item>
-<en>Numerical Format</en>
-<de>Numerical Format</de>
-<custom>Numerical Format</custom>
-</_translation>
-<_translation>
-<id>115559</id>
-<container>setup</container>
-<item>num_culture_</item>
-<en>Culture Code</en>
-<de>Culture Code</de>
-<custom>Culture Code</custom>
-</_translation>
-<_translation>
-<id>115567</id>
-<container>setup_edit</container>
-<item>num_format_</item>
-<en>Numerical Format</en>
-<de>Numerical Format</de>
-<custom>Numerical Format</custom>
-</_translation>
-<_translation>
-<id>1093</id>
-<container>billing_customer</container>
-<item>invoiced_</item>
-<en>Invoiced at</en>
-<de>Abgerechnet am</de>
-<custom>Abgerechnet am</custom>
-</_translation>
-<_translation>
-<id>1094</id>
-<container>billing_customer_edit</container>
-<item>invoiced_</item>
-<en>Invoiced at</en>
-<de>Abgerechnet am</de>
-<custom>Abgerechnet am</custom>
-</_translation>
-<_translation>
-<id>1095</id>
-<container>request</container>
-<item>invoice_</item>
-<en>Invoice</en>
-<de>Abrechnen</de>
-<custom>Abrechnen</custom>
-</_translation>
-<_translation>
-<id>1096</id>
-<container>request</container>
-<item>billing_customer_</item>
-<en>Invoice-ID</en>
-<de>Abrechnungs-ID</de>
-<custom>Abrechnungs-ID</custom>
-</_translation>
-<_translation>
-<id>1097</id>
-<container>request_edit</container>
-<item>invoice_</item>
-<en>Invoice</en>
-<de>Abrechnen</de>
-<custom>Abrechnen</custom>
-</_translation>
-<_translation>
-<id>1098</id>
-<container>request_edit</container>
-<item>billing_customer_</item>
-<en>Invoice-ID</en>
-<de>Abrechnungs-ID</de>
-<custom>Abrechnungs-ID</custom>
-</_translation>
-<_translation>
-<id>1099</id>
-<container>ribbon_bar</container>
-<item>grp_info</item>
-<en>About</en>
-<de>About</de>
-<custom>About</custom>
-</_translation>
-<_translation>
-<id>1100</id>
-<container>project</container>
-<item>invoice_</item>
-<en>Invoice</en>
-<de>Abrechnen</de>
-<custom>Abrechnen</custom>
-</_translation>
-<_translation>
-<id>1101</id>
-<container>project</container>
-<item>billing_customer_</item>
-<en>Invoice-ID</en>
-<de>Rechnungs-ID</de>
-<custom>Rechnungs-ID</custom>
-</_translation>
-<_translation>
-<id>1102</id>
-<container>project_edit</container>
-<item>invoice_</item>
-<en>Invoice</en>
-<de>Abrechnen</de>
-<custom>Abrechnen</custom>
-</_translation>
-<_translation>
-<id>1103</id>
-<container>project_edit</container>
-<item>billing_customer_</item>
-<en>Invoice-ID</en>
-<de>Rechnungs-ID</de>
-<custom>Rechnungs-ID</custom>
-</_translation>
-<_translation>
-<id>1104</id>
-<container>billing</container>
-<item>billing_from_</item>
-<en>From</en>
-<de>Von</de>
-<custom>Von</custom>
-</_translation>
-<_translation>
-<id>1105</id>
-<container>billing</container>
-<item>billing_till_</item>
-<en>Till</en>
-<de>Bis</de>
-<custom>Bis</custom>
-</_translation>
-<_translation>
-<id>1106</id>
-<container>billing_customer</container>
-<item>projects_</item>
-<en>Projects</en>
-<de>Projekte</de>
-<custom>Projekte</custom>
-</_translation>
-<_translation>
-<id>1107</id>
-<container>technique_translation</container>
-<item>Sensorics</item>
-<en>Sensoric</en>
-<de>Sensorisch</de>
-<custom>Sensorisch</custom>
-</_translation>
-<_translation>
-<id>1108</id>
-<container>msgbox</container>
-<item>mailadress_error</item>
-<en>Email not sent. Mailadress not provided or with wrong format.</en>
-<de>E-Mail nicht gesendet. Mailadresse nicht angegeben oder mit falschem Format.</de>
-<custom>E-Mail nicht gesendet. Mailadresse nicht angegeben oder mit falschem Format.</custom>
-</_translation>
-<_translation>
-<id>1314</id>
-<container>project_formulation_sbf</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>1315</id>
-<container>project_formulation_sbf</container>
-<item>title_</item>
-<en>Title</en>
-<de>Titel</de>
-<custom>Titel</custom>
-</_translation>
-<_translation>
-<id>1316</id>
-<container>project_formulation_sbf</container>
-<item>description_</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
-</_translation>
-<_translation>
-<id>1317</id>
-<container>project_formulation_sbf</container>
-<item>instruction_</item>
-<en>Instruction</en>
-<de>Anleitung</de>
-<custom>Anleitung</custom>
-</_translation>
-<_translation>
-<id>1318</id>
-<container>project_formulation_sbf</container>
-<item>deactivate_</item>
-<en>Deactivate</en>
-<de>Deaktivieren</de>
-<custom>Deaktivieren</custom>
-</_translation>
-<_translation>
-<id>1319</id>
-<container>project_formulation_sbf</container>
-<item>project_</item>
-<en>Project</en>
-<de>Projekt</de>
-<custom>Projekt</custom>
-</_translation>
-<_translation>
-<id>1320</id>
-<container>project_formulation_sbf</container>
-<item>owner_</item>
-<en>Owner</en>
-<de>Eigentümer</de>
-<custom>Eigentümer</custom>
-</_translation>
-<_translation>
-<id>1321</id>
-<container>ribbon_bar</container>
-<item>grp_project</item>
-<en>Project</en>
-<de>Projekt</de>
-<custom>Projekt</custom>
-</_translation>
-<_translation>
-<id>1322</id>
-<container>ribbon_bar</container>
-<item>btn_project</item>
-<en>Project</en>
-<de>Projekte</de>
-<custom>Projekte</custom>
-</_translation>
-<_translation>
-<id>1323</id>
-<container>batch_position_sbf</container>
-<item>sample_already_stored</item>
-<en>Sample already stored. Correct or press ESC.</en>
-<de>Probe bereits gespeichert. Korrigieren Sie oder drücken Sie ESC.</de>
-<custom>Probe bereits gespeichert. Korrigieren Sie oder drücken Sie ESC.</custom>
-</_translation>
-<_translation>
-<id>1324</id>
-<container>technique</container>
-<item>deactivate_</item>
-<en>Deactivate</en>
-<de>Deaktivieren</de>
-<custom>Deaktivieren</custom>
-</_translation>
-<_translation>
-<id>1325</id>
-<container>technique_edit</container>
-<item>deactivate_</item>
-<en>Deactivate</en>
-<de>Deaktivieren</de>
-<custom>Deaktivieren</custom>
-</_translation>
-<_translation>
-<id>1326</id>
-<container>priority</container>
-<item>deactivate_</item>
-<en>Deactivate</en>
-<de>Deaktivieren</de>
-<custom>Deaktivieren</custom>
-</_translation>
-<_translation>
-<id>1327</id>
-<container>priority_edit</container>
-<item>deactivate_</item>
-<en>Deactivate</en>
-<de>Deaktivieren</de>
-<custom>Deaktivieren</custom>
-</_translation>
-<_translation>
-<id>1328</id>
-<container>qualification</container>
-<item>reviewed_by_</item>
-<en>Reviewed by</en>
-<de>Überprüft von</de>
-<custom>Überprüft von</custom>
-</_translation>
-<_translation>
-<id>1329</id>
-<container>qualification_edit</container>
-<item>reviewed_by_</item>
-<en>Reviewed by</en>
-<de>Überprüft von</de>
-<custom>Überprüft von</custom>
-</_translation>
-<_translation>
-<id>1330</id>
-<container>msgbox</container>
-<item>method_in_use</item>
-<en>Method still in use. Correct and try again.</en>
-<de>Die Methode wird immer noch verwendet. Bitte korrigieren und erneut versuchen.</de>
-<custom>Die Methode wird immer noch verwendet. Bitte korrigieren und erneut versuchen.</custom>
-</_translation>
-<_translation>
-<id>1331</id>
-<container>instrument_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-<custom>Speichern</custom>
-</_translation>
-<_translation>
-<id>1332</id>
-<container>method_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-<custom>Speichern</custom>
-</_translation>
-<_translation>
-<id>1333</id>
-<container>profile_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-<custom>Speichern</custom>
-</_translation>
-<_translation>
-<id>1334</id>
-<container>qualification</container>
-<item>user_id_</item>
-<en>User</en>
-<de>Benutzer</de>
-<custom>Benutzer</custom>
-</_translation>
-<_translation>
-<id>1335</id>
-<container>request_customfield_sbf</container>
-<item>field_key_</item>
-<en>Key</en>
-<de>Key</de>
-<custom>Key</custom>
-</_translation>
-<_translation>
-<id>1336</id>
-<container>request_customfield_sbf</container>
-<item>field_name_</item>
-<en>Name</en>
-<de>Name</de>
-<custom>Name</custom>
-</_translation>
-<_translation>
-<id>1337</id>
-<container>request_customfield_sbf</container>
-<item>field_value_</item>
-<en>Value</en>
-<de>Wert</de>
-<custom>Wert</custom>
-</_translation>
-<_translation>
-<id>1338</id>
-<container>request_customfield_sbf</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>1339</id>
-<container>customfield</container>
-<item>caption_</item>
-<en>Custom Field</en>
-<de>Benutzerdefiniertes Feld</de>
-<custom>Benutzerdefiniertes Feld</custom>
-</_translation>
-<_translation>
-<id>1340</id>
-<container>customfield</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>1341</id>
-<container>customfield</container>
-<item>table_name_</item>
-<en>Table</en>
-<de>Tabelle</de>
-<custom>Tabelle</custom>
-</_translation>
-<_translation>
-<id>1342</id>
-<container>customfield</container>
-<item>field_key_</item>
-<en>Key</en>
-<de>Schlüssel</de>
-<custom>Schlüssel</custom>
-</_translation>
-<_translation>
-<id>1343</id>
-<container>customfield</container>
-<item>field_name_</item>
-<en>Name</en>
-<de>Name</de>
-<custom>Name</custom>
-</_translation>
-<_translation>
-<id>1344</id>
-<container>ribbon_bar</container>
-<item>btn_customfield</item>
-<en>Add. Fields</en>
-<de>Zusatzfelder</de>
-<custom>Zusatzfelder</custom>
-</_translation>
-<_translation>
-<id>1345</id>
-<container>setup</container>
-<item>upload_max_byte_</item>
-<en>Max Filesize (byte)</en>
-<de>Max. Dateigröße (byte)</de>
-<custom>Max. Dateigröße (byte)</custom>
-</_translation>
-<_translation>
-<id>1346</id>
-<container>setup_edit</container>
-<item>upload_max_byte_</item>
-<en>Max Filesize (byte)</en>
-<de>Max. Dateigröße (byte)</de>
-<custom>Max. Dateigröße (byte)</custom>
-</_translation>
-<_translation>
-<id>1347</id>
-<container>Dialogs</container>
-<item>max_filesize_exceeded</item>
-<en>Maximum file size exceeded</en>
-<de>Maximale Dateigröße überschritten</de>
-<custom>Maximale Dateigröße überschritten</custom>
-</_translation>
-<_translation>
-<id>1348</id>
-<container>project_edit</container>
-<item>tab_other</item>
-<en>Other</en>
-<de>Andere</de>
-<custom>Andere</custom>
-</_translation>
-<_translation>
-<id>1349</id>
-<container>project_customfield_sbf</container>
-<item>caption_</item>
-<en>Custom Field</en>
-<de>Benutzerdefiniertes Feld</de>
-<custom>Benutzerdefiniertes Feld</custom>
-</_translation>
-<_translation>
-<id>1350</id>
-<container>project_customfield_sbf</container>
-<item>field_key_</item>
-<en>Key</en>
-<de>Schlüssel</de>
-<custom>Schlüssel</custom>
-</_translation>
-<_translation>
-<id>1351</id>
-<container>project_customfield_sbf</container>
-<item>field_name_</item>
-<en>Name</en>
-<de>Name</de>
-<custom>Name</custom>
-</_translation>
-<_translation>
-<id>1352</id>
-<container>project_customfield_sbf</container>
-<item>field_value_</item>
-<en>Value</en>
-<de>Wert</de>
-<custom>Wert</custom>
-</_translation>
-<_translation>
-<id>1353</id>
-<container>project_customfield_sbf</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>1354</id>
-<container>RPT-S001</container>
-<item>hrg_not_translateable</item>
-<en>Amtsgericht Landau</en>
-<de>Amtsgericht Landau</de>
-<custom>Amtsgericht Landau</custom>
-</_translation>
-<_translation>
-<id>1355</id>
-<container>RPT-S001</container>
-<item>hrg_</item>
-<en>HRG</en>
-<de>HRG</de>
-<custom>HRG</custom>
-</_translation>
-<_translation>
-<id>1356</id>
-<container>RPT-S001</container>
-<item>company_</item>
-<en>Company</en>
-<de>Firma</de>
-<custom>Firma</custom>
-</_translation>
-<_translation>
-<id>1357</id>
-<container>RPT-S001</container>
-<item>hrgid_not_translateable</item>
-<en>1123</en>
-<de>1123</de>
-<custom>1123</custom>
-</_translation>
-<_translation>
-<id>1358</id>
-<container>RPT-S001</container>
-<item>hrgid_</item>
-<en>HRG-Nr</en>
-<de>HRG-Nr</de>
-<custom>HRG-Nr</custom>
-</_translation>
-<_translation>
-<id>1359</id>
-<container>RPT-S001</container>
-<item>ustdid_</item>
-<en>VAT</en>
-<de>UstId-Nr</de>
-<custom>UstId-Nr</custom>
-</_translation>
-<_translation>
-<id>1360</id>
-<container>role</container>
-<item>deactivate_</item>
-<en>Deactivate</en>
-<de>Deaktivieren</de>
-<custom>Deaktivieren</custom>
-</_translation>
-<_translation>
-<id>1361</id>
-<container>qualification_edit</container>
-<item>user_id_</item>
-<en>User</en>
-<de>Benutzer</de>
-<custom>Benutzer</custom>
-</_translation>
-<_translation>
-<id>1362</id>
-<container>request_measurement_sbf</container>
-<item>request_id_</item>
-<en>Request</en>
-<de>Auftrag</de>
-<custom>Auftrag</custom>
-</_translation>
-<_translation>
-<id>1363</id>
-<container>batch_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-<custom>Speichern</custom>
-</_translation>
-<_translation>
-<id>1364</id>
-<container>storage_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-<custom>Speichern</custom>
-</_translation>
-<_translation>
-<id>1365</id>
-<container>project</container>
-<item>not_a_project_member</item>
-<en>Permission denied. Your are not a project member or owner.</en>
-<de>Erlaubnis verweigert. Sie sind kein Projektmitglied oder Projekteigner.</de>
-<custom>Erlaubnis verweigert. Sie sind kein Projektmitglied oder Projekteigner.</custom>
-</_translation>
-<_translation>
-<id>1366</id>
-<container>translation</container>
-<item>de_</item>
-<en>DE</en>
-<de>DE</de>
-<custom>DE</custom>
-</_translation>
-<_translation>
-<id>1367</id>
-<container>strposition_sbf</container>
-<item>batch_id_</item>
-<en>Ch.-B.</en>
-<de>Ch.-B.</de>
-<custom>Ch.-B.</custom>
-</_translation>
-<_translation>
-<id>1368</id>
-<container>strposition_sbf</container>
-<item>opened_on_</item>
-<en>Opened on</en>
-<de>Geöffnet am</de>
-<custom>Geöffnet am</custom>
-</_translation>
-<_translation>
-<id>1369</id>
-<container>strposition_sbf</container>
-<item>best_before_</item>
-<en>Best before</en>
-<de>Haltbar bis</de>
-<custom>Haltbar bis</custom>
-</_translation>
-<_translation>
-<id>1370</id>
-<container>profile_edit</container>
-<item>reference_material_</item>
-<en>Reference material</en>
-<de>Referenz Standard</de>
-<custom>Referenz Standard</custom>
-</_translation>
-<_translation>
-<id>1371</id>
-<container>profile</container>
-<item>reference_material_</item>
-<en>Reference material</en>
-<de>Referenz Standard</de>
-<custom>Referenz Standard</custom>
-</_translation>
-<_translation>
-<id>1372</id>
-<container>profile</container>
-<item>report_template_</item>
-<en>Report template</en>
-<de>Berichtsvorlage</de>
-<custom>Berichtsvorlage</custom>
-</_translation>
-<_translation>
-<id>1373</id>
-<container>profile_edit</container>
-<item>report_template_</item>
-<en>Report template</en>
-<de>Berichtsvorlage</de>
-<custom>Berichtsvorlage</custom>
-</_translation>
-<_translation>
-<id>1374</id>
-<container>profile</container>
-<item>expiration_</item>
-<en>Expiration</en>
-<de>Ablaufdatum</de>
-<custom>Ablaufdatum</custom>
-</_translation>
-<_translation>
-<id>1375</id>
-<container>profile_edit</container>
-<item>expiration_</item>
-<en>Expiration</en>
-<de>Ablaufdatum</de>
-<custom>Ablaufdatum</custom>
-</_translation>
-<_translation>
-<id>1376</id>
-<container>strposition_sbf</container>
-<item>expiration_</item>
-<en>Expiration</en>
-<de>Ablaufdatum</de>
-<custom>Ablaufdatum</custom>
-</_translation>
-<_translation>
-<id>1377</id>
-<container>project</container>
-<item>profile_</item>
-<en>Profile</en>
-<de>Profile</de>
-<custom>Profile</custom>
-</_translation>
-<_translation>
-<id>1378</id>
-<container>project_edit</container>
-<item>profile_</item>
-<en>Profile</en>
-<de>Profile</de>
-<custom>Profile</custom>
-</_translation>
-<_translation>
-<id>1379</id>
-<container>project_member</container>
-<item>member_exists</item>
-<en>Member exists</en>
-<de>Mitglied existiert bereits</de>
-<custom>Mitglied existiert bereits</custom>
-</_translation>
-<_translation>
-<id>1380</id>
-<container>method</container>
-<item>method_in_use</item>
-<en>Method still in use</en>
-<de>Methode in Verwendung</de>
-<custom>Methode in Verwendung</custom>
-</_translation>
-<_translation>
-<id>1381</id>
-<container>filter_apply_dlg</container>
-<item>deletion_aborted</item>
-<en>Permission denied. Deletion Aborted.</en>
-<de>Erlaubnis verweigert. Löschen abgebrochen.</de>
-<custom>Erlaubnis verweigert. Löschen abgebrochen.</custom>
-</_translation>
-<_translation>
-<id>1382</id>
-<container>attachment_sbf</container>
-<item>reminder_</item>
-<en>Reminder</en>
-<de>Erinnerung</de>
-<custom>Erinnerung</custom>
-</_translation>
-<_translation>
-<id>1383</id>
-<container>attachment_sbf</container>
-<item>responsible_</item>
-<en>Responsible Person</en>
-<de>Verantwortlicher</de>
-<custom>Verantwortlicher</custom>
-</_translation>
-<_translation>
-<id>1384</id>
-<container>request</container>
-<item>smp_composit_</item>
-<en>Composit</en>
-<de>Komposit</de>
-<custom>Komposit</custom>
-</_translation>
-<_translation>
-<id>1385</id>
-<container>request</container>
-<item>smptype_</item>
-<en>Sample type</en>
-<de>Probenart</de>
-<custom>Probenart</custom>
-</_translation>
-<_translation>
-<id>1386</id>
-<container>request</container>
-<item>smpmatrix_</item>
-<en>Sample matrix</en>
-<de>Matrix</de>
-<custom>Matrix</custom>
-</_translation>
-<_translation>
-<id>1387</id>
-<container>request</container>
-<item>smpcontainer_</item>
-<en>Sample container</en>
-<de>Probenbehälter</de>
-<custom>Probenbehälter</custom>
-</_translation>
-<_translation>
-<id>1388</id>
-<container>request</container>
-<item>smpcondition_</item>
-<en>Sample condition</en>
-<de>Probenzustand</de>
-<custom>Probenzustand</custom>
-</_translation>
-<_translation>
-<id>1389</id>
-<container>request</container>
-<item>smppreservation_</item>
-<en>Sample preservation</en>
-<de>Konservierung</de>
-<custom>Konservierung</custom>
-</_translation>
-<_translation>
-<id>1390</id>
-<container>request</container>
-<item>smppoint_</item>
-<en>Sample point</en>
-<de>Probenahmestelle</de>
-<custom>Probenahmestelle</custom>
-</_translation>
-<_translation>
-<id>1391</id>
-<container>request_edit</container>
-<item>smptype_</item>
-<en>Sample type</en>
-<de>Probenart</de>
-<custom>Probenart</custom>
-</_translation>
-<_translation>
-<id>1392</id>
-<container>request_edit</container>
-<item>smpmatrix_</item>
-<en>Sample matrix</en>
-<de>Matrix</de>
-<custom>Matrix</custom>
-</_translation>
-<_translation>
-<id>1393</id>
-<container>request_edit</container>
-<item>smpcontainer_</item>
-<en>Sample container</en>
-<de>Probenbehälter</de>
-<custom>Probenbehälter</custom>
-</_translation>
-<_translation>
-<id>1394</id>
-<container>request_edit</container>
-<item>smpcondition_</item>
-<en>Sample condition</en>
-<de>Probenzustand</de>
-<custom>Probenzustand</custom>
-</_translation>
-<_translation>
-<id>1395</id>
-<container>request_edit</container>
-<item>smppreservation_</item>
-<en>Sample preservation</en>
-<de>Konservierung</de>
-<custom>Konservierung</custom>
-</_translation>
-<_translation>
-<id>1396</id>
-<container>request_edit</container>
-<item>smppoint_</item>
-<en>Sample point</en>
-<de>Probenahmestelle</de>
-<custom>Probenahmestelle</custom>
-</_translation>
-<_translation>
-<id>1397</id>
-<container>request_edit</container>
-<item>smp_composit_</item>
-<en>Composit</en>
-<de>Komposit</de>
-<custom>Komposit</custom>
-</_translation>
-<_translation>
-<id>1398</id>
-<container>request</container>
-<item>smp_date_</item>
-<en>Sampling date</en>
-<de>Probenahmedatum</de>
-<custom>Probenahmedatum</custom>
-</_translation>
-<_translation>
-<id>1399</id>
-<container>request_edit</container>
-<item>smp_date_</item>
-<en>Sampling date</en>
-<de>Probenahmedatum</de>
-<custom>Probenahmedatum</custom>
-</_translation>
-<_translation>
-<id>1400</id>
-<container>attachment_sbf</container>
-<item>revision_</item>
-<en>Last revision</en>
-<de>Letzte Überarbeitung</de>
-<custom>Letzte Überarbeitung</custom>
-</_translation>
-<_translation>
-<id>1401</id>
-<container>attachment_sbf</container>
-<item>repetition_</item>
-<en>To be revised in (days)</en>
-<de>Zu überarbeiten in (Tage)</de>
-<custom>Zu überarbeiten in (Tage)</custom>
-</_translation>
-<_translation>
-<id>1402</id>
-<container>attachment_sbf</container>
-<item>version_control_</item>
-<en>Version control</en>
-<de>Versionskontrolle</de>
-<custom>Versionskontrolle</custom>
-</_translation>
-<_translation>
-<id>1403</id>
-<container>desktop_attachment_revision</container>
-<item>caption_</item>
-<en>Attachment revision</en>
-<de>Wiedervorlage Dokumente</de>
-<custom>Wiedervorlage Dokumente</custom>
-</_translation>
-<_translation>
-<id>1404</id>
-<container>desktop_attachment_revision</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>1405</id>
-<container>desktop_attachment_revision</container>
-<item>reminder_</item>
-<en>To be checked till</en>
-<de>Zu überprüfen bis</de>
-<custom>Zu überprüfen bis</custom>
-</_translation>
-<_translation>
-<id>1406</id>
-<container>desktop_attachment_revision</container>
-<item>title_</item>
-<en>Title</en>
-<de>Title</de>
-<custom>Title</custom>
-</_translation>
-<_translation>
-<id>1407</id>
-<container>desktop_attachment_revision</container>
-<item>file_name_</item>
-<en>Filename</en>
-<de>Dateiname</de>
-<custom>Dateiname</custom>
-</_translation>
-<_translation>
-<id>1408</id>
-<container>setup</container>
-<item>alert_document_</item>
-<en>Document revision alert (days)</en>
-<de>Warnung zur Dokumentüberarbeitung (Tage)</de>
-<custom>Warnung zur Dokumentüberarbeitung (Tage)</custom>
-</_translation>
-<_translation>
-<id>1409</id>
-<container>setup_edit</container>
-<item>alert_document_</item>
-<en>Document revision alert (days)</en>
-<de>Warnung zur Dokumentüberarbeitung (Tage)</de>
-<custom>Warnung zur Dokumentüberarbeitung (Tage)</custom>
-</_translation>
-<_translation>
-<id>1410</id>
-<container>desktop_attachment_revision</container>
-<item>responsible_</item>
-<en>Responsible User</en>
-<de>Verantwortlicher Benutzer</de>
-<custom>Verantwortlicher Benutzer</custom>
-</_translation>
-<_translation>
-<id>1411</id>
-<container>project</container>
-<item>started_</item>
-<en>Started</en>
-<de>Gestartet</de>
-<custom>Gestartet</custom>
-</_translation>
-<_translation>
-<id>1412</id>
-<container>project_edit</container>
-<item>started_</item>
-<en>Started</en>
-<de>Gestartet</de>
-<custom>Gestartet</custom>
-</_translation>
-<_translation>
-<id>1413</id>
-<container>project_edit</container>
-<item>tab_task</item>
-<en>Tasks</en>
-<de>Aufgabe</de>
-<custom>Aufgabe</custom>
-</_translation>
-<_translation>
-<id>1414</id>
-<container>project_task_sbf</container>
-<item>caption_</item>
-<en>Task</en>
-<de>Aufgabe</de>
-<custom>Aufgabe</custom>
-</_translation>
-<_translation>
-<id>1415</id>
-<container>project_task_sbf</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>1416</id>
-<container>project_task_sbf</container>
-<item>title_</item>
-<en>Title</en>
-<de>Titel</de>
-<custom>Titel</custom>
-</_translation>
-<_translation>
-<id>1417</id>
-<container>project_task_sbf</container>
-<item>description_</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
-</_translation>
-<_translation>
-<id>1418</id>
-<container>project_task_sbf</container>
-<item>created_by_</item>
-<en>Created by</en>
-<de>Erstellt von</de>
-<custom>Erstellt von</custom>
-</_translation>
-<_translation>
-<id>1419</id>
-<container>project_task_sbf</container>
-<item>created_at_</item>
-<en>Created at</en>
-<de>Erstellt am</de>
-<custom>Erstellt am</custom>
-</_translation>
-<_translation>
-<id>1420</id>
-<container>project_task_sbf</container>
-<item>planned_start_</item>
-<en>Planned start</en>
-<de>Geplanter Beginn</de>
-<custom>Geplanter Beginn</custom>
-</_translation>
-<_translation>
-<id>1421</id>
-<container>project_task_sbf</container>
-<item>planned_end_</item>
-<en>Planned end</en>
-<de>Geplantes Ende</de>
-<custom>Geplantes Ende</custom>
-</_translation>
-<_translation>
-<id>1422</id>
-<container>project_task_sbf</container>
-<item>workload_planned_</item>
-<en>Workload planned</en>
-<de>Geplante Arbeitsstunden</de>
-<custom>Geplante Arbeitsstunden</custom>
-</_translation>
-<_translation>
-<id>1423</id>
-<container>project_task_sbf</container>
-<item>realized_start_</item>
-<en>Realized start</en>
-<de>Realisierter Beginn</de>
-<custom>Realisierter Beginn</custom>
-</_translation>
-<_translation>
-<id>1424</id>
-<container>project_task_sbf</container>
-<item>realized_end_</item>
-<en>Realized end</en>
-<de>Realisiertes Ende</de>
-<custom>Realisiertes Ende</custom>
-</_translation>
-<_translation>
-<id>1425</id>
-<container>project_task_sbf</container>
-<item>deactivate_</item>
-<en>Deactivate</en>
-<de>Deaktiviert</de>
-<custom>Deaktiviert</custom>
-</_translation>
-<_translation>
-<id>1426</id>
-<container>project_task_sbf</container>
-<item>project_</item>
-<en>Project</en>
-<de>Projekt</de>
-<custom>Projekt</custom>
-</_translation>
-<_translation>
-<id>1427</id>
-<container>project_task_sbf</container>
-<item>responsible_</item>
-<en>Responsible</en>
-<de>Verantwortlich</de>
-<custom>Verantwortlich</custom>
-</_translation>
-<_translation>
-<id>1428</id>
-<container>project_task_sbf</container>
-<item>fulfillment_</item>
-<en>Fulfillment</en>
-<de>Erfüllung</de>
-<custom>Erfüllung</custom>
-</_translation>
-<_translation>
-<id>1429</id>
-<container>desktop_task_sbf</container>
-<item>caption_</item>
-<en>Task</en>
-<de>Aufgabe</de>
-<custom>Aufgabe</custom>
-</_translation>
-<_translation>
-<id>1430</id>
-<container>desktop_task_sbf</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>1431</id>
-<container>desktop_task_sbf</container>
-<item>title_</item>
-<en>Title</en>
-<de>Titel</de>
-<custom>Titel</custom>
-</_translation>
-<_translation>
-<id>1432</id>
-<container>desktop_task_sbf</container>
-<item>description_</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
-</_translation>
-<_translation>
-<id>1433</id>
-<container>desktop_task_sbf</container>
-<item>created_by_</item>
-<en>Created by</en>
-<de>Erstellt von</de>
-<custom>Erstellt von</custom>
-</_translation>
-<_translation>
-<id>1434</id>
-<container>desktop_task_sbf</container>
-<item>created_at_</item>
-<en>Created at</en>
-<de>Erstellt am</de>
-<custom>Erstellt am</custom>
-</_translation>
-<_translation>
-<id>1435</id>
-<container>desktop_task_sbf</container>
-<item>planned_start_</item>
-<en>Planned start</en>
-<de>Geplanter Beginn</de>
-<custom>Geplanter Beginn</custom>
-</_translation>
-<_translation>
-<id>1436</id>
-<container>desktop_task_sbf</container>
-<item>planned_end_</item>
-<en>Planned end</en>
-<de>Geplantes Ende</de>
-<custom>Geplantes Ende</custom>
-</_translation>
-<_translation>
-<id>1437</id>
-<container>desktop_task_sbf</container>
-<item>workload_planned_</item>
-<en>Workload planned</en>
-<de>Geplanter Workload</de>
-<custom>Geplanter Workload</custom>
-</_translation>
-<_translation>
-<id>1438</id>
-<container>desktop_task_sbf</container>
-<item>fulfillment_</item>
-<en>Fulfillment</en>
-<de>Erfüllung</de>
-<custom>Erfüllung</custom>
-</_translation>
-<_translation>
-<id>1439</id>
-<container>task_edit</container>
-<item>caption_</item>
-<en>Edit task</en>
-<de>Aufgabe bearbeiten</de>
-<custom>Aufgabe bearbeiten</custom>
-</_translation>
-<_translation>
-<id>1440</id>
-<container>task_edit</container>
-<item>tab_task</item>
-<en>Task</en>
-<de>Aufgabe</de>
-<custom>Aufgabe</custom>
-</_translation>
-<_translation>
-<id>1441</id>
-<container>task_edit</container>
-<item>tab_description</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
-</_translation>
-<_translation>
-<id>1442</id>
-<container>task_edit</container>
-<item>tab_workload</item>
-<en>Workload</en>
-<de>Workload</de>
-<custom>Workload</custom>
-</_translation>
-<_translation>
-<id>1443</id>
-<container>task_edit</container>
-<item>tab_attachment</item>
-<en>Attachment</en>
-<de>Anhang</de>
-<custom>Anhang</custom>
-</_translation>
-<_translation>
-<id>1444</id>
-<container>task_edit</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>1445</id>
-<container>task_edit</container>
-<item>title_</item>
-<en>Title</en>
-<de>Titel</de>
-<custom>Titel</custom>
-</_translation>
-<_translation>
-<id>1446</id>
-<container>task_edit</container>
-<item>created_by_</item>
-<en>Created by</en>
-<de>Erstellt von</de>
-<custom>Erstellt von</custom>
-</_translation>
-<_translation>
-<id>1447</id>
-<container>task_edit</container>
-<item>created_at_</item>
-<en>Created at</en>
-<de>Erstellt am</de>
-<custom>Erstellt am</custom>
-</_translation>
-<_translation>
-<id>1448</id>
-<container>task_edit</container>
-<item>planned_start_</item>
-<en>Planned start</en>
-<de>Geplanter Beginn</de>
-<custom>Geplanter Beginn</custom>
-</_translation>
-<_translation>
-<id>1449</id>
-<container>task_edit</container>
-<item>planned_end_</item>
-<en>Planned end</en>
-<de>Geplantes Ende</de>
-<custom>Geplantes Ende</custom>
-</_translation>
-<_translation>
-<id>1450</id>
-<container>task_edit</container>
-<item>workload_planned_</item>
-<en>Workload planned</en>
-<de>Geplanter Workload</de>
-<custom>Geplanter Workload</custom>
-</_translation>
-<_translation>
-<id>1451</id>
-<container>task_edit</container>
-<item>realized_start_</item>
-<en>Realized start</en>
-<de>Relisierter Beginn</de>
-<custom>Relisierter Beginn</custom>
-</_translation>
-<_translation>
-<id>1452</id>
-<container>task_edit</container>
-<item>realized_end_</item>
-<en>Realized end</en>
-<de>Realisiertes Ende</de>
-<custom>Realisiertes Ende</custom>
-</_translation>
-<_translation>
-<id>1453</id>
-<container>task_edit</container>
-<item>deactivate_</item>
-<en>Deactivate</en>
-<de>Daektivieren</de>
-<custom>Daektivieren</custom>
-</_translation>
-<_translation>
-<id>1454</id>
-<container>task_edit</container>
-<item>project_</item>
-<en>Project</en>
-<de>Projekt</de>
-<custom>Projekt</custom>
-</_translation>
-<_translation>
-<id>1455</id>
-<container>task_edit</container>
-<item>fulfillment_</item>
-<en>Fulfillment</en>
-<de>Erfüllung</de>
-<custom>Erfüllung</custom>
-</_translation>
-<_translation>
-<id>1456</id>
-<container>task_edit</container>
-<item>responsible_</item>
-<en>Responsible</en>
-<de>Verantwortlich</de>
-<custom>Verantwortlich</custom>
-</_translation>
-<_translation>
-<id>1457</id>
-<container>task_workload_sbf</container>
-<item>caption_</item>
-<en>Workload</en>
-<de>Workload</de>
-<custom>Workload</custom>
-</_translation>
-<_translation>
-<id>1458</id>
-<container>task_workload_sbf</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>1459</id>
-<container>task_workload_sbf</container>
-<item>workload_</item>
-<en>Workload</en>
-<de>Workload</de>
-<custom>Workload</custom>
-</_translation>
-<_translation>
-<id>1460</id>
-<container>task_workload_sbf</container>
-<item>workday_</item>
-<en>Workday</en>
-<de>Arbeitstag</de>
-<custom>Arbeitstag</custom>
-</_translation>
-<_translation>
-<id>1461</id>
-<container>desktop_task_sbf</container>
-<item>project_id_</item>
-<en>Project ID</en>
-<de>Projekt ID</de>
-<custom>Projekt ID</custom>
-</_translation>
-<_translation>
-<id>1462</id>
-<container>desktop_task_sbf</container>
-<item>project_title_</item>
-<en>Project title</en>
-<de>Projekt Titel</de>
-<custom>Projekt Titel</custom>
-</_translation>
-<_translation>
-<id>1463</id>
-<container>measurement_edit</container>
-<item>note_reference_expired_</item>
-<en>Reference standard expired. Check before measurement.</en>
-<de>Der Referenzstandard ist abgelaufen. Vor der Messung prüfen.</de>
-<custom>Der Referenzstandard ist abgelaufen. Vor der Messung prüfen.</custom>
-</_translation>
-<_translation>
-<id>1464</id>
-<container>analysis_edit</container>
-<item>type_tip_</item>
-<en>Choose between N-Numerical, T-Text or A-Attributive values to be applied to measurements.</en>
-<de>Wählen Sie zwischen N-Numerischen, T-Text oder A-Attributiven Werten, die auf die Messungen angewendet werden sollen.</de>
-<custom>Wählen Sie zwischen N-Numerischen, T-Text oder A-Attributiven Werten, die auf die Messungen angewendet werden sollen.</custom>
-</_translation>
-<_translation>
-<id>1465</id>
-<container>project_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Sichern</de>
-<custom>Sichern</custom>
-</_translation>
-<_translation>
-<id>1466</id>
-<container>project_task_sbf</container>
-<item>workload_sum_</item>
-<en>Actual workload</en>
-<de>Aktueller Workload</de>
-<custom>Aktueller Workload</custom>
-</_translation>
-<_translation>
-<id>1467</id>
-<container>material</container>
-<item>supplier_</item>
-<en>Supplier</en>
-<de>Lieferant</de>
-<custom>Lieferant</custom>
-</_translation>
-<_translation>
-<id>1468</id>
-<container>material_edit</container>
-<item>supplier_</item>
-<en>Supplier</en>
-<de>Lieferant</de>
-<custom>Lieferant</custom>
-</_translation>
-<_translation>
-<id>1469</id>
-<container>request</container>
-<item>formulation_</item>
-<en>Formulation</en>
-<de>Formulierung</de>
-<custom>Formulierung</custom>
-</_translation>
-<_translation>
-<id>1470</id>
-<container>request_edit</container>
-<item>formulation_</item>
-<en>Formulation</en>
-<de>Formulierung</de>
-<custom>Formulierung</custom>
-</_translation>
-<_translation>
-<id>1471</id>
-<container>sticker_zebra</container>
-<item>103x199</item>
-<en>^XA    ^FX Top section with logo, name and address.  ^CF0,60  ^FO50,50^GFA,2698,2698,19,,P07gKFE,:::::::::::::::::gR0JFE,:::::::::::::::::::7gKFEK0JFE,::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::7gKFE,:::::::::::::::::::::::::::::::::::::^FS  ^FO220,50^FDLABDESK LIMS^FS  ^CF0,30  ^FO220,115^FDLeipziger Ring 14 a^FS  ^FO220,155^FD59558 Lippstadt^FS  ^FO220,195^FDGermany (NRW)^FS  ^FO50,250^GB700,3,3^FS    ^FX Second section with recipient address and permit information.  ^CFA,30  ^FO50,300^FD[SELECT @value = CAST(customer.name As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^FO50,340^FD[SELECT @value = CAST(customer.postal_street As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}] [SELECT @value = CAST(customer.postal_housenumber As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^FO50,380^FD[SELECT @value = CAST(customer.postal_postalcode As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}] [SELECT @value = CAST(customer.postal_city As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^FO50,420^FD[SELECT @value = CAST(customer.postal_country As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^CFA,15  ^FO500,300^GB250,150,3^FS  ^FO538,340^FDPO No.^FS  ^FO538,390^FD[SELECT @value = CAST(client_order_id As nvarchar) FROM request WHERE id = {id}]^FS  ^FO50,500^GB700,3,3^FS    ^FX Third section with bar code.  ^BY3,2,270  ^FO100,550^BC^FDSMP-[SELECT @value = CAST(id As nvarchar) FROM request WHERE id = {id}]^FS    ^FX Fourth section (the two boxes on the bottom).  ^FO50,900^GB700,250,3^FS  ^FO400,900^GB3,250,3^FS  ^CF0,40  ^FO100,960^FDHAZARDOUS^FS  ^FO100,1010^FDMATERIAL^FS  ^FO100,1060^FDHandle with care!^FS  ^CF0,190  ^FO450,900^GFA,8192,8192,32,,::::::::::::::gQ07F,gP01FF8,gP07FFE,:gP0JF,gO01JF8,:gO03JFC,:gO07JFE,gO07KF,gO0LF,gN01LF8,:gN03LFC,:gN07LFE,gN07MF,gN0NF,gM01NF8,:gM03NFC,:gM07NFE,gM07OF,gM0PF,gL01PF8,:gL03PFC,:gL07PFE,gL07QF,gL0RF,gK01RF8,:gK03RFC,:gK07RFE,gK07SF,gK0TF,gJ01TF8,:gJ03TFC,:gJ07TFE,gJ07UF,gJ0VF,gI01VF8,:gI03VFC,:gI07VFE,gI07WF,gI0XF,gH01XF8,:gH03XFC,:gH07XFE,gH07YF,gH0gF,gG01gF8,:gG03gFC,:gG07gFE,gG07gGF,gG0gHF,g01gHF8,:g03gHFC,:g07gHFE,g07MFN0NF,g0NFN0NF,Y01NFN0NF8,:Y03NFN0NFC,:Y07NFN0NFE,Y07NFN0OF,Y0OFN0OF,X01OFN0OF8,:X03OFN0OFC,:X07OFN0OFE,:X0PFN0PF,W01PFN0PF8,:W03PFN0PFC,:W07PFN0PFE,:W0QFN0QF,W0QFN0QF8,V01QFN0QF8,V03QFN0QFC,:V07QFN0QFE,:V0RFN0RF,V0RFN0RF8,U01RFN0RF8,U03RFN0RFC,:U07RFN0RFE,:U0SFN0SF,U0SFN0SF8,T01SFN0SF8,T03SFN0SFC,:T07SFN0SFE,:T0TFN0TF,T0TFN0TF8,S01TFN0TF8,S03TFN0TFC,:S07TFN0TFE,:S0UFN0UF,S0UFN0UF8,R01UFN0UF8,R03UFN0UFC,:R07UFN0UFE,:R0VFN0VF,R0VFN0VF8,Q01VFN0VF8,Q03VFN0VFC,:Q07VFN0VFE,:Q0WFN0WF,Q0WFN0WF8,P01WFN0WF8,P03WFN0WFC,:P07WFN0WFE,:P0XFN0XF,P0XFN0XF8,O01XFN0XF8,O03XFN0XFC,:O07XFN0XFE,:O0YFN0YF,O0YFN0YF8,N01hLF8,N03hLFC,:N07hLFE,:N0hNF,N0hNF8,M01hNF8,M03hNFC,:M07hNFE,:M0hPF,:L01hPF8,L03hPFC,:L07hPFE,:L0hRF,L0gHFN0gHF,K01gHFN0gHF8,K03gHFN0gHFC,:K07gHFN0gHFE,:K0gIFN0gIF,:J01gIFN0gIF8,J01gIFN0gIFC,J03gIFN0gIFC,J07gIFN0gIFE,:J0gJFN0gJF,:I01gJFN0gJF8,I01gJFN0gJFC,I03gJFN0gJFC,I07gJFN0gJFE,:I0gKFN0gKF,:001gKFN0gKF8,001gKFN0gKFC,003gKFN0gKFC,007gKFN0gKFE,:00iF,:01iF8,01iFC,03iFC,07iFE,:0iHF,:1iHF81iHFC3iHFC7iHFE:7!!::::7iHFE:3iHFC1iHFC0iHF,07iFE,,::::::::::::::^FS    ^FX Fourth section (security notes).  ^FO50,1200^GB700,3,3^FS  ^CFA,30  ^FO50,1250^FDIn case of damaged packaging contact^FS  ^FO50,1300^FDTel. +49 123 44 55 66 10^FS    ^XZ</en>
-<de>-</de>
-<custom>-</custom>
-</_translation>
-<_translation>
-<id>1472</id>
-<container>customer</container>
-<item>postal_country_</item>
-<en>Country</en>
-<de>Land</de>
-<custom>Land</custom>
-</_translation>
-<_translation>
-<id>1473</id>
-<container>customer</container>
-<item>postal_state_</item>
-<en>State</en>
-<de>Bundesland</de>
-<custom>Bundesland</custom>
-</_translation>
-<_translation>
-<id>1474</id>
-<container>customer</container>
-<item>postal_district_</item>
-<en>District</en>
-<de>Disctrict</de>
-<custom>Disctrict</custom>
-</_translation>
-<_translation>
-<id>1475</id>
-<container>customer</container>
-<item>postal_city_</item>
-<en>City</en>
-<de>Stadt</de>
-<custom>Stadt</custom>
-</_translation>
-<_translation>
-<id>1476</id>
-<container>customer</container>
-<item>postal_postalcode_</item>
-<en>Postal code</en>
-<de>Postleitzahl</de>
-<custom>Postleitzahl</custom>
-</_translation>
-<_translation>
-<id>1477</id>
-<container>customer</container>
-<item>postal_street_</item>
-<en>Street</en>
-<de>Straße</de>
-<custom>Straße</custom>
-</_translation>
-<_translation>
-<id>1478</id>
-<container>customer</container>
-<item>postal_housenumber_</item>
-<en>Housenumber</en>
-<de>Hausnummer</de>
-<custom>Hausnummer</custom>
-</_translation>
-<_translation>
-<id>1479</id>
-<container>customer</container>
-<item>billing_country_</item>
-<en>Country</en>
-<de>Land</de>
-<custom>Land</custom>
-</_translation>
-<_translation>
-<id>1480</id>
-<container>customer</container>
-<item>billing_state_</item>
-<en>State</en>
-<de>Bundesland</de>
-<custom>Bundesland</custom>
-</_translation>
-<_translation>
-<id>1481</id>
-<container>customer</container>
-<item>billing_district_</item>
-<en>District</en>
-<de>District</de>
-<custom>District</custom>
-</_translation>
-<_translation>
-<id>1482</id>
-<container>customer</container>
-<item>billing_city_</item>
-<en>City</en>
-<de>Stadt</de>
-<custom>Stadt</custom>
-</_translation>
-<_translation>
-<id>1483</id>
-<container>customer</container>
-<item>billing_postalcode_</item>
-<en>Postal code</en>
-<de>Postleitzahl</de>
-<custom>Postleitzahl</custom>
-</_translation>
-<_translation>
-<id>1484</id>
-<container>customer</container>
-<item>billing_street_</item>
-<en>Street</en>
-<de>Straße</de>
-<custom>Straße</custom>
-</_translation>
-<_translation>
-<id>1485</id>
-<container>customer</container>
-<item>billing_housenumber_</item>
-<en>Housenumber</en>
-<de>Hausnummer</de>
-<custom>Hausnummer</custom>
-</_translation>
-<_translation>
-<id>1486</id>
-<container>customer</container>
-<item>bank_</item>
-<en>Bank</en>
-<de>Bank</de>
-<custom>Bank</custom>
-</_translation>
-<_translation>
-<id>1487</id>
-<container>customer</container>
-<item>iban_</item>
-<en>IBAN</en>
-<de>IBAN</de>
-<custom>IBAN</custom>
-</_translation>
-<_translation>
-<id>1488</id>
-<container>customer</container>
-<item>bic_</item>
-<en>BIC</en>
-<de>BIC</de>
-<custom>BIC</custom>
-</_translation>
-<_translation>
-<id>1489</id>
-<container>customer</container>
-<item>vatnr_</item>
-<en>Vat-No.</en>
-<de>USt-IdNr.</de>
-<custom>USt-IdNr.</custom>
-</_translation>
-<_translation>
-<id>1490</id>
-<container>customer_edit</container>
-<item>tab_address_postal</item>
-<en>Address postal</en>
-<de>Postadresse</de>
-<custom>Postadresse</custom>
-</_translation>
-<_translation>
-<id>1491</id>
-<container>customer_edit</container>
-<item>tab_address_billing</item>
-<en>Address billing</en>
-<de>Rechnungsadresse</de>
-<custom>Rechnungsadresse</custom>
-</_translation>
-<_translation>
-<id>1492</id>
-<container>customer_edit</container>
-<item>tab_bank</item>
-<en>Bank</en>
-<de>Bank</de>
-<custom>Bank</custom>
-</_translation>
-<_translation>
-<id>1493</id>
-<container>customer_edit</container>
-<item>postal_country_</item>
-<en>Country</en>
-<de>Land</de>
-<custom>Land</custom>
-</_translation>
-<_translation>
-<id>1494</id>
-<container>customer_edit</container>
-<item>postal_state_</item>
-<en>State</en>
-<de>Bundesland</de>
-<custom>Bundesland</custom>
-</_translation>
-<_translation>
-<id>1495</id>
-<container>customer_edit</container>
-<item>postal_district_</item>
-<en>District</en>
-<de>District</de>
-<custom>District</custom>
-</_translation>
-<_translation>
-<id>1496</id>
-<container>customer_edit</container>
-<item>postal_city_</item>
-<en>City</en>
-<de>Stadt</de>
-<custom>Stadt</custom>
-</_translation>
-<_translation>
-<id>1497</id>
-<container>customer_edit</container>
-<item>postal_postalcode_</item>
-<en>Postal code</en>
-<de>Postleitzahl</de>
-<custom>Postleitzahl</custom>
-</_translation>
-<_translation>
-<id>1498</id>
-<container>customer_edit</container>
-<item>postal_street_</item>
-<en>Street</en>
-<de>Straße</de>
-<custom>Straße</custom>
-</_translation>
-<_translation>
-<id>1499</id>
-<container>customer_edit</container>
-<item>postal_housenumber_</item>
-<en>Housenumber</en>
-<de>Hausnummer</de>
-<custom>Hausnummer</custom>
-</_translation>
-<_translation>
-<id>1500</id>
-<container>customer_edit</container>
-<item>billing_country_</item>
-<en>Country</en>
-<de>Land</de>
-<custom>Land</custom>
-</_translation>
-<_translation>
-<id>1501</id>
-<container>customer_edit</container>
-<item>billing_state_</item>
-<en>State</en>
-<de>Bundesland</de>
-<custom>Bundesland</custom>
-</_translation>
-<_translation>
-<id>1502</id>
-<container>customer_edit</container>
-<item>billing_district_</item>
-<en>District</en>
-<de>District</de>
-<custom>District</custom>
-</_translation>
-<_translation>
-<id>1503</id>
-<container>customer_edit</container>
-<item>billing_city_</item>
-<en>City</en>
-<de>Stadt</de>
-<custom>Stadt</custom>
-</_translation>
-<_translation>
-<id>1504</id>
-<container>customer_edit</container>
-<item>billing_postalcode_</item>
-<en>Postal code</en>
-<de>Postleitszahl</de>
-<custom>Postleitszahl</custom>
-</_translation>
-<_translation>
-<id>1505</id>
-<container>customer_edit</container>
-<item>billing_street_</item>
-<en>Street</en>
-<de>Straße</de>
-<custom>Straße</custom>
-</_translation>
-<_translation>
-<id>1506</id>
-<container>customer_edit</container>
-<item>billing_housenumber_</item>
-<en>Housenumber</en>
-<de>Hausnummer</de>
-<custom>Hausnummer</custom>
-</_translation>
-<_translation>
-<id>1507</id>
-<container>customer_edit</container>
-<item>bank_</item>
-<en>Bank</en>
-<de>Bank</de>
-<custom>Bank</custom>
-</_translation>
-<_translation>
-<id>1508</id>
-<container>customer_edit</container>
-<item>iban_</item>
-<en>IBAN</en>
-<de>IBAN</de>
-<custom>IBAN</custom>
-</_translation>
-<_translation>
-<id>1509</id>
-<container>customer_edit</container>
-<item>bic_</item>
-<en>BIC</en>
-<de>BIC</de>
-<custom>BIC</custom>
-</_translation>
-<_translation>
-<id>1510</id>
-<container>customer_edit</container>
-<item>vatnr_</item>
-<en>Vat-No.</en>
-<de>USt-IdNr.</de>
-<custom>USt-IdNr.</custom>
-</_translation>
-<_translation>
-<id>1511</id>
-<container>measurement_edit</container>
-<item>btn_pool</item>
-<en>Pool</en>
-<de>Pool</de>
-<custom>Pool</custom>
-</_translation>
-<_translation>
-<id>1512</id>
-<container>measurement_edit</container>
-<item>pooling_performed</item>
-<en>Pooling performed.</en>
-<de>Pooling durchgeführt.</de>
-<custom>Pooling durchgeführt.</custom>
-</_translation>
-<_translation>
-<id>1513</id>
-<container>traversal_sbf</container>
-<item>title_</item>
-<en>Report Title</en>
-<de>Bericht Bezeichnung</de>
-<custom>Bericht Bezeichnung</custom>
-</_translation>
-<_translation>
-<id>1514</id>
-<container>S001_header</container>
-<item>caption_</item>
-<en>Labreport Header</en>
-<de>Labreport Header</de>
-<custom>Labreport Header</custom>
-</_translation>
-<_translation>
-<id>1515</id>
-<container>S001_header</container>
-<item>id_</item>
-<en>Order ID</en>
-<de>Auftrags-Nr</de>
-<custom>Auftrags-Nr</custom>
-</_translation>
-<_translation>
-<id>1516</id>
-<container>S001_header</container>
-<item>smp__date_</item>
-<en>Sample Date</en>
-<de>Probenahmedatum</de>
-<custom>Probenahmedatum</custom>
-</_translation>
-<_translation>
-<id>1517</id>
-<container>S001_header</container>
-<item>smp_type_</item>
-<en>Sample Type</en>
-<de>Probentyp</de>
-<custom>Probentyp</custom>
-</_translation>
-<_translation>
-<id>1518</id>
-<container>S001_header</container>
-<item>profile_</item>
-<en>Profile</en>
-<de>Profil</de>
-<custom>Profil</custom>
-</_translation>
-<_translation>
-<id>1519</id>
-<container>S001_header</container>
-<item>customer_</item>
-<en>Customer</en>
-<de>Kunde</de>
-<custom>Kunde</custom>
-</_translation>
-<_translation>
-<id>1520</id>
-<container>S001_header</container>
-<item>smp_condition_</item>
-<en>Condition</en>
-<de>Zustand</de>
-<custom>Zustand</custom>
-</_translation>
-<_translation>
-<id>1521</id>
-<container>S001_header</container>
-<item>smp_preservation_</item>
-<en>Preservation</en>
-<de>Konservierung</de>
-<custom>Konservierung</custom>
-</_translation>
-<_translation>
-<id>1522</id>
-<container>S001_header</container>
-<item>smp_point_</item>
-<en>Sample Point</en>
-<de>Probenahmestelle</de>
-<custom>Probenahmestelle</custom>
-</_translation>
-<_translation>
-<id>1523</id>
-<container>S001_header</container>
-<item>client_sample_id_</item>
-<en>Client Sample-ID</en>
-<de>Kunden Proben-Nr.</de>
-<custom>Kunden Proben-Nr.</custom>
-</_translation>
-<_translation>
-<id>1524</id>
-<container>S001_header</container>
-<item>client_order_id_</item>
-<en>Client Order ID</en>
-<de>Kundenbestell-Nr</de>
-<custom>Kundenbestell-Nr</custom>
-</_translation>
-<_translation>
-<id>1525</id>
-<container>S001_header</container>
-<item>description_</item>
-<en>Comment</en>
-<de>Kommentar</de>
-<custom>Kommentar</custom>
-</_translation>
-<_translation>
-<id>1526</id>
-<container>S001_subrequest</container>
-<item>caption_</item>
-<en>Labreport Subrequest</en>
-<de>Labreport Subrequest</de>
-<custom>Labreport Subrequest</custom>
-</_translation>
-<_translation>
-<id>1527</id>
-<container>S001_subrequest</container>
-<item>id_</item>
-<en>Sample-ID</en>
-<de>Proben-Nr</de>
-<custom>Proben-Nr</custom>
-</_translation>
-<_translation>
-<id>1528</id>
-<container>S001_details</container>
-<item>caption_</item>
-<en>Labreport Details</en>
-<de>Labreport Details</de>
-<custom>Labreport Details</custom>
-</_translation>
-<_translation>
-<id>1529</id>
-<container>S001_details</container>
-<item>analysis_</item>
-<en>Analysis</en>
-<de>Analyse</de>
-<custom>Analyse</custom>
-</_translation>
-<_translation>
-<id>1530</id>
-<container>S001_details</container>
-<item>method_</item>
-<en>Method</en>
-<de>Methode</de>
-<custom>Methode</custom>
-</_translation>
-<_translation>
-<id>1531</id>
-<container>S001_details</container>
-<item>value_txt_</item>
-<en>Value</en>
-<de>Wert</de>
-<custom>Wert</custom>
-</_translation>
-<_translation>
-<id>1532</id>
-<container>S001_details</container>
-<item>uncertainty_</item>
-<en>+/-</en>
-<de>+/-</de>
-<custom>+/-</custom>
-</_translation>
-<_translation>
-<id>1565</id>
-<container>measurement_edit</container>
-<item>note_not_valid</item>
-<en>You are not qualified or instrument has a out of control situation.</en>
-<de>Sie haben keine gültige Qualifikation oder das Gerät hat eine außer Kontroll Situation.</de>
-<custom>Sie haben keine gültige Qualifikation oder das Gerät hat eine außer Kontroll Situation.</custom>
-</_translation>
-<_translation>
-<id>1566</id>
-<container>request_measurement_sbf</container>
-<item>udl_</item>
-<en>UDL</en>
-<de>OEG</de>
-<custom>OEG</custom>
-</_translation>
-<_translation>
-<id>1567</id>
-<container>request_measurement_sbf</container>
-<item>ldl_</item>
-<en>LDL</en>
-<de>UEG</de>
-<custom>UEG</custom>
-</_translation>
-<_translation>
-<id>1568</id>
-<container>analysis_translation</container>
-<item>Odour</item>
-<en>Odour</en>
-<de>Geruch</de>
-<custom>Geruch</custom>
-</_translation>
-<_translation>
-<id>1569</id>
-<container>analysis_translation</container>
-<item>Magnesium</item>
-<en>Magnesium</en>
-<de>Magnesium</de>
-<custom>Magnesium</custom>
-</_translation>
-<_translation>
-<id>1570</id>
-<container>analysis_translation</container>
-<item>Calcium</item>
-<en>Calcium</en>
-<de>Calcium</de>
-<custom>Calcium</custom>
-</_translation>
-<_translation>
-<id>1571</id>
-<container>analysis_translation</container>
-<item>Appearance</item>
-<en>Appearance</en>
-<de>Appearance</de>
-<custom>Appearance</custom>
-</_translation>
-<_translation>
-<id>1572</id>
-<container>users</container>
-<item>activated_</item>
-<en>Activated</en>
-<de>Aktiviert</de>
-<custom>Aktiviert</custom>
-</_translation>
-<_translation>
-<id>1573</id>
-<container>users</container>
-<item>activation_success</item>
-<en>User activated successfully.</en>
-<de>Benutzer erfolgreich aktiviert.</de>
-<custom>Benutzer erfolgreich aktiviert.</custom>
 </_translation>
 </dataroot>
 </root>
