@@ -68,7 +68,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-03T16:29:02">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-05T09:51:48">
 <_role_permission>
 <id>1</id>
 <role>1</role>
@@ -1498,7 +1498,7 @@
 <can_create>1</can_create>
 <can_read>1</can_read>
 <can_update>1</can_update>
-<can_delete>0</can_delete>
+<can_delete>1</can_delete>
 </_role_permission>
 <_role_permission>
 <id>160</id>

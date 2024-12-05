@@ -67,7 +67,6 @@ Public Sub ContextMenuInit()
     ContextMenuAdd "menu_dpl", "audit_trail", 29, True
     ContextMenuAdd "menu_dpl", "refresh", 37, True
     
-    
     'Create menu_rqt entries
     ContextMenuAdd "menu_rqt", "add_record", 192
     ContextMenuAdd "menu_rqt", "add_subrequest", 188
@@ -97,7 +96,6 @@ Public Sub ContextMenuInit()
     'Create menu_sub entries
     ContextMenuAdd "menu_sub", "audit_trail_subform", 29
     ContextMenuAdd "menu_sub", "clmn_dlg", 8
-    ContextMenuAdd "menu_sub", "refresh", 37
     
     'Create menu_usr entires
     ContextMenuAdd "menu_usr", "add_record", 192
@@ -146,6 +144,9 @@ On Error GoTo Catch_Error
         Case "clmn_std"
             Forms(frmCurrentForm.name).ApplyClmnStd
         
+        Case "clmn_dlg"
+            DoCmd.RunCommand acCmdUnhideColumns
+        
         Case "upload_file"
             Forms(frmCurrentForm.name).Form("attachment_sbf").Form.UploadFile
         
@@ -154,9 +155,6 @@ On Error GoTo Catch_Error
         
         Case "open_file"
             Forms(frmCurrentForm.name).Form("attachment_sbf").Form.OpenFile
-            
-        Case "clmn_dlg"
-            DoCmd.RunCommand acCmdUnhideColumns
 
         Case "show_report"
             Forms(frmCurrentForm.name).ShowReport
