@@ -91,7 +91,927 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-05T09:51:48">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-09T20:01:23">
+<_translation>
+<id>1</id>
+<container>laboratory</container>
+<item>caption_</item>
+<en>Laboratory</en>
+<de>Labor</de>
+<custom>Labor</custom>
+</_translation>
+<_translation>
+<id>2</id>
+<container>laboratory</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>3</id>
+<container>laboratory</container>
+<item>title_</item>
+<en>Title</en>
+<de>Titel</de>
+<custom>Titel</custom>
+</_translation>
+<_translation>
+<id>4</id>
+<container>laboratory</container>
+<item>ustnr_</item>
+<en>VAT No</en>
+<de>MwSt.-Nr.</de>
+<custom>MwSt.-Nr.</custom>
+</_translation>
+<_translation>
+<id>5</id>
+<container>laboratory</container>
+<item>fax_</item>
+<en>Fax</en>
+<de>Fax</de>
+<custom>Fax</custom>
+</_translation>
+<_translation>
+<id>6</id>
+<container>laboratory</container>
+<item>postal_country_</item>
+<en>Country</en>
+<de>Land</de>
+<custom>Land</custom>
+</_translation>
+<_translation>
+<id>7</id>
+<container>laboratory</container>
+<item>postal_state_</item>
+<en>State</en>
+<de>Bundesland</de>
+<custom>Bundesland</custom>
+</_translation>
+<_translation>
+<id>8</id>
+<container>laboratory</container>
+<item>postal_district_</item>
+<en>District</en>
+<de>Bezirk</de>
+<custom>Bezirk</custom>
+</_translation>
+<_translation>
+<id>9</id>
+<container>laboratory</container>
+<item>postal_city_</item>
+<en>City</en>
+<de>Stadt</de>
+<custom>Stadt</custom>
+</_translation>
+<_translation>
+<id>10</id>
+<container>laboratory</container>
+<item>postal_postalcode_</item>
+<en>Postal code</en>
+<de>Postleitzahl</de>
+<custom>Postleitzahl</custom>
+</_translation>
+<_translation>
+<id>11</id>
+<container>laboratory</container>
+<item>postal_street_</item>
+<en>Street</en>
+<de>Straße</de>
+<custom>Straße</custom>
+</_translation>
+<_translation>
+<id>12</id>
+<container>laboratory</container>
+<item>postal_housnumber_</item>
+<en>Housenumber</en>
+<de>Hausnummer</de>
+<custom>Hausnummer</custom>
+</_translation>
+<_translation>
+<id>13</id>
+<container>laboratory</container>
+<item>billing_country_</item>
+<en>Country</en>
+<de>Land</de>
+<custom>Land</custom>
+</_translation>
+<_translation>
+<id>14</id>
+<container>laboratory</container>
+<item>billing_state_</item>
+<en>State</en>
+<de>Bundesland</de>
+<custom>Bundesland</custom>
+</_translation>
+<_translation>
+<id>15</id>
+<container>laboratory</container>
+<item>billing_district_</item>
+<en>District</en>
+<de>Bezirk</de>
+<custom>Bezirk</custom>
+</_translation>
+<_translation>
+<id>16</id>
+<container>laboratory</container>
+<item>billing_city_</item>
+<en>City</en>
+<de>Stadt</de>
+<custom>Stadt</custom>
+</_translation>
+<_translation>
+<id>17</id>
+<container>laboratory</container>
+<item>billing_postalcode_</item>
+<en>Postal code</en>
+<de>Postleitzahl</de>
+<custom>Postleitzahl</custom>
+</_translation>
+<_translation>
+<id>18</id>
+<container>laboratory</container>
+<item>billing_street_</item>
+<en>Street</en>
+<de>Straße</de>
+<custom>Straße</custom>
+</_translation>
+<_translation>
+<id>19</id>
+<container>laboratory</container>
+<item>billing_housenumber_</item>
+<en>Housenumber</en>
+<de>Hausnummer</de>
+<custom>Hausnummer</custom>
+</_translation>
+<_translation>
+<id>20</id>
+<container>laboratory</container>
+<item>lab_url_</item>
+<en>URL</en>
+<de>URL</de>
+<custom>URL</custom>
+</_translation>
+<_translation>
+<id>21</id>
+<container>laboratory</container>
+<item>account_type_</item>
+<en>Account type</en>
+<de>Konto-Typ</de>
+<custom>Konto-Typ</custom>
+</_translation>
+<_translation>
+<id>22</id>
+<container>laboratory</container>
+<item>account_iban_</item>
+<en>Account IBAN</en>
+<de>Konto IBAN</de>
+<custom>Konto IBAN</custom>
+</_translation>
+<_translation>
+<id>23</id>
+<container>laboratory</container>
+<item>account_bic_</item>
+<en>Account bic</en>
+<de>Konto bic</de>
+<custom>Konto bic</custom>
+</_translation>
+<_translation>
+<id>24</id>
+<container>laboratory</container>
+<item>account_bank_</item>
+<en>Account bank</en>
+<de>Konto Bank</de>
+<custom>Konto Bank</custom>
+</_translation>
+<_translation>
+<id>25</id>
+<container>laboratory</container>
+<item>account_branch_</item>
+<en>Account branch</en>
+<de>Konto Zweigstelle</de>
+<custom>Konto Zweigstelle</custom>
+</_translation>
+<_translation>
+<id>26</id>
+<container>laboratory</container>
+<item>accredited_</item>
+<en>Accredited</en>
+<de>Akkreditiert</de>
+<custom>Akkreditiert</custom>
+</_translation>
+<_translation>
+<id>27</id>
+<container>laboratory</container>
+<item>accreditation_</item>
+<en>Accreditation</en>
+<de>Akkreditierung</de>
+<custom>Akkreditierung</custom>
+</_translation>
+<_translation>
+<id>28</id>
+<container>laboratory</container>
+<item>acc_uid_</item>
+<en>Accreditation UID</en>
+<de>Akkreditierung UID</de>
+<custom>Akkreditierung UID</custom>
+</_translation>
+<_translation>
+<id>29</id>
+<container>laboratory</container>
+<item>acc_body_</item>
+<en>Accreditation body</en>
+<de>Akkreditierungsstelle</de>
+<custom>Akkreditierungsstelle</custom>
+</_translation>
+<_translation>
+<id>30</id>
+<container>laboratory</container>
+<item>acc_url_</item>
+<en>Accreditation URL</en>
+<de>Akkreditierungs-URL</de>
+<custom>Akkreditierungs-URL</custom>
+</_translation>
+<_translation>
+<id>31</id>
+<container>laboratory</container>
+<item>acc_letterhead_</item>
+<en>Letterhead</en>
+<de>Briefkopf</de>
+<custom>Briefkopf</custom>
+</_translation>
+<_translation>
+<id>32</id>
+<container>laboratory</container>
+<item>manager_</item>
+<en>Manager</en>
+<de>Manager</de>
+<custom>Manager</custom>
+</_translation>
+<_translation>
+<id>33</id>
+<container>tooltip</container>
+<item>click_to_upload</item>
+<en>Upload</en>
+<de>Hochladen</de>
+<custom>Hochladen</custom>
+</_translation>
+<_translation>
+<id>34</id>
+<container>laboratory_edit</container>
+<item>caption_</item>
+<en>Edit Laboratory</en>
+<de>Labor bearbeiten</de>
+<custom>Labor bearbeiten</custom>
+</_translation>
+<_translation>
+<id>35</id>
+<container>laboratory_edit</container>
+<item>tab_laboratory</item>
+<en>Laboratory</en>
+<de>Labor</de>
+<custom>Labor</custom>
+</_translation>
+<_translation>
+<id>36</id>
+<container>laboratory_edit</container>
+<item>tab_address_postal</item>
+<en>Postal</en>
+<de>Post</de>
+<custom>Post</custom>
+</_translation>
+<_translation>
+<id>37</id>
+<container>laboratory_edit</container>
+<item>address_billing</item>
+<en>Billing</en>
+<de>Rechnungsstellung</de>
+<custom>Rechnungsstellung</custom>
+</_translation>
+<_translation>
+<id>38</id>
+<container>laboratory_edit</container>
+<item>tab_bank</item>
+<en>Bank</en>
+<de>Bank</de>
+<custom>Bank</custom>
+</_translation>
+<_translation>
+<id>39</id>
+<container>laboratory_edit</container>
+<item>tab_accreditation</item>
+<en>Accreditation</en>
+<de>Akkreditierung</de>
+<custom>Akkreditierung</custom>
+</_translation>
+<_translation>
+<id>40</id>
+<container>laboratory_edit</container>
+<item>tab_logo_lab</item>
+<en>Lab Logo</en>
+<de>Labor-Logo</de>
+<custom>Labor-Logo</custom>
+</_translation>
+<_translation>
+<id>41</id>
+<container>laboratory_edit</container>
+<item>tab_logo_acc</item>
+<en>Acc. Logo</en>
+<de>Acc. Logo</de>
+<custom>Acc. Logo</custom>
+</_translation>
+<_translation>
+<id>42</id>
+<container>laboratory_edit</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>43</id>
+<container>laboratory_edit</container>
+<item>title_</item>
+<en>Title</en>
+<de>Titel</de>
+<custom>Titel</custom>
+</_translation>
+<_translation>
+<id>44</id>
+<container>laboratory_edit</container>
+<item>manager_</item>
+<en>Manger</en>
+<de>Manager</de>
+<custom>Manager</custom>
+</_translation>
+<_translation>
+<id>45</id>
+<container>laboratory_edit</container>
+<item>ustnr_</item>
+<en>VAT No</en>
+<de>MwSt.-Nr.</de>
+<custom>MwSt.-Nr.</custom>
+</_translation>
+<_translation>
+<id>46</id>
+<container>laboratory_edit</container>
+<item>fax_</item>
+<en>Fax</en>
+<de>Fax</de>
+<custom>Fax</custom>
+</_translation>
+<_translation>
+<id>47</id>
+<container>laboratory_edit</container>
+<item>lab_url_</item>
+<en>URL</en>
+<de>URL</de>
+<custom>URL</custom>
+</_translation>
+<_translation>
+<id>48</id>
+<container>laboratory_edit</container>
+<item>postal_country_</item>
+<en>Country</en>
+<de>Land</de>
+<custom>Land</custom>
+</_translation>
+<_translation>
+<id>49</id>
+<container>laboratory_edit</container>
+<item>postal_state_</item>
+<en>State</en>
+<de>Bundesland</de>
+<custom>Bundesland</custom>
+</_translation>
+<_translation>
+<id>50</id>
+<container>laboratory_edit</container>
+<item>postal_district_</item>
+<en>District</en>
+<de>Bezirk</de>
+<custom>Bezirk</custom>
+</_translation>
+<_translation>
+<id>51</id>
+<container>laboratory_edit</container>
+<item>postal_city_</item>
+<en>City</en>
+<de>Stadt</de>
+<custom>Stadt</custom>
+</_translation>
+<_translation>
+<id>52</id>
+<container>laboratory_edit</container>
+<item>postal_postalcode_</item>
+<en>Postal code</en>
+<de>Postleitzahl</de>
+<custom>Postleitzahl</custom>
+</_translation>
+<_translation>
+<id>53</id>
+<container>laboratory_edit</container>
+<item>postal_street_</item>
+<en>Street</en>
+<de>Straße</de>
+<custom>Straße</custom>
+</_translation>
+<_translation>
+<id>54</id>
+<container>laboratory_edit</container>
+<item>postal_housnumber_</item>
+<en>Housenumber</en>
+<de>Hausnummer</de>
+<custom>Hausnummer</custom>
+</_translation>
+<_translation>
+<id>55</id>
+<container>laboratory_edit</container>
+<item>billing_country_</item>
+<en>Country</en>
+<de>Land</de>
+<custom>Land</custom>
+</_translation>
+<_translation>
+<id>56</id>
+<container>laboratory_edit</container>
+<item>billing_state_</item>
+<en>State</en>
+<de>Bundesland</de>
+<custom>Bundesland</custom>
+</_translation>
+<_translation>
+<id>57</id>
+<container>laboratory_edit</container>
+<item>billing_district_</item>
+<en>District</en>
+<de>Bezirk</de>
+<custom>Bezirk</custom>
+</_translation>
+<_translation>
+<id>58</id>
+<container>laboratory_edit</container>
+<item>billing_city_</item>
+<en>City</en>
+<de>Stadt</de>
+<custom>Stadt</custom>
+</_translation>
+<_translation>
+<id>59</id>
+<container>laboratory_edit</container>
+<item>billing_postalcode_</item>
+<en>Postal code</en>
+<de>Postleitzahl</de>
+<custom>Postleitzahl</custom>
+</_translation>
+<_translation>
+<id>60</id>
+<container>laboratory_edit</container>
+<item>billing_street_</item>
+<en>Street</en>
+<de>Straße</de>
+<custom>Straße</custom>
+</_translation>
+<_translation>
+<id>61</id>
+<container>laboratory_edit</container>
+<item>billing_housenumber_</item>
+<en>Housenumber</en>
+<de>Hausnummer</de>
+<custom>Hausnummer</custom>
+</_translation>
+<_translation>
+<id>62</id>
+<container>laboratory_edit</container>
+<item>account_type_</item>
+<en>Account type</en>
+<de>Konto-Typ</de>
+<custom>Konto-Typ</custom>
+</_translation>
+<_translation>
+<id>63</id>
+<container>laboratory_edit</container>
+<item>account_iban_</item>
+<en>Account IBAN</en>
+<de>Konto IBAN</de>
+<custom>Konto IBAN</custom>
+</_translation>
+<_translation>
+<id>64</id>
+<container>laboratory_edit</container>
+<item>account_bic_</item>
+<en>Account BIC</en>
+<de>Konto BIC</de>
+<custom>Konto BIC</custom>
+</_translation>
+<_translation>
+<id>65</id>
+<container>laboratory_edit</container>
+<item>account_bank_</item>
+<en>Account bank</en>
+<de>Konto Bank</de>
+<custom>Konto Bank</custom>
+</_translation>
+<_translation>
+<id>66</id>
+<container>laboratory_edit</container>
+<item>account_branch_</item>
+<en>Account branch</en>
+<de>Konto Zweigstelle</de>
+<custom>Konto Zweigstelle</custom>
+</_translation>
+<_translation>
+<id>67</id>
+<container>laboratory_edit</container>
+<item>accredited_</item>
+<en>Accredited</en>
+<de>Akkreditiert</de>
+<custom>Akkreditiert</custom>
+</_translation>
+<_translation>
+<id>68</id>
+<container>laboratory_edit</container>
+<item>accreditation_</item>
+<en>Accreditation</en>
+<de>Akkreditierung</de>
+<custom>Akkreditierung</custom>
+</_translation>
+<_translation>
+<id>69</id>
+<container>laboratory_edit</container>
+<item>acc_uid_</item>
+<en>Accreditation UID</en>
+<de>Akkreditierung UID</de>
+<custom>Akkreditierung UID</custom>
+</_translation>
+<_translation>
+<id>70</id>
+<container>laboratory_edit</container>
+<item>acc_body_</item>
+<en>Accreditation body</en>
+<de>Akkreditierungsstelle</de>
+<custom>Akkreditierungsstelle</custom>
+</_translation>
+<_translation>
+<id>71</id>
+<container>laboratory_edit</container>
+<item>acc_url_</item>
+<en>Accreditation URL</en>
+<de>Akkreditierungs-URL</de>
+<custom>Akkreditierungs-URL</custom>
+</_translation>
+<_translation>
+<id>72</id>
+<container>laboratory_edit</container>
+<item>acc_letterhead_</item>
+<en>Letterhead</en>
+<de>Briefkopf</de>
+<custom>Briefkopf</custom>
+</_translation>
+<_translation>
+<id>73</id>
+<container>role</container>
+<item>caption_</item>
+<en>Role</en>
+<de>Rolle</de>
+<custom>Rolle</custom>
+</_translation>
+<_translation>
+<id>74</id>
+<container>role</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>75</id>
+<container>role</container>
+<item>title_</item>
+<en>Title</en>
+<de>Titel</de>
+<custom>Titel</custom>
+</_translation>
+<_translation>
+<id>76</id>
+<container>role</container>
+<item>description_</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>77</id>
+<container>form</container>
+<item>label_read_only</item>
+<en>(read only)</en>
+<de>(nur lesen)</de>
+<custom>(nur lesen)</custom>
+</_translation>
+<_translation>
+<id>78</id>
+<container>role_edit</container>
+<item>caption_</item>
+<en>Edit role</en>
+<de>Rolle bearbeiten</de>
+<custom>Rolle bearbeiten</custom>
+</_translation>
+<_translation>
+<id>79</id>
+<container>role_edit</container>
+<item>tab_role</item>
+<en>Role</en>
+<de>Rolle</de>
+<custom>Rolle</custom>
+</_translation>
+<_translation>
+<id>80</id>
+<container>role_edit</container>
+<item>tab_description</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>81</id>
+<container>role_edit</container>
+<item>tab_permission</item>
+<en>Permissions</en>
+<de>Berechtigungen</de>
+<custom>Berechtigungen</custom>
+</_translation>
+<_translation>
+<id>82</id>
+<container>role_edit</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>83</id>
+<container>role_edit</container>
+<item>title_</item>
+<en>Title</en>
+<de>Titel</de>
+<custom>Titel</custom>
+</_translation>
+<_translation>
+<id>84</id>
+<container>role_edit_permission_sbf</container>
+<item>caption_</item>
+<en>Permissions</en>
+<de>Berechtigungen</de>
+<custom>Berechtigungen</custom>
+</_translation>
+<_translation>
+<id>85</id>
+<container>role_edit_permission_sbf</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>86</id>
+<container>role_edit_permission_sbf</container>
+<item>role_</item>
+<en>Role</en>
+<de>Rolle</de>
+<custom>Rolle</custom>
+</_translation>
+<_translation>
+<id>87</id>
+<container>role_edit_permission_sbf</container>
+<item>can_create_</item>
+<en>Can create</en>
+<de>Kann erstellen</de>
+<custom>Kann erstellen</custom>
+</_translation>
+<_translation>
+<id>88</id>
+<container>role_edit_permission_sbf</container>
+<item>can_read_</item>
+<en>Can read</en>
+<de>Kann lesen</de>
+<custom>Kann lesen</custom>
+</_translation>
+<_translation>
+<id>89</id>
+<container>role_edit_permission_sbf</container>
+<item>can_update_</item>
+<en>Can update</en>
+<de>Kann aktualisieren</de>
+<custom>Kann aktualisieren</custom>
+</_translation>
+<_translation>
+<id>90</id>
+<container>role_edit_permission_sbf</container>
+<item>can_delete_</item>
+<en>Can delete</en>
+<de>Kann löschen</de>
+<custom>Kann löschen</custom>
+</_translation>
+<_translation>
+<id>91</id>
+<container>role_edit_permission_sbf</container>
+<item>permission_</item>
+<en>Permission</en>
+<de>Erlaubnis</de>
+<custom>Erlaubnis</custom>
+</_translation>
+<_translation>
+<id>92</id>
+<container>role_edit_permission_sbf</container>
+<item>description_</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>93</id>
+<container>msgbox</container>
+<item>save_record</item>
+<en>Save changes of record?</en>
+<de>Änderungen des Datensatzes speichern?</de>
+<custom>Änderungen des Datensatzes speichern?</custom>
+</_translation>
+<_translation>
+<id>94</id>
+<container>msgbox</container>
+<item>vbYesNo</item>
+<en>Choose an option</en>
+<de>Wählen Sie eine Option</de>
+<custom>Wählen Sie eine Option</custom>
+</_translation>
+<_translation>
+<id>95</id>
+<container>translation</container>
+<item>caption_</item>
+<en>Translations</en>
+<de>Übersetzungen</de>
+<custom>Übersetzungen</custom>
+</_translation>
+<_translation>
+<id>96</id>
+<container>translation</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>97</id>
+<container>translation</container>
+<item>container_</item>
+<en>Container</en>
+<de>Container</de>
+<custom>Container</custom>
+</_translation>
+<_translation>
+<id>98</id>
+<container>translation</container>
+<item>item_</item>
+<en>Item</en>
+<de>Item</de>
+<custom>Item</custom>
+</_translation>
+<_translation>
+<id>99</id>
+<container>translation</container>
+<item>en_</item>
+<en>EN</en>
+<de>EN</de>
+<custom>EN</custom>
+</_translation>
+<_translation>
+<id>100</id>
+<container>department</container>
+<item>caption_</item>
+<en>Department</en>
+<de>Abteilung</de>
+<custom>Abteilung</custom>
+</_translation>
+<_translation>
+<id>101</id>
+<container>department</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>102</id>
+<container>department</container>
+<item>title_</item>
+<en>Title</en>
+<de>Titel</de>
+<custom>Titel</custom>
+</_translation>
+<_translation>
+<id>103</id>
+<container>department</container>
+<item>description_</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>104</id>
+<container>department</container>
+<item>deactivate_</item>
+<en>Deactivate</en>
+<de>Deaktivieren</de>
+<custom>Deaktivieren</custom>
+</_translation>
+<_translation>
+<id>105</id>
+<container>department_edit</container>
+<item>caption_</item>
+<en>Edit department</en>
+<de>Abteilung bearbeiten</de>
+<custom>Abteilung bearbeiten</custom>
+</_translation>
+<_translation>
+<id>106</id>
+<container>department_edit</container>
+<item>tab_department</item>
+<en>Department</en>
+<de>Abteilung</de>
+<custom>Abteilung</custom>
+</_translation>
+<_translation>
+<id>107</id>
+<container>department_edit</container>
+<item>tab_description</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>108</id>
+<container>department_edit</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>109</id>
+<container>department_edit</container>
+<item>title_</item>
+<en>Title</en>
+<de>Titel</de>
+<custom>Titel</custom>
+</_translation>
+<_translation>
+<id>110</id>
+<container>department_edit</container>
+<item>deactivate_</item>
+<en>Deactivate</en>
+<de>Deaktivieren</de>
+<custom>Deaktivieren</custom>
+</_translation>
+<_translation>
+<id>111</id>
+<container>contact</container>
+<item>caption_</item>
+<en>Contact</en>
+<de>Kontakt</de>
+<custom>Kontakt</custom>
+</_translation>
+<_translation>
+<id>112</id>
+<container>contact</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>113</id>
+<container>contact</container>
+<item>salutation_</item>
+<en>Salutation</en>
+<de>Begrüßung</de>
+<custom>Begrüßung</custom>
+</_translation>
+<_translation>
+<id>114</id>
+<container>contact</container>
+<item>first_name_</item>
+<en>First name</en>
+<de>Vornamen</de>
+<custom>Vornamen</custom>
+</_translation>
+<_translation>
+<id>115</id>
+<container>contact</container>
+<item>last_name_</item>
+<en>Last name</en>
+<de>Nachname</de>
+<custom>Nachname</custom>
+</_translation>
 <_translation>
 <id>116</id>
 <container>contact</container>
@@ -7909,6 +8829,1230 @@
 <custom>Kategorie</custom>
 </_translation>
 <_translation>
+<id>39822</id>
+<container>RPT-M001</container>
+<item>bic_</item>
+<en>BIC</en>
+<de>BIC</de>
+<custom>BIC</custom>
+</_translation>
+<_translation>
+<id>39824</id>
+<container>RPT-M001</container>
+<item>hrg_not_translateable</item>
+<en>Leipzig</en>
+<de>Leipzig</de>
+<custom>Leipzig</custom>
+</_translation>
+<_translation>
+<id>39825</id>
+<container>RPT-M001</container>
+<item>hrg_</item>
+<en>HRG</en>
+<de>HRG</de>
+<custom>HRG</custom>
+</_translation>
+<_translation>
+<id>39826</id>
+<container>RPT-M001</container>
+<item>hrgid_not_translateable</item>
+<en>EB191918</en>
+<de>EB10101923</de>
+<custom>EB10101923</custom>
+</_translation>
+<_translation>
+<id>39827</id>
+<container>RPT-M001</container>
+<item>hrgid_</item>
+<en>HRG DI</en>
+<de>HRG ID</de>
+<custom>HRG ID</custom>
+</_translation>
+<_translation>
+<id>39829</id>
+<container>RPT-M001</container>
+<item>ustdid_</item>
+<en>VAT</en>
+<de>Ust-Id</de>
+<custom>Ust-Id</custom>
+</_translation>
+<_translation>
+<id>39831</id>
+<container>RPT-M001</container>
+<item>CEO_</item>
+<en>CEO</en>
+<de>CEO</de>
+<custom>CEO</custom>
+</_translation>
+<_translation>
+<id>39832</id>
+<container>RPT-M001</container>
+<item>company_</item>
+<en>Company</en>
+<de>Firma</de>
+<custom>Firma</custom>
+</_translation>
+<_translation>
+<id>39836</id>
+<container>RPT-M001</container>
+<item>telefone_</item>
+<en>Telefone</en>
+<de>Telefon</de>
+<custom>Telefon</custom>
+</_translation>
+<_translation>
+<id>39866</id>
+<container>M001_header</container>
+<item>caption_</item>
+<en>Labreport</en>
+<de>Laborbericht</de>
+<custom>Laborbericht</custom>
+</_translation>
+<_translation>
+<id>39867</id>
+<container>M001_header</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>39868</id>
+<container>M001_header</container>
+<item>customer_</item>
+<en>Customer</en>
+<de>Kunde</de>
+<custom>Kunde</custom>
+</_translation>
+<_translation>
+<id>39869</id>
+<container>M001_header</container>
+<item>client_order_id_</item>
+<en>Client Order ID</en>
+<de>Kundenbestell-Nr</de>
+<custom>Kundenbestell-Nr</custom>
+</_translation>
+<_translation>
+<id>39870</id>
+<container>M001_header</container>
+<item>address_</item>
+<en>Address</en>
+<de>Adresse</de>
+<custom>Adresse</custom>
+</_translation>
+<_translation>
+<id>39871</id>
+<container>M001_header</container>
+<item>contact_</item>
+<en>Contact</en>
+<de>Kontakt</de>
+<custom>Kontakt</custom>
+</_translation>
+<_translation>
+<id>39872</id>
+<container>M001_header</container>
+<item>email_</item>
+<en>Email</en>
+<de>E-Mail</de>
+<custom>E-Mail</custom>
+</_translation>
+<_translation>
+<id>40808</id>
+<container>RPT-M001</container>
+<item>smp_id</item>
+<en>=&quot;SMP-&quot; &amp; [id]</en>
+<de>=&quot;SMP-&quot; &amp; [id]</de>
+<custom>=&quot;SMP-&quot; &amp; [id]</custom>
+</_translation>
+<_translation>
+<id>45687</id>
+<container>ribbon_bar</container>
+<item>btn_error</item>
+<en>Errors</en>
+<de>Errors</de>
+<custom>Errors</custom>
+</_translation>
+<_translation>
+<id>45732</id>
+<container>errorlog</container>
+<item>caption_</item>
+<en>Errors</en>
+<de>Errors</de>
+<custom>Errors</custom>
+</_translation>
+<_translation>
+<id>45733</id>
+<container>errorlog</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>45735</id>
+<container>errorlog</container>
+<item>user_id_</item>
+<en>User ID</en>
+<de>User ID</de>
+<custom>User ID</custom>
+</_translation>
+<_translation>
+<id>45739</id>
+<container>errorlog</container>
+<item>error_description_</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>45741</id>
+<container>errorlog</container>
+<item>created_at_</item>
+<en>Created at</en>
+<de>Erstell am</de>
+<custom>Erstell am</custom>
+</_translation>
+<_translation>
+<id>45748</id>
+<container>errorlog</container>
+<item>error_id_</item>
+<en>Error ID</en>
+<de>Error ID</de>
+<custom>Error ID</custom>
+</_translation>
+<_translation>
+<id>47211</id>
+<container>setup</container>
+<item>verbous_</item>
+<en>Verbous</en>
+<de>Verbous</de>
+<custom>Verbous</custom>
+</_translation>
+<_translation>
+<id>47212</id>
+<container>setup</container>
+<item>verbous_tooltip</item>
+<en>Report all errors</en>
+<de>Fehler berichten</de>
+<custom>Fehler berichten</custom>
+</_translation>
+<_translation>
+<id>51196</id>
+<container>system</container>
+<item>MDIMode-On</item>
+<en>Multi Document Interface switched on. Restart to take effect.</en>
+<de>Multi Document Interface ist eingeschaltet. Starten Sie neu, damit es wirksam wird.</de>
+<custom>Multi Document Interface ist eingeschaltet. Starten Sie neu, damit es wirksam wird.</custom>
+</_translation>
+<_translation>
+<id>51197</id>
+<container>system</container>
+<item>MDIMode-Off</item>
+<en>Multi Document Interface switched off. Restart to take effect.</en>
+<de>Multi Document Interface ist ausgeschaltet. Starten Sie neu, damit es wirksam wird.</de>
+<custom>Multi Document Interface ist ausgeschaltet. Starten Sie neu, damit es wirksam wird.</custom>
+</_translation>
+<_translation>
+<id>51485</id>
+<container>ribbon_bar</container>
+<item>btn_mdi</item>
+<en>MDI</en>
+<de>MDI</de>
+<custom>MDI</custom>
+</_translation>
+<_translation>
+<id>54859</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_sub_clmn_dlg</item>
+<en>Columns</en>
+<de>Spalten</de>
+<custom>Spalten</custom>
+</_translation>
+<_translation>
+<id>54860</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_sub_clmn_std</item>
+<en>Reset</en>
+<de>Zurücksetzen</de>
+<custom>Zurücksetzen</custom>
+</_translation>
+<_translation>
+<id>66560</id>
+<container>request-sub</container>
+<item>invoice_</item>
+<en>Invoice</en>
+<de>Abrechnen</de>
+<custom>Abrechnen</custom>
+</_translation>
+<_translation>
+<id>68337</id>
+<container>S001_header</container>
+<item>smp_id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>68338</id>
+<container>S001_header</container>
+<item>smp_id</item>
+<en>=&quot;SMP-&quot;&amp;[ID]</en>
+<de>=&quot;SMP-&quot;&amp;[ID]</de>
+<custom>=&quot;SMP-&quot;&amp;[ID]</custom>
+</_translation>
+<_translation>
+<id>68500</id>
+<container>M001_header</container>
+<item>smp_id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>68547</id>
+<container>M001_header</container>
+<item>smp_id</item>
+<en>=&quot;SMP-&quot;&amp;[ID]</en>
+<de>=&quot;SMP-&quot;&amp;[ID]</de>
+<custom>=&quot;SMP-&quot;&amp;[ID]</custom>
+</_translation>
+<_translation>
+<id>86876</id>
+<container>setup_edit</container>
+<item>verbous_</item>
+<en>Verbous</en>
+<de>Verbous</de>
+<custom>Verbous</custom>
+</_translation>
+<_translation>
+<id>99297</id>
+<container>view_measurement</container>
+<item>smp_date_</item>
+<en>Sampling Date</en>
+<de>Probenahmedatum</de>
+<custom>Probenahmedatum</custom>
+</_translation>
+<_translation>
+<id>99299</id>
+<container>view_measurement</container>
+<item>profile_</item>
+<en>Profile</en>
+<de>Profil</de>
+<custom>Profil</custom>
+</_translation>
+<_translation>
+<id>99301</id>
+<container>view_measurement</container>
+<item>smppoint_</item>
+<en>Sample Point</en>
+<de>Probenahmestelle</de>
+<custom>Probenahmestelle</custom>
+</_translation>
+<_translation>
+<id>103685</id>
+<container>workflow_state_sbf</container>
+<item>role_</item>
+<en>Assigned Role</en>
+<de>Zugewiesene Rolle</de>
+<custom>Zugewiesene Rolle</custom>
+</_translation>
+<_translation>
+<id>103686</id>
+<container>workflow_state_sbf</container>
+<item>role_tooltip</item>
+<en>Choose role to get alert on pending requests in desktop</en>
+<de>Rolle auswähnlen um über ausstehende Analysenaufträge im Desktop informiert zu werden</de>
+<custom>Rolle auswähnlen um über ausstehende Analysenaufträge im Desktop informiert zu werden</custom>
+</_translation>
+<_translation>
+<id>103723</id>
+<container>desktop</container>
+<item>tab_request</item>
+<en>Requests to check</en>
+<de>Aufträge zur Prüfung</de>
+<custom>Aufträge zur Prüfung</custom>
+</_translation>
+<_translation>
+<id>105127</id>
+<container>request</container>
+<item>role_</item>
+<en>Responsible</en>
+<de>Zuständig</de>
+<custom>Zuständig</custom>
+</_translation>
+<_translation>
+<id>105726</id>
+<container>desktop_request_sbf</container>
+<item>caption_</item>
+<en>Requests</en>
+<de>Aufträge</de>
+<custom>Aufträge</custom>
+</_translation>
+<_translation>
+<id>105727</id>
+<container>desktop_request_sbf</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>105729</id>
+<container>desktop_request_sbf</container>
+<item>description_</item>
+<en>Description</en>
+<de>Beschreibung</de>
+<custom>Beschreibung</custom>
+</_translation>
+<_translation>
+<id>105731</id>
+<container>desktop_request_sbf</container>
+<item>smp_date_</item>
+<en>Sample Date</en>
+<de>Probenahmedatum</de>
+<custom>Probenahmedatum</custom>
+</_translation>
+<_translation>
+<id>105733</id>
+<container>desktop_request_sbf</container>
+<item>client_sample_id_</item>
+<en>Client Sampe ID</en>
+<de>Kunden Probennummer</de>
+<custom>Kunden Probennummer</custom>
+</_translation>
+<_translation>
+<id>105735</id>
+<container>desktop_request_sbf</container>
+<item>client_order_id_</item>
+<en>Client Order ID</en>
+<de>Client Order ID</de>
+<custom>Client Order ID</custom>
+</_translation>
+<_translation>
+<id>105737</id>
+<container>desktop_request_sbf</container>
+<item>customer_</item>
+<en>Customer</en>
+<de>Kunde</de>
+<custom>Kunde</custom>
+</_translation>
+<_translation>
+<id>105739</id>
+<container>desktop_request_sbf</container>
+<item>smptype_</item>
+<en>Sample Type</en>
+<de>Probentyp</de>
+<custom>Probentyp</custom>
+</_translation>
+<_translation>
+<id>105741</id>
+<container>desktop_request_sbf</container>
+<item>smpmatrix_</item>
+<en>Sample Matrix</en>
+<de>Probenmatrix</de>
+<custom>Probenmatrix</custom>
+</_translation>
+<_translation>
+<id>105743</id>
+<container>desktop_request_sbf</container>
+<item>priority_</item>
+<en>Priority</en>
+<de>Priorität</de>
+<custom>Priorität</custom>
+</_translation>
+<_translation>
+<id>105745</id>
+<container>desktop_request_sbf</container>
+<item>profile_</item>
+<en>Profile</en>
+<de>Profil</de>
+<custom>Profil</custom>
+</_translation>
+<_translation>
+<id>105747</id>
+<container>desktop_request_sbf</container>
+<item>formulation_</item>
+<en>Formulation</en>
+<de>Formulierung</de>
+<custom>Formulierung</custom>
+</_translation>
+<_translation>
+<id>105749</id>
+<container>desktop_request_sbf</container>
+<item>project_</item>
+<en>Project</en>
+<de>Projekt</de>
+<custom>Projekt</custom>
+</_translation>
+<_translation>
+<id>105751</id>
+<container>desktop_request_sbf</container>
+<item>sampler_</item>
+<en>Sampler</en>
+<de>Probennehmer</de>
+<custom>Probennehmer</custom>
+</_translation>
+<_translation>
+<id>115557</id>
+<container>setup</container>
+<item>num_format_</item>
+<en>Numerical Format</en>
+<de>Numerical Format</de>
+<custom>Numerical Format</custom>
+</_translation>
+<_translation>
+<id>115559</id>
+<container>setup</container>
+<item>num_culture_</item>
+<en>Culture Code</en>
+<de>Culture Code</de>
+<custom>Culture Code</custom>
+</_translation>
+<_translation>
+<id>115567</id>
+<container>setup_edit</container>
+<item>num_format_</item>
+<en>Numerical Format</en>
+<de>Numerical Format</de>
+<custom>Numerical Format</custom>
+</_translation>
+<_translation>
+<id>115569</id>
+<container>setup_edit</container>
+<item>num_culture_</item>
+<en>Culture Code</en>
+<de>Culture Code</de>
+<custom>Culture Code</custom>
+</_translation>
+<_translation>
+<id>116211</id>
+<container>template</container>
+<item>client_order_id_</item>
+<en>Client Order ID</en>
+<de>Client Order ID</de>
+<custom>Client Order ID</custom>
+</_translation>
+<_translation>
+<id>116215</id>
+<container>template_edit</container>
+<item>client_order_id_</item>
+<en>Client Order ID</en>
+<de>Client Order ID</de>
+<custom>Client Order ID</custom>
+</_translation>
+<_translation>
+<id>120471</id>
+<container>template_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+<custom>Speichern</custom>
+</_translation>
+<_translation>
+<id>121066</id>
+<container>translation_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121100</id>
+<container>role_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121136</id>
+<container>workflow_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121192</id>
+<container>billing_customer_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121309</id>
+<container>laboratory_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121317</id>
+<container>department_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121335</id>
+<container>workplace_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121487</id>
+<container>customer_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121615</id>
+<container>contact_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121623</id>
+<container>manufacturer_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121649</id>
+<container>supplier_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121749</id>
+<container>priority_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121758</id>
+<container>technique_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121767</id>
+<container>instype_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121776</id>
+<container>service_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121809</id>
+<container>material_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121861</id>
+<container>smpcontainer_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121865</id>
+<container>smppreservation_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121873</id>
+<container>smpcondition_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121882</id>
+<container>smppoint_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121891</id>
+<container>smptype_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>121899</id>
+<container>smpmatrix_edit</container>
+<item>btn_save</item>
+<en>Save</en>
+<de>Speichern</de>
+</_translation>
+<_translation>
+<id>122442</id>
+<container>_background_worker_form</container>
+<item>demo-mode</item>
+<en>Demo Mode. Labdesk will close automatically.</en>
+<de>Demo-Modus. Labdesk wird automatisch geschlossen.</de>
+<custom>Demo-Modus. Labdesk wird automatisch geschlossen.</custom>
+</_translation>
+<_translation>
+<id>122443</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_add_record</item>
+<en>Add record</en>
+<de>Hinzufügen</de>
+<custom>Hinzufügen</custom>
+</_translation>
+<_translation>
+<id>122444</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_activate_user</item>
+<en>Issue Licence</en>
+<de>Lizenz ausstellen</de>
+</_translation>
+<_translation>
+<id>122445</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_deactivate_user</item>
+<en>Revoke Licence</en>
+<de>Lizenz entziehen</de>
+</_translation>
+<_translation>
+<id>122446</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_apply_filter</item>
+<en>Apply filer</en>
+<de>Filter anwenden</de>
+</_translation>
+<_translation>
+<id>122447</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_save_filter</item>
+<en>Save filter</en>
+<de>Filter speichern</de>
+</_translation>
+<_translation>
+<id>122448</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_clmn_dlg</item>
+<en>Columns</en>
+<de>Spalten</de>
+<custom>Spalten</custom>
+</_translation>
+<_translation>
+<id>122449</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_clmn_std</item>
+<en>Reset</en>
+<de>Zurücksetzen</de>
+<custom>Zurücksetzen</custom>
+</_translation>
+<_translation>
+<id>122450</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_audit_trail</item>
+<en>Audit Trail</en>
+<de>Audit Trail</de>
+<custom>Audit Trail</custom>
+</_translation>
+<_translation>
+<id>122451</id>
+<container>mdlContextMenu</container>
+<item>contextmnu_menu_usr_refresh</item>
+<en>Refresh</en>
+<de>Aktualisieren</de>
+<custom>Aktualisieren</custom>
+</_translation>
+<_translation>
+<id>122478</id>
+<container>users</container>
+<item>licence_</item>
+<en>Activated</en>
+<de>Aktiviert</de>
+</_translation>
+<_translation>
+<id>122646</id>
+<container>_TextBoxDialog</container>
+<item>btn_save</item>
+<en>OK</en>
+<de>OK</de>
+</_translation>
+<_translation>
+<id>122647</id>
+<container>_TextBoxDialog</container>
+<item>btn_cancel</item>
+<en>Cancel</en>
+<de>Abbrechen</de>
+</_translation>
+<_translation>
+<id>122648</id>
+<container>_TextBoxDialog</container>
+<item>comboBox</item>
+<en>UID/UAK</en>
+<de>UID/UAK</de>
+</_translation>
+<_translation>
+<id>122655</id>
+<container>_TextBoxDialog</container>
+<item>caption</item>
+<en>Activate User</en>
+<de>Benutzer Aktivierung</de>
+</_translation>
+<_translation>
+<id>122688</id>
+<container>users</container>
+<item>uak_not_valid</item>
+<en>UAK not valid. Contact the software vendor.</en>
+<de>UAK nicht gültig. Kontakieren Sie den Anbieter.</de>
+</_translation>
+<_translation>
+<id>128672</id>
+<container>setup</container>
+<item>nav_button_</item>
+<en>Show Navigation</en>
+<de>Navigation anzeigen</de>
+</_translation>
+<_translation>
+<id>128673</id>
+<container>setup</container>
+<item>nav_button_tooltip</item>
+</_translation>
+<_translation>
+<id>128683</id>
+<container>setup_edit</container>
+<item>nav_button_</item>
+<en>Show Navigation</en>
+<de>Navigation anzeigen</de>
+</_translation>
+<_translation>
+<id>128684</id>
+<container>setup_edit</container>
+<item>nav_button_tooltip</item>
+</_translation>
+<_translation>
+<id>131293</id>
+<container>material</container>
+<item>hazard_H200</item>
+<de>[H200] Instabil, explosiv</de>
+</_translation>
+<_translation>
+<id>131294</id>
+<container>material</container>
+<item>hazard_H201</item>
+<de>[H201] Explosiv, Gefahr der Massenexplosion.</de>
+</_translation>
+<_translation>
+<id>131295</id>
+<container>material</container>
+<item>hazard_H202</item>
+<de>[H202] Explosiv; große Gefahr durch Splitter, Spreng- und Wurfstücke.</de>
+</_translation>
+<_translation>
+<id>131296</id>
+<container>material</container>
+<item>hazard_H203</item>
+<de>[H203] Explosiv; Gefahr durch Feuer, Luftdruck oder Splitter, Spreng- und Wurfstücke.</de>
+</_translation>
+<_translation>
+<id>131297</id>
+<container>material</container>
+<item>hazard_H204</item>
+<de>[H204] Gefahr durch Feuer oder Splitter, Spreng- und Wurfstücke.</de>
+</_translation>
+<_translation>
+<id>131298</id>
+<container>material</container>
+<item>hazard_H205</item>
+<de>[H205] Gefahr der Massenexplosion bei Feuer.</de>
+</_translation>
+<_translation>
+<id>131299</id>
+<container>material</container>
+<item>hazard_H206</item>
+<de>[H206] Gefahr durch Feuer, Druckstoß oder Sprengstücke; erhöhte Explosionsgefahr, wenn das Desensibilisierungsmittel reduziert wird.</de>
+</_translation>
+<_translation>
+<id>131300</id>
+<container>material</container>
+<item>hazard_H207</item>
+<de>[H207] Gefahr durch Feuer oder Sprengstücke; erhöhte Explosionsgefahr, wenn das Desensibilisierungsmittel reduziert wird.</de>
+</_translation>
+<_translation>
+<id>131301</id>
+<container>material</container>
+<item>hazard_H208</item>
+<de>[H208] Gefahr durch Feuer; erhöhte Explosionsgefahr, wenn das Desensibilisierungsmittel reduziert wird.</de>
+</_translation>
+<_translation>
+<id>131302</id>
+<container>material</container>
+<item>hazard_H209</item>
+<de>[H209] Explosiv.</de>
+</_translation>
+<_translation>
+<id>131303</id>
+<container>material</container>
+<item>hazard_H210</item>
+<de>[H210] Sehr empfindlich.</de>
+</_translation>
+<_translation>
+<id>131304</id>
+<container>material</container>
+<item>hazard_H211</item>
+<de>[H211] Kann empfindlich sein.</de>
+</_translation>
+<_translation>
+<id>131305</id>
+<container>material</container>
+<item>hazard_H220</item>
+<de>[H220] Extrem entzündbares Gas.</de>
+</_translation>
+<_translation>
+<id>131306</id>
+<container>material</container>
+<item>hazard_H221</item>
+<de>[H221] Entzündbares Gas.</de>
+</_translation>
+<_translation>
+<id>131307</id>
+<container>material</container>
+<item>hazard_H222</item>
+<de>[H222] Extrem entzündbares Aerosol.</de>
+</_translation>
+<_translation>
+<id>131308</id>
+<container>material</container>
+<item>hazard_H223</item>
+<de>[H223] Entzündbares Aerosol.</de>
+</_translation>
+<_translation>
+<id>131309</id>
+<container>material</container>
+<item>hazard_H224</item>
+<de>[H224] Flüssigkeit und Dampf extrem entzündbar.</de>
+</_translation>
+<_translation>
+<id>131310</id>
+<container>material</container>
+<item>hazard_H225</item>
+<de>[H225] Flüssigkeit und Dampf leicht entzündbar.</de>
+</_translation>
+<_translation>
+<id>131311</id>
+<container>material</container>
+<item>hazard_H226</item>
+<de>[H226] Flüssigkeit und Dampf entzündbar.</de>
+</_translation>
+<_translation>
+<id>131312</id>
+<container>material</container>
+<item>hazard_H227</item>
+<de>[H227] Brennbare Flüssigkeit.</de>
+</_translation>
+<_translation>
+<id>131313</id>
+<container>material</container>
+<item>hazard_H228</item>
+<de>[H228] Entzündbarer Feststoff.</de>
+</_translation>
+<_translation>
+<id>131314</id>
+<container>material</container>
+<item>hazard_H229</item>
+<de>[H229] Behälter steht unter Druck: kann bei Erwärmung bersten.</de>
+</_translation>
+<_translation>
+<id>131315</id>
+<container>material</container>
+<item>hazard_H230</item>
+<de>[H230] Kann auch in Abwesenheit von Luft explosionsartig reagieren.</de>
+</_translation>
+<_translation>
+<id>131316</id>
+<container>material</container>
+<item>hazard_H231</item>
+<de>[H231] Kann auch in Abwesenheit von Luft bei erhöhtem Druck und/oder erhöhter Temperatur explosionsartig reagieren.</de>
+</_translation>
+<_translation>
+<id>131317</id>
+<container>material</container>
+<item>hazard_H232</item>
+<de>[H232] Kann sich bei Kontakt mit Luft spontan entzünden.</de>
+</_translation>
+<_translation>
+<id>131318</id>
+<container>material</container>
+<item>hazard_H240</item>
+<de>[H240] Erwärmung kann Explosion verursachen.</de>
+</_translation>
+<_translation>
+<id>131319</id>
+<container>material</container>
+<item>hazard_H241</item>
+<de>[H241] Erwärmung kann Brand oder Explosion verursachen.</de>
+</_translation>
+<_translation>
+<id>131320</id>
+<container>material</container>
+<item>hazard_H242</item>
+<de>[H242] Erwärmung kann Brand verursachen.</de>
+</_translation>
+<_translation>
+<id>1467</id>
+<container>material</container>
+<item>supplier_</item>
+<en>Supplier</en>
+<de>Lieferant</de>
+<custom>Lieferant</custom>
+</_translation>
+<_translation>
+<id>1468</id>
+<container>material_edit</container>
+<item>supplier_</item>
+<en>Supplier</en>
+<de>Lieferant</de>
+<custom>Lieferant</custom>
+</_translation>
+<_translation>
+<id>1469</id>
+<container>request</container>
+<item>formulation_</item>
+<en>Formulation</en>
+<de>Formulierung</de>
+<custom>Formulierung</custom>
+</_translation>
+<_translation>
+<id>1470</id>
+<container>request_edit</container>
+<item>formulation_</item>
+<en>Formulation</en>
+<de>Formulierung</de>
+<custom>Formulierung</custom>
+</_translation>
+<_translation>
+<id>1471</id>
+<container>sticker_zebra</container>
+<item>103x199</item>
+<en>^XA    ^FX Top section with logo, name and address.  ^CF0,60  ^FO50,50^GFA,2698,2698,19,,P07gKFE,:::::::::::::::::gR0JFE,:::::::::::::::::::7gKFEK0JFE,::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::7gKFE,:::::::::::::::::::::::::::::::::::::^FS  ^FO220,50^FDLABDESK LIMS^FS  ^CF0,30  ^FO220,115^FDLeipziger Ring 14 a^FS  ^FO220,155^FD59558 Lippstadt^FS  ^FO220,195^FDGermany (NRW)^FS  ^FO50,250^GB700,3,3^FS    ^FX Second section with recipient address and permit information.  ^CFA,30  ^FO50,300^FD[SELECT @value = CAST(customer.name As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^FO50,340^FD[SELECT @value = CAST(customer.postal_street As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}] [SELECT @value = CAST(customer.postal_housenumber As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^FO50,380^FD[SELECT @value = CAST(customer.postal_postalcode As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}] [SELECT @value = CAST(customer.postal_city As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^FO50,420^FD[SELECT @value = CAST(customer.postal_country As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^CFA,15  ^FO500,300^GB250,150,3^FS  ^FO538,340^FDPO No.^FS  ^FO538,390^FD[SELECT @value = CAST(client_order_id As nvarchar) FROM request WHERE id = {id}]^FS  ^FO50,500^GB700,3,3^FS    ^FX Third section with bar code.  ^BY3,2,270  ^FO100,550^BC^FDSMP-[SELECT @value = CAST(id As nvarchar) FROM request WHERE id = {id}]^FS    ^FX Fourth section (the two boxes on the bottom).  ^FO50,900^GB700,250,3^FS  ^FO400,900^GB3,250,3^FS  ^CF0,40  ^FO100,960^FDHAZARDOUS^FS  ^FO100,1010^FDMATERIAL^FS  ^FO100,1060^FDHandle with care!^FS  ^CF0,190  ^FO450,900^GFA,8192,8192,32,,::::::::::::::gQ07F,gP01FF8,gP07FFE,:gP0JF,gO01JF8,:gO03JFC,:gO07JFE,gO07KF,gO0LF,gN01LF8,:gN03LFC,:gN07LFE,gN07MF,gN0NF,gM01NF8,:gM03NFC,:gM07NFE,gM07OF,gM0PF,gL01PF8,:gL03PFC,:gL07PFE,gL07QF,gL0RF,gK01RF8,:gK03RFC,:gK07RFE,gK07SF,gK0TF,gJ01TF8,:gJ03TFC,:gJ07TFE,gJ07UF,gJ0VF,gI01VF8,:gI03VFC,:gI07VFE,gI07WF,gI0XF,gH01XF8,:gH03XFC,:gH07XFE,gH07YF,gH0gF,gG01gF8,:gG03gFC,:gG07gFE,gG07gGF,gG0gHF,g01gHF8,:g03gHFC,:g07gHFE,g07MFN0NF,g0NFN0NF,Y01NFN0NF8,:Y03NFN0NFC,:Y07NFN0NFE,Y07NFN0OF,Y0OFN0OF,X01OFN0OF8,:X03OFN0OFC,:X07OFN0OFE,:X0PFN0PF,W01PFN0PF8,:W03PFN0PFC,:W07PFN0PFE,:W0QFN0QF,W0QFN0QF8,V01QFN0QF8,V03QFN0QFC,:V07QFN0QFE,:V0RFN0RF,V0RFN0RF8,U01RFN0RF8,U03RFN0RFC,:U07RFN0RFE,:U0SFN0SF,U0SFN0SF8,T01SFN0SF8,T03SFN0SFC,:T07SFN0SFE,:T0TFN0TF,T0TFN0TF8,S01TFN0TF8,S03TFN0TFC,:S07TFN0TFE,:S0UFN0UF,S0UFN0UF8,R01UFN0UF8,R03UFN0UFC,:R07UFN0UFE,:R0VFN0VF,R0VFN0VF8,Q01VFN0VF8,Q03VFN0VFC,:Q07VFN0VFE,:Q0WFN0WF,Q0WFN0WF8,P01WFN0WF8,P03WFN0WFC,:P07WFN0WFE,:P0XFN0XF,P0XFN0XF8,O01XFN0XF8,O03XFN0XFC,:O07XFN0XFE,:O0YFN0YF,O0YFN0YF8,N01hLF8,N03hLFC,:N07hLFE,:N0hNF,N0hNF8,M01hNF8,M03hNFC,:M07hNFE,:M0hPF,:L01hPF8,L03hPFC,:L07hPFE,:L0hRF,L0gHFN0gHF,K01gHFN0gHF8,K03gHFN0gHFC,:K07gHFN0gHFE,:K0gIFN0gIF,:J01gIFN0gIF8,J01gIFN0gIFC,J03gIFN0gIFC,J07gIFN0gIFE,:J0gJFN0gJF,:I01gJFN0gJF8,I01gJFN0gJFC,I03gJFN0gJFC,I07gJFN0gJFE,:I0gKFN0gKF,:001gKFN0gKF8,001gKFN0gKFC,003gKFN0gKFC,007gKFN0gKFE,:00iF,:01iF8,01iFC,03iFC,07iFE,:0iHF,:1iHF81iHFC3iHFC7iHFE:7!!::::7iHFE:3iHFC1iHFC0iHF,07iFE,,::::::::::::::^FS    ^FX Fourth section (security notes).  ^FO50,1200^GB700,3,3^FS  ^CFA,30  ^FO50,1250^FDIn case of damaged packaging contact^FS  ^FO50,1300^FDTel. +49 123 44 55 66 10^FS    ^XZ</en>
+<de>-</de>
+<custom>-</custom>
+</_translation>
+<_translation>
+<id>1472</id>
+<container>customer</container>
+<item>postal_country_</item>
+<en>Country</en>
+<de>Land</de>
+<custom>Land</custom>
+</_translation>
+<_translation>
+<id>1473</id>
+<container>customer</container>
+<item>postal_state_</item>
+<en>State</en>
+<de>Bundesland</de>
+<custom>Bundesland</custom>
+</_translation>
+<_translation>
+<id>1474</id>
+<container>customer</container>
+<item>postal_district_</item>
+<en>District</en>
+<de>Disctrict</de>
+<custom>Disctrict</custom>
+</_translation>
+<_translation>
+<id>1475</id>
+<container>customer</container>
+<item>postal_city_</item>
+<en>City</en>
+<de>Stadt</de>
+<custom>Stadt</custom>
+</_translation>
+<_translation>
+<id>1476</id>
+<container>customer</container>
+<item>postal_postalcode_</item>
+<en>Postal code</en>
+<de>Postleitzahl</de>
+<custom>Postleitzahl</custom>
+</_translation>
+<_translation>
+<id>1477</id>
+<container>customer</container>
+<item>postal_street_</item>
+<en>Street</en>
+<de>Straße</de>
+<custom>Straße</custom>
+</_translation>
+<_translation>
+<id>1478</id>
+<container>customer</container>
+<item>postal_housenumber_</item>
+<en>Housenumber</en>
+<de>Hausnummer</de>
+<custom>Hausnummer</custom>
+</_translation>
+<_translation>
+<id>1479</id>
+<container>customer</container>
+<item>billing_country_</item>
+<en>Country</en>
+<de>Land</de>
+<custom>Land</custom>
+</_translation>
+<_translation>
+<id>1480</id>
+<container>customer</container>
+<item>billing_state_</item>
+<en>State</en>
+<de>Bundesland</de>
+<custom>Bundesland</custom>
+</_translation>
+<_translation>
+<id>1481</id>
+<container>customer</container>
+<item>billing_district_</item>
+<en>District</en>
+<de>District</de>
+<custom>District</custom>
+</_translation>
+<_translation>
+<id>1482</id>
+<container>customer</container>
+<item>billing_city_</item>
+<en>City</en>
+<de>Stadt</de>
+<custom>Stadt</custom>
+</_translation>
+<_translation>
+<id>1483</id>
+<container>customer</container>
+<item>billing_postalcode_</item>
+<en>Postal code</en>
+<de>Postleitzahl</de>
+<custom>Postleitzahl</custom>
+</_translation>
+<_translation>
+<id>1484</id>
+<container>customer</container>
+<item>billing_street_</item>
+<en>Street</en>
+<de>Straße</de>
+<custom>Straße</custom>
+</_translation>
+<_translation>
+<id>1485</id>
+<container>customer</container>
+<item>billing_housenumber_</item>
+<en>Housenumber</en>
+<de>Hausnummer</de>
+<custom>Hausnummer</custom>
+</_translation>
+<_translation>
+<id>1486</id>
+<container>customer</container>
+<item>bank_</item>
+<en>Bank</en>
+<de>Bank</de>
+<custom>Bank</custom>
+</_translation>
+<_translation>
+<id>1487</id>
+<container>customer</container>
+<item>iban_</item>
+<en>IBAN</en>
+<de>IBAN</de>
+<custom>IBAN</custom>
+</_translation>
+<_translation>
+<id>1488</id>
+<container>customer</container>
+<item>bic_</item>
+<en>BIC</en>
+<de>BIC</de>
+<custom>BIC</custom>
+</_translation>
+<_translation>
+<id>1489</id>
+<container>customer</container>
+<item>vatnr_</item>
+<en>Vat-No.</en>
+<de>USt-IdNr.</de>
+<custom>USt-IdNr.</custom>
+</_translation>
+<_translation>
+<id>1490</id>
+<container>customer_edit</container>
+<item>tab_address_postal</item>
+<en>Address postal</en>
+<de>Postadresse</de>
+<custom>Postadresse</custom>
+</_translation>
+<_translation>
+<id>1491</id>
+<container>customer_edit</container>
+<item>tab_address_billing</item>
+<en>Address billing</en>
+<de>Rechnungsadresse</de>
+<custom>Rechnungsadresse</custom>
+</_translation>
+<_translation>
+<id>1492</id>
+<container>customer_edit</container>
+<item>tab_bank</item>
+<en>Bank</en>
+<de>Bank</de>
+<custom>Bank</custom>
+</_translation>
+<_translation>
+<id>1493</id>
+<container>customer_edit</container>
+<item>postal_country_</item>
+<en>Country</en>
+<de>Land</de>
+<custom>Land</custom>
+</_translation>
+<_translation>
+<id>1494</id>
+<container>customer_edit</container>
+<item>postal_state_</item>
+<en>State</en>
+<de>Bundesland</de>
+<custom>Bundesland</custom>
+</_translation>
+<_translation>
+<id>1495</id>
+<container>customer_edit</container>
+<item>postal_district_</item>
+<en>District</en>
+<de>District</de>
+<custom>District</custom>
+</_translation>
+<_translation>
+<id>1496</id>
+<container>customer_edit</container>
+<item>postal_city_</item>
+<en>City</en>
+<de>Stadt</de>
+<custom>Stadt</custom>
+</_translation>
+<_translation>
 <id>1093</id>
 <container>billing_customer</container>
 <item>invoiced_</item>
@@ -8139,246 +10283,6 @@
 <en>Deactivate</en>
 <de>Deaktivieren</de>
 <custom>Deaktivieren</custom>
-</_translation>
-<_translation>
-<id>1921</id>
-<container>INV-I001</container>
-<item>calc_vat_</item>
-<en>Vat</en>
-<de>MwSt</de>
-<custom>MwSt</custom>
-</_translation>
-<_translation>
-<id>1922</id>
-<container>INV-I001</container>
-<item>calc_sum_</item>
-<en>Overall</en>
-<de>Gesamt</de>
-<custom>Gesamt</custom>
-</_translation>
-<_translation>
-<id>1923</id>
-<container>invoice</container>
-<item>subject_invoice</item>
-<en>Subject</en>
-<de>Betreff</de>
-<custom>Betreff</custom>
-</_translation>
-<_translation>
-<id>1924</id>
-<container>invoice</container>
-<item>body_invoice</item>
-<en>Body</en>
-<de>Body</de>
-<custom>Body</custom>
-</_translation>
-<_translation>
-<id>1925</id>
-<container>mailqueue</container>
-<item>billing_customer_</item>
-<en>Invoice</en>
-<de>Rechnung</de>
-<custom>Rechnung</custom>
-</_translation>
-<_translation>
-<id>1926</id>
-<container>billing_customer_edit</container>
-<item>tab_email</item>
-<en>Email</en>
-<de>Email</de>
-<custom>Email</custom>
-</_translation>
-<_translation>
-<id>1927</id>
-<container>billing_customer_edit</container>
-<item>cc_email_</item>
-<en>CC-Email</en>
-<de>CC-Email</de>
-<custom>CC-Email</custom>
-</_translation>
-<_translation>
-<id>1928</id>
-<container>billing_customer_edit</container>
-<item>recipients_</item>
-<en>Recipients</en>
-<de>Empfänger</de>
-<custom>Empfänger</custom>
-</_translation>
-<_translation>
-<id>1929</id>
-<container>billing_customer_edit</container>
-<item>btn_generate</item>
-<en>Prepare Email</en>
-<de>Email erstellen</de>
-<custom>Email erstellen</custom>
-</_translation>
-<_translation>
-<id>1930</id>
-<container>billing_customer_edit</container>
-<item>subject_</item>
-<en>Subject</en>
-<de>Betreff</de>
-<custom>Betreff</custom>
-</_translation>
-<_translation>
-<id>1931</id>
-<container>billing_customer_edit</container>
-<item>body_</item>
-<en>Body</en>
-<de>Body</de>
-<custom>Body</custom>
-</_translation>
-<_translation>
-<id>1932</id>
-<container>billing_customer</container>
-<item>delivered_</item>
-<en>Delivered</en>
-<de>Gelierfert</de>
-<custom>Gelierfert</custom>
-</_translation>
-<_translation>
-<id>1933</id>
-<container>billing_customer_edit</container>
-<item>delivered_</item>
-<en>Delivered</en>
-<de>Gelierfert</de>
-<custom>Gelierfert</custom>
-</_translation>
-<_translation>
-<id>1934</id>
-<container>I001_header</container>
-<item>requests_</item>
-<en>Requests</en>
-<de>Aufträge</de>
-<custom>Aufträge</custom>
-</_translation>
-<_translation>
-<id>1935</id>
-<container>measurement_edit</container>
-<item>note_state_</item>
-<en>CP - Captured, AQ - Aquired, VD - Validated, RE - Retest, RT - Retract</en>
-<de>CP - Erfasst, AQ -Übernommen, VD - Validiert, RE - Neuprüfung, RT - Zurückweisen</de>
-<custom>CP - Erfasst, AQ -Übernommen, VD - Validiert, RE - Neuprüfung, RT - Zurückweisen</custom>
-</_translation>
-<_translation>
-<id>1936</id>
-<container>ribbon_bar</container>
-<item>btn_info</item>
-<en>Us</en>
-<de>Us</de>
-<custom>Us</custom>
-</_translation>
-<_translation>
-<id>1937</id>
-<container>project</container>
-<item>customer_</item>
-<en>Customer</en>
-<de>Kunde</de>
-<custom>Kunde</custom>
-</_translation>
-<_translation>
-<id>1938</id>
-<container>project_edit</container>
-<item>customer_</item>
-<en>Customer</en>
-<de>Kunde</de>
-<custom>Kunde</custom>
-</_translation>
-<_translation>
-<id>1939</id>
-<container>role</container>
-<item>hourly_rate_</item>
-<en>Hourly Rate</en>
-<de>Stundensatz</de>
-<custom>Stundensatz</custom>
-</_translation>
-<_translation>
-<id>1940</id>
-<container>role_edit</container>
-<item>hourly_rate_</item>
-<en>Hourly Rate</en>
-<de>Stundensatz</de>
-<custom>Stundensatz</custom>
-</_translation>
-<_translation>
-<id>1941</id>
-<container>task_edit</container>
-<item>tab_material</item>
-<en>Material</en>
-<de>Material</de>
-<custom>Material</custom>
-</_translation>
-<_translation>
-<id>1942</id>
-<container>task_edit</container>
-<item>tab_service</item>
-<en>Service</en>
-<de>Service</de>
-<custom>Service</custom>
-</_translation>
-<_translation>
-<id>1943</id>
-<container>task_material_sbf</container>
-<item>caption_</item>
-<en>Material</en>
-<de>Material</de>
-<custom>Material</custom>
-</_translation>
-<_translation>
-<id>1944</id>
-<container>task_material_sbf</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>1945</id>
-<container>task_material_sbf</container>
-<item>amount_</item>
-<en>Amount</en>
-<de>Menge</de>
-<custom>Menge</custom>
-</_translation>
-<_translation>
-<id>1946</id>
-<container>task_material_sbf</container>
-<item>task_</item>
-<en>Task</en>
-<de>Aufgabe</de>
-<custom>Aufgabe</custom>
-</_translation>
-<_translation>
-<id>2050</id>
-<container>request</container>
-<item>smp_id_</item>
-<en>SMP-ID</en>
-<de>SMP-ID</de>
-<custom>SMP-ID</custom>
-</_translation>
-<_translation>
-<id>2052</id>
-<container>request</container>
-<item>smp_id</item>
-<en>=&quot;SMP-&quot; &amp; [id]</en>
-<de>=&quot;SMP-&quot; &amp; [id]</de>
-<custom>=&quot;SMP-&quot; &amp; [id]</custom>
-</_translation>
-<_translation>
-<id>2068</id>
-<container>RPT-S001</container>
-<item>smp_id</item>
-<en>=&quot;SMP-&quot; &amp; [id]</en>
-<de>=&quot;SMP-&quot; &amp; [id]</de>
-<custom>=&quot;SMP-&quot; &amp; [id]</custom>
-</_translation>
-<_translation>
-<id>2371</id>
-<container>RPT-M002</container>
-<item>smp_id</item>
-<en>=&quot;SMP-&quot; &amp; [id]</en>
-<de>=&quot;SMP-&quot; &amp; [id]</de>
-<custom>=&quot;SMP-&quot; &amp; [id]</custom>
 </_translation>
 <_translation>
 <id>1327</id>
@@ -10443,1166 +12347,6 @@
 <en>CC Email</en>
 <de>CC Email</de>
 <custom>CC Email</custom>
-</_translation>
-<_translation>
-<id>1</id>
-<container>laboratory</container>
-<item>caption_</item>
-<en>Laboratory</en>
-<de>Labor</de>
-<custom>Labor</custom>
-</_translation>
-<_translation>
-<id>2</id>
-<container>laboratory</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>3</id>
-<container>laboratory</container>
-<item>title_</item>
-<en>Title</en>
-<de>Titel</de>
-<custom>Titel</custom>
-</_translation>
-<_translation>
-<id>4</id>
-<container>laboratory</container>
-<item>ustnr_</item>
-<en>VAT No</en>
-<de>MwSt.-Nr.</de>
-<custom>MwSt.-Nr.</custom>
-</_translation>
-<_translation>
-<id>5</id>
-<container>laboratory</container>
-<item>fax_</item>
-<en>Fax</en>
-<de>Fax</de>
-<custom>Fax</custom>
-</_translation>
-<_translation>
-<id>6</id>
-<container>laboratory</container>
-<item>postal_country_</item>
-<en>Country</en>
-<de>Land</de>
-<custom>Land</custom>
-</_translation>
-<_translation>
-<id>7</id>
-<container>laboratory</container>
-<item>postal_state_</item>
-<en>State</en>
-<de>Bundesland</de>
-<custom>Bundesland</custom>
-</_translation>
-<_translation>
-<id>8</id>
-<container>laboratory</container>
-<item>postal_district_</item>
-<en>District</en>
-<de>Bezirk</de>
-<custom>Bezirk</custom>
-</_translation>
-<_translation>
-<id>9</id>
-<container>laboratory</container>
-<item>postal_city_</item>
-<en>City</en>
-<de>Stadt</de>
-<custom>Stadt</custom>
-</_translation>
-<_translation>
-<id>10</id>
-<container>laboratory</container>
-<item>postal_postalcode_</item>
-<en>Postal code</en>
-<de>Postleitzahl</de>
-<custom>Postleitzahl</custom>
-</_translation>
-<_translation>
-<id>11</id>
-<container>laboratory</container>
-<item>postal_street_</item>
-<en>Street</en>
-<de>Straße</de>
-<custom>Straße</custom>
-</_translation>
-<_translation>
-<id>12</id>
-<container>laboratory</container>
-<item>postal_housnumber_</item>
-<en>Housenumber</en>
-<de>Hausnummer</de>
-<custom>Hausnummer</custom>
-</_translation>
-<_translation>
-<id>13</id>
-<container>laboratory</container>
-<item>billing_country_</item>
-<en>Country</en>
-<de>Land</de>
-<custom>Land</custom>
-</_translation>
-<_translation>
-<id>14</id>
-<container>laboratory</container>
-<item>billing_state_</item>
-<en>State</en>
-<de>Bundesland</de>
-<custom>Bundesland</custom>
-</_translation>
-<_translation>
-<id>15</id>
-<container>laboratory</container>
-<item>billing_district_</item>
-<en>District</en>
-<de>Bezirk</de>
-<custom>Bezirk</custom>
-</_translation>
-<_translation>
-<id>16</id>
-<container>laboratory</container>
-<item>billing_city_</item>
-<en>City</en>
-<de>Stadt</de>
-<custom>Stadt</custom>
-</_translation>
-<_translation>
-<id>17</id>
-<container>laboratory</container>
-<item>billing_postalcode_</item>
-<en>Postal code</en>
-<de>Postleitzahl</de>
-<custom>Postleitzahl</custom>
-</_translation>
-<_translation>
-<id>18</id>
-<container>laboratory</container>
-<item>billing_street_</item>
-<en>Street</en>
-<de>Straße</de>
-<custom>Straße</custom>
-</_translation>
-<_translation>
-<id>19</id>
-<container>laboratory</container>
-<item>billing_housenumber_</item>
-<en>Housenumber</en>
-<de>Hausnummer</de>
-<custom>Hausnummer</custom>
-</_translation>
-<_translation>
-<id>20</id>
-<container>laboratory</container>
-<item>lab_url_</item>
-<en>URL</en>
-<de>URL</de>
-<custom>URL</custom>
-</_translation>
-<_translation>
-<id>21</id>
-<container>laboratory</container>
-<item>account_type_</item>
-<en>Account type</en>
-<de>Konto-Typ</de>
-<custom>Konto-Typ</custom>
-</_translation>
-<_translation>
-<id>22</id>
-<container>laboratory</container>
-<item>account_iban_</item>
-<en>Account IBAN</en>
-<de>Konto IBAN</de>
-<custom>Konto IBAN</custom>
-</_translation>
-<_translation>
-<id>23</id>
-<container>laboratory</container>
-<item>account_bic_</item>
-<en>Account bic</en>
-<de>Konto bic</de>
-<custom>Konto bic</custom>
-</_translation>
-<_translation>
-<id>24</id>
-<container>laboratory</container>
-<item>account_bank_</item>
-<en>Account bank</en>
-<de>Konto Bank</de>
-<custom>Konto Bank</custom>
-</_translation>
-<_translation>
-<id>25</id>
-<container>laboratory</container>
-<item>account_branch_</item>
-<en>Account branch</en>
-<de>Konto Zweigstelle</de>
-<custom>Konto Zweigstelle</custom>
-</_translation>
-<_translation>
-<id>26</id>
-<container>laboratory</container>
-<item>accredited_</item>
-<en>Accredited</en>
-<de>Akkreditiert</de>
-<custom>Akkreditiert</custom>
-</_translation>
-<_translation>
-<id>27</id>
-<container>laboratory</container>
-<item>accreditation_</item>
-<en>Accreditation</en>
-<de>Akkreditierung</de>
-<custom>Akkreditierung</custom>
-</_translation>
-<_translation>
-<id>28</id>
-<container>laboratory</container>
-<item>acc_uid_</item>
-<en>Accreditation UID</en>
-<de>Akkreditierung UID</de>
-<custom>Akkreditierung UID</custom>
-</_translation>
-<_translation>
-<id>29</id>
-<container>laboratory</container>
-<item>acc_body_</item>
-<en>Accreditation body</en>
-<de>Akkreditierungsstelle</de>
-<custom>Akkreditierungsstelle</custom>
-</_translation>
-<_translation>
-<id>30</id>
-<container>laboratory</container>
-<item>acc_url_</item>
-<en>Accreditation URL</en>
-<de>Akkreditierungs-URL</de>
-<custom>Akkreditierungs-URL</custom>
-</_translation>
-<_translation>
-<id>31</id>
-<container>laboratory</container>
-<item>acc_letterhead_</item>
-<en>Letterhead</en>
-<de>Briefkopf</de>
-<custom>Briefkopf</custom>
-</_translation>
-<_translation>
-<id>32</id>
-<container>laboratory</container>
-<item>manager_</item>
-<en>Manager</en>
-<de>Manager</de>
-<custom>Manager</custom>
-</_translation>
-<_translation>
-<id>33</id>
-<container>tooltip</container>
-<item>click_to_upload</item>
-<en>Upload</en>
-<de>Hochladen</de>
-<custom>Hochladen</custom>
-</_translation>
-<_translation>
-<id>34</id>
-<container>laboratory_edit</container>
-<item>caption_</item>
-<en>Edit Laboratory</en>
-<de>Labor bearbeiten</de>
-<custom>Labor bearbeiten</custom>
-</_translation>
-<_translation>
-<id>35</id>
-<container>laboratory_edit</container>
-<item>tab_laboratory</item>
-<en>Laboratory</en>
-<de>Labor</de>
-<custom>Labor</custom>
-</_translation>
-<_translation>
-<id>36</id>
-<container>laboratory_edit</container>
-<item>tab_address_postal</item>
-<en>Postal</en>
-<de>Post</de>
-<custom>Post</custom>
-</_translation>
-<_translation>
-<id>37</id>
-<container>laboratory_edit</container>
-<item>address_billing</item>
-<en>Billing</en>
-<de>Rechnungsstellung</de>
-<custom>Rechnungsstellung</custom>
-</_translation>
-<_translation>
-<id>38</id>
-<container>laboratory_edit</container>
-<item>tab_bank</item>
-<en>Bank</en>
-<de>Bank</de>
-<custom>Bank</custom>
-</_translation>
-<_translation>
-<id>39</id>
-<container>laboratory_edit</container>
-<item>tab_accreditation</item>
-<en>Accreditation</en>
-<de>Akkreditierung</de>
-<custom>Akkreditierung</custom>
-</_translation>
-<_translation>
-<id>40</id>
-<container>laboratory_edit</container>
-<item>tab_logo_lab</item>
-<en>Lab Logo</en>
-<de>Labor-Logo</de>
-<custom>Labor-Logo</custom>
-</_translation>
-<_translation>
-<id>41</id>
-<container>laboratory_edit</container>
-<item>tab_logo_acc</item>
-<en>Acc. Logo</en>
-<de>Acc. Logo</de>
-<custom>Acc. Logo</custom>
-</_translation>
-<_translation>
-<id>42</id>
-<container>laboratory_edit</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>43</id>
-<container>laboratory_edit</container>
-<item>title_</item>
-<en>Title</en>
-<de>Titel</de>
-<custom>Titel</custom>
-</_translation>
-<_translation>
-<id>44</id>
-<container>laboratory_edit</container>
-<item>manager_</item>
-<en>Manger</en>
-<de>Manager</de>
-<custom>Manager</custom>
-</_translation>
-<_translation>
-<id>45</id>
-<container>laboratory_edit</container>
-<item>ustnr_</item>
-<en>VAT No</en>
-<de>MwSt.-Nr.</de>
-<custom>MwSt.-Nr.</custom>
-</_translation>
-<_translation>
-<id>46</id>
-<container>laboratory_edit</container>
-<item>fax_</item>
-<en>Fax</en>
-<de>Fax</de>
-<custom>Fax</custom>
-</_translation>
-<_translation>
-<id>47</id>
-<container>laboratory_edit</container>
-<item>lab_url_</item>
-<en>URL</en>
-<de>URL</de>
-<custom>URL</custom>
-</_translation>
-<_translation>
-<id>48</id>
-<container>laboratory_edit</container>
-<item>postal_country_</item>
-<en>Country</en>
-<de>Land</de>
-<custom>Land</custom>
-</_translation>
-<_translation>
-<id>49</id>
-<container>laboratory_edit</container>
-<item>postal_state_</item>
-<en>State</en>
-<de>Bundesland</de>
-<custom>Bundesland</custom>
-</_translation>
-<_translation>
-<id>50</id>
-<container>laboratory_edit</container>
-<item>postal_district_</item>
-<en>District</en>
-<de>Bezirk</de>
-<custom>Bezirk</custom>
-</_translation>
-<_translation>
-<id>51</id>
-<container>laboratory_edit</container>
-<item>postal_city_</item>
-<en>City</en>
-<de>Stadt</de>
-<custom>Stadt</custom>
-</_translation>
-<_translation>
-<id>52</id>
-<container>laboratory_edit</container>
-<item>postal_postalcode_</item>
-<en>Postal code</en>
-<de>Postleitzahl</de>
-<custom>Postleitzahl</custom>
-</_translation>
-<_translation>
-<id>53</id>
-<container>laboratory_edit</container>
-<item>postal_street_</item>
-<en>Street</en>
-<de>Straße</de>
-<custom>Straße</custom>
-</_translation>
-<_translation>
-<id>54</id>
-<container>laboratory_edit</container>
-<item>postal_housnumber_</item>
-<en>Housenumber</en>
-<de>Hausnummer</de>
-<custom>Hausnummer</custom>
-</_translation>
-<_translation>
-<id>55</id>
-<container>laboratory_edit</container>
-<item>billing_country_</item>
-<en>Country</en>
-<de>Land</de>
-<custom>Land</custom>
-</_translation>
-<_translation>
-<id>56</id>
-<container>laboratory_edit</container>
-<item>billing_state_</item>
-<en>State</en>
-<de>Bundesland</de>
-<custom>Bundesland</custom>
-</_translation>
-<_translation>
-<id>57</id>
-<container>laboratory_edit</container>
-<item>billing_district_</item>
-<en>District</en>
-<de>Bezirk</de>
-<custom>Bezirk</custom>
-</_translation>
-<_translation>
-<id>58</id>
-<container>laboratory_edit</container>
-<item>billing_city_</item>
-<en>City</en>
-<de>Stadt</de>
-<custom>Stadt</custom>
-</_translation>
-<_translation>
-<id>59</id>
-<container>laboratory_edit</container>
-<item>billing_postalcode_</item>
-<en>Postal code</en>
-<de>Postleitzahl</de>
-<custom>Postleitzahl</custom>
-</_translation>
-<_translation>
-<id>60</id>
-<container>laboratory_edit</container>
-<item>billing_street_</item>
-<en>Street</en>
-<de>Straße</de>
-<custom>Straße</custom>
-</_translation>
-<_translation>
-<id>61</id>
-<container>laboratory_edit</container>
-<item>billing_housenumber_</item>
-<en>Housenumber</en>
-<de>Hausnummer</de>
-<custom>Hausnummer</custom>
-</_translation>
-<_translation>
-<id>62</id>
-<container>laboratory_edit</container>
-<item>account_type_</item>
-<en>Account type</en>
-<de>Konto-Typ</de>
-<custom>Konto-Typ</custom>
-</_translation>
-<_translation>
-<id>63</id>
-<container>laboratory_edit</container>
-<item>account_iban_</item>
-<en>Account IBAN</en>
-<de>Konto IBAN</de>
-<custom>Konto IBAN</custom>
-</_translation>
-<_translation>
-<id>64</id>
-<container>laboratory_edit</container>
-<item>account_bic_</item>
-<en>Account BIC</en>
-<de>Konto BIC</de>
-<custom>Konto BIC</custom>
-</_translation>
-<_translation>
-<id>65</id>
-<container>laboratory_edit</container>
-<item>account_bank_</item>
-<en>Account bank</en>
-<de>Konto Bank</de>
-<custom>Konto Bank</custom>
-</_translation>
-<_translation>
-<id>66</id>
-<container>laboratory_edit</container>
-<item>account_branch_</item>
-<en>Account branch</en>
-<de>Konto Zweigstelle</de>
-<custom>Konto Zweigstelle</custom>
-</_translation>
-<_translation>
-<id>67</id>
-<container>laboratory_edit</container>
-<item>accredited_</item>
-<en>Accredited</en>
-<de>Akkreditiert</de>
-<custom>Akkreditiert</custom>
-</_translation>
-<_translation>
-<id>68</id>
-<container>laboratory_edit</container>
-<item>accreditation_</item>
-<en>Accreditation</en>
-<de>Akkreditierung</de>
-<custom>Akkreditierung</custom>
-</_translation>
-<_translation>
-<id>69</id>
-<container>laboratory_edit</container>
-<item>acc_uid_</item>
-<en>Accreditation UID</en>
-<de>Akkreditierung UID</de>
-<custom>Akkreditierung UID</custom>
-</_translation>
-<_translation>
-<id>70</id>
-<container>laboratory_edit</container>
-<item>acc_body_</item>
-<en>Accreditation body</en>
-<de>Akkreditierungsstelle</de>
-<custom>Akkreditierungsstelle</custom>
-</_translation>
-<_translation>
-<id>71</id>
-<container>laboratory_edit</container>
-<item>acc_url_</item>
-<en>Accreditation URL</en>
-<de>Akkreditierungs-URL</de>
-<custom>Akkreditierungs-URL</custom>
-</_translation>
-<_translation>
-<id>72</id>
-<container>laboratory_edit</container>
-<item>acc_letterhead_</item>
-<en>Letterhead</en>
-<de>Briefkopf</de>
-<custom>Briefkopf</custom>
-</_translation>
-<_translation>
-<id>73</id>
-<container>role</container>
-<item>caption_</item>
-<en>Role</en>
-<de>Rolle</de>
-<custom>Rolle</custom>
-</_translation>
-<_translation>
-<id>74</id>
-<container>role</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>75</id>
-<container>role</container>
-<item>title_</item>
-<en>Title</en>
-<de>Titel</de>
-<custom>Titel</custom>
-</_translation>
-<_translation>
-<id>76</id>
-<container>role</container>
-<item>description_</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
-</_translation>
-<_translation>
-<id>77</id>
-<container>form</container>
-<item>label_read_only</item>
-<en>(read only)</en>
-<de>(nur lesen)</de>
-<custom>(nur lesen)</custom>
-</_translation>
-<_translation>
-<id>78</id>
-<container>role_edit</container>
-<item>caption_</item>
-<en>Edit role</en>
-<de>Rolle bearbeiten</de>
-<custom>Rolle bearbeiten</custom>
-</_translation>
-<_translation>
-<id>79</id>
-<container>role_edit</container>
-<item>tab_role</item>
-<en>Role</en>
-<de>Rolle</de>
-<custom>Rolle</custom>
-</_translation>
-<_translation>
-<id>80</id>
-<container>role_edit</container>
-<item>tab_description</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
-</_translation>
-<_translation>
-<id>81</id>
-<container>role_edit</container>
-<item>tab_permission</item>
-<en>Permissions</en>
-<de>Berechtigungen</de>
-<custom>Berechtigungen</custom>
-</_translation>
-<_translation>
-<id>82</id>
-<container>role_edit</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>83</id>
-<container>role_edit</container>
-<item>title_</item>
-<en>Title</en>
-<de>Titel</de>
-<custom>Titel</custom>
-</_translation>
-<_translation>
-<id>84</id>
-<container>role_edit_permission_sbf</container>
-<item>caption_</item>
-<en>Permissions</en>
-<de>Berechtigungen</de>
-<custom>Berechtigungen</custom>
-</_translation>
-<_translation>
-<id>85</id>
-<container>role_edit_permission_sbf</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>86</id>
-<container>role_edit_permission_sbf</container>
-<item>role_</item>
-<en>Role</en>
-<de>Rolle</de>
-<custom>Rolle</custom>
-</_translation>
-<_translation>
-<id>87</id>
-<container>role_edit_permission_sbf</container>
-<item>can_create_</item>
-<en>Can create</en>
-<de>Kann erstellen</de>
-<custom>Kann erstellen</custom>
-</_translation>
-<_translation>
-<id>88</id>
-<container>role_edit_permission_sbf</container>
-<item>can_read_</item>
-<en>Can read</en>
-<de>Kann lesen</de>
-<custom>Kann lesen</custom>
-</_translation>
-<_translation>
-<id>89</id>
-<container>role_edit_permission_sbf</container>
-<item>can_update_</item>
-<en>Can update</en>
-<de>Kann aktualisieren</de>
-<custom>Kann aktualisieren</custom>
-</_translation>
-<_translation>
-<id>90</id>
-<container>role_edit_permission_sbf</container>
-<item>can_delete_</item>
-<en>Can delete</en>
-<de>Kann löschen</de>
-<custom>Kann löschen</custom>
-</_translation>
-<_translation>
-<id>91</id>
-<container>role_edit_permission_sbf</container>
-<item>permission_</item>
-<en>Permission</en>
-<de>Erlaubnis</de>
-<custom>Erlaubnis</custom>
-</_translation>
-<_translation>
-<id>92</id>
-<container>role_edit_permission_sbf</container>
-<item>description_</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
-</_translation>
-<_translation>
-<id>93</id>
-<container>msgbox</container>
-<item>save_record</item>
-<en>Save changes of record?</en>
-<de>Änderungen des Datensatzes speichern?</de>
-<custom>Änderungen des Datensatzes speichern?</custom>
-</_translation>
-<_translation>
-<id>94</id>
-<container>msgbox</container>
-<item>vbYesNo</item>
-<en>Choose an option</en>
-<de>Wählen Sie eine Option</de>
-<custom>Wählen Sie eine Option</custom>
-</_translation>
-<_translation>
-<id>95</id>
-<container>translation</container>
-<item>caption_</item>
-<en>Translations</en>
-<de>Übersetzungen</de>
-<custom>Übersetzungen</custom>
-</_translation>
-<_translation>
-<id>96</id>
-<container>translation</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>97</id>
-<container>translation</container>
-<item>container_</item>
-<en>Container</en>
-<de>Container</de>
-<custom>Container</custom>
-</_translation>
-<_translation>
-<id>98</id>
-<container>translation</container>
-<item>item_</item>
-<en>Item</en>
-<de>Item</de>
-<custom>Item</custom>
-</_translation>
-<_translation>
-<id>99</id>
-<container>translation</container>
-<item>en_</item>
-<en>EN</en>
-<de>EN</de>
-<custom>EN</custom>
-</_translation>
-<_translation>
-<id>100</id>
-<container>department</container>
-<item>caption_</item>
-<en>Department</en>
-<de>Abteilung</de>
-<custom>Abteilung</custom>
-</_translation>
-<_translation>
-<id>101</id>
-<container>department</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>102</id>
-<container>department</container>
-<item>title_</item>
-<en>Title</en>
-<de>Titel</de>
-<custom>Titel</custom>
-</_translation>
-<_translation>
-<id>103</id>
-<container>department</container>
-<item>description_</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
-</_translation>
-<_translation>
-<id>104</id>
-<container>department</container>
-<item>deactivate_</item>
-<en>Deactivate</en>
-<de>Deaktivieren</de>
-<custom>Deaktivieren</custom>
-</_translation>
-<_translation>
-<id>105</id>
-<container>department_edit</container>
-<item>caption_</item>
-<en>Edit department</en>
-<de>Abteilung bearbeiten</de>
-<custom>Abteilung bearbeiten</custom>
-</_translation>
-<_translation>
-<id>106</id>
-<container>department_edit</container>
-<item>tab_department</item>
-<en>Department</en>
-<de>Abteilung</de>
-<custom>Abteilung</custom>
-</_translation>
-<_translation>
-<id>107</id>
-<container>department_edit</container>
-<item>tab_description</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
-</_translation>
-<_translation>
-<id>108</id>
-<container>department_edit</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>109</id>
-<container>department_edit</container>
-<item>title_</item>
-<en>Title</en>
-<de>Titel</de>
-<custom>Titel</custom>
-</_translation>
-<_translation>
-<id>110</id>
-<container>department_edit</container>
-<item>deactivate_</item>
-<en>Deactivate</en>
-<de>Deaktivieren</de>
-<custom>Deaktivieren</custom>
-</_translation>
-<_translation>
-<id>111</id>
-<container>contact</container>
-<item>caption_</item>
-<en>Contact</en>
-<de>Kontakt</de>
-<custom>Kontakt</custom>
-</_translation>
-<_translation>
-<id>112</id>
-<container>contact</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>113</id>
-<container>contact</container>
-<item>salutation_</item>
-<en>Salutation</en>
-<de>Begrüßung</de>
-<custom>Begrüßung</custom>
-</_translation>
-<_translation>
-<id>114</id>
-<container>contact</container>
-<item>first_name_</item>
-<en>First name</en>
-<de>Vornamen</de>
-<custom>Vornamen</custom>
-</_translation>
-<_translation>
-<id>115</id>
-<container>contact</container>
-<item>last_name_</item>
-<en>Last name</en>
-<de>Nachname</de>
-<custom>Nachname</custom>
-</_translation>
-<_translation>
-<id>1467</id>
-<container>material</container>
-<item>supplier_</item>
-<en>Supplier</en>
-<de>Lieferant</de>
-<custom>Lieferant</custom>
-</_translation>
-<_translation>
-<id>1468</id>
-<container>material_edit</container>
-<item>supplier_</item>
-<en>Supplier</en>
-<de>Lieferant</de>
-<custom>Lieferant</custom>
-</_translation>
-<_translation>
-<id>1469</id>
-<container>request</container>
-<item>formulation_</item>
-<en>Formulation</en>
-<de>Formulierung</de>
-<custom>Formulierung</custom>
-</_translation>
-<_translation>
-<id>1470</id>
-<container>request_edit</container>
-<item>formulation_</item>
-<en>Formulation</en>
-<de>Formulierung</de>
-<custom>Formulierung</custom>
-</_translation>
-<_translation>
-<id>1471</id>
-<container>sticker_zebra</container>
-<item>103x199</item>
-<en>^XA    ^FX Top section with logo, name and address.  ^CF0,60  ^FO50,50^GFA,2698,2698,19,,P07gKFE,:::::::::::::::::gR0JFE,:::::::::::::::::::7gKFEK0JFE,::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::7gKFE,:::::::::::::::::::::::::::::::::::::^FS  ^FO220,50^FDLABDESK LIMS^FS  ^CF0,30  ^FO220,115^FDLeipziger Ring 14 a^FS  ^FO220,155^FD59558 Lippstadt^FS  ^FO220,195^FDGermany (NRW)^FS  ^FO50,250^GB700,3,3^FS    ^FX Second section with recipient address and permit information.  ^CFA,30  ^FO50,300^FD[SELECT @value = CAST(customer.name As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^FO50,340^FD[SELECT @value = CAST(customer.postal_street As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}] [SELECT @value = CAST(customer.postal_housenumber As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^FO50,380^FD[SELECT @value = CAST(customer.postal_postalcode As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}] [SELECT @value = CAST(customer.postal_city As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^FO50,420^FD[SELECT @value = CAST(customer.postal_country As nvarchar) FROM request INNER JOIN customer ON (request.customer = customer.id) WHERE request.id = {id}]^FS  ^CFA,15  ^FO500,300^GB250,150,3^FS  ^FO538,340^FDPO No.^FS  ^FO538,390^FD[SELECT @value = CAST(client_order_id As nvarchar) FROM request WHERE id = {id}]^FS  ^FO50,500^GB700,3,3^FS    ^FX Third section with bar code.  ^BY3,2,270  ^FO100,550^BC^FDSMP-[SELECT @value = CAST(id As nvarchar) FROM request WHERE id = {id}]^FS    ^FX Fourth section (the two boxes on the bottom).  ^FO50,900^GB700,250,3^FS  ^FO400,900^GB3,250,3^FS  ^CF0,40  ^FO100,960^FDHAZARDOUS^FS  ^FO100,1010^FDMATERIAL^FS  ^FO100,1060^FDHandle with care!^FS  ^CF0,190  ^FO450,900^GFA,8192,8192,32,,::::::::::::::gQ07F,gP01FF8,gP07FFE,:gP0JF,gO01JF8,:gO03JFC,:gO07JFE,gO07KF,gO0LF,gN01LF8,:gN03LFC,:gN07LFE,gN07MF,gN0NF,gM01NF8,:gM03NFC,:gM07NFE,gM07OF,gM0PF,gL01PF8,:gL03PFC,:gL07PFE,gL07QF,gL0RF,gK01RF8,:gK03RFC,:gK07RFE,gK07SF,gK0TF,gJ01TF8,:gJ03TFC,:gJ07TFE,gJ07UF,gJ0VF,gI01VF8,:gI03VFC,:gI07VFE,gI07WF,gI0XF,gH01XF8,:gH03XFC,:gH07XFE,gH07YF,gH0gF,gG01gF8,:gG03gFC,:gG07gFE,gG07gGF,gG0gHF,g01gHF8,:g03gHFC,:g07gHFE,g07MFN0NF,g0NFN0NF,Y01NFN0NF8,:Y03NFN0NFC,:Y07NFN0NFE,Y07NFN0OF,Y0OFN0OF,X01OFN0OF8,:X03OFN0OFC,:X07OFN0OFE,:X0PFN0PF,W01PFN0PF8,:W03PFN0PFC,:W07PFN0PFE,:W0QFN0QF,W0QFN0QF8,V01QFN0QF8,V03QFN0QFC,:V07QFN0QFE,:V0RFN0RF,V0RFN0RF8,U01RFN0RF8,U03RFN0RFC,:U07RFN0RFE,:U0SFN0SF,U0SFN0SF8,T01SFN0SF8,T03SFN0SFC,:T07SFN0SFE,:T0TFN0TF,T0TFN0TF8,S01TFN0TF8,S03TFN0TFC,:S07TFN0TFE,:S0UFN0UF,S0UFN0UF8,R01UFN0UF8,R03UFN0UFC,:R07UFN0UFE,:R0VFN0VF,R0VFN0VF8,Q01VFN0VF8,Q03VFN0VFC,:Q07VFN0VFE,:Q0WFN0WF,Q0WFN0WF8,P01WFN0WF8,P03WFN0WFC,:P07WFN0WFE,:P0XFN0XF,P0XFN0XF8,O01XFN0XF8,O03XFN0XFC,:O07XFN0XFE,:O0YFN0YF,O0YFN0YF8,N01hLF8,N03hLFC,:N07hLFE,:N0hNF,N0hNF8,M01hNF8,M03hNFC,:M07hNFE,:M0hPF,:L01hPF8,L03hPFC,:L07hPFE,:L0hRF,L0gHFN0gHF,K01gHFN0gHF8,K03gHFN0gHFC,:K07gHFN0gHFE,:K0gIFN0gIF,:J01gIFN0gIF8,J01gIFN0gIFC,J03gIFN0gIFC,J07gIFN0gIFE,:J0gJFN0gJF,:I01gJFN0gJF8,I01gJFN0gJFC,I03gJFN0gJFC,I07gJFN0gJFE,:I0gKFN0gKF,:001gKFN0gKF8,001gKFN0gKFC,003gKFN0gKFC,007gKFN0gKFE,:00iF,:01iF8,01iFC,03iFC,07iFE,:0iHF,:1iHF81iHFC3iHFC7iHFE:7!!::::7iHFE:3iHFC1iHFC0iHF,07iFE,,::::::::::::::^FS    ^FX Fourth section (security notes).  ^FO50,1200^GB700,3,3^FS  ^CFA,30  ^FO50,1250^FDIn case of damaged packaging contact^FS  ^FO50,1300^FDTel. +49 123 44 55 66 10^FS    ^XZ</en>
-<de>-</de>
-<custom>-</custom>
-</_translation>
-<_translation>
-<id>1472</id>
-<container>customer</container>
-<item>postal_country_</item>
-<en>Country</en>
-<de>Land</de>
-<custom>Land</custom>
-</_translation>
-<_translation>
-<id>1473</id>
-<container>customer</container>
-<item>postal_state_</item>
-<en>State</en>
-<de>Bundesland</de>
-<custom>Bundesland</custom>
-</_translation>
-<_translation>
-<id>1474</id>
-<container>customer</container>
-<item>postal_district_</item>
-<en>District</en>
-<de>Disctrict</de>
-<custom>Disctrict</custom>
-</_translation>
-<_translation>
-<id>1475</id>
-<container>customer</container>
-<item>postal_city_</item>
-<en>City</en>
-<de>Stadt</de>
-<custom>Stadt</custom>
-</_translation>
-<_translation>
-<id>1476</id>
-<container>customer</container>
-<item>postal_postalcode_</item>
-<en>Postal code</en>
-<de>Postleitzahl</de>
-<custom>Postleitzahl</custom>
-</_translation>
-<_translation>
-<id>1477</id>
-<container>customer</container>
-<item>postal_street_</item>
-<en>Street</en>
-<de>Straße</de>
-<custom>Straße</custom>
-</_translation>
-<_translation>
-<id>1478</id>
-<container>customer</container>
-<item>postal_housenumber_</item>
-<en>Housenumber</en>
-<de>Hausnummer</de>
-<custom>Hausnummer</custom>
-</_translation>
-<_translation>
-<id>1479</id>
-<container>customer</container>
-<item>billing_country_</item>
-<en>Country</en>
-<de>Land</de>
-<custom>Land</custom>
-</_translation>
-<_translation>
-<id>1480</id>
-<container>customer</container>
-<item>billing_state_</item>
-<en>State</en>
-<de>Bundesland</de>
-<custom>Bundesland</custom>
-</_translation>
-<_translation>
-<id>1481</id>
-<container>customer</container>
-<item>billing_district_</item>
-<en>District</en>
-<de>District</de>
-<custom>District</custom>
-</_translation>
-<_translation>
-<id>1482</id>
-<container>customer</container>
-<item>billing_city_</item>
-<en>City</en>
-<de>Stadt</de>
-<custom>Stadt</custom>
-</_translation>
-<_translation>
-<id>1483</id>
-<container>customer</container>
-<item>billing_postalcode_</item>
-<en>Postal code</en>
-<de>Postleitzahl</de>
-<custom>Postleitzahl</custom>
-</_translation>
-<_translation>
-<id>1484</id>
-<container>customer</container>
-<item>billing_street_</item>
-<en>Street</en>
-<de>Straße</de>
-<custom>Straße</custom>
-</_translation>
-<_translation>
-<id>1485</id>
-<container>customer</container>
-<item>billing_housenumber_</item>
-<en>Housenumber</en>
-<de>Hausnummer</de>
-<custom>Hausnummer</custom>
-</_translation>
-<_translation>
-<id>1486</id>
-<container>customer</container>
-<item>bank_</item>
-<en>Bank</en>
-<de>Bank</de>
-<custom>Bank</custom>
-</_translation>
-<_translation>
-<id>1487</id>
-<container>customer</container>
-<item>iban_</item>
-<en>IBAN</en>
-<de>IBAN</de>
-<custom>IBAN</custom>
-</_translation>
-<_translation>
-<id>1488</id>
-<container>customer</container>
-<item>bic_</item>
-<en>BIC</en>
-<de>BIC</de>
-<custom>BIC</custom>
-</_translation>
-<_translation>
-<id>1489</id>
-<container>customer</container>
-<item>vatnr_</item>
-<en>Vat-No.</en>
-<de>USt-IdNr.</de>
-<custom>USt-IdNr.</custom>
-</_translation>
-<_translation>
-<id>1490</id>
-<container>customer_edit</container>
-<item>tab_address_postal</item>
-<en>Address postal</en>
-<de>Postadresse</de>
-<custom>Postadresse</custom>
-</_translation>
-<_translation>
-<id>1491</id>
-<container>customer_edit</container>
-<item>tab_address_billing</item>
-<en>Address billing</en>
-<de>Rechnungsadresse</de>
-<custom>Rechnungsadresse</custom>
-</_translation>
-<_translation>
-<id>1492</id>
-<container>customer_edit</container>
-<item>tab_bank</item>
-<en>Bank</en>
-<de>Bank</de>
-<custom>Bank</custom>
-</_translation>
-<_translation>
-<id>1493</id>
-<container>customer_edit</container>
-<item>postal_country_</item>
-<en>Country</en>
-<de>Land</de>
-<custom>Land</custom>
-</_translation>
-<_translation>
-<id>1494</id>
-<container>customer_edit</container>
-<item>postal_state_</item>
-<en>State</en>
-<de>Bundesland</de>
-<custom>Bundesland</custom>
-</_translation>
-<_translation>
-<id>1495</id>
-<container>customer_edit</container>
-<item>postal_district_</item>
-<en>District</en>
-<de>District</de>
-<custom>District</custom>
-</_translation>
-<_translation>
-<id>1496</id>
-<container>customer_edit</container>
-<item>postal_city_</item>
-<en>City</en>
-<de>Stadt</de>
-<custom>Stadt</custom>
 </_translation>
 <_translation>
 <id>1615</id>
@@ -14053,6 +14797,246 @@
 <custom>Summe</custom>
 </_translation>
 <_translation>
+<id>1921</id>
+<container>INV-I001</container>
+<item>calc_vat_</item>
+<en>Vat</en>
+<de>MwSt</de>
+<custom>MwSt</custom>
+</_translation>
+<_translation>
+<id>1922</id>
+<container>INV-I001</container>
+<item>calc_sum_</item>
+<en>Overall</en>
+<de>Gesamt</de>
+<custom>Gesamt</custom>
+</_translation>
+<_translation>
+<id>1923</id>
+<container>invoice</container>
+<item>subject_invoice</item>
+<en>Subject</en>
+<de>Betreff</de>
+<custom>Betreff</custom>
+</_translation>
+<_translation>
+<id>1924</id>
+<container>invoice</container>
+<item>body_invoice</item>
+<en>Body</en>
+<de>Body</de>
+<custom>Body</custom>
+</_translation>
+<_translation>
+<id>1925</id>
+<container>mailqueue</container>
+<item>billing_customer_</item>
+<en>Invoice</en>
+<de>Rechnung</de>
+<custom>Rechnung</custom>
+</_translation>
+<_translation>
+<id>1926</id>
+<container>billing_customer_edit</container>
+<item>tab_email</item>
+<en>Email</en>
+<de>Email</de>
+<custom>Email</custom>
+</_translation>
+<_translation>
+<id>1927</id>
+<container>billing_customer_edit</container>
+<item>cc_email_</item>
+<en>CC-Email</en>
+<de>CC-Email</de>
+<custom>CC-Email</custom>
+</_translation>
+<_translation>
+<id>1928</id>
+<container>billing_customer_edit</container>
+<item>recipients_</item>
+<en>Recipients</en>
+<de>Empfänger</de>
+<custom>Empfänger</custom>
+</_translation>
+<_translation>
+<id>1929</id>
+<container>billing_customer_edit</container>
+<item>btn_generate</item>
+<en>Prepare Email</en>
+<de>Email erstellen</de>
+<custom>Email erstellen</custom>
+</_translation>
+<_translation>
+<id>1930</id>
+<container>billing_customer_edit</container>
+<item>subject_</item>
+<en>Subject</en>
+<de>Betreff</de>
+<custom>Betreff</custom>
+</_translation>
+<_translation>
+<id>1931</id>
+<container>billing_customer_edit</container>
+<item>body_</item>
+<en>Body</en>
+<de>Body</de>
+<custom>Body</custom>
+</_translation>
+<_translation>
+<id>1932</id>
+<container>billing_customer</container>
+<item>delivered_</item>
+<en>Delivered</en>
+<de>Gelierfert</de>
+<custom>Gelierfert</custom>
+</_translation>
+<_translation>
+<id>1933</id>
+<container>billing_customer_edit</container>
+<item>delivered_</item>
+<en>Delivered</en>
+<de>Gelierfert</de>
+<custom>Gelierfert</custom>
+</_translation>
+<_translation>
+<id>1934</id>
+<container>I001_header</container>
+<item>requests_</item>
+<en>Requests</en>
+<de>Aufträge</de>
+<custom>Aufträge</custom>
+</_translation>
+<_translation>
+<id>1935</id>
+<container>measurement_edit</container>
+<item>note_state_</item>
+<en>CP - Captured, AQ - Aquired, VD - Validated, RE - Retest, RT - Retract</en>
+<de>CP - Erfasst, AQ -Übernommen, VD - Validiert, RE - Neuprüfung, RT - Zurückweisen</de>
+<custom>CP - Erfasst, AQ -Übernommen, VD - Validiert, RE - Neuprüfung, RT - Zurückweisen</custom>
+</_translation>
+<_translation>
+<id>1936</id>
+<container>ribbon_bar</container>
+<item>btn_info</item>
+<en>Us</en>
+<de>Us</de>
+<custom>Us</custom>
+</_translation>
+<_translation>
+<id>1937</id>
+<container>project</container>
+<item>customer_</item>
+<en>Customer</en>
+<de>Kunde</de>
+<custom>Kunde</custom>
+</_translation>
+<_translation>
+<id>1938</id>
+<container>project_edit</container>
+<item>customer_</item>
+<en>Customer</en>
+<de>Kunde</de>
+<custom>Kunde</custom>
+</_translation>
+<_translation>
+<id>1939</id>
+<container>role</container>
+<item>hourly_rate_</item>
+<en>Hourly Rate</en>
+<de>Stundensatz</de>
+<custom>Stundensatz</custom>
+</_translation>
+<_translation>
+<id>1940</id>
+<container>role_edit</container>
+<item>hourly_rate_</item>
+<en>Hourly Rate</en>
+<de>Stundensatz</de>
+<custom>Stundensatz</custom>
+</_translation>
+<_translation>
+<id>1941</id>
+<container>task_edit</container>
+<item>tab_material</item>
+<en>Material</en>
+<de>Material</de>
+<custom>Material</custom>
+</_translation>
+<_translation>
+<id>1942</id>
+<container>task_edit</container>
+<item>tab_service</item>
+<en>Service</en>
+<de>Service</de>
+<custom>Service</custom>
+</_translation>
+<_translation>
+<id>1943</id>
+<container>task_material_sbf</container>
+<item>caption_</item>
+<en>Material</en>
+<de>Material</de>
+<custom>Material</custom>
+</_translation>
+<_translation>
+<id>1944</id>
+<container>task_material_sbf</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
+<custom>ID</custom>
+</_translation>
+<_translation>
+<id>1945</id>
+<container>task_material_sbf</container>
+<item>amount_</item>
+<en>Amount</en>
+<de>Menge</de>
+<custom>Menge</custom>
+</_translation>
+<_translation>
+<id>1946</id>
+<container>task_material_sbf</container>
+<item>task_</item>
+<en>Task</en>
+<de>Aufgabe</de>
+<custom>Aufgabe</custom>
+</_translation>
+<_translation>
+<id>2050</id>
+<container>request</container>
+<item>smp_id_</item>
+<en>SMP-ID</en>
+<de>SMP-ID</de>
+<custom>SMP-ID</custom>
+</_translation>
+<_translation>
+<id>2052</id>
+<container>request</container>
+<item>smp_id</item>
+<en>=&quot;SMP-&quot; &amp; [id]</en>
+<de>=&quot;SMP-&quot; &amp; [id]</de>
+<custom>=&quot;SMP-&quot; &amp; [id]</custom>
+</_translation>
+<_translation>
+<id>2068</id>
+<container>RPT-S001</container>
+<item>smp_id</item>
+<en>=&quot;SMP-&quot; &amp; [id]</en>
+<de>=&quot;SMP-&quot; &amp; [id]</de>
+<custom>=&quot;SMP-&quot; &amp; [id]</custom>
+</_translation>
+<_translation>
+<id>2371</id>
+<container>RPT-M002</container>
+<item>smp_id</item>
+<en>=&quot;SMP-&quot; &amp; [id]</en>
+<de>=&quot;SMP-&quot; &amp; [id]</de>
+<custom>=&quot;SMP-&quot; &amp; [id]</custom>
+</_translation>
+<_translation>
 <id>2509</id>
 <container>request_edit</container>
 <item>sample_not_stored</item>
@@ -14534,801 +15518,1692 @@ RT - Zurückziehen</custom>
 <custom>IBAN</custom>
 </_translation>
 <_translation>
-<id>39822</id>
-<container>RPT-M001</container>
-<item>bic_</item>
-<en>BIC</en>
-<de>BIC</de>
-<custom>BIC</custom>
-</_translation>
-<_translation>
-<id>39824</id>
-<container>RPT-M001</container>
-<item>hrg_not_translateable</item>
-<en>Leipzig</en>
-<de>Leipzig</de>
-<custom>Leipzig</custom>
-</_translation>
-<_translation>
-<id>39825</id>
-<container>RPT-M001</container>
-<item>hrg_</item>
-<en>HRG</en>
-<de>HRG</de>
-<custom>HRG</custom>
-</_translation>
-<_translation>
-<id>39826</id>
-<container>RPT-M001</container>
-<item>hrgid_not_translateable</item>
-<en>EB191918</en>
-<de>EB10101923</de>
-<custom>EB10101923</custom>
-</_translation>
-<_translation>
-<id>39827</id>
-<container>RPT-M001</container>
-<item>hrgid_</item>
-<en>HRG DI</en>
-<de>HRG ID</de>
-<custom>HRG ID</custom>
-</_translation>
-<_translation>
-<id>39829</id>
-<container>RPT-M001</container>
-<item>ustdid_</item>
-<en>VAT</en>
-<de>Ust-Id</de>
-<custom>Ust-Id</custom>
-</_translation>
-<_translation>
-<id>39831</id>
-<container>RPT-M001</container>
-<item>CEO_</item>
-<en>CEO</en>
-<de>CEO</de>
-<custom>CEO</custom>
-</_translation>
-<_translation>
-<id>39832</id>
-<container>RPT-M001</container>
-<item>company_</item>
-<en>Company</en>
-<de>Firma</de>
-<custom>Firma</custom>
-</_translation>
-<_translation>
-<id>39836</id>
-<container>RPT-M001</container>
-<item>telefone_</item>
-<en>Telefone</en>
-<de>Telefon</de>
-<custom>Telefon</custom>
-</_translation>
-<_translation>
-<id>39866</id>
-<container>M001_header</container>
-<item>caption_</item>
-<en>Labreport</en>
-<de>Laborbericht</de>
-<custom>Laborbericht</custom>
-</_translation>
-<_translation>
-<id>39867</id>
-<container>M001_header</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
-</_translation>
-<_translation>
-<id>39868</id>
-<container>M001_header</container>
-<item>customer_</item>
-<en>Customer</en>
-<de>Kunde</de>
-<custom>Kunde</custom>
-</_translation>
-<_translation>
-<id>39869</id>
-<container>M001_header</container>
-<item>client_order_id_</item>
-<en>Client Order ID</en>
-<de>Kundenbestell-Nr</de>
-<custom>Kundenbestell-Nr</custom>
+<id>131321</id>
+<container>material</container>
+<item>hazard_H250</item>
+<de>[H250] Entzündet sich in Berührung mit Luft von selbst.</de>
 </_translation>
 <_translation>
-<id>39870</id>
-<container>M001_header</container>
-<item>address_</item>
-<en>Address</en>
-<de>Adresse</de>
-<custom>Adresse</custom>
+<id>131322</id>
+<container>material</container>
+<item>hazard_H251</item>
+<de>[H251] Selbsterhitzungsfähig; kann in Brand geraten.</de>
 </_translation>
 <_translation>
-<id>39871</id>
-<container>M001_header</container>
-<item>contact_</item>
-<en>Contact</en>
-<de>Kontakt</de>
-<custom>Kontakt</custom>
+<id>131323</id>
+<container>material</container>
+<item>hazard_H252</item>
+<de>[H252] In großen Mengen selbsterhitzungsfähig; kann in Brand geraten.</de>
 </_translation>
 <_translation>
-<id>39872</id>
-<container>M001_header</container>
-<item>email_</item>
-<en>Email</en>
-<de>E-Mail</de>
-<custom>E-Mail</custom>
+<id>131324</id>
+<container>material</container>
+<item>hazard_H260</item>
+<de>[H260] In Berührung mit Wasser entstehen entzündbare Gase, die sich spontan entzünden können.</de>
 </_translation>
 <_translation>
-<id>40808</id>
-<container>RPT-M001</container>
-<item>smp_id</item>
-<en>=&quot;SMP-&quot; &amp; [id]</en>
-<de>=&quot;SMP-&quot; &amp; [id]</de>
-<custom>=&quot;SMP-&quot; &amp; [id]</custom>
+<id>131325</id>
+<container>material</container>
+<item>hazard_H261</item>
+<de>[H261] In Berührung mit Wasser entstehen entzündbare Gase.</de>
 </_translation>
 <_translation>
-<id>45687</id>
-<container>ribbon_bar</container>
-<item>btn_error</item>
-<en>Errors</en>
-<de>Errors</de>
-<custom>Errors</custom>
+<id>131326</id>
+<container>material</container>
+<item>hazard_H270</item>
+<de>[H270] Kann Brand verursachen oder verstärken; Oxidationsmittel.</de>
 </_translation>
 <_translation>
-<id>45732</id>
-<container>errorlog</container>
-<item>caption_</item>
-<en>Errors</en>
-<de>Errors</de>
-<custom>Errors</custom>
+<id>131327</id>
+<container>material</container>
+<item>hazard_H271</item>
+<de>[H271] Kann Brand oder Explosion verursachen; starkes Oxidationsmittel.</de>
 </_translation>
 <_translation>
-<id>45733</id>
-<container>errorlog</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
+<id>131328</id>
+<container>material</container>
+<item>hazard_H272</item>
+<de>[H272] Kann Brand verstärken; Oxidationsmittel.</de>
 </_translation>
 <_translation>
-<id>45735</id>
-<container>errorlog</container>
-<item>user_id_</item>
-<en>User ID</en>
-<de>User ID</de>
-<custom>User ID</custom>
+<id>131329</id>
+<container>material</container>
+<item>hazard_H280</item>
+<de>[H280] Enthält Gas unter Druck; kann bei Erwärmung explodieren.</de>
 </_translation>
 <_translation>
-<id>45739</id>
-<container>errorlog</container>
-<item>error_description_</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
+<id>131330</id>
+<container>material</container>
+<item>hazard_H281</item>
+<de>[H281] Enthält tiefgekühltes Gas; kann Kälteverbrennungen oder -verletzungen verursachen.</de>
 </_translation>
 <_translation>
-<id>45741</id>
-<container>errorlog</container>
-<item>created_at_</item>
-<en>Created at</en>
-<de>Erstell am</de>
-<custom>Erstell am</custom>
+<id>131331</id>
+<container>material</container>
+<item>hazard_H282</item>
+<de>[H282] Extrem entzündbare Chemikalie unter Druck; kann bei Erwärmung explodieren.</de>
 </_translation>
 <_translation>
-<id>45748</id>
-<container>errorlog</container>
-<item>error_id_</item>
-<en>Error ID</en>
-<de>Error ID</de>
-<custom>Error ID</custom>
+<id>131332</id>
+<container>material</container>
+<item>hazard_H283</item>
+<de>[H283] Entzündbare Chemikalie unter Druck; kann bei Erwärmung explodieren.</de>
 </_translation>
 <_translation>
-<id>47211</id>
-<container>setup</container>
-<item>verbous_</item>
-<en>Verbous</en>
-<de>Verbous</de>
-<custom>Verbous</custom>
+<id>131333</id>
+<container>material</container>
+<item>hazard_H284</item>
+<de>[H284] Chemikalie unter Druck; kann bei Erwärmung explodieren.</de>
 </_translation>
 <_translation>
-<id>47212</id>
-<container>setup</container>
-<item>verbous_tooltip</item>
-<en>Report all errors</en>
-<de>Fehler berichten</de>
-<custom>Fehler berichten</custom>
+<id>131334</id>
+<container>material</container>
+<item>hazard_H290</item>
+<de>[H290] Kann gegenüber Metallen korrosiv sein.</de>
 </_translation>
 <_translation>
-<id>51196</id>
-<container>system</container>
-<item>MDIMode-On</item>
-<en>Multi Document Interface switched on. Restart to take effect.</en>
-<de>Multi Document Interface ist eingeschaltet. Starten Sie neu, damit es wirksam wird.</de>
-<custom>Multi Document Interface ist eingeschaltet. Starten Sie neu, damit es wirksam wird.</custom>
+<id>131335</id>
+<container>material</container>
+<item>hazard_H300</item>
+<de>[H300] Lebensgefahr bei Verschlucken.</de>
 </_translation>
 <_translation>
-<id>51197</id>
-<container>system</container>
-<item>MDIMode-Off</item>
-<en>Multi Document Interface switched off. Restart to take effect.</en>
-<de>Multi Document Interface ist ausgeschaltet. Starten Sie neu, damit es wirksam wird.</de>
-<custom>Multi Document Interface ist ausgeschaltet. Starten Sie neu, damit es wirksam wird.</custom>
+<id>131336</id>
+<container>material</container>
+<item>hazard_H301</item>
+<de>[H301] Giftig bei Verschlucken.</de>
 </_translation>
 <_translation>
-<id>51485</id>
-<container>ribbon_bar</container>
-<item>btn_mdi</item>
-<en>MDI</en>
-<de>MDI</de>
-<custom>MDI</custom>
+<id>131337</id>
+<container>material</container>
+<item>hazard_H302</item>
+<de>[H302] Gesundheitsschädlich bei Verschlucken.</de>
 </_translation>
 <_translation>
-<id>54859</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_sub_clmn_dlg</item>
-<en>Columns</en>
-<de>Spalten</de>
-<custom>Spalten</custom>
+<id>131338</id>
+<container>material</container>
+<item>hazard_H303</item>
+<de>[H303] Kann bei Verschlucken gesundheitsschädlich sein.</de>
 </_translation>
 <_translation>
-<id>54860</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_sub_clmn_std</item>
-<en>Reset</en>
-<de>Zurücksetzen</de>
-<custom>Zurücksetzen</custom>
+<id>131339</id>
+<container>material</container>
+<item>hazard_H304</item>
+<de>[H304] Kann bei Verschlucken und Eindringen in die Atemwege tödlich sein.</de>
 </_translation>
 <_translation>
-<id>66560</id>
-<container>request-sub</container>
-<item>invoice_</item>
-<en>Invoice</en>
-<de>Abrechnen</de>
-<custom>Abrechnen</custom>
+<id>131340</id>
+<container>material</container>
+<item>hazard_H305</item>
+<de>[H305] Kann bei Verschlucken und Eindringen in die Atemwege gesundheitsschädlich sein.</de>
 </_translation>
 <_translation>
-<id>68337</id>
-<container>S001_header</container>
-<item>smp_id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
+<id>131341</id>
+<container>material</container>
+<item>hazard_H310</item>
+<de>[H310] Lebensgefahr bei Hautkontakt.</de>
 </_translation>
 <_translation>
-<id>68338</id>
-<container>S001_header</container>
-<item>smp_id</item>
-<en>=&quot;SMP-&quot;&amp;[ID]</en>
-<de>=&quot;SMP-&quot;&amp;[ID]</de>
-<custom>=&quot;SMP-&quot;&amp;[ID]</custom>
+<id>131342</id>
+<container>material</container>
+<item>hazard_H311</item>
+<de>[H311] Giftig bei Hautkontakt.</de>
 </_translation>
 <_translation>
-<id>68500</id>
-<container>M001_header</container>
-<item>smp_id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
+<id>131343</id>
+<container>material</container>
+<item>hazard_H312</item>
+<de>[H312] Gesundheitsschädlich bei Hautkontakt.</de>
 </_translation>
 <_translation>
-<id>68547</id>
-<container>M001_header</container>
-<item>smp_id</item>
-<en>=&quot;SMP-&quot;&amp;[ID]</en>
-<de>=&quot;SMP-&quot;&amp;[ID]</de>
-<custom>=&quot;SMP-&quot;&amp;[ID]</custom>
+<id>131344</id>
+<container>material</container>
+<item>hazard_H313</item>
+<de>[H313] Kann bei Hautkontakt gesundheitsschädlich sein.</de>
 </_translation>
 <_translation>
-<id>86876</id>
-<container>setup_edit</container>
-<item>verbous_</item>
-<en>Verbous</en>
-<de>Verbous</de>
-<custom>Verbous</custom>
+<id>131345</id>
+<container>material</container>
+<item>hazard_H314</item>
+<de>[H314] Verursacht schwere Verätzungen der Haut und schwere Augenschäden.</de>
 </_translation>
 <_translation>
-<id>99297</id>
-<container>view_measurement</container>
-<item>smp_date_</item>
-<en>Sampling Date</en>
-<de>Probenahmedatum</de>
-<custom>Probenahmedatum</custom>
+<id>131346</id>
+<container>material</container>
+<item>hazard_H315</item>
+<de>[H315] Verursacht Hautreizungen.</de>
 </_translation>
 <_translation>
-<id>99299</id>
-<container>view_measurement</container>
-<item>profile_</item>
-<en>Profile</en>
-<de>Profil</de>
-<custom>Profil</custom>
+<id>131347</id>
+<container>material</container>
+<item>hazard_H316</item>
+<de>[H316] Verursacht leichte Hautreizungen.</de>
 </_translation>
 <_translation>
-<id>99301</id>
-<container>view_measurement</container>
-<item>smppoint_</item>
-<en>Sample Point</en>
-<de>Probenahmestelle</de>
-<custom>Probenahmestelle</custom>
+<id>131348</id>
+<container>material</container>
+<item>hazard_H317</item>
+<de>[H317] Kann allergische Hautreaktionen verursachen.</de>
 </_translation>
 <_translation>
-<id>103685</id>
-<container>workflow_state_sbf</container>
-<item>role_</item>
-<en>Assigned Role</en>
-<de>Zugewiesene Rolle</de>
-<custom>Zugewiesene Rolle</custom>
+<id>131349</id>
+<container>material</container>
+<item>hazard_H318</item>
+<de>[H318] Verursacht schwere Augenschäden.</de>
 </_translation>
 <_translation>
-<id>103686</id>
-<container>workflow_state_sbf</container>
-<item>role_tooltip</item>
-<en>Choose role to get alert on pending requests in desktop</en>
-<de>Rolle auswähnlen um über ausstehende Analysenaufträge im Desktop informiert zu werden</de>
-<custom>Rolle auswähnlen um über ausstehende Analysenaufträge im Desktop informiert zu werden</custom>
+<id>131350</id>
+<container>material</container>
+<item>hazard_H319</item>
+<de>[H319] Verursacht schwere Augenreizung.</de>
 </_translation>
 <_translation>
-<id>103723</id>
-<container>desktop</container>
-<item>tab_request</item>
-<en>Requests to check</en>
-<de>Aufträge zur Prüfung</de>
-<custom>Aufträge zur Prüfung</custom>
+<id>131351</id>
+<container>material</container>
+<item>hazard_H320</item>
+<de>[H320] Verursacht Augenreizung.</de>
 </_translation>
 <_translation>
-<id>105127</id>
-<container>request</container>
-<item>role_</item>
-<en>Responsible</en>
-<de>Zuständig</de>
-<custom>Zuständig</custom>
+<id>131352</id>
+<container>material</container>
+<item>hazard_H330</item>
+<de>[H330] Lebensgefahr bei Einatmen.</de>
 </_translation>
 <_translation>
-<id>105726</id>
-<container>desktop_request_sbf</container>
-<item>caption_</item>
-<en>Requests</en>
-<de>Aufträge</de>
-<custom>Aufträge</custom>
+<id>131353</id>
+<container>material</container>
+<item>hazard_H331</item>
+<de>[H331] Giftig bei Einatmen.</de>
 </_translation>
 <_translation>
-<id>105727</id>
-<container>desktop_request_sbf</container>
-<item>id_</item>
-<en>ID</en>
-<de>ID</de>
-<custom>ID</custom>
+<id>131354</id>
+<container>material</container>
+<item>hazard_H332</item>
+<de>[H332] Gesundheitsschädlich bei Einatmen.</de>
 </_translation>
 <_translation>
-<id>105729</id>
-<container>desktop_request_sbf</container>
-<item>description_</item>
-<en>Description</en>
-<de>Beschreibung</de>
-<custom>Beschreibung</custom>
+<id>131355</id>
+<container>material</container>
+<item>hazard_H333</item>
+<de>[H333] Kann bei Einatmen gesundheitsschädlich sein.</de>
 </_translation>
 <_translation>
-<id>105731</id>
-<container>desktop_request_sbf</container>
-<item>smp_date_</item>
-<en>Sample Date</en>
-<de>Probenahmedatum</de>
-<custom>Probenahmedatum</custom>
+<id>131356</id>
+<container>material</container>
+<item>hazard_H334</item>
+<de>[H334] Kann bei Einatmen Allergie, asthmaartige Symptome oder Atembeschwerden verursachen.</de>
 </_translation>
 <_translation>
-<id>105733</id>
-<container>desktop_request_sbf</container>
-<item>client_sample_id_</item>
-<en>Client Sampe ID</en>
-<de>Kunden Probennummer</de>
-<custom>Kunden Probennummer</custom>
+<id>131357</id>
+<container>material</container>
+<item>hazard_H335</item>
+<de>[H335] Kann die Atemwege reizen.</de>
 </_translation>
 <_translation>
-<id>105735</id>
-<container>desktop_request_sbf</container>
-<item>client_order_id_</item>
-<en>Client Order ID</en>
-<de>Client Order ID</de>
-<custom>Client Order ID</custom>
+<id>131358</id>
+<container>material</container>
+<item>hazard_H336</item>
+<de>[H336] Kann Schläfrigkeit und Benommenheit verursachen.</de>
 </_translation>
 <_translation>
-<id>105737</id>
-<container>desktop_request_sbf</container>
-<item>customer_</item>
-<en>Customer</en>
-<de>Kunde</de>
-<custom>Kunde</custom>
+<id>131359</id>
+<container>material</container>
+<item>hazard_H340</item>
+<de>[H340] Kann genetische Defekte verursachen (Expositionsweg angeben, sofern schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht).</de>
 </_translation>
 <_translation>
-<id>105739</id>
-<container>desktop_request_sbf</container>
-<item>smptype_</item>
-<en>Sample Type</en>
-<de>Probentyp</de>
-<custom>Probentyp</custom>
+<id>131360</id>
+<container>material</container>
+<item>hazard_H341</item>
+<de>[H341] Kann vermutlich genetische Defekte verursachen (Expositionsweg angeben, sofern schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht).</de>
 </_translation>
 <_translation>
-<id>105741</id>
-<container>desktop_request_sbf</container>
-<item>smpmatrix_</item>
-<en>Sample Matrix</en>
-<de>Probenmatrix</de>
-<custom>Probenmatrix</custom>
+<id>131361</id>
+<container>material</container>
+<item>hazard_H350</item>
+<de>[H350] Kann Krebs erzeugen (Expositionsweg angeben, sofern schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht).</de>
 </_translation>
 <_translation>
-<id>105743</id>
-<container>desktop_request_sbf</container>
-<item>priority_</item>
-<en>Priority</en>
-<de>Priorität</de>
-<custom>Priorität</custom>
+<id>131362</id>
+<container>material</container>
+<item>hazard_H350i</item>
+<de>[H350i] Kann bei Einatmen Krebs erzeugen.</de>
 </_translation>
 <_translation>
-<id>105745</id>
-<container>desktop_request_sbf</container>
-<item>profile_</item>
-<en>Profile</en>
-<de>Profil</de>
-<custom>Profil</custom>
+<id>131363</id>
+<container>material</container>
+<item>hazard_H351</item>
+<de>[H351] Kann vermutlich Krebs erzeugen (Expositionsweg angeben, sofern schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht).</de>
 </_translation>
 <_translation>
-<id>105747</id>
-<container>desktop_request_sbf</container>
-<item>formulation_</item>
-<en>Formulation</en>
-<de>Formulierung</de>
-<custom>Formulierung</custom>
+<id>131364</id>
+<container>material</container>
+<item>hazard_H360</item>
+<de>[H360] Kann die Fruchtbarkeit beeinträchtigen oder das Kind im Mutterleib schädigen (konkrete Wirkung angeben, sofern bekannt) (Expositionsweg angeben, sofern schlüssig belegt ist, dass die Gefahr bei keinem anderen Expositionsweg besteht).</de>
 </_translation>
 <_translation>
-<id>105749</id>
-<container>desktop_request_sbf</container>
-<item>project_</item>
-<en>Project</en>
-<de>Projekt</de>
-<custom>Projekt</custom>
+<id>131365</id>
+<container>material</container>
+<item>hazard_H360F</item>
+<de>[H360F] Kann die Fruchtbarkeit beeinträchtigen.</de>
 </_translation>
 <_translation>
-<id>105751</id>
-<container>desktop_request_sbf</container>
-<item>sampler_</item>
-<en>Sampler</en>
-<de>Probennehmer</de>
-<custom>Probennehmer</custom>
+<id>131366</id>
+<container>material</container>
+<item>hazard_H360D</item>
+<de>[H360D] Kann das Kind im Mutterleib schädigen.</de>
 </_translation>
 <_translation>
-<id>115557</id>
-<container>setup</container>
-<item>num_format_</item>
-<en>Numerical Format</en>
-<de>Numerical Format</de>
-<custom>Numerical Format</custom>
+<id>131367</id>
+<container>material</container>
+<item>hazard_H360FD</item>
+<de>[H360FD] Kann die Fruchtbarkeit beeinträchtigen. Kann das Kind im Mutterleib schädigen.</de>
 </_translation>
 <_translation>
-<id>115559</id>
-<container>setup</container>
-<item>num_culture_</item>
-<en>Culture Code</en>
-<de>Culture Code</de>
-<custom>Culture Code</custom>
+<id>131368</id>
+<container>material</container>
+<item>hazard_H360Fd_</item>
+<de>[H360Fd] Kann die Fruchtbarkeit beeinträchtigen. Kann vermutlich das Kind im Mutterleib schädigen.</de>
 </_translation>
 <_translation>
-<id>115567</id>
-<container>setup_edit</container>
-<item>num_format_</item>
-<en>Numerical Format</en>
-<de>Numerical Format</de>
-<custom>Numerical Format</custom>
+<id>131369</id>
+<container>material</container>
+<item>hazard_H360Df</item>
+<de>[H360Df] Kann das Kind im Mutterleib schädigen. Kann vermutlich die Fruchtbarkeit beeinträchtigen.</de>
 </_translation>
 <_translation>
-<id>115569</id>
-<container>setup_edit</container>
-<item>num_culture_</item>
-<en>Culture Code</en>
-<de>Culture Code</de>
-<custom>Culture Code</custom>
+<id>131370</id>
+<container>material</container>
+<item>hazard_H361</item>
+<de>[H361] Kann vermutlich die Fruchtbarkeit beeinträchtigen oder das Kind im Mutterleib schädigen (konkrete Wirkung angeben, sofern bekannt) (Expositionsweg angeben, sofern schlüssig belegt ist, dass die Gefahr bei keinem anderen Expositionsweg besteht).</de>
 </_translation>
 <_translation>
-<id>116211</id>
-<container>template</container>
-<item>client_order_id_</item>
-<en>Client Order ID</en>
-<de>Client Order ID</de>
-<custom>Client Order ID</custom>
+<id>131371</id>
+<container>material</container>
+<item>hazard_H361f</item>
+<de>[H361f] Kann vermutlich die Fruchtbarkeit beeinträchtigen.</de>
 </_translation>
 <_translation>
-<id>116215</id>
-<container>template_edit</container>
-<item>client_order_id_</item>
-<en>Client Order ID</en>
-<de>Client Order ID</de>
-<custom>Client Order ID</custom>
+<id>131372</id>
+<container>material</container>
+<item>hazard_H361d</item>
+<de>[H361d] Kann vermutlich das Kind im Mutterleib schädigen.</de>
 </_translation>
 <_translation>
-<id>120471</id>
-<container>template_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
-<custom>Speichern</custom>
+<id>131373</id>
+<container>material</container>
+<item>hazard_H361fd</item>
+<de>[H361fd] Kann vermutlich die Fruchtbarkeit beeinträchtigen. Kann vermutlich das Kind im Mutterleib schädigen.</de>
 </_translation>
 <_translation>
-<id>121066</id>
-<container>translation_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131374</id>
+<container>material</container>
+<item>hazard_H362</item>
+<de>[H362] Kann Säuglinge über die Muttermilch schädigen.</de>
 </_translation>
 <_translation>
-<id>121100</id>
-<container>role_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131375</id>
+<container>material</container>
+<item>hazard_H370</item>
+<de>[H370] Schädigt die Organe (oder alle betroffenen Organe nennen, sofern bekannt) (Expositionsweg angeben, sofern schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht).</de>
 </_translation>
 <_translation>
-<id>121136</id>
-<container>workflow_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131376</id>
+<container>material</container>
+<item>hazard_H371</item>
+<de>[H371] Kann die Organe schädigen (oder alle betroffenen Organe nennen, sofern bekannt) (Expositionsweg angeben, sofern schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht).</de>
 </_translation>
 <_translation>
-<id>121192</id>
-<container>billing_customer_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131377</id>
+<container>material</container>
+<item>hazard_H372</item>
+<de>[H372] Schädigt die Organe (alle betroffenen Organe nennen) bei längerer oder wiederholter Exposition (Expositionsweg angeben, wenn schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht).</de>
 </_translation>
 <_translation>
-<id>121309</id>
-<container>laboratory_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131378</id>
+<container>material</container>
+<item>hazard_H373</item>
+<de>[H373] Kann die Organe schädigen (alle betroffenen Organe nennen, sofern bekannt) bei längerer oder wiederholter Exposition (Expositionsweg angeben, wenn schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht).</de>
 </_translation>
 <_translation>
-<id>121317</id>
-<container>department_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131379</id>
+<container>material</container>
+<item>hazard_400</item>
+<de>[400] Sehr giftig für Wasserorganismen.</de>
 </_translation>
 <_translation>
-<id>121335</id>
-<container>workplace_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131380</id>
+<container>material</container>
+<item>hazard_H401</item>
+<de>[H401] Giftig für Wasserorganismen.</de>
 </_translation>
 <_translation>
-<id>121487</id>
-<container>customer_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131381</id>
+<container>material</container>
+<item>hazard_H402</item>
+<de>[H402] Schädlich für Wasserorganismen.</de>
 </_translation>
 <_translation>
-<id>121615</id>
-<container>contact_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131382</id>
+<container>material</container>
+<item>hazard_H410</item>
+<de>[H410] Sehr giftig für Wasserorganismen mit langfristiger Wirkung.</de>
 </_translation>
 <_translation>
-<id>121623</id>
-<container>manufacturer_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131383</id>
+<container>material</container>
+<item>hazard_H411</item>
+<de>[H411] Giftig für Wasserorganismen, mit langfristiger Wirkung.</de>
 </_translation>
 <_translation>
-<id>121649</id>
-<container>supplier_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131384</id>
+<container>material</container>
+<item>hazard_H412</item>
+<de>[H412] Schädlich für Wasserorganismen, mit langfristiger Wirkung.</de>
 </_translation>
 <_translation>
-<id>121749</id>
-<container>priority_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131385</id>
+<container>material</container>
+<item>hazard_H413</item>
+<de>[H413] Kann für Wasserorganismen schädlich sein, mit langfristiger Wirkung.</de>
 </_translation>
 <_translation>
-<id>121758</id>
-<container>technique_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131386</id>
+<container>material</container>
+<item>hazard_H420</item>
+<de>[H420] Schädigt die öffentliche Gesundheit und die Umwelt durch Ozonabbau in der äußeren Atmosphäre.</de>
 </_translation>
 <_translation>
-<id>121767</id>
-<container>instype_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131387</id>
+<container>material</container>
+<item>EUH_EUH001</item>
+<de>[EUH001] In trockenem Zustand explosiv. aufgehoben, durch H206 – H208 ersetzt</de>
 </_translation>
 <_translation>
-<id>121776</id>
-<container>service_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131388</id>
+<container>material</container>
+<item>EUH_EUH006</item>
+<de>[EUH006] Mit und ohne Luft explosionsfähig. aufgehoben, durch H230/P420 ersetzt</de>
 </_translation>
 <_translation>
-<id>121809</id>
+<id>131389</id>
+<container>material</container>
+<item>EUH_EUH014</item>
+<de>[EUH014] Reagiert heftig mit Wasser.</de>
+</_translation>
+<_translation>
+<id>131390</id>
+<container>material</container>
+<item>EUH_EUH018</item>
+<de>[EUH018] Kann bei Verwendung explosionsfähige / entzündbare Dampf/Luft-Gemische bilden.</de>
+</_translation>
+<_translation>
+<id>131391</id>
+<container>material</container>
+<item>EUH_EUH019</item>
+<de>[EUH019] Kann explosionsfähige Peroxide bilden.</de>
+</_translation>
+<_translation>
+<id>131392</id>
+<container>material</container>
+<item>EUH_EUH029</item>
+<de>[EUH029] Entwickelt bei Berührung mit Wasser giftige Gase.</de>
+</_translation>
+<_translation>
+<id>131393</id>
+<container>material</container>
+<item>EUH_EUH031</item>
+<de>[EUH031] Entwickelt bei Berührung mit Säure giftige Gase.</de>
+</_translation>
+<_translation>
+<id>131394</id>
+<container>material</container>
+<item>EUH_EUH032</item>
+<de>[EUH032] Entwickelt bei Berührung mit Säure sehr giftige Gase.</de>
+</_translation>
+<_translation>
+<id>131395</id>
+<container>material</container>
+<item>EUH_EUH044</item>
+<de>[EUH044] Explosionsgefahr bei Erhitzen unter Einschluss.</de>
+</_translation>
+<_translation>
+<id>131396</id>
+<container>material</container>
+<item>EUH_EUH059</item>
+<de>[EUH059] Die Ozonschicht schädigend. aufgehoben, durch H420 ersetzt</de>
+</_translation>
+<_translation>
+<id>131397</id>
+<container>material</container>
+<item>EUH_EUH066</item>
+<de>[EUH066] Wiederholter Kontakt kann zu spröder oder rissiger Haut führen.</de>
+</_translation>
+<_translation>
+<id>131398</id>
+<container>material</container>
+<item>EUH_EUH070</item>
+<de>[EUH070] Giftig bei Berührung mit den Augen.</de>
+</_translation>
+<_translation>
+<id>131399</id>
+<container>material</container>
+<item>EUH_EUH071</item>
+<de>[EUH071] Wirkt ätzend auf die Atemwege.</de>
+</_translation>
+<_translation>
+<id>131400</id>
+<container>material</container>
+<item>EUH_EUH201</item>
+<de>[EUH201] Enthält Blei. Nicht für den Anstrich von Gegenständen verwenden, die von Kindern gekaut oder gelutscht werden könnten.</de>
+</_translation>
+<_translation>
+<id>131401</id>
+<container>material</container>
+<item>EUH_EUH201A</item>
+<de>[EUH201A] Achtung! Enthält Blei.</de>
+</_translation>
+<_translation>
+<id>131402</id>
+<container>material</container>
+<item>EUH_EUH202</item>
+<de>[EUH202] Cyanacrylat. Gefahr. Klebt innerhalb von Sekunden Haut und Augenlider zusammen. Darf nicht in die Hände von Kindern gelangen.</de>
+</_translation>
+<_translation>
+<id>131403</id>
+<container>material</container>
+<item>EUH_EUH203</item>
+<de>[EUH203] Enthält Chrom(VI). Kann allergische Reaktionen hervorrufen.</de>
+</_translation>
+<_translation>
+<id>131404</id>
+<container>material</container>
+<item>EUH_EUH204</item>
+<de>[EUH204] Enthält Isocyanate. Kann allergische Reaktionen hervorrufen.</de>
+</_translation>
+<_translation>
+<id>131405</id>
+<container>material</container>
+<item>EUH_EUH205</item>
+<de>[EUH205] Enthält epoxidhaltige Verbindungen. Kann allergische Reaktionen hervorrufen.</de>
+</_translation>
+<_translation>
+<id>131406</id>
+<container>material</container>
+<item>EUH_EUH206</item>
+<de>[EUH206] Achtung! Nicht zusammen mit anderen Produkten verwenden, da gefährliche Gase (Chlor) freigesetzt werden können.</de>
+</_translation>
+<_translation>
+<id>131407</id>
+<container>material</container>
+<item>EUH_EUH207</item>
+<de>[EUH207] Achtung! Enthält Cadmium. Bei der Verwendung entstehen gefährliche Dämpfe. Hinweise des Herstellers beachten. Sicherheitsanweisungen einhalten.</de>
+</_translation>
+<_translation>
+<id>131408</id>
+<container>material</container>
+<item>EUH_EUH208</item>
+<de>[EUH208] Enthält (Name des sensibilisierenden Stoffes). Kann allergische Reaktionen hervorrufen.</de>
+</_translation>
+<_translation>
+<id>131409</id>
+<container>material</container>
+<item>EUH_EUH209</item>
+<de>[EUH209] Kann bei Verwendung leicht entzündbar werden.</de>
+</_translation>
+<_translation>
+<id>131410</id>
+<container>material</container>
+<item>EUH_EUH209A</item>
+<de>[EUH209A] Kann bei Verwendung entzündbar werden.</de>
+</_translation>
+<_translation>
+<id>131411</id>
+<container>material</container>
+<item>EUH_EUH210</item>
+<de>[EUH210] Sicherheitsdatenblatt auf Anfrage erhältlich.</de>
+</_translation>
+<_translation>
+<id>131412</id>
+<container>material</container>
+<item>EUH_EUH211</item>
+<de>[EUH211] Achtung! Beim Sprühen können gefährliche lungengängige Tröpfchen entstehen. Aerosol oder Nebel nicht einatmen.</de>
+</_translation>
+<_translation>
+<id>131413</id>
+<container>material</container>
+<item>EUH_EUH212</item>
+<de>[EUH212] Achtung! Bei der Verwendung kann gefährlicher lungengängiger Staub entstehen. Staub nicht einatmen.</de>
+</_translation>
+<_translation>
+<id>131414</id>
+<container>material</container>
+<item>EUH_EUH380</item>
+<de>[EUH380] Kann beim Menschen endokrine Störungen verursachen.</de>
+</_translation>
+<_translation>
+<id>131415</id>
+<container>material</container>
+<item>EUH_EUH381</item>
+<de>[EUH381] Steht in dem Verdacht, beim Menschen endokrine Störungen zu verursachen.</de>
+</_translation>
+<_translation>
+<id>131416</id>
+<container>material</container>
+<item>EUH_EUH401</item>
+<de>[EUH401] Zur Vermeidung von Risiken für Mensch und Umwelt die Gebrauchsanleitung einhalten.</de>
+</_translation>
+<_translation>
+<id>131417</id>
+<container>material</container>
+<item>EUH_EUH430</item>
+<de>[EUH430] Kann endokrine Störungen in der Umwelt verursachen.</de>
+</_translation>
+<_translation>
+<id>131418</id>
+<container>material</container>
+<item>EUH_EUH431</item>
+<de>[EUH431] Steht in dem Verdacht, endokrine Störungen in der Umwelt zu verursachen.</de>
+</_translation>
+<_translation>
+<id>131419</id>
+<container>material</container>
+<item>EUH_EUH440</item>
+<de>[EUH440] Anreicherung in der Umwelt und in lebenden Organismen einschließlich Menschen.</de>
+</_translation>
+<_translation>
+<id>131420</id>
+<container>material</container>
+<item>EUH_EUH441</item>
+<de>[EUH441] Starke Anreicherung in der Umwelt und in lebenden Organismen einschließlich Menschen.</de>
+</_translation>
+<_translation>
+<id>131421</id>
+<container>material</container>
+<item>EUH_EUH450</item>
+<de>[EUH450] Kann lang anhaltende und diffuse Verschmutzung von Wasserressourcen verursachen.</de>
+</_translation>
+<_translation>
+<id>131422</id>
+<container>material</container>
+<item>EUH_EUH451</item>
+<de>[EUH451] Kann sehr lang anhaltende und diffuse Verschmutzung von Wasserressourcen verursachen.</de>
+</_translation>
+<_translation>
+<id>131423</id>
+<container>material</container>
+<item>precautionary_P101</item>
+<de>[P101] Ist ärztlicher Rat erforderlich, Verpackung oder Kennzeichnungsetikett bereithalten.</de>
+</_translation>
+<_translation>
+<id>131424</id>
+<container>material</container>
+<item>precautionary_P102</item>
+<de>[P102] Darf nicht in die Hände von Kindern gelangen.</de>
+</_translation>
+<_translation>
+<id>131425</id>
+<container>material</container>
+<item>precautionary_P103</item>
+<de>[P103] Vor Gebrauch Kennzeichnungsetikett lesen.</de>
+</_translation>
+<_translation>
+<id>131426</id>
+<container>material</container>
+<item>precautionary_P201</item>
+<de>[P201] Vor Gebrauch besondere Anweisungen einholen.</de>
+</_translation>
+<_translation>
+<id>131427</id>
+<container>material</container>
+<item>precautionary_P202</item>
+<de>[P202] Vor Gebrauch alle Sicherheitshinweise lesen und verstehen.</de>
+</_translation>
+<_translation>
+<id>131428</id>
+<container>material</container>
+<item>precautionary_P210</item>
+<de>[P210] Von Hitze, heißen Oberflächen, Funken, offenen Flammen sowie anderen Zündquellenarten fernhalten. Nicht rauchen.</de>
+</_translation>
+<_translation>
+<id>131429</id>
+<container>material</container>
+<item>precautionary_P211</item>
+<de>[P211] Nicht gegen offene Flamme oder andere Zündquelle sprühen.</de>
+</_translation>
+<_translation>
+<id>131430</id>
+<container>material</container>
+<item>precautionary_P212</item>
+<de>[P212] Erhitzen unter Einschluss und Reduzierung des Desensibilisierungs­mittels vermeiden.</de>
+</_translation>
+<_translation>
+<id>131431</id>
+<container>material</container>
+<item>precautionary_P220</item>
+<de>[P220] Von Kleidung und anderen brennbaren Materialien fernhalten. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Von Kleidung /…/ brennbaren Materialien fernhalten/entfernt aufbewahren.)</de>
+</_translation>
+<_translation>
+<id>131432</id>
+<container>material</container>
+<item>precautionary_P221</item>
+<de>[P221] (Mischen mit brennbaren Stoffen / … unbedingt verhindern.) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131433</id>
+<container>material</container>
+<item>precautionary_P222</item>
+<de>[P222] Keinen Kontakt mit Luft zulassen. (Bis zum Inkrafttreten der 4. ATP am 1. Dezember 2014: Kontakt mit Luft nicht zulassen; Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Berührung mit Luft vermeiden.)</de>
+</_translation>
+<_translation>
+<id>131434</id>
+<container>material</container>
+<item>precautionary_P223</item>
+<de>[P223] Keinen Kontakt mit Wasser zulassen. (Bis zum Inkrafttreten der 4. ATP am 1. Dezember 2014: Kontakt mit Wasser wegen heftiger Reaktion und möglichem Aufflammen unbedingt verhindern.)</de>
+</_translation>
+<_translation>
+<id>131435</id>
+<container>material</container>
+<item>precautionary_P230</item>
+<de>[P230] Feucht halten mit … . (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen)</de>
+</_translation>
+<_translation>
+<id>131436</id>
+<container>material</container>
+<item>precautionary_P231</item>
+<de>[P231] Inhalt unter inertem Gas/… handhaben und aufbewahren. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen) (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Unter inertem Gas handhaben.)</de>
+</_translation>
+<_translation>
+<id>131437</id>
+<container>material</container>
+<item>precautionary_P232</item>
+<de>[P232] Vor Feuchtigkeit schützen.</de>
+</_translation>
+<_translation>
+<id>131438</id>
+<container>material</container>
+<item>precautionary_P233</item>
+<de>[P233] Behälter dicht verschlossen halten.</de>
+</_translation>
+<_translation>
+<id>131439</id>
+<container>material</container>
+<item>precautionary_P234</item>
+<de>[P234] Nur in Originalverpackung aufbewahren. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Nur im Originalbehälter aufbewahren.)</de>
+</_translation>
+<_translation>
+<id>131440</id>
+<container>material</container>
+<item>precautionary_P235</item>
+<de>[P235] Kühl halten.</de>
+</_translation>
+<_translation>
+<id>131441</id>
+<container>material</container>
+<item>precautionary_P240</item>
+<de>[P240] Behälter und zu befüllende Anlage erden.</de>
+</_translation>
+<_translation>
+<id>131442</id>
+<container>material</container>
+<item>precautionary_P241</item>
+<de>[P241] Explosionsgeschützte [elektrische … / Lüftungs-… / Beleuchtungs-… / …] Geräte verwenden. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen) (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Explosionsgeschützte</de>
+</_translation>
+<_translation>
+<id>131443</id>
+<container>material</container>
+<item>precautionary_P242</item>
+<de>[P242] Funkenarmes Werkzeug verwenden. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Nur funkenfreies Werkzeug verwenden.)</de>
+</_translation>
+<_translation>
+<id>131444</id>
+<container>material</container>
+<item>precautionary_P243</item>
+<de>[P243] Maßnahmen gegen elektrostatische Entladungen treffen.</de>
+</_translation>
+<_translation>
+<id>131445</id>
+<container>material</container>
+<item>precautionary_P244</item>
+<de>[P244] Druckminderer frei von Fett und Öl halten.</de>
+</_translation>
+<_translation>
+<id>131446</id>
+<container>material</container>
+<item>precautionary_P250</item>
+<de>[P250] Nicht schleifen / stoßen / reiben / … . (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen)</de>
+</_translation>
+<_translation>
+<id>131447</id>
+<container>material</container>
+<item>precautionary_P251</item>
+<de>[P251] Nicht durchstechen oder verbrennen, auch nicht nach der Verwendung.</de>
+</_translation>
+<_translation>
+<id>131448</id>
+<container>material</container>
+<item>precautionary_P260</item>
+<de>[P260] Staub / Rauch / Gas / Nebel / Dampf / Aerosol nicht einatmen.</de>
+</_translation>
+<_translation>
+<id>131449</id>
+<container>material</container>
+<item>precautionary_P261</item>
+<de>[P261] Einatmen von Staub / Rauch / Gas / Nebel / Dampf / Aerosol vermeiden.</de>
+</_translation>
+<_translation>
+<id>131450</id>
+<container>material</container>
+<item>precautionary_P262</item>
+<de>[P262] Nicht in die Augen, auf die Haut oder auf die Kleidung gelangen lassen.</de>
+</_translation>
+<_translation>
+<id>131451</id>
+<container>material</container>
+<item>precautionary_P263</item>
+<de>[P263] Berührung während der Schwangerschaft und Stillzeit vermeiden. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Kontakt während der Schwangerschaft / und der Stillzeit vermeiden.)</de>
+</_translation>
+<_translation>
+<id>131452</id>
+<container>material</container>
+<item>precautionary_P264</item>
+<de>[P264] Nach Gebrauch … gründlich waschen. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen)</de>
+</_translation>
+<_translation>
+<id>131453</id>
+<container>material</container>
+<item>precautionary_P270</item>
+<de>[P270] Bei Gebrauch nicht essen, trinken oder rauchen.</de>
+</_translation>
+<_translation>
+<id>131454</id>
+<container>material</container>
+<item>precautionary_P271</item>
+<de>[P271] Nur im Freien oder in gut belüfteten Räumen verwenden.</de>
+</_translation>
+<_translation>
+<id>131455</id>
+<container>material</container>
+<item>precautionary_P272</item>
+<de>[P272] Kontaminierte Arbeitskleidung nicht außerhalb des Arbeitsplatzes tragen.</de>
+</_translation>
+<_translation>
+<id>131456</id>
+<container>material</container>
+<item>precautionary_P273</item>
+<de>[P273] Freisetzung in die Umwelt vermeiden.</de>
+</_translation>
+<_translation>
+<id>131457</id>
+<container>material</container>
+<item>precautionary_P280</item>
+<de>[P280] Schutzhandschuhe / Schutzkleidung / Augenschutz / Gesichtsschutz tragen.</de>
+</_translation>
+<_translation>
+<id>131458</id>
+<container>material</container>
+<item>precautionary_P281</item>
+<de>[P281] (Vorgeschriebene persönliche Schutzausrüstung verwenden.) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131459</id>
+<container>material</container>
+<item>precautionary_P282</item>
+<de>[P282] Schutzhandschuhe mit Kälteisolierung und zusätzlich Gesichtsschild oder Augenschutz tragen. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Schutzhandschuhe / Gesichtsschild / Augenschutz mit Kälteisolierung tragen.)</de>
+</_translation>
+<_translation>
+<id>131460</id>
+<container>material</container>
+<item>precautionary_P283</item>
+<de>[P283] Schwer entflammbare oder flammhemmende Kleidung tragen. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Schwer entflammbare / flammhemmende Kleidung tragen.)</de>
+</_translation>
+<_translation>
+<id>131461</id>
+<container>material</container>
+<item>precautionary_P284</item>
+<de>[P284] [Bei unzureichender Belüftung] Atemschutz tragen. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Atemschutz tragen.)</de>
+</_translation>
+<_translation>
+<id>131462</id>
+<container>material</container>
+<item>precautionary_P285</item>
+<de>[P285] (Bei unzureichender Belüftung Atemschutz tragen.) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131463</id>
+<container>material</container>
+<item>precautionary_P301</item>
+<de>[P301] Bei Verschlucken:</de>
+</_translation>
+<_translation>
+<id>131464</id>
+<container>material</container>
+<item>precautionary_P302</item>
+<de>[P302] Bei Berührung mit der Haut:</de>
+</_translation>
+<_translation>
+<id>131465</id>
+<container>material</container>
+<item>precautionary_P303</item>
+<de>[P303] Bei Berührung mit der Haut (oder dem Haar):</de>
+</_translation>
+<_translation>
+<id>131466</id>
+<container>material</container>
+<item>precautionary_P304</item>
+<de>[P304] Bei Einatmen:</de>
+</_translation>
+<_translation>
+<id>131467</id>
+<container>material</container>
+<item>precautionary_P305</item>
+<de>[P305] Bei Kontakt mit den Augen:</de>
+</_translation>
+<_translation>
+<id>131468</id>
+<container>material</container>
+<item>precautionary_P306</item>
+<de>[P306] Bei kontaminierter Kleidung:</de>
+</_translation>
+<_translation>
+<id>131469</id>
+<container>material</container>
+<item>precautionary_P307</item>
+<de>[P307] (Bei Exposition: … ) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131470</id>
+<container>material</container>
+<item>precautionary_P308</item>
+<de>[P308] Bei Exposition oder falls betroffen:</de>
+</_translation>
+<_translation>
+<id>131471</id>
+<container>material</container>
+<item>precautionary_P309</item>
+<de>[P309] (Bei Exposition oder Unwohlsein: … ) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131472</id>
+<container>material</container>
+<item>precautionary_P310</item>
+<de>[P310] Sofort Giftinformationszentrum, Arzt oder … anrufen.</de>
+</_translation>
+<_translation>
+<id>131473</id>
+<container>material</container>
+<item>precautionary_P311</item>
+<de>[P311] Giftinformationszentrum, Arzt oder … anrufen.</de>
+</_translation>
+<_translation>
+<id>131474</id>
+<container>material</container>
+<item>precautionary_P312</item>
+<de>[P312] Bei Unwohlsein Giftinformationszentrum / Arzt / … anrufen.</de>
+</_translation>
+<_translation>
+<id>131475</id>
+<container>material</container>
+<item>precautionary_P313</item>
+<de>[P313] Ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen.</de>
+</_translation>
+<_translation>
+<id>131476</id>
+<container>material</container>
+<item>precautionary_P314</item>
+<de>[P314] Bei Unwohlsein ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen.</de>
+</_translation>
+<_translation>
+<id>131477</id>
+<container>material</container>
+<item>precautionary_P315</item>
+<de>[P315] Sofort ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen.</de>
+</_translation>
+<_translation>
+<id>131478</id>
+<container>material</container>
+<item>precautionary_P320</item>
+<de>[P320] Besondere Behandlung dringend erforderlich (siehe … auf diesem Kennzeichnungsetikett). (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen)</de>
+</_translation>
+<_translation>
+<id>131479</id>
+<container>material</container>
+<item>precautionary_P321</item>
+<de>[P321] Besondere Behandlung (siehe … auf diesem Kennzeichnungsetikett). (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen)</de>
+</_translation>
+<_translation>
+<id>131480</id>
+<container>material</container>
+<item>precautionary_P322</item>
+<de>[P322] (Gezielte Maßnahmen (siehe … auf diesem Kennzeichnungsetikett).) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131481</id>
+<container>material</container>
+<item>precautionary_P330</item>
+<de>[P330] Mund ausspülen.</de>
+</_translation>
+<_translation>
+<id>131482</id>
+<container>material</container>
+<item>precautionary_P331</item>
+<de>[P331] Kein Erbrechen herbeiführen.</de>
+</_translation>
+<_translation>
+<id>131483</id>
+<container>material</container>
+<item>precautionary_P332</item>
+<de>[P332] Bei Hautreizung:</de>
+</_translation>
+<_translation>
+<id>131484</id>
+<container>material</container>
+<item>precautionary_P333</item>
+<de>[P333] Bei Hautreizung oder -ausschlag:</de>
+</_translation>
+<_translation>
+<id>131485</id>
+<container>material</container>
+<item>precautionary_P334</item>
+<de>[P334] In kaltes Wasser tauchen [oder nassen Verband anlegen]. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: In kaltes Wasser tauchen / nassen Verband anlegen.)</de>
+</_translation>
+<_translation>
+<id>131486</id>
+<container>material</container>
+<item>precautionary_P335</item>
+<de>[P335] Lose Partikel von der Haut abbürsten.</de>
+</_translation>
+<_translation>
+<id>131487</id>
+<container>material</container>
+<item>precautionary_P336</item>
+<de>[P336] Vereiste Bereiche mit lauwarmem Wasser auftauen. Betroffenen Bereich nicht reiben.</de>
+</_translation>
+<_translation>
+<id>131488</id>
+<container>material</container>
+<item>precautionary_P337</item>
+<de>[P337] Bei anhaltender Augenreizung:</de>
+</_translation>
+<_translation>
+<id>131489</id>
+<container>material</container>
+<item>precautionary_P338</item>
+<de>[P338] Eventuell vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter ausspülen.</de>
+</_translation>
+<_translation>
+<id>131490</id>
+<container>material</container>
+<item>precautionary_P340</item>
+<de>[P340] Die betroffene Person an die frische Luft bringen und für ungehinderte Atmung sorgen.</de>
+</_translation>
+<_translation>
+<id>131491</id>
+<container>material</container>
+<item>precautionary_P341</item>
+<de>[P341] (Bei Atembeschwerden an die frische Luft bringen und in einer Position ruhigstellen, die das Atmen erleichtert.) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131492</id>
+<container>material</container>
+<item>precautionary_P342</item>
+<de>[P342] Bei Symptomen der Atemwege:</de>
+</_translation>
+<_translation>
+<id>131493</id>
+<container>material</container>
+<item>precautionary_P350</item>
+<de>[P350] (Behutsam mit viel Wasser und Seife waschen.) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131494</id>
+<container>material</container>
+<item>precautionary_P351</item>
+<de>[P351] Einige Minuten lang behutsam mit Wasser ausspülen.</de>
+</_translation>
+<_translation>
+<id>131495</id>
+<container>material</container>
+<item>precautionary_P352</item>
+<de>[P352] Mit viel Wasser / … waschen. (Bis zum Inkrafttreten der 4. ATP am 1. Dezember 2014: Mit viel Wasser und Seife waschen.)</de>
+</_translation>
+<_translation>
+<id>131496</id>
+<container>material</container>
+<item>precautionary_P353</item>
+<de>[P353] Haut mit Wasser abwaschen [oder duschen]. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Haut mit Wasser abwaschen / duschen.)</de>
+</_translation>
+<_translation>
+<id>131497</id>
+<container>material</container>
+<item>precautionary_P360</item>
+<de>[P360] Kontaminierte Kleidung und Haut sofort mit viel Wasser abwaschen und danach Kleidung ausziehen.</de>
+</_translation>
+<_translation>
+<id>131498</id>
+<container>material</container>
+<item>precautionary_P361</item>
+<de>[P361] Alle kontaminierten Kleidungsstücke sofort ausziehen.</de>
+</_translation>
+<_translation>
+<id>131499</id>
+<container>material</container>
+<item>precautionary_P362</item>
+<de>[P362] Kontaminierte Kleidung ausziehen. (Bis zum Inkrafttreten der 4. ATP am 1. Dezember 2014: Kontaminierte Kleidung ausziehen und vor erneutem Tragen waschen.)</de>
+</_translation>
+<_translation>
+<id>131500</id>
+<container>material</container>
+<item>precautionary_P363</item>
+<de>[P363] Kontaminierte Kleidung vor erneutem Tragen waschen.</de>
+</_translation>
+<_translation>
+<id>131501</id>
+<container>material</container>
+<item>precautionary_P364</item>
+<de>[P364] Und vor erneutem Tragen waschen.</de>
+</_translation>
+<_translation>
+<id>131502</id>
+<container>material</container>
+<item>precautionary_P370</item>
+<de>[P370] Bei Brand:</de>
+</_translation>
+<_translation>
+<id>131503</id>
+<container>material</container>
+<item>precautionary_P371</item>
+<de>[P371] Bei Großbrand und großen Mengen:</de>
+</_translation>
+<_translation>
+<id>131504</id>
+<container>material</container>
+<item>precautionary_P372</item>
+<de>[P372] Explosionsgefahr. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Explosionsgefahr bei Brand.)</de>
+</_translation>
+<_translation>
+<id>131505</id>
+<container>material</container>
+<item>precautionary_P373</item>
+<de>[P373] Keine Brandbekämpfung, wenn das Feuer explosive Stoffe / Gemische / Erzeugnisse erreicht.</de>
+</_translation>
+<_translation>
+<id>131506</id>
+<container>material</container>
+<item>precautionary_P374</item>
+<de>[P374] (Brandbekämpfung mit üblichen Vorsichtsmaßnahmen aus angemessener Entfernung.) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131507</id>
+<container>material</container>
+<item>precautionary_P375</item>
+<de>[P375] Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen.</de>
+</_translation>
+<_translation>
+<id>131508</id>
+<container>material</container>
+<item>precautionary_P376</item>
+<de>[P376] Undichtigkeit beseitigen, wenn gefahrlos möglich.</de>
+</_translation>
+<_translation>
+<id>131509</id>
+<container>material</container>
+<item>precautionary_P377</item>
+<de>[P377] Brand von ausströmendem Gas: Nicht löschen, bis Undichtigkeit gefahrlos beseitigt werden kann.</de>
+</_translation>
+<_translation>
+<id>131510</id>
+<container>material</container>
+<item>precautionary_P378</item>
+<de>[P378] … zum Löschen … verwenden. (Die vom Gesetzgeber offen gelassenen Einfügungen sind vom Inverkehrbringer zu ergänzen)</de>
+</_translation>
+<_translation>
+<id>131511</id>
+<container>material</container>
+<item>precautionary_P380</item>
+<de>[P380] Umgebung räumen.</de>
+</_translation>
+<_translation>
+<id>131512</id>
+<container>material</container>
+<item>precautionary_P381</item>
+<de>[P381] Bei Undichtigkeit alle Zündquellen entfernen (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Alle Zündquellen entfernen, wenn gefahrlos möglich.)</de>
+</_translation>
+<_translation>
+<id>131513</id>
+<container>material</container>
+<item>precautionary_P390</item>
+<de>[P390] Verschüttete Mengen aufnehmen, um Materialschäden zu vermeiden.</de>
+</_translation>
+<_translation>
+<id>131514</id>
+<container>material</container>
+<item>precautionary_P391</item>
+<de>[P391] Verschüttete Mengen aufnehmen.</de>
+</_translation>
+<_translation>
+<id>131515</id>
+<container>material</container>
+<item>precautionary_P401</item>
+<de>[P401] Aufbewahren gemäß … (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen) (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: … aufbewahren.)</de>
+</_translation>
+<_translation>
+<id>131516</id>
+<container>material</container>
+<item>precautionary_P402</item>
+<de>[P402] An einem trockenen Ort aufbewahren.</de>
+</_translation>
+<_translation>
+<id>131517</id>
+<container>material</container>
+<item>precautionary_P403</item>
+<de>[P403] An einem gut belüfteten Ort aufbewahren.</de>
+</_translation>
+<_translation>
+<id>131518</id>
+<container>material</container>
+<item>precautionary_P404</item>
+<de>[P404] In einem geschlossenen Behälter aufbewahren.</de>
+</_translation>
+<_translation>
+<id>131519</id>
+<container>material</container>
+<item>precautionary_P405</item>
+<de>[P405] Unter Verschluss aufbewahren.</de>
+</_translation>
+<_translation>
+<id>131520</id>
+<container>material</container>
+<item>precautionary_P406</item>
+<de>[P406] In korrosionsbeständigem / … Behälter mit korrosionsbeständiger Innenauskleidung aufbewahren. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen) (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: In korrosionsbe</de>
+</_translation>
+<_translation>
+<id>131521</id>
+<container>material</container>
+<item>precautionary_P407</item>
+<de>[P407] Luftspalt zwischen Stapeln / Paletten lassen.</de>
+</_translation>
+<_translation>
+<id>131522</id>
+<container>material</container>
+<item>precautionary_P410</item>
+<de>[P410] Vor Sonnenbestrahlung schützen.</de>
+</_translation>
+<_translation>
+<id>131523</id>
+<container>material</container>
+<item>precautionary_P411</item>
+<de>[P411] Bei Temperaturen nicht über … °C / … °F aufbewahren. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen) (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Bei Temperaturen von nicht mehr als … °C / … aufbewahren</de>
+</_translation>
+<_translation>
+<id>131524</id>
+<container>material</container>
+<item>precautionary_P412</item>
+<de>[P412] Nicht Temperaturen über 50 °C / 122 °F aussetzen. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Nicht Temperaturen von mehr als 50 °C aussetzen.)</de>
+</_translation>
+<_translation>
+<id>131525</id>
+<container>material</container>
+<item>precautionary_P413</item>
+<de>[P413] Schüttgut in Mengen von mehr als … kg / … lbs bei Temperaturen nicht über … °C / … °F aufbewahren. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen) (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Schüttgut </de>
+</_translation>
+<_translation>
+<id>131526</id>
+<container>material</container>
+<item>precautionary_P420</item>
+<de>[P420] Getrennt aufbewahren. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Von anderen Materialien entfernt aufbewahren.)</de>
+</_translation>
+<_translation>
+<id>131527</id>
+<container>material</container>
+<item>precautionary_P422</item>
+<de>[P422] (Inhalt in / unter … aufbewahren. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen)) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131528</id>
+<container>material</container>
+<item>precautionary_P501</item>
+<de>[P501] Inhalt / Behälter … zuführen. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen)</de>
+</_translation>
+<_translation>
+<id>131529</id>
+<container>material</container>
+<item>precautionary_P502</item>
+<de>[P502] Informationen zur Wiederverwendung oder Wiederverwertung bei Hersteller oder Lieferant erfragen. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Informationen zur Wiederverwendung/Wiederverwertung beim Hersteller/Lieferanten erfragen.)</de>
+</_translation>
+<_translation>
+<id>131530</id>
+<container>material</container>
+<item>precautionary_P503</item>
+<de>[P503] Informationen zur Entsorgung/Wiederverwendung/Wiederverwertung beim Hersteller/Lieferanten/… erfragen.</de>
+</_translation>
+<_translation>
+<id>131633</id>
+<container>material</container>
+<item>hazard_H300+H310</item>
+<de>[H300+H310] Lebensgefahr bei Verschlucken oder Hautkontakt.</de>
+</_translation>
+<_translation>
+<id>131634</id>
+<container>material</container>
+<item>hazard_H300+H330</item>
+<de>[H300+H330] Lebensgefahr bei Verschlucken oder Einatmen.</de>
+</_translation>
+<_translation>
+<id>131635</id>
+<container>material</container>
+<item>hazard_H310+H330</item>
+<de>[H310+H330] Lebensgefahr bei Hautkontakt oder Einatmen.</de>
+</_translation>
+<_translation>
+<id>131636</id>
+<container>material</container>
+<item>hazard_H300+H310+H330</item>
+<de>[H300+H310+H330] Lebensgefahr bei Verschlucken, Hautkontakt oder Einatmen.</de>
+</_translation>
+<_translation>
+<id>131637</id>
+<container>material</container>
+<item>hazard_H301+H311</item>
+<de>[H301+H311] Giftig bei Verschlucken oder Hautkontakt.</de>
+</_translation>
+<_translation>
+<id>131638</id>
+<container>material</container>
+<item>hazard_H301+H331</item>
+<de>[H301+H331] Giftig bei Verschlucken oder Einatmen.</de>
+</_translation>
+<_translation>
+<id>131639</id>
+<container>material</container>
+<item>hazard_H311+H331</item>
+<de>[H311+H331] Giftig bei Hautkontakt oder Einatmen.</de>
+</_translation>
+<_translation>
+<id>131640</id>
+<container>material</container>
+<item>hazard_H301+H311+H331</item>
+<de>[H301+H311+H331] Giftig bei Verschlucken, Hautkontakt oder Einatmen.</de>
+</_translation>
+<_translation>
+<id>131641</id>
+<container>material</container>
+<item>hazard_H302+H312</item>
+<de>[H302+H312] Gesundheitsschädlich bei Verschlucken oder Hautkontakt.</de>
+</_translation>
+<_translation>
+<id>131642</id>
+<container>material</container>
+<item>hazard_H302+H332</item>
+<de>[H302+H332] Gesundheitsschädlich bei Verschlucken oder Einatmen.</de>
+</_translation>
+<_translation>
+<id>131643</id>
+<container>material</container>
+<item>hazard_H312+H332</item>
+<de>[H312+H332] Gesundheitsschädlich bei Hautkontakt oder Einatmen.</de>
+</_translation>
+<_translation>
+<id>131644</id>
+<container>material</container>
+<item>hazard_H302+H312+H332</item>
+<de>[H302+H312+H332] Gesundheitsschädlich bei Verschlucken, Hautkontakt oder Einatmen.</de>
+</_translation>
+<_translation>
+<id>131763</id>
+<container>material</container>
+<item>precautionary_P231+P232</item>
+<de>[P231+P232] Inhalt unter inertem Gas/… handhaben und aufbewahren. Vor Feuchtigkeit schützen. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Unter inertem Gas handhaben. Vor Feuchtigkeit schützen.)</de>
+</_translation>
+<_translation>
+<id>131764</id>
+<container>material</container>
+<item>precautionary_P301+P310</item>
+<de>[P301+P310] Bei Verschlucken: Sofort Giftinformationszentrum, Arzt oder … anrufen.</de>
+</_translation>
+<_translation>
+<id>131765</id>
+<container>material</container>
+<item>precautionary_P301+P330+P331+P310</item>
+<de>[P301+P330+P331+P310] keine offizielle Kombination</de>
+</_translation>
+<_translation>
+<id>131766</id>
+<container>material</container>
+<item>precautionary_P301+P312</item>
+<de>[P301+P312] Bei Verschlucken: Bei Unwohlsein Giftinformationszentrum / Arzt / … anrufen.</de>
+</_translation>
+<_translation>
+<id>131767</id>
+<container>material</container>
+<item>precautionary_P301+P330+P331</item>
+<de>[P301+P330+P331] Bei Verschlucken: Mund ausspülen. Kein Erbrechen herbeiführen. (Mit Inkrafttreten der 4. ATP am 1. Dezember 2014 aufgehoben, mit Inkrafttreten der 8. ATP am 1. Februar 2018 wieder aufgenommen)</de>
+</_translation>
+<_translation>
+<id>131768</id>
+<container>material</container>
+<item>precautionary_P302+P334</item>
+<de>[P302+P334] Bei Berührung mit der Haut: In kaltes Wasser tauchen [oder nassen Verband anlegen]. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Bei Kontakt mit der Haut: In kaltes Wasser tauchen / nassen Verband anlegen.)</de>
+</_translation>
+<_translation>
+<id>131769</id>
+<container>material</container>
+<item>precautionary_P302+P335+P334</item>
+<de>[P302+P335+P334] Bei Berührung mit der Haut: Lose Partikel von der Haut abbürsten. In kaltes Wasser tauchen [oder nassen Verband anlegen]. (Mit Inkrafttreten der 8. ATP am 1. Februar 2018 neu aufgenommen)</de>
+</_translation>
+<_translation>
+<id>131770</id>
+<container>material</container>
+<item>precautionary_P302+P350</item>
+<de>[P302+P350] (Bei Kontakt mit der Haut: Behutsam mit viel Wasser und Seife waschen.) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131771</id>
+<container>material</container>
+<item>precautionary_P302+P352</item>
+<de>[P302+P352] Bei Berührung mit der Haut: Mit viel Wasser / … waschen. (Bis zum Inkrafttreten der 4. ATP am 1. Dezember 2014: Bei Kontakt mit der Haut: Mit viel Wasser und Seife waschen.)</de>
+</_translation>
+<_translation>
+<id>131772</id>
+<container>material</container>
+<item>precautionary_P302+P352+P310</item>
+<de>[P302+P352+P310] keine offizielle Kombination</de>
+</_translation>
+<_translation>
+<id>131773</id>
+<container>material</container>
+<item>precautionary_P302+P352+P312</item>
+<de>[P302+P352+P312] keine offizielle Kombination</de>
+</_translation>
+<_translation>
+<id>131774</id>
+<container>material</container>
+<item>precautionary_P303+P361+P353</item>
+<de>[P303+P361+P353] Bei Berührung mit der Haut [oder dem Haar]: Alle kontaminierten Kleidungsstücke sofort ausziehen. Haut mit Wasser abwaschen [oder duschen]. (Bis zum Inkrafttreten der 4. ATP am 1. Dezember 2014: Bei Kontakt mit der Haut [oder dem Haar]: A</de>
+</_translation>
+<_translation>
+<id>131775</id>
+<container>material</container>
+<item>precautionary_P303+P361+P353+P315</item>
+<de>[P303+P361+P353+P315] keine offizielle Kombination</de>
+</_translation>
+<_translation>
+<id>131776</id>
+<container>material</container>
+<item>precautionary_P304+P340</item>
+<de>[P304+P340] Bei Einatmen: Die Person an die frische Luft bringen und für ungehinderte Atmung sorgen.</de>
+</_translation>
+<_translation>
+<id>131777</id>
+<container>material</container>
+<item>precautionary_P304+P340+P310</item>
+<de>[P304+P340+P310] Bei Einatmen: Die Person an die frische Luft bringen und für ungehinderte Atmung sorgen. Sofort Giftinformationszentrum oder Arzt anrufen.</de>
+</_translation>
+<_translation>
+<id>131778</id>
+<container>material</container>
+<item>precautionary_P304+P340+P311</item>
+<de>[P304+P340+P311] keine offizielle Kombination</de>
+</_translation>
+<_translation>
+<id>131779</id>
+<container>material</container>
+<item>precautionary_P304+P340+P315</item>
+<de>[P304+P340+P315] keine offizielle Kombination</de>
+</_translation>
+<_translation>
+<id>131780</id>
+<container>material</container>
+<item>precautionary_P304+P341</item>
+<de>[P304+P341] (Bei Einatmen: Bei Atembeschwerden an die frische Luft bringen und in einer Position ruhigstellen, die das Atmen erleichtert.) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131781</id>
+<container>material</container>
+<item>precautionary_P305+P351+P338</item>
+<de>[P305+P351+P338] Bei Kontakt mit den Augen: Einige Minuten lang behutsam mit Wasser spülen. Eventuell vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter spülen. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Bei Kontakt mit den Augen: Eini</de>
+</_translation>
+<_translation>
+<id>131782</id>
+<container>material</container>
+<item>precautionary_P305+P351+P338+P315</item>
+<de>[P305+P351+P338+P315] keine offizielle Kombination</de>
+</_translation>
+<_translation>
+<id>131783</id>
+<container>material</container>
+<item>precautionary_P306+P360</item>
+<de>[P306+P360] Bei Kontakt mit der Kleidung: Kontaminierte Kleidung und Haut sofort mit viel Wasser abwaschen und danach Kleidung ausziehen.</de>
+</_translation>
+<_translation>
+<id>131784</id>
+<container>material</container>
+<item>precautionary_P307+P310</item>
+<de>[P307+P310] keine offizielle Kombination</de>
+</_translation>
+<_translation>
+<id>131785</id>
+<container>material</container>
+<item>precautionary_P307+P311</item>
+<de>[P307+P311] (Bei Exposition: Giftinformationszentrum oder Arzt anrufen.) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131786</id>
+<container>material</container>
+<item>precautionary_P308+P310</item>
+<de>[P308+P310] keine offizielle Kombination</de>
+</_translation>
+<_translation>
+<id>131787</id>
+<container>material</container>
+<item>precautionary_P308+P311</item>
+<de>[P308+P311] Bei Exposition oder falls betroffen: Giftinformationszentrum, Arzt oder … anrufen.</de>
+</_translation>
+<_translation>
+<id>131788</id>
+<container>material</container>
+<item>precautionary_P308+P313</item>
+<de>[P308+P313] Bei Exposition oder falls betroffen: Ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen.</de>
+</_translation>
+<_translation>
+<id>131789</id>
+<container>material</container>
+<item>precautionary_P309+P310</item>
+<de>[P309+P310] keine offizielle Kombination</de>
+</_translation>
+<_translation>
+<id>131790</id>
+<container>material</container>
+<item>precautionary_P309+P311</item>
+<de>[P309+P311] (Bei Exposition oder Unwohlsein: Giftinformationszentrum oder Arzt anrufen.) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131791</id>
+<container>material</container>
+<item>precautionary_P332+P313</item>
+<de>[P332+P313] Bei Hautreizung: Ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen.</de>
+</_translation>
+<_translation>
+<id>131792</id>
+<container>material</container>
+<item>precautionary_P333+P313_</item>
+<de>[P333+P313] Bei Hautreizung oder -ausschlag: Ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen.</de>
+</_translation>
+<_translation>
+<id>131793</id>
+<container>material</container>
+<item>precautionary_P335+P334</item>
+<de>[P335+P334] (Lose Partikel von der Haut abbürsten. In kaltes Wasser tauchen / nassen Verband anlegen.) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131794</id>
+<container>material</container>
+<item>precautionary_P336+P315</item>
+<de>[P336+P315] Vereiste Bereiche mit lauwarmem Wasser auftauen. Betroffenen Bereich nicht reiben. Sofort ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen. (Mit Inkrafttreten der 8. ATP am 1. Februar 2018 neu aufgenommen)</de>
+</_translation>
+<_translation>
+<id>131795</id>
+<container>material</container>
+<item>precautionary_P337+P313</item>
+<de>[P337+P313] Bei anhaltender Augenreizung: Ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen.</de>
+</_translation>
+<_translation>
+<id>131796</id>
+<container>material</container>
+<item>precautionary_P342+P311</item>
+<de>[P342+P311] Bei Symptomen der Atemwege: Giftinformationszentrum, Arzt oder … anrufen.</de>
+</_translation>
+<_translation>
+<id>131797</id>
+<container>material</container>
+<item>precautionary_P361+P364</item>
+<de>[P361+P364] Alle kontaminierten Kleidungsstücke sofort ausziehen und vor erneutem Tragen waschen.</de>
+</_translation>
+<_translation>
+<id>131798</id>
+<container>material</container>
+<item>precautionary_P362+P364</item>
+<de>[P362+P364] Kontaminierte Kleidung ausziehen und vor erneutem Tragen waschen.</de>
+</_translation>
+<_translation>
+<id>131799</id>
+<container>material</container>
+<item>precautionary_P370+P376</item>
+<de>[P370+P376] Bei Brand: Undichtigkeit beseitigen, wenn gefahrlos möglich.</de>
+</_translation>
+<_translation>
+<id>131800</id>
+<container>material</container>
+<item>precautionary_P370+P378</item>
+<de>[P370+P378] Bei Brand: … zum Löschen … verwenden. (Die vom Gesetzgeber offen gelassenen Einfügungen sind vom Inverkehrbringer zu ergänzen)</de>
+</_translation>
+<_translation>
+<id>131801</id>
+<container>material</container>
+<item>precautionary_P370+P380</item>
+<de>[P370+P380] (Bei Brand: Umgebung räumen.) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131802</id>
+<container>material</container>
+<item>precautionary_P370+P380+P375</item>
+<de>[P370+P380+P375] Bei Brand: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen.</de>
+</_translation>
+<_translation>
+<id>131803</id>
+<container>material</container>
+<item>precautionary_P371+P380+P375_</item>
+<de>[P371+P380+P375] Bei Großbrand und großen Mengen: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen.</de>
+</_translation>
+<_translation>
+<id>131804</id>
+<container>material</container>
+<item>precautionary_P370+P372+P380+P373</item>
+<de>[P370+P372+P380+P373] Bei Brand: Explosionsgefahr. Umgebung räumen. KEINE Brandbekämpfung, wenn das Feuer explosive Stoffe/Gemische/Erzeugnisse erreicht. (Mit Inkrafttreten der 8. ATP am 1. Februar 2018 neu aufgenommen)</de>
+</_translation>
+<_translation>
+<id>131805</id>
+<container>material</container>
+<item>precautionary_P370+P380+P375+[P378]</item>
+<de>[P370+P380+P375+[P378]] Bei Brand: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen. [… zum Löschen verwenden.] (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen) (Mit Inkrafttreten der 8. ATP am</de>
+</_translation>
+<_translation>
+<id>131806</id>
+<container>material</container>
+<item>precautionary_P402+P404</item>
+<de>[P402+P404] In einem geschlossenen Behälter an einem trockenen Ort aufbewahren.</de>
+</_translation>
+<_translation>
+<id>131807</id>
+<container>material</container>
+<item>precautionary_P403+P233</item>
+<de>[P403+P233] An einem gut belüfteten Ort aufbewahren. Behälter dicht verschlossen halten. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Behälter dicht verschlossen an einem gut belüfteten Ort aufbewahren.)</de>
+</_translation>
+<_translation>
+<id>131808</id>
+<container>material</container>
+<item>precautionary_P403+P235</item>
+<de>[P403+P235] An einem gut belüfteten Ort aufbewahren. Kühl halten. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Kühl an einem gut belüfteten Ort aufbewahren.)</de>
+</_translation>
+<_translation>
+<id>131809</id>
+<container>material</container>
+<item>precautionary_P410+P403</item>
+<de>[P410+P403] Vor Sonnenbestrahlung schützen. An einem gut belüfteten Ort aufbewahren. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Vor Sonnenbestrahlung geschützt an einem gut belüfteten Ort aufbewahren.)</de>
+</_translation>
+<_translation>
+<id>131810</id>
+<container>material</container>
+<item>precautionary_P410+P412</item>
+<de>[P410+P412] Vor Sonnenbestrahlung schützen. Nicht Temperaturen über 50 °C / 122 °F aussetzen. (Bis zum Inkrafttreten der 8. ATP am 1. Februar 2018: Vor Sonnenbestrahlung schützen und nicht Temperaturen von mehr als 50 °C aussetzen.)</de>
+</_translation>
+<_translation>
+<id>131811</id>
+<container>material</container>
+<item>precautionary_P411+P235</item>
+<de>[P411+P235] (Kühl und bei Temperaturen von nicht mehr als … °C aufbewahren. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen)) aufgehoben</de>
+</_translation>
+<_translation>
+<id>131819</id>
+<container>material</container>
+<item>precautionary_P307+P310_</item>
+<de>[P307+P310] Bei Exposition: Sofort Giftinformationszentrum, Arzt oder … anrufen. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen. Keine offizielle P-Satz-Kombination)</de>
+</_translation>
+<_translation>
+<id>131820</id>
+<container>material</container>
+<item>precautionary_P308+P310__</item>
+<de>[P308+P310] Bei Exposition oder falls betroffen: Sofort Giftinformationszentrum, Arzt oder … anrufen. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen. Keine offizielle P-Satz-Kombination)</de>
+</_translation>
+<_translation>
+<id>131838</id>
 <container>material_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<item>tab_hp</item>
+<en>HP-Statements</en>
+<de>HP-Sätze</de>
 </_translation>
 <_translation>
-<id>121861</id>
-<container>smpcontainer_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131980</id>
+<container>material_hp_sbf</container>
+<item>caption_</item>
+<en>HP-Statements</en>
+<de>HP-Sätze</de>
 </_translation>
 <_translation>
-<id>121865</id>
-<container>smppreservation_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131981</id>
+<container>material_hp_sbf</container>
+<item>id_</item>
+<en>ID</en>
+<de>ID</de>
 </_translation>
 <_translation>
-<id>121873</id>
-<container>smpcondition_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131982</id>
+<container>material_hp_sbf</container>
+<item>id_tooltip</item>
 </_translation>
 <_translation>
-<id>121882</id>
-<container>smppoint_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131983</id>
+<container>material_hp_sbf</container>
+<item>applies_</item>
+<en>Applies</en>
+<de>Anwenden</de>
 </_translation>
 <_translation>
-<id>121891</id>
-<container>smptype_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131984</id>
+<container>material_hp_sbf</container>
+<item>applies_tooltip</item>
 </_translation>
 <_translation>
-<id>121899</id>
-<container>smpmatrix_edit</container>
-<item>btn_save</item>
-<en>Save</en>
-<de>Speichern</de>
+<id>131985</id>
+<container>material_hp_sbf</container>
+<item>statement_</item>
+<en>Statement</en>
+<de>Satz</de>
 </_translation>
 <_translation>
-<id>122442</id>
-<container>_background_worker_form</container>
-<item>demo-mode</item>
-<en>Demo Mode. Labdesk will close automatically.</en>
-<de>Demo-Modus. Labdesk wird automatisch geschlossen.</de>
-<custom>Demo-Modus. Labdesk wird automatisch geschlossen.</custom>
-</_translation>
-<_translation>
-<id>122443</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_add_record</item>
-<en>Add record</en>
-<de>Hinzufügen</de>
-<custom>Hinzufügen</custom>
-</_translation>
-<_translation>
-<id>122444</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_activate_user</item>
-<en>Issue Licence</en>
-<de>Lizenz ausstellen</de>
-</_translation>
-<_translation>
-<id>122445</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_deactivate_user</item>
-<en>Revoke Licence</en>
-<de>Lizenz entziehen</de>
-</_translation>
-<_translation>
-<id>122446</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_apply_filter</item>
-<en>Apply filer</en>
-<de>Filter anwenden</de>
-</_translation>
-<_translation>
-<id>122447</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_save_filter</item>
-<en>Save filter</en>
-<de>Filter speichern</de>
-</_translation>
-<_translation>
-<id>122448</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_clmn_dlg</item>
-<en>Columns</en>
-<de>Spalten</de>
-<custom>Spalten</custom>
-</_translation>
-<_translation>
-<id>122449</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_clmn_std</item>
-<en>Reset</en>
-<de>Zurücksetzen</de>
-<custom>Zurücksetzen</custom>
-</_translation>
-<_translation>
-<id>122450</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_audit_trail</item>
-<en>Audit Trail</en>
-<de>Audit Trail</de>
-<custom>Audit Trail</custom>
-</_translation>
-<_translation>
-<id>122451</id>
-<container>mdlContextMenu</container>
-<item>contextmnu_menu_usr_refresh</item>
-<en>Refresh</en>
-<de>Aktualisieren</de>
-<custom>Aktualisieren</custom>
-</_translation>
-<_translation>
-<id>122478</id>
-<container>users</container>
-<item>licence_</item>
-<en>Activated</en>
-<de>Aktiviert</de>
-</_translation>
-<_translation>
-<id>122646</id>
-<container>_TextBoxDialog</container>
-<item>btn_save</item>
-<en>OK</en>
-<de>OK</de>
-</_translation>
-<_translation>
-<id>122647</id>
-<container>_TextBoxDialog</container>
-<item>btn_cancel</item>
-<en>Cancel</en>
-<de>Abbrechen</de>
-</_translation>
-<_translation>
-<id>122648</id>
-<container>_TextBoxDialog</container>
-<item>comboBox</item>
-<en>UID/UAK</en>
-<de>UID/UAK</de>
-</_translation>
-<_translation>
-<id>122655</id>
-<container>_TextBoxDialog</container>
-<item>caption</item>
-<en>Activate User</en>
-<de>Benutzer Aktivierung</de>
-</_translation>
-<_translation>
-<id>122688</id>
-<container>users</container>
-<item>uak_not_valid</item>
-<en>UAK not valid. Contact the software vendor.</en>
-<de>UAK nicht gültig. Kontakieren Sie den Anbieter.</de>
-</_translation>
-<_translation>
-<id>127456</id>
-<container>formulation_edit</container>
-<item>btn_save</item>
+<id>131986</id>
+<container>material_hp_sbf</container>
+<item>statement_tooltip</item>
 </_translation>
 </dataroot>
 </root>

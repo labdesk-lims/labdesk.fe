@@ -537,6 +537,20 @@ Skip_hide:
     ' Individual initialisation routines
     rfrm.Form_Init_Individual
     
+    ' Show/Hide navigation button
+    rfrm.NavigationButtons = DbProcedures.GetFieldValue("setup", "nav_button")
+    
+    ' Datasheet style template
+    rfrm.DatasheetBorderLineStyle = 1
+    rfrm.DatasheetCellsEffect = acEffectNormal
+    rfrm.DatasheetColumnHeaderUnderlineStyle = 0
+    rfrm.HorizontalDatasheetGridlineStyle = 1
+    rfrm.DatasheetGridlinesColor = 15132391
+    rfrm.DatasheetGridlinesBehavior = acGridlinesBoth
+    rfrm.DatasheetForeColor = 0
+    rfrm.DatasheetBackColor = 16777215
+    rfrm.DatasheetAlternateBackColor = 15921906
+    
     ' Init filter setting
     rfrm.filter = Nz(DbProcedures.GetFilterSetting(rfrm.name), "")
     rfrm.FilterOn = Not IsNull(DbProcedures.GetFilterSetting(rfrm.name))

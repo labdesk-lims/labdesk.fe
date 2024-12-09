@@ -52,7 +52,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-05T09:51:48">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-09T20:01:23">
 <_permission>
 <id>1</id>
 <title>role</title>
@@ -962,6 +962,11 @@
 <id>1383</id>
 <title>desktop_request_sbf</title>
 <description>Desktop Form -&gt; Request Subform</description>
+</_permission>
+<_permission>
+<id>2433</id>
+<title>material_hp_sbf</title>
+<description>Material Form -&gt; hp Subform</description>
 </_permission>
 </dataroot>
 </root>

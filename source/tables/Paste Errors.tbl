@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:od="urn:schemas-microsoft-com:officedata">
+<xsd:schema>
+<xsd:element name="dataroot">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element ref="Paste_x0020_Errors" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+<xsd:attribute name="generated" type="xsd:dateTime"/>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Paste_x0020_Errors">
+<xsd:annotation>
+<xsd:appinfo>
+<od:tableProperty name="Orientation" type="2" value="0"/>
+<od:tableProperty name="LogTable" type="3" value="1"/>
+</xsd:appinfo>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="F1" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="F2" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="F3" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-09T20:01:23">
+<Paste_x0020_Errors>
+<F1>material</F1>
+<F2>precautionary_P301+P330+P331+P310</F2>
+<F3>[P301+P330+P331+P310] Bei Verschlucken: Mund ausspülen. Kein Erbrechen herbeiführen. Sofort Giftinformationszentrum, Arzt oder … anrufen. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen. Keine offizielle P-Satz-Kombinat</F3>
+</Paste_x0020_Errors>
+<Paste_x0020_Errors>
+<F1>material</F1>
+<F2>precautionary_P302+P352+P310</F2>
+<F3>[P302+P352+P310] Bei Berührung mit der Haut: Mit viel Wasser / … waschen. Sofort Giftinformationszentrum, Arzt oder … anrufen. (Die vom Gesetzgeber offen gelassenen Einfügungen sind vom Inverkehrbringer zu ergänzen. Keine offizielle P-Satz-Kombination)</F3>
+</Paste_x0020_Errors>
+<Paste_x0020_Errors>
+<F1>material</F1>
+<F2>precautionary_P302+P352+P312</F2>
+<F3>[P302+P352+P312] Bei Berührung mit der Haut: Mit viel Wasser / … waschen. Bei Unwohlsein Giftinformationszentrum, Arzt oder … anrufen. (Die vom Gesetzgeber offen gelassenen Einfügungen sind vom Inverkehrbringer zu ergänzen. Keine offizielle P-Satz-Kombina</F3>
+</Paste_x0020_Errors>
+<Paste_x0020_Errors>
+<F1>material</F1>
+<F2>precautionary_P303+P361+P353+P315</F2>
+<F3>[P303+P361+P353+P315] Bei Berührung mit der Haut [oder dem Haar]: Alle kontaminierten Kleidungsstücke sofort ausziehen. Haut mit Wasser abwaschen [oder duschen]. Sofort ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen. (Keine offizielle P-Satz-Kombin</F3>
+</Paste_x0020_Errors>
+<Paste_x0020_Errors>
+<F1>material</F1>
+<F2>precautionary_P304+P340+P311</F2>
+<F3>[P304+P340+P311] Bei Einatmen: Die Person an die frische Luft bringen und für ungehinderte Atmung sorgen. Giftinformationszentrum, Arzt oder … anrufen. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen. Keine offizielle P</F3>
+</Paste_x0020_Errors>
+<Paste_x0020_Errors>
+<F1>material</F1>
+<F2>precautionary_P304+P340+P315</F2>
+<F3>[P304+P340+P315] Bei Einatmen: Die Person an die frische Luft bringen und für ungehinderte Atmung sorgen. Sofort ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen. (Keine offizielle P-Satz-Kombination)</F3>
+</Paste_x0020_Errors>
+<Paste_x0020_Errors>
+<F1>material</F1>
+<F2>precautionary_P305+P351+P338+P315</F2>
+<F3>[P305+P351+P338+P315] Bei Kontakt mit den Augen: Einige Minuten lang behutsam mit Wasser spülen. Eventuell vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter spülen. Sofort ärztlichen Rat einholen / ärztliche Hilfe hinzuziehen. (Keine offizielle </F3>
+</Paste_x0020_Errors>
+<Paste_x0020_Errors>
+<F1>material</F1>
+<F2>precautionary_P309+P310</F2>
+<F3>[P309+P310] Bei Exposition oder Unwohlsein: Sofort Giftinformationszentrum, Arzt oder … anrufen. (Die vom Gesetzgeber offen gelassene Einfügung ist vom Inverkehrbringer zu ergänzen. Keine offizielle P-Satz-Kombination)</F3>
+</Paste_x0020_Errors>
+</dataroot>
+</root>
