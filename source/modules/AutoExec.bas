@@ -81,10 +81,6 @@ login_form:
     SysCmd acSysCmdSetStatus, "Clean cache"
     System.CleanCache
     
-    'Init local tables
-    SysCmd acSysCmdSetStatus, "Init local tables"
-    LocalTables.InitLocalTables
-    
     'Install appplication if no users exists
     If InstallationPending Then
         If MsgBox("Press OK to install application. This may take a while.", vbOKCancel, "Information") = vbOK Then

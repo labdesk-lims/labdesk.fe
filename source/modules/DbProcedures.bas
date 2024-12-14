@@ -69,19 +69,19 @@ On Error GoTo Catch_Error
     
     Set db = CurrentDb()
     'Local column style switch off
-    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM lcl_columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
-    'Set rs = db.OpenRecordset("SELECT COUNT(*) FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    'Set rs = db.OpenRecordset("SELECT COUNT(*) FROM lcl_columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    Set rs = db.OpenRecordset("SELECT COUNT(*) FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
     
     If hidden Then Width = 0 'workaround to make the hidden property persistent
     
     If Not rs(0) > 0 Then
         'Local column style switch off
-        db.Execute "INSERT INTO lcl_columns (user_id, table_id, column_id, column_width, column_hidden, column_order) VALUES('" & GetUserName() & "', '" & rfrm.name & "', '" & clmn & "', " & Width & ", " & CInt(hidden) & ", " & order & ")"
-        'db.Execute "INSERT INTO columns (user_id, table_id, column_id, column_width, column_hidden, column_order) VALUES('" & GetUserName() & "', '" & rfrm.name & "', '" & clmn & "', " & Width & ", " & CInt(hidden) & ", " & order & ")"
+        'db.Execute "INSERT INTO lcl_columns (user_id, table_id, column_id, column_width, column_hidden, column_order) VALUES('" & GetUserName() & "', '" & rfrm.name & "', '" & clmn & "', " & Width & ", " & CInt(hidden) & ", " & order & ")"
+        db.Execute "INSERT INTO columns (user_id, table_id, column_id, column_width, column_hidden, column_order) VALUES('" & GetUserName() & "', '" & rfrm.name & "', '" & clmn & "', " & Width & ", " & CInt(hidden) & ", " & order & ")"
     Else
         'Local column style switch off
-        db.Execute "UPDATE lcl_columns SET column_width = " & Width & ", column_hidden = " & CInt(hidden) & ", column_order = " & order & " WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'"
-        'db.Execute "UPDATE columns SET column_width = " & Width & ", column_hidden = " & CInt(hidden) & ", column_order = " & order & " WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'"
+        'db.Execute "UPDATE lcl_columns SET column_width = " & Width & ", column_hidden = " & CInt(hidden) & ", column_order = " & order & " WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'"
+        db.Execute "UPDATE columns SET column_width = " & Width & ", column_hidden = " & CInt(hidden) & ", column_order = " & order & " WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'"
     End If
     
     SetColumnStyle = True
@@ -113,8 +113,8 @@ On Error GoTo Catch_Error
     Set db = CurrentDb()
     
     'Local column style switch off
-    Set rs = db.OpenRecordset("SELECT * FROM lcl_columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
-    'Set rs = db.OpenRecordset("SELECT * FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    'Set rs = db.OpenRecordset("SELECT * FROM lcl_columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
+    Set rs = db.OpenRecordset("SELECT * FROM columns WHERE user_id = '" & GetUserName() & "' AND table_id = '" & rfrm.name & "' AND column_id = '" & clmn & "'", dbOpenDynaset, dbSeeChanges)
     
     If rs.EOF Or rs.BOF Then
         cs.Width = -3
@@ -402,7 +402,7 @@ On Error GoTo Catch_Error
     Dim rs As Recordset
     
     Set db = CurrentDb()
-    Set rs = db.OpenRecordset("SELECT " & language & " FROM lcl_translation WHERE container ='" & container & "' AND item = '" & item & "'")
+    Set rs = db.OpenRecordset("SELECT " & language & " FROM translation WHERE container ='" & container & "' AND item = '" & item & "'")
     
     If rs.EOF Or rs.BOF Then
         db.Execute "INSERT INTO translation(container, item) VALUES('" & container & "', '" & item & "')"
@@ -901,15 +901,12 @@ On Error GoTo Catch_Error
     cmd.Parameters.Append cmd.CreateParameter("@return_message", adBSTR, adParamOutput, -1)
     cmd.Execute
     
-    ReplaceSql = cmd.Parameters.item("@return_message")
-    
-    Set rs = cmd.Execute()
+    ReplaceSql = Nz(cmd.Parameters.item("@return_message"), "Error rendering sticker. Check SQL statement.")
 
 Exit_Function:
     Set cmd = Nothing
     Exit Function
 Catch_Error:
-    'ReplaceSql = "Error rendering sticker. Check for missing informations."
     ReplaceSql = message
     AddErrorLog Err.Number, "DbProcedures.ReplaceSQL: " & Err.description
     Resume Exit_Function

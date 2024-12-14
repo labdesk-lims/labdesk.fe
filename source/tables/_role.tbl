@@ -73,17 +73,17 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-09T20:01:23">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-14T10:36:30">
 <_role>
 <id>1</id>
 <title>Administrator</title>
 <description>&lt;div&gt;Full access. Should only be applied for administrators.&lt;/div&gt;</description>
-<hourly_rate>0</hourly_rate>
+<hourly_rate>120</hourly_rate>
 <administrative>1</administrative>
 <deactivate>0</deactivate>
 </_role>
 <_role>
-<id>2</id>
+<id>3</id>
 <title>Mitarbeiter (Labor)</title>
 <description>&lt;div&gt;Rolle für Labormitarbeiter&lt;/div&gt;</description>
 <hourly_rate>0</hourly_rate>
