@@ -113,7 +113,8 @@ login_form:
     ' Check users licence
     If Not UserHasLicence(GetUserId()) Then
         config.DemoMode = True
-        MsgBox "User has no active licence. Demo mode only.", vbInformation, "Information"
+        
+        'MsgBox "You do not have a valid license. This application will be closed after a few minutes.", vbInformation, "Information"
     End If
     
     'Open the background worker form

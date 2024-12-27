@@ -109,16 +109,16 @@ AAAFAAAAAAAAAAAAAAAAAAAAAAA=
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-14T10:36:30">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-27T16:15:06">
 <keyvalue>
-<id>2970</id>
-<key>7</key>
-<value_txt>LBL-sticker_pdf</value_txt>
+<id>2982</id>
+<key>10</key>
+<value_txt>RPT-M001</value_txt>
 </keyvalue>
 <keyvalue>
-<id>2971</id>
-<key>8</key>
-<value_txt>LBL-sticker_zebra_103x199</value_txt>
+<id>2983</id>
+<key>15</key>
+<value_txt>RPT-S001</value_txt>
 </keyvalue>
 </dataroot>
 </root>
