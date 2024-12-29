@@ -35,7 +35,7 @@ Public DemoMode As Boolean
 
 ' Semantic Versioning according to https://semver.org/
 ' MAJOR-MINOR-PATCH
-Private Const pFeVersion = "v2.9.1" 'Presented frontend version
+Private Const pFeVersion = "v2.9.2" 'Presented frontend version
 Private Const pBeVersion = "v2.9.0" 'Required backend version
 
 ' Identifiers used for reports and labels

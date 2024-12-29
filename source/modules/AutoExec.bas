@@ -113,7 +113,6 @@ login_form:
     ' Check users licence
     If Not UserHasLicence(GetUserId()) Then
         config.DemoMode = True
-        
         'MsgBox "You do not have a valid license. This application will be closed after a few minutes.", vbInformation, "Information"
     End If
     
@@ -128,7 +127,7 @@ login_form:
     If Application.SysCmd(acSysCmdGetObjectState, acForm, "desktop") <> acObjStateOpen And Nz(GetFieldValue("setup", "show_desktop"), False) Then DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
     
     'Fill status bar text with user name
-    SysCmd acSysCmdSetStatus, "User: " & DbProcedures.GetUserName()
+    SysCmd acSysCmdSetStatus, "User: " & DbProcedures.GetUserName() & IIf(config.DemoMode, " (not licensed)", " (licensed)")
     
     InitApp = True
     
