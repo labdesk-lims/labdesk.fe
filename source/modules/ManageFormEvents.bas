@@ -39,7 +39,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Sub AsyncFormInit(ByRef rfrm As Form)
+Public Sub AsyncFormInit(ByRef rfrm As Form, Optional ByVal forcenull As Boolean)
 '-------------------------------------------------------------------------------
 ' Function:         AsyncFormInit
 ' Date:             2022 March
@@ -57,10 +57,10 @@ On Error GoTo Catch_Error
     rfrm.tmpGuid = CreateGuid()
     
     'Skip table flag check if new record is created
-    If IsNull(rfrm.ID) Then GoTo Skip_Check
+    If isnull(rfrm.ID) Or forcenull Then GoTo Skip_Check
     
     ' Check if requested record is already in use by another user
-    If Not IsNull(GetTableFlag(rfrm.DataTable, rfrm.ID)) Then
+    If Not isnull(GetTableFlag(rfrm.DataTable, rfrm.ID)) Then
         If MsgBox(GetTranslation("msgbox", "tableflag_set", GetDbSetting("language")), vbYesNo, GetTranslation("msgbox", "vbInformation", GetDbSetting("language")) & " - " & GetTableFlag(rfrm.DataTable, rfrm.ID)) = vbYes Then
             RemoveTableFlag rfrm.DataTable, rfrm.ID
         End If
@@ -69,11 +69,11 @@ On Error GoTo Catch_Error
 Skip_Check:
     
     ' Check read only condidtion
-    If Not GetPermission(rfrm.name).Update Or rfrm.Form_Init_Individual_Permission() Or Not IsNull(GetTableFlag(rfrm.DataTable, Nz(rfrm.ID, 0))) Then
+    If Not GetPermission(rfrm.name).Update Or rfrm.Form_Init_Individual_Permission() Or Not isnull(GetTableFlag(rfrm.DataTable, Nz(rfrm.ID, 0))) Then
         readOnly = True
     Else
         ' Block record as in use by actual user
-        If Not IsNull(rfrm.ID) Then SetTableFlag GetUserName, rfrm.DataTable, rfrm.ID
+        If Not isnull(rfrm.ID) And Not forcenull Then SetTableFlag GetUserName, rfrm.DataTable, rfrm.ID
     End If
     
     ' Config main form
@@ -83,9 +83,10 @@ Skip_Check:
     End If
 
     ' Config subforms if ID is not null
-    If Not IsNull(rfrm.ID) Then
+    If Not isnull(rfrm.ID) Then
         For Each ctrl In rfrm.Controls
             If ctrl.ControlType = acSubform Then
+                rfrm.Form(ctrl.name).Form.visible = True
                 rfrm.Form(ctrl.name).Form.Form_Init readOnly, "WHERE " & rfrm.DataTable & " = " & rfrm.ID
             End If
         Next
@@ -209,7 +210,7 @@ On Error GoTo Catch_Error
     
     ' Check for changes on subforms
     For Each ctrl In rfrm.Controls
-        If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
+        If ctrl.ControlType = acSubform And Not isnull(rfrm.ID) Then
             subFormChanged = subFormChanged Or rfrm.Form(ctrl.name).Form.FormChanged
         End If
     Next
@@ -217,7 +218,7 @@ On Error GoTo Catch_Error
     ' Check validity of subForms
     subFormValidity = True
     For Each ctrl In rfrm.Controls
-        If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
+        If ctrl.ControlType = acSubform And Not isnull(rfrm.ID) Then
             subFormValidity = subFormValidity And rfrm.Form(ctrl.name).Form.Form_Check_Validity
         End If
     Next
@@ -231,7 +232,7 @@ On Error GoTo Catch_Error
                 End If
             Next
             ' Remove flag to unblock record
-            If Not IsNull(rfrm.ID) Then RemoveTableFlag rfrm.DataTable, rfrm.ID
+            If Not isnull(rfrm.ID) Then RemoveTableFlag rfrm.DataTable, rfrm.ID
             Exit Sub
         Else
             DoCmd.CancelEvent
@@ -240,7 +241,7 @@ On Error GoTo Catch_Error
     End If
     
     ' Check if record was taken over by antoher user and prevent update if applies
-    If Not IsNull(rfrm.ID) Then
+    If Not isnull(rfrm.ID) Then
         If GetTableFlag(rfrm.DataTable, rfrm.ID) <> GetUserName And (rfrm.FormChanged Or subFormChanged And Not rfrm.ForceClose) Then
             MsgBox GetTranslation("msgbox", "tableflag_readonly", GetDbSetting("language")), vbInformation, GetTranslation("msgbox", "vbInformation", GetDbSetting("language")) & " - " & GetTableFlag(rfrm.DataTable, rfrm.ID)
             GoTo Skip_update
@@ -253,7 +254,7 @@ On Error GoTo Catch_Error
             If rfrm.FormChanged Then UpdateTable rfrm.DataTable, GetTableNameFromGuid(rfrm.tmpGuid)
         Else
             For Each ctrl In rfrm.Controls
-                If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
+                If ctrl.ControlType = acSubform And Not isnull(rfrm.ID) Then
                     rfrm.Form(ctrl.name).Form.FormChanged = False
                 End If
             Next
@@ -265,7 +266,7 @@ On Error GoTo Catch_Error
     rfrm.Form_Unload_Individual
     
     ' Remove flag to unblock record
-    If Not IsNull(rfrm.ID) Then RemoveTableFlag rfrm.DataTable, rfrm.ID
+    If Not isnull(rfrm.ID) Then RemoveTableFlag rfrm.DataTable, rfrm.ID
     
 Skip_update:
     
@@ -281,7 +282,7 @@ Catch_Error:
     Resume Exit_Function
 End Sub
 
-Public Sub AsyncFormSave(ByRef rfrm As Form)
+Public Sub AsyncFormSave(ByRef rfrm As Form, Optional ByVal forcenull As Boolean)
 '-------------------------------------------------------------------------------
 ' Function:         AsyncFormSave
 ' Date:             2022 March
@@ -296,9 +297,11 @@ On Error GoTo Catch_Error
     Dim subFormChanged As Boolean
     Dim subFormValidity As Boolean
 
+    If forcenull Then GoTo Skip_Check
+    
     ' Check for changes on subforms
     For Each ctrl In rfrm.Controls
-        If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
+        If ctrl.ControlType = acSubform And Not isnull(rfrm.ID) Then
             subFormChanged = subFormChanged Or rfrm.Form(ctrl.name).Form.FormChanged
         End If
     Next
@@ -306,10 +309,20 @@ On Error GoTo Catch_Error
      ' Check validity of subForms
     subFormValidity = True
     For Each ctrl In rfrm.Controls
-        If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
+        If ctrl.ControlType = acSubform And Not isnull(rfrm.ID) Then
             subFormValidity = subFormValidity And rfrm.Form(ctrl.name).Form.Form_Check_Validity
         End If
     Next
+    
+    ' Check if record was taken over by antoher user and prevent update if applies
+    If Not isnull(rfrm.ID) Then
+        If GetTableFlag(rfrm.DataTable, rfrm.ID) <> GetUserName And (rfrm.FormChanged Or subFormChanged And Not rfrm.ForceClose) Then
+            MsgBox GetTranslation("msgbox", "tableflag_readonly", GetDbSetting("language")), vbInformation, GetTranslation("msgbox", "vbInformation", GetDbSetting("language")) & " - " & GetTableFlag(rfrm.DataTable, rfrm.ID)
+            Exit Sub
+        End If
+    End If
+    
+Skip_Check:
     
     ' Check validity of main form
     If rfrm.Form_Check_Validity = False Or subFormValidity = False Then
@@ -317,26 +330,18 @@ On Error GoTo Catch_Error
         Exit Sub
     End If
     
-    ' Check if record was taken over by antoher user and prevent update if applies
-    If Not IsNull(rfrm.ID) Then
-        If GetTableFlag(rfrm.DataTable, rfrm.ID) <> GetUserName And (rfrm.FormChanged Or subFormChanged And Not rfrm.ForceClose) Then
-            MsgBox GetTranslation("msgbox", "tableflag_readonly", GetDbSetting("language")), vbInformation, GetTranslation("msgbox", "vbInformation", GetDbSetting("language")) & " - " & GetTableFlag(rfrm.DataTable, rfrm.ID)
-            Exit Sub
-        End If
-    End If
-    
     ' Save all changes for main form and subforms
     If rfrm.FormChanged Or subFormChanged And Not rfrm.ForceClose Then
         UpdateTable rfrm.DataTable, GetTableNameFromGuid(rfrm.tmpGuid)
         For Each ctrl In rfrm.Controls
-                If ctrl.ControlType = acSubform And Not IsNull(rfrm.ID) Then
+                If ctrl.ControlType = acSubform And Not isnull(rfrm.ID) Then
                     AsyncSubFormSaveData rfrm.Form(ctrl.name).Form
                 End If
             Next
     End If
     
     ' Remove flag to unblock record
-    If Not IsNull(rfrm.ID) Then RemoveTableFlag rfrm.DataTable, rfrm.ID
+    If Not isnull(rfrm.ID) And Not forcenull Then RemoveTableFlag rfrm.DataTable, rfrm.ID
 
     ' Call individual form unload routines
     rfrm.Form_Unload_Individual
@@ -351,7 +356,7 @@ End Sub
 Public Sub AsyncFormAuditClick(rfrm As Form)
     On Error GoTo Catch_Error
     ' Open the audit log form
-    If Not IsNull(rfrm.ID) Then DoCmd.OpenForm "audit", acNormal, , "table_name = '" & rfrm.DataTable & "' AND table_id = " & rfrm.ID, acFormReadOnly, acWindowNormal
+    If Not isnull(rfrm.ID) Then DoCmd.OpenForm "audit", acNormal, , "table_name = '" & rfrm.DataTable & "' AND table_id = " & rfrm.ID, acFormReadOnly, acWindowNormal
 
 Exit_Function:
     Exit Sub
@@ -553,7 +558,7 @@ Skip_hide:
     
     ' Init filter setting
     rfrm.filter = Nz(DbProcedures.GetFilterSetting(rfrm.name), "")
-    rfrm.FilterOn = Not IsNull(DbProcedures.GetFilterSetting(rfrm.name))
+    rfrm.FilterOn = Not isnull(DbProcedures.GetFilterSetting(rfrm.name))
     
     ' Show form after adjustments are made
     On Error GoTo Skip_show
@@ -610,11 +615,11 @@ On Error GoTo Catch_Error
     End If
 
     ' Open the form to edit a record. Add new record if ID is null.
-    If IsNull(rfrm.ID) Then
-        DoCmd.OpenForm rfrm.EditForm, acNormal, , , acFormAdd, acWindowNormal
+    If isnull(rfrm.ID) Then
+        DoCmd.OpenForm rfrm.EditForm, acNormal, , , acFormEdit, acWindowNormal
         Forms(rfrm.EditForm).Form_Init
     Else
-        DoCmd.OpenForm rfrm.EditForm, acNormal, , "id = " & rfrm.ID, acFormEdit
+        DoCmd.OpenForm rfrm.EditForm, acNormal, , "id = " & rfrm.ID, acFormEdit, acWindowNormal
         Forms(rfrm.EditForm).Form_Init "WHERE id = " & rfrm.ID
     End If
 
@@ -644,7 +649,7 @@ On Error GoTo Catch_Error
     If Not GetPermission(rfrm.name).Create Then
         MsgBox GetTranslation("msgbox", "add_record_not_supported", GetDbSetting("language")), vbExclamation, GetTranslation("msgbox", "vbExclamation", GetDbSetting("language"))
     Else
-        DoCmd.OpenForm rfrm.EditForm, acNormal, , , acFormAdd, acWindowNormal
+        DoCmd.OpenForm rfrm.EditForm, acNormal, , , acFormEdit, acWindowNormal
         Forms(rfrm.EditForm).Form_Init
     End If
 
@@ -759,7 +764,7 @@ On Error GoTo Catch_Error
     End If
 
     ' Open the form to edit a record. Add new record if ID is null.
-    If IsNull(rfrm.ID) Then
+    If isnull(rfrm.ID) Then
         DoCmd.OpenForm rfrm.EditForm, acNormal, , , acFormAdd, acWindowNormal
         Forms(rfrm.EditForm).Form_Init
     Else
@@ -776,7 +781,7 @@ End Sub
 
 Public Sub SyncSubFormSaveFilter(rfrm As Form)
     ' Open form to save filter settings
-    If rfrm.FilterOn And Not IsNull(rfrm.filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
+    If rfrm.FilterOn And Not isnull(rfrm.filter) Then DoCmd.OpenForm "filter_save_dlg", acNormal, , , acFormAdd, acDialog, rfrm.name
 End Sub
 
 Public Sub SyncSubFormApplyFilter(rfrm As Form)

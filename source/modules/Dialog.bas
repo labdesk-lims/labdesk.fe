@@ -120,7 +120,7 @@ Public Function SelectDialog(ByVal templateId As String) As Variant
     
     DoCmd.OpenForm "_SelectDialog", acNormal, , , acFormEdit, acDialog, "SELECT value_txt, key FROM keyvalue"
     
-    If Not IsNull(Forms("_SelectDialog").comboBox.Column(1)) Then
+    If Not isnull(Forms("_SelectDialog").comboBox.Column(1)) Then
         SelectDialog = Forms("_SelectDialog").comboBox.Column(0)
     Else
         SelectDialog = Null

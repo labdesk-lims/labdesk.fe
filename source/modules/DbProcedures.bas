@@ -223,7 +223,7 @@ On Error GoTo Catch_Error
     'Local column style switch off
     Set rs = db.OpenRecordset("SELECT TOP 1 version_fe FROM setup", dbOpenDynaset, dbSeeChanges)
     
-    If IsNull(rs!version_fe) Then db.Execute "UPDATE setup SET version_fe = '" & config.FeVersion & "'"
+    If isnull(rs!version_fe) Then db.Execute "UPDATE setup SET version_fe = '" & config.FeVersion & "'"
     GetFeVersion = Nz(rs!version_fe, config.FeVersion)
 
 Exit_Function:
@@ -621,7 +621,7 @@ Public Function AttachToMailQueue(ByVal request As Variant, ByVal billing_custom
 On Error GoTo Catch_Error
     Dim db As database
     
-    If IsNull(recipients) Or recipients = "" Or IsNull(request) Then Err.Raise vbObjectError + 513, , GetTranslation("msgbox", "mailadress_error", GetDbSetting("language"))
+    If isnull(recipients) Or recipients = "" Or isnull(request) Then Err.Raise vbObjectError + 513, , GetTranslation("msgbox", "mailadress_error", GetDbSetting("language"))
     
     Set db = CurrentDb
     
@@ -1113,7 +1113,7 @@ On Error GoTo Catch_Error
     
     fname = fpath & "\" & "tmp_" & CreateGuid()
 
-    If Not IsNull(fref) Then DbBlob.BlobToFile fname, fref
+    If Not isnull(fref) Then DbBlob.BlobToFile fname, fref
     
     If FileExists(fname) Then
         pref.Picture = fname
@@ -1169,13 +1169,13 @@ On Error GoTo Err_Handler
             'For multi-valued field, loop through the values
             Set rsMV = rs(0).value
             Do While Not rsMV.EOF
-                If Not IsNull(rsMV(0)) Then
+                If Not isnull(rsMV(0)) Then
                     strOut = strOut & rsMV(0) & strSeparator
                 End If
                 rsMV.MoveNext
             Loop
             Set rsMV = Nothing
-        ElseIf Not IsNull(rs(0)) Then
+        ElseIf Not isnull(rs(0)) Then
             strOut = strOut & rs(0) & strSeparator
         End If
         rs.MoveNext

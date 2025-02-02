@@ -29,7 +29,6 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-
 Public Function GetUserUak(ByVal ID As Integer) As String
 On Error GoTo Catch_Error
     Dim db As database
@@ -134,7 +133,7 @@ On Error GoTo Catch_Error
     'Validate activation key
     Set rs2 = db.OpenRecordset("SELECT uak FROM users WHERE id = " & ID, dbOpenDynaset, dbSeeChanges)
     
-    If rs2.EOF Or IsNull(rs2(0)) Then Exit Function
+    If rs2.EOF Or isnull(rs2(0)) Then Exit Function
     If CipherAES.RetrieveDecryptAES(rs2(0), config.MasterKey & ID, 1) <> rs1(0) Then Err.Raise vbObjectError + 513, , "Activation key not properly written. Activation failed"
     
     UserHasLicence = True
@@ -151,3 +150,29 @@ End Function
 Public Function GetLicenceKey(ByVal ID As Integer, ByVal uid As String) As String
     GetLicenceKey = CipherAES.StoreEncryptAES(uid, config.MasterKey & ID, 1)
 End Function
+
+Public Sub LicenceAllUsers()
+    Dim rs As DAO.Recordset
+    
+    Set rs = CurrentDb.OpenRecordset("SELECT * FROM users", dbOpenDynaset, dbSeeChanges)
+
+    'Loop through all users and write licence key
+    If Not (rs.EOF And rs.BOF) Then
+        rs.MoveFirst
+        Do Until rs.EOF = True
+            rs.Edit
+            rs!uak = GetLicenceKey(rs!ID, GetUserUid(rs!ID))
+            rs.Update
+            
+            'Prompt licensed user
+            SysCmd acSysCmdSetStatus, "User " & rs!ID & " licensed."
+            
+            rs.MoveNext
+        Loop
+    End If
+    
+    SysCmd acSysCmdSetStatus, "User: " & DbProcedures.GetUserName() & IIf(config.DemoMode, " (not licensed)", " (licensed)")
+    
+    rs.Close 'Close the recordset
+    Set rs = Nothing 'Clean up
+End Sub

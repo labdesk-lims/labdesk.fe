@@ -169,10 +169,10 @@ On Error GoTo Catch_Error
             Forms(frmCurrentForm.name).ShowInvoice
         
         Case "audit_trail"
-            If Not IsNull(Forms(frmCurrentForm.name).ID) Then DoCmd.OpenForm "_AuditTrail", acNormal, , , acFormReadOnly, acWindowNormal, Forms(frmCurrentForm.name).LinkedTable & ", " & Forms(frmCurrentForm.name).ID
+            If Not isnull(Forms(frmCurrentForm.name).ID) Then DoCmd.OpenForm "_AuditTrail", acNormal, , , acFormReadOnly, acWindowNormal, Forms(frmCurrentForm.name).LinkedTable & ", " & Forms(frmCurrentForm.name).ID
             
         Case "audit_trail_subform"
-            If Not IsNull(Forms(frmCurrentForm.name).Form(Screen.ActiveControl.Parent.name).Form.ID) Then DoCmd.OpenForm "_AuditTrail", acNormal, , , acFormReadOnly, acWindowNormal, Forms(frmCurrentForm.name).Form(Screen.ActiveControl.Parent.name).Form.DataTable & ", " & Forms(frmCurrentForm.name).Form(Screen.ActiveControl.Parent.name).Form.ID
+            If Not isnull(Forms(frmCurrentForm.name).Form(Screen.ActiveControl.Parent.name).Form.ID) Then DoCmd.OpenForm "_AuditTrail", acNormal, , , acFormReadOnly, acWindowNormal, Forms(frmCurrentForm.name).Form(Screen.ActiveControl.Parent.name).Form.DataTable & ", " & Forms(frmCurrentForm.name).Form(Screen.ActiveControl.Parent.name).Form.ID
             
         Case "refresh"
             Forms(frmCurrentForm.name).Requery
@@ -181,7 +181,7 @@ On Error GoTo Catch_Error
             Forms(frmCurrentForm.name).ActivateUser
         
          Case "deactivate_user"
-            If Not IsNull(Forms(frmCurrentForm.name).ID) Then ManageLicence.DeActivateUser Forms(frmCurrentForm.name).ID
+            If Not isnull(Forms(frmCurrentForm.name).ID) Then ManageLicence.DeActivateUser Forms(frmCurrentForm.name).ID
             Forms(frmCurrentForm.name).Requery
     End Select
 

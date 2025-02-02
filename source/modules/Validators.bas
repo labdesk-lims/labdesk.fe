@@ -23,7 +23,7 @@ On Error GoTo Catch_Error
     Dim objRegExp As New RegExp
     Dim blnIsValidEmail As Boolean
     
-    If IsNull(strEmailAddress) Then Resume Exit_Function
+    If isnull(strEmailAddress) Then Resume Exit_Function
     
     objRegExp.IgnoreCase = True
     objRegExp.global = True

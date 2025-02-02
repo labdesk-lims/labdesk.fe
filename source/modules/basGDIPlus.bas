@@ -291,7 +291,7 @@ Function InitGDIP() As Boolean
             End If
             
         #Else
-            If IsNull(TempVars("GDIPlusHandle")) Then
+            If isnull(TempVars("GDIPlusHandle")) Then
                 'Debug.Print Now(), "InitGDIP, start INIT"
                 TGDP.GdiplusVersion = 1
                 hMod = GetModuleHandle("gdiplus.dll")

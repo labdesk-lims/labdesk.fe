@@ -288,7 +288,7 @@ On Error GoTo Catch_Error
     Set rs = db.OpenRecordset("SELECT * FROM _permission")
     
     Do While Not rs.EOF
-        If Not IsNull(rs!description) Then
+        If Not isnull(rs!description) Then
             AddPermission Nz(rs!title, ""), Nz(rs!description, "")
         Else
             AddPermission Nz(rs!title, ""), ""
