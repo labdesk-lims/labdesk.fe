@@ -233,6 +233,6 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    MsgBox "Error (DbConnect - UnAttachDSNLessTables): " & Err.description, vbCritical, "Error"
+    'MsgBox "Error (DbConnect - UnAttachDSNLessTables): " & Err.description, vbCritical, "Error"
     Resume Exit_Function
 End Function
