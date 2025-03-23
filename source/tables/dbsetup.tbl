@@ -233,10 +233,10 @@ AAAAAAAAAAA=
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-02-15T09:59:14">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-03-23T18:20:49">
 <dbsetup>
 <ID>1</ID>
-<server>192.168.0.131</server>
+<server>labdesk-server</server>
 <database>develop</database>
 <user>sa</user>
 <password></password>

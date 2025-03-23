@@ -386,6 +386,39 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
+Public Function UserHasAdminRole() As Boolean
+'-------------------------------------------------------------------------------
+' Function:  GetUserId
+' Date:      2022 March
+' Purpose:   Get the id of the logged in user
+' In:        -
+' Out:       User id (will be null in case of any error)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    If pUserId <> 0 Then GoTo Exit_Function
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT users.id FROM users INNER JOIN role ON users.role = role.id WHERE role.administrative = 1 AND users.name = '" & GetUserName() & "'", dbOpenDynaset, dbSeeChanges)
+    
+    If rs.EOF Or rs.BOF Then
+        UserHasAdminRole = False
+    Else
+        UserHasAdminRole = True
+    End If
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.GetUserId: " & Err.description
+    UserHasAdminRole = Null
+    Resume Exit_Function
+End Function
+
 Public Function GetTranslation(ByVal container As String, ByVal item As String, ByVal language As String) As Variant
 '-------------------------------------------------------------------------------
 ' Function:         GetTranslation
@@ -494,6 +527,10 @@ On Error GoTo Catch_Error
         Case "profile"
             cmd.CommandText = "profile_duplicate"
             cmd.Parameters.Append cmd.CreateParameter("@pProfile", adInteger, adParamInput, , ID)
+            cmd.Execute
+        Case "project"
+            cmd.CommandText = "project_duplicate"
+            cmd.Parameters.Append cmd.CreateParameter("@pProject", adInteger, adParamInput, , ID)
             cmd.Execute
         Case Else
             MsgBox GetTranslation("msgbox", "duplication_not_supported", GetDbSetting("language")), vbExclamation, GetTranslation("msgbox", "vbExclamation", GetDbSetting("language"))

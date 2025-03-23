@@ -640,7 +640,7 @@ Public Sub SyncFormAddRecord(ByRef rfrm As Form)
 ' Out:              -
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-        ' If form is already open then exit sub to avoid data loss
+    ' If form is already open then exit sub to avoid data loss
     If IsFormOpen(rfrm.EditForm) Then
         MsgBox GetTranslation("msgbox", "edit_form_already_open", GetDbSetting("language")), vbExclamation, GetTranslation("msgbox", "vbExclamation", GetDbSetting("language"))
         Exit Sub
