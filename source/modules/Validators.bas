@@ -140,3 +140,19 @@ Public Sub ComboBoxSearch(ByRef combo As comboBox, ByVal lookupField As String, 
     combo.RowSource = "SELECT " & lookupField & ", " & pk & " FROM (" & Replace(strSQL, ";", "") & ") WHERE " & lookupField & " Like '*" & combo.Text & "*'"
     'combo.Dropdown '<- activate to open dropdown combobox automatically
 End Sub
+
+Public Function ControlExists(controlName As String, rfrm As Form) As Boolean
+'-------------------------------------------------------------------------------
+'Function:          ControlExists
+'Date:              2025 May
+'Purpose:           Check if control exists
+'In:
+'-> controlName     Name of the control
+'-> rfrm            Name of the form to be checked
+'Out:               Exists (T/F)
+'-------------------------------------------------------------------------------
+    Dim ctl As control
+    For Each ctl In rfrm.Controls
+        If ctl.name = controlName Then ControlExists = True
+    Next ctl
+End Function

@@ -7,7 +7,7 @@ Attribute VB_Name = "DbBlob"
 Option Compare Database
 Option Explicit
     
-Public Function BlobToFile(ByVal strFile As String, ByRef field As Object) As Long
+Public Function BlobToFile(ByVal strFile As String, ByRef Field As Object) As Long
 '-------------------------------------------------------------------------------
 'Function:          BlobToFile
 'Date:              2021 October
@@ -24,7 +24,7 @@ On Error GoTo Err_BlobToFile
     nFileNum = FreeFile
 
     Open strFile For Binary Access Write As nFileNum
-    abytData = field
+    abytData = Field
     Put #nFileNum, , abytData
     BlobToFile = LOF(nFileNum)
 
@@ -38,7 +38,7 @@ Err_BlobToFile:
     Resume Exit_BlobToFile
 End Function
 
-Public Function FileToBlob(ByVal strFile As String, ByRef field As Object) As Boolean
+Public Function FileToBlob(ByVal strFile As String, ByRef Field As Object) As Boolean
 '-------------------------------------------------------------------------------
 'Function:          FileToBlob
 'Date:              2021 October
@@ -71,7 +71,7 @@ On Error GoTo Err_FileToBlob
     mstream.LoadFromFile strFile
 
     'read our binary file into the OLE Field
-    field = mstream.Read
+    Field = mstream.Read
 
     'Edit: Removed some cleanup code I had inadvertently left here.
 

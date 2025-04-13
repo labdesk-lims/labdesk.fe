@@ -136,7 +136,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function GetFieldValue(ByVal table As String, ByVal field As String, Optional ByVal ID As Long) As Variant
+Public Function GetFieldValue(ByVal Table As String, ByVal Field As String, Optional ByVal ID As Long) As Variant
 '-------------------------------------------------------------------------------
 ' Function:         GetFieldValue
 ' Date:             2022 Feburary
@@ -152,9 +152,9 @@ On Error GoTo Catch_Error
     
     Set db = CurrentDb()
     If Nz(ID, 0) = 0 Then
-        Set rs = db.OpenRecordset("SELECT TOP 1 " & field & " FROM " & table)
+        Set rs = db.OpenRecordset("SELECT TOP 1 " & Field & " FROM " & Table)
     Else
-        Set rs = db.OpenRecordset("SELECT " & field & " FROM " & table & " WHERE id = " & ID)
+        Set rs = db.OpenRecordset("SELECT " & Field & " FROM " & Table & " WHERE id = " & ID)
     End If
     
     If rs(0) <> "" Then
@@ -173,7 +173,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function SetFieldValue(ByVal table As String, ByVal field As String, ByVal ID As Long, ByVal value As Variant) As Boolean
+Public Function SetFieldValue(ByVal Table As String, ByVal Field As String, ByVal ID As Long, ByVal value As Variant) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         SetFieldValue
 ' Date:             2022 Feburary
@@ -190,9 +190,9 @@ On Error GoTo Catch_Error
     Set db = CurrentDb()
     
     If IsNumeric(value) Then
-        db.Execute "UPDATE " & table & " SET " & field & " = " & value
+        db.Execute "UPDATE " & Table & " SET " & Field & " = " & value
     Else
-        db.Execute "UPDATE " & table & " SET " & field & " = '" & value & "'"
+        db.Execute "UPDATE " & Table & " SET " & Field & " = '" & value & "'"
     End If
     
     SetFieldValue = True
@@ -498,7 +498,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function DuplicateRecord(ByVal table As String, ByVal ID As Long) As Boolean
+Public Function DuplicateRecord(ByVal Table As String, ByVal ID As Long) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         DuplicateRecord
 ' Date:             2022 January
@@ -515,7 +515,7 @@ On Error GoTo Catch_Error
     cmd.ActiveConnection = ADODBConStr
     cmd.CommandType = adCmdStoredProc
     
-    Select Case table
+    Select Case Table
         Case "role"
             cmd.CommandText = "role_duplicate"
             cmd.Parameters.Append cmd.CreateParameter("@pRole", adInteger, adParamInput, , ID)
@@ -806,7 +806,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function GetAuditTrail(ByVal table As String, ByVal ID As Long) As String
+Public Function GetAuditTrail(ByVal Table As String, ByVal ID As Long) As String
 '-------------------------------------------------------------------------------
 ' Function:         etAuditTrail
 ' Date:             2022 March
@@ -821,7 +821,7 @@ Public Function GetAuditTrail(ByVal table As String, ByVal ID As Long) As String
 On Error GoTo Catch_Error
     Dim cmd As ADODB.Command
     Dim rs As ADODB.Recordset
-    Dim fld As field
+    Dim fld As Field
     Dim s As String
     
     Set cmd = New ADODB.Command
@@ -830,7 +830,7 @@ On Error GoTo Catch_Error
     
     cmd.CommandType = adCmdStoredProc
     cmd.CommandText = "audit_xml_diff"
-    cmd.Parameters.Append cmd.CreateParameter("@table_name", adVarChar, adParamInput, 128, table)
+    cmd.Parameters.Append cmd.CreateParameter("@table_name", adVarChar, adParamInput, 128, Table)
     cmd.Parameters.Append cmd.CreateParameter("@id", adInteger, adParamInput, , ID)
     
     Set rs = cmd.Execute()

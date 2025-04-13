@@ -187,7 +187,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function ConfigAsyncForm(ByRef rfrm As Form, ByVal table As String, ByVal tmpGuid As String, Optional navButton As Boolean, Optional readOnly As Boolean, Optional whereClause As String) As Boolean
+Public Function ConfigAsyncForm(ByRef rfrm As Form, ByVal Table As String, ByVal tmpGuid As String, Optional navButton As Boolean, Optional readOnly As Boolean, Optional whereClause As String) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         ConfigAsyncForm
 ' Date:             2022 January
@@ -212,7 +212,7 @@ On Error GoTo Catch_Error
     CustomizeForm rfrm
 
     'Disable identity column if one exists
-    If GetIdentityColumn(table) <> "" Then rfrm.Controls(GetIdentityColumn(table)).enabled = False
+    If GetIdentityColumn(Table) <> "" Then rfrm.Controls(GetIdentityColumn(Table)).enabled = False
     
     'Translate all controls
     TranslateForm rfrm.Form, GetDbSetting("language")
@@ -220,11 +220,11 @@ On Error GoTo Catch_Error
     
     'Prepare temporary table for actual session and set it as object source
     If TableExists(GetTableNameFromGuid(tmpGuid)) Then CurrentDb.TableDefs.Delete GetTableNameFromGuid(tmpGuid)
-    CreateTable table, GetTableNameFromGuid(tmpGuid)
+    CreateTable Table, GetTableNameFromGuid(tmpGuid)
     rfrm.RecordSource = GetTableNameFromGuid(tmpGuid)
     
     'Copy table for async data handling
-    If whereClause <> "" Then CopyTable table, GetTableNameFromGuid(tmpGuid), whereClause
+    If whereClause <> "" Then CopyTable Table, GetTableNameFromGuid(tmpGuid), whereClause
     If TableExists(GetCpyTableNameFromGuid(tmpGuid)) Then CurrentDb.TableDefs.Delete GetCpyTableNameFromGuid(tmpGuid)
     CopyTable GetTableNameFromGuid(tmpGuid), GetCpyTableNameFromGuid(tmpGuid)
     
@@ -239,7 +239,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function ConfigAsyncSubForm(ByRef rfrm As Form, ByVal table As String, ByVal tmpGuid As String, Optional ByVal navButton As Boolean, Optional ByVal readOnly As Boolean, Optional ByVal whereClause As String) As Boolean
+Public Function ConfigAsyncSubForm(ByRef rfrm As Form, ByVal Table As String, ByVal tmpGuid As String, Optional ByVal navButton As Boolean, Optional ByVal readOnly As Boolean, Optional ByVal whereClause As String) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         ConfigAsyncSubForm
 ' Date:             2022 January
@@ -269,18 +269,18 @@ On Error GoTo Catch_Error
     CustomizeForm rfrm
 
     'Disable identity column
-    rfrm.Controls(GetIdentityColumn(table)).enabled = False
+    rfrm.Controls(GetIdentityColumn(Table)).enabled = False
 
     'Translate all controls
     TranslateForm rfrm.Form, GetDbSetting("language")
     
     'Prepare temporary table for actual session and set it as object source
     If TableExists(GetTableNameFromGuid(tmpGuid)) Then CurrentDb.TableDefs.Delete GetTableNameFromGuid(tmpGuid)
-    CreateTable table, GetTableNameFromGuid(tmpGuid)
+    CreateTable Table, GetTableNameFromGuid(tmpGuid)
     rfrm.RecordSource = GetTableNameFromGuid(tmpGuid)
     
     'Copy table for async data handling
-    If whereClause <> "" Then CopyTable table, GetTableNameFromGuid(tmpGuid), whereClause
+    If whereClause <> "" Then CopyTable Table, GetTableNameFromGuid(tmpGuid), whereClause
     If TableExists(GetCpyTableNameFromGuid(tmpGuid)) Then CurrentDb.TableDefs.Delete GetCpyTableNameFromGuid(tmpGuid)
     CopyTable GetTableNameFromGuid(tmpGuid), GetCpyTableNameFromGuid(tmpGuid)
     rfrm.Requery
@@ -294,7 +294,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function ConfigSyncForm(ByRef rfrm As Form, ByVal table As String, Optional ByVal navButton As Boolean, Optional ByVal readOnly As Boolean) As Boolean
+Public Function ConfigSyncForm(ByRef rfrm As Form, ByVal Table As String, Optional ByVal navButton As Boolean, Optional ByVal readOnly As Boolean) As Boolean
 '-------------------------------------------------------------------------------
 ' Function:         ConfigSyncForm
 ' Date:             2022 January

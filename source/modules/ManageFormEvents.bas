@@ -381,11 +381,22 @@ Public Sub AsyncSubFormInit(ByRef rfrm As Form)
 On Error GoTo Catch_Error
     Dim ctrl As control
     Dim cs As ColumnStyle
+    Dim dt As String
     
     rfrm.tmpGuid = CreateGuid()
     
     ' Config Main Form
-    ConfigAsyncSubForm rfrm.Form, rfrm.DataTable, rfrm.tmpGuid, False, rfrm.readOnly, rfrm.whereClause
+    If ControlExists(rfrm.name, rfrm.Parent) Then
+        dt = Nz(rfrm.Parent(rfrm.name).LinkChildFields, "")
+    Else
+        dt = rfrm.Parent.DataTable
+    End If
+    
+    If dt <> rfrm.Parent.DataTable Then
+        ConfigAsyncSubForm rfrm.Form, rfrm.DataTable, rfrm.tmpGuid, False, rfrm.readOnly, "WHERE " & dt & "=" & rfrm.Parent(dt).value
+    Else
+        ConfigAsyncSubForm rfrm.Form, rfrm.DataTable, rfrm.tmpGuid, False, rfrm.readOnly, rfrm.whereClause
+    End If
     
     ' Adjust to best fit width
     For Each ctrl In rfrm.Controls
@@ -660,9 +671,9 @@ Catch_Error:
     Resume Exit_Function
 End Sub
 
-Public Sub SyncFormDuplicateRecord(ByVal table As String, ByVal ID As Long)
+Public Sub SyncFormDuplicateRecord(ByVal Table As String, ByVal ID As Long)
      ' This sub is called by the context menu, add any code of relevance
-     DuplicateRecord table, ID
+     DuplicateRecord Table, ID
 End Sub
 
 Public Sub SyncFormSaveFilter(rfrm As Form)

@@ -47,7 +47,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function GetIdentityColumn(ByVal table As String) As String
+Public Function GetIdentityColumn(ByVal Table As String) As String
 '-------------------------------------------------------------------------------
 'Function:  GetIdentityColumn
 'Date:      2021 October
@@ -57,13 +57,13 @@ Public Function GetIdentityColumn(ByVal table As String) As String
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     Dim db As DAO.database, tbl As DAO.TableDef
-    Dim f As DAO.field
+    Dim f As DAO.Field
     Dim id_clmn As String
     
     Set db = CurrentDb()
     
     For Each tbl In db.TableDefs
-        If tbl.name = table Then
+        If tbl.name = Table Then
             For Each f In tbl.Fields
                 If f.attributes = 17 And f.type = 4 Then    '(17 = dbAutoIncrField (16) + dbFixedField(1),  4 = dbLong)
                     id_clmn = f.name
@@ -81,7 +81,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function TableExists(ByVal table As String) As Boolean
+Public Function TableExists(ByVal Table As String) As Boolean
 '-------------------------------------------------------------------------------
 'Function:  TableExists
 'Date:      2021 October
@@ -91,7 +91,7 @@ Public Function TableExists(ByVal table As String) As Boolean
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     Dim tbl
-    tbl = DCount("*", table)
+    tbl = DCount("*", Table)
     
     TableExists = True
     
@@ -101,7 +101,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function CleanTable(ByVal table As String) As Boolean
+Public Function CleanTable(ByVal Table As String) As Boolean
 '-------------------------------------------------------------------------------
 'Function:  Clean Table
 'Date:      2021 October
@@ -110,7 +110,7 @@ Public Function CleanTable(ByVal table As String) As Boolean
 'Out:       Cleaned(T/F)
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
-    CurrentDb.Execute "DELETE * FROM " & table
+    CurrentDb.Execute "DELETE * FROM " & Table
     
     CleanTable = True
     
@@ -121,7 +121,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function CreateTable(ByVal table As String, ByVal tableCopy As String) As Boolean
+Public Function CreateTable(ByVal Table As String, ByVal tableCopy As String) As Boolean
 '-------------------------------------------------------------------------------
 'Function:      CreateTable
 'Date:          2021 October
@@ -133,12 +133,12 @@ Public Function CreateTable(ByVal table As String, ByVal tableCopy As String) As
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     Dim db As database
-    Dim tdf As TableDef, fldNew As field
-    Dim fldOld As field, rst As Recordset
+    Dim tdf As TableDef, fldNew As Field
+    Dim fldOld As Field, rst As Recordset
     Dim fldPrp As DAO.Property
     
     Set db = CurrentDb
-    Set rst = CurrentDb.OpenRecordset("Select * FROM " & table, dbOpenDynaset, dbSeeChanges, dbOptimistic)
+    Set rst = CurrentDb.OpenRecordset("Select * FROM " & Table, dbOpenDynaset, dbSeeChanges, dbOptimistic)
     'Create new table
     Set tdf = db.CreateTableDef(tableCopy)
     
@@ -160,7 +160,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function CopyTable(ByVal table As String, ByVal tableCopy As String, Optional ByVal whereClause As String) As Boolean
+Public Function CopyTable(ByVal Table As String, ByVal tableCopy As String, Optional ByVal whereClause As String) As Boolean
 '-------------------------------------------------------------------------------
 'Function:          CopyTable
 'Date:              2021 October
@@ -181,11 +181,11 @@ On Error GoTo Catch_Error
     If TableExists(tableCopy) Then
         CleanTable tableCopy
     Else
-        CreateTable table, tableCopy
+        CreateTable Table, tableCopy
     End If
     
     'Copy data from table to copyTable
-    db.Execute "INSERT INTO " & tableCopy & " SELECT * FROM " & table & " " & whereClause, dbSeeChanges
+    db.Execute "INSERT INTO " & tableCopy & " SELECT * FROM " & Table & " " & whereClause, dbSeeChanges
     
     CopyTable = True
 
@@ -196,7 +196,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function UpdateTable(ByVal table As String, ByVal tableCopy As String) As Boolean
+Public Function UpdateTable(ByVal Table As String, ByVal tableCopy As String) As Boolean
 '-------------------------------------------------------------------------------
 'Function:      UpdateTable
 'Date:          2021 October
@@ -208,19 +208,19 @@ Public Function UpdateTable(ByVal table As String, ByVal tableCopy As String) As
 '-------------------------------------------------------------------------------
 On Error GoTo Catch_Error
     Dim db As database, rstForm As Recordset, rstTemp As Recordset
-    Dim fld As field
+    Dim fld As Field
     Dim id_column As String
     
     Set db = CurrentDb
 
     Set rstTemp = CurrentDb.OpenRecordset("Select * FROM " & tableCopy & " WHERE id <> NULL", dbOpenDynaset, dbSeeChanges, dbOptimistic)
-    id_column = GetIdentityColumn(table)
+    id_column = GetIdentityColumn(Table)
 
     If Not (rstTemp.BOF And rstTemp.EOF) Then
         'Update all of the form records which have been edited
         rstTemp.MoveFirst
         Do Until rstTemp.EOF
-            Set rstForm = CurrentDb.OpenRecordset("Select * FROM " & table & " WHERE id = " & rstTemp(id_column).value, dbOpenDynaset, dbSeeChanges, dbOptimistic)
+            Set rstForm = CurrentDb.OpenRecordset("Select * FROM " & Table & " WHERE id = " & rstTemp(id_column).value, dbOpenDynaset, dbSeeChanges, dbOptimistic)
             If Not rstForm.EOF Then
                 rstForm.Edit
                 For Each fld In rstTemp.Fields
@@ -239,8 +239,8 @@ On Error GoTo Catch_Error
     End If
     
     Set rstTemp = CurrentDb.OpenRecordset("Select * FROM " & tableCopy & " WHERE id IS NULL", dbOpenDynaset, dbSeeChanges, dbOptimistic)
-    Set rstForm = db.OpenRecordset(table, dbOpenDynaset, dbSeeChanges, dbOptimistic)
-    id_column = GetIdentityColumn(table)
+    Set rstForm = db.OpenRecordset(Table, dbOpenDynaset, dbSeeChanges, dbOptimistic)
+    id_column = GetIdentityColumn(Table)
 
     If Not (rstTemp.BOF And rstTemp.EOF) Then
         'Add all of the form records which have been added
@@ -262,7 +262,7 @@ On Error GoTo Catch_Error
         'Delete all of the form records which have been deleted
         rstTemp.MoveFirst
         Do Until rstTemp.EOF
-            CurrentDb.Execute "DELETE FROM " & table & " WHERE id = " & rstTemp("id").value, dbSeeChanges
+            CurrentDb.Execute "DELETE FROM " & Table & " WHERE id = " & rstTemp("id").value, dbSeeChanges
             rstTemp.MoveNext
         Loop
     End If
@@ -276,7 +276,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function CreateMultiReportTable(ByVal table As String, ByVal profile As Long, ByVal smppoint As Long, ByVal top As Long, ByVal startFrom As Long) As Recordset
+Public Function CreateMultiReportTable(ByVal Table As String, ByVal profile As Long, ByVal smppoint As Long, ByVal top As Long, ByVal startFrom As Long) As Recordset
 '-------------------------------------------------------------------------------
 'Function:      CreateMultiReportTable
 'Date:          2023 December
@@ -295,7 +295,7 @@ On Error GoTo Catch_Error
     Dim rx As Recordset
     Dim i As Long
     Dim tdf As TableDef
-    Dim fld As field
+    Dim fld As Field
     
     Set cmd = New ADODB.Command
     
@@ -309,9 +309,9 @@ On Error GoTo Catch_Error
     
     Set rs = cmd.Execute
     
-    If TableExists(table) Then CurrentDb.TableDefs.Delete table
+    If TableExists(Table) Then CurrentDb.TableDefs.Delete Table
     
-    Set tdf = CurrentDb.CreateTableDef(table)
+    Set tdf = CurrentDb.CreateTableDef(Table)
     
     ' Create columns
     For i = 0 To rs.Fields.count - 1
@@ -322,7 +322,7 @@ On Error GoTo Catch_Error
     CurrentDb.TableDefs.Append tdf
     
     ' Update data
-    Set rx = CurrentDb.OpenRecordset(table, dbOpenDynaset)
+    Set rx = CurrentDb.OpenRecordset(Table, dbOpenDynaset)
     rs.MoveFirst
     Do While Not rs.EOF
         rx.AddNew
@@ -345,7 +345,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function CreateHorizontalReportTable(ByVal table As String, ByVal request As Long) As Recordset
+Public Function CreateHorizontalReportTable(ByVal Table As String, ByVal request As Long) As Recordset
 '-------------------------------------------------------------------------------
 'Function:      CreateHorizontalReportTable
 'Date:          2024 September
@@ -361,7 +361,7 @@ On Error GoTo Catch_Error
     Dim rx As Recordset
     Dim i As Long
     Dim tdf As TableDef
-    Dim fld As field
+    Dim fld As Field
     
     Set cmd = New ADODB.Command
     
@@ -372,9 +372,9 @@ On Error GoTo Catch_Error
     
     Set rs = cmd.Execute
     
-    If TableExists(table) Then CurrentDb.TableDefs.Delete table
+    If TableExists(Table) Then CurrentDb.TableDefs.Delete Table
     
-    Set tdf = CurrentDb.CreateTableDef(table)
+    Set tdf = CurrentDb.CreateTableDef(Table)
     
     ' Create columns
     For i = 0 To rs.Fields.count - 1
@@ -385,7 +385,7 @@ On Error GoTo Catch_Error
     CurrentDb.TableDefs.Append tdf
     
     ' Update data
-    Set rx = CurrentDb.OpenRecordset(table, dbOpenDynaset)
+    Set rx = CurrentDb.OpenRecordset(Table, dbOpenDynaset)
     rs.MoveFirst
     Do While Not rs.EOF
         rx.AddNew
@@ -408,7 +408,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function CreateHorizontalProfileTable(ByVal table As String, ByVal request As Long) As Recordset
+Public Function CreateHorizontalProfileTable(ByVal Table As String, ByVal request As Long) As Recordset
 '-------------------------------------------------------------------------------
 'Function:      CreateHorizontalReportTable
 'Date:          2024 September
@@ -424,7 +424,7 @@ On Error GoTo Catch_Error
     Dim rx As Recordset
     Dim i As Long
     Dim tdf As TableDef
-    Dim fld As field
+    Dim fld As Field
     
     Set cmd = New ADODB.Command
     
@@ -435,9 +435,9 @@ On Error GoTo Catch_Error
     
     Set rs = cmd.Execute
     
-    If TableExists(table) Then CurrentDb.TableDefs.Delete table
+    If TableExists(Table) Then CurrentDb.TableDefs.Delete Table
     
-    Set tdf = CurrentDb.CreateTableDef(table)
+    Set tdf = CurrentDb.CreateTableDef(Table)
     
     ' Create columns
     For i = 0 To rs.Fields.count - 1
@@ -448,7 +448,7 @@ On Error GoTo Catch_Error
     CurrentDb.TableDefs.Append tdf
     
     ' Update data
-    Set rx = CurrentDb.OpenRecordset(table, dbOpenDynaset)
+    Set rx = CurrentDb.OpenRecordset(Table, dbOpenDynaset)
     rs.MoveFirst
     Do While Not rs.EOF
         rx.AddNew
