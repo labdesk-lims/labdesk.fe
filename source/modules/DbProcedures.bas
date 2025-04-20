@@ -435,13 +435,13 @@ On Error GoTo Catch_Error
     Dim rs As Recordset
     
     Set db = CurrentDb()
-    Set rs = db.OpenRecordset("SELECT " & language & " FROM translation WHERE container ='" & container & "' AND item = '" & item & "'")
+    Set rs = db.OpenRecordset("SELECT " & language & ", mandantory FROM translation WHERE container ='" & container & "' AND item = '" & item & "'")
     
     If rs.EOF Or rs.BOF Then
         db.Execute "INSERT INTO translation(container, item) VALUES('" & container & "', '" & item & "')"
         GetTranslation = item
     Else
-        GetTranslation = Nz(rs(0), item)
+        GetTranslation = Nz(rs(0), item) & IIf(rs(1), " *", "")
     End If
 
 Exit_Function:
@@ -451,6 +451,39 @@ Exit_Function:
 Catch_Error:
     AddErrorLog Err.Number, "DbProcedures.GetTranslation: " & Err.description
     GetTranslation = item
+    Resume Exit_Function
+End Function
+
+Public Function IsMandantory(ByVal container As String, ByVal item As String) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         IsMandantory
+' Date:             2025 April
+' Purpose:          Check if item in container is mandantoy
+' In:
+' -> container:     Container with item of interes (e.g. Form, MsgBox, . . .)
+' -> item:          Item to be translated (e.g. name of the control)
+' Out:              Mandantory (will be null in case of any error)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim db As database
+    Dim rs As Recordset
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("SELECT mandantory FROM translation WHERE container ='" & container & "' AND item = '" & item & "'")
+
+    If rs.EOF Or rs.BOF Then
+        IsMandantory = False
+    Else
+        IsMandantory = Nz(rs(0), False)
+    End If
+
+Exit_Function:
+    Set db = Nothing
+    Set rs = Nothing
+    Exit Function
+Catch_Error:
+    AddErrorLog Err.Number, "DbProcedures.IsMandantory: " & Err.description
+    IsMandantory = False
     Resume Exit_Function
 End Function
 
@@ -1289,7 +1322,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Public Function RunTemplate(ByVal template As Integer, ByVal priority As Integer, ByVal workflow As Integer, ByVal clientOrderId As String) As Variant
+Public Function RunTemplate(ByVal template As Integer, ByVal priority As Variant, ByVal workflow As Variant, ByVal clientOrderId As String) As Variant
 '-------------------------------------------------------------------------------
 ' Function:         RunTemplate
 ' Date:             2024 May

@@ -48,6 +48,14 @@ End Function
 Public Sub ContextMenuInit()
     ContextMenuReset
     
+    'Create menu_stx entries
+    ContextMenuAdd "menu_stx", "apply_filter", 601, True
+    ContextMenuAdd "menu_stx", "save_filter", 602
+    ContextMenuAdd "menu_stx", "clmn_dlg", 8, True
+    ContextMenuAdd "menu_stx", "clmn_std", 6
+    ContextMenuAdd "menu_stx", "audit_trail", 29, True
+    ContextMenuAdd "menu_stx", "refresh", 37, True
+    
     'Create menu_std entries
     ContextMenuAdd "menu_std", "add_record", 192
     ContextMenuAdd "menu_std", "apply_filter", 601, True

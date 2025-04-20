@@ -156,3 +156,35 @@ Public Function ControlExists(controlName As String, rfrm As Form) As Boolean
         If ctl.name = controlName Then ControlExists = True
     Next ctl
 End Function
+
+Public Function MandantoryFieldsSet(ByRef rfrm As Form) As Boolean
+'-------------------------------------------------------------------------------
+' Function:         MandantoryFieldsSet
+' Date:             2025 April
+' Purpose:          Check if all mandantory fields are set
+' In:
+' -> rfrm:          Form which will be configured
+' Out:              All set (T/F)
+'-------------------------------------------------------------------------------
+On Error GoTo Catch_Error
+    Dim ctrl As control
+    
+    MandantoryFieldsSet = True
+    
+    'Check all fields if set
+    For Each ctrl In rfrm.Controls
+        'Translate labels
+        If TypeName(ctrl) = "TextBox" Or TypeName(ctrl) = "CheckBox" Or TypeName(ctrl) = "ComboBox" Or TypeName(ctrl) = "CustomControl" Or TypeName(ctrl) = "ListBox" Or TypeName(ctrl) = "ObjectFrame" Then
+            If IsMandantory(rfrm.name, ctrl.name & "_") And (rfrm(ctrl.name) = "" Or isnull(rfrm(ctrl.name))) Then
+                MandantoryFieldsSet = False
+            End If
+        End If
+    Next ctrl
+    
+Exit_Function:
+    Exit Function
+Catch_Error:
+    AddErrorLog Err.Number, "ManageForm.MandantoryFieldsSet: " & Err.description
+    Resume Exit_Function
+End Function
+

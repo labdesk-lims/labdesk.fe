@@ -235,7 +235,7 @@ On Error GoTo Catch_Error
 Exit_Function:
     Exit Function
 Catch_Error:
-    AddErrorLog Err.Number, "ManageForm.ConfigAsynForm: " & Err.description
+    AddErrorLog Err.Number, "ManageForm.ConfigAsyncForm: " & Err.description
     Resume Exit_Function
 End Function
 
@@ -319,7 +319,7 @@ On Error GoTo Catch_Error
     'Set all labels to read only if edit permission is not set
     For Each ctrl In rfrm.Controls
         'Translate labels
-        If TypeName(ctrl) = "TextBox" Or TypeName(ctrl) = "CheckBox" Or TypeName(ctrl) = "ComboBox" Or TypeName(ctrl) = "CustomControl" Or TypeName(ctrl) = "ListBox" Or TypeName(ctrl) = "ObjecFrame" Then
+        If TypeName(ctrl) = "TextBox" Or TypeName(ctrl) = "CheckBox" Or TypeName(ctrl) = "ComboBox" Or TypeName(ctrl) = "CustomControl" Or TypeName(ctrl) = "ListBox" Or TypeName(ctrl) = "ObjectFrame" Then
             If Not GetPermission(rfrm.name).Update Or readOnly Then
                 rfrm.Controls(ctrl.name).Locked = True
             Else

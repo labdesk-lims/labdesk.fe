@@ -17,6 +17,8 @@
 						<col style="WIDTH: 2.499cm"/>
 						<col style="WIDTH: 2.499cm"/>
 						<col style="WIDTH: 2.499cm"/>
+						<col style="TEXT-ALIGN: right; WIDTH: 2.499cm"/>
+						<col style="TEXT-ALIGN: right; WIDTH: 2.499cm"/>
 					</colgroup>
 					<tbody>
 						<tr>
@@ -50,6 +52,16 @@
 									<strong>custom</strong>
 								</div>
 							</td>
+							<td>
+								<div align="center">
+									<strong>mandantory</strong>
+								</div>
+							</td>
+							<td>
+								<div align="center">
+									<strong>factory</strong>
+								</div>
+							</td>
 						</tr>
 					</tbody>
 					<tbody id="CTRL2">
@@ -74,6 +86,12 @@
 								</td>
 								<td>
 									<xsl:value-of select="custom"/>
+								</td>
+								<td>
+									<xsl:value-of select="mandantory"/>
+								</td>
+								<td>
+									<xsl:value-of select="factory"/>
 								</td>
 							</tr>
 						</xsl:for-each>
