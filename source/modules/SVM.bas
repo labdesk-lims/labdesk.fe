@@ -228,7 +228,7 @@ Private Function addFolder(ByVal strPath As String, ByVal strFolder As String) A
     If Not fso.FolderExists(addFolder) Then MkDir addFolder
 End Function
 
-Public Function deleteFolder(ByVal strPath As String, ByVal strFolder As String) As String
+Private Function deleteFolder(ByVal strPath As String, ByVal strFolder As String) As String
 On Error GoTo Skip
     Dim fso As Object
     

@@ -27,16 +27,13 @@ Private Const pAppTitle = "LABDESK - Laboratory Information Management System"
 ' Background worker timer interval in milliseconds
 Private Const pBackgroundWorkerInterval = 3 * 60000
 
-' Encryption master key
-Private Const pMasterKey = "d9!7*G7vBd/bs778#"
-
-' Demo mode
-Public DemoMode As Boolean
-
 ' Semantic Versioning according to https://semver.org/
 ' MAJOR-MINOR-PATCH
-Private Const pFeVersion = "v2.9.7" 'Presented frontend version
-Private Const pBeVersion = "v2.9.6" 'Required backend version
+Private Const pFeVersion = "v2.9.8" 'Presented frontend version
+Private Const pBeVersion = "v2.9.8" 'Required backend version
+
+' Licensing
+Private Const pLicenceFile = "labdesk.lic" 'Filename of the licence
 
 ' Identifiers used for reports and labels
 Private Const pReportId = "RPT-" 'Identifier for selectable reports
@@ -47,6 +44,9 @@ Private Const pWorksheetId = "WKS-" 'Identifier for selectable Worksheets
 ' Temporary cache folder (the local user folder will be used) .labdesk
 Private pCacheFolder As String
 
+Public Property Get LicencePath() As String
+    LicencePath = CurrentProject.path & "\" & pLicenceFile
+End Property
 Public Property Get ConnectionTimeout() As Integer
     ConnectionTimeout = pConnectionTimeout
 End Property
@@ -61,10 +61,6 @@ End Property
 
 Public Property Get BackgroundWorkerInterval()
     BackgroundWorkerInterval = pBackgroundWorkerInterval
-End Property
-
-Public Property Get MasterKey() As String
-    MasterKey = pMasterKey
 End Property
 
 Public Property Get FeVersion() As String

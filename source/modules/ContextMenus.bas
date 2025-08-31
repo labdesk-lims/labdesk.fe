@@ -40,7 +40,7 @@ Private Function ContextMenuAdd(ByVal name As String, ByVal parameter As String,
     
     If beginGroup Then cmbBtn_CreateNew.beginGroup = True
     cmbBtn_CreateNew.faceId = faceId
-    cmbBtn_CreateNew.caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_" & parameter, DbConnect.GetDbSetting("language"))
+    cmbBtn_CreateNew.Caption = DbProcedures.GetTranslation("mdlContextMenu", "contextmnu_" & name & "_" & parameter, DbConnect.GetDbSetting("language"))
     cmbBtn_CreateNew.parameter = parameter
     cmbBtn_CreateNew.OnAction = "fnCall"
 End Function
@@ -107,8 +107,6 @@ Public Sub ContextMenuInit()
     
     'Create menu_usr entires
     ContextMenuAdd "menu_usr", "add_record", 192
-    ContextMenuAdd "menu_usr", "activate_user", 343, True
-    ContextMenuAdd "menu_usr", "deactivate_user", 342
     ContextMenuAdd "menu_usr", "apply_filter", 601, True
     ContextMenuAdd "menu_usr", "save_filter", 602
     ContextMenuAdd "menu_usr", "clmn_dlg", 8, True
@@ -134,6 +132,7 @@ On Error GoTo Catch_Error
     Set frmCurrentForm = Screen.ActiveForm
     
     Select Case strAction
+    
         Case "add_record"
             Forms(frmCurrentForm.name).AddRecord
             
@@ -184,13 +183,7 @@ On Error GoTo Catch_Error
             
         Case "refresh"
             Forms(frmCurrentForm.name).Requery
-            
-        Case "activate_user"
-            Forms(frmCurrentForm.name).ActivateUser
-        
-         Case "deactivate_user"
-            If Not isnull(Forms(frmCurrentForm.name).ID) Then ManageLicence.DeActivateUser Forms(frmCurrentForm.name).ID
-            Forms(frmCurrentForm.name).Requery
+    
     End Select
 
 Exit_Function:

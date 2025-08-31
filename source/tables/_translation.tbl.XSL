@@ -11,14 +11,14 @@
 			<body link="#0c0000" vlink="#050000">
 				<table border="1" bgcolor="#ffffff" cellspacing="0" cellpadding="0" id="CTRL1">
 					<colgroup>
-						<col style="TEXT-ALIGN: right; WIDTH: 2.499cm"/>
-						<col style="WIDTH: 2.499cm"/>
-						<col style="WIDTH: 2.499cm"/>
-						<col style="WIDTH: 2.499cm"/>
-						<col style="WIDTH: 2.499cm"/>
-						<col style="WIDTH: 2.499cm"/>
-						<col style="TEXT-ALIGN: right; WIDTH: 2.499cm"/>
-						<col style="TEXT-ALIGN: right; WIDTH: 2.499cm"/>
+						<col style="TEXT-ALIGN: right; WIDTH: 2.38cm"/>
+						<col style="WIDTH: 8.941cm"/>
+						<col style="WIDTH: 2.38cm"/>
+						<col style="WIDTH: 2.38cm"/>
+						<col style="WIDTH: 2.38cm"/>
+						<col style="WIDTH: 2.38cm"/>
+						<col style="TEXT-ALIGN: right; WIDTH: 2.38cm"/>
+						<col style="TEXT-ALIGN: right; WIDTH: 2.38cm"/>
 					</colgroup>
 					<tbody>
 						<tr>

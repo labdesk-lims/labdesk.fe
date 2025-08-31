@@ -20,13 +20,13 @@ On Error GoTo Catch_Error
     Dim ctrl As control
     Dim s As String
     
-    rfrm.caption = GetTranslation(rfrm.name, "caption_", language)
+    rfrm.Caption = GetTranslation(rfrm.name, "caption_", language)
     
     For Each ctrl In rfrm.Controls
         'Translate labels
         If TypeName(ctrl) = "Label" Then
             s = GetTranslation(rfrm.name, ctrl.name, language)
-            If s <> "" Then rfrm.Controls(ctrl.name).caption = s
+            If s <> "" Then rfrm.Controls(ctrl.name).Caption = s
         End If
     Next ctrl
     

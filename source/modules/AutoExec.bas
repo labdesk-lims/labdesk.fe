@@ -111,10 +111,10 @@ login_form:
     DbProcedures.AddUser
     
     ' Check users licence
-    If Not UserHasLicence(GetUserId()) Then
-        config.DemoMode = True
-        MsgBox "You do not have a valid license. This application will be closed after a few minutes.", vbInformation, "Information"
-    End If
+    'If Not UserHasLicence(GetUserId()) Then
+    '    config.DemoMode = True
+    '    MsgBox "You do not have a valid license. This application will be closed after a few minutes.", vbInformation, "Information"
+    'End If
     
     'Open the background worker form
     SysCmd acSysCmdSetStatus, "Init background worker"
@@ -127,7 +127,10 @@ login_form:
     If Application.SysCmd(acSysCmdGetObjectState, acForm, "desktop") <> acObjStateOpen And Nz(GetFieldValue("setup", "show_desktop"), False) Then DoCmd.OpenForm "desktop", acNormal, , , acFormReadOnly, acWindowNormal
     
     'Fill status bar text with user name
-    SysCmd acSysCmdSetStatus, "User: " & DbProcedures.GetUserName() & IIf(config.DemoMode, " (not licensed)", " (licensed)")
+    SysCmd acSysCmdSetStatus, "User: " & DbProcedures.GetUserName()
+    
+    'Activate Auto Compact
+    Application.SetOption "Auto compact", True
     
     InitApp = True
     

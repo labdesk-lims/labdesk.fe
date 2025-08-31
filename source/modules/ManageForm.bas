@@ -87,14 +87,14 @@ On Error GoTo Catch_Error
     Dim i As Integer
     Dim s As String
     
-    rfrm.caption = GetTranslation(rfrm.name, "caption_", language)
+    rfrm.Caption = GetTranslation(rfrm.name, "caption_", language)
     
     For Each ctrl In rfrm.Controls
         'Translate labels
         If TypeName(ctrl) = "Label" Then
             'labels
             s = GetTranslation(rfrm.name, ctrl.name, language)
-            If s <> "" Then rfrm.Controls(ctrl.name).caption = s
+            If s <> "" Then rfrm.Controls(ctrl.name).Caption = s
             'tooltips
             s = GetTranslation(rfrm.name, ctrl.name & "tooltip", language)
             If s <> "" And s <> ctrl.name & "tooltip" Then rfrm.Controls(ctrl.name).ControlTipText = s
@@ -103,14 +103,14 @@ On Error GoTo Catch_Error
         'Translate buttons
         If TypeName(ctrl) = "CommandButton" Then
             s = GetTranslation(rfrm.name, ctrl.name, language)
-            If s <> "" Then rfrm.Controls(ctrl.name).caption = s
+            If s <> "" Then rfrm.Controls(ctrl.name).Caption = s
         End If
         
         'Translate register tabs
         If TypeName(ctrl) = "TabControl" Then
             While i < rfrm.Controls(ctrl.name).Pages.count
                 s = GetTranslation(rfrm.name, rfrm.Controls(ctrl.name).Pages(i).name, language)
-                If s <> "" Then rfrm.Controls(ctrl.name).Pages(i).caption = s
+                If s <> "" Then rfrm.Controls(ctrl.name).Pages(i).Caption = s
                 i = i + 1
             Wend
             i = 0
@@ -216,7 +216,7 @@ On Error GoTo Catch_Error
     
     'Translate all controls
     TranslateForm rfrm.Form, GetDbSetting("language")
-    If Not GetPermission(rfrm.name).Update Or readOnly Then rfrm.caption = rfrm.caption & " " & GetTranslation("form", "label_read_only", DbConnect.GetDbSetting("language"))
+    If Not GetPermission(rfrm.name).Update Or readOnly Then rfrm.Caption = rfrm.Caption & " " & GetTranslation("form", "label_read_only", DbConnect.GetDbSetting("language"))
     
     'Prepare temporary table for actual session and set it as object source
     If TableExists(GetTableNameFromGuid(tmpGuid)) Then CurrentDb.TableDefs.Delete GetTableNameFromGuid(tmpGuid)
@@ -335,7 +335,7 @@ On Error GoTo Catch_Error
     TranslateForm rfrm.Form, GetDbSetting("language")
     
     'Attach a read only hint if applies
-    If Not GetPermission(rfrm.name).Update Or readOnly Then rfrm.caption = rfrm.caption & " " & GetTranslation("form", "label_read_only", GetDbSetting("language"))
+    If Not GetPermission(rfrm.name).Update Or readOnly Then rfrm.Caption = rfrm.Caption & " " & GetTranslation("form", "label_read_only", GetDbSetting("language"))
     
     ConfigSyncForm = True
     

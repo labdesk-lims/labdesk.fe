@@ -88,7 +88,6 @@ Public Sub Install()
     
     'Add admin and activate licence
     AddAdmin
-    ManageLicence.ActivateUser 1
     
     'Set Frontend Version
     SetFeVersion
@@ -170,7 +169,7 @@ Catch_Error:
     Resume Exit_Function
 End Function
 
-Private Sub AddTranslation(ByVal container As String, ByVal item As String, ByVal en As String, ByVal de As String)
+Private Sub AddTranslation(ByVal container As String, ByVal item As String, ByVal en As String, ByVal de As String, ByVal mandantory As Boolean, factory As Boolean)
 On Error GoTo Catch_Error
     Dim db As database
     Dim rs As Recordset
@@ -179,9 +178,10 @@ On Error GoTo Catch_Error
     Set rs = db.OpenRecordset("SELECT COUNT(id) As cnt FROM translation WHERE container = '" & container & "' AND item = '" & item & "'", dbOpenDynaset, dbSeeChanges)
     
     If rs!cnt = 0 Then
-        db.Execute "INSERT INTO translation (container, item, en, de) VALUES ('" & container & "', '" & item & "', '" & en & "', '" & de & "')"
+        db.Execute "INSERT INTO translation (container, item, en, de, mandantory, factory) VALUES ('" & container & "', '" & item & "', '" & en & "', '" & de & "', '" & CInt(mandantory) & "', '" & CInt(factory) & "')"
     Else
-        db.Execute "UPDATE translation SET en = '" & en & "', de = '" & de & "' WHERE container = '" & container & "' AND item = '" & item & "'"
+        db.Execute "UPDATE translation SET en = '" & en & "', de = '" & de & "', mandantory = '" & CInt(mandantory) & "' WHERE container = '" & container & "' AND item = '" & item & "'"
+        db.Execute "UPDATE translation SET factory = '" & CInt(factory) & "' WHERE container = '" & container & "' AND item = '" & item & "'"
     End If
     
 Exit_Function:
@@ -202,7 +202,7 @@ On Error GoTo Catch_Error
     Set rs = db.OpenRecordset("SELECT * FROM _translation")
     
     Do While Not rs.EOF
-        AddTranslation Nz(rs!container, ""), Nz(rs!item, ""), Nz(rs!en, ""), Nz(rs!de, "")
+        AddTranslation Nz(rs!container, ""), Nz(rs!item, ""), Nz(rs!en, ""), Nz(rs!de, ""), Nz(rs!mandantory, False), Nz(rs!factory, False)
         rs.MoveNext
     Loop
 
