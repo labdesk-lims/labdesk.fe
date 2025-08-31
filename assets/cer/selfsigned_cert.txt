@@ -1,0 +1,6 @@
+New-SelfSignedCertificate -Subject "CN=labdesk" -CertStoreLocation "Cert:\CurrentUser\My" -KeyExportPolicy Exportable -KeySpec Signature -KeyLength 2048 -KeyAlgorithm RSA -HashAlgorithm SHA256
+
+Export-Certificate -Cert $cert -FilePath "C:\Users\lkoge\Documents\GitHub\labdesk.fe\assets\cer\labdesk.cer"
+
+$mypwd = ConvertTo-SecureString -String "{labdesk#2600*}" -Force -AsPlainText
+Export-PfxCertificate -Cert $cert -FilePath "C:\Users\lkoge\Documents\GitHub\labdesk.fe\assets\cer\labdesk_prv.pfx" -Password $mypwd   ## Specify your preferred location
