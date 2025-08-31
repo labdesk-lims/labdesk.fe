@@ -1,0 +1,27 @@
+SOFTWARE LICENCE TERMS
+
+Thank you for choosing Labdesk Laboratory Information and Management System!
+
+(I) IMPORTANT NOTICE
+This is a copyright agreement between you and the KOLUMA GmbH. This agreement describes your rights and the conditions upon which you may use the software. You should review the entire agreement, because all of the terms are important and apply to you. By accepting this agreement or using the software, you agree to all of these terms. If you do not accept and comply with these terms, you may not use the software or its features.
+
+(II) LICENCE
+In consideration of the provisions contained in this agreement and for other good and valuable consideration, the receipt and sufficiency of which is acknowledged, the parties agree as follows:
+(a) Under this agreement the vendor grants to the licensee a non-exclusive and non-transferable licence (the „Licence“) to use Labdesk (the „Software“).
+(b) „Software“ includes the source code, executable computer programs and any related printed, electronic and online documentation and any other files that may accompany the product.
+(c) Title, copyright, intellectual property rights and distribution rights of the Software remain exclusively with the vendor. Intellectual property rights include the look and feel of the Software. This agreement constitutes a licence for use only and is not in any way a transfer of ownership rights to the software.
+(d) The rights and obligations of this agreement are personal rights granted to the licensee only. The licensee may not transfer or assign any of the rights or obligations granted under this agreement to any other person or legal entity. The licensee may not make available the software for use by one or more third parties.
+(e) Failure to comply with any of the terms under the licence section will be considered a material breach of this agreement.
+
+(III) LICENCE FEE
+The purchase fee paid by the licensee will constitute the entire licence fee and is the full consideration for this agreement.
+
+(IV) GOVERNING LAW
+The parties to this agreement submit to the jurisdiction of the courts named in the imprint of the homepage www.labdesk.net for the enforcement of this agreement or any arbitration award or decision arising from this agreement. This agreement will be enforced or construed according to the laws of Germany.
+
+(V) INSTALLATION AND USE RIGHTS
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to test and train the software without restriction, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. For any commercial use a licence needs to be purchased.
+
+(VI) DISCLAIMER
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
